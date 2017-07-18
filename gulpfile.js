@@ -8,7 +8,11 @@ var output = 'dist/css/';
 
 var sassOptions = {
   errLogToConsole: true,
-  outputStyle: 'expanded'
+  outputStyle: 'expanded',
+    includePaths: [
+        'src/govuk_template/assets/stylesheets',
+        'src/govuk_frontend_toolkit/stylesheets'
+    ]
 };
 
 var autoprefixerOptions = {
@@ -19,7 +23,6 @@ gulp.task('sass', function () {
   return gulp
     .src(input)
     .pipe(sass(sassOptions))
-    .pipe(autoprefixer(autoprefixerOptions))
     .pipe(gulp.dest(output));
 });
 
