@@ -8,7 +8,7 @@ var output = 'dist/css/';
 
 var sassOptions = {
   errLogToConsole: true,
-  outputStyle: 'expanded',
+  outputStyle: 'compressed',
     includePaths: [
         'src/govuk_template/assets/stylesheets',
         'src/govuk_frontend_toolkit/stylesheets'
