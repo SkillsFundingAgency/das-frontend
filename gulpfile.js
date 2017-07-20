@@ -4,7 +4,7 @@ var sourcemaps = require('gulp-sourcemaps');
 var autoprefixer = require('gulp-autoprefixer');
 
 var input = ['src/esfa-sass/*.scss'];
-var output = 'dist/css/';
+var output = 'distcss/css/';
 
 var sassOptions = {
   errLogToConsole: true,
