@@ -1,5 +1,6 @@
 var gulp = require('gulp');
 var sass = require('gulp-sass');
+var gulpcopy = require('gulp-copy');
 var sourcemaps = require('gulp-sourcemaps');
 var autoprefixer = require('gulp-autoprefixer');
 
@@ -26,4 +27,10 @@ gulp.task('sass', function () {
     .pipe(gulp.dest(output));
 });
 
-gulp.task('default', ['sass']);
+gulp.task('copy', function () {
+    return gulp
+        .src('src/static/css/*.css')
+        .pipe(gulpcopy('dist/css'));
+});
+
+gulp.task('default', ['sass', 'copy']);
