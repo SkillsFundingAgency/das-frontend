@@ -32,7 +32,7 @@ gulp.task('sass', function () {
 });
 
 gulp.task('build-js', function() {
-  return gulp.src(['src/javascript/*.js'])
+  return gulp.src(['src/javascript/*/*.js', 'src/javascript/*.js'])
     .pipe(concat('app.js'))
     .pipe(uglify())
     .on('error', function (err) { gutil.log(gutil.colors.red('[Error]'), err.toString()); })

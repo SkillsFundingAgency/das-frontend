@@ -1,6 +1,6 @@
 var esfa = esfa || {};
 
-esfa.myaHomepage : {
+esfa.myaHomepage = {
     init: function () {
         this.startButton();
         this.toggleRadios();
