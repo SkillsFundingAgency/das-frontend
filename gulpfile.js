@@ -3,6 +3,10 @@ var sass = require('gulp-sass');
 var gulpcopy = require('gulp-copy');
 var sourcemaps = require('gulp-sourcemaps');
 var autoprefixer = require('gulp-autoprefixer');
+var concat = require('gulp-concat');
+var uglify = require('gulp-uglify');
+var gutil = require('gulp-util');
+
 
 var input = ['src/esfa-sass/*.scss'];
 var output = 'distcss/css/';
@@ -27,10 +31,12 @@ gulp.task('sass', function () {
     .pipe(gulp.dest(output));
 });
 
-gulp.task('copy', function () {
-    return gulp
-        .src('src/static/css/*.css')
-        .pipe(gulpcopy('dist/css'));
+gulp.task('build-js', function() {
+  return gulp.src(['src/javascript/*.js'])
+    .pipe(concat('app.js'))
+    .pipe(uglify())
+    .on('error', function (err) { gutil.log(gutil.colors.red('[Error]'), err.toString()); })
+    .pipe(gulp.dest('distjavascript/javascript'));
 });
 
-gulp.task('default', ['sass']);
+gulp.task('default', ['sass', 'build-js']);
