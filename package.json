@@ -1,0 +1,32 @@
+{
+  "name": "das-frontend",
+  "version": "1.0.0",
+  "description": "DAS Frontend contains the code used across the apprenticeship services ",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/SkillsFundingAgency/das-frontend.git"
+  },
+  "author": "Education & Skill Funding Agency developers",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.2",
+    "govuk-frontend": "^1.3.0",
+    "gulp-sass": "^3.1.0",
+    "nunjucks": "^3.1.3"
+  },
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^3.10.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-rename": "^1.4.0",
+    "gulp-uglify": "^3.0.1"
+  },
+  "bugs": {
+    "url": "https://github.com/SkillsFundingAgency/das-frontend/issues"
+  },
+  "homepage": "https://github.com/SkillsFundingAgency/das-frontend#readme"
+}

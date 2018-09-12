@@ -1,0 +1,8 @@
+$govuk-assets-path: "../assets/";
+$govuk-fonts-path: "../assets/fonts/";
+
+// GDS Design System
+@import "all";
+
+// DAS Components
+@import "components/global-navigation";
