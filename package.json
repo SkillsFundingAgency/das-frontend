@@ -4,6 +4,7 @@
   "description": "DAS Frontend contains the code used across the apprenticeship services ",
   "main": "index.js",
   "scripts": {
+    "dev": "settings='dev' node server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
