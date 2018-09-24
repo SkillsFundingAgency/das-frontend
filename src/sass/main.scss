@@ -1,3 +1,4 @@
+// Override path variables
 $govuk-assets-path: "../assets/";
 $govuk-fonts-path: "../assets/fonts/";
 
@@ -6,3 +7,6 @@ $govuk-fonts-path: "../assets/fonts/";
 
 // DAS Components
 @import "components/global-navigation";
+
+// DAS defaults
+p { @extend .govuk-body }
