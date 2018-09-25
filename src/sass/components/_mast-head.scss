@@ -1,0 +1,25 @@
+.app-masthead {
+  @include govuk-responsive-padding(6, "top");
+  @include govuk-responsive-padding(6, "bottom");
+  color: govuk-colour("white");
+  background-color: govuk-colour("blue");
+
+  h1 {
+    color: govuk-colour("white");
+    @include govuk-responsive-margin(6, "bottom");
+  }
+
+  p {
+    color: govuk-colour("white");
+    @include govuk-font(24);
+    margin-bottom: 0;
+  }
+}
+
+main > .app-masthead {
+  margin-top: -30px;
+  margin-bottom: 20px;
+  @include govuk-media-query(tablet) {
+    margin-top: -40px;
+  }
+}

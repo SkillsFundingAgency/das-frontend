@@ -7,6 +7,35 @@ $govuk-fonts-path: "../assets/fonts/";
 
 // DAS Components
 @import "components/global-navigation";
+@import "components/mast-head";
 
 // DAS defaults
-p { @extend .govuk-body }
+
+main {
+
+  h1 {
+    @extend .govuk-heading-xl
+  }
+  h2 {
+    @extend .govuk-heading-l
+  }
+  h3 {
+    @extend .govuk-heading-m
+  }
+  p {
+    @extend .govuk-body
+  }
+  img {
+    display: inline-block;
+    max-width: 100%;
+  }
+  ul {
+    @extend .govuk-list;
+    @extend .govuk-list--bullet;
+  }
+
+  a {
+    @extend .govuk-link;
+  }
+
+}
