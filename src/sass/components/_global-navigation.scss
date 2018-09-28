@@ -1,0 +1,25 @@
+.das-navigation {
+  border-bottom: 1px solid govuk-colour(grey-1);
+  @include govuk-text-colour;
+  @include govuk-font($size: 19);
+}
+
+.das-navigation__list {
+  list-style: none;
+  padding: 0;
+}
+
+.das-navigation__list-item {
+
+}
+
+.das-navigation__link {
+  display: block;
+  padding: 10px 0;
+  border-bottom: 1px solid govuk-colour(grey-3);
+  color: $govuk-link-colour;
+}
+
+.das-navigation__link--last {
+  border-bottom: none;
+}

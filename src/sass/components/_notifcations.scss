@@ -1,0 +1,24 @@
+
+.das-notification  {
+  @include govuk-text-colour;
+  @include govuk-responsive-padding(4);
+  @include govuk-responsive-margin(8, "bottom");
+  @include govuk-focusable;
+
+  border: $govuk-border-width-mobile solid govuk-colour("turquoise");
+
+  @include govuk-media-query($from: tablet) {
+    border-width: $govuk-border-width;
+  }
+}
+
+
+.das-notification__body {
+  @include govuk-text-colour;
+  @include govuk-font($size: 19);
+  margin-bottom: 5px;
+}
+
+.das-notification--warning {
+  border-color: govuk-colour("orange");
+}
