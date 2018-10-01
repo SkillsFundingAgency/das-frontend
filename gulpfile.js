@@ -7,8 +7,10 @@ const uglify = require('gulp-uglify');
 const cleanCSS = require('gulp-clean-css');
 
 const input = './src/sass/**/*.scss';
-
 const output = './dist/css/';
+
+const inputLegacy = './src/legacy/sass/**/*.scss';
+const outputLegacy = './dist/legacy/css/';
 
 let sassOptions;
 
@@ -16,6 +18,8 @@ sassOptions = {
   errLogToConsole: true,
   outputStyle: 'compressed',
   includePaths: [
+    'node_modules/govuk_frontend_toolkit/stylesheets',
+    'node_modules/govuk-elements-sass/public/sass',
     'node_modules/govuk-frontend'
   ],
 };
@@ -39,5 +43,10 @@ gulp.task('sass', () => gulp
   .src(input)
   .pipe(sass(sassOptions))
   .pipe(gulp.dest(output)));
+
+gulp.task('sass-legacy', () => gulp
+  .src(inputLegacy)
+  .pipe(sass(sassOptions))
+  .pipe(gulp.dest(outputLegacy)));
 
 gulp.task('default', ['sass', 'watch']);
