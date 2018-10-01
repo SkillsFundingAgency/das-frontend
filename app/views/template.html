@@ -21,7 +21,7 @@
     <meta property="og:image" content="/static/assets/images/govuk-opengraph-image.png">
 </head>
 
-<body class="govuk-template__body ">
+<body class="govuk-template__body {{ bodyClass }}">
 <script>
   document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');
 
@@ -31,7 +31,6 @@
 
 <header class="govuk-header " role="banner" data-module="header">
     <div class="govuk-header__container govuk-width-container">
-
         <div class="govuk-header__logo">
             <a href="/" class="govuk-header__link govuk-header__link--homepage">
           <span class="govuk-header__logotype">
@@ -49,11 +48,34 @@
         </div>
         <div class="govuk-header__content">
             <a href="#" class="govuk-header__link govuk-header__link--service-name">
-                {{ serviceTitle if serviceTitle else "Manage Apprenticeships" }}
+                {{ serviceTitle if serviceTitle else "Manage apprenticeships" }}
             </a>
         </div>
     </div>
 </header>
+
+<nav class="das-navigation">
+    <ul class="das-navigation__list govuk-width-container">
+        <li class="das-navigation__list-item">
+            <a class="das-navigation__link das-navigation__link--current" href="/link">Home</a>
+        </li>
+        <li class="das-navigation__list-item">
+            <a class="das-navigation__link" href="/link">Finance</a>
+        </li>
+        <li class="das-navigation__list-item">
+            <a class="das-navigation__link" href="/link">Apprentices</a>
+        </li>
+        <li class="das-navigation__list-item">
+            <a class="das-navigation__link" href="/link">Your team</a>
+        </li>
+        <li class="das-navigation__list-item">
+            <a class="das-navigation__link" href="/link">Your organisations and agreements</a>
+        </li>
+        <li class="das-navigation__list-item">
+            <a class="das-navigation__link das-navigation__link--last" href="/link">PAYE schemes</a>
+        </li>
+    </ul>
+</nav>
 
 <main class="govuk-main-wrapper " id="main-content" role="main">
 
@@ -109,6 +131,10 @@
 <script>
   window.GOVUKFrontend.initAll()
 </script>
+
+{% block js %}
+
+{% endblock %}
 
 </body>
 

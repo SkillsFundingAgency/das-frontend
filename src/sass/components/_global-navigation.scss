@@ -10,7 +10,9 @@
 }
 
 .das-navigation__list-item {
-
+  @include govuk-media-query($from: tablet) {
+    display: inline-block;
+  }
 }
 
 .das-navigation__link {
@@ -18,6 +20,18 @@
   padding: 10px 0;
   border-bottom: 1px solid govuk-colour(grey-3);
   color: $govuk-link-colour;
+  font-weight: bold;
+  text-decoration: none;
+  @include govuk-focusable;
+  @include govuk-media-query($from: tablet) {
+    border: none;
+    padding: 10px 10px 8px;
+  }
+}
+
+.das-navigation__link--current {
+  border-bottom: 4px solid govuk-colour(blue);
+  margin-bottom: -4px;
 }
 
 .das-navigation__link--last {
