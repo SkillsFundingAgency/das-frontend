@@ -18,9 +18,11 @@ sassOptions = {
   errLogToConsole: true,
   outputStyle: 'compressed',
   includePaths: [
+    'node_modules/govuk_template_mustache/source/assets/stylesheets',
     'node_modules/govuk_frontend_toolkit/stylesheets',
     'node_modules/govuk-elements-sass/public/sass',
-    'node_modules/govuk-frontend'
+    'node_modules/govuk-frontend',
+    'src/sass'
   ],
 };
 
@@ -39,6 +41,10 @@ gulp.task('copy-js', () => {
   gulp.src('node_modules/govuk-frontend/*.js').pipe(gulp.dest('./dist/js/'));
 });
 
+gulp.task('copy-legacy-template-assets', () => {
+  gulp.src('node_modules/govuk_template_mustache/assets/stylesheets/**/*').pipe(gulp.dest('./dist/libs/template'));
+});
+
 gulp.task('sass', () => gulp
   .src(input)
   .pipe(sass(sassOptions))
@@ -49,4 +55,6 @@ gulp.task('sass-legacy', () => gulp
   .pipe(sass(sassOptions))
   .pipe(gulp.dest(outputLegacy)));
 
+
+gulp.task('legacy', ['copy-legacy-template-assets', 'sass-legacy']);
 gulp.task('default', ['sass', 'watch']);

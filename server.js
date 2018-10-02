@@ -22,7 +22,7 @@ nunjucks.configure(
 });
 
 app.set('view engine', 'html');
-app.use('/static', express.static('dist'));
+app.use('/dist', express.static('dist'));
 
 routes.bind(app);
 

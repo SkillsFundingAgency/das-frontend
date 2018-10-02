@@ -18,5 +18,10 @@ module.exports = {
       var journey = req.params.journey;
       res.render('services/' + journey + '/' + subFolder + '/' + stepId, {action: req.query.action, type: req.query.type})
     })
+    app.get('/legacy/:journey/:stepId', function (req, res) {
+      var stepId = req.params.stepId;
+      var journey = req.params.journey;
+      res.render('legacy/' + journey + '/' + stepId, {action: req.query.action, type: req.query.type})
+    })
   }
 }
