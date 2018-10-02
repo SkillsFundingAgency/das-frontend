@@ -41,20 +41,32 @@ gulp.task('copy-js', () => {
   gulp.src('node_modules/govuk-frontend/*.js').pipe(gulp.dest('./dist/js/'));
 });
 
-gulp.task('copy-legacy-template-assets', () => {
-  gulp.src('node_modules/govuk_template_mustache/assets/stylesheets/**/*').pipe(gulp.dest('./dist/libs/template'));
-});
-
 gulp.task('sass', () => gulp
   .src(input)
   .pipe(sass(sassOptions))
   .pipe(gulp.dest(output)));
+
+
+
 
 gulp.task('sass-legacy', () => gulp
   .src(inputLegacy)
   .pipe(sass(sassOptions))
   .pipe(gulp.dest(outputLegacy)));
 
+gulp.task('copy-legacy-template-assets', () => {
+  gulp.src('node_modules/govuk_template_mustache/assets/stylesheets/**/*').pipe(gulp.dest('./dist/libs/template'));
+});
 
-gulp.task('legacy', ['copy-legacy-template-assets', 'sass-legacy']);
-gulp.task('default', ['sass', 'watch']);
+// script paths
+let jsFiles = 'src/legacy/javascript/*.js',
+  jsDest = 'dist/legacy/js';
+
+gulp.task('js-legacy', function() {
+  return gulp.src(jsFiles)
+    .pipe(concat('app.min.js'))
+    .pipe(gulp.dest(jsDest));
+});
+
+gulp.task('legacy', ['copy-legacy-template-assets', 'js-legacy', 'sass-legacy']);
+gulp.task('default', ['copy-assets', 'copy-js', 'sass', 'watch']);
