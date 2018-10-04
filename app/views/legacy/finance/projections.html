@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<!--[if lt IE 9]><html class="lte-ie8" lang="en"><![endif]-->
+<!--[if gt IE 8]><!-->
+<html lang="en">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8" />
+    <title>Funding projection - Manage apprentices</title>
+
+    <link href="/dist/libs/template/govuk-template.css" media="screen" rel="stylesheet" />
+    <link href="/dist/libs/template/govuk-template-print.css" media="print" rel="stylesheet" />
+    <link href="/dist/libs/template/fonts.css" media="all" rel="stylesheet" />
+
+    <link rel="shortcut icon" href="/dist/images/favicon.ico" type="image/x-icon" />
+    <link rel="mask-icon" href="/dist/images/gov.uk_logotype_crown.svg" color="#0b0c0c">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="/dist/images/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon-precomposed" sizes="120x120" href="/dist/images/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon-precomposed" sizes="76x76" href="/dist/images/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon-precomposed" href="/dist/images/apple-touch-icon-60x60.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <meta property="og:image" content="/dist/images/opengraph-image.png">
+    <meta name="msapplication-config" content="none" />
+    <link href="/dist/legacy/css/screen.css" media="all" rel="stylesheet" />
+
+</head>
+<body>
+<script>document.body.className = document.body.className + ' js-enabled';</script>
+
+
+<header role="banner" id="global-header" class="with-proposition">
+    <div class="header-wrapper">
+        <div class="header-global">
+            <div class="header-logo">
+                <a href="https://www.gov.uk" title="Go to the GOV.UK homepage" id="logo" class="content">
+                    <img src="https://assets.publishing.service.gov.uk/static/gov.uk_logotype_crown_invert_trans-203e1db49d3eff430d7dc450ce723c1002542fe1d2bce661b6d8571f14c1043c.png" alt="" width="36" height="32"> GOV.UK
+                </a>
+            </div>
+        </div>
+        <div class="header-proposition">
+            <div class="content">
+                <a id="proposition-name" href="/">Manage apprenticeships</a>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div id="floating-menu-holder">
+    <div class="account-information floating-menu">
+        <div class="js-float">
+            <p class="floating-head-text">Your employer account </p>
+            <nav id="user-nav" role="navigation" aria-label="Main menu">
+                <ul role="menubar">
+                    <li><a href="https://manage-apprenticeships.service.gov.uk/service/help" class="menu-main">Help</a></li>
+                    <li class="has-sub-menu">
+                        <a href="/" role="menuitem" class="menu-main" aria-label="Account settings">Settings</a>
+                        <ul role="menu" id="settings-menu" class="js-hidden">
+                            <li><a href="https://manage-apprenticeships.service.gov.uk/service/accounts" role="menuitem" class="sub-menu-item">Your accounts</a></li>
+                            <li><a href="https://manage-apprenticeships.service.gov.uk/accounts/84VBNV/rename/" role="menuitem" class="sub-menu-item">Rename account</a></li>
+                            <li><a href="https://beta-login.apprenticeships.sfa.bis.gov.uk/account/changepassword?clientId=fcastprd&amp;returnurl=https%3a%2f%2f%2fservice%2fpassword%2fchange" class="sub-menu-item">Change your password</a></li>
+                            <li><a href="https://beta-login.apprenticeships.sfa.bis.gov.uk/account/changeemail?clientId=fcastprd&amp;returnurl=https%3a%2f%2f%2fservice%2femail%2fchange" class="sub-menu-item">Change your email address</a></li>
+                            <li><a href="https://manage-apprenticeships.service.gov.uk/settings/notifications" class="sub-menu-item">Notification settings</a></li>
+
+                        </ul>
+                    </li>
+                    <li><a href="/forecasting/Service/signout" role="menuitem" class="menu-main" aria-label="Sign out">Sign out</a></li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+</div> <!--/floating-menu-holder-->
+<div class="header-organisation" role="navigation">
+
+    <nav class="header-inner">
+        <ul role="menubar" id="global-nav-links">
+            <li><a href="https://manage-apprenticeships.service.gov.uk/accounts/84VBNV/teams/" class="" role="menuitem">Home</a></li>
+            <li><a href="https://manage-apprenticeships.service.gov.uk/accounts/84VBNV/balance/" class="" role="menuitem">Finance</a></li>
+            <li><a href="https://manage-apprenticeships.service.gov.uk/commitments/accounts/84VBNV/apprentices/home" class="" role="menuitem">Apprentices</a></li>
+            <li><a href="https://manage-apprenticeships.service.gov.uk/accounts/84VBNV/teams/view" class="" role="menuitem">Your team</a></li>
+            <li><a href="https://manage-apprenticeships.service.gov.uk/accounts/84VBNV/agreements/" class="" role="menuitem">Your organisations and agreements</a></li>
+            <li><a href="https://manage-apprenticeships.service.gov.uk/accounts/84VBNV/schemes/" class="" role="menuitem">PAYE schemes</a></li>
+        </ul>
+    </nav>
+</div>
+
+
+<div class="phase-banner phase-banner-beta">
+    <div class="phase-banner-info">
+        <strong class="phase-tag">BETA</strong>
+        <span>
+            This is a new feature – your <a href="#projection-survey">feedback</a> will help us to improve it.
+        </span>
+    </div>
+</div>
+
+
+<main role="main" id="content">
+
+
+
+
+
+
+
+
+
+    <div class="breadcrumbs">
+        <ol role="navigation">
+            <li><a href="https://manage-apprenticeships.service.gov.uk/accounts/84VBNV/teams/">Home</a></li>
+            <li><a href="https://manage-apprenticeships.service.gov.uk/accounts/84VBNV/balance/">Finance</a></li>
+            <li>Funding projection</li>
+        </ol>
+    </div>
+
+    <div class="grid-row funding-projection">
+        <div class="column-two-thirds">
+            <div class="hgroup form-group">
+                <h1 class="heading-xlarge">
+                    Funding projection
+                </h1>
+                <p>
+                    The figures below show the estimated funds that may be available to you for the duration of your apprenticeships.
+                </p>
+
+                <details>
+                    <summary>More information</summary>
+                    <div>
+                        <p>
+                            These figures are based on the current information in your account and the data provided by your training provider which is used to calculate funding.
+                        <p />
+                        <p>
+                            The projection doesn’t include any future apprenticeship starts or apprentices who’ve already started and payment has not yet been made to their training provider. These will be added to the funding projection soon.
+                        </p>
+                    </div>
+                </details>
+
+                <a class="button margin-top-x2" href="/accounts/84VBNV/forecasting/estimations/start">Estimate apprenticeships you could fund</a>
+            </div>
+        </div>
+
+        <div class="column-one-third">
+            <div class="related">
+                <h3 class="heading-small">Download data as a spreadsheet</h3>
+                <div class="form-group">
+                    <ul class="list list-links">
+
+                        <li>
+                            <a id="apprenticeship_csvdownload" href="/accounts/84VBNV/forecasting/download-apprenticeships" class="">
+                                Apprenticeship details in the account projection
+                            </a>
+                            <p>
+                                The download includes the details of apprenticeships used to create this projection
+                            </p>
+                        </li>
+
+                        <li>
+                            <a id="projections_csvdownload" href="/accounts/84VBNV/forecasting/download" class="">
+                                Account projection table
+                            </a>
+                            <p>
+                                The download includes the details of the data in the table shown on this page
+                            </p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CHART -->
+
+    <div class="grid-row">
+        <div class="column-two-thirds">
+            <div class="panel projection-date">
+                <p>
+                    If you have declared your levy and/or made a payment to your training provider, your account will show the projection when it next updates. The account is updated twice a month.
+                </p>
+                <p>
+                    You won't see a projection of funds until you declare your levy or make a payment to a training provider.
+                </p>
+            </div>
+        </div>
+    </div>
+    <div class="grid-row">
+        <div class="column-full">
+            <div class="chart-container" aria-hidden="true">
+                <div class="chart-data"
+                     data-dates=""
+                     data-values="">
+
+                </div>
+                <h2 class="heading-large">Funding Projection Chart</h2>
+                <p>Account funds over time</p>
+                <div id="chart" aria-hidden="true"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Projection -->
+    <h4 class="heading-large">Your account projection</h4>
+    <div class="grid-row" id="account-projection">
+        <div class="column-two-thirds">
+            <p>A month by month projection of your account balance.</p>
+            <p>
+                <span class="bold">Current Balance: </span> &#163;0
+            </p>
+        </div>
+        <div class="column-one-third pending-completion-payments">
+            <div class="panel panel-width-thin">
+                <p>Overdue completion payments</p>
+                <span class="heading-medium">&#163;0</span>
+                <details>
+                    <summary>What does this figure mean?</summary>
+                    <div class="">
+                        <p>This is the value of your overdue completion payments where the apprenticeships have overrun the planned completion date.</p>
+                    </div>
+                </details>
+            </div>
+        </div>
+    </div>
+
+    <div class="grid-row">
+        <div class="column-full" id="BalanceSheet-Tables">
+
+
+            <details>
+                <summary>Where is the end-point assessment cost?</summary>
+                <div class="panel panel-width-thin">
+
+                    <p>
+                        The end-point assessment cost is paid by your training provider to your end-point assessment organisation (EPAO).
+                    </p>
+                    <p>
+                        The funds for this payment are included in the training and completion costs.
+                    </p>
+                </div>
+            </details>
+
+        </div>
+    </div>
+    <div class="grid-row">
+        <div class="column-full">
+            <div class="panel panel-filled-purple panel-border-wide">
+                <h3 class="heading-medium">Disclaimer</h3>
+                <p>This tool is designed to illustrate what your funds may look like based on the apprenticeships currently in your apprenticeship service account.</p>
+                <p>The actual amount of funds available is likely to vary if there are any changes made to your apprenticeship arrangements, including, for example, changes in the number of apprentices employed, or the cost and duration of their training.</p>
+                <p>You should therefore not rely solely on the information provided by this tool when making decisions about how to spend future levy funds.</p>
+            </div>
+
+            <details id="projection-survey" class="projection-survey">
+                <summary>Help us improve this section</summary>
+                <iframe src="https://www.smartsurvey.co.uk/s/7DFNM/"></iframe>
+            </details>
+        </div>
+
+    </div>
+
+
+
+
+</main>
+
+<footer class="group js-footer" id="footer" role="contentinfo">
+    <div class="footer-wrapper">
+        <div class="footer-meta">
+            <div class="footer-meta-inner">
+                <ul class="platform-help-links">
+                    <li><a href="https://manage-apprenticeships.service.gov.uk/service/help">Help</a></li>
+                    <li><a href="https://www.surveymonkey.co.uk/r/2JPLQ9T" target="_blank">Feedback</a></li>
+                    <li><a href="https://manage-apprenticeships.service.gov.uk/service/privacy">Privacy and cookies</a></li>
+                    <li>Built by the <a href="http://gov.uk/sfa" target="_blank">Education and Skills Funding Agency</a></li>
+                </ul>
+                <div class="open-government-licence">
+                    <p class="logo">
+                        <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence</a>
+                    </p>
+                    <p>
+                        All content is available under the <a href="https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/" rel="license">Open Government Licence v3.0</a>, except where otherwise stated
+                    </p>
+                </div>
+            </div>
+            <div class="copyright">
+                <a href="http://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/copyright-and-re-use/crown-copyright/">© Crown copyright</a>
+            </div>
+        </div>
+    </div>
+</footer>
+<div id="global-app-error" class="app-error hidden"></div>
+<script src="/bundles/libs?v=QjqnZ5txeFMzq82RwQ1KD-ETjKVITDmBT7A52ps7ICw1"></script>
+
+<script src="/bundles/c3?v=sf7KgTJXk4yjKGKCY-BUs2jkwFJTPpZLLLOLA5QesyE1"></script>
+
+<script src="/bundles/tippy?v=02-NVkAQJzZAK_E3E_-1vR7ZL5nIs9jDW5veAgQ-5Xk1"></script>
+
+<script src="/bundles/screen?v=Wpte3Wz_T74TLoPjrFGRWoRGONEgolDoAAyC0fXshQM1"></script>
+
+
+
+
+
+</body>
+</html>

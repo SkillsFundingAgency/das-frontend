@@ -1,3 +1,8 @@
+$das-assets-path: "/dist/legacy/images/";
+$das-images-path: $das-assets-path;
+
+@import "tools/functions";
+
 @import "govuk-elements";
 @import "mixins";
 @import "helpers";
