@@ -109,7 +109,9 @@
                     "isHttpAllowed": {
                         "value": "[parameters('isHttpAllowed')]"
                     },
-                    "originPath": "[parameters('originPath')]"
+                    "originPath": {
+                        "value": "[parameters('originPath')]"
+                    }
                 }
             },
             "dependsOn": [
