@@ -1,0 +1,116 @@
+{
+    "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+    "contentVersion": "1.0.0.0",
+    "parameters": {
+        "storageAccountName": {
+            "type": "string",
+            "metadata": {
+                "description": "Name of the storage account"
+            }
+        },
+        "accessTier": {
+            "type": "string",
+            "defaultValue": "",
+            "allowedValues": [
+                "Hot",
+                "Cool",
+                ""
+            ],
+            "metadata": {
+                "description": "This setting is required if using BlobStorage as the storageKind, otherwise can be left blank"
+            }
+        },
+        "storageKind": {
+            "type": "string",
+            "defaultValue": "Storage",
+            "allowedValues": [
+                "Storage",
+                "StorageV2",
+                "BlobStorage"
+            ]
+        },
+        "cdnProfileName": {
+            "type": "string",
+            "metadata": {
+                "description": "Name of Content Delivery Name profile"
+            }
+        },
+        "cdnEndPointName": {
+            "type": "string"
+        },
+        "originHostName": {
+            "type": "string"
+        },
+        "customDomainName": {
+            "defaultValue": "",
+            "type": "string"
+        },
+        "isHttpAllowed": {
+            "type": "bool",
+            "defaultValue": true
+        },
+        "cdnProfileResourceGroup": {
+            "type": "string"
+        }
+    },
+    "variables": {},
+    "resources": [
+        {
+            "apiVersion": "2017-05-10",
+            "name": "storage-account-arm",
+            "type": "Microsoft.Resources/deployments",
+            "properties": {
+                "mode": "Incremental",
+                "templateLink": {
+                    "uri": "https://raw.githubusercontent.com/SkillsFundingAgency/das-platform-building-blocks/master/templates/storage-account-arm.json",
+                    "contentVersion": "1.0.0.0"
+                },
+                "parameters": {
+                    "storageAccountName": {
+                        "value": "[parameters('storageAccountName')]"
+                    },
+                    "accessTier": {
+                        "value": "[parameters('accessTier')]"
+                    },
+                    "storageKind": {
+                        "value": "[parameters('storageKind')]"
+                    }
+                }
+            },
+            "dependsOn": []
+        },
+        {
+            "apiVersion": "2017-05-10",
+            "name": "cdn-endpoint",
+            "type": "Microsoft.Resources/deployments",
+            "resourceGroup": "[parameters('cdnProfileResourceGroup')]",
+            "properties": {
+                "mode": "Incremental",
+                "templateLink": {
+                    "uri": "https://raw.githubusercontent.com/SkillsFundingAgency/das-platform-building-blocks/master/templates/cdn-endpoint.json",
+                    "contentVersion": "1.0.0.0"
+                },
+                "parameters": {
+                    "cdnProfileName": {
+                        "value": "[parameters('cdnProfileName')]"
+                    },
+                    "cdnEndPointName": {
+                        "value": "[parameters('cdnEndPointName')]"
+                    },
+                    "customDomainName": {
+                        "value": "[parameters('customDomainName')]"
+                    },
+                    "originHostName": {
+                        "value": "[parameters('originHostName')]"
+                    },
+                    "isHttpAllowed": {
+                        "value": "[parameters('isHttpAllowed')]"
+                    }
+                }
+            },
+            "dependsOn": [
+                "storage-account-arm"
+            ]
+        }
+    ]
+}
