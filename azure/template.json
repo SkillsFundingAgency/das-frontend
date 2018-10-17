@@ -51,6 +51,9 @@
         },
         "cdnProfileResourceGroup": {
             "type": "string"
+        },
+        "originPath": {
+            "type": "string"
         }
     },
     "variables": {},
@@ -105,7 +108,8 @@
                     },
                     "isHttpAllowed": {
                         "value": "[parameters('isHttpAllowed')]"
-                    }
+                    },
+                    "originPath": "[parameters('originPath')]"
                 }
             },
             "dependsOn": [
