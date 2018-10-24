@@ -54,6 +54,8 @@
     </div>
 </header>
 
+{% if loggedIn %}
+
 <nav class="das-navigation">
     <ul class="das-navigation__list govuk-width-container">
         <li class="das-navigation__list-item">
@@ -77,21 +79,24 @@
     </ul>
 </nav>
 
-<main class="govuk-main-wrapper " id="main-content" role="main">
+{% endif %}
 
+<div class="govuk-width-container">
 
     {% if backLink %}
     <a href="{{ backLink }}" class="govuk-back-link">Back</a>
     {% endif %}
 
+    <main class="govuk-main-wrapper " id="main-content" role="main">
+
     {% block preContent %} {% endblock %}
 
-    <div class="govuk-width-container">
         {% block content %}
         <h1 class="govuk-heading-xl">Default page template</h1>
         {% endblock %}
-    </div>
-</main>
+
+    </main>
+</div>
 
 <footer class="govuk-footer " role="contentinfo">
     <div class="govuk-width-container ">
