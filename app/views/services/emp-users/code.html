@@ -1,0 +1,48 @@
+{% extends "template.html" %}
+{% set backLink = "forgotten-password" %}
+
+
+{% block content %}
+
+<div class="das-notification das-notification--success" tabindex="-1">
+    <h3 class="das-notification__heading">Getting your reset code</h3>
+    <p class="das-notification__body">If email address is registered, we'll send you a reset code now.</p>
+</div>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">
+            Enter your reset code
+        </h1>
+    </div>
+</div>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-half">
+        <form method="get">
+            <div class="govuk-form-group">
+                <label class="govuk-label" for="code">
+                    Reset code
+                </label>
+                <input class="govuk-input govuk-input--width-10" id="code" name="code" type="text">
+            </div>
+            <div class="govuk-form-group">
+                <label class="govuk-label" for="password">
+                    Create password
+                </label>
+                <span id="password-hint" class="govuk-hint">Password requires upper and lowercase letters, a number and at least 8 characters.</span>
+                <input class="govuk-input" id="password" name="password" type="password" aria-describedby="email-hint">
+            </div>
+            <div class="govuk-form-group">
+                <label class="govuk-label" for="confirm-password">
+                    Confirm password
+                </label>
+                <input class="govuk-input" id="confirm-password" name="confirm-password" type="password">
+            </div>
+            <button type="submit" class="govuk-button">
+                Continue
+            </button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}
