@@ -12,10 +12,17 @@
   }
 }
 
+.das-notification__heading {
+  @include govuk-text-colour;
+  @include govuk-font($size: 24, $weight: bold);
+  margin-top: 0;
+  @include govuk-responsive-margin(2, "bottom");
+}
 
 .das-notification__body {
   @include govuk-text-colour;
   @include govuk-font($size: 19);
+  margin-top: 0;
   margin-bottom: 5px;
 }
 
