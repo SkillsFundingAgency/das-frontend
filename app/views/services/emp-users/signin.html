@@ -1,0 +1,35 @@
+{% extends "template.html" %}
+{% set pageTitle = "DAS - Sign in" %}
+{% set backLink = "../ma/used-service-before" %}
+{% set loggedIn = false %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-half">
+        <h1 class="govuk-heading-xl">
+            Sign-in
+        </h1>
+        <p class="govuk-body">Sign in or <a href="create-account" class="govuk-link">create an account</a> to manage your apprenticeship funds.</p>
+        <form>
+            <div class="govuk-form-group">
+                <label class="govuk-label" for="email">
+                    Email address
+                </label>
+                <input class="govuk-input" id="email" name="email" type="text">
+            </div>
+            <div class="govuk-form-group">
+                <label class="govuk-label" for="password">
+                    Password
+                </label>
+                <input class="govuk-input" id="password" name="password" type="password">
+            </div>
+            <button type="submit" class="govuk-button">
+                Sign in
+            </button>
+        </form>
+        <p class="govuk-body"><a href="forgotten-password" class="govuk-link">Forgotten your password?</a></p>
+    </div>
+</div>
+
+{% endblock %}

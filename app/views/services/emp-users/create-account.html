@@ -1,0 +1,56 @@
+{% extends "template.html" %}
+{% set pageTitle = "DAS - Create account" %}
+{% set backLink = "signin" %}
+{% set loggedIn = false %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-half">
+        <h1 class="govuk-heading-xl">
+            Get set up as a user
+        </h1>
+        <form>
+            <div class="govuk-form-group">
+                <label class="govuk-label" for="first-name">
+                    First name
+                </label>
+                <input class="govuk-input" id="first-name" name="first-name" type="text">
+            </div>
+            <div class="govuk-form-group">
+                <label class="govuk-label" for="last-name">
+                    Last name
+                </label>
+                <input class="govuk-input" id="last-name" name="last-name" type="text">
+            </div>
+            <div class="govuk-form-group">
+                <label class="govuk-label" for="email">
+                    Email
+                </label>
+                <span id="email-hint" class="govuk-hint">We'll send you an email to confirm your identity.</span>
+                <input class="govuk-input" id="email" name="email" type="text" aria-describedby="email-hint">
+            </div>
+            <div class="govuk-form-group">
+                <label class="govuk-label" for="password">
+                    Create password
+                </label>
+                <span id="password-hint" class="govuk-hint">Password requires upper and lowercase letters, a number and at least 8 characters.</span>
+                <input class="govuk-input" id="password" name="password" type="password" aria-describedby="email-hint">
+            </div>
+            <div class="govuk-form-group">
+                <label class="govuk-label" for="confirm-password">
+                    Confirm password
+                </label>
+                <input class="govuk-input" id="confirm-password" name="confirm-password" type="password">
+            </div>
+            <div class="govuk-inset-text">
+                By continuing you accept the <a href="terms" class="govuk-link">terms and conditions</a>.
+            </div>
+            <button type="submit" class="govuk-button">
+                Set me up
+            </button>
+        </form>
+    </div>
+</div>
+
+{% endblock %}
