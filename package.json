@@ -2,7 +2,7 @@
   "name": "das-frontend",
   "description": "DAS Frontend contains the code used across the apprenticeship services ",
   "scripts": {
-    "dev": "settings='dev' node server.js",
+    "dev": "settings='dev' node server.js"
   },
   "repository": {
     "type": "git",
@@ -27,5 +27,5 @@
   },
   "bugs": {
     "url": "https://github.com/SkillsFundingAgency/das-frontend/issues"
-  },
+  }
 }
