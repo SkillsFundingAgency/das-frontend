@@ -23,7 +23,14 @@
   @include govuk-text-colour;
   @include govuk-font($size: 19);
   margin-top: 0;
-  margin-bottom: 5px;
+  @include govuk-responsive-margin(2, "bottom");
+}
+
+.das-notification__body:last-child {
+  margin-bottom: 0;
+  @include govuk-media-query($from: tablet) {
+    margin-bottom: -2px;
+  }
 }
 
 .das-notification--success {
