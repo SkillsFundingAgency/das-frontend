@@ -48,7 +48,7 @@
         </div>
         <div class="govuk-header__content">
             <a href="#" class="govuk-header__link govuk-header__link--service-name">
-                {{ serviceTitle if serviceTitle else "Manage apprenticeships" }}
+                {{ serviceTitle if serviceTitle else "DAS frontend" }}
             </a>
         </div>
     </div>
@@ -82,6 +82,17 @@
 {% endif %}
 
 <div class="govuk-width-container">
+
+    <div class="govuk-phase-banner">
+      <p class="govuk-phase-banner__content">
+        <strong class="govuk-tag govuk-phase-banner__content__tag ">
+          beta
+        </strong>
+        <span class="govuk-phase-banner__text">
+          This is a new service
+        </span>
+      </p>
+    </div>
 
     {% if backLink %}
     <a href="{{ backLink }}" class="govuk-back-link">Back</a>
