@@ -1,0 +1,12 @@
+{
+  "src": {
+    "default": "./src/sass/**/*.scss",
+    "legacy": "./src/legacy/sass/**/*.scss",
+    "legacyJs": "./src/legacy/javascript/*.js"
+  },
+  "dist": {
+    "default": "./dist/css/",
+    "legacy": "./dist/legacy/css/",
+    "legacyJs": "./dist/legacy/js"
+  }
+}
