@@ -1,0 +1,35 @@
+.clearfix:after {
+  content: "";
+  display: block;
+  clear: both; }
+
+.vh, .visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  border: 0; }
+
+.heading-xl {
+  color: #000;
+  text-transform: uppercase;
+  font-family: nobel, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 1.09375; }
+  @media (min-width: 46.25em) {
+    .heading-xl {
+      font-size: 48px;
+      line-height: 1.04167; } }
+  @media print {
+    .heading-xl {
+      font-size: 32pt;
+      line-height: 1.15; } }
+
+.heading-l {
+  color: #000; }

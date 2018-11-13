@@ -1,0 +1,76 @@
+@import "vendor/sass-mq";
+
+@mixin font($size, $weight: regular, $line-height: false) {
+
+  @include typography-common;
+  @if $weight == regular {
+    font-weight: 400;
+  } @else if $weight == bold {
+    font-weight: 700;
+  }
+
+  @if $size {
+    @include typography-responsive($size, $override-line-height: $line-height);
+  }
+}
+
+@mixin typography-common($font-family: $font-family) {
+  font-family: $font-family;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@mixin typography-responsive($size, $override-line-height: false, $important: false) {
+
+  @if not map-has-key($typography-scale, $size) {
+    @error "Unknown font size `#{$size}` - expected a point from the typography scale.";
+  }
+
+  $font-map: map-get($typography-scale, $size);
+
+  @each $breakpoint, $breakpoint-map in $font-map {
+    $font-size: map-get($breakpoint-map, "font-size");
+    $line-height: _line-height(
+        $line-height: if($override-line-height,
+                $override-line-height,
+                map-get($breakpoint-map, "line-height")
+        ),
+        $font-size: $font-size
+    );
+
+    // Mark rules as !important if $important is true - this will result in
+    // these variables becoming strings, so this needs to happen *after* they
+    // are used in calculations
+    $font-size: $font-size;
+    $line-height: $line-height;
+
+    @if $breakpoint == null {
+      font-size: $font-size; // sass-lint:disable no-duplicate-properties
+      line-height: $line-height;
+    } @elseif $breakpoint == "print" {
+      @include media-query($media-type: print) {
+        font-size: $font-size;
+        line-height: $line-height;
+      }
+    } @else {
+      @include media-query($from: $breakpoint) {
+        font-size: $font-size; // sass-lint:disable no-duplicate-properties
+        line-height: $line-height;
+      }
+    }
+  }
+}
+
+@function _line-height($line-height, $font-size) {
+  @if not unitless($line-height) and unit($line-height) == unit($font-size) {
+    $line-height: $line-height / $font-size;
+  }
+
+  @return $line-height;
+}
+
+@mixin media-query($args...) {
+  @include mq($args...) {
+    @content;
+  };
+}

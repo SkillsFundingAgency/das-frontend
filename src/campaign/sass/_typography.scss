@@ -1,0 +1,16 @@
+// Headings
+
+.heading-xl {
+  color: $text-colour;
+  text-transform: uppercase;
+  @include font($size: 48, $weight: bold);
+
+}
+
+.heading-l {
+  color: $text-colour;
+}
+
+p {
+  
+}
