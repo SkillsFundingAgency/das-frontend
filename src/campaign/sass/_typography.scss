@@ -4,6 +4,8 @@
   color: $text-colour;
   text-transform: uppercase;
   @include font($size: 48, $weight: bold);
+  margin-top: 0;
+  @include responsive-margin(8, "bottom");
 }
 
 .heading-l {

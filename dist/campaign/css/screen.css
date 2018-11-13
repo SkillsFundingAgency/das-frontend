@@ -28,7 +28,9 @@
   -moz-osx-font-smoothing: grayscale;
   font-weight: 700;
   font-size: 32px;
-  line-height: 1.09375; }
+  line-height: 1.09375;
+  margin-top: 0;
+  margin-bottom: 30px; }
   @media (min-width: 46.25em) {
     .heading-xl {
       font-size: 48px;
@@ -37,6 +39,9 @@
     .heading-xl {
       font-size: 32pt;
       line-height: 1.15; } }
+  @media (min-width: 46.25em) {
+    .heading-xl {
+      margin-bottom: 50px; } }
 
 .heading-l {
   color: #000;
@@ -415,3 +420,95 @@ template {
 
 .footer {
   background: #212121; }
+
+.button {
+  font-family: nobel, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 1.3125;
+  text-transform: uppercase;
+  box-sizing: border-box;
+  display: inline-block;
+  position: relative;
+  width: 100%;
+  margin-top: 0;
+  margin-bottom: 22px;
+  padding: 7px 10px;
+  border: 2px solid transparent;
+  border-radius: 0;
+  color: #fff;
+  background-color: #006dff;
+  box-shadow: 0 2px 0 #004cb3;
+  text-align: center;
+  vertical-align: top;
+  cursor: pointer;
+  -webkit-appearance: none; }
+  @media (min-width: 46.25em) {
+    .button {
+      font-size: 19px;
+      line-height: 1.10526; } }
+  @media print {
+    .button {
+      font-size: 14pt;
+      line-height: 21px; } }
+  .button:focus {
+    outline: 3px solid #ffbf47;
+    outline-offset: 0; }
+  @media (min-width: 46.25em) {
+    .button {
+      margin-bottom: 32px; } }
+  @media (min-width: 46.25em) {
+    .button {
+      width: auto; } }
+  .button:link, .button:visited, .button:active, .button:hover {
+    color: #fff;
+    text-decoration: none; }
+  .button::-moz-focus-inner {
+    padding: 0;
+    border: 0; }
+  .button:hover, .button:focus {
+    background-color: #0062e6; }
+  .button:active {
+    top: 2px;
+    box-shadow: none; }
+  .button::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    bottom: -4px;
+    left: -2px;
+    background: transparent; }
+  .button:active::before {
+    top: -4px; }
+
+.button--disabled,
+.button[disabled="disabled"],
+.button[disabled] {
+  opacity: 0.5;
+  background: #006dff; }
+  .button--disabled:hover,
+  .button[disabled="disabled"]:hover,
+  .button[disabled]:hover {
+    background-color: #006dff;
+    cursor: default; }
+  .button--disabled:focus,
+  .button[disabled="disabled"]:focus,
+  .button[disabled]:focus {
+    outline: none; }
+  .button--disabled:active,
+  .button[disabled="disabled"]:active,
+  .button[disabled]:active {
+    top: 0;
+    box-shadow: 0 2px 0 #004cb3; }
+
+.button {
+  padding-top: 9px;
+  padding-bottom: 6px; }
+
+.button--start {
+  padding-top: 9px;
+  padding-bottom: 6px; }
