@@ -4,13 +4,27 @@
   color: $text-colour;
   text-transform: uppercase;
   @include font($size: 48, $weight: bold);
-
 }
 
 .heading-l {
   color: $text-colour;
+  text-transform: uppercase;
+  @include font($size: 36, $weight: bold);
 }
 
+.heading-m {
+  color: $text-colour;
+  text-transform: uppercase;
+  @include font($size: 24, $weight: bold);
+}
+
+.heading-s {
+  color: $text-colour;
+  text-transform: uppercase;
+  @include font($size: 19, $weight: bold);
+}
+
+
 p {
-  
+  @include font($size: 19, $weight: light);
 }
