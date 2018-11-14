@@ -100,8 +100,3 @@ $offset: 2;
   padding-top: (spacing(2) - $border-width-form-element - ($button-shadow-size / 2) + $offset); // s1
   padding-bottom: (spacing(2) - $border-width-form-element - ($button-shadow-size / 2) - $offset + 1); // s1
 }
-
-.button--start {
-  padding-top: (spacing(2) - $border-width-form-element - ($button-shadow-size / 2) + $offset); // s1
-  padding-bottom: (spacing(2) - $border-width-form-element - ($button-shadow-size / 2) - $offset + 1); // s1
-}

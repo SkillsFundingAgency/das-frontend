@@ -16,6 +16,10 @@
 .page-template {
   background: #212121; }
 
+.wrap {
+  margin: 0 auto;
+  max-width: 960px; }
+
 .main-content {
   padding: 20px;
   background: #fff; }
@@ -418,9 +422,6 @@ template {
 [hidden] {
   display: none; }
 
-.footer {
-  background: #212121; }
-
 .button {
   font-family: nobel, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -509,6 +510,5 @@ template {
   padding-top: 9px;
   padding-bottom: 6px; }
 
-.button--start {
-  padding-top: 9px;
-  padding-bottom: 6px; }
+.footer {
+  background: #212121; }
