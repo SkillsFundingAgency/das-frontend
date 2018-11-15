@@ -26,11 +26,31 @@
   @include font($size: 19, $weight: bold);
 }
 
-
 p {
   @include font($size: 19, $weight: light);
 }
 
 .list {
+  @include font($size: 19, $weight: light);
+  text-color: $text-colour;
+  margin-top: 0;
+  @include responsive-margin(4, "bottom");
+  padding-left: 0;
+  list-style-type: none;
+}
 
+.list > li {
+  @include media-query($from: tablet) {
+    margin-bottom: spacing(1);
+  }
+}
+
+.list--bullet {
+  padding-left: spacing(4);
+  list-style-type: disc;
+}
+
+.list--number {
+  padding-left: spacing(4);
+  list-style-type: decimal;
 }
