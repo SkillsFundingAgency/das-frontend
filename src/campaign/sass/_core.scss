@@ -10,6 +10,9 @@
 .main-content {
   padding: 20px;
   background: #fff;
+  @include media-query($from: tablet) {
+    padding: 50px;
+  }
 }
 
 
