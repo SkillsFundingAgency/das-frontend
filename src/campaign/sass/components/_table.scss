@@ -1,0 +1,39 @@
+.table {
+  @include font($size: 16, $weight: bold);
+  width: 100%;
+  @include responsive-margin(6, "bottom");
+  color: $grey-3;
+  border-spacing: 0;
+  border-collapse: collapse;
+  border-top: 1px solid $border-colour;
+  border-left: 1px solid $border-colour;
+  border-right: 1px solid $border-colour;
+}
+
+.table__thead .table__header {
+  background: $grey-4;
+}
+
+.table__header {
+  text-transform: uppercase;
+}
+
+.table__header,
+.table__cell {
+  padding: spacing(4) spacing(4);
+  border-bottom: 1px solid $border-colour;
+  text-align: left;
+}
+
+.table__sub-heading {
+  @include font($size: 16, $weight: light);
+  display: block;
+  text-transform: none;
+}
+
+.table__row--highlight > .table__header,
+.table__row--highlight > .table__cell {
+  background: $grey-4;
+  color: #000;
+  @include font($size: 24, $weight: bold);
+}
