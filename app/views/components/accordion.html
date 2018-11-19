@@ -1,0 +1,22 @@
+{% extends "template.html" %}
+{% set backLink = "index" %}
+{% from "../../../dist/campaign/components/accordion/macro.njk" import govukAccordion %}
+
+
+{% block content %}
+{{ govukAccordion({
+  id: "AccordionTest",
+  items: [
+      {
+        label:"section 1 label",
+        "label.html": "section 1 html",
+        content:{html: "<p>section 1 content</p>"}
+      },
+      {
+        label:"section 2",
+        "label.html": "section 2",
+        content:{html: "section 2"}
+      }
+  ]
+}) }}
+  {% endblock %}
