@@ -1,5 +1,18 @@
 .quote-box {
-  padding: 20px;
+  padding: 30px;
   margin: 0;
   background: $apprentice-light;
+}
+
+.quote-box__content {
+  margin: 0 0 15px;
+  padding: 0;
+}
+
+.quote-box__cite {
+  @include font($size: 14, $weight: bold);
+  display: block;
+  text-transform: uppercase;
+  font-style: normal;
+  color: $apprentice;
 }

@@ -26,6 +26,39 @@
   @include font($size: 19, $weight: bold);
 }
 
+.caption-xl {
+  @include font($size: 27);
+  display: block;
+  text-transform: uppercase;
+  margin-bottom: spacing(1);
+  color: $secondary-text-colour;
+}
+
+.caption-l {
+  @include font($size: 24);
+  display: block;
+  margin-bottom: spacing(1);
+  text-transform: uppercase;
+  color: $secondary-text-colour;
+  @include media-query($from: tablet) {
+    margin-bottom: 0;
+  }
+}
+
+.caption-m {
+  @include font($size: 19);
+  display: block;
+  text-transform: uppercase;
+  color: $secondary-text-colour;
+}
+
+.caption-s {
+  @include font($size: 14, $weight: bold);
+  display: block;
+  text-transform: uppercase;
+  color: $secondary-text-colour;
+}
+
 p {
   @include font($size: 19, $weight: light);
 }
