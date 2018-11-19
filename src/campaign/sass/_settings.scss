@@ -4,7 +4,7 @@ $font-bold-weight: 700;
 
 $root-font-size: 16px !default;
 
-$page-width: 960px !default;
+$page-width: 1040px !default;
 $gutter: 30px !default;
 
 @include media-query($from: tablet) {

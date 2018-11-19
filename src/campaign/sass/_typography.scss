@@ -26,6 +26,8 @@
   @include font($size: 19, $weight: bold);
 }
 
+// Captions
+
 .caption-xl {
   @include font($size: 27);
   display: block;
@@ -59,9 +61,17 @@
   color: $secondary-text-colour;
 }
 
+// Generic
+
 p {
   @include font($size: 19, $weight: light);
 }
+
+#main-content a {
+  color: $apprentice;
+}
+
+// Lists
 
 .list {
   @include font($size: 19, $weight: light);
@@ -94,7 +104,6 @@ p {
     left: spacing(4) * -1;
     top: .05em;
     line-height: .5em;
-
 }
 
 .list--bullet-employer > li:before {
