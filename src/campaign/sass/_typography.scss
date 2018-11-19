@@ -89,7 +89,7 @@ p {
 }
 
 .list--bullet {
-  padding-left: spacing(4);
+  padding-left: spacing(5);
 }
 
 .list--bullet > li {
@@ -98,11 +98,11 @@ p {
 
 .list--bullet > li:before {
     content: "•";
-    font-size: 2.4em;
+    font-size: 3em;
     position: absolute;
     color: $apprentice;
-    left: spacing(4) * -1;
-    top: .05em;
+    left: spacing(5) * -1;
+    top: .03em;
     line-height: .5em;
 }
 
@@ -113,4 +113,8 @@ p {
 .list--number {
   padding-left: spacing(4);
   list-style-type: decimal;
+}
+
+.caption-s + .heading-m {
+  margin-top: .2em;
 }
