@@ -11,6 +11,10 @@ module.exports = {
       var pageName = req.params.pageName;
       res.render('campaign/' + pageName , {action: req.query.action, type: req.query.type})
     })
+    app.get('/campaign/components/:compName', function (req, res) {
+      var compName = req.params.compName;
+      res.render('campaign/components/' + compName +'/' + compName , {action: req.query.action, type: req.query.type})
+    })
     app.get('/services/:journey/:stepId', function (req, res) {
       var stepId = req.params.stepId;
       var journey = req.params.journey;

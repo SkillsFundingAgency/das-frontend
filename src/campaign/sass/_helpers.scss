@@ -49,7 +49,7 @@
     @if $breakpoint == null {
       font-size: $font-size; // sass-lint:disable no-duplicate-properties
       line-height: $line-height;
-    } @elseif $breakpoint == "print" {
+    } @else if $breakpoint == "print" {
       @include media-query($media-type: print) {
         font-size: $font-size;
         line-height: $line-height;
@@ -160,4 +160,15 @@
   }
 
   @return map-get($spacing-points, $spacing-point);
+}
+
+@mixin device-pixel-ratio($ratio: 2) {
+  @media only screen and (-webkit-min-device-pixel-ratio: $ratio),
+    only screen and (min--moz-device-pixel-ratio: $ratio),
+    only screen and (  -o-min-device-pixel-ratio: #{($ratio*10)} / 10),
+    only screen and (     min-device-pixel-ratio: $ratio),
+    only screen and (             min-resolution: #{($ratio*96)}dpi),
+    only screen and (             min-resolution: #{$ratio}dppx) {
+      @content;
+    }
 }

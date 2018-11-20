@@ -4,7 +4,7 @@ $font-bold-weight: 700;
 
 $root-font-size: 16px !default;
 
-$page-width: 1040px !default;
+$page-width: 1440px !default;
 $gutter: 30px !default;
 
 @include media-query($from: tablet) {
@@ -106,6 +106,20 @@ $typography-scale: (
                         line-height: 1.15
                 )
         ),
+        18: (
+                null: (
+                        font-size: 16px,
+                        line-height: 20px
+                ),
+                tablet: (
+                        font-size: 18px,
+                        line-height: 25px
+                ),
+                print: (
+                        font-size: 14pt,
+                        line-height: 1.15
+                )
+        ),
         16: (
                 null: (
                         font-size: 14px,
@@ -176,7 +190,16 @@ $spacing-responsive-scale: (
         9: (
                 null: 40px,
                 tablet: 60px
-        )
+        ),
+        10: (
+                null: 60px,
+                tablet: 80px
+        ),
+        11: (
+                null: 80px,
+                tablet: 100px
+        ),
+
 ) !default;
 
 $spacing-points: (
@@ -189,5 +212,7 @@ $spacing-points: (
         6: 30px,
         7: 40px,
         8: 50px,
-        9: 60px
+        9: 60px,
+        10: 70px,
+        11: 80px
 ) !default;
