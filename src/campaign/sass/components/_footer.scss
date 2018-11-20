@@ -27,15 +27,30 @@
     @include font($size: $footer-text-size);
     @include responsive-padding(7, "top");
     @include responsive-padding(5, "bottom");
-    @include responsive-padding(11, "left");
-    @include responsive-padding(11, "right");
+    @include responsive-padding(10, "left");
+    @include responsive-padding(10, "right");
     font-style: book;
     line-height: 23px;
     border-top: 1px solid $footer-border-top;
     color: $footer-text;
     background: $footer-background;
     letter-spacing: 0rem;
+
+    @include mq ($until: tablet) {
+      @include responsive-padding(4, "left");
+      @include responsive-padding(4, "right");
+    }
   }
+
+  .footer__apprenticeship-logo{
+      width:100%;
+      max-width: 200px;
+  }
+  .footer__HMGovernment-logo{
+    @include mq ($until: tablet) {
+      @include responsive-margin(6, "bottom");
+    }
+}
 
   .footer__link {
     @include focusable-fill;
@@ -81,6 +96,7 @@
     flex-wrap: wrap; // Support: Flexbox
     align-items: flex-end; // Support: Flexbox
     justify-content: center; // Support: Flexbox
+    margin-top:$gutter;
   }
 
   .footer__meta-item {
@@ -114,7 +130,10 @@
   }
 
   .footer__licence-description {
+    @include mq ($from: tablet) {
+      
     text-align: right;
+    }
   }
 
   .footer__copyright-logo {
@@ -137,7 +156,12 @@
     margin-top: 0;
     margin-bottom: spacing(3);
     padding: 0;
-    float: right;
+    list-style: none;
+    
+
+    @include mq($from: tablet){
+      float: right;
+    }
   }
 
   .footer__meta-custom {
@@ -145,11 +169,18 @@
   }
 
   .footer__inline-list-item {
-    display: inline-block;
     margin-right: spacing(3);
     padding-right: spacing(3);
     margin-bottom: spacing(1);
-    border-right: $footer-text solid 1px;
+
+    @include mq($from: tablet){
+      display: inline-block;
+      border-right: $footer-text solid 1px;
+    }
+    @include mq($until: tablet){
+      line-height: normal;
+      margin-bottom:0;
+    }
   }
   .footer__inline-list-item:last-child {
     border-right: none;
@@ -169,6 +200,8 @@
 
   .footer__text{
     @include font($size: $footer-text-size, $weight:200);
+    margin-block-end: 0;
+    margin-block-start: 0;
   }
   .footer__navigation {
     display: flex; // Support: Flexbox
@@ -181,15 +214,21 @@
     display: inline-block;
    
     margin-bottom: $gutter;
-  
+  padding:0;
     vertical-align: top;
     // Ensure columns take up equal width (typically one-half:one-half)
     flex-grow: 1; // Support: Flexbox
     flex-shrink: 1; // Support: Flexbox
-    @include mq ($until: desktop) {
+    @include mq ($from: tablet) {
+      margin-top: 10px;
+    }
+
+    @include mq ($until: tablet) {
       // Make sure columns do not drop below 200px in width
       // Will typically result in wrapping, and end up in a single column on smaller screens.
       flex-basis: 200px; // Support: Flexbox
+      margin-bottom:0px;
+      background-color: #000000;
     }
   }
 
@@ -205,13 +244,21 @@
     padding: 0;
     list-style: none;
     column-gap: $gutter; // Support: Columns
+    @include mq ($until: tablet) {
+      @include responsive-margin(4, "top");
+      @include responsive-margin(4, "bottom");
+    }
   }
 
   .footer__list-header{
-    @include font($size: $footer-text-size, $weight:bold);
+    @include font($size: 14, $weight:bold);
     text-transform: uppercase;
     color: $footer-header;
-    letter-spacing: 5%;
+    letter-spacing: 0.05rem;
+    @include mq ($until: tablet) {
+      padding: 0 15px;
+      background-color: $footer-background;
+    }
   }
 
   @include mq ($from: desktop) {
@@ -226,6 +273,9 @@
 
   .footer__list-item {
     @include responsive-margin(4, "bottom");
+    @include mq ($until: tablet) {
+      padding: 0 15px;
+    }
   }
 
   .footer__list-item:last-child {

@@ -134,8 +134,9 @@ Accordion.prototype.setHeaderAttributes = function ($header, index) {
   icon.setAttribute('height', '16')
   icon.setAttribute('viewBox', '0 0 32 32')
   icon.setAttribute('class', 'govuk-accordion--icon')
-  icon.innerHTML = '<rect class="govuk-accordion--icon-horizontal-bar" x="0" y="12" width="32" height="8" rx=".8"></rect><rect class="govuk-accordion--icon-vertical-bar" x="12" y="0" width="8" height="32" rx=".8"></rect>';
+  icon.innerHTML = ' <path class="govuk-accordion--icon-open" d="M13.3721 -7.11581e-08L7.48837 5.84655L1.5814 -5.86546e-07L-6.9424e-08 1.58823L7.51163 9L15 1.61125L13.3721 -7.11581e-08Z"/><rect class="govuk-accordion--icon-close" x="1.58691" y="0.0893555" width="16.0371" height="2.16583" transform="rotate(45 1.58691 0.0893555)"/><rect class="govuk-accordion--icon-close" x="0.0966797" y="11.34" width="16.0371" height="2.16583" transform="rotate(-45 0.0966797 11.34)"/>';s
 
+ 
   $header.appendChild(icon)
 }
 

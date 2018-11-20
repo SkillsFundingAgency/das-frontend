@@ -4,7 +4,7 @@
     "legacy": "./src/legacy/sass/**/*.scss",
     "campaign": "./src/campaign/sass/**/*.scss",
     "legacyJs": "./src/legacy/javascript/*.js",
-    "dasJs": "./src/js/das-all.js"
+    "dasJs": "./src/das-all.js"
   },
   "dist": {
     "default": "./dist/css/",

@@ -13,7 +13,7 @@ gulp.task('watch', () => {
 });
 
 gulp.task('copy-assets', () => {
-  gulp.src('./node_modules/govuk-frontend/assets/**/*').pipe(gulp.dest('./dist/assets/'));
+  gulp.src(['./node_modules/govuk-frontend/assets/**/*','./src/assets/**/*']).pipe(gulp.dest('./dist/assets/'));
 });
 
 gulp.task('copy-js', () => {

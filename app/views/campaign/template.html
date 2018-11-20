@@ -31,27 +31,32 @@
 
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
-    <div class="wrap">
+  <div class="wrap">
 
-        <header class="header">
-            Header
-        </header>
-
-
+    <header class="header">
+      Header
+    </header>
 
 
-        <main id="main-content" class="main-content">
-
-        {% block content %}
-          <h1 class="govuk-heading-xl">Default page template</h1>
-        {% endblock %}
-
-        </main>
 
 
-     {% include './components/footer/_footer.html' %}
+    <main id="main-content" class="main-content">
 
-    </div>
+      {% block content %}
+      <h1 class="govuk-heading-xl">Default page template</h1>
+      {% endblock %}
+
+    </main>
+
+
+    {% include './components/footer/_footer.html' %}
+
+  </div>
+
+  <script src="/dist/js/das-all.js"></script>
+  <script>
+    window.DASFrontend.initAll()
+  </script>
 </body>
 
 </html>

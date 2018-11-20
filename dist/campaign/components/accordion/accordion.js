@@ -23,16 +23,15 @@ function Accordion ($module) {
   this.$openAllButton = ''
 }
 
-Accordion.prototype.init = function () {
-  function nodeListForEach (nodes, callback) {
-    if (window.NodeList.prototype.forEach) {
-      return nodes.forEach(callback)
-    }
-    for (var i = 0; i < nodes.length; i++) {
-      callback.call(window, nodes[i], i, nodes);
-    }
+function nodeListForEach (nodes, callback) {
+  if (window.NodeList.prototype.forEach) {
+    return nodes.forEach(callback)
   }
-  
+  for (var i = 0; i < nodes.length; i++) {
+    callback.call(window, nodes[i], i, nodes);
+  }
+}
+Accordion.prototype.init = function () {
   
   // Check module exists
   var $module = this.$module
@@ -130,13 +129,13 @@ Accordion.prototype.setHeaderAttributes = function ($header, index) {
   $header.removeChild($button)
   $header.appendChild($buttonAsButton)
 
-  var icon = document.createElementNS('http://www.w3.org/2000/svg', 'svg')
+  var icon = document.createElementNS('http://www.w3.org/2000/svg', 'div')
   icon.setAttribute('width', '16')
   icon.setAttribute('height', '16')
   icon.setAttribute('viewBox', '0 0 32 32')
   icon.setAttribute('class', 'govuk-accordion--icon')
-  icon.innerHTML = '<rect class="govuk-accordion--icon-horizontal-bar" x="0" y="12" width="32" height="8" rx=".8"></rect><rect class="govuk-accordion--icon-vertical-bar" x="12" y="0" width="8" height="32" rx=".8"></rect>';
-
+  // icon.innerHTML = '<rect class="govuk-accordion--icon-horizontal-bar" x="0" y="12" width="32" height="8" rx=".8"></rect><rect class="govuk-accordion--icon-vertical-bar" x="12" y="0" width="8" height="32" rx=".8"></rect>';
+ 
   $header.appendChild(icon)
 }
 
