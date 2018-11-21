@@ -14,7 +14,8 @@
   <link rel="apple-touch-icon" href="/dist/campaign/images/apple-touch-icon.png">
 
   <!--[if !IE 8]><!-->
-  {# <link href="/dist/css/main.css" rel="stylesheet" /> #}
+  {#
+  <link href="/dist/css/main.css" rel="stylesheet" /> #}
   <link href="/dist/campaign/css/screen.css" rel="stylesheet" />
 
   <link rel="stylesheet" href="https://use.typekit.net/tyj1hwm.css">
@@ -29,14 +30,17 @@
   <script>
     document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');
   </script>
-
-        {% block content %}
-          <h1 class="heading-xl">Default component template</h1>
-        {% endblock %}
-
+  <div class="wrap">
+    <main id="main-content" class="main-content">
+      {% block content %}
+      <h1 class="heading-xl">Default component template</h1>
+      {% endblock %}
+    </main>
+  </div>
 </body>
-  <script src="/dist/js/das-all.js"></script>
-  <script>
-    window.DASFrontend.initAll()
-  </script>
+<script src="/dist/js/das-all.js"></script>
+<script>
+  window.DASFrontend.initAll()
+</script>
+
 </html>
