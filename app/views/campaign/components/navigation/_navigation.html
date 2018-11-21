@@ -2,9 +2,14 @@
     <span></span>
 </a>
 <nav class="navigation" id="navigation">
-    <ul class="navigation__menu">
-        <li><a href="" class="navigation__link--top-level">Apprenticeships</a>
-            <ul class="navigation__sub-menu">
+    <ul class="navigation__menu  govuk-accordion" data-module="accordion"  id="accordion-navigation">
+        <li class="govuk-accordion__section">
+            <a href="" class="navigation__link--top-level govuk-accordion__section-header" id="accordion-nav-heading-1">
+                Apprenticeships
+                <span class="navigation__accordion-button govuk-accordion__section-header-button"></span>
+                <span class="navigation__accordion-icon"></span>
+            </a>
+            <ul class="navigation__sub-menu govuk-accordion__section-panel" aria-labelledby="accordion-nav-heading-1">
                 <li><a href="" class="navigation__link">
                         What is an apprenticeship?
                         <span class="navigation__link-caption">Find out how taking on an apprentice can recharge your business</span>
@@ -32,10 +37,15 @@
                 </li>
             </ul>
         </li>
-        <li><a href="" class="navigation__link--top-level">Employers</a> </li>
-        <li><a href="" class="navigation__link--top-level">Real stories</a> </li>
-        <li><a href="" class="navigation__link--top-level">Sectors</a>
-            <ul class="navigation__sub-menu">
+        <li><a href="#" class="navigation__link--top-level">Employers</a> </li>
+        <li><a href="#" class="navigation__link--top-level">Real stories</a> </li>
+        <li class="govuk-accordion__section">
+            <a href="#" class="navigation__link--top-level govuk-accordion__section-header" id="accordion-nav-heading-2">
+                Sectors
+                <span class="navigation__accordion-button govuk-accordion__section-header-button"></span>
+                <span class="navigation__accordion-icon"></span>
+            </a>
+            <ul class="navigation__sub-menu govuk-accordion__section-panel" aria-labelledby="accordion-nav-heading-2">
                 <li><a href="#" class="navigation__link">Agriculture, environment &amp; animal care</a></li>
                 <li><a href="#" class="navigation__link">Agriculture, environment &amp; animal care</a></li>
                 <li><a href="#" class="navigation__link">Agriculture, environment &amp; animal care</a></li>

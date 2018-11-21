@@ -160,6 +160,11 @@
       $('.navigation__toggle').on('click', function() {
         $('body').toggleClass('js-menu-open');
       });
+
+      $('.navigation__accordion-button').on('click', function(e) {
+        e.preventDefault();
+      });
+
     });
     </script>
 
