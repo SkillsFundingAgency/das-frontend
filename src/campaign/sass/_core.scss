@@ -9,6 +9,8 @@
 .wrap {
   margin: 0 auto;
   max-width: $page-width;
+  position: relative;
+  overflow: hidden;
 }
 
 .main-content {

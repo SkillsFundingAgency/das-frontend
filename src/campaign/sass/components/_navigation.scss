@@ -31,6 +31,9 @@
       top: 10px;
     }
   }
+  @include media-query($from: tablet) {
+    display: none;
+  }
 }
 
 .navigation__accordion-icon {
@@ -43,7 +46,11 @@
   top: 23px;
   right: 45px;
   transform: rotate(45deg);
-  transition:all 0.3s ease;
+  transition:all 0.2s ease;
+  @include media-query($from: tablet) {
+    right: 15px;
+    top: 20px;
+  }
 }
 
 .navigation__accordion-icon:after {
@@ -57,7 +64,7 @@
   background: $text-colour;
   border-radius: 2px;
   transform: rotate(90deg);
-  transition:all 0.3s ease;
+  transition:all 0.2s ease;
 }
 
 .govuk-accordion__section--expanded .navigation__accordion-icon,
@@ -68,6 +75,10 @@
 .govuk-accordion__section--expanded .navigation__accordion-icon {
   right: 39px;
   top: 25px;
+  @include media-query($from: tablet) {
+    right: 8px;
+    top: 20px;
+  }
 }
 
 .govuk-accordion__section--expanded .navigation__accordion-icon:after {
@@ -98,7 +109,6 @@
   color: #fff;
   position: fixed;
   top: 100px;
-  right: 0;
   height: 100%;
   width: 100%;
   font-size: 1.4em;
@@ -106,11 +116,28 @@
   overflow: auto;
   transition:all .3s ease;
   right: -100%;
+  @include media-query($from: tablet) {
+    right: 0;
+    position: static;
+    float: right;
+    width: auto;;
+    height: auto;
+  }
 }
 
 .navigation__menu {
   padding: 0;
   margin: 0;
+  list-style: none;
+  @include media-query($from: tablet) {
+
+  }
+}
+
+.navigation__menu > li {
+  @include media-query($from: tablet) {
+    float: left;
+  }
 }
 
 .navigation__link--top-level {
@@ -121,6 +148,15 @@
   text-decoration: none;
   padding: 20px;
   position: relative;
+  @include media-query($from: tablet) {
+    padding: 10px
+  }
+}
+
+.govuk-accordion.with-js .navigation__link--top-level.govuk-accordion__section-header {
+  @include media-query($from: tablet) {
+    padding: 10px 30px 10px 10px;
+  }
 }
 
 .navigation__sub-menu {
@@ -128,6 +164,14 @@
   margin: 0;
   padding: 0;
   list-style: none;
+  @include media-query($from: tablet) {
+    display: none;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 95px;
+    padding: 40px 70px;
+  }
 }
 
 .navigation__link {
@@ -136,10 +180,25 @@
   text-decoration: none;
   display: block;
   padding: 20px;
+  @include media-query($from: tablet) {
+    float: left;
+    width: 20%;
+    padding: 0 10px;
+    @include font($size: 14, $weight: bold);
+    text-transform: uppercase;
+    color: #000;
+    box-sizing: border-box;
+  }
 }
 
 .navigation__link-caption {
   display: none;
+  @include media-query($from: tablet) {
+    display: block;
+    text-transform: none;
+    color: $grey-3;
+    font-weight: 300;
+  }
 }
 
 .js-menu-open .navigation {

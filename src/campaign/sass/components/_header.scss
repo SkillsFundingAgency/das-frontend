@@ -1,5 +1,10 @@
 .header {
-
+  @include media-query($from: tablet) {
+    position: absolute;
+    background: #fff;
+    left: 0;
+    right: 0;
+  }
 }
 
 .header__logo {
@@ -14,6 +19,16 @@
   -webkit-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.25);
   -moz-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.25);
   box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.25);
+  @include media-query($from: tablet) {
+    position: static;
+    background: none;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    padding: 0;
+    border: none;
+    float: left;
+  }
 }
 
 .header__logo-image {

@@ -1,0 +1,12 @@
+.hero {
+  background: #0B0C0C;
+  padding: 50px;
+  text-align: center;
+  font-size: 40px;
+  color: #fff;
+  text-transform: uppercase;
+  @include font($size: 48, $weight: bold);
+  @include media-query($from: tablet) {
+    padding: 100px;
+  }
+}
