@@ -1,0 +1,87 @@
+{% extends '../template.html'%}
+{% from "./macro.njk" import dasButton %}
+
+
+
+{% block content %}
+<div>
+    <h2 class="heading-m">Primary button:</h2>
+    <br />
+    {{ dasButton({
+    "text": "Start now link button",
+    "href": "/",
+    "classes": "button"
+    }) }}
+    <br />
+    <h3 class="heading-s">with shadow:</h3>
+    {{ dasButton({
+    "text": "Start now link button",
+    "href": "/",
+    "classes": "button",
+    "shadow": true
+    }) }}
+    <br />
+    <h3 class="heading-s">with sparks:</h3>
+    {{ dasButton({
+    "text": "Start now link button",
+    "href": "/",
+    "classes": "button",
+    "sparks":true
+    }) }}
+</div>
+<div>
+    <h2 class="heading-m">Secondary button:</h2>
+    <br />
+    {{ dasButton({
+    "text": "Start now link button",
+    "href": "/",
+    "classes": "button-inverted"
+    }) }}
+    <br />
+    <h3 class="heading-s">with shadow:</h3>
+    {{ dasButton({
+    "text": "Start now link button",
+    "href": "/",
+    "classes": "button-inverted",
+    "shadow": true
+    }) }}
+</div>
+
+<div>
+    <h2 class="heading-m">Apprentice button:</h2>
+    <br />
+    {{ dasButton({
+    "text": "Start now link button",
+    "href": "/",
+    "classes": "button-apprentice"
+    }) }}
+    <br />
+    <h3 class="heading-s">with shadow:</h3>
+    {{ dasButton({
+    "text": "Start now link button",
+    "href": "/",
+    "classes": "button-apprentice",
+    "shadow": true
+    }) }}
+</div>
+
+<div>
+    <h2 class="heading-m">Employer button:</h2>
+    <br />
+    {{ dasButton({
+    "text": "Start now link button",
+    "href": "/",
+    "classes": "button-employer"
+    }) }}
+    <br />
+    <h3 class="heading-s">with shadow:</h3>
+    {{ dasButton({
+    "text": "Start now link button",
+    "href": "/",
+    "classes": "button-employer",
+    "shadow": true
+    }) }}
+</div>
+
+
+{% endblock %}
