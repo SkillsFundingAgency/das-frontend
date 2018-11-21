@@ -214,7 +214,7 @@
     display: inline-block;
    
     margin-bottom: $gutter;
-  padding:0;
+
     vertical-align: top;
     // Ensure columns take up equal width (typically one-half:one-half)
     flex-grow: 1; // Support: Flexbox
@@ -229,6 +229,7 @@
       flex-basis: 200px; // Support: Flexbox
       margin-bottom:0px;
       background-color: #000000;
+      padding:0;
     }
   }
 
