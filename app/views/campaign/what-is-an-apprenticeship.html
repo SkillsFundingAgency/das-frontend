@@ -35,26 +35,13 @@
 
         <header class="header">
 
-            <div class="logo">
-            Apprenticeships Logo
+            <div class="header__logo">
+                <img src="/dist/campaign/images/apprenticeships-logo.png" alt="Apprenticeships Logo" class="header__logo-image">
             </div>
-            <nav>
-            <ul>
-            <li><a href="">Apprenticeships</a> </li>
-            <li><a href="">Employers</a> </li>
-            <li><a href="">Real stories</a> </li>
-            <li><a href="">Sectors</a> </li>
-</ul>
-</nav>
 
-<div class="hero-header">
-<h1>Apprenticeships</h1>
-</div>
+            {% include './components/navigation/_navigation.html'%}
 
         </header>
-
-
-
 
         <main id="main-content" class="main-content">
 
@@ -154,10 +141,25 @@
             </div>
         </section>
 
-
-        {% include './components/footer/_footer.html' %}
+    {% include './components/footer/_footer.html'%}
 
     </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"></script>
+
+    <script>
+    $(function() {
+      $('.navigation__toggle').on('click', function() {
+        $('body').toggleClass('js-menu-open');
+      });
+    });
+    </script>
+
+
+
 </body>
 
 </html>

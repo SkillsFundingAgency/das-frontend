@@ -1,6 +1,10 @@
 .page-template {
    background: $page-bg;
- }
+}
+
+.js-menu-open {
+  overflow: hidden;
+}
 
 .wrap {
   margin: 0 auto;
