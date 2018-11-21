@@ -67,10 +67,6 @@ p {
   @include font($size: 19, $weight: light);
 }
 
-#main-content a {
-  color: $apprentice;
-}
-
 // Lists
 
 .list {
