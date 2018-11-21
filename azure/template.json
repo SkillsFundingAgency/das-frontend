@@ -118,5 +118,15 @@
                 "storage-account-arm"
             ]
         }
-    ]
+    ],
+    "outputs": {
+        "storageKey": {
+            "type": "string",
+            "value": "[reference('storage-account-arm').outputs.storageKey.value]"
+        },
+        "storageConnectionString": {
+            "type": "string",
+            "value": "[reference('storage-account-arm').outputs.storageConnectionString.value]"
+        }
+    }
 }
