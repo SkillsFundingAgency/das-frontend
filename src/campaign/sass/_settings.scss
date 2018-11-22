@@ -4,14 +4,12 @@ $font-bold-weight: 700;
 
 $root-font-size: 16px !default;
 
-$page-width: 1440px !default;
-$gutter: 30px !default;
+$page-width: 1440px;
+$page-width: 1100px;
 
-@include media-query($from: tablet) {
-        $gutter: 50px
-}
-
+$gutter: 40px !default;
 $gutter-half: $gutter / 2;
+
 $border-width: 5px !default;
 $border-width-wide: 10px !default;
 $border-width-mobile: 4px !default;

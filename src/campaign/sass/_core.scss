@@ -9,6 +9,8 @@
 .wrap {
   margin: 0 auto;
   max-width: $page-width;
+  position: relative;
+  overflow: hidden;
 }
 
 .main-content {
@@ -16,6 +18,19 @@
   background: #fff;
   @include media-query($from: tablet) {
     padding: 50px;
+  }
+}
+
+.header,
+.main-content,
+.section,
+.footer {
+  padding: 20px;
+  @include media-query($from: tablet) {
+    padding: 40px;
+  }
+  @include media-query($from: desktop) {
+    padding: 40px 80px;
   }
 }
 
