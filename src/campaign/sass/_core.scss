@@ -25,12 +25,12 @@
 .main-content,
 .section,
 .footer {
-  padding: 10px 20px;
+  padding: 20px;
   @include media-query($from: tablet) {
-    padding: 20px 40px;
+    padding: 40px;
   }
   @include media-query($from: desktop) {
-    padding: 20px 80px;
+    padding: 40px 80px;
   }
 }
 

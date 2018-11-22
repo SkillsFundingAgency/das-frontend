@@ -145,11 +145,13 @@
   color: $text-colour;
   text-transform: uppercase;
   @include font($size: 19, $weight: bold);
+  font-size: 16px;
   text-decoration: none;
   padding: 20px;
   position: relative;
   @include media-query($from: tablet) {
-    padding: 10px
+    padding: 10px;
+    font-size: 14px;
   }
 }
 
