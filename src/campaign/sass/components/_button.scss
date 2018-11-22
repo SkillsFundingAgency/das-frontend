@@ -1,0 +1,183 @@
+$button-colour: #FFFFFF;
+$button-text-colour: #000000;
+
+$button-apprentice-colour: $apprentice;
+$button-apprentice-text-colour: #fff;
+
+$button-employer-colour: $employer;
+$button-employer-text-colour: #fff;
+
+
+$button-hover-colour: darken($button-colour, 5%);
+$button-shadow-colour: darken($button-colour, 15%);
+$button-shadow-size: $border-width-form-element;
+$offset: 2;
+
+.button {
+  @include font($size: 14, $line-height: 21px, $weight: bold);
+  
+  @include focusable;
+
+  margin-top: 0;
+  @include responsive-margin(6, "bottom", $adjustment: $button-shadow-size); // s2
+  padding-top: (spacing(4) - $border-width-form-element - ($button-shadow-size / 2) + $offset); // s1
+  padding-bottom: (spacing(4) - $border-width-form-element - ($button-shadow-size / 2) - $offset + 1); // s1
+  padding-left: (spacing(6) - $border-width-form-element - ($button-shadow-size / 2) + $offset); // s1
+  padding-right: (spacing(6) - $border-width-form-element - ($button-shadow-size / 2) - $offset + 1); // s1
+
+
+  box-sizing: border-box;
+  display: inline-block;
+  position: relative;
+  width: 100%;
+
+  color: $button-text-colour;
+  background-color: $button-colour;
+
+  border: $border-width-form-element solid transparent;
+  border-radius: 0;
+
+  text-align: center;
+  text-transform: uppercase;
+  vertical-align: top;
+  letter-spacing: 0.05rem;
+  cursor: pointer;
+  -webkit-appearance: none;
+
+
+  @include media-query($from: tablet) {
+    width: auto;
+  }
+
+  &:link,
+  &:visited,
+  &:active,
+  &:hover {
+    color: $button-text-colour;
+    text-decoration: none;
+  }
+
+  &::-moz-focus-inner {
+    padding: 0;
+    border: 0;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: darken($button-colour, 5%);;
+  }
+
+  &:active {
+    top: $button-shadow-size;
+    box-shadow: none;
+  }
+
+  &::before {
+    content: "";
+    display: block;
+
+    position: absolute;
+
+    top: -$border-width-form-element;
+    right: -$border-width-form-element;
+    bottom: -($border-width-form-element + $button-shadow-size);
+    left: -$border-width-form-element;
+
+    background: transparent;
+  }
+
+  &:active::before {
+    top: -($border-width-form-element + $button-shadow-size);
+  }
+}
+
+.button--sparks{
+  border-image-slice: 276 0 169 0 fill; 
+  border-image-width: 3em 0px 3em 0px; 
+  border-image-outset: 3em 0px 3em 0px; 
+  border-image-repeat: stretch stretch;
+  // border-image-source: url('/dist/assets/images/button-border.png')
+}
+
+.button--shadow{
+  box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.15), 0px 4px 4px rgba(0, 0, 0, 0.25);
+}
+
+.button--disabled,
+.button[disabled="disabled"],
+.button[disabled] {
+  opacity: (.5);
+
+  &:hover {
+    cursor: default;
+  }
+
+  &:focus {
+    outline: none;
+  }
+
+  &:active {
+    top: 0;
+    box-shadow: 0 $button-shadow-size 0 $button-shadow-colour;
+  }
+}
+
+.button-apprentice
+{
+  color: $button-apprentice-text-colour;
+  background-color: $button-apprentice-colour;
+
+  &:link,
+  &:visited,
+  &:active,
+  &:hover {
+    color: $button-apprentice-text-colour;
+    text-decoration: none;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: darken($button-apprentice-colour, 5%);
+  }
+
+}
+
+.button-employer
+{
+  color: $button-employer-text-colour;
+  background-color: $button-employer-colour;
+
+  &:link,
+  &:visited,
+  &:active,
+  &:hover {
+    color: $button-employer-text-colour;
+    text-decoration: none;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: darken($button-employer-colour, 5%);
+  }
+
+}
+
+.button-inverted
+{
+  color: $button-colour;
+  background-color: $button-text-colour;
+
+  &:link,
+  &:visited,
+  &:active,
+  &:hover {
+    color: $button-colour;
+    text-decoration: none;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: lighten($button-text-colour, 10%);
+  }
+
+}

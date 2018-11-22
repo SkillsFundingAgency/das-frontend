@@ -1,0 +1,21 @@
+.sidebar {
+  background: $apprentice-mid;
+}
+
+.sidebar__header {
+  background: $apprentice;
+  padding: 30px;
+}
+
+.sidebar__caption {
+  color: rgba(255, 255, 255, .6);
+}
+
+.sidebar__heading {
+  color: #fff;
+  margin: .2em 0 0;
+}
+
+.sidebar__content {
+  padding: 30px;
+}
