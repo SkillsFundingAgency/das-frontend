@@ -20,7 +20,7 @@
   }
   .input::placeholder{
     color: $input-border-colour;
-  }
+    padding: 5px 0;
 
   .input::-webkit-outer-spin-button,
   .input::-webkit-inner-spin-button {
@@ -67,3 +67,4 @@
   .input--width-2 {
     max-width: 5.4ex;
   }
+}
