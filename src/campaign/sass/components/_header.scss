@@ -1,37 +1,38 @@
 .header {
-  @include media-query($from: tablet) {
-    position: absolute;
+  transition: all 0.2s ease;
+  background: #000;
+  background: linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%);
+  padding: 20px;
+  height: 55px;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  .js-menu-open & {
     background: #fff;
-    left: 0;
-    right: 0;
+  }
+  @include media-query($from: tablet) {
+    padding: 25px 80px;
+    height: 70px;
   }
 }
 
 .header__logo {
-  padding: 23px 20px 22px;
-  position: absolute;
-  background: #fff;
-  top: 0;
-  left: 0;
-  right: 0;
-  border-bottom: 1px solid #bfbfbf;
-  z-index: 20;
-  -webkit-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.25);
-  -moz-box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.25);
-  box-shadow: 0px 2px 5px 0px rgba(0,0,0,0.25);
+  height: 55px;
+  .js-menu-open & {
+    background-image: url('../images/apprenticeships-logo-black.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
   @include media-query($from: tablet) {
-    position: static;
-    background: none;
-    -webkit-box-shadow: none;
-    -moz-box-shadow: none;
-    box-shadow: none;
-    padding: 0;
-    border: none;
+    height: 70px;
     float: left;
   }
 }
 
 .header__logo-image {
-  height: 55px;
-  display: block;
+  max-height: 100%;
+  .js-menu-open & {
+    opacity: 0;
+  }
 }
