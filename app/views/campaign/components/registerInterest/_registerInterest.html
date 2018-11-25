@@ -1,0 +1,55 @@
+{% from "../button/macro.njk" import dasButton %}
+<section class="section">
+<div class="grid-row">
+  <div class="grid-column-full">
+    <span class="caption-s">Register interest</span>
+    <h1 class="heading-m">keep me informed of upcoming features</h1>
+    <div class="form-group">
+      {% include '../textInput/_textInput.html'%}
+    </div>
+
+    <div class="form-group">
+      {% include '../textInput/_textInput.html'%}
+    </div>
+    <div class="form-group">
+      {% include '../checkbox/_checkbox.html'%}
+    </div>
+
+    {{ dasButton({
+    "text": "Register interest",
+    "classes": "button-inverted"
+    }) }}
+  </div>
+</div>
+</section>
+<section class="section section-grey">
+<div class="grid-row">
+
+  <div class="grid-column-one-half">
+    <h2 class="heading-s">Apprentice</h2>
+    <hr class="hr hr-apprentice">
+    <ul class="list form-list list-apprentice list--bullet">
+      <li class="form-list-item">get paid and learn at the same time, with at least 20% of your time set aside for
+        learning - normally at a
+        college, university or other training providers</li>
+      <li class="form-list-item">gain official certification of your skills, equivalent to a qualification ranging
+        from level 2 (GCSE
+        equivalent) up to degree level</li>
+      <li class="form-list-item">start a long-term career path with the possibility of higher earnings</li>
+    </ul>
+  </div>
+  <div class="grid-column-one-half">
+    <h2 class="heading-s">Employer</h2>
+    <hr class="hr hr-employer">
+    <ul class="list form-list list-employer list--bullet">
+      <li class="form-list-item">get paid and learn at the same time, with at least 20% of your time set aside for
+        learning - normally at a
+        college, university or other training providers</li>
+      <li class="form-list-item">gain official certification of your skills, equivalent to a qualification ranging
+        from level 2 (GCSE
+        equivalent) up to degree level</li>
+      <li class="form-list-item">start a long-term career path with the possibility of higher earnings</li>
+    </ul>
+  </div>
+</div>
+</section>

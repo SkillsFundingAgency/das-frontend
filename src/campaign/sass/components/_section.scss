@@ -1,3 +1,9 @@
 .section {
-  background: $apprentice-light;
+  padding: 50px;
+  //MD - think the background colour should be set on modifier level as this is currently overriding other styles (we can use the !important flag if this is acceptable also?)
+  // background: $apprentice-light;
+}
+
+.section-grey {
+   background: $grey-6;
 }

@@ -1,0 +1,21 @@
+{% extends '../template.html'%}
+{% from "./macro.njk" import dasModel %}
+{% from "../button/macro.njk" import dasButton %}
+
+
+
+{% block content %}
+
+    {{ dasModel({
+        "content": "Some content here",
+        "id": "register-interest-modal"
+        }) }}
+
+        {{ dasButton({
+            "text": "Register interest",
+            "classes": "button-inverted",
+            "href":"#register-interest-modal"
+            }) }}
+
+
+{% endblock %}

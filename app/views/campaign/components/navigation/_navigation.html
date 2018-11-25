@@ -1,3 +1,5 @@
+{% from "../button/macro.njk" import dasButton %}
+
 <a href="#navigation" class="navigation__toggle">
     <span></span>
 </a>
@@ -40,6 +42,7 @@
                     <span class="navigation__link-caption">For further reading and help you can access the resources on .GOV</span>
                     </a>
                 </li>
+               
             </ul>
         </li>
         <li class="navigation__list-item">
@@ -73,6 +76,14 @@
                     </a>
                 </li>
             </ul>
+        </li>
+        <li>
+            {{ dasButton({
+                "text": "Register interest",
+                "classes": "button-inverted",
+                "shadow":true,
+                "href":"#register-interest"
+                }) }}
         </li>
     </ul>
 </nav>
