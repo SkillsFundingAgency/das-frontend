@@ -169,8 +169,10 @@
 
       $('.navigation__sub-menu-toggle').on('click', function(e) {
         e.preventDefault();
-        var menu = $(this).parent().parent().find('.navigation__sub-menu');
-        menu.toggleClass('js-show')
+        var $parent = $(this).parent();
+        var $menu = $parent.parent().find('.navigation__sub-menu');
+        $parent.toggleClass('sub-menu-open');
+        $menu.toggleClass('js-show')
       });
 
 

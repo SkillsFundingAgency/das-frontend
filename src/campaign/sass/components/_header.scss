@@ -11,9 +11,15 @@
   .js-menu-open & {
     background: #fff;
   }
-  @include media-query($from: tablet) {
-    padding: 25px 80px;
+  @include media-query($from: $nav-breakpoint) {
+    padding: 25px 40px;
     height: 70px;
+    &:hover {
+      background: #fff;
+    }
+  }
+  @include media-query($from: desktop) {
+    padding: 25px 80px;
   }
 }
 
@@ -24,9 +30,14 @@
     background-size: contain;
     background-repeat: no-repeat;
   }
-  @include media-query($from: tablet) {
+  @include media-query($from: $nav-breakpoint) {
     height: 70px;
     float: left;
+    .header:hover & {
+      background-image: url('../images/apprenticeships-logo-black.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
   }
 }
 
@@ -34,5 +45,10 @@
   max-height: 100%;
   .js-menu-open & {
     opacity: 0;
+  }
+  @include media-query($from: $nav-breakpoint) {
+    .header:hover & {
+      opacity: 0;
+    }
   }
 }

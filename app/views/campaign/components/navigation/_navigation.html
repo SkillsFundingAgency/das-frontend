@@ -13,7 +13,7 @@
                 <span class="navigation__sub-menu-icon"></span>
             </a>
             <ul class="navigation__sub-menu">
-                <li><a href="" class="navigation__link">
+                <li><a href="" class="navigation__link hidden--desktop">
                         Apprenticeship hub
                     </a>
                 </li>
@@ -72,15 +72,14 @@
             </a>
             <ul class="navigation__sub-menu">
                 <li><a href="" class="navigation__link">
-                        All sectors
+                        All industries
                     </a>
                 </li>
             </ul>
         </li>
-        <li>
+        <li class="navigation__list-item navigation__list-item--with-button">
             {{ dasButton({
                 "text": "Register interest",
-                "classes": "button-inverted",
                 "shadow":true,
                 "href":"#register-interest"
                 }) }}
