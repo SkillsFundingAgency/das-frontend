@@ -1,0 +1,16 @@
+{% macro dasModel(params,content) %}
+
+
+ <div class="modal" id="{{ params.id }}" aria-hidden="true">
+
+    <div class="modal-dialog">
+        <div class="modal-header">
+            <a href="#" class="close"><svg width="32" height="32" viewBox="0 0 32 32" class=""> 
+                 <rect class="modal--icon-close" x="1.58691" y="0.0893555" width="16.0371" height="2.16583" transform="rotate(45 1.58691 0.0893555)">
+
+              </rect><rect class="modal--icon-close" x="0.0966797" y="11.34" width="16.0371" height="2.16583" transform="rotate(-45 0.0966797 11.34)"></rect></svg></a>
+          </div>
+ {% include '../registerInterest/_registerInterest.html' %}
+    </div>
+  </div>
+  {% endmacro %}

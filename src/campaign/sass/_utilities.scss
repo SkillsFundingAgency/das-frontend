@@ -28,3 +28,11 @@
 .vh, .visually-hidden {
   @include visually-hidden
 }
+
+.js-enabled .js-show {
+  display: block;
+}
+
+.js-enabled .js-hidden {
+  display: none;
+}

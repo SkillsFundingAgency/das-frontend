@@ -1,0 +1,82 @@
+//
+// Variables
+// ----------------------
+
+$space: 40px;
+$blue: #428bca;
+$blue-dark: darken($blue, 5%);
+
+// Mixin for transition/transform
+@mixin translate($x, $y){
+  -webkit-transform: translate($x, $y);
+      -ms-transform: translate($x, $y); // IE9+
+          transform: translate($x, $y);
+}
+@mixin transition($transition){
+  -webkit-transition: $transition;
+          transition: $transition;
+}
+@mixin transition-transform($transition){
+  -webkit-transition: -webkit-transform $transition;
+     -moz-transition: -moz-transform $transition;
+       -o-transition: -o-transform $transition;
+          transition: transform $transition;
+}
+
+
+//
+// Modal
+// ----------------------
+
+.modal{
+   
+  // This is modal bg
+  &:before{
+    content: ""; 
+    display: none;
+    background: rgba(0,0,0,.6);
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0; 
+    z-index: 10;
+  }
+  
+  &:target{
+     
+    // Active animate in modal
+    &:before{
+      display: block;
+    }  
+    .modal-dialog{
+      @include translate(0, 0); 
+      top: 10%;  
+    }
+     
+  }
+  
+}
+
+// Modal Dialog
+// ----------------------
+
+.modal-dialog{
+  background: #fefefe;
+  border: $grey-2 solid 1px;
+  margin-left: -200px;
+  position: fixed; 
+  left: 32%; 
+  top: -100%;  
+  z-index: 11; 
+  width: 60%;
+  @include translate(0, -500%);
+  @include transition-transform(#{"0.3s ease-out"});
+}
+
+.modal-body{
+  padding: $space/2;
+}
+
+.modal-header{
+  padding: 20px 10px 0 0;
+  float: right;
+}
+

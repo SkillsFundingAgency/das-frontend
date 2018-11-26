@@ -1,0 +1,14 @@
+.form-group {
+  @include responsive-margin(6, "bottom", $adjustment: $button-shadow-size); // s2
+}
+
+.form-list-item{
+  @include responsive-padding(4, "left"); // s2
+  @include responsive-padding(4, "bottom"); // s2
+  color: $grey-5;
+}
+
+.form-section{
+  background: inherit !important; 
+
+}

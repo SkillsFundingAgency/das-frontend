@@ -36,7 +36,9 @@
         <header class="header">
 
             <div class="header__logo">
-                <img src="/dist/campaign/images/apprenticeships-logo.png" alt="Apprenticeships Logo" class="header__logo-image">
+                <a href="#">
+                    <img src="/dist/campaign/images/apprenticeships-logo.png" alt="Apprenticeships Logo" class="header__logo-image">
+                </a>
             </div>
 
             {% include './components/navigation/_navigation.html'%}
@@ -165,9 +167,15 @@
         $('body').toggleClass('js-menu-open');
       });
 
-      $('.navigation__accordion-button').on('click', function(e) {
+      $('.navigation__sub-menu-toggle').on('click', function(e) {
         e.preventDefault();
+        var $parent = $(this).parent();
+        var $menu = $parent.parent().find('.navigation__sub-menu');
+        $parent.toggleClass('sub-menu-open');
+        $menu.toggleClass('js-show')
       });
+
+
 
     });
     </script>
