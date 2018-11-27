@@ -31,6 +31,11 @@
   border-radius: 50%;
   margin-right: -5px;
   z-index: 1;
+  svg {
+    max-width: 50%;
+    margin: 25%;
+    fill: #fff
+  }
 }
 
 .quote-box__avatar {

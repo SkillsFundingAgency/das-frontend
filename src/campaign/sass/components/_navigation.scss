@@ -15,9 +15,10 @@
   position: absolute;
   top: 25px;
   right: 20px;
-  height: 50px;
-  width: 50px;
-  span {
+  color: #fff;
+  display: block;
+  text-decoration: none;
+  .navigation__toggle-icon {
     @extend %nav-icon-lines;
     top: 23px;
     right: 10px;
@@ -32,13 +33,14 @@
       top: 10px;
     }
   }
+
   @include media-query($from: $nav-breakpoint) {
     display: none;
   }
 
   .js-menu-open &,
   .js-menu-open .header:hover &{
-    span {
+    .navigation__toggle-icon {
       background: rgba(0, 0, 0, 0);
       &:after {
         top: 0;
@@ -51,6 +53,17 @@
         background: $text-colour;
       }
     }
+  }
+}
+
+.navigation__toggle-label {
+  color: #fff;
+  @include font($size: 16, $weight: bold);
+  text-transform: uppercase;
+  display: block;
+  padding: 17px 52px 15px 15px;
+  .js-menu-open & {
+    color: $text-colour;
   }
 }
 
@@ -67,7 +80,7 @@
   z-index: 10;
   overflow: auto;
   transition:all .3s ease;
-  letter-spacing: 0.05rem;
+  letter-spacing: 0.03rem;
   right: -100%;
   @include media-query($from: $nav-breakpoint) {
     right: 0;
@@ -169,7 +182,15 @@
     left: 0;
     right: 0;
     top: 120px;
-    padding: 40px 70px;
+    padding: 40px 60px;
+    flex-wrap: wrap;
+    > li {
+      width: 20%;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      padding: 0 20px 15px;
+    }
   }
 }
 
@@ -223,7 +244,7 @@
 
 .navigation__list-item:hover .navigation__sub-menu {
   @include media-query($from: $nav-breakpoint) {
-    display: block;
+    display: flex;
   }
 }
 
@@ -234,9 +255,7 @@
   display: block;
   padding: 15px 20px;
   @include media-query($from: $nav-breakpoint) {
-    float: left;
-    width: 20%;
-    padding: 0 10px;
+    padding: 0;
     @include font($size: 14, $weight: bold);
     text-transform: uppercase;
     color: #000;

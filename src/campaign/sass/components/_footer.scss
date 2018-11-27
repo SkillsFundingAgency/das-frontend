@@ -46,7 +46,7 @@
       width:100%;
       max-width: 200px;
   }
-  .footer__HMGovernment-logo{
+  .footer__hm-government-logo{
     @include mq ($until: tablet) {
       @include responsive-margin(6, "bottom");
     }

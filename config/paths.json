@@ -3,6 +3,7 @@
     "default": "./src/sass/**/*.scss",
     "legacy": "./src/legacy/sass/**/*.scss",
     "campaign": "./src/campaign/sass/**/*.scss",
+    "campaignJs": "./src/campaign/javascript/*.js",
     "legacyJs": "./src/legacy/javascript/*.js",
     "dasJs": "./src/das-all.js"
   },
@@ -11,6 +12,7 @@
     "defaultJs": "./dist/js/",
     "legacy": "./dist/legacy/css/",
     "campaign": "./dist/campaign/css/",
+    "campaignJs": "./dist/campaign/js",
     "legacyJs": "./dist/legacy/js"
   }
 }

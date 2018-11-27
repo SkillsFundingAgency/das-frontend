@@ -67,9 +67,10 @@ p {
   @include font($size: 19, $weight: light);
 }
 
-#main-content a {
-  color: $apprentice;
-}
+// Commented out as this is overriding colours set on child block elements
+// #main-content a {
+//   color: $apprentice;
+// }
 
 .caption-s + .heading-m {
   margin-top: .2em;
