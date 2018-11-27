@@ -1,10 +1,11 @@
 {% from "../button/macro.njk" import dasButton %}
 
 <a href="#navigation" class="navigation__toggle">
-    <span></span>
+    <span class="navigation__toggle-label" id="nav-label">Menu</span>
+    <span class="navigation__toggle-icon"></span>
 </a>
 
-<nav class="navigation">
+<nav class="navigation" aria-labelledby="nav-label">
     <ul class="navigation__menu">
         <li class="navigation__list-item">
             <a href="" class="navigation__link--top-level">
