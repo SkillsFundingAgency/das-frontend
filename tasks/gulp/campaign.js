@@ -1,6 +1,7 @@
 'use strict'
 const gulp = require('gulp')
 const sass = require('gulp-sass');
+const concat = require('gulp-concat');
 const paths = require('../../config/paths.json')
 const sassOptions = require('../../config/sassOptions.js')
 
@@ -10,6 +11,13 @@ gulp.task('watch-campaign', () => {
       console.log(`File ${event.path} was ${event.type}, running tasks...`);
     });
 })
+
+
+gulp.task('js-campaign', function() {
+  return gulp.src(paths.src.campaignJs)
+    .pipe(concat('app.min.js'))
+    .pipe(gulp.dest(paths.dist.campaignJs));
+});
 
 gulp.task('sass-campaign', () => gulp
   .src(paths.src.campaign)

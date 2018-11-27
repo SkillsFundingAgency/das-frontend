@@ -1,17 +1,62 @@
 {% from "../button/macro.njk" import dasButton %}
 
 <a href="#navigation" class="navigation__toggle">
-    <span></span>
+    <span class="navigation__toggle-label" id="nav-label">Menu</span>
+    <span class="navigation__toggle-icon"></span>
 </a>
-<nav class="navigation" id="navigation">
-    <ul class="navigation__menu  govuk-accordion" data-module="accordion"  id="accordion-navigation">
-        <li class="govuk-accordion__section">
-            <a href="#" class="navigation__link--top-level govuk-accordion__section-header" id="accordion-nav-heading-1">
-                Apprenticeships
-                <span class="navigation__accordion-button govuk-accordion__section-header-button"></span>
-                <span class="navigation__accordion-icon"></span>
+
+<nav class="navigation" aria-labelledby="nav-label">
+    <ul class="navigation__menu">
+        <li class="navigation__list-item">
+            <a href="" class="navigation__link--top-level">
+                Apprentice
+                <span class="navigation__sub-menu-toggle"></span>
+                <span class="navigation__sub-menu-icon"></span>
             </a>
-            <ul class="navigation__sub-menu govuk-accordion__section-panel" aria-labelledby="accordion-nav-heading-1">
+            <ul class="navigation__sub-menu">
+                <li class="hidden--desktop"><a href="" class="navigation__link">
+                        Apprenticeship hub
+                    </a>
+                </li>
+                <li><a href="" class="navigation__link">
+                        What is an apprenticeship?
+                        <span class="navigation__link-caption">If you don't know what career you want to do.... consider an apprenticeship and open up your potential</span>
+                    </a>
+                </li>
+                <li><a href="" class="navigation__link">
+                    What are the benefits to me?
+                    <span class="navigation__link-caption">Have you wondered what's in it for you?  </span>
+                    </a>
+                </li>
+                <li><a href="" class="navigation__link">
+                    How to become a great apprentice
+                    <span class="navigation__link-caption">Take a look at what it takes to make a great apprentice</span>
+                    </a>
+                </li>
+                <li><a href="" class="navigation__link">
+                    the right apprenticeship for you
+                    <span class="navigation__link-caption">Have a look at the different sectors and case studies to help you choose the right apprenticeship</span>
+                    </a>
+                </li>
+                <li><a href="" class="navigation__link">
+                    Find an apprenticeship
+                    <span class="navigation__link-caption">Find an apprenticeship that you want to do, to kick start your career</span>
+                    </a>
+                </li>
+               
+            </ul>
+        </li>
+        <li class="navigation__list-item">
+            <a href="" class="navigation__link--top-level">
+                Employer
+                <span class="navigation__sub-menu-toggle"></span>
+                <span class="navigation__sub-menu-icon"></span>
+            </a>
+            <ul class="navigation__sub-menu">
+                <li class="hidden--desktop"><a href="" class="navigation__link">
+                        Employer hub
+                    </a>
+                </li>
                 <li><a href="" class="navigation__link">
                         What is an apprenticeship?
                         <span class="navigation__link-caption">Find out how taking on an apprentice can recharge your business</span>
@@ -37,38 +82,45 @@
                     <span class="navigation__link-caption">For further reading and help you can access the resources on .GOV</span>
                     </a>
                 </li>
-               
             </ul>
         </li>
-        <li><a href="#" class="navigation__link--top-level">Employers</a> </li>
-        <li><a href="#" class="navigation__link--top-level">Real stories</a> </li>
-        <li class="govuk-accordion__section">
-            <a href="#" class="navigation__link--top-level govuk-accordion__section-header" id="accordion-nav-heading-2">
-                Sectors
-                <span class="navigation__accordion-button govuk-accordion__section-header-button"></span>
-                <span class="navigation__accordion-icon"></span>
+        <li class="navigation__list-item">
+            <a href="" class="navigation__link--top-level">Resources</a>
+        </li>
+        <li class="navigation__list-item">
+            <a href="" class="navigation__link--top-level">Real stories</a>
+        </li>
+        <li class="navigation__list-item">
+            <a href="" class="navigation__link--top-level">
+                Industries
+                <span class="navigation__sub-menu-toggle"></span>
+                <span class="navigation__sub-menu-icon"></span>
             </a>
-            <ul class="navigation__sub-menu govuk-accordion__section-panel" aria-labelledby="accordion-nav-heading-2">
-                <li><a href="#" class="navigation__link">Agriculture, environment &amp; animal care</a></li>
-                <li><a href="#" class="navigation__link">Agriculture, environment &amp; animal care</a></li>
-                <li><a href="#" class="navigation__link">Agriculture, environment &amp; animal care</a></li>
-                <li><a href="#" class="navigation__link">Agriculture, environment &amp; animal care</a></li>
-                <li><a href="#" class="navigation__link">Agriculture, environment &amp; animal care</a></li>
-                <li><a href="#" class="navigation__link">Agriculture, environment &amp; animal care</a></li>
-                <li><a href="#" class="navigation__link">Agriculture, environment &amp; animal care</a></li>
-                <li><a href="#" class="navigation__link">Agriculture, environment &amp; animal care</a></li>
-                <li><a href="#" class="navigation__link">Agriculture, environment &amp; animal care</a></li>
-                <li><a href="#" class="navigation__link">Agriculture, environment &amp; animal care</a></li>
-                <li><a href="#" class="navigation__link">Agriculture, environment &amp; animal care</a></li>
-                <li><a href="#" class="navigation__link">Agriculture, environment &amp; animal care</a></li>
-                <li><a href="#" class="navigation__link">Agriculture, environment &amp; animal care</a></li>
-                <li><a href="#" class="navigation__link">Agriculture, environment &amp; animal care</a></li>
+            <ul class="navigation__sub-menu">
+                <li class="hidden--desktop"><a href="" class="navigation__link">
+                        All industries
+                    </a>
+                </li>
+                <li><a href="" class="navigation__link">Agriculture,  enivironment &amp; animal care</a></li>
+                <li><a href="" class="navigation__link">Buinsess &amp; administration</a></li>
+                <li><a href="" class="navigation__link">Care services</a></li>
+                <li><a href="" class="navigation__link">Catering &amp; hospitality</a></li>
+                <li><a href="" class="navigation__link">Creative &amp; design</a></li>
+                <li><a href="" class="navigation__link">Construction</a></li>
+                <li><a href="" class="navigation__link">Digital</a></li>
+                <li><a href="" class="navigation__link">Education &amp; childcare</a></li>
+                <li><a href="" class="navigation__link">Engineering &amp; manufacturing</a></li>
+                <li><a href="" class="navigation__link">Hair &amp; beauty</a></li>
+                <li><a href="" class="navigation__link">Health &amp; science</a></li>
+                <li><a href="" class="navigation__link">Legal, finance &amp; accounting</a></li>
+                <li><a href="" class="navigation__link">Protective services</a></li>
+                <li><a href="" class="navigation__link">Sales, marketing &amp; procurement</a></li>
+                <li><a href="" class="navigation__link">Transport &amp; logistics</a></li>
             </ul>
         </li>
-        <li>
+        <li class="navigation__list-item navigation__list-item--with-button">
             {{ dasButton({
                 "text": "Register interest",
-                "classes": "button-inverted",
                 "shadow":true,
                 "href":"#register-interest"
                 }) }}

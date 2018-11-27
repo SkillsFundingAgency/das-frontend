@@ -36,7 +36,9 @@
         <header class="header">
 
             <div class="header__logo">
-                <img src="/dist/campaign/images/apprenticeships-logo.png" alt="Apprenticeships Logo" class="header__logo-image">
+                <a href="#">
+                    <img src="/dist/campaign/images/apprenticeships-logo.png" alt="Apprenticeships Logo" class="header__logo-image">
+                </a>
             </div>
 
             {% include './components/navigation/_navigation.html'%}
@@ -65,14 +67,7 @@
                         <li>start a long-term career path with the possibility of higher earnings</li>
                     </ul>
 
-                    <blockquote class="quote-box">
-                        <p class="quote-box__content">I had great grades at 'A' level, but I didn't want to get into huge debt.... my career advisor at school told me about apprenticeships.  I am now about to complete my degree apprenticeship and I have a job lined up.  So pleased I chose this career path...</p>
-                        <footer class="quote-box__footer">
-                            <span class="quote-box__icon"></span>
-                            <span class="quote-box__avatar"><img src="/dist/campaign/images/avatar-apprentice.jpg" alt="James, 23, Chester" class="quote-box__avatar-image"></span>
-                            <cite class="quote-box__cite">James, 23, Chester</cite>
-                        </footer>
-                    </blockquote>
+                    {% include './components/boxQuote/_boxQuote.html'%}
 
                     <p>An apprenticeship can take 2 to 4 years to complete depending on which level you do.   </p>
 
@@ -153,24 +148,12 @@
       src="https://code.jquery.com/jquery-3.3.1.min.js"
       integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
       crossorigin="anonymous"></script>
-
+        <script src="/dist/campaign/js/app.min.js"></script>
       <script src="/dist/js/das-all.js"></script>
         <script>
           window.DASFrontend.initAll()
         </script>
 
-    <script>
-    $(function() {
-      $('.navigation__toggle').on('click', function() {
-        $('body').toggleClass('js-menu-open');
-      });
-
-      $('.navigation__accordion-button').on('click', function(e) {
-        e.preventDefault();
-      });
-
-    });
-    </script>
 
 
 

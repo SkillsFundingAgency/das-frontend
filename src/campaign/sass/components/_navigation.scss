@@ -1,142 +1,142 @@
+
+
+%nav-icon-lines {
+  display: block;
+  height: 3px;
+  width: 30px;
+  position: absolute;
+  border-radius: 2px;
+  background: #fff;
+  transition:all 0.3s ease;
+}
+
 .navigation__toggle {
   z-index: 20;
   position: absolute;
   top: 25px;
   right: 20px;
-  height: 50px;
-  width: 50px;
-  span {
-    display: block;
-    height: 3px;
-    width: 30px;
-    position: absolute;
-    background: $text-colour;
-    border-radius: 2px;
+  color: #fff;
+  display: block;
+  text-decoration: none;
+  .navigation__toggle-icon {
+    @extend %nav-icon-lines;
     top: 23px;
     right: 10px;
     &:after,
     &:before {
+      @extend %nav-icon-lines;
       content: "";
-      display: block;
-      height: 3px;
-      width: 30px;
-      position: absolute;
       left: 0;
       top: -10px;
-      background: $text-colour;
-      border-radius: 2px;
-      transition:all 0.3s ease;
     }
     &:after {
       top: 10px;
     }
   }
-  @include media-query($from: tablet) {
+
+  @include media-query($from: $nav-breakpoint) {
     display: none;
   }
-}
 
-.navigation__accordion-icon {
-  display: block;
-  height: 3px;
-  width: 10px;
-  position: absolute;
-  background: $text-colour;
-  border-radius: 2px;
-  top: 23px;
-  right: 45px;
-  transform: rotate(45deg);
-  transition:all 0.2s ease;
-  @include media-query($from: tablet) {
-    right: 15px;
-    top: 20px;
-  }
-}
-
-.navigation__accordion-icon:after {
-  content: "";
-  display: block;
-  height: 3px;
-  width: 10px;
-  position: absolute;
-  left: 4px;
-  top: -4px;
-  background: $text-colour;
-  border-radius: 2px;
-  transform: rotate(90deg);
-  transition:all 0.2s ease;
-}
-
-.govuk-accordion__section--expanded .navigation__accordion-icon,
-.govuk-accordion__section--expanded .navigation__accordion-icon:after {
-  width: 17px;
-}
-
-.govuk-accordion__section--expanded .navigation__accordion-icon {
-  right: 39px;
-  top: 25px;
-  @include media-query($from: tablet) {
-    right: 8px;
-    top: 20px;
-  }
-}
-
-.govuk-accordion__section--expanded .navigation__accordion-icon:after {
-  top: 0;
-  left: 0;
-}
-
-
-.js-menu-open {
-  .navigation__toggle {
-    span {
+  .js-menu-open &,
+  .js-menu-open .header:hover &{
+    .navigation__toggle-icon {
       background: rgba(0, 0, 0, 0);
       &:after {
         top: 0;
         transform: rotate(45deg);
+        background: $text-colour;
       }
       &:before {
         top: 0;
         transform: rotate(-45deg);
+        background: $text-colour;
       }
     }
   }
 }
 
+.navigation__toggle-label {
+  color: #fff;
+  @include font($size: 16, $weight: bold);
+  text-transform: uppercase;
+  display: block;
+  padding: 17px 52px 15px 15px;
+  .js-menu-open & {
+    color: $text-colour;
+  }
+}
+
 .navigation {
   background: #fff;
+  border-top: 1px solid #ccc;
   text-align: left;
   color: #fff;
   position: fixed;
-  top: 100px;
-  height: 100%;
+  top: 95px;
+  bottom: 0;
   width: 100%;
   font-size: 1.4em;
   z-index: 10;
   overflow: auto;
   transition:all .3s ease;
+  letter-spacing: 0.03rem;
   right: -100%;
-  @include media-query($from: tablet) {
+  @include media-query($from: $nav-breakpoint) {
     right: 0;
     position: static;
     float: right;
-    width: auto;;
+    width: auto;
     height: auto;
+    background: none;
+    border: none;
+  }
+  .js-menu-open & {
+    right: 0;
   }
 }
 
 .navigation__menu {
-  padding: 0;
+  padding: 0 0 100px;
   margin: 0;
   list-style: none;
-  @include media-query($from: tablet) {
+}
 
+.navigation__list-item {
+  @include media-query($from: $nav-breakpoint) {
+    float: left;
   }
 }
 
-.navigation__menu > li {
-  @include media-query($from: tablet) {
-    float: left;
+.navigation__list-item--with-button {
+  position: absolute;
+  background: #fff;
+  border-top: 1px solid #ccc;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 20px;
+  z-index: 3;
+  .js-menu-open & {
+    position: fixed;
+  }
+  @include media-query($from: $nav-breakpoint) {
+    background: none;
+    position: static;
+    padding: 0 0 0 15px;
+    border: none;
+  }
+}
+
+.navigation__list-item--with-button  > .button {
+  margin: 0;
+  .header:hover &,
+  .js-menu-open & {
+    background: #000;
+    color: #fff;
+  }
+  @include media-query($from: $nav-breakpoint) {
+    font-size: 14px;
   }
 }
 
@@ -145,34 +145,106 @@
   color: $text-colour;
   text-transform: uppercase;
   @include font($size: 19, $weight: bold);
-  font-size: 16px;
   text-decoration: none;
-  padding: 20px;
+  line-height: 1;
+  padding: 15px 20px;
   position: relative;
-  @include media-query($from: tablet) {
-    padding: 10px;
+  @include media-query($from: $nav-breakpoint) {
+    padding: 20px 15px 60px;
     font-size: 14px;
+    color: #fff;
+    .header:hover & {
+      color: $text-colour;
+    }
   }
 }
 
-.govuk-accordion.with-js .navigation__link--top-level.govuk-accordion__section-header {
-  @include media-query($from: tablet) {
-    padding: 10px 30px 10px 10px;
+.navigation__sub-menu-toggle {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 2;
+  @include media-query($from: $nav-breakpoint) {
+    display: none;
   }
 }
 
 .navigation__sub-menu {
   background: #efefef;
   margin: 0;
-  padding: 0;
+  padding: 0 0 10px;
   list-style: none;
-  @include media-query($from: tablet) {
-    display: none;
+  display: none;
+  @include media-query($from: $nav-breakpoint) {
     position: absolute;
     left: 0;
     right: 0;
-    top: 95px;
-    padding: 40px 70px;
+    top: 120px;
+    padding: 40px 60px;
+    flex-wrap: wrap;
+    > li {
+      width: 20%;
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+      padding: 0 20px 15px;
+    }
+  }
+}
+
+.navigation__sub-menu-icon {
+  position: absolute;
+  display: block;
+  background: #000;
+  width: 13px;
+  height: 3px;
+  right: 20px;
+  top: 20px;
+  transform: rotate(-45deg);
+  z-index: 1;
+  &:before {
+    content: '';
+    position: absolute;
+    display: block;
+    background: #000;
+    width: 13px;
+    height: 3px;
+    right: 5px;
+    top: -5px;
+    transform: rotate(90deg);
+  }
+  .sub-menu-open & {
+    width: 17px;
+    &:before {
+      width: 17px;
+      right: 0;
+      top: 0;
+    }
+  }
+  @include media-query($from: $nav-breakpoint) {
+    position: relative;
+    display: inline-block;
+    background: #fff;
+    margin-left: 10px;
+    right: 0;
+    top: -5px;
+    &:before {
+      background: #fff;
+    }
+    .header:hover & {
+      background: #000;
+      &:before {
+        background: #000;
+      }
+    }
+  }
+}
+
+.navigation__list-item:hover .navigation__sub-menu {
+  @include media-query($from: $nav-breakpoint) {
+    display: flex;
   }
 }
 
@@ -181,11 +253,9 @@
   color: $grey-5;
   text-decoration: none;
   display: block;
-  padding: 20px;
-  @include media-query($from: tablet) {
-    float: left;
-    width: 20%;
-    padding: 0 10px;
+  padding: 15px 20px;
+  @include media-query($from: $nav-breakpoint) {
+    padding: 0;
     @include font($size: 14, $weight: bold);
     text-transform: uppercase;
     color: #000;
@@ -195,26 +265,10 @@
 
 .navigation__link-caption {
   display: none;
-  @include media-query($from: tablet) {
+  @include media-query($from: $nav-breakpoint) {
     display: block;
     text-transform: none;
     color: $grey-3;
     font-weight: 300;
   }
-}
-
-.js-menu-open .navigation {
-  right: 0;
-}
-
-.js-enabled .navigation__accordion-button {
-  width:100%;
-  height: 100%;
-  position: absolute;
-  z-index: 1000;
-  display: block;
-  top: 0;
-  left: 0;
-  margin: 0;
-  padding: 0;
 }

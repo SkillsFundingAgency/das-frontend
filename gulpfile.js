@@ -8,8 +8,4 @@ require('./tasks/gulp/dasJs')
 
 gulp.task('legacy',   ['copy-legacy-template-assets', 'js-legacy', 'sass-legacy']);
 gulp.task('default',  ['copy-assets', 'copy-js', 'sass', 'watch']);
-gulp.task('campaign', ['sass-campaign', 'watch-campaign']);
-
-gulp.task('scripts', cb => {
-    runsequence('js:compile', cb)
-})
+gulp.task('campaign', ['sass-campaign', 'watch-campaign', 'js-campaign']);
