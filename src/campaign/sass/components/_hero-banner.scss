@@ -45,8 +45,9 @@ $hero-text-colour: #FFF;
       margin-top:50px;
     }
     @include mq ($from: desktop) {
-    margin-left:$gutter-half;
-    margin-right:$gutter-half;
+    margin-left:0px;
+    margin-right:0px;
+    width:100%
     }
 
     @include mq ($until: tablet) {
@@ -73,7 +74,14 @@ $hero-text-colour: #FFF;
   }
   @include mq ($from: tablet) {
     float:left;
-    }
+  }
+  @include mq ($from: desktop) {
+    max-width:30%;
+  }
+}
+
+.hero-banner:nth-child(even) .hero-banner_content-main {
+  margin-left: 20%;
 }
 
 .hero-banner:nth-child(odd) .hero-banner_icon-play_apprentice,
@@ -96,7 +104,7 @@ $hero-text-colour: #FFF;
   @include responsive-padding(6, "right");
   
   @include mq($from: tablet){
-    padding-right: $gutter-half;
+    padding-right: $gutter;
   }
   margin: 0 -20px;
   padding-bottom: -5px;
@@ -106,7 +114,7 @@ $hero-text-colour: #FFF;
 .hero-banner:nth-child(odd) .hero-banner_caption-text{
   @include responsive-padding(6, "left");
   @include mq($from: tablet){
-    padding-left: $gutter-half;
+    padding-left: $gutter;
   }
  
   z-index: 20;
