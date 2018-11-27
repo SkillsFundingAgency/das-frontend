@@ -145,6 +145,20 @@ $typography-scale: (
                         font-size: 12pt,
                         line-height: 1.2
                 )
+        ),
+        12: (
+                null: (
+                        font-size: 10px,
+                        line-height: 14px
+                ),
+                tablet: (
+                        font-size: 12px,
+                        line-height: 18px
+                ),
+                print: (
+                        font-size: 10pt,
+                        line-height: 1.1
+                )
         )
 );
 
