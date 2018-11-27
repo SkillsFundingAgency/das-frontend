@@ -5,6 +5,17 @@
 .sidebar__header {
   background: $apprentice;
   padding: 30px;
+  position: relative;
+  &:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-style: solid;
+    border-width: 0 0 40px 380px;
+    border-color: transparent transparent $apprentice
+  }
 }
 
 .sidebar__caption {

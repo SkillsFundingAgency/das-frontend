@@ -5,7 +5,12 @@ module.exports = {
     })
     app.get('/components/:compName', function (req, res) {
       var compName = req.params.compName;
-      res.render('components/' + compName , {action: req.query.action, type: req.query.type})
+      res.render('components/' + compName, {action: req.query.action, type: req.query.type})
+    })
+    app.get('/components/:compFolder/:compName', function (req, res) {
+      var compFolder = req.params.compFolder;
+      var compName = req.params.compName;
+      res.render('components/' + compFolder + '/' + compName, {action: req.query.action, type: req.query.type})
     })
     app.get('/campaign/:pageName', function (req, res) {
       var pageName = req.params.pageName;

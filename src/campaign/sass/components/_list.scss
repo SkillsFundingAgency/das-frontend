@@ -32,11 +32,7 @@
     line-height: .5em;
 }
 
-.list-employer > li:before {
-  color: $employer;
-}
-
-.list-apprentice > li:before {
+.list--bullet-apprentice > li:before {
   color: $apprentice;
 }
 

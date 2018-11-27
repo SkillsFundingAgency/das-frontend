@@ -16,4 +16,7 @@
     border-width: 0 0 151px 1440px;
     border-color: transparent transparent #fff
   }
+  @include media-query($from: tablet) {
+    padding: 140px 80px 80px;
+  }
 }
