@@ -155,30 +155,12 @@
       src="https://code.jquery.com/jquery-3.3.1.min.js"
       integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
       crossorigin="anonymous"></script>
-
+        <script src="/dist/campaign/js/app.min.js"></script>
       <script src="/dist/js/das-all.js"></script>
         <script>
           window.DASFrontend.initAll()
         </script>
 
-    <script>
-    $(function() {
-      $('.navigation__toggle').on('click', function() {
-        $('body').toggleClass('js-menu-open');
-      });
-
-      $('.navigation__sub-menu-toggle').on('click', function(e) {
-        e.preventDefault();
-        var $parent = $(this).parent();
-        var $menu = $parent.parent().find('.navigation__sub-menu');
-        $parent.toggleClass('sub-menu-open');
-        $menu.toggleClass('js-show')
-      });
-
-
-
-    });
-    </script>
 
 
 
