@@ -95,11 +95,11 @@ $offset: 2;
 }
 
 .button--sparks{
-  border-image-slice: 276 0 169 0 fill; 
-  border-image-width: 3em 0px 3em 0px; 
-  border-image-outset: 3em 0px 3em 0px; 
+  border-image-slice: 915 0 850 0; 
+  border-image-width: 4em 0px 4em 0.1em; 
+  border-image-outset: 4em 0px 4em 0em; 
   border-image-repeat: stretch stretch;
-  // border-image-source: url('/dist/assets/images/button-border.png')
+  border-image-source: url('../images/button-border.png')
 }
 
 .button--shadow{

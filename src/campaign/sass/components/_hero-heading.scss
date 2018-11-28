@@ -1,0 +1,41 @@
+.hero-heading {
+  text-transform: uppercase;
+  transform: rotate(-6deg) skewX(-6deg);;
+  @include font($size: 19, $weight: bold);
+}
+
+.hero-heading__caption {
+  display: block;
+  font-size: 14px;
+  line-height: 1.4;
+  letter-spacing: -0.05em;
+  @include media-query($from: tablet) {
+    font-size: 16px;
+  }
+}
+
+.hero-heading__caption--apprentice {
+  color: $apprentice;
+}
+
+.hero-heading__caption--employer {
+  color: $employer;
+}
+
+.hero-heading__heading {
+  margin: 0;
+  line-height: 1;
+  text-indent: -20px;
+  padding-left: 20px;
+  letter-spacing: -0.08em;
+  @include media-query($from: tablet) {
+    font-size: 40px;
+    text-indent: -30px;
+    padding-left: 30px;
+  }
+  @include media-query($from: desktop) {
+    font-size: 60px;
+    text-indent: -40px;
+    padding-left: 40px;
+  }
+}

@@ -34,34 +34,42 @@
     <div class="wrap">
 
         <header class="header">
-
             <div class="header__logo">
                 <a href="#">
                     <img src="/dist/campaign/images/apprenticeships-logo.png" alt="Apprenticeships Logo" class="header__logo-image">
                 </a>
             </div>
-
             {% include './components/navigation/_navigation.html'%}
-
         </header>
 
         <div class="hero">
-            <h1>This is the heading</h1>
+            <div class="grid-row">
+                <div class="grid-column-one-half">
+                    <div class="hero-heading">
+                        <span class="hero-heading__caption hero-heading__caption--apprentice">Apprentice</span>
+                        <h1 class="hero-heading__heading">What is an apprenticeship?</h1>
+                    </div>
+                    <ul class="list list--arrows">
+                        <li><a href="#">How much can you earn</a> </li>
+                        <li><a href="#">Cost to you</a> </li>
+                        <li><a href="#">Future prospects</a> </li>
+                        <li><a href="#">Top 5 reasons for becoming an apprentice</a> </li>
+                    </ul>
+                </div>
+            </div>
         </div>
 
         <main id="main-content" class="main-content">
 
             <div class="grid-row">
                 <div class="grid-column-two-thirds">
-                    <span class="caption-s">Apprenticeships</span>
-                    <h1 class="heading-m">What is an apprenticeship?</h1>
 
-                    <hr class="section-break">
+                    <h1 class="heading-m">Introduction to apprenticeships</h1>
 
                     <p>An apprenticeship gives you hands-on experience, a salary and the opportunity to train while you work.   You get a same as other employees: a contract of employment, holiday leave and sick pay.   Anyone from the age of 16 can become an apprentice as long as they're living in England and not in full-time education.</p>
                     <p>An apprenticeship is a real job. It's a way to:</p>
 
-                    <ul class="list list--bullet">
+                    <ul class="list list--bullet list--bullet-apprentice">
                         <li>get paid and learn at the same time, with at least 20% of your time set aside for learning - normally at a college, university or other training providers</li>
                         <li>gain official certification of your skills, equivalent to a qualification ranging from level 2 (GCSE equivalent) up to degree level</li>
                         <li>start a long-term career path with the possibility of higher earnings</li>

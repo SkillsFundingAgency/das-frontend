@@ -2,6 +2,18 @@
   padding: 30px;
   margin: 30px 0;
   background: $apprentice-light;
+  position: relative;
+  overflow: hidden;
+  &:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-style: solid;
+    border-width: 0 0 40px 1374px;
+    border-color: transparent transparent #fff
+  }
 }
 
 .quote-box__content {
