@@ -257,7 +257,7 @@
     color: $footer-header;
     letter-spacing: 0.05rem;
     @include mq ($until: tablet) {
-      padding: 0 15px;
+      padding: 0 20px;
       background-color: $footer-background;
     }
   }
