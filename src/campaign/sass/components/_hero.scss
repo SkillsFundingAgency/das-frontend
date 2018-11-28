@@ -2,7 +2,7 @@
   background-color: #0b0c0c;
   background-image: url("/dist/campaign/images/bokeh-tint-bg.jpg");
   background-size: cover;
-  padding: 140px 20px 80px;
+  padding: 140px 20px 50px;
   color: #fff;
   position: relative;
   z-index: 10;
@@ -22,4 +22,8 @@
   @include media-query($from: desktop) {
     padding: 140px 80px 80px;
   }
+}
+
+.hero__link {
+  color: #fff;
 }

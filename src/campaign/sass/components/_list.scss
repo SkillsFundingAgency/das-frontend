@@ -2,7 +2,7 @@
 
 .list {
   @include font($size: 19, $weight: light);
-  text-color: $text-colour;
+  color: $text-colour;
   margin-top: 0;
   @include responsive-margin(4, "bottom");
   padding-left: 0;
@@ -10,13 +10,14 @@
 }
 
 .list > li {
+  font-size: 21px;
   @include media-query($from: tablet) {
     margin-bottom: spacing(1);
   }
 }
 
 .list--bullet {
-  padding-left: spacing(5);
+  padding-left: spacing(4);
 }
 
 .list--bullet > li {
@@ -45,6 +46,19 @@
   list-style-type: decimal;
 }
 
-.list--arrow {
+.list--arrows {
+  padding-left: spacing(4);
+}
 
+.list--arrows > li {
+  position: relative;
+  margin-bottom: spacing(2);
+}
+
+.list--arrows > li:before {
+  content: ">";
+  position: absolute;
+  left: spacing(4) * -1;
+  top: .4em;
+  line-height: .5em;
 }

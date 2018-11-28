@@ -4,11 +4,11 @@
 
   @include typography-common;
   @if $weight == regular {
-    font-weight: 400;
+    font-weight: $font-weight-regular;
   } @else if $weight == light {
-    font-weight: 300;
+    font-weight: $font-weight-light;
   } @else if $weight == bold {
-    font-weight: $font-bold-weight;
+    font-weight: $font-weight-bold;
   }
 
   @if $size {

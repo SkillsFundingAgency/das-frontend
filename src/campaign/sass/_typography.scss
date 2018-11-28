@@ -1,7 +1,7 @@
 // Headings
 
 .heading-xl {
-  color: $text-colour;
+  color: $heading-colour;
   text-transform: uppercase;
   @include font($size: 48, $weight: bold);
   margin-top: 0;
@@ -9,19 +9,19 @@
 }
 
 .heading-l {
-  color: $text-colour;
+  color: $heading-colour;
   text-transform: uppercase;
   @include font($size: 36, $weight: bold);
 }
 
 .heading-m {
-  color: $text-colour;
+  color: $heading-colour;
   text-transform: uppercase;
   @include font($size: 24, $weight: bold);
 }
 
 .heading-s {
-  color: $text-colour;
+  color: $heading-colour;
   text-transform: uppercase;
   @include font($size: 19, $weight: bold);
 }
@@ -64,7 +64,10 @@
 // Generic
 
 p {
-  @include font($size: 19, $weight: light);
+  font-family: $font-family;
+  font-weight: $font-weight-light;
+  font-size: 21px;
+  color: $text-colour;
 }
 
 // Commented out as this is overriding colours set on child block elements
@@ -76,7 +79,7 @@ p {
   margin-top: .2em;
 }
 
-.hr{
+.hr {
   height: 6px;
   border: none;
   @include responsive-margin(5, "bottom");
