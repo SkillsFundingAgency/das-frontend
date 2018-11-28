@@ -24,5 +24,10 @@ gulp.task('sass-campaign', () => gulp
   .pipe(sass(sassOptions))
   .pipe(gulp.dest(paths.dist.campaign)));
 
+  gulp.task('image-campaign', () => {
+    gulp.src(paths.src.campaignImages).pipe(gulp.dest(paths.dist.campaignImages));
+  });
+  
+
 gulp.task('components-campaign',() => gulp
 .src(['./src/components/**/*.js','./src/components/**/*.njk']).pipe(gulp.dest('./dist/campaign/components/')));
