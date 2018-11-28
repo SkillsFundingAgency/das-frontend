@@ -4,6 +4,7 @@
     "legacy": "./src/legacy/sass/**/*.scss",
     "campaign": "./src/campaign/sass/**/*.scss",
     "campaignJs": "./src/campaign/javascript/*.js",
+    "campaignImages": "./src/campaign/images/*",
     "legacyJs": "./src/legacy/javascript/*.js",
     "dasJs": "./src/das-all.js"
   },
@@ -13,6 +14,7 @@
     "legacy": "./dist/legacy/css/",
     "campaign": "./dist/campaign/css/",
     "campaignJs": "./dist/campaign/js",
+    "campaignImages": "./dist/campaign/images/",
     "legacyJs": "./dist/legacy/js"
   }
 }
