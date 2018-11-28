@@ -215,10 +215,10 @@ top: -6px;
 
 .hero-banner_icon-play_apprentice{
   @extend .hero-banner_icon-play;
-  background-image: url('/dist/assets/images/hero-play-apprentice.png');
+  background-image: url('../images/hero-play-apprentice.png');
 }
 
 .hero-banner_icon-play_employer{
   @extend .hero-banner_icon-play;
-  background-image: url('/dist/assets/images/hero-play-employer.png');
+  background-image: url('../images/hero-play-employer.png');
 }

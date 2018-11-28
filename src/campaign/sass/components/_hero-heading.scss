@@ -1,6 +1,5 @@
 .hero-heading {
   text-transform: uppercase;
-  letter-spacing: -0.05em;
   transform: rotate(-6deg) skewX(-6deg);;
   @include font($size: 19, $weight: bold);
   @include media-query($from: tablet) {
@@ -10,6 +9,9 @@
 
 .hero-heading__caption {
   display: block;
+  font-size: 14px;
+  line-height: 1.4;
+  letter-spacing: -0.05em;
 }
 
 .hero-heading__caption--apprentice {
@@ -21,6 +23,7 @@
   line-height: 1;
   text-indent: -20px;
   padding-left: 20px;
+  letter-spacing: -0.08em;
   @include media-query($from: tablet) {
     font-size: 60px;
     text-indent: -40px;
