@@ -1,13 +1,22 @@
 .hero {
-  background: #0B0C0C;
-  background: #2b8cc4;
-  padding: 50px;
-  text-align: center;
-  font-size: 40px;
+  background-color: #0b0c0c;
+  background-image: url("/dist/campaign/images/bokeh-tint-bg.jpg");
+  background-size: cover;
+  padding: 140px 20px 80px;
   color: #fff;
-  text-transform: uppercase;
-  @include font($size: 48, $weight: bold);
+  position: relative;
+  z-index: 10;
+  &:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-style: solid;
+    border-width: 0 0 151px 1440px;
+    border-color: transparent transparent #fff
+  }
   @include media-query($from: tablet) {
-    padding: 100px;
+    padding: 140px 80px 80px;
   }
 }
