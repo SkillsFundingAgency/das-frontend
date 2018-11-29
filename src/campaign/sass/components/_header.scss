@@ -3,18 +3,20 @@
   background: #000;
   background: linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%);
   padding: 20px;
-  height: 55px;
   position: fixed;
   left: 0;
   right: 0;
   top: 0;
   z-index: 1000;
+  max-width: $page-width;
+  margin: 0 auto;
+  box-sizing: border-box;
   .js-menu-open & {
     background: #fff;
   }
   @include media-query($from: $nav-breakpoint) {
     padding: 25px 40px;
-    height: 70px;
+    height: 120px;
     &:hover {
       background: #fff;
     }
