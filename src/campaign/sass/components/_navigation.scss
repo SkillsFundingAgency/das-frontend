@@ -45,12 +45,12 @@
       &:after {
         top: 0;
         transform: rotate(45deg);
-        background: $text-colour;
+        background: $black;
       }
       &:before {
         top: 0;
         transform: rotate(-45deg);
-        background: $text-colour;
+        background: $black;
       }
     }
   }
@@ -59,11 +59,12 @@
 .navigation__toggle-label {
   color: #fff;
   @include font($size: 16, $weight: bold);
+  font-size: 16px;
   text-transform: uppercase;
   display: block;
-  padding: 17px 52px 15px 15px;
+  padding: 15px 50px 15px 15px;
   .js-menu-open & {
-    color: $text-colour;
+    color: $black;
   }
 }
 
@@ -142,7 +143,7 @@
 
 .navigation__link--top-level {
   display: block;
-  color: $text-colour;
+  color: $black;
   text-transform: uppercase;
   @include font($size: 19, $weight: bold);
   text-decoration: none;
@@ -154,7 +155,7 @@
     font-size: 14px;
     color: #fff;
     .header:hover & {
-      color: $text-colour;
+      color: $black;
     }
   }
 }
@@ -234,9 +235,9 @@
       background: #fff;
     }
     .header:hover & {
-      background: #000;
+      background: $black;
       &:before {
-        background: #000;
+        background: $black;
       }
     }
   }
@@ -258,7 +259,7 @@
     padding: 0;
     @include font($size: 14, $weight: bold);
     text-transform: uppercase;
-    color: #000;
+    color: $black;
     box-sizing: border-box;
   }
 }

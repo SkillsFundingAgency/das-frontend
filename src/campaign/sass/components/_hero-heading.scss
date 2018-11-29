@@ -1,12 +1,12 @@
 .hero-heading {
-  text-transform: uppercase;
-  transform: rotate(-6deg) skewX(-6deg);;
-  @include font($size: 19, $weight: bold);
+  transform: rotate(-6deg) skewX(-6deg);
+  margin-bottom: 40px;
 }
 
 .hero-heading__caption {
   display: block;
   font-size: 14px;
+  font-weight: bold;
   line-height: 1.4;
   letter-spacing: -0.05em;
   @include media-query($from: tablet) {
@@ -23,8 +23,10 @@
 }
 
 .hero-heading__heading {
+  color: #fff;
   margin: 0;
   line-height: 1;
+  font-size: 36px;
   text-indent: -20px;
   padding-left: 20px;
   letter-spacing: -0.08em;
