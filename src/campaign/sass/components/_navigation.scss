@@ -124,8 +124,12 @@
   @include media-query($from: $nav-breakpoint) {
     background: none;
     position: static;
-    padding: 0 0 0 15px;
+    padding: 15px 0 0 5px;
     border: none;
+  }
+  @include media-query($from: $nav-breakpoint-desktop) {
+    font-size: 14px;
+    padding-left: 15px;
   }
 }
 
@@ -137,8 +141,14 @@
     color: #fff;
   }
   @include media-query($from: $nav-breakpoint) {
-    font-size: 14px;
+    font-size: 12px;
+    padding: 6px 10px;
   }
+  @include media-query($from: $nav-breakpoint-desktop) {
+    font-size: 14px;
+    padding: 10px 30px;
+  }
+
 }
 
 .navigation__link--top-level {
@@ -151,12 +161,16 @@
   padding: 15px 20px;
   position: relative;
   @include media-query($from: $nav-breakpoint) {
-    padding: 20px 15px 60px;
-    font-size: 14px;
+    padding: 25px 10px 60px;
+    font-size: 13px;
     color: #fff;
     .header:hover & {
       color: $black;
     }
+  }
+  @include media-query($from: $nav-breakpoint-desktop) {
+    padding: 25px 15px 60px;
+    font-size: 14px;
   }
 }
 
@@ -228,11 +242,17 @@
     position: relative;
     display: inline-block;
     background: #fff;
-    margin-left: 10px;
+    margin-left: 6px;
     right: 0;
-    top: -5px;
+    top: -3px;
+    width: 9px;
+    height: 2px;
     &:before {
+      width: 9px;
+      height: 2px;
       background: #fff;
+      top: -4px;
+      right: 4px;
     }
     .header:hover & {
       background: $black;
@@ -240,6 +260,9 @@
         background: $black;
       }
     }
+  }
+  @include media-query($from: $nav-breakpoint-desktop) {
+
   }
 }
 
