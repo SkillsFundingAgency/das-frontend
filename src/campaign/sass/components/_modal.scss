@@ -37,7 +37,7 @@ $blue-dark: darken($blue, 5%);
     background: rgba(0,0,0,.6);
     position: fixed;
     top: 0; left: 0; right: 0; bottom: 0; 
-    z-index: 10;
+    z-index: 2000;
   }
   
   &:target{
@@ -65,7 +65,7 @@ $blue-dark: darken($blue, 5%);
   position: fixed; 
   left: 32%; 
   top: -100%;  
-  z-index: 11; 
+  z-index: 2010; 
   width: 60%;
   @include translate(0, -500%);
   @include transition-transform(#{"0.3s ease-out"});
