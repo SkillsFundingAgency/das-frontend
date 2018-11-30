@@ -14,7 +14,7 @@
 .sidebar__hero-image {
   max-width: 100%;
   clip-path: polygon(0 100%, 100% 91.4%, 100% 0, 0 8.6%);
-
+  -webkit-clip-path: polygon(0 100%, 100% 91.4%, 100% 0, 0 8.6%);
 }
 
 .sidebar__header {
@@ -61,4 +61,99 @@
 .sidebar__content {
   padding: 30px;
   background: $apprentice-mid;
+}
+
+$timeline-width: 2px;
+
+.sidebar-nav {
+  @include font($size: 19, $weight: light);
+  list-style: none;
+  counter-reset: li;
+  padding-left: 0px;
+  padding-bottom: 20px;
+  border-left: $timeline-width solid #fff;
+  margin-left: 20px;
+  position: relative;
+  &:after {
+    content: '';
+    background: #fff;
+    height: $timeline-width;
+    width: 10px;
+    position: absolute;
+    bottom: 0;
+    left: -6px;
+  }
+  > li {
+    counter-increment: li;
+    position: relative;
+    margin: 0;
+    left: $timeline-width * -1;
+    border-left: $timeline-width solid transparent;
+    &:before {
+      content: counter(li);
+      width: 1em;
+      height: 1em;
+      font-size: 14px;
+      background: #fff;
+      color: $apprentice;
+      -webkit-border-radius: 50%;
+      -moz-border-radius: 50%;
+      border-radius: 50%;
+      text-align: center;
+      line-height: 1em;
+      overflow: hidden;
+      display: block;
+      padding: 10px;
+      font-weight: $font-weight-bold;
+      position: absolute;
+      top: 0;
+      left: -19px;
+    }
+
+    &.sidebar-nav__section--active {
+      border-left-color: $apprentice;
+      &:before {
+        background-color: $apprentice;
+        color: #fff;
+      }
+    }
+    & > a {
+      text-transform: uppercase;
+      color: $heading-colour;
+      font-weight: $font-weight-bold;
+      text-decoration: none;
+      margin: 0 0 20px 0;
+      padding: 6px 0 0 30px;
+      display: block;
+      font-size: 16px;
+    }
+    & > ul {
+      padding-bottom: 30px;
+      list-style: none;
+      padding: 0 0 30px 30px;
+      & > li {
+        position: relative;
+        &:before {
+          content: "";
+          font-size: 3em;
+          position: absolute;
+          left: -39px;
+          top: .03em;
+          line-height: .5em;
+          color: $apprentice;
+          border: 3px solid $apprentice-light;
+          background: $apprentice;
+          width: 10px;
+          height: 10px;
+          display: block;
+          -webkit-border-radius: 50%;
+          -moz-border-radius: 50%;
+          border-radius: 50%;
+        }
+        & > a {
+          color: $apprentice;
+        }
+      }
+    }
+  }
 }
