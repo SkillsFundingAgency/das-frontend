@@ -12,6 +12,10 @@
 }
 
 .sidebar__hero-image {
+  display: none;
+  @include media-query($from: tablet) {
+    display: block;
+  }
   max-width: 100%;
   clip-path: polygon(0 100%, 100% 91.4%, 100% 0, 0 8.6%);
   -webkit-clip-path: polygon(0 100%, 100% 91.4%, 100% 0, 0 8.6%);
@@ -61,6 +65,7 @@
 .sidebar__content {
   padding: 30px;
   background: $apprentice-mid;
+  position: relative;
 }
 
 $timeline-width: 2px;
