@@ -42,7 +42,23 @@
             {% include './components/navigation/_navigation.html'%}
         </header>
 
-        {% include './components/hero-heading/_hero-heading.html' %}
+        <div class="hero">
+            <div class="grid-row">
+                <div class="grid-column-one-half">
+                    <div class="hero-heading">
+                        <span class="caption-m hero-heading__caption hero-heading__caption--employer">Employer</span>
+                        <h1 class="heading-xl hero-heading__heading">Apprenticeship costs</h1>
+                    </div>
+                    <ul class="list list--arrows">
+                        <li><a href="#" class="hero__link">How much can you earn</a> </li>
+                        <li><a href="#" class="hero__link">Cost to you</a> </li>
+                        <li><a href="#" class="hero__link">Future prospects</a> </li>
+                        <li><a href="#" class="hero__link">Top 5 reasons for becoming an apprentice</a> </li>
+                    </ul>
+                    <img alt="HM Government Logo" class="hero__hm-government-logo" src="/dist/campaign/images/hm-government-logo.png" srcset="/dist/campaign/images/hm-government-logo.png 1x, /dist/campaign/images/hm-government-logo@2x.png 2x" />
+                </div>
+            </div>
+        </div>
 
         <main id="main-content" class="main-content">
 
@@ -57,13 +73,40 @@
                         <p>An apprenticeship gives you hands-on experience, a salary and the opportunity to train while you work.   You get a same as other employees: a contract of employment, holiday leave and sick pay.   Anyone from the age of 16 can become an apprentice as long as they're living in England and not in full-time education.</p>
                         <p>An apprenticeship is a real job. It's a way to:</p>
 
-                        <ul class="list list--bullet list--bullet-apprentice">
+                        <ul class="list list--bullet list--bullet-employer">
                             <li>get paid and learn at the same time, with at least 20% of your time set aside for learning - normally at a college, university or other training providers</li>
                             <li>gain official certification of your skills, equivalent to a qualification ranging from level 2 (GCSE equivalent) up to degree level</li>
                             <li>start a long-term career path with the possibility of higher earnings</li>
                         </ul>
 
-                        {% include './components/boxQuote/_boxQuote.html'%}
+                        <table class="table">
+                            <thead class="table__thead">
+                            <tr>
+                                <th class="table__header">
+                                    Financial services administrator
+                                </th>
+                                <th class="table__header">
+                                    Level 3 (equivalent to A levels at grades A to E)
+                                </th>
+                            </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="table__cell">Number of apprentices </td>
+                                    <td class="table__cell">2</td>
+                                </tr>
+                                <tr>
+                                    <td class="table__cell">Number of apprentices </td>
+                                    <td class="table__cell">2</td>
+                                </tr>
+                            </tbody>
+                            <tfoot class="table__footer">
+                                <tr>
+                                    <td class="table__cell">Cost to you</td>
+                                    <td class="table__cell">&pound;300</td>
+                                </tr>
+                            </tfoot>
+                        </table>
 
                         <p>An apprenticeship can take 2 to 4 years to complete depending on which level you do.   </p>
 
@@ -95,6 +138,7 @@
                         </div>
                         <div class="trimmer">
                             <div class="sidebar__header">
+
                                 <h3 class="heading-s sidebar__heading">The process to becoming an apprentice</h3>
                             </div>
                         </div>
