@@ -134,6 +134,16 @@
       width: 100%;
       float: left; } }
 
+.grid-row-full-width:after {
+  content: "";
+  display: block;
+  clear: both; }
+
+@media (min-width: 46.25em) {
+  .grid-column-full-width-one-half {
+    width: 50%;
+    float: left; } }
+
 .heading-xl {
   color: #0B0C0C;
   text-transform: uppercase;
@@ -1637,6 +1647,71 @@ template {
     max-width: 7.2ex; }
   .input::placeholder .input--width-2 {
     max-width: 5.4ex; }
+
+.launcher {
+  background-color: #111;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: linear-gradient(225deg, rgba(0, 0, 0, 0) 0%, black 100%), url("../images/worker-girl.jpg");
+  padding: 200px 20px 100px;
+  color: #fff; }
+  @media (min-width: 46.25em) {
+    .launcher {
+      padding-left: 40px;
+      padding-right: 40px; } }
+  @media (min-width: 61.25em) {
+    .launcher {
+      padding-left: 80px;
+      padding-right: 240px; } }
+
+.launcher__section-heading {
+  background: #006dff;
+  text-transform: uppercase;
+  font-family: nobel, sans-serif;
+  font-size: 24px;
+  display: inline-block;
+  padding: 5px 10px;
+  padding-left: 80px;
+  margin-left: -80px; }
+  .launcher--employer .launcher__section-heading {
+    background: #ffb007; }
+  @media (min-width: 46.25em) {
+    .launcher__section-heading {
+      padding-left: 40px;
+      margin-left: -40px; } }
+  @media (min-width: 61.25em) {
+    .launcher__section-heading {
+      padding-left: 80px;
+      margin-left: -80px; } }
+
+.launcher__heading {
+  text-transform: uppercase;
+  font-family: nobel, sans-serif;
+  font-size: 36px; }
+
+.launcher__content {
+  color: #fff; }
+
+.launcher__link {
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: 700;
+  font-family: nobel, sans-serif;
+  font-size: 14px;
+  display: inline-block;
+  padding-top: 20px;
+  position: relative;
+  text-decoration: none; }
+  .launcher__link:before {
+    content: "";
+    display: block;
+    height: 2px;
+    width: 50px;
+    background: #006dff;
+    position: absolute;
+    top: 0; }
+    .launcher--employer .launcher__link:before {
+      background: #ffb007; }
 
 .list {
   font-family: nobel, sans-serif;

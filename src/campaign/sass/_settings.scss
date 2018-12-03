@@ -11,6 +11,11 @@ $page-width: 1440px;
 
 $gutter: 40px !default;
 $gutter-half: $gutter / 2;
+$gutter-double: $gutter * 2;
+
+$edgeGutter:            20px;
+$edgeGutterTablet:      40px;
+$edgeGutterDesktop:     80px;
 
 $nav-breakpoint: 900px;
 $nav-breakpoint-desktop: 1200px;
@@ -22,6 +27,8 @@ $border-width-form-element: 5px !default;
 $border-width-form-element-error: 4px !default;
 $border-width-form-group-error: $border-width !default;
 $focus-width: 3px !default;
+
+
 
 
 $typography-scale: (
