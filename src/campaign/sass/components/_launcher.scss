@@ -1,12 +1,13 @@
 
 .launcher {
-  background-color: #111;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-image: linear-gradient(225deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%), url("../images/worker-girl.jpg");
+  position: relative;
+  overflow: hidden;
+  height: 100%;
+}
+
+.launcher__content {
   padding: 200px $edgeGutter 100px;
   color: #fff;
-
   @include media-query($from: tablet) {
     padding-left: $edgeGutterTablet;
     padding-right: $edgeGutterTablet;
@@ -18,8 +19,27 @@
   }
 }
 
-.launcher--employer {
+.launcher__content > a {
+  text-decoration: none;
+  color: #fff;
+}
 
+.launcher__bg {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: linear-gradient(225deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%), url("../images/worker-girl.jpg");
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: block;
+  z-index: -1;
+  transition:all .3s ease;
+}
+
+.launcher:hover .launcher__bg {
+  transform: scale(1.1);
 }
 
 .launcher__section-heading {
@@ -50,7 +70,7 @@
   font-size: 36px;
 }
 
-.launcher__content {
+.launcher__intro {
   color: #fff;
 }
 

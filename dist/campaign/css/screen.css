@@ -140,6 +140,10 @@
   clear: both; }
 
 @media (min-width: 46.25em) {
+  .grid-row-full-width {
+    display: flex; } }
+
+@media (min-width: 46.25em) {
   .grid-column-full-width-one-half {
     width: 50%;
     float: left; } }
@@ -1239,7 +1243,6 @@ template {
   background: inherit !important; }
 
 .header {
-  transition: all 0.2s ease;
   background: #000;
   background: linear-gradient(0deg, rgba(0, 0, 0, 0) 0%, black 100%);
   padding: 20px;
@@ -1649,20 +1652,41 @@ template {
     max-width: 5.4ex; }
 
 .launcher {
-  background-color: #111;
-  background-repeat: no-repeat;
-  background-size: cover;
-  background-image: linear-gradient(225deg, rgba(0, 0, 0, 0) 0%, black 100%), url("../images/worker-girl.jpg");
+  position: relative;
+  overflow: hidden;
+  height: 100%; }
+
+.launcher__content {
   padding: 200px 20px 100px;
   color: #fff; }
   @media (min-width: 46.25em) {
-    .launcher {
+    .launcher__content {
       padding-left: 40px;
       padding-right: 40px; } }
   @media (min-width: 61.25em) {
-    .launcher {
+    .launcher__content {
       padding-left: 80px;
       padding-right: 240px; } }
+
+.launcher__content > a {
+  text-decoration: none;
+  color: #fff; }
+
+.launcher__bg {
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-image: linear-gradient(225deg, rgba(0, 0, 0, 0) 0%, black 100%), url("../images/worker-girl.jpg");
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: block;
+  z-index: -1;
+  transition: all .3s ease; }
+
+.launcher:hover .launcher__bg {
+  transform: scale(1.1); }
 
 .launcher__section-heading {
   background: #006dff;
@@ -1689,7 +1713,7 @@ template {
   font-family: nobel, sans-serif;
   font-size: 36px; }
 
-.launcher__content {
+.launcher__intro {
   color: #fff; }
 
 .launcher__link {
@@ -1903,7 +1927,6 @@ template {
   font-size: 1.4em;
   z-index: 10;
   overflow: auto;
-  transition: all .3s ease;
   letter-spacing: 0.03rem;
   right: -100%; }
   @media (min-width: 56.25em) {

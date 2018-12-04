@@ -80,7 +80,7 @@
   font-size: 1.4em;
   z-index: 10;
   overflow: auto;
-  transition:all .3s ease;
+  //transition:all .3s ease;
   letter-spacing: 0.03rem;
   right: -100%;
   @include media-query($from: $nav-breakpoint) {
