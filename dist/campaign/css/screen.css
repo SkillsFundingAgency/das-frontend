@@ -1460,11 +1460,11 @@ template {
   right: 0;
   bottom: 0;
   z-index: -1;
-  background-image: url("../images/hero-banner-bg.jpg");
+  background-image: linear-gradient(225deg, rgba(0, 0, 0, 0) 0%, black 100%), url("../images/hero-banner-bg.jpg");
   background-size: cover;
   background-position: center; }
   .hero-banner--right-aligned .hero-banner__background {
-    background-image: url("../images/hero-banner-bg-right-aligned.jpg"); }
+    background-image: linear-gradient(-225deg, rgba(0, 0, 0, 0) 0%, black 100%), url("../images/hero-banner-bg-right-aligned.jpg"); }
 
 .hero-heading {
   transform: rotate(-6deg) skewX(-6deg);

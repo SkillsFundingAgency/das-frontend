@@ -162,11 +162,11 @@ $hero-text-colour: #fff;
   right: 0;
   bottom: 0;
   z-index: -1;
-  background-image: url("../images/hero-banner-bg.jpg");
+  background-image: linear-gradient(225deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%), url("../images/hero-banner-bg.jpg");
   background-size: cover;
   background-position: center;
   .hero-banner--right-aligned & {
-    background-image: url("../images/hero-banner-bg-right-aligned.jpg");
+    background-image:  linear-gradient(-225deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%), url("../images/hero-banner-bg-right-aligned.jpg");
   }
 }
 
