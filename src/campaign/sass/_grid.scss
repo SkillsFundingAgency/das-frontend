@@ -43,3 +43,17 @@ $grid-widths: (
 @include grid-column(two-thirds);
 @include grid-column(three-quarters);
 @include grid-column();
+
+.grid-row-full-width {
+  @include clearfix;
+  @include media-query($from: tablet) {
+    display: flex;
+  }
+}
+
+.grid-column-full-width-one-half {
+  @include media-query($from: tablet) {
+    width: 50%;
+    float: left;
+  }
+}

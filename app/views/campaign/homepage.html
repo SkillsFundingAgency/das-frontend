@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Campaign</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b0c0c" />
+
+  <link rel="shortcut icon" sizes="16x16 32x32 48x48" href="/dist/campaign/images/favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/dist/campaign/images/apple-touch-icon-180x180.png">
+  <link rel="apple-touch-icon" sizes="167x167" href="/dist/campaign/images/apple-touch-icon-167x167.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/dist/campaign/images/apple-touch-icon-152x152.png">
+  <link rel="apple-touch-icon" href="/dist/campaign/images/apple-touch-icon.png">
+
+  <!--[if !IE 8]><!-->
+
+  <link href="/dist/campaign/css/screen.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://use.typekit.net/tyj1hwm.css">
+
+  <!--<![endif]-->
+
+  <meta property="og:image" content="/dist/campaign/images/opengraph.png">
+</head>
+
+<body class="page-template">
+
+    <script>
+    document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');
+    </script>
+
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <div class="wrap">
+
+        {% include './components/header/_header.html'%}
+
+            <section class="">
+                <div class="grid-row-full-width">
+                    <div class="grid-column-full-width-one-half">
+                        <div class="launcher launcher--apprentices">
+                            <div class="launcher__content">
+                                <h1 class="launcher__section-heading">Apprenticeships</h1>
+                                <a href="#">
+                                    <h2 class="launcher__heading">Change what you know &amp; become an apprentice</h2>
+                                    <p class="launcher__intro">Find out what you need to do to become an apprentice, the benefits, the process and which career pathway to consider. </p>
+                                    <p class="launcher__link">Find out more <span class="vh">about Apprenticeships</span></p>
+                                </a>
+                            </div>
+                            <span class="launcher__bg"></span>
+                        </div>
+                    </div>
+                    <div class="grid-column-full-width-one-half">
+                        <div class="launcher launcher--employer">
+                            <div class="launcher__content">
+                                <h1 class="launcher__section-heading">Employers</h1>
+                                <a href="#">
+                                    <h2 class="launcher__heading">Be part of the change &amp; employ an apprentice</h2>
+                                    <p class="launcher__intro">Find out the cost involved in taking on an apprentice and what you need to do to deliver it - in order to get the best out of your new apprentice. </p>
+                                    <p class="launcher__link">Find out more <span class="vh">about hiring apprentices</span></p>
+                                </a>
+                            </div>
+                            <span class="launcher__bg"></span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ============================= -->
+
+            <div class="grid-row hero-banner hero-banner--apprentice hero-banner--right-aligned">
+                <div class="grid-column-full">
+                    <div class="hero-banner__caption">
+                        <span class="hero-banner__caption-icon"></span>
+                        <span class="hero-banner__caption-text">Real apprentice stories</span>
+                    </div>
+                    <div class="grid-row hero-banner__content">
+                        <div class="grid-column-one-half  hero-banner__icon-play-container">
+                            <div class="hero-banner__icon-play"></div>
+                        </div>
+                        <div class="grid-column-one-half hero-banner__content-main">
+                            <h3 class="hero-banner__header">Valuable hands-on experience</h3>
+                            <p class="hero-banner__copy">
+                                "I didn't think university was for me. I saw a lot of my friends
+                                struggling to make ends meet - I didn't want the debt and I was desperate to get the hands-on experience."
+                            </p>
+                            <div class="hero-banner__cite">Sarah Bloggs <span class="hero-banner__cite-detail">33, Designer, Manchester</span></div>
+                            <a class="hero-banner__link" href="#">View more apprentice stories</a>
+                        </div>
+                    </div>
+                    <span class="hero-banner__background"></span>
+                </div>
+            </div>
+
+            <!-- ============================= -->
+
+            <div class="grid-row hero-banner hero-banner--employer">
+                <div class="grid-column-full">
+                    <div class="hero-banner__caption">
+                        <span class="hero-banner__caption-icon"></span>
+                        <span class="hero-banner__caption-text">Real apprentice stories</span>
+                    </div>
+                    <div class="grid-row hero-banner__content">
+                        <div class="grid-column-one-half  hero-banner__icon-play-container">
+                            <div class="hero-banner__icon-play"></div>
+                        </div>
+                        <div class="grid-column-one-half hero-banner__content-main">
+                            <h3 class="hero-banner__header">Valuable hands-on experience</h3>
+                            <p class="hero-banner__copy">
+                                "I didn't think university was for me. I saw a lot of my friends
+                                struggling to make ends meet - I didn't want the debt and I was desperate to get the hands-on experience."
+                            </p>
+                            <p class="hero-banner__cite">Sarah Bloggs <span class="hero-banner__cite-detail">33, Designer, Manchester</span></p>
+                            <a class="hero-banner__link" href="#">View more apprentice stories</a>
+                        </div>
+                    </div>
+                    <span class="hero-banner__background"></span>
+                </div>
+            </div>
+
+
+        {% include './components/footer/_footer.html'%}
+
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"></script>
+        <script src="/dist/campaign/js/app.min.js"></script>
+      <script src="/dist/js/das-all.js"></script>
+        <script>
+          window.DASFrontend.initAll()
+        </script>
+
+</body>
+
+</html>
