@@ -2243,6 +2243,12 @@ template {
     border-style: solid;
     border-width: 0 0 50px 475px;
     border-color: transparent transparent #d1e6fb; }
+  .sidebar--employer .sidebar__header {
+    background: #ffb007; }
+    .sidebar--employer .sidebar__header:before {
+      border-bottom-color: #ffb007; }
+    .sidebar--employer .sidebar__header:after {
+      border-bottom-color: #ffe9c1; }
 
 .trimmer {
   overflow: hidden;
@@ -2260,6 +2266,8 @@ template {
   padding: 30px;
   background: #d1e6fb;
   position: relative; }
+  .sidebar--employer .sidebar__content {
+    background: #ffe9c1; }
 
 .sidebar-nav {
   font-family: nobel, sans-serif;
@@ -2316,11 +2324,17 @@ template {
       position: absolute;
       top: 0;
       left: -19px; }
+      .sidebar--employer .sidebar-nav > li:before {
+        color: #ffb007; }
     .sidebar-nav > li.sidebar-nav__section--active {
       border-left-color: #006dff; }
+      .sidebar--employer .sidebar-nav > li.sidebar-nav__section--active {
+        border-left-color: #ffb007; }
       .sidebar-nav > li.sidebar-nav__section--active:before {
         background-color: #006dff;
         color: #fff; }
+        .sidebar--employer .sidebar-nav > li.sidebar-nav__section--active:before {
+          background-color: #ffb007; }
     .sidebar-nav > li > a {
       text-transform: uppercase;
       color: #0B0C0C;
@@ -2343,8 +2357,7 @@ template {
           left: -39px;
           top: .03em;
           line-height: .5em;
-          color: #006dff;
-          border: 3px solid #d7e9fc;
+          border: 3px solid #d1e6fb;
           background: #006dff;
           width: 10px;
           height: 10px;
@@ -2352,6 +2365,9 @@ template {
           -webkit-border-radius: 50%;
           -moz-border-radius: 50%;
           border-radius: 50%; }
+          .sidebar--employer .sidebar-nav > li > ul > li:before {
+            background: #ffb007;
+            border-color: #ffe9c1; }
         .sidebar-nav > li > ul > li > a {
           color: #006dff; }
 

@@ -45,6 +45,15 @@
     border-width: 0 0 50px 475px;
     border-color: transparent transparent $apprentice-mid;
   }
+  .sidebar--employer & {
+    background: $employer;
+    &:before {
+      border-bottom-color: $employer;
+    }
+    &:after {
+      border-bottom-color: $employer-mid;
+    }
+  }
 }
 
 .trimmer {
@@ -66,6 +75,9 @@
   padding: 30px;
   background: $apprentice-mid;
   position: relative;
+  .sidebar--employer & {
+    background: $employer-mid;
+  }
 }
 
 $timeline-width: 2px;
@@ -113,13 +125,22 @@ $timeline-width: 2px;
       position: absolute;
       top: 0;
       left: -19px;
+      .sidebar--employer & {
+        color: $employer;
+      }
     }
 
     &.sidebar-nav__section--active {
       border-left-color: $apprentice;
+      .sidebar--employer & {
+        border-left-color: $employer;
+      }
       &:before {
         background-color: $apprentice;
         color: #fff;
+        .sidebar--employer & {
+          background-color: $employer;
+        }
       }
     }
     & > a {
@@ -145,8 +166,7 @@ $timeline-width: 2px;
           left: -39px;
           top: .03em;
           line-height: .5em;
-          color: $apprentice;
-          border: 3px solid $apprentice-light;
+          border: 3px solid $apprentice-mid;
           background: $apprentice;
           width: 10px;
           height: 10px;
@@ -154,9 +174,14 @@ $timeline-width: 2px;
           -webkit-border-radius: 50%;
           -moz-border-radius: 50%;
           border-radius: 50%;
+          .sidebar--employer & {
+            background: $employer;
+            border-color: $employer-mid;
+          }
         }
         & > a {
           color: $apprentice;
+
         }
       }
     }
