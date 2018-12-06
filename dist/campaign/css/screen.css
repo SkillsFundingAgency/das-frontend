@@ -1961,9 +1961,11 @@ template {
 .navigation__sub-menu {
   background: #efefef;
   margin: 0;
-  padding: 0 0 10px;
+  padding: 10px 0 10px;
   list-style: none;
   display: none; }
+  .navigation__sub-menu ul {
+    list-style: none; }
   @media (min-width: 56.25em) {
     .navigation__sub-menu {
       position: absolute;
@@ -1972,12 +1974,58 @@ template {
       top: 120px;
       padding: 40px 60px;
       flex-wrap: wrap; }
-      .navigation__sub-menu > li {
-        width: 20%;
+      .navigation__sub-menu ul, .navigation__sub-menu ol {
+        width: 30em;
+        padding-inline-start: 0px;
+        padding-top: 20px; }
+      .navigation__sub-menu ol {
+        counter-reset: custom;
+        list-style-type: none; }
+      .navigation__sub-menu ol li:before {
+        font-family: nobel, sans-serif;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 1.25;
+        content: counter(custom) " - ";
+        counter-increment: custom;
+        float: left;
+        position: relative;
+        top: -5px;
+        padding-right: 5px; } }
+    @media (min-width: 56.25em) and (min-width: 46.25em) {
+      .navigation__sub-menu ol li:before {
+        font-size: 19px;
+        line-height: 1.31579; } }
+    @media print and (min-width: 56.25em) {
+      .navigation__sub-menu ol li:before {
+        font-size: 14pt;
+        line-height: 1.15; } }
+  @media (min-width: 56.25em) {
+      .navigation__sub-menu li {
         -webkit-box-sizing: border-box;
         -moz-box-sizing: border-box;
         box-sizing: border-box;
-        padding: 0 20px 15px; } }
+        padding: 0 0 15px;
+        float: left;
+        width: 15em; } }
+
+.navigation__sub-menu__employer {
+  color: #ffb007; }
+  @media (min-width: 75em) {
+    .navigation__sub-menu__employer {
+      border-top: 10px solid #ffb007; } }
+  .navigation__sub-menu__employer .highlight {
+    color: #ffb007;
+    text-transform: uppercase; }
+
+@media (min-width: 75em) {
+  .navigation__sub-menu__apprentice {
+    border-top: 10px solid #006dff;
+    color: #006dff; }
+    .navigation__sub-menu__apprentice .highlight {
+      color: #006dff; } }
 
 .navigation__sub-menu-icon {
   position: absolute;

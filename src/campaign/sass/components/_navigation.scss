@@ -189,9 +189,13 @@
 .navigation__sub-menu {
   background: #efefef;
   margin: 0;
-  padding: 0 0 10px;
+  padding: 10px 0 10px;
   list-style: none;
   display: none;
+  
+  ul{
+    list-style: none;
+  }
   @include media-query($from: $nav-breakpoint) {
     position: absolute;
     left: 0;
@@ -199,15 +203,61 @@
     top: 120px;
     padding: 40px 60px;
     flex-wrap: wrap;
-    > li {
-      width: 20%;
+    ul, ol{
+      width: 30em;
+      padding-inline-start: 0px;
+      padding-top:20px;
+    }
+     ol{
+      counter-reset: custom;
+      list-style-type: none;
+    }
+    ol li:before {
+      @include font($size: 19);
+      content: counter(custom)' - ';
+      counter-increment: custom;
+      float: left;
+      position: relative;
+      top:-5px;
+      padding-right: 5px;
+    }
+    li {
+      // width: 20%;
       -webkit-box-sizing: border-box;
       -moz-box-sizing: border-box;
       box-sizing: border-box;
-      padding: 0 20px 15px;
+      padding: 0 0 15px;
+      float: left;
+      width: 15em;
     }
   }
 }
+.navigation__sub-menu__employer
+{
+  color: $employer;
+  @include media-query($from: $nav-breakpoint-desktop) {
+  border-top: 10px solid $employer;
+  }
+   .highlight
+    {
+      color: $employer;
+      text-transform:uppercase; 
+    }
+  
+}
+
+.navigation__sub-menu__apprentice
+{
+  @include media-query($from: $nav-breakpoint-desktop) {
+  border-top: 10px solid $apprentice;
+  color: $apprentice;
+  .highlight
+    {
+      color: $apprentice;
+    }
+  }
+}
+
 
 .navigation__sub-menu-icon {
   position: absolute;
