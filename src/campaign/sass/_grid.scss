@@ -51,6 +51,13 @@ $grid-widths: (
   }
 }
 
+.grid-column-full-width-one-quarter {
+  @include media-query($from: tablet) {
+    width: 25%;
+    float: left;
+  }
+}
+
 .grid-column-full-width-one-half {
   @include media-query($from: tablet) {
     width: 50%;

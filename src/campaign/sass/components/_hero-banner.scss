@@ -74,7 +74,7 @@ $hero-text-colour: #fff;
   color: $hero-text-colour;
 }
 
-.hero-banner__header{
+.hero-banner__header {
   font-weight: $font-weight-bold;
   font-size: 36px;
   @include mq ($from: tablet) {
@@ -82,6 +82,16 @@ $hero-text-colour: #fff;
   }
   color: $hero-text-colour;
   text-transform: uppercase;
+}
+
+.hero-banner__sub-heading {
+  color: $hero-text-colour;
+}
+
+.hero-banner__hero-header {
+  margin-top: 100px;
+  color: #fff;
+  font-size: 60px;
 }
 
 .hero-banner__cite {
