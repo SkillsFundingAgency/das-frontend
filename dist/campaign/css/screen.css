@@ -144,6 +144,11 @@
     display: flex; } }
 
 @media (min-width: 46.25em) {
+  .grid-column-full-width-one-quarter {
+    width: 25%;
+    float: left; } }
+
+@media (min-width: 46.25em) {
   .grid-column-full-width-one-half {
     width: 50%;
     float: left; } }
@@ -1391,6 +1396,14 @@ template {
     .hero-banner__header {
       margin-top: 100px; } }
 
+.hero-banner__sub-heading {
+  color: #fff; }
+
+.hero-banner__hero-header {
+  margin-top: 100px;
+  color: #fff;
+  font-size: 60px; }
+
 .hero-banner__cite {
   text-transform: uppercase;
   font-weight: 700;
@@ -1501,9 +1514,11 @@ template {
       padding-left: 30px; } }
   @media (min-width: 61.25em) {
     .hero-heading__heading {
-      font-size: 60px;
+      font-size: 72px;
       text-indent: -40px;
       padding-left: 40px; } }
+  .hero-banner .hero-heading__heading {
+    margin-top: 100px; }
 
 .input {
   font-family: nobel, sans-serif;
@@ -2183,7 +2198,7 @@ template {
 
 .trimmer {
   overflow: hidden;
-  margin-top: -176px;
+  margin-top: -172px;
   padding-top: 50px; }
 
 .sidebar__caption {
