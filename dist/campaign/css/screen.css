@@ -847,6 +847,84 @@ template {
   .button-inverted:hover, .button-inverted:focus {
     background-color: #1a1a1a; }
 
+.card__collection {
+  background: #fff;
+  display: flex;
+  align-items: stretch;
+  padding-bottom: 100px;
+  clip-path: polygon(0 100%, 100% 91.4%, 100% 8.6%, 0 0);
+  margin-top: -100px; }
+
+.card {
+  text-decoration: none;
+  position: relative;
+  display: block;
+  height: 100%; }
+
+.card__image {
+  height: 200px;
+  position: relative;
+  overflow: hidden; }
+  @media (min-width: 46.25em) {
+    .card__image {
+      height: 200px; } }
+  @media (min-width: 61.25em) {
+    .card__image {
+      height: 300px; } }
+
+.card__img {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-size: cover;
+  transition: all .3s ease; }
+
+.card:hover .card__img {
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  -o-transform: scale(1.1);
+  transform: scale(1.1); }
+
+.card__img--1 {
+  background-image: url("../images/card-1.jpg"); }
+
+.card__img--2 {
+  background-image: url("../images/card-2.jpg"); }
+
+.card__img--3 {
+  background-image: url("../images/card-3.jpg"); }
+
+.card__img--4 {
+  background-image: url("../images/card-4.jpg"); }
+
+.card__content {
+  padding: 20px 40px 50px; }
+
+.card__link {
+  text-transform: uppercase;
+  font-weight: 700;
+  font-family: nobel, sans-serif;
+  font-size: 14px;
+  display: inline-block;
+  padding-top: 20px;
+  position: absolute;
+  color: #000;
+  bottom: 0; }
+  .card__link:before {
+    content: "";
+    display: block;
+    height: 2px;
+    width: 50px;
+    background: #006dff;
+    position: absolute;
+    top: 0; }
+    .card--employer .card__link:before {
+      background: #ffb007; }
+
 .checkboxes__item {
   font-family: nobel, sans-serif;
   -webkit-font-smoothing: antialiased;
