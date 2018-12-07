@@ -195,7 +195,9 @@
   
   ul{
     list-style: none;
+    //   width: 15em;
   }
+ 
   @include media-query($from: $nav-breakpoint) {
     position: absolute;
     left: 0;
@@ -204,7 +206,7 @@
     padding: 40px 60px;
     flex-wrap: wrap;
     ul, ol{
-      width: 30em;
+      width: 100%;
       padding-inline-start: 0px;
       padding-top:20px;
     }
@@ -228,7 +230,12 @@
       box-sizing: border-box;
       padding: 0 0 15px;
       float: left;
-      width: 15em;
+      width: 100%;
+    }
+  }
+  @include media-query($from: $nav-breakpoint-desktop) {
+    li {
+      width:50%;
     }
   }
 }

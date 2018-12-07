@@ -1961,7 +1961,7 @@ template {
       padding: 40px 60px;
       flex-wrap: wrap; }
       .navigation__sub-menu ul, .navigation__sub-menu ol {
-        width: 30em;
+        width: 100%;
         padding-inline-start: 0px;
         padding-top: 20px; }
       .navigation__sub-menu ol {
@@ -1995,7 +1995,10 @@ template {
         box-sizing: border-box;
         padding: 0 0 15px;
         float: left;
-        width: 15em; } }
+        width: 100%; } }
+  @media (min-width: 75em) {
+    .navigation__sub-menu li {
+      width: 50%; } }
 
 .navigation__sub-menu__employer {
   color: #ffb007; }
