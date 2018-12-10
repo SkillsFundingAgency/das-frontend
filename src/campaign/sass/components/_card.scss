@@ -1,10 +1,9 @@
 .card__collection {
   background: #fff;
-  display: flex;
-  align-items: stretch;
-  padding-bottom: 100px;
-  clip-path: polygon(0 100%, 100% 91.4%, 100% 8.6%, 0 0);
-  margin-top: -100px;
+  @include media-query($from: desktop) {
+    display: flex;
+    align-items: stretch;
+  }
 }
 
 .card {
@@ -51,7 +50,7 @@
 .card__img--4 { background-image: url("../images/card-4.jpg") }
 
 .card__content {
-  padding: 20px 40px 50px;
+  padding: 20px 40px 70px;
 }
 
 .card__link {
@@ -61,6 +60,7 @@
   font-size: 14px;
   display: inline-block;
   padding-top: 20px;
+  padding-bottom: 20px;
   position: absolute;
   color: #000;
   bottom: 0;

@@ -36,6 +36,12 @@
 
 .page {
   max-width: 700px;
+  @include media-query($from: tablet) {
+    padding-right: 40px;
+  }
+  @include media-query($from: desktop) {
+    padding-right: 80px;
+  }
 }
 
 .section-break {
