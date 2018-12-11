@@ -2232,6 +2232,52 @@ template {
       color: #646c6f;
       font-weight: 300; } }
 
+.pagination {
+  margin-top: 30px;
+  border-top: 1px solid #ddd;
+  padding: 30px 0 0 0;
+  list-style: none; }
+  .pagination:after {
+    content: "";
+    display: block;
+    clear: both; }
+
+.pagination__list-item {
+  margin: 10px 0; }
+  @media (min-width: 46.25em) {
+    .pagination__list-item {
+      width: 50%;
+      float: left; } }
+
+.pagination__link {
+  text-transform: uppercase;
+  font-family: nobel, sans-serif;
+  font-weight: bold;
+  color: #006dff;
+  text-decoration: none; }
+
+.pagination__link--previous,
+.pagination__link--next {
+  background-repeat: no-repeat;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  display: inline-block;
+  box-sizing: border-box; }
+
+.pagination__link--previous {
+  padding-left: 35px;
+  background-image: url("../images/arrow-left.svg");
+  background-position: left center; }
+
+.pagination__link--next {
+  padding-right: 35px;
+  background-image: url("../images/arrow-right.svg");
+  background-position: right center;
+  text-align: right; }
+  @media (min-width: 46.25em) {
+    .pagination__link--next {
+      float: right; } }
+
 .promotion {
   color: #fff;
   padding: 40px 20px 40px; }
