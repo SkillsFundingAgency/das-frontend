@@ -20,6 +20,10 @@
   font-weight: bold;
   color: $link-colour;
   text-decoration: none;
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+  }
 }
 
 .pagination__link--previous,

@@ -63,6 +63,12 @@
   @media (min-width: 61.25em) {
     .page {
       padding-right: 80px; } }
+  .page a {
+    color: #006dff; }
+    .page a:hover, .page a:focus {
+      text-decoration: none; }
+    .page a:visited {
+      color: #006dff; }
 
 .section-break {
   margin: 0;
@@ -2255,6 +2261,8 @@ template {
   font-weight: bold;
   color: #006dff;
   text-decoration: none; }
+  .pagination__link:hover, .pagination__link:focus {
+    text-decoration: underline; }
 
 .pagination__link--previous,
 .pagination__link--next {
