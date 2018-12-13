@@ -370,6 +370,9 @@ p {
 .text--employer {
   color: #ffb007; }
 
+.text-danger {
+  color: #C42B3A; }
+
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -1415,7 +1418,8 @@ template {
   display: none; }
 
 .input-validation-error {
-  border-bottom-color: #C42B3A !important; }
+  border-bottom-color: #C42B3A !important;
+  margin-bottom: 10px; }
 
 .header {
   background: #000;
