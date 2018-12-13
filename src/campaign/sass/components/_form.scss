@@ -30,6 +30,9 @@
     @include responsive-margin(1, "bottom", $adjustment: $button-shadow-size); // s2
 }
 
+.validation-summary-valid {
+  display:none;
+}
 .input-validation-error{
   border-bottom-color: $error-colour !important;
 }

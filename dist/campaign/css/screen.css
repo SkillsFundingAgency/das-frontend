@@ -1411,6 +1411,9 @@ template {
     .form-group-validation-error {
       margin-bottom: 10px; } }
 
+.validation-summary-valid {
+  display: none; }
+
 .input-validation-error {
   border-bottom-color: #C42B3A !important; }
 
@@ -1934,7 +1937,8 @@ template {
   -webkit-transition: -webkit-transform 0.3s ease-out;
   -moz-transition: -moz-transform 0.3s ease-out;
   -o-transition: -o-transform 0.3s ease-out;
-  transition: transform 0.3s ease-out; }
+  transition: transform 0.3s ease-out;
+  overflow: scroll; }
 
 .modal-body {
   padding: 20px; }
