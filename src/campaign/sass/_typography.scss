@@ -26,6 +26,12 @@
   @include font($size: 19, $weight: bold);
 }
 
+.heading-xs {
+  color: $heading-colour;
+  text-transform: uppercase;
+  @include font($size: 14, $weight: bold);
+}
+
 // Captions
 
 .caption-xl {

@@ -36,6 +36,22 @@
 
 .page {
   max-width: 700px;
+  @include media-query($from: tablet) {
+    padding-right: 40px;
+  }
+  @include media-query($from: desktop) {
+    padding-right: 80px;
+  }
+  a {
+    color: $link-colour;
+    &:hover,
+    &:focus {
+      text-decoration: none;
+    }
+    &:visited {
+      color: $link-visited-colour;
+    }
+  }
 }
 
 .section-break {

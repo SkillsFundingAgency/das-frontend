@@ -1,0 +1,40 @@
+.promotion {
+  color: #fff;
+  padding: 40px $edgeGutter 40px;
+
+  @include media-query($from: tablet) {
+    padding-left: $edgeGutterTablet;
+    padding-right: $edgeGutterTablet;
+  }
+
+  @include media-query($from: desktop) {
+    padding-left: $edgeGutterDesktop;
+    padding-right: $edgeGutterDesktop;
+  }
+}
+
+.promotion--apprentice {
+  background: $apprentice;
+}
+
+.promotion--employer {
+  background: $employer;
+}
+
+.promotion__caption {
+  color: #fff;
+}
+
+.promotion__heading {
+  color: #fff;
+}
+
+.promotion__sub-heading {
+  color: #fff;
+  margin-bottom: 10px;
+}
+
+.promotion__content {
+  color: #fff;
+  margin-top: 0;
+}
