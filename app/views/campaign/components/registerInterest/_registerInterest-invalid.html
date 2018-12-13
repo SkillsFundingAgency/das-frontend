@@ -1,0 +1,78 @@
+{% from "../button/macro.njk" import dasButton %}
+<form action="/RegisterInterest" method="post">
+  <section class="section">
+    <div class="grid-row">
+      <div class="grid-column-full">
+        <span class="caption-s">Register interest</span>
+        <h1 class="heading-m">keep me informed of upcoming features</h1>
+        <div class="text-danger validation-summary-errors form-validation-summary" data-valmsg-summary="true">
+          <h3 class="heading-s">Sorry but there seems to be a problem with you registration</h3>
+          <ul>
+            <li>The FirstName field is required.</li>
+            <li>The LastName field is required.</li>
+          </ul>
+        </div>
+        <div class="form-group form-group-validation-error">
+
+          <label class="label visually-hidden" for="FirstName">
+            First name
+          </label>
+          <input class="input input-validation-error" type="text" placeholder="First name" data-val="true"
+            data-val-required="The FirstName field is required." id="FirstName" name="FirstName" value="">
+          <span class="text-danger field-validation-error" data-valmsg-for="FirstName" data-valmsg-replace="true">The
+            FirstName field is required.</span>
+        </div>
+
+        <div class="form-group form-group-validation-error">
+
+          <label class="label visually-hidden" for="LastName">
+            Last name
+          </label>
+          <input class="input input-validation-error" type="text" placeholder="Last name" data-val="true"
+            data-val-required="The LastName field is required." id="LastName" name="LastName" value="">
+        </div>
+        <div class="form-group form-group-validation-error">
+
+          <label class="label visually-hidden" for="EmailAddress">
+            Email Address
+          </label>
+          <input class="input" type="text" placeholder="Email address" data-val="true" data-val-email="The EmailAddress field is not a valid e-mail address."
+            id="EmailAddress" name="EmailAddress" value="">
+          <span class="text-danger field-validation-valid" data-valmsg-for="EmailAddress" data-valmsg-replace="true"></span>
+        </div>
+        <div class="form-group  form-group-validation-error radios">
+            We want to engage with you in future, what type of user are you?
+          <div class="radios__item">
+            <input class="input radios__input" value="true" type="radio" id="myFirstId" name="Route"><label class="label radios__label"
+              for="myFirstId">I’m to become an <span class="text--apprentice">apprentice</span></label>
+          </div>
+          <div class="radios__item">
+            <input class="input radios__input" value="false" type="radio" id="mySecondId" name="Route"><label class="label radios__label" for="mySecondId">I
+              want to <span class="text--employer">employ</span> an apprentice</label>
+            <span class="text-danger field-validation-valid" data-valmsg-for="Route" data-valmsg-replace="true"></span>
+          </div>
+        </div>
+        <div class="form-group form-group-validation-error">
+          <div class="checkboxes__item">
+            <input class="checkboxes__input" type="checkbox" value="true" data-val="true" data-val-required="The AcceptTandCs field is required."
+              id="AcceptTandCs" name="AcceptTandCs">
+            <label class="label checkboxes__label" for="AcceptTandCs">
+              I agree to the terms and conditions
+            </label>
+            <span class="text-danger field-validation-valid" data-valmsg-for="AcceptTandCs" data-valmsg-replace="true"></span>
+          </div>
+        </div>
+
+        <input type="hidden" value="/RegisterInterest" id="ReturnUrl" name="ReturnUrl">
+
+        <button class="button button-inverted " name="registerInterestSubmit" type="submit">Register Interest </button>
+
+
+
+
+      </div>
+    </div>
+  </section>
+  <input name="__RequestVerificationToken" type="hidden" value="CfDJ8ELSqgTk9i1Kqo_3aXWysmlHxu0SAPPAavF8ppNnbKDxB1xrWl4AVnx4ptr3UCFvPcfFJJSi6Trac5xGuKGyUZ0CoK1X3JdQG9iuKVxRxUBjLLPUuLE02apyJtSTm5Ln3xHBYQCpfoLGeVm0TsbhYss"><input
+    name="AcceptTandCs" type="hidden" value="false">
+</form>
