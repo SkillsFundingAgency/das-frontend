@@ -1922,12 +1922,12 @@ template {
 .modal-dialog {
   background: #fefefe;
   border: #212121 solid 1px;
-  margin-left: -200px;
   position: fixed;
-  left: 32%;
+  left: 20%;
   top: -100%;
   z-index: 2010;
   width: 60%;
+  height: 90%;
   -webkit-transform: translate(0, -500%);
   -ms-transform: translate(0, -500%);
   transform: translate(0, -500%);
