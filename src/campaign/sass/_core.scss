@@ -38,6 +38,7 @@
   max-width: 700px;
   @include media-query($from: tablet) {
     padding-right: 40px;
+    min-height: 800px;
   }
   @include media-query($from: desktop) {
     padding-right: 80px;
