@@ -59,7 +59,8 @@
   max-width: 700px; }
   @media (min-width: 46.25em) {
     .page {
-      padding-right: 40px; } }
+      padding-right: 40px;
+      min-height: 800px; } }
   @media (min-width: 61.25em) {
     .page {
       padding-right: 80px; } }
@@ -1980,6 +1981,47 @@ template {
   margin: 0;
   list-style: none; }
 
+.navigation__list {
+  padding: 0;
+  margin: 0 -20px 20px;
+  list-style: none;
+  border-bottom: 1px solid #ddd; }
+  @media (min-width: 56.25em) {
+    .navigation__list {
+      border-bottom: none; } }
+
+.navigation__ordered-list {
+  padding: 0;
+  margin: 0 -20px 20px;
+  list-style: none; }
+  .navigation__ordered-list > li {
+    counter-increment: li;
+    position: relative; }
+    .navigation__ordered-list > li:before {
+      content: counter(li) " - ";
+      width: 1em;
+      height: 1em;
+      font-size: 14px;
+      color: #000;
+      font-family: nobel, sans-serif;
+      font-weight: 700;
+      white-space: nowrap;
+      position: absolute;
+      top: 17px;
+      left: 20px; }
+      .navigation__sub-menu--apprentice .navigation__ordered-list > li:before {
+        color: #006dff; }
+      .navigation__sub-menu--employer .navigation__ordered-list > li:before {
+        color: #ffb007; }
+    .navigation__ordered-list > li > a {
+      padding-left: 42px; }
+
+@media (min-width: 75em) {
+  .navigation__list > li,
+  .navigation__ordered-list > li {
+    float: left;
+    width: 50%; } }
+
 @media (min-width: 56.25em) {
   .navigation__list-item {
     float: left; } }
@@ -2072,8 +2114,6 @@ template {
   padding: 10px 0 10px;
   list-style: none;
   display: none; }
-  .navigation__sub-menu ul {
-    list-style: none; }
   @media (min-width: 56.25em) {
     .navigation__sub-menu {
       position: absolute;
@@ -2081,62 +2121,39 @@ template {
       right: 0;
       top: 120px;
       padding: 40px 60px;
-      flex-wrap: wrap; }
-      .navigation__sub-menu ul, .navigation__sub-menu ol {
-        width: 100%;
-        padding-inline-start: 0px;
-        padding-top: 20px; }
-      .navigation__sub-menu ol {
-        counter-reset: custom;
-        list-style-type: none; }
-      .navigation__sub-menu ol li:before {
-        font-family: nobel, sans-serif;
-        -webkit-font-smoothing: antialiased;
-        -moz-osx-font-smoothing: grayscale;
-        font-weight: 500;
-        font-size: 16px;
-        line-height: 1.25;
-        content: counter(custom) " - ";
-        counter-increment: custom;
-        float: left;
-        position: relative;
-        top: -5px;
-        padding-right: 5px; } }
-    @media (min-width: 56.25em) and (min-width: 46.25em) {
-      .navigation__sub-menu ol li:before {
-        font-size: 19px;
-        line-height: 1.31579; } }
-    @media print and (min-width: 56.25em) {
-      .navigation__sub-menu ol li:before {
-        font-size: 14pt;
-        line-height: 1.15; } }
-  @media (min-width: 56.25em) {
-      .navigation__sub-menu li {
-        -webkit-box-sizing: border-box;
-        -moz-box-sizing: border-box;
-        box-sizing: border-box;
-        padding: 0 0 15px;
-        float: left;
-        width: 100%; } }
-  @media (min-width: 75em) {
-    .navigation__sub-menu li {
-      width: 50%; } }
+      flex-wrap: wrap; } }
 
-.navigation__sub-menu__employer {
+.navigation__sub-menu--employer {
   color: #ffb007; }
   @media (min-width: 75em) {
-    .navigation__sub-menu__employer {
+    .navigation__sub-menu--employer {
       border-top: 10px solid #ffb007; } }
-  .navigation__sub-menu__employer .highlight {
-    color: #ffb007;
-    text-transform: uppercase; }
 
 @media (min-width: 75em) {
-  .navigation__sub-menu__apprentice {
+  .navigation__sub-menu--apprentice {
     border-top: 10px solid #006dff;
-    color: #006dff; }
-    .navigation__sub-menu__apprentice .highlight {
-      color: #006dff; } }
+    color: #006dff; } }
+
+.navigation_sub-heading {
+  margin: 5px 0; }
+  @media (min-width: 56.25em) {
+    .navigation_sub-heading {
+      margin: 0 0 10px; } }
+  @media (min-width: 56.25em) {
+    .navigation__sub-menu--apprentice .navigation_sub-heading > .highlight {
+      color: #006dff; }
+    .navigation__sub-menu--employer .navigation_sub-heading > .highlight {
+      color: #ffb007; } }
+  .navigation_sub-heading > .highlight :after {
+    content: '...'; }
+    @media (min-width: 56.25em) {
+      .navigation_sub-heading > .highlight :after {
+        content: ''; } }
+  .navigation_sub-heading > .secondary {
+    display: none; }
+    @media (min-width: 56.25em) {
+      .navigation_sub-heading > .secondary {
+        display: inline; } }
 
 .navigation__sub-menu-icon {
   position: absolute;
@@ -2191,43 +2208,17 @@ template {
 
 .navigation__link {
   font-family: nobel, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  font-weight: 300;
   font-size: 18px;
-  line-height: 1.11111;
+  font-weight: 300;
   color: #6F777B;
   text-decoration: none;
   display: block;
   padding: 15px 20px; }
-  @media (min-width: 46.25em) {
-    .navigation__link {
-      font-size: 24px;
-      line-height: 1.25; } }
-  @media print {
-    .navigation__link {
-      font-size: 18pt;
-      line-height: 1.15; } }
   @media (min-width: 56.25em) {
     .navigation__link {
-      padding: 0;
-      font-family: nobel, sans-serif;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      font-weight: 700;
-      font-size: 12px;
-      line-height: 1.25;
-      text-transform: uppercase;
-      color: #0B0C0C;
-      box-sizing: border-box; } }
-  @media (min-width: 56.25em) and (min-width: 46.25em) {
-    .navigation__link {
-      font-size: 14px;
-      line-height: 1.42857; } }
-  @media print and (min-width: 56.25em) {
-    .navigation__link {
-      font-size: 12pt;
-      line-height: 1.2; } }
+      text-decoration: underline;
+      line-height: 1.3;
+      padding: 10px 20px; } }
 
 .navigation__link-caption {
   display: none; }
@@ -2237,6 +2228,18 @@ template {
       text-transform: none;
       color: #646c6f;
       font-weight: 300; } }
+
+.navigation__link--top-level--apprentice.sub-menu-open {
+  color: #006dff; }
+  .navigation__link--top-level--apprentice.sub-menu-open .navigation__sub-menu-icon,
+  .navigation__link--top-level--apprentice.sub-menu-open .navigation__sub-menu-icon:before {
+    background: #006dff; }
+
+.navigation__link--top-level--employer.sub-menu-open {
+  color: #ffb007; }
+  .navigation__link--top-level--employer.sub-menu-open .navigation__sub-menu-icon,
+  .navigation__link--top-level--employer.sub-menu-open .navigation__sub-menu-icon:before {
+    background: #ffb007; }
 
 .pagination {
   margin-top: 30px;
