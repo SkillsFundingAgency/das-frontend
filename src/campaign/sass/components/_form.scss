@@ -1,4 +1,5 @@
 .form-group {
+  @include font($size: 19, $weight: light);
   @include responsive-margin(6, "bottom", $adjustment: $button-shadow-size); // s2
 }
 
@@ -11,4 +12,28 @@
 .form-section{
   background: inherit !important; 
 
+}
+
+.form-validation-summary{
+  @include font($size: 19, $weight: light);
+  border: 8px solid $error-colour;
+  @include responsive-margin(6, "bottom", $adjustment: $button-shadow-size); // s2
+  @include responsive-padding(2, $adjustment: $button-shadow-size); // s2
+}
+
+.form-group-validation-error{
+
+  border-left: 8px solid $error-colour;
+  padding-left: 15px;
+    // padding-bottom: 20px;
+    @include responsive-padding(4, "bottom", $adjustment: $button-shadow-size); // s2
+    @include responsive-margin(1, "bottom", $adjustment: $button-shadow-size); // s2
+}
+
+.validation-summary-valid {
+  display:none;
+}
+.input-validation-error{
+  border-bottom-color: $error-colour !important;
+  margin-bottom: 10px;
 }

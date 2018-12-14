@@ -365,6 +365,15 @@ p {
 .hr-employer {
   background-color: #ffb007; }
 
+.text--apprentice {
+  color: #006dff; }
+
+.text--employer {
+  color: #ffb007; }
+
+.text-danger {
+  color: #C42B3A; }
+
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
 /* Document
    ========================================================================== */
@@ -1336,7 +1345,21 @@ template {
   margin-bottom: 0; }
 
 .form-group {
+  font-family: nobel, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.25;
   margin-bottom: 25px; }
+  @media (min-width: 46.25em) {
+    .form-group {
+      font-size: 19px;
+      line-height: 1.31579; } }
+  @media print {
+    .form-group {
+      font-size: 14pt;
+      line-height: 1.15; } }
   @media (min-width: 46.25em) {
     .form-group {
       margin-bottom: 35px; } }
@@ -1354,6 +1377,50 @@ template {
 
 .form-section {
   background: inherit !important; }
+
+.form-validation-summary {
+  font-family: nobel, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 1.25;
+  border: 8px solid #C42B3A;
+  margin-bottom: 25px;
+  padding: 15px; }
+  @media (min-width: 46.25em) {
+    .form-validation-summary {
+      font-size: 19px;
+      line-height: 1.31579; } }
+  @media print {
+    .form-validation-summary {
+      font-size: 14pt;
+      line-height: 1.15; } }
+  @media (min-width: 46.25em) {
+    .form-validation-summary {
+      margin-bottom: 35px; } }
+  @media (min-width: 46.25em) {
+    .form-validation-summary {
+      padding: 15px; } }
+
+.form-group-validation-error {
+  border-left: 8px solid #C42B3A;
+  padding-left: 15px;
+  padding-bottom: 20px;
+  margin-bottom: 10px; }
+  @media (min-width: 46.25em) {
+    .form-group-validation-error {
+      padding-bottom: 25px; } }
+  @media (min-width: 46.25em) {
+    .form-group-validation-error {
+      margin-bottom: 10px; } }
+
+.validation-summary-valid {
+  display: none; }
+
+.input-validation-error {
+  border-bottom-color: #C42B3A !important;
+  margin-bottom: 10px; }
 
 .header {
   background: #000;
@@ -1668,7 +1735,7 @@ template {
   .input::placeholder .input[type="number"] {
     -moz-appearance: textfield; }
   .input::placeholder .input--error {
-    border: 4px solid #c00; }
+    border: 4px solid #C42B3A; }
   .input::placeholder .input--width-30 {
     max-width: 59ex; }
   .input::placeholder .input--width-20 {
@@ -1863,19 +1930,20 @@ template {
 .modal-dialog {
   background: #fefefe;
   border: #212121 solid 1px;
-  margin-left: -200px;
   position: fixed;
-  left: 32%;
+  left: 20%;
   top: -100%;
   z-index: 2010;
   width: 60%;
+  height: 90%;
   -webkit-transform: translate(0, -500%);
   -ms-transform: translate(0, -500%);
   transform: translate(0, -500%);
   -webkit-transition: -webkit-transform 0.3s ease-out;
   -moz-transition: -moz-transform 0.3s ease-out;
   -o-transition: -o-transform 0.3s ease-out;
-  transition: transform 0.3s ease-out; }
+  transition: transform 0.3s ease-out;
+  overflow: scroll; }
 
 .modal-body {
   padding: 20px; }
@@ -2389,6 +2457,141 @@ template {
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   border-radius: 50%; }
+
+.radios__item {
+  font-family: nobel, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.25;
+  display: block;
+  position: relative;
+  min-height: 40px;
+  margin-bottom: 10px;
+  padding: 0 0 0 40px;
+  clear: left; }
+  @media (min-width: 46.25em) {
+    .radios__item {
+      font-size: 19px;
+      line-height: 1.31579; } }
+  @media print {
+    .radios__item {
+      font-size: 14pt;
+      line-height: 1.15; } }
+
+.radios__item:last-child,
+.radios__item:last-of-type {
+  margin-bottom: 0; }
+
+.radios__input {
+  position: absolute;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  cursor: pointer;
+  margin: 0;
+  opacity: 0; }
+
+.radios__label {
+  display: inline-block;
+  margin-bottom: 0;
+  padding: 8px 15px 5px;
+  cursor: pointer;
+  -ms-touch-action: manipulation;
+  touch-action: manipulation; }
+
+.radios__hint {
+  display: block;
+  padding-right: 15px;
+  padding-left: 15px; }
+
+.radios__input + .radios__label::before {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 40px;
+  height: 40px;
+  border: 5px solid currentColor;
+  border-radius: 50%;
+  background: transparent; }
+
+.radios__input + .radios__label::after {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: 0;
+  height: 0;
+  border: 10px solid currentColor;
+  border-radius: 50%;
+  opacity: 0;
+  background: currentColor; }
+
+.radios__input:focus + .radios__label::before {
+  outline: 3px solid transparent;
+  outline-offset: 3px;
+  box-shadow: 0 0 0 4px #ffbf47; }
+
+.radios__input:checked + .radios__label::after {
+  opacity: 1; }
+
+.radios__input:disabled,
+.radios__input:disabled + .radios__label {
+  cursor: default; }
+
+.radios__input:disabled + .radios__label {
+  opacity: .5; }
+
+@media (min-width: 46.25em) {
+  .radios--inline:after {
+    content: "";
+    display: block;
+    clear: both; }
+  .radios--inline .radios__item {
+    margin-right: 20px;
+    float: left;
+    clear: none; } }
+
+.radios--inline.radios--conditional .radios__item {
+  margin-right: 0;
+  float: none; }
+
+.radios__divider {
+  font-family: nobel, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.25;
+  width: 40px;
+  margin-bottom: 10px;
+  text-align: center; }
+  @media (min-width: 46.25em) {
+    .radios__divider {
+      font-size: 19px;
+      line-height: 1.31579; } }
+  @media print {
+    .radios__divider {
+      font-size: 14pt;
+      line-height: 1.15; } }
+
+.radios__conditional {
+  margin-bottom: 15px;
+  margin-left: 18px;
+  padding-left: 33px;
+  border-left: 4px solid #ddd; }
+  @media (min-width: 46.25em) {
+    .radios__conditional {
+      margin-bottom: 20px; } }
+  .js-enabled .radios__conditional--hidden {
+    display: none; }
+  .radios__conditional > :last-child {
+    margin-bottom: 0; }
 
 .section {
   padding: 50px; }
