@@ -1,9 +1,11 @@
 $grid-widths: (
+        one-fifth: 20%,
     one-quarter: 25%,
     one-third: 33.3333%,
     one-half: 50%,
     two-thirds: 66.6666%,
     three-quarters: 75%,
+    four-fifths: 80%,
     full: 100%
 );
 
@@ -37,11 +39,13 @@ $grid-widths: (
 }
 
 @include grid-row;
+@include grid-column(one-fifth);
 @include grid-column(one-quarter);
 @include grid-column(one-third);
 @include grid-column(one-half);
 @include grid-column(two-thirds);
 @include grid-column(three-quarters);
+@include grid-column(four-fifths);
 @include grid-column();
 
 .grid-row-full-width {
