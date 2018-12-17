@@ -1,4 +1,3 @@
-@charset "UTF-8";
 .clearfix:after {
   content: "";
   display: block;
@@ -1896,18 +1895,22 @@ template {
   position: relative; }
 
 .list--bullet > li:before {
-  content: "•";
-  font-size: 3em;
+  content: "";
   position: absolute;
-  left: -25px;
-  top: .03em;
-  line-height: .5em; }
+  left: -20px;
+  top: 8px;
+  background-color: #6F777B;
+  width: 10px;
+  height: 10px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%; }
 
 .list--bullet-apprentice > li:before {
-  color: #006dff; }
+  background-color: #006dff; }
 
 .list--bullet-employer > li:before {
-  color: #ffb007; }
+  background-color: #ffb007; }
 
 .list--number {
   padding-left: 20px;

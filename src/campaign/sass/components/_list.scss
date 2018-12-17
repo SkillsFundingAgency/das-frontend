@@ -25,20 +25,24 @@
 }
 
 .list--bullet > li:before {
-    content: "•";
-    font-size: 3em;
-    position: absolute;
-    left: spacing(5) * -1;
-    top: .03em;
-    line-height: .5em;
+  content: "";
+  position: absolute;
+  left: spacing(4) * -1;
+  top: 8px;
+  background-color: $text-colour;
+  width: 10px;
+  height: 10px;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
 }
 
 .list--bullet-apprentice > li:before {
-  color: $apprentice;
+  background-color: $apprentice;
 }
 
 .list--bullet-employer > li:before {
-  color: $employer
+  background-color: $employer
 }
 
 .list--number {
