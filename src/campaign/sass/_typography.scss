@@ -70,16 +70,11 @@
 // Generic
 
 p {
-  font-family: $font-family;
+  @include typography-common;
   font-weight: $font-weight-light;
   font-size: 21px;
   color: $text-colour;
 }
-
-// Commented out as this is overriding colours set on child block elements
-// #main-content a {
-//   color: $apprentice;
-// }
 
 .caption-s + .heading-m {
   margin-top: .2em;
