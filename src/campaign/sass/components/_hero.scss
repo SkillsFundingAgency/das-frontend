@@ -27,6 +27,12 @@
 
 .hero__link {
   color: #fff;
+  text-decoration: none;
+  border-bottom: 1px solid #fff;
+  &:hover,
+  &:focus {
+    border-bottom-color: transparent;
+  }
 }
 
 .hero .list--arrows > li:before {
