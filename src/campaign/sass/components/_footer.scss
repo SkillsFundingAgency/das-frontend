@@ -8,11 +8,11 @@
   $footer-background: $grey-1;
   $footer-border-top: #a1acb2;
   $footer-border: colour("grey-2");
-  $footer-header: #FFFFFF;
-  $footer-text: #BFC1C3;
+  $footer-header: #fff;
+  $footer-text: #bfc1c3;
   $footer-text-size: 18;
   $footer-link: $footer-text;
-  $footer-link-hover: #EEEEEE;
+  $footer-link-hover: #eee;
 
   $focus-text-colour:  $footer-link-hover;
 
@@ -23,93 +23,72 @@
   $footer-crest-image-width: ($footer-crest-image-width-2x / 2);
   $footer-crest-image-height: ($footer-crest-image-height-2x / 2);
 
-  .footer {
-    @include font($size: $footer-text-size);
-    @include responsive-padding(7, "top");
-    @include responsive-padding(5, "bottom");
-    @include responsive-padding(10, "left");
-    @include responsive-padding(10, "right");
-    font-style: book;
-    line-height: 23px;
-    color: $footer-text;
-    background: $footer-background;
-    letter-spacing: 0rem;
-
-    @include mq ($until: tablet) {
-      @include responsive-padding(4, "left");
-      @include responsive-padding(4, "right");
-    }
-  }
-
-  .footer__apprenticeship-logo{
-      width:100%;
-      max-width: 200px;
-  }
-  .footer__hm-government-logo{
-    @include mq ($until: tablet) {
-      @include responsive-margin(6, "bottom");
-    }
+.footer {
+  @include font($size: $footer-text-size, $weight: light);
+  color: $footer-text;
+  background: $footer-background;
 }
 
-  .footer__link {
-    @include focusable-fill;
-    font-weight: 200;
-    &:link,
-    &:visited {
-      color: $footer-link;
-    }
+.footer--privacy {
+  background: #1e1d1d;
+}
 
-    &:hover,
-    &:active {
-      color: $footer-link-hover;
-    }
+.footer__apprenticeship-logo{
+    width:100%;
+    max-width: 200px;
+}
+.footer__hm-government-logo{
+  @include mq ($until: tablet) {
+    @include responsive-margin(6, "bottom");
+  }
+}
 
-    // When focussed, the text colour needs to be darker to ensure that colour
-    // contrast is still acceptable
-    &:focus {
-      color: $focus-text-colour;
-    }
-
-
-    // alphagov/govuk_template includes a specific a:link:focus selector
-    // designed to make unvisited links a slightly darker blue when focussed, so
-    // we need to override the text colour for that combination of selectors.
-    // @include compatibility(govuk_template) {
-    //   &:link:focus {
-    //     @include text-colour;
-    //   }
-    // }
+.footer__link {
+  @include focusable-fill;
+  &:link,
+  &:visited {
+    color: $footer-link;
   }
 
-  .footer__section-break {
-    margin: 0; // Reset `<hr>` default margins
-    @include responsive-margin(8, "bottom");
-    border: 0; // Reset `<hr>` default borders
-    border-bottom: 1px solid $footer-border;
+  &:hover,
+  &:active {
+    color: $footer-link-hover;
   }
 
-  .footer__meta {
-    display: flex; // Support: Flexbox
-    margin-right: -$gutter-half;
-    margin-left: -$gutter-half;
-    flex-wrap: wrap; // Support: Flexbox
-    align-items: flex-end; // Support: Flexbox
-    justify-content: center; // Support: Flexbox
-    margin-top:$gutter;
+  &:focus {
+    color: $focus-text-colour;
   }
+}
 
-  .footer__meta-item {
-    margin-right: $gutter-half;
-    margin-bottom: spacing(5);
-    margin-left: $gutter-half;
-  }
+.footer__section-break {
+  margin: 0; // Reset `<hr>` default margins
+  @include responsive-margin(8, "bottom");
+  border: 0; // Reset `<hr>` default borders
+  border-bottom: 1px solid $footer-border;
+}
 
-  .footer__meta-item--grow {
-    flex: 1; // Support: Flexbox
-    @include mq ($until: tablet) {
-      flex-basis: 320px; // Support: Flexbox
-    }
+.footer__meta {
+  display: flex; // Support: Flexbox
+  margin-right: -$gutter-half;
+  margin-left: -$gutter-half;
+  flex-wrap: wrap; // Support: Flexbox
+  align-items: flex-end; // Support: Flexbox
+  justify-content: center; // Support: Flexbox
+}
+
+.footer__meta-item {
+  margin-right: $gutter-half;
+  margin-bottom: spacing(5);
+  margin-left: $gutter-half;
+}
+
+.footer__meta-item--grow {
+  flex: 1; // Support: Flexbox
+  @include mq ($until: tablet) {
+    flex-basis: 320px; // Support: Flexbox
   }
+}
+
 .footer__hr{
   border: 0;
   display: block;
@@ -119,165 +98,164 @@
   background-color: #333;  
 }
 
-  .footer__licence-logo {
-    display: inline-block;
-    margin-right: spacing(2);
-    @include mq ($until: desktop) {
-      margin-bottom: spacing(3);
-    }
-    vertical-align: top;
-  }
-
-  .footer__licence-description {
-    @include mq ($from: tablet) {
-      
-    text-align: right;
-    }
-  }
-
-  .footer__copyright-logo {
-    display: inline-block;
-    min-width: $footer-crest-image-width;
-    padding-top: ($footer-crest-image-height + spacing(2));
-    background-image: image-url("crest.png");
-    @include device-pixel-ratio {
-      background-image: image-url("crest-2x.png");
-    }
-    background-repeat: no-repeat;
-    background-position: 50% 0%;
-    background-size: $footer-crest-image-width $footer-crest-image-height;
-    text-align: center;
-    text-decoration: none;
-    white-space: nowrap;
-  }
-
-  .footer__inline-list {
-    margin-top: 0;
+.footer__licence-logo {
+  display: inline-block;
+  margin-right: spacing(2);
+  @include mq ($until: desktop) {
     margin-bottom: spacing(3);
-    padding: 0;
-    list-style: none;
-    
-
-    @include mq($from: tablet){
-      float: right;
-    }
   }
+  vertical-align: top;
+}
 
-  .footer__meta-custom {
-    margin-bottom: spacing(4);
+.footer__licence-description {
+  @include mq ($from: tablet) {
+    text-align: right;
   }
+}
 
-  .footer__inline-list-item {
-    margin-right: spacing(3);
-    padding-right: spacing(3);
-    margin-bottom: spacing(1);
-
-    @include mq($from: tablet){
-      display: inline-block;
-      border-right: $footer-text solid 1px;
-    }
-    @include mq($until: tablet){
-      line-height: normal;
-      margin-bottom:0;
-    }
+.footer__copyright-logo {
+  display: inline-block;
+  min-width: $footer-crest-image-width;
+  padding-top: ($footer-crest-image-height + spacing(2));
+  background-image: image-url("crest.png");
+  @include device-pixel-ratio {
+    background-image: image-url("crest-2x.png");
   }
-  .footer__inline-list-item:last-child {
-    border-right: none;
-    padding-right: spacing(0);
-    margin-right: spacing(0);
-  }
+  background-repeat: no-repeat;
+  background-position: 50% 0%;
+  background-size: $footer-crest-image-width $footer-crest-image-height;
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+}
 
-
-  .footer__heading {
-    @include responsive-margin(7, "bottom");
-    padding-bottom: spacing(4);
-    @include mq ($until: tablet) {
-      padding-bottom: spacing(2);
-    }
-    border-bottom: 1px solid $footer-border;
+.footer__inline-list {
+  margin-top: 0;
+  margin-bottom: spacing(2);
+  padding: 0;
+  list-style: none;
+  @include mq($from: tablet){
+    float: right;
   }
+}
 
-  .footer__text{
-    @include font($size: $footer-text-size, $weight:200);
-    margin-block-end: 0;
-    margin-block-start: 0;
-  }
-  .footer__navigation {
-    display: flex; // Support: Flexbox
-    margin-right: -$gutter-half;
-    margin-left: -$gutter-half;
-    flex-wrap: wrap; // Support: Flexbox
-  }
+.footer__meta-custom {
+  margin-bottom: spacing(4);
+}
 
-  .footer__section {
+.footer__inline-list-item {
+  margin-right: spacing(3);
+  padding-right: spacing(3);
+  @include mq($from: tablet) {
     display: inline-block;
-   
-    margin-bottom: $gutter;
+    border-right: 1px solid #70777b;
+    line-height: 1;
+    margin-bottom: spacing(1);
+  }
+}
 
-    vertical-align: top;
-    // Ensure columns take up equal width (typically one-half:one-half)
-    flex-grow: 1; // Support: Flexbox
-    flex-shrink: 1; // Support: Flexbox
-    @include mq ($from: tablet) {
-      margin-top: 10px;
-    }
+.footer__inline-list-item:last-child {
+  border-right: none;
+  padding-right: 0;
+  margin-right: 0;
+}
 
-    @include mq ($until: tablet) {
-      // Make sure columns do not drop below 200px in width
-      // Will typically result in wrapping, and end up in a single column on smaller screens.
-      flex-basis: 200px; // Support: Flexbox
-      margin-bottom:0px;
-      background-color: #000000;
-      padding:0;
-    }
+.footer__heading {
+  @include responsive-margin(7, "bottom");
+  padding-bottom: spacing(4);
+  @include mq ($until: tablet) {
+    padding-bottom: spacing(2);
+  }
+  border-bottom: 1px solid $footer-border;
+}
+
+.footer__text{
+  @include font($size: $footer-text-size, $weight:200);
+  margin-block-end: 0;
+  margin-block-start: 0;
+  color: $footer-text;
+}
+.footer__navigation {
+  display: flex; // Support: Flexbox
+  margin-right: -$gutter-half;
+  margin-left: -$gutter-half;
+  flex-wrap: wrap; // Support: Flexbox
+}
+
+.footer__section {
+  display: inline-block;
+
+  margin-bottom: $gutter;
+
+  vertical-align: top;
+  // Ensure columns take up equal width (typically one-half:one-half)
+  flex-grow: 1; // Support: Flexbox
+  flex-shrink: 1; // Support: Flexbox
+  @include mq ($from: tablet) {
+    margin-top: 10px;
   }
 
-  // Sections two-third:one-third on desktop
-  @include mq ($from: desktop) {
-    .footer__section:first-child {
-      flex-grow: 2; // Support: Flexbox
-    }
+  @include mq ($until: tablet) {
+    // Make sure columns do not drop below 200px in width
+    // Will typically result in wrapping, and end up in a single column on smaller screens.
+    flex-basis: 200px; // Support: Flexbox
+    margin-bottom:0px;
+    background-color: #000000;
+    padding:0;
   }
+}
 
-  .footer__list {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-    column-gap: $gutter; // Support: Columns
-    @include mq ($until: tablet) {
-      @include responsive-margin(4, "top");
-      @include responsive-margin(4, "bottom");
-    }
+// Sections two-third:one-third on desktop
+@include mq ($from: desktop) {
+  .footer__section:first-child {
+    flex-grow: 2; // Support: Flexbox
   }
+}
 
-  .footer__list-header{
-    @include font($size: 14, $weight:bold);
-    text-transform: uppercase;
-    color: $footer-header;
-    letter-spacing: 0.05rem;
-    @include mq ($until: tablet) {
-      padding: 0 20px;
-      background-color: $footer-background;
-    }
-  }
-
-  @include mq ($from: desktop) {
-    .footer__list--columns-2 {
-      column-count: 2; // Support: Columns
-    }
-
-    .footer__list--columns-3 {
-      column-count: 3; // Support: Columns
-    }
-  }
-
-  .footer__list-item {
+.footer__list {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  column-gap: $gutter;
+  @include mq ($until: tablet) {
+    @include responsive-margin(4, "top");
     @include responsive-margin(4, "bottom");
-    @include mq ($until: tablet) {
-      padding: 0 15px;
-    }
+  }
+}
+
+.footer__list-header {
+  @include font($size: 14, $weight:bold);
+  text-transform: uppercase;
+  color: $footer-header;
+  letter-spacing: 0.05rem;
+
+}
+
+.footer__list-header.accordion__section-header {
+  @include mq ($until: tablet) {
+    padding: 0 20px;
+    background-color: $footer-background;
+  }
+}
+
+@include mq ($from: desktop) {
+  .footer__list--columns-2 {
+    column-count: 2; // Support: Columns
   }
 
-  .footer__list-item:last-child {
-    margin-bottom: 0;
+  .footer__list--columns-3 {
+    column-count: 3; // Support: Columns
   }
+}
+
+.footer__list-item {
+  @include responsive-margin(4, "bottom");
+  padding: 0 20px;
+  @include mq ($from: tablet) {
+    padding-left: 0;
+  }
+}
+
+.footer__list-item:last-child {
+  margin-bottom: 0;
+}
