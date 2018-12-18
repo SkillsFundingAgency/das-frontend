@@ -8,11 +8,11 @@
   $footer-background: $grey-1;
   $footer-border-top: #a1acb2;
   $footer-border: colour("grey-2");
-  $footer-header: #FFFFFF;
-  $footer-text: #BFC1C3;
+  $footer-header: #fff;
+  $footer-text: #bfc1c3;
   $footer-text-size: 18;
   $footer-link: $footer-text;
-  $footer-link-hover: #EEEEEE;
+  $footer-link-hover: #eee;
 
   $focus-text-colour:  $footer-link-hover;
 
@@ -23,72 +23,71 @@
   $footer-crest-image-width: ($footer-crest-image-width-2x / 2);
   $footer-crest-image-height: ($footer-crest-image-height-2x / 2);
 
-  .footer {
-    @include font($size: $footer-text-size);
-    line-height: 23px;
-    color: $footer-text;
-    background: $footer-background;
-    letter-spacing: 0rem;
-
-  }
-
-  .footer__apprenticeship-logo{
-      width:100%;
-      max-width: 200px;
-  }
-  .footer__hm-government-logo{
-    @include mq ($until: tablet) {
-      @include responsive-margin(6, "bottom");
-    }
+.footer {
+  @include font($size: $footer-text-size, $weight: light);
+  color: $footer-text;
+  background: $footer-background;
 }
 
-  .footer__link {
-    @include focusable-fill;
-    font-weight: 200;
-    &:link,
-    &:visited {
-      color: $footer-link;
-    }
+.footer--privacy {
+  background: #1e1d1d;
+}
 
-    &:hover,
-    &:active {
-      color: $footer-link-hover;
-    }
+.footer__apprenticeship-logo{
+    width:100%;
+    max-width: 200px;
+}
+.footer__hm-government-logo{
+  @include mq ($until: tablet) {
+    @include responsive-margin(6, "bottom");
+  }
+}
 
-    &:focus {
-      color: $focus-text-colour;
-    }
+.footer__link {
+  @include focusable-fill;
+  &:link,
+  &:visited {
+    color: $footer-link;
   }
 
-  .footer__section-break {
-    margin: 0; // Reset `<hr>` default margins
-    @include responsive-margin(8, "bottom");
-    border: 0; // Reset `<hr>` default borders
-    border-bottom: 1px solid $footer-border;
+  &:hover,
+  &:active {
+    color: $footer-link-hover;
   }
 
-  .footer__meta {
-    display: flex; // Support: Flexbox
-    margin-right: -$gutter-half;
-    margin-left: -$gutter-half;
-    flex-wrap: wrap; // Support: Flexbox
-    align-items: flex-end; // Support: Flexbox
-    justify-content: center; // Support: Flexbox
-    margin-top:$gutter;
+  &:focus {
+    color: $focus-text-colour;
   }
+}
 
-  .footer__meta-item {
-    margin-right: $gutter-half;
-    margin-bottom: spacing(5);
-    margin-left: $gutter-half;
-  }
+.footer__section-break {
+  margin: 0; // Reset `<hr>` default margins
+  @include responsive-margin(8, "bottom");
+  border: 0; // Reset `<hr>` default borders
+  border-bottom: 1px solid $footer-border;
+}
 
-  .footer__meta-item--grow {
-    flex: 1; // Support: Flexbox
-    @include mq ($until: tablet) {
-      flex-basis: 320px; // Support: Flexbox
-    }
+.footer__meta {
+  display: flex; // Support: Flexbox
+  margin-right: -$gutter-half;
+  margin-left: -$gutter-half;
+  flex-wrap: wrap; // Support: Flexbox
+  align-items: flex-end; // Support: Flexbox
+  justify-content: center; // Support: Flexbox
+}
+
+.footer__meta-item {
+  margin-right: $gutter-half;
+  margin-bottom: spacing(5);
+  margin-left: $gutter-half;
+}
+
+.footer__meta-item--grow {
+  flex: 1; // Support: Flexbox
+  @include mq ($until: tablet) {
+    flex-basis: 320px; // Support: Flexbox
   }
+}
 
 .footer__hr{
   border: 0;
@@ -110,8 +109,7 @@
 
 .footer__licence-description {
   @include mq ($from: tablet) {
-
-  text-align: right;
+    text-align: right;
   }
 }
 
@@ -133,11 +131,9 @@
 
 .footer__inline-list {
   margin-top: 0;
-  margin-bottom: spacing(3);
+  margin-bottom: spacing(2);
   padding: 0;
   list-style: none;
-
-
   @include mq($from: tablet){
     float: right;
   }
@@ -150,15 +146,11 @@
 .footer__inline-list-item {
   margin-right: spacing(3);
   padding-right: spacing(3);
-  margin-bottom: spacing(1);
-
-  @include mq($from: tablet){
+  @include mq($from: tablet) {
     display: inline-block;
-    border-right: $footer-text solid 1px;
-  }
-  @include mq($until: tablet){
-    line-height: normal;
-    margin-bottom:0;
+    border-right: 1px solid #70777b;
+    line-height: 1;
+    margin-bottom: spacing(1);
   }
 }
 
@@ -167,7 +159,6 @@
   padding-right: 0;
   margin-right: 0;
 }
-
 
 .footer__heading {
   @include responsive-margin(7, "bottom");
@@ -182,6 +173,7 @@
   @include font($size: $footer-text-size, $weight:200);
   margin-block-end: 0;
   margin-block-start: 0;
+  color: $footer-text;
 }
 .footer__navigation {
   display: flex; // Support: Flexbox
@@ -224,18 +216,22 @@
   margin: 0;
   padding: 0;
   list-style: none;
-  column-gap: $gutter; // Support: Columns
+  column-gap: $gutter;
   @include mq ($until: tablet) {
     @include responsive-margin(4, "top");
     @include responsive-margin(4, "bottom");
   }
 }
 
-.footer__list-header{
+.footer__list-header {
   @include font($size: 14, $weight:bold);
   text-transform: uppercase;
   color: $footer-header;
   letter-spacing: 0.05rem;
+
+}
+
+.footer__list-header.accordion__section-header {
   @include mq ($until: tablet) {
     padding: 0 20px;
     background-color: $footer-background;
