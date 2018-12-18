@@ -1094,11 +1094,6 @@ template {
   font-weight: 500;
   font-size: 16px;
   line-height: 1.25;
-  padding-top: 25px;
-  padding-bottom: 15px;
-  padding-left: 60px;
-  padding-right: 60px;
-  font-style: book;
   line-height: 23px;
   color: #BFC1C3;
   background: #212121;
@@ -1111,28 +1106,6 @@ template {
     .footer {
       font-size: 14pt;
       line-height: 1.15; } }
-  @media (min-width: 46.25em) {
-    .footer {
-      padding-top: 40px; } }
-  @media (min-width: 46.25em) {
-    .footer {
-      padding-bottom: 25px; } }
-  @media (min-width: 46.25em) {
-    .footer {
-      padding-left: 80px; } }
-  @media (min-width: 46.25em) {
-    .footer {
-      padding-right: 80px; } }
-  @media (max-width: 46.24em) {
-    .footer {
-      padding-left: 15px;
-      padding-right: 15px; } }
-  @media (max-width: 46.24em) and (min-width: 46.25em) {
-    .footer {
-      padding-left: 20px; } }
-  @media (max-width: 46.24em) and (min-width: 46.25em) {
-    .footer {
-      padding-right: 20px; } }
 
 .footer__apprenticeship-logo {
   width: 100%;
@@ -1352,13 +1325,14 @@ template {
     column-count: 3; } }
 
 .footer__list-item {
-  margin-bottom: 15px; }
+  margin-bottom: 15px;
+  padding: 0 20px; }
   @media (min-width: 46.25em) {
     .footer__list-item {
       margin-bottom: 20px; } }
-  @media (max-width: 46.24em) {
+  @media (min-width: 46.25em) {
     .footer__list-item {
-      padding: 0 15px; } }
+      padding-left: 0; } }
 
 .footer__list-item:last-child {
   margin-bottom: 0; }
@@ -1709,7 +1683,7 @@ template {
       padding-left: 30px; } }
   @media (min-width: 61.25em) {
     .hero-heading__heading {
-      font-size: 72px;
+      font-size: 68px;
       text-indent: -40px;
       padding-left: 40px; } }
   .hero-banner .hero-heading__heading {
