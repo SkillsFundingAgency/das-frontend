@@ -782,14 +782,7 @@ template {
   font-weight: 700;
   font-size: 14px;
   line-height: 1.5;
-  margin-top: 0;
-  margin-bottom: 25px;
-  margin-left: 10px;
-  margin-right: 10px;
-  padding-top: 14.5px;
-  padding-bottom: 10.5px;
-  padding-left: 24.5px;
-  padding-right: 20.5px;
+  margin: 0;
   padding: 10px 30px;
   box-sizing: border-box;
   display: inline-block;
@@ -816,15 +809,6 @@ template {
   .button:focus {
     outline: 3px solid #ffbf47;
     outline-offset: 0; }
-  @media (min-width: 46.25em) {
-    .button {
-      margin-bottom: 35px; } }
-  @media (min-width: 46.25em) {
-    .button {
-      margin-left: 10px; } }
-  @media (min-width: 46.25em) {
-    .button {
-      margin-right: 10px; } }
   @media (min-width: 46.25em) {
     .button {
       width: auto; } }
@@ -2044,7 +2028,8 @@ template {
       width: auto;
       height: auto;
       background: none;
-      border: none; } }
+      border: none;
+      overflow: visible; } }
   .js-menu-open .navigation {
     right: 0; }
 
