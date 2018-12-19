@@ -2065,6 +2065,7 @@ template {
 .navigation__ordered-list {
   padding: 0;
   margin: 0 -20px 20px;
+  margin: 0;
   list-style: none; }
   .navigation__ordered-list > li {
     counter-increment: li;
@@ -2080,17 +2081,20 @@ template {
       white-space: nowrap;
       position: absolute;
       top: 17px;
-      left: 20px; }
+      left: 0px; }
       .navigation__sub-menu--apprentice .navigation__ordered-list > li:before {
         color: #006dff; }
       .navigation__sub-menu--employer .navigation__ordered-list > li:before {
         color: #ffb007; }
     .navigation__ordered-list > li > a {
-      padding-left: 42px; }
+      padding-left: 22px; }
+
+.navigation__ordered-list--reset-3 {
+  counter-reset: li 3; }
 
 @media (min-width: 75em) {
-  .navigation__list > li,
-  .navigation__ordered-list > li {
+  .navigation__list,
+  .navigation__ordered-list {
     float: left;
     width: 50%; } }
 
@@ -2118,7 +2122,7 @@ template {
   @media (min-width: 75em) {
     .navigation__list-item--with-button {
       font-size: 14px;
-      padding-left: 15px; } }
+      padding-left: 25px; } }
 
 .navigation__list-item--with-button > .button {
   margin: 0; }
@@ -2159,14 +2163,14 @@ template {
       line-height: 1.15; } }
   @media (min-width: 56.25em) {
     .navigation__link--top-level {
-      padding: 25px 10px 60px;
+      padding: 25px 20px 60px;
       font-size: 13px;
       color: #fff; }
       .header:hover .navigation__link--top-level {
         color: #0B0C0C; } }
   @media (min-width: 75em) {
     .navigation__link--top-level {
-      padding: 25px 15px 60px;
+      padding: 25px 25px 60px;
       font-size: 14px; } }
 
 .navigation__sub-menu-toggle {

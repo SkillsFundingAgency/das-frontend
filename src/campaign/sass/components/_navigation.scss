@@ -115,6 +115,7 @@
 .navigation__ordered-list {
   padding: 0;
   margin: 0 -20px 20px;
+  margin: 0;
   list-style: none;
   & > li {
     counter-increment: li;
@@ -130,7 +131,7 @@
       white-space: nowrap;
       position: absolute;
       top: 17px;
-      left: 20px;
+      left: 0px;
       .navigation__sub-menu--apprentice & {
         color: $apprentice;
       }
@@ -139,17 +140,21 @@
       }
     }
     & > a {
-      padding-left: 42px;
+      padding-left: 22px;
     }
   }
 }
 
-.navigation__list > li,
-.navigation__ordered-list > li {
+.navigation__ordered-list--reset-3 {
+  counter-reset: li 3
+}
+
+.navigation__list,
+.navigation__ordered-list {
   @include media-query($from: $nav-breakpoint-desktop) {
     float: left;
     width: 50%;
-  }
+ }
 }
 
 .navigation__list-item {
@@ -178,7 +183,7 @@
   }
   @include media-query($from: $nav-breakpoint-desktop) {
     font-size: 14px;
-    padding-left: 15px;
+    padding-left: 25px;
   }
 }
 
@@ -209,15 +214,19 @@
   padding: 15px 20px;
   position: relative;
   @include media-query($from: $nav-breakpoint) {
-    padding: 25px 10px 60px;
+    padding: 25px 20px 60px;
     font-size: 13px;
     color: #fff;
     .header:hover & {
       color: $black;
+      &:hover,
+      &:focus {
+
+      }
     }
   }
   @include media-query($from: $nav-breakpoint-desktop) {
-    padding: 25px 15px 60px;
+    padding: 25px 25px 60px;
     font-size: 14px;
   }
 }
