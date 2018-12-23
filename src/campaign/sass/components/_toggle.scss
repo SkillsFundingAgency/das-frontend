@@ -1,0 +1,95 @@
+
+.toggleContainer{
+  display: flex;
+  align-items: center;
+  margin: 0px 0px;
+  justify-items: center;
+}
+.toggleContainer input[type=checkbox] {display: none;}
+
+.toggleContainer .q {font-size: 15px; margin-bottom: 6px;}
+
+.toggleContainer label {
+	display: block;
+	width: 60px;
+	height: 30px;
+  border:3px solid #333333;
+  left:25%;
+	cursor: pointer;
+	position: relative;
+	-webkit-border-radius: 30px;
+	        border-radius: 30px;
+}
+
+.toggleContainer label:after{
+	display: block;
+	content: "";
+	width: 20px;
+    height: 20px;
+    border: #333 solid;
+	-webkit-border-radius: 50%;
+	        border-radius: 50%;
+	position: absolute;
+	left: 2px;
+	top: 2px;
+	-webkit-transition: all 0.3s ease;
+	   -moz-transition: all 0.3s ease;
+	    -ms-transition: all 0.3s ease;
+	     -o-transition: all 0.3s ease;
+	        transition: all 0.3s ease;
+}
+
+.toggleContainer label:hover {
+	border:3px solid #000;
+}
+
+.toggleContainer label:hover:after{
+	background: #000;
+}
+
+.toggleContainer label:active {
+	border:3px solid #666666;
+	background: #666;
+}
+
+.toggleContainer label:active:after{
+	background: #fff;
+}
+
+.toggleContainer label:before{
+	display: inline-block;
+	height: 25px;
+	line-height: 25px;
+	white-space: nowrap;
+	position: absolute;
+	left: 17px;
+	top: 35px;
+  
+  @include font($size: 14,$weight:bold);
+}
+
+.toggleContainer input[type=checkbox] + label:before {
+  content: attr(data-off);
+  text-transform: capitalize;
+  color: $grey-3;
+}
+.toggleContainer input[type=checkbox]:checked + label:before {
+  content: attr(data-on);
+  text-transform: capitalize;
+  color: $apprentice;
+}
+
+.toggleContainer input[type=checkbox]:checked + label:after {
+	left: 32px;
+  background: #0478FF;
+  border-color: #0478FF;
+}
+
+
+.toggleContainer input[type=checkbox]:checked + label:active {
+	background: #666;
+}
+
+.toggleContainer input[type=checkbox]:checked + label:active:after{
+	background: #fff;
+}
