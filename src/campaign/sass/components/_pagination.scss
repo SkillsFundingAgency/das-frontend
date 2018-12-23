@@ -1,5 +1,5 @@
 .pagination {
-  margin-top: 30px;
+  margin-top: 80px;
   border-top: 1px solid #ddd;
   padding: 30px 0 0 0;
   list-style: none;
@@ -14,7 +14,7 @@
   }
 }
 
-.pagination__link {
+.page .pagination__link {
   text-transform: uppercase;
   font-family: $font-family;
   font-weight: bold;
@@ -24,7 +24,11 @@
   &:focus {
     text-decoration: underline;
   }
-  .pagination--employer & {
+}
+
+.page .pagination--employer .pagination__link {
+  color: $employer;
+  &:visited {
     color: $employer;
   }
 }

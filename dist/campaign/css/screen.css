@@ -2358,7 +2358,7 @@ template {
     background: #ffb007; }
 
 .pagination {
-  margin-top: 30px;
+  margin-top: 80px;
   border-top: 1px solid #ddd;
   padding: 30px 0 0 0;
   list-style: none; }
@@ -2374,15 +2374,18 @@ template {
       width: 50%;
       float: left; } }
 
-.pagination__link {
+.page .pagination__link {
   text-transform: uppercase;
   font-family: nobel, sans-serif;
   font-weight: bold;
   color: #006dff;
   text-decoration: none; }
-  .pagination__link:hover, .pagination__link:focus {
+  .page .pagination__link:hover, .page .pagination__link:focus {
     text-decoration: underline; }
-  .pagination--employer .pagination__link {
+
+.page .pagination--employer .pagination__link {
+  color: #ffb007; }
+  .page .pagination--employer .pagination__link:visited {
     color: #ffb007; }
 
 @media (min-width: 46.25em) {
@@ -2781,15 +2784,11 @@ template {
       left: -19px; }
       .sidebar--employer .sidebar-nav > li:before {
         color: #ffb007; }
-    .sidebar-nav > li.sidebar-nav__section--active {
-      border-left-color: #006dff; }
-      .sidebar--employer .sidebar-nav > li.sidebar-nav__section--active {
-        border-left-color: #ffb007; }
-      .sidebar-nav > li.sidebar-nav__section--active:before {
-        background-color: #006dff;
-        color: #fff; }
-        .sidebar--employer .sidebar-nav > li.sidebar-nav__section--active:before {
-          background-color: #ffb007; }
+    .sidebar-nav > li.sidebar-nav__section--active:before {
+      background-color: #006dff;
+      color: #fff; }
+      .sidebar--employer .sidebar-nav > li.sidebar-nav__section--active:before {
+        background-color: #ffb007; }
     .sidebar-nav > li > a {
       text-transform: uppercase;
       color: #0B0C0C;

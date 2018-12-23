@@ -106,6 +106,7 @@ $timeline-width: 2px;
     margin: 0;
     left: $timeline-width * -1;
     border-left: $timeline-width solid transparent;
+
     &:before {
       content: counter(li);
       width: 1em;
@@ -131,10 +132,6 @@ $timeline-width: 2px;
     }
 
     &.sidebar-nav__section--active {
-      border-left-color: $apprentice;
-      .sidebar--employer & {
-        border-left-color: $employer;
-      }
       &:before {
         background-color: $apprentice;
         color: #fff;
