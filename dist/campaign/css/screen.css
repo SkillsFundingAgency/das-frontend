@@ -2152,11 +2152,16 @@ template {
       font-size: 13px;
       color: #fff; }
       .header:hover .navigation__link--top-level {
-        color: #0B0C0C; } }
+        color: #0B0C0C;
+        color: #646c6f; } }
   @media (min-width: 75em) {
     .navigation__link--top-level {
       padding: 25px 25px 60px;
       font-size: 14px; } }
+
+@media (min-width: 56.25em) {
+  .navigation__list-item:hover .navigation__link--top-level {
+    color: #0B0C0C; } }
 
 .navigation__sub-menu-toggle {
   position: absolute;

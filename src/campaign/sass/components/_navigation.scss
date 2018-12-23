@@ -219,15 +219,18 @@
     color: #fff;
     .header:hover & {
       color: $black;
-      &:hover,
-      &:focus {
-
-      }
+      color: $grey-3;
     }
   }
   @include media-query($from: $nav-breakpoint-desktop) {
     padding: 25px 25px 60px;
     font-size: 14px;
+  }
+}
+
+.navigation__list-item:hover .navigation__link--top-level {
+  @include media-query($from: $nav-breakpoint) {
+    color: $black;
   }
 }
 
@@ -363,6 +366,8 @@
     display: flex;
   }
 }
+
+
 
 .navigation__link {
   font-family: $font-family;
