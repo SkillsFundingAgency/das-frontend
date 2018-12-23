@@ -18,15 +18,7 @@ $offset: 2;
   
   @include focusable;
 
-  margin-top: 0;
-  @include responsive-margin(6, "bottom", $adjustment: $button-shadow-size); // s2
-  @include responsive-margin(1, "left", $adjustment: $button-shadow-size); // s2
-  @include responsive-margin(1, "right", $adjustment: $button-shadow-size); // s2
-  padding-top: (spacing(4) - $border-width-form-element - ($button-shadow-size / 2) + $offset); // s1
-  padding-bottom: (spacing(4) - $border-width-form-element - ($button-shadow-size / 2) - $offset); // s1
-  padding-left: (spacing(6) - $border-width-form-element - ($button-shadow-size / 2) + $offset); // s1
-  padding-right: (spacing(6) - $border-width-form-element - ($button-shadow-size / 2) - $offset); // s1
-
+  margin: 0;
   padding: spacing(2) spacing(6);
 
   box-sizing: border-box;

@@ -24,6 +24,15 @@
   &:focus {
     text-decoration: underline;
   }
+  .pagination--employer & {
+    color: $employer;
+  }
+}
+
+.pagination__list-item--next {
+  @include media-query($from: tablet) {
+    float: right;
+  }
 }
 
 .pagination__link--previous,
@@ -39,6 +48,9 @@
   padding-left: 35px;
   background-image: url("../images/arrow-left.svg");
   background-position: left center;
+  .pagination--employer & {
+    background-image: url("../images/arrow-left-employer.svg");
+  }
 }
 
 .pagination__link--next {
@@ -48,5 +60,8 @@
   text-align: right;
   @include media-query($from: tablet) {
     float: right;
+  }
+  .pagination--employer & {
+    background-image: url("../images/arrow-right-employer.svg");
   }
 }
