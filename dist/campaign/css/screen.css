@@ -1802,6 +1802,9 @@ template {
       padding-left: 80px;
       padding-right: 240px; } }
 
+.launcher__link-wrap {
+  text-decoration: none; }
+
 .launcher__content > a {
   text-decoration: none;
   color: #fff; }
