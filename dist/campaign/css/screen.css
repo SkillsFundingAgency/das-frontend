@@ -782,14 +782,7 @@ template {
   font-weight: 700;
   font-size: 14px;
   line-height: 1.5;
-  margin-top: 0;
-  margin-bottom: 25px;
-  margin-left: 10px;
-  margin-right: 10px;
-  padding-top: 14.5px;
-  padding-bottom: 10.5px;
-  padding-left: 24.5px;
-  padding-right: 20.5px;
+  margin: 0;
   padding: 10px 30px;
   box-sizing: border-box;
   display: inline-block;
@@ -816,15 +809,6 @@ template {
   .button:focus {
     outline: 3px solid #ffbf47;
     outline-offset: 0; }
-  @media (min-width: 46.25em) {
-    .button {
-      margin-bottom: 35px; } }
-  @media (min-width: 46.25em) {
-    .button {
-      margin-left: 10px; } }
-  @media (min-width: 46.25em) {
-    .button {
-      margin-right: 10px; } }
   @media (min-width: 46.25em) {
     .button {
       width: auto; } }
@@ -1086,6 +1070,56 @@ template {
     display: none; }
   .checkboxes__conditional > :last-child {
     margin-bottom: 0; }
+
+.cookiebanner {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #FFFFFF;
+  color: #6F777B;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  padding-left: 30px;
+  padding-right: 30px; }
+  @media (min-width: 46.25em) {
+    .cookiebanner {
+      padding-top: 20px; } }
+  @media (min-width: 46.25em) {
+    .cookiebanner {
+      padding-bottom: 20px; } }
+  @media (min-width: 46.25em) {
+    .cookiebanner {
+      padding-left: 50px; } }
+  @media (min-width: 46.25em) {
+    .cookiebanner {
+      padding-right: 50px; } }
+  .cookiebanner .button {
+    display: initial; }
+
+.cookiebanner__text p {
+  font-size: 18px; }
+
+.cookiebanner__content {
+  display: flex;
+  align-items: center; }
+
+.cookiebanner__link {
+  color: #006dff;
+  font-family: nobel, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.25; }
+  @media (min-width: 46.25em) {
+    .cookiebanner__link {
+      font-size: 18px;
+      line-height: 1.38889; } }
+  @media print {
+    .cookiebanner__link {
+      font-size: 14pt;
+      line-height: 1.15; } }
 
 .footer {
   font-family: nobel, sans-serif;
@@ -2044,7 +2078,8 @@ template {
       width: auto;
       height: auto;
       background: none;
-      border: none; } }
+      border: none;
+      overflow: visible; } }
   .js-menu-open .navigation {
     right: 0; }
 
@@ -2167,11 +2202,16 @@ template {
       font-size: 13px;
       color: #fff; }
       .header:hover .navigation__link--top-level {
-        color: #0B0C0C; } }
+        color: #0B0C0C;
+        color: #646c6f; } }
   @media (min-width: 75em) {
     .navigation__link--top-level {
       padding: 25px 25px 60px;
       font-size: 14px; } }
+
+@media (min-width: 56.25em) {
+  .navigation__list-item:hover .navigation__link--top-level {
+    color: #0B0C0C; } }
 
 .navigation__sub-menu-toggle {
   position: absolute;
@@ -2342,6 +2382,12 @@ template {
   text-decoration: none; }
   .pagination__link:hover, .pagination__link:focus {
     text-decoration: underline; }
+  .pagination--employer .pagination__link {
+    color: #ffb007; }
+
+@media (min-width: 46.25em) {
+  .pagination__list-item--next {
+    float: right; } }
 
 .pagination__link--previous,
 .pagination__link--next {
@@ -2355,6 +2401,8 @@ template {
   padding-left: 35px;
   background-image: url("../images/arrow-left.svg");
   background-position: left center; }
+  .pagination--employer .pagination__link--previous {
+    background-image: url("../images/arrow-left-employer.svg"); }
 
 .pagination__link--next {
   padding-right: 35px;
@@ -2364,6 +2412,8 @@ template {
   @media (min-width: 46.25em) {
     .pagination__link--next {
       float: right; } }
+  .pagination--employer .pagination__link--next {
+    background-image: url("../images/arrow-right-employer.svg"); }
 
 .promotion {
   color: #fff;
@@ -2857,6 +2907,104 @@ template {
     .table__row--highlight > .table__cell {
       font-size: 18pt;
       line-height: 1.15; } }
+
+.toggleContainer {
+  display: flex;
+  align-items: center;
+  margin: 0px 0px;
+  justify-items: center; }
+
+.toggleContainer input[type=checkbox] {
+  display: none; }
+
+.toggleContainer .q {
+  font-size: 15px;
+  margin-bottom: 6px; }
+
+.toggleContainer label {
+  display: block;
+  width: 60px;
+  height: 30px;
+  border: 3px solid #333333;
+  left: 25%;
+  cursor: pointer;
+  position: relative;
+  -webkit-border-radius: 30px;
+  border-radius: 30px; }
+
+.toggleContainer label:after {
+  display: block;
+  content: "";
+  width: 20px;
+  height: 20px;
+  border: #333 solid;
+  -webkit-border-radius: 50%;
+  border-radius: 50%;
+  position: absolute;
+  left: 2px;
+  top: 2px;
+  -webkit-transition: all 0.3s ease;
+  -moz-transition: all 0.3s ease;
+  -ms-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease; }
+
+.toggleContainer label:hover {
+  border: 3px solid #000; }
+
+.toggleContainer label:hover:after {
+  background: #000; }
+
+.toggleContainer label:active {
+  border: 3px solid #666666;
+  background: #666; }
+
+.toggleContainer label:active:after {
+  background: #fff; }
+
+.toggleContainer label:before {
+  display: inline-block;
+  height: 25px;
+  line-height: 25px;
+  white-space: nowrap;
+  position: absolute;
+  left: 17px;
+  top: 35px;
+  font-family: nobel, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 1.25; }
+  @media (min-width: 46.25em) {
+    .toggleContainer label:before {
+      font-size: 14px;
+      line-height: 1.42857; } }
+  @media print {
+    .toggleContainer label:before {
+      font-size: 12pt;
+      line-height: 1.2; } }
+
+.toggleContainer input[type=checkbox] + label:before {
+  content: attr(data-off);
+  text-transform: capitalize;
+  color: #646c6f; }
+
+.toggleContainer input[type=checkbox]:checked + label:before {
+  content: attr(data-on);
+  text-transform: capitalize;
+  color: #006dff; }
+
+.toggleContainer input[type=checkbox]:checked + label:after {
+  left: 32px;
+  background: #0478FF;
+  border-color: #0478FF; }
+
+.toggleContainer input[type=checkbox]:checked + label:active {
+  background: #666; }
+
+.toggleContainer input[type=checkbox]:checked + label:active:after {
+  background: #fff; }
 
 @media (min-width: 46.25em) {
   .hidden--desktop {
