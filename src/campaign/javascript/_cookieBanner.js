@@ -59,19 +59,23 @@ function eraseCookie(name) {
 }
 
 window.onload = function () {
+
+    var mCheckbox = document.getElementById(MarketingcheckboxId);
+    var aCheckbox = document.getElementById(AnalyticsCheckboxId);
+
     if (checkCookie(window.cookieName) == window.cookieValue) {
         removeMe();
     } else {
         showMe();
     }
-    document.getElementById(MarketingcheckboxId).checked = (checkCookie(MarketingcookieName) === "true");
-    document.getElementById(AnalyticsCheckboxId).checked = (checkCookie(AnalyticscookieName) === "true");
+    if (mCheckbox !== null && aCheckbox !== null) {
+        mCheckbox.checked = (checkCookie(MarketingcookieName) === "true");
+        aCheckbox.checked = (checkCookie(AnalyticscookieName) === "true");
+    }
 }
 
 function removeMe() {
-
-
     var element = document.getElementById(cookieBannerId);
-    element.parentNode.removeChild(element);
-
+    if (element !== null)
+        element.parentNode.removeChild(element);
 }
