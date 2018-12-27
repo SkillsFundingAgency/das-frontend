@@ -55,7 +55,8 @@
       padding: 40px 80px; } }
 
 .page {
-  max-width: 700px; }
+  max-width: 700px;
+  color: #6F777B; }
   @media (min-width: 46.25em) {
     .page {
       padding-right: 40px;
