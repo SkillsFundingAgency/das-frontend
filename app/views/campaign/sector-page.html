@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8" />
+  <title>Apprentice hub</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b0c0c" />
+
+  <link rel="shortcut icon" sizes="16x16 32x32 48x48" href="/dist/campaign/images/favicon.ico" type="image/x-icon" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/dist/campaign/images/apple-touch-icon-180x180.png">
+  <link rel="apple-touch-icon" sizes="167x167" href="/dist/campaign/images/apple-touch-icon-167x167.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="/dist/campaign/images/apple-touch-icon-152x152.png">
+  <link rel="apple-touch-icon" href="/dist/campaign/images/apple-touch-icon.png">
+
+  <!--[if !IE 8]><!-->
+
+  <link href="/dist/campaign/css/screen.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://use.typekit.net/tyj1hwm.css">
+
+  <!--<![endif]-->
+
+  <meta property="og:image" content="/dist/campaign/images/opengraph.png">
+</head>
+
+<body class="page-template">
+
+  <script>
+    document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');
+  </script>
+
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <div class="wrap">
+
+        {% include './components/header/_header.html'%}
+
+        <div class="hero">
+            <div class="grid-row">
+
+                <div class="grid-column-one-half">
+                    <div class="hero-heading">
+                        <h1 class="heading-xl hero-heading__heading">Catering &amp; hospitality</h1>
+                    </div>
+                    <div class="hero-heading__content">
+                        <p class="lead-paragraph">
+                           Catering and hospitality covers work in restaurants, cafés, pubs, bars, nightclubs and hotels.
+                           But the sector also supplies food and drink to other industries. Schools, colleges, hospitals and large businesses often have canteens and catering staff too.
+                       </p>
+                       <p>
+                           You could train as a chef in a restaurant, or learn how to cook on a large scale for institutions such as the NHS. Or you could be 'front of house' servicing guests or helping management make sure day-to-day operations run smoothly.
+                       </p>
+                       <dl class="inline-list">
+                            <dt class="inline-list__title">Digital includes</dt>
+                            <dd>graphic design</dd>
+                            <dd>IT</dd>
+                            <dd>media</dd>
+                            <dd>digital marketing</dd>
+                            <dd>photography</dd>
+                            <dd>cyber security</dd>
+                            <dd>sports media</dd>
+                        </dl>
+                    </div>
+                </div>
+                <div class="grid-column-one-half">
+                    <img src="/dist/campaign/images/industries/industry-hero-digital.jpg" class="hero-heading__image">
+                </div>
+
+            </div>
+        </div>
+
+
+
+    {% include './components/footer/_footer.html'%}
+
+    </div>
+
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.min.js"
+      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+      crossorigin="anonymous"></script>
+        <script src="/dist/campaign/js/app.min.js"></script>
+      <script src="/dist/js/das-all.js"></script>
+        <script>
+          window.DASFrontend.initAll()
+        </script>
+
+
+
+
+</body>
+
+</html>

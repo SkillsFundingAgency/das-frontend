@@ -44,3 +44,24 @@
     margin-top: 100px;
   }
 }
+
+.hero-heading__content {
+  color: #fff;
+  padding-top: 1px;
+}
+
+.hero-heading__image {
+  max-width: 100%;
+  display: none;
+  @include media-query($from: tablet) {
+    display: block;
+    position: relative;
+    right: -40px;
+    margin-bottom: -80px;
+    clip-path: polygon(0 100%, 100% 93.1%, 100% 0, 0 6.9%);
+  //  -webkit-clip-path: polygon(0 100%, 100% 93.1%, 100% 0, 0 6.9%);
+  }
+  @include media-query($from: desktop) {
+    right: -80px;
+  }
+}

@@ -73,7 +73,11 @@ p {
   @include typography-common;
   font-weight: $font-weight-light;
   font-size: 21px;
-  color: $text-colour;
+  //color: $text-colour;
+}
+
+.lead-paragraph {
+  font-size: 26px;
 }
 
 .caption-s + .heading-m {

@@ -66,3 +66,28 @@
   top: .4em;
   line-height: .5em;
 }
+
+.inline-list {
+  @include typography-common;
+  font-weight: $font-weight-bold;
+  font-size: 14px;
+  line-height: 22px;
+  color: $text-colour;
+  text-transform: uppercase;
+  > dd {
+    padding: 0;
+    margin: 0;
+    display: inline-block;
+    &:after {
+      content: ', ';
+    }
+    &:last-child:after {
+      content: '';
+    }
+  }
+}
+
+.inline-list__title {
+  color: #fff;
+  margin-bottom: 10px;
+}
