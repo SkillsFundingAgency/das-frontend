@@ -21,8 +21,10 @@ function removeBanner() {
 
 function showMe() {
     var banner = document.getElementById(cookieBannerId);
-    var bannerClass = banner.getAttribute('class').replace(' visually-hidden', '');
-    banner.setAttribute('class', bannerClass);
+    if (banner !== null) {
+        var bannerClass = banner.getAttribute('class').replace(' visually-hidden', '');
+        banner.setAttribute('class', bannerClass);
+    }
 }
 function setChecked(elem, cookie) {
     value = elem.checked ? "true" : "false";
