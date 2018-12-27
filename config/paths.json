@@ -4,7 +4,7 @@
     "legacy": "./src/legacy/sass/**/*.scss",
     "campaign": "./src/campaign/sass/**/*.scss",
     "campaignJs": "./src/campaign/javascript/*.js",
-    "campaignImages": "./src/campaign/images/*",
+    "campaignImages": "./src/campaign/images/**/*",
     "legacyJs": "./src/legacy/javascript/*.js",
     "dasJs": "./src/das-all.js"
   },
