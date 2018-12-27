@@ -1985,6 +1985,10 @@ template {
   -o-transition: -o-transform 0.3s ease-out;
   transition: transform 0.3s ease-out;
   overflow: scroll; }
+  @media (max-width: 46.24em) {
+    .modal-dialog {
+      left: 0;
+      width: 100%; } }
 
 .modal-body {
   padding: 20px; }
