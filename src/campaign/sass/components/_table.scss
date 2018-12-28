@@ -26,10 +26,10 @@
   background-color: $grey-7;
   text-align: left;
 }
-.table__header-row-title{
+.table__row-title--header{
   color: $black;
 }
-.table__header-row-value{
+.table__row-value--header{
   @include font($size: 14, $weight: light);
 }
 

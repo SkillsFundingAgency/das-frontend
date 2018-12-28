@@ -2946,10 +2946,10 @@ template {
   background-color: #F8F8F8;
   text-align: left; }
 
-.table__header-row-title {
+.table__row-title--header {
   color: #0B0C0C; }
 
-.table__header-row-value {
+.table__row-value--header {
   font-family: nobel, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -2957,11 +2957,11 @@ template {
   font-size: 12px;
   line-height: 1.25; }
   @media (min-width: 46.25em) {
-    .table__header-row-value {
+    .table__row-value--header {
       font-size: 14px;
       line-height: 1.42857; } }
   @media print {
-    .table__header-row-value {
+    .table__row-value--header {
       font-size: 12pt;
       line-height: 1.2; } }
 
