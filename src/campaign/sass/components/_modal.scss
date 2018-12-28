@@ -69,7 +69,8 @@ $blue-dark: darken($blue, 5%);
   height: 90%;
   @include translate(0, -500%);
   @include transition-transform(#{"0.3s ease-out"});
-  overflow: scroll;
+  overflow-y: scroll;
+  overflow-x: hidden;
   @include media-query($until: tablet) {
    left:0;
    width: 100%;
