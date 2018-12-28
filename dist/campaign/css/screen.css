@@ -2027,7 +2027,8 @@ template {
   -moz-transition: -moz-transform 0.3s ease-out;
   -o-transition: -o-transform 0.3s ease-out;
   transition: transform 0.3s ease-out;
-  overflow: scroll; }
+  overflow-y: scroll;
+  overflow-x: hidden; }
   @media (max-width: 46.24em) {
     .modal-dialog {
       left: 0;
