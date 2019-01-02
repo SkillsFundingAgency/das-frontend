@@ -1084,6 +1084,8 @@ p {
   width: 100%;
   background-color: #FFFFFF;
   color: #6F777B;
+  box-sizing: border-box;
+  z-index: 1000;
   padding-top: 15px;
   padding-bottom: 15px;
   padding-left: 30px;
