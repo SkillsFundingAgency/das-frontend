@@ -56,6 +56,28 @@
   }
 }
 
+.sidebar__sub-content {
+  @extend .sidebar__header;
+  margin-top: 120px;
+  padding-bottom:70px;
+  & p{
+    color: #FFFFFF;
+  }
+  &:after {
+    border-color: transparent transparent #FFFFFF;
+  }
+  .button{
+    display: flex;
+      justify-content: center;
+  }
+
+  .sidebar--employer & {
+    &:after {
+      border-bottom-color: #FFFFFF;
+    }
+  }
+}
+
 .trimmer {
   overflow: hidden;
   margin-top: -172px;
