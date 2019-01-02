@@ -1562,6 +1562,9 @@ p {
   .hero-banner.hero-banner--right-aligned {
     text-align: right; }
 
+.hero-banner__caption svg {
+  fill: red; }
+
 .hero-banner__caption-text {
   font-weight: 700;
   font-size: 14px;
