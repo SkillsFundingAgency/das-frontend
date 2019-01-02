@@ -1,0 +1,106 @@
+{% extends './template.html'%}
+
+{% block content %}
+<div class="grid-row">
+    <div class="grid-column-two-thirds">
+
+        <div class="page">
+           
+<div class="error_content">
+<hr />
+<p>
+    Looks like something went a bit wrong on our end.
+    Please head back to the homepage or alternatively head to any of the links below that may be able to help you...
+</p>
+<hr />
+</div>
+<div class="grid-row">
+    <div class="grid-column-one-half">
+        <ul class="list error_list list--apprentice">
+            <li>
+                <a>What is an apprenticeship</a>
+                <p>Have you wondered what’s in it for you?  </p>
+            </li>
+            <li>
+                <a>Find an apprenticeship</a>
+                <p>If you don’t know what career you want to do.... consider an apprenticeship and open up your potential</p>
+            </li>
+
+            <li>
+                <a>Application</a>
+                <p>Take a look at what it takes to make a great apprentice</p>
+            </li>
+            <li>
+                <a>Interview</a>
+                <p>Have a look at the different sectors and case studies to help you choose the right apprenticeship. </p>
+            </li>
+            <li>
+                <a>Your apprenticeship</a>
+                <p>Some text here</p>
+            </li>
+            <li>
+                <a>Assessment and qualification</a>
+                <p>Some text here</p>
+            </li>
+        </ul>
+    </div>
+
+    <div class="grid-column-one-half">
+        <ul class="list error__list list--employer">
+            <li>
+                <a>How much is it going to cost</a>
+                <p>Some text here</p>
+            </li>
+            <li>
+                <a>The right apprentice</a>
+                <p>Some text here</p>
+            </li>
+            <li>
+                <a>Choose a training provider</a>
+                <p>Some text here</p>
+            </li>
+            <li>
+                <a>Hire an apprentice</a>
+                <p>Some text here</p>
+            </li>
+            <li>
+                <a>Preparing and monitoring</a>
+                <p>Some text here</p>
+            </li>
+            <li>
+                <a>Assessment and qualification</a>
+                <p>Some text here</p>
+            </li>
+        </ul>
+    </div>
+</div>
+
+        </div>
+
+
+    </div>
+    <div class="grid-column-one-third">
+        <div class="sidebar">
+            <div class="sidebar__hero">
+                <img src="/dist/campaign/images/worker-girl.jpg" class="sidebar__hero-image">
+            </div>
+            <div class="trimmer">
+                <div class="sidebar__header">
+                    <h3 class="heading-s sidebar__heading">The process to becoming an apprentice</h3>
+                </div>
+            </div>
+            <div class="sidebar__content">
+                {% include './components/sideBar/_sideBar.html'%}
+            </div>
+            <div class="trimmer">
+                <div class="sidebar__sub-content">
+                    <h2 class="heading-s sidebar__heading">Find out more</h2>
+                    <p>Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper.</p>
+                    <a class="button button--sparks button--shadow " href="#modal-RegisterInterest">Register Interest</a>
+                </div>
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endblock %}

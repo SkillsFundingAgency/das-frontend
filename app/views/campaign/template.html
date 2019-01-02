@@ -32,18 +32,11 @@
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
   <div class="wrap">
-
+    {% include './components/header/_header.html'%}
+    {% include './components/hero-heading/_hero-heading.html' %}
     <main id="main-content" class="main-content">
 
-      <header class="header">
-
-        <div class="header__logo">
-          <img src="/dist/campaign/images/apprenticeships-logo.png" alt="Apprenticeships Logo" class="header__logo-image">
-        </div>
-
-        {% include './components/navigation/_navigation.html'%}
-
-      </header>
+      
 
       {% block content %}
       <h1 class="govuk-heading-xl">Default page template</h1>
@@ -56,7 +49,7 @@
 
   </div>
 
-  {% include './components/_cookieBanner.html'%}
+  {% include './components/cookiebanner/_cookieBanner.html'%}
 
   <div class="modal" id="register-interest" aria-hidden="true">
 

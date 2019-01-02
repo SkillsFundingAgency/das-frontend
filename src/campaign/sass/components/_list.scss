@@ -16,6 +16,17 @@
   }
 }
 
+.list--apprentice {
+  & > li > a{
+    color: $apprentice;
+  }
+}
+.list--employer {
+  & > li > a{
+    color: $employer;
+  }
+}
+
 .list--bullet {
   padding-left: spacing(4);
 }
@@ -91,3 +102,4 @@
   color: #fff;
   margin-bottom: 10px;
 }
+
