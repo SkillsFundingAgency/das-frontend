@@ -1543,7 +1543,8 @@ p {
   z-index: 1000;
   max-width: 1440px;
   margin: 0 auto;
-  box-sizing: border-box; }
+  box-sizing: border-box;
+  transition: all 0.2s ease; }
   .js-menu-open .header {
     background: #fff; }
   @media (min-width: 56.25em) {
@@ -1556,8 +1557,15 @@ p {
     .header {
       padding: 25px 80px; } }
 
+.header.header--active {
+  background: #fff;
+  -webkit-box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.2);
+  -moz-box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: 0px 3px 10px 0px rgba(0, 0, 0, 0.2); }
+
 .header__logo {
   height: 55px; }
+  .header--active .header__logo,
   .js-menu-open .header__logo {
     background-image: url("../images/apprenticeships-logo-black.png");
     background-size: contain;
@@ -1566,6 +1574,7 @@ p {
     .header__logo {
       height: 70px;
       float: left; }
+      .header--active .header__logo,
       .header:hover .header__logo {
         background-image: url("../images/apprenticeships-logo-black.png");
         background-size: contain;
@@ -1573,6 +1582,7 @@ p {
 
 .header__logo-image {
   max-height: 100%; }
+  .header--active .header__logo-image,
   .js-menu-open .header__logo-image {
     opacity: 0; }
   @media (min-width: 56.25em) {
@@ -2148,6 +2158,10 @@ p {
       top: -9px; }
     .navigation__toggle .navigation__toggle-icon:after {
       top: 9px; }
+    .header--active .navigation__toggle .navigation__toggle-icon {
+      background: #0B0C0C; }
+      .header--active .navigation__toggle .navigation__toggle-icon:after, .header--active .navigation__toggle .navigation__toggle-icon:before {
+        background: #0B0C0C; }
   @media (min-width: 56.25em) {
     .navigation__toggle {
       display: none; } }
@@ -2185,6 +2199,7 @@ p {
     .navigation__toggle-label {
       font-size: 14pt;
       line-height: 1.2; } }
+  .header--active .navigation__toggle-label,
   .js-menu-open .navigation__toggle-label {
     color: #0B0C0C; }
 
@@ -2201,7 +2216,8 @@ p {
   z-index: 10;
   overflow: auto;
   letter-spacing: 0.03rem;
-  right: -100%; }
+  right: -100%;
+  transition: all 0.2s ease; }
   @media (min-width: 56.25em) {
     .navigation {
       right: 0;
@@ -2211,7 +2227,8 @@ p {
       height: auto;
       background: none;
       border: none;
-      overflow: visible; } }
+      overflow: visible;
+      transition: none; } }
   .js-menu-open .navigation {
     right: 0; }
 
@@ -2294,6 +2311,7 @@ p {
 .navigation__list-item--with-button > .button {
   margin: 0; }
   .header:hover .navigation__list-item--with-button > .button,
+  .header--active .navigation__list-item--with-button > .button,
   .js-menu-open .navigation__list-item--with-button > .button {
     background: #000;
     color: #fff; }
@@ -2333,8 +2351,8 @@ p {
       padding: 25px 20px 60px;
       font-size: 13px;
       color: #fff; }
+      .header--active .navigation__link--top-level,
       .header:hover .navigation__link--top-level {
-        color: #0B0C0C;
         color: #646c6f; } }
   @media (min-width: 75em) {
     .navigation__link--top-level {
@@ -2373,11 +2391,11 @@ p {
 
 .navigation__sub-menu--employer {
   color: #ffb007; }
-  @media (min-width: 75em) {
+  @media (min-width: 56.25em) {
     .navigation__sub-menu--employer {
       border-top: 10px solid #ffb007; } }
 
-@media (min-width: 75em) {
+@media (min-width: 56.25em) {
   .navigation__sub-menu--apprentice {
     border-top: 10px solid #006dff;
     color: #006dff; } }
@@ -2445,9 +2463,15 @@ p {
         background: #fff;
         top: -4px;
         right: 4px; }
+      .header--active .navigation__sub-menu-icon,
       .header:hover .navigation__sub-menu-icon {
-        background: #0B0C0C; }
+        background: #646c6f; }
+        .header--active .navigation__sub-menu-icon:before,
         .header:hover .navigation__sub-menu-icon:before {
+          background: #646c6f; }
+      .navigation__link--top-level:hover .navigation__sub-menu-icon {
+        background: #0B0C0C; }
+        .navigation__link--top-level:hover .navigation__sub-menu-icon:before {
           background: #0B0C0C; } }
 
 @media (min-width: 56.25em) {
