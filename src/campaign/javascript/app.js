@@ -6,4 +6,9 @@ $(function() {
       $(".header").removeClass("header--active");
     }
   });
+
+  if($(window).scrollTop() > 50) {
+    $(".header").addClass("header--active");
+  }
+
 });
