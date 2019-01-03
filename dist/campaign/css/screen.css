@@ -1134,7 +1134,8 @@ p {
   margin: 40px 0px; }
 
 .error__list > li {
-  min-height: 70px; }
+  min-height: 40px;
+  list-style-type: decimal; }
 
 .error__list > li > p {
   font-family: nobel, sans-serif;
