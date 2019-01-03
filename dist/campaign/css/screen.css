@@ -1108,7 +1108,8 @@ p {
   font-family: nobel, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  color: #0B0C0C; }
+  color: #0B0C0C;
+  text-transform: uppercase; }
 
 .cookiebanner__button {
   display: block;
