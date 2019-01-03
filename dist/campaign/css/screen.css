@@ -827,7 +827,7 @@ p {
   .button:hover, .button:focus {
     background-color: #f2f2f2; }
   .button:active {
-    top: 5px;
+    top: 3px;
     box-shadow: none; }
   .button::before {
     content: "";
@@ -838,8 +838,19 @@ p {
     bottom: -10px;
     left: -5px;
     background: transparent; }
-  .button:active::before {
-    top: -10px; }
+
+.button--with-icon {
+  padding: 8px 20px; }
+
+.button__text {
+  display: inline-block;
+  vertical-align: middle; }
+
+.button__icon {
+  display: inline-block;
+  vertical-align: middle;
+  height: 30px;
+  margin-right: 10px; }
 
 .button--sparks {
   border-image-slice: 915 0 850 0;
@@ -1081,39 +1092,41 @@ p {
   position: fixed;
   left: 0;
   bottom: 0;
-  width: 100%;
-  background-color: #FFFFFF;
+  right: 0;
+  border-top: 1px solid #ddd;
+  background-color: #fff;
   color: #6F777B;
   box-sizing: border-box;
   z-index: 1000;
-  padding-top: 15px;
-  padding-bottom: 15px;
-  padding-left: 30px;
-  padding-right: 30px; }
+  padding: 20px 30px; }
   @media (min-width: 46.25em) {
     .cookiebanner {
-      padding-top: 20px; } }
-  @media (min-width: 46.25em) {
-    .cookiebanner {
-      padding-bottom: 20px; } }
-  @media (min-width: 46.25em) {
-    .cookiebanner {
-      padding-left: 50px; } }
-  @media (min-width: 46.25em) {
-    .cookiebanner {
-      padding-right: 50px; } }
-  .cookiebanner .button {
-    display: initial; }
+      padding: 20px 50px; } }
 
-.cookiebanner__text p {
-  font-size: 18px; }
+.cookiebanner__heading {
+  margin: 10px 0 0;
+  font-family: nobel, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #0B0C0C; }
 
-.cookiebanner__content {
-  display: flex;
-  align-items: center; }
+.cookiebanner__button {
+  display: block;
+  width: 100%; }
+  @media (min-width: 81.25em) {
+    .cookiebanner__button {
+      display: inline-block;
+      width: auto; } }
+
+.cookiebanner_actions {
+  text-align: center; }
 
 .cookiebanner__link {
+  display: block;
+  text-align: center;
+  padding: 10px 20px;
   color: #006dff;
+  margin-top: 5px;
   font-family: nobel, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -1128,6 +1141,22 @@ p {
     .cookiebanner__link {
       font-size: 14pt;
       line-height: 1.15; } }
+  @media (min-width: 46.25em) {
+    .cookiebanner__link {
+      margin-top: 0; } }
+  @media (min-width: 81.25em) {
+    .cookiebanner__link {
+      display: inline-block; } }
+
+.cookiebanner__text p {
+  font-size: 18px; }
+  .cookiebanner__text p > a {
+    color: #006dff; }
+
+@media (min-width: 46.25em) {
+  .cookiebanner__content {
+    display: flex;
+    align-items: center; } }
 
 .error_content > hr {
   border: #ddd solid 1px;
@@ -1795,7 +1824,8 @@ p {
       position: relative;
       right: -40px;
       margin-bottom: -80px;
-      clip-path: polygon(0 100%, 100% 93.1%, 100% 0, 0 6.9%); } }
+      clip-path: polygon(0 100%, 100% 93.1%, 100% 0, 0 6.9%);
+      -webkit-clip-path: polygon(0 100%, 100% 93.1%, 100% 0, 0 6.9%); } }
   @media (min-width: 61.25em) {
     .hero-heading__image {
       right: -80px; } }

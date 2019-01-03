@@ -3,15 +3,15 @@
 <div class="cookiebanner">
     <div class="grid-row cookiebanner__content">
         <div class="grid-column-two-thirds cookiebanner__text">
-            <h4 class="heading-xs">COOKIES ON THIS SITE</h4>
-            <p>Please read : Our website is set to allow cookies. We use cookies to improve your website experience, the products and services we offer and to make sure our digital marketing is personalised to you. See the cookies we use on our website by visiting our cookie policy. </p>
+            <h4 class="cookiebanner__heading">COOKIES ON THIS SITE</h4>
+            <p>Please read : Our website is set to allow cookies. We use cookies to improve your website experience, the products and services we offer and to make sure our digital marketing is personalised to you. See the cookies we use on our website by visiting our <a href=""> cookie policy</a>. </p>
         </div>
-        <div class="grid-column-one-third cookiebanner_actions"> {{ dasButton({
-                "text": "Continue",
-                "href": "/",
-                "classes": "button button-apprentice"
-                }) }}
-                <a class="cookiebanner__link" href="#modal-cookiesettings">No, take me to my settings</a> 
+        <div class="grid-column-one-third cookiebanner_actions">
+            <a href="/" role="button" draggable="false" class="button button--with-icon button-apprentice cookiebanner__button">
+                <img src="/dist/campaign/images/icon-circle-tick.svg" class="button__icon" />
+                <span class="button__text">Continue</span>
+            </a>
+            <a class="cookiebanner__link" href="#modal-cookiesettings">No, take me to my settings</a>
         </div>
     </div>
 </div>

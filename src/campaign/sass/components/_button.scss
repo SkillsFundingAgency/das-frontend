@@ -63,7 +63,7 @@ $offset: 2;
   }
 
   &:active {
-    top: $button-shadow-size;
+    top: 3px;
     box-shadow: none;
   }
 
@@ -81,9 +81,22 @@ $offset: 2;
     background: transparent;
   }
 
-  &:active::before {
-    top: -($border-width-form-element + $button-shadow-size);
-  }
+}
+
+.button--with-icon {
+  padding: 8px 20px;
+}
+
+.button__text {
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.button__icon {
+  display: inline-block;
+  vertical-align: middle;
+  height: 30px;
+  margin-right: 10px;
 }
 
 .button--sparks{
