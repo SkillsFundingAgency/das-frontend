@@ -1,6 +1,6 @@
 import Accordion from './components/accordion/accordion'
-import Navigation from './campaign/javascript/_navigation'
-import CookieBanner from './campaign/javascript/_cookieBanner'
+import Navigation from './components/navigation/_navigation'
+import CookieBanner from './components/cookieBanner/_cookieBanner'
 
 function nodeListForEach(nodes, callback) {
   if (window.NodeList.prototype.forEach) {

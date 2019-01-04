@@ -8,6 +8,7 @@ const uglify = require('gulp-uglify')
 const eol = require('gulp-eol')
 const rename = require('gulp-rename')
 const resolve = require('rollup-plugin-node-resolve')
+const commonjs = require('rollup-plugin-commonjs');
 
 const isDist = false
 
@@ -31,7 +32,7 @@ gulp.task('js:compile', () => {
       .pipe(rollup({
         // Used to set the `window` global and UMD/AMD export name.
         name: 'DASFrontend',
-        plugins: [resolve()],
+        plugins: [resolve(), commonjs()],
         // Legacy mode is required for IE8 support
         legacy: true,
         // UMD allows the published bundle to work in CommonJS and in the browser.
