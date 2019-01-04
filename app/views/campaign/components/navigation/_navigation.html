@@ -1,167 +1,168 @@
 {% from "../button/macro.njk" import dasButton %}
+<div data-module="navigation">
+    <a href="#navigation" class="navigation__toggle">
+        <span class="navigation__toggle-label" id="nav-label">Menu</span>
+        <span class="navigation__toggle-icon"></span>
+    </a>
 
-<a href="#navigation" class="navigation__toggle">
-    <span class="navigation__toggle-label" id="nav-label">Menu</span>
-    <span class="navigation__toggle-icon"></span>
-</a>
-
-<nav class="navigation" aria-labelledby="nav-label">
-    <ul class="navigation__menu">
-        <li class="navigation__list-item">
-            <a href="/apprentice" class="navigation__link--top-level navigation__link--top-level--apprentice">
-                Apprentice
-                <span class="navigation__sub-menu-toggle"></span>
-                <span class="navigation__sub-menu-icon"></span>
-            </a>
-            <div class="grid-row navigation__sub-menu navigation__sub-menu--apprentice">
-                <div class="grid-column-one-half navigation__column">
-                    <h3 class="heading-s navigation_sub-heading">
-                        <span class="highlight">Why</span>
-                        <span class="secondary">you should become an apprentice...</span>
-                    </h3>
-                    <ul class="navigation__list">
-                        <li class="hidden--desktop">
-                            <a href="/apprentice" class="navigation__link">
-                                Apprentice hub
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/real-stories/apprentice" class="navigation__link">
-                                Real stories &amp; famous Apprentices
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/industries" class="navigation__link">
-                                My interests - find your perfect apprentice
-                            </a>
-                        </li>
-                    </ul>
+    <nav class="navigation" aria-labelledby="nav-label">
+        <ul class="navigation__menu">
+            <li class="navigation__list-item">
+                <a href="/apprentice" class="navigation__link--top-level navigation__link--top-level--apprentice">
+                    Apprentice
+                    <span class="navigation__sub-menu-toggle"></span>
+                    <span class="navigation__sub-menu-icon"></span>
+                </a>
+                <div class="grid-row navigation__sub-menu navigation__sub-menu--apprentice">
+                    <div class="grid-column-one-half navigation__column">
+                        <h3 class="heading-s navigation_sub-heading">
+                            <span class="highlight">Why</span>
+                            <span class="secondary">you should become an apprentice...</span>
+                        </h3>
+                        <ul class="navigation__list">
+                            <li class="hidden--desktop">
+                                <a href="/apprentice" class="navigation__link">
+                                    Apprentice hub
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/real-stories/apprentice" class="navigation__link">
+                                    Real stories &amp; famous Apprentices
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/industries" class="navigation__link">
+                                    My interests - find your perfect apprentice
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="grid-column-one-half navigation__column">
+                        <h3 class="heading-s navigation_sub-heading">
+                            <span class="highlight">How</span>
+                            <span class="secondary">to become an apprentice - step by step...</span>
+                        </h3>
+                        <ol class="navigation__ordered-list">
+                            <li>
+                                <a href="/apprentice/fire-up-your-apprenticeship" class="navigation__link">
+                                    Fire up your apprenticeship
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/apprentice/what-are-the-benefits-to-me" class="navigation__link">
+                                    What are the benefits to me?
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/apprentice/what-are-the-steps-I-need-to-take" class="navigation__link">
+                                    What are the steps I need to take?
+                                </a>
+                            </li>
+                        </ol>
+                        <ol class="navigation__ordered-list navigation__ordered-list--reset-3">
+                            <li>
+                                <a href="/apprentice/how-to-get-your-application-right" class="navigation__link">
+                                    How to get your application right and nail the interview
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/apprentice/monitor-your-progress" class="navigation__link">
+                                    Monitor your progress
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/apprentice/assessment-and-qualification" class="navigation__link">
+                                    Assessment and qualification
+                                </a>
+                            </li>
+                        </ol>
+                    </div>
                 </div>
-                <div class="grid-column-one-half navigation__column">
-                    <h3 class="heading-s navigation_sub-heading">
-                        <span class="highlight">How</span>
-                        <span class="secondary">to become an apprentice - step by step...</span>
-                    </h3>
-                    <ol class="navigation__ordered-list">
-                        <li>
-                            <a href="/apprentice/fire-up-your-apprenticeship" class="navigation__link">
-                                Fire up your apprenticeship
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/apprentice/what-are-the-benefits-to-me" class="navigation__link">
-                                What are the benefits to me?
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/apprentice/what-are-the-steps-I-need-to-take" class="navigation__link">
-                                What are the steps I need to take?
-                            </a>
-                        </li>
-                    </ol>
-                    <ol class="navigation__ordered-list navigation__ordered-list--reset-3">
-                        <li>
-                            <a href="/apprentice/how-to-get-your-application-right" class="navigation__link">
-                                How to get your application right and nail the interview
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/apprentice/monitor-your-progress" class="navigation__link">
-                                Monitor your progress
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/apprentice/assessment-and-qualification" class="navigation__link">
-                                Assessment and qualification
-                            </a>
-                        </li>
-                    </ol>
+            </li>
+            <li class="navigation__list-item">
+                <a href="/employer" class="navigation__link--top-level  navigation__link--top-level--employer">
+                    Employer
+                    <span class="navigation__sub-menu-toggle"></span>
+                    <span class="navigation__sub-menu-icon"></span>
+                </a>
+                <div class="grid-row navigation__sub-menu navigation__sub-menu--employer">
+
+                    <div class="grid-column-one-half navigation__column">
+                        <h3 class="heading-s navigation_sub-heading">
+                            <span class="highlight">Why</span>
+                            <span class="secondary">you should hire an apprentice...</span>
+                        </h3>
+                        <ul class="navigation__list">
+                            <li class="hidden--desktop">
+                                <a href="/employer" class="navigation__link">
+                                    Employer hub
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/employer/benefits" class="navigation__link">
+                                    Benefits to your business
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/industries" class="navigation__link">
+                                    My industry - find out what other companies are doing
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/real-stories/employer" class="navigation__link">
+                                    Real stories &amp; famous Apprentices
+                                </a>
+                            </li>
+
+                        </ul>
+                    </div>
+                    <div class="grid-column-one-half navigation__column">
+                        <h3 class="heading-s navigation_sub-heading">
+                            <span class="highlight">How</span>
+                            <span class="secondary">to hire an apprentice - step by step...</span>
+                        </h3>
+                        <ol class="navigation__ordered-list">
+                            <li>
+                                <a href="/employer/how-much-is-it-going-to-cost" class="navigation__link">
+                                    How much is it going to cost?
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/employer/the-right-apprenticeship" class="navigation__link">
+                                    The right apprenticeship
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/employer/choose-training-provider" class="navigation__link">
+                                    Choose a training provider
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/employer/hire-an-apprentice" class="navigation__link">
+                                    Hire an apprentice
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/employer/preparing-and-monitoring" class="navigation__link">
+                                    Preparing and monitoring
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/employer/assessment-and-qualification" class="navigation__link">
+                                    Assessment and qualification
+                                </a>
+                            </li>
+                        </ol>
+                    </div>
                 </div>
-            </div>
-        </li>
-        <li class="navigation__list-item">
-            <a href="/employer" class="navigation__link--top-level  navigation__link--top-level--employer">
-                Employer
-                <span class="navigation__sub-menu-toggle"></span>
-                <span class="navigation__sub-menu-icon"></span>
-            </a>
-            <div class="grid-row navigation__sub-menu navigation__sub-menu--employer">
 
-                <div class="grid-column-one-half navigation__column">
-                    <h3 class="heading-s navigation_sub-heading">
-                        <span class="highlight">Why</span>
-                        <span class="secondary">you should hire an apprentice...</span>
-                    </h3>
-                    <ul class="navigation__list">
-                        <li class="hidden--desktop">
-                            <a href="/employer" class="navigation__link">
-                                Employer hub
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/employer/benefits" class="navigation__link">
-                                Benefits to your business
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/industries" class="navigation__link">
-                                My industry - find out what other companies are doing
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/real-stories/employer" class="navigation__link">
-                                Real stories &amp; famous Apprentices
-                            </a>
-                        </li>
+            </li>
 
-                    </ul>
-                </div>
-                <div class="grid-column-one-half navigation__column">
-                    <h3 class="heading-s navigation_sub-heading">
-                        <span class="highlight">How</span>
-                        <span class="secondary">to hire an apprentice - step by step...</span>
-                    </h3>
-                    <ol class="navigation__ordered-list">
-                        <li>
-                            <a href="/employer/how-much-is-it-going-to-cost" class="navigation__link">
-                                How much is it going to cost?
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/employer/the-right-apprenticeship" class="navigation__link">
-                                The right apprenticeship
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/employer/choose-training-provider" class="navigation__link">
-                                Choose a training provider
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/employer/hire-an-apprentice" class="navigation__link">
-                                Hire an apprentice
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/employer/preparing-and-monitoring" class="navigation__link">
-                                Preparing and monitoring
-                            </a>
-                        </li>
-                        <li>
-                            <a href="/employer/assessment-and-qualification" class="navigation__link">
-                                Assessment and qualification
-                            </a>
-                        </li>
-                    </ol>
-                </div>
-            </div>
+            <li class="navigation__list-item navigation__list-item--with-button">
 
-        </li>
+                <a class="button button--sparks button--shadow " href="#modal-RegisterInterest">Register Interest</a>
 
-        <li class="navigation__list-item navigation__list-item--with-button">
-
-            <a class="button button--sparks button--shadow " href="#modal-RegisterInterest">Register Interest</a>
-
-        </li>
-    </ul>
-</nav>
+            </li>
+        </ul>
+    </nav>
+</div>

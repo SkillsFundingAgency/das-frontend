@@ -1,13 +1,14 @@
 {% from "../button/macro.njk" import dasButton %}
 
-<div class="cookiebanner">
+<div class="cookiebanner  visually-hidden" data-module="cookieBanner">
     <div class="grid-row cookiebanner__content">
         <div class="grid-column-two-thirds cookiebanner__text">
             <h4 class="cookiebanner__heading">Cookies on this site</h4>
             <p>Please read : Our website is set to allow cookies. We use cookies to improve your website experience, the products and services we offer and to make sure our digital marketing is personalised to you. See the cookies we use on our website by visiting our <a href=""> cookie policy</a>. </p>
         </div>
+
         <div class="grid-column-one-third cookiebanner_actions">
-            <a href="/" role="button" draggable="false" class="button button--with-icon button-apprentice cookiebanner__button">
+            <a href="#" role="button" draggable="false" class="button button--with-icon button-apprentice cookiebanner__button  cookiebanner__button--continue">
                 <img src="/dist/campaign/images/icon-circle-tick.svg" class="button__icon" />
                 <span class="button__text">Continue</span>
             </a>
