@@ -25,6 +25,10 @@ $hero-text-colour: #fff;
   }
 }
 
+.hero-banner__caption svg {
+  fill: red
+}
+
 .hero-banner__caption-text {
   font-weight: $font-weight-bold;
   font-size: 14px;

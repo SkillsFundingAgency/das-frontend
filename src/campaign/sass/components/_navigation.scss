@@ -1,5 +1,3 @@
-
-
 %nav-icon-lines {
   display: block;
   height: 3px;
@@ -7,7 +5,7 @@
   position: absolute;
   border-radius: 2px;
   background: #fff;
-  transition:all 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .navigation__toggle {
@@ -32,6 +30,13 @@
     &:after {
       top: 9px;
     }
+    .header--active & {
+      background: $black;
+      &:after,
+      &:before {
+        background: $black;
+      }
+    }
   }
 
   @include media-query($from: $nav-breakpoint) {
@@ -39,7 +44,7 @@
   }
 
   .js-menu-open &,
-  .js-menu-open .header:hover &{
+  .js-menu-open .header:hover & {
     .navigation__toggle-icon {
       background: rgba(0, 0, 0, 0);
       &:after {
@@ -63,6 +68,7 @@
   text-transform: uppercase;
   display: block;
   padding: 15px 50px 15px 15px;
+  .header--active &,
   .js-menu-open & {
     color: $black;
   }
@@ -82,6 +88,7 @@
   overflow: auto;
   letter-spacing: 0.03rem;
   right: -100%;
+  transition: all 0.2s ease;
   @include media-query($from: $nav-breakpoint) {
     right: 0;
     position: static;
@@ -91,6 +98,7 @@
     background: none;
     border: none;
     overflow: visible;
+    transition: none;
   }
   .js-menu-open & {
     right: 0;
@@ -190,6 +198,7 @@
 .navigation__list-item--with-button  > .button {
   margin: 0;
   .header:hover &,
+  .header--active &,
   .js-menu-open & {
     background: #000;
     color: #fff;
@@ -217,8 +226,8 @@
     padding: 25px 20px 60px;
     font-size: 13px;
     color: #fff;
+    .header--active & ,
     .header:hover & {
-      color: $black;
       color: $grey-3;
     }
   }
@@ -265,14 +274,14 @@
 .navigation__sub-menu--employer
 {
   color: $employer;
-  @include media-query($from: $nav-breakpoint-desktop) {
+  @include media-query($from: $nav-breakpoint) {
     border-top: 10px solid $employer;
   }
 }
 
 .navigation__sub-menu--apprentice
 {
-  @include media-query($from: $nav-breakpoint-desktop) {
+  @include media-query($from: $nav-breakpoint) {
     border-top: 10px solid $apprentice;
     color: $apprentice;
   }
@@ -352,7 +361,14 @@
       top: -4px;
       right: 4px;
     }
+    .header--active &,
     .header:hover & {
+      background: $grey-3;
+      &:before {
+        background: $grey-3;
+      }
+    }
+    .navigation__link--top-level:hover & {
       background: $black;
       &:before {
         background: $black;

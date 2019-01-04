@@ -6,11 +6,12 @@
 }
 
 .launcher__content {
-  padding: 200px $edgeGutter 80px;
+  padding: 160px $edgeGutter 80px;
   color: #fff;
   @include media-query($from: tablet) {
     padding-left: $edgeGutterTablet;
     padding-right: $edgeGutterTablet;
+    padding-top: 200px;
   }
 
   @include media-query($from: desktop) {
@@ -53,21 +54,11 @@
   background: $apprentice;
   text-transform: uppercase;
   font-family: $font-family;
-  font-size: 24px;
+  font-size: 14px;
   display: inline-block;
-  padding: 5px 10px;
-  padding-left: $edgeGutterDesktop;
-  margin-left: $edgeGutterDesktop * -1;
+  padding: 10px 20px;
   .launcher--employer & {
     background: $employer;
-  }
-  @include media-query($from: tablet) {
-    padding-left: $edgeGutterTablet;
-    margin-left: $edgeGutterTablet * -1;
-  }
-  @include media-query($from: desktop) {
-    padding-left: $edgeGutterDesktop;
-    margin-left: $edgeGutterDesktop * -1;
   }
 }
 
@@ -75,6 +66,7 @@
   text-transform: uppercase;
   font-family: $font-family;
   font-size: 36px;
+  margin: 10px 0 15px;
 }
 
 .launcher__intro {
@@ -91,6 +83,8 @@
   padding-top: 20px;
   position: relative;
   text-decoration: none;
+  margin-top: 0;
+  border-bottom: 1px solid #fff;
   &:before {
     content: "";
     display: block;
