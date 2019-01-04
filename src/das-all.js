@@ -1,6 +1,6 @@
 import Accordion from './components/accordion/accordion'
-import Navigation from './campaign/javascript/_navigation'
-import CookieBanner from './campaign/javascript/_cookieBanner'
+import Navigation from './components/navigation/_navigation'
+import CookieBanner from './components/cookieBanner/_cookieBanner'
 
 function nodeListForEach(nodes, callback) {
   if (window.NodeList.prototype.forEach) {
@@ -25,6 +25,11 @@ function initAll() {
   var $cookieBanner = document.querySelector('[data-module="cookieBanner"]');
   if ($cookieBanner != null){
     new CookieBanner($cookieBanner).init();
+  }
+
+  if (aspnetValidation != null){
+    let validationService = new aspnetValidation.ValidationService();
+    validationService.bootstrap();
   }
 
 }

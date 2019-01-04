@@ -425,6 +425,11 @@ function initAll() {
     new CookieBanner($cookieBanner).init();
   }
 
+  if (aspnetValidation != null){
+    let validationService = new aspnetValidation.ValidationService();
+    validationService.bootstrap();
+  }
+
 }
 
 exports.initAll = initAll;
