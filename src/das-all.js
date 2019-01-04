@@ -1,7 +1,6 @@
 import Accordion from './components/accordion/accordion'
 import Navigation from './components/navigation/_navigation'
 import CookieBanner from './components/cookieBanner/_cookieBanner'
-// import {ValidationService} from 'aspnet-validation'
 
 function nodeListForEach(nodes, callback) {
   if (window.NodeList.prototype.forEach) {
@@ -27,8 +26,12 @@ function initAll() {
   if ($cookieBanner != null){
     new CookieBanner($cookieBanner).init();
   }
-let validationService = new aspnetValidation.ValidationService();
-validationService.bootstrap();
+
+  if (aspnetValidation != null){
+    let validationService = new aspnetValidation.ValidationService();
+    validationService.bootstrap();
+  }
+
 }
 
 export {

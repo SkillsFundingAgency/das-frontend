@@ -400,8 +400,6 @@ CookieBanner.prototype.removeBanner = function() {
     this.$cookieBanner.parentNode.removeChild(this.$cookieBanner);
 };
 
-// import {ValidationService} from 'aspnet-validation'
-
 function nodeListForEach$2(nodes, callback) {
   if (window.NodeList.prototype.forEach) {
     return nodes.forEach(callback)
@@ -426,8 +424,12 @@ function initAll() {
   if ($cookieBanner != null){
     new CookieBanner($cookieBanner).init();
   }
-let validationService = new aspnetValidation.ValidationService();
-validationService.bootstrap();
+
+  if (aspnetValidation != null){
+    let validationService = new aspnetValidation.ValidationService();
+    validationService.bootstrap();
+  }
+
 }
 
 exports.initAll = initAll;
