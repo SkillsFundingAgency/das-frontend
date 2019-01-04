@@ -24,6 +24,7 @@
 
 .main-content,
 .section,
+.resources,
 .footer {
   padding: $gutter-half;
   @include media-query($from: tablet) {
