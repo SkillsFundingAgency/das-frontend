@@ -252,7 +252,13 @@ Accordion.prototype.readState = function () {
   }
 };
 
-function nodeListForEach$1 (nodes, callback) {
+function Navigation($module) {
+  this.$module = $module;
+  this.$navToggle = $module.querySelector('.navigation__toggle');
+  this.$navItems = $module.querySelectorAll('.navigation__list-item');
+}
+
+function nodeListForEach$1(nodes, callback) {
   if (window.NodeList.prototype.forEach) {
     return nodes.forEach(callback)
   }
@@ -261,14 +267,169 @@ function nodeListForEach$1 (nodes, callback) {
   }
 }
 
-function initAll () {
+Navigation.prototype.init = function () {
+
+  // Check module exists
+  var $module = this.$module;
+  if (!$module) {
+    return
+  }
+
+  if (this.$navToggle != undefined) {
+    this.$navToggle.addEventListener('click', this.onToggleNav.bind(this, this.$navToggle));
+  }
+
+  nodeListForEach$1(this.$navItems, function ($navItem, i) {
+    this.$subnavToggle = $navItem.querySelector('.navigation__sub-menu-toggle');
+    if (this.$subnavToggle != undefined) {
+      this.$subnavToggle.addEventListener('click', this.onToggleSubNav.bind(this, $navItem));
+    }
+  }.bind(this));
+};
+
+Navigation.prototype.onToggleNav = function () {
+  var menu = document.querySelector('body'); // Using a class instead, see note below.
+  menu.classList.toggle('js-menu-open');
+};
+
+Navigation.prototype.onToggleSubNav = function ($navItem,event) {
+  event.preventDefault();
+  $navItem.querySelector('.navigation__link--top-level').classList.toggle('sub-menu-open');
+  $navItem.querySelector('.navigation__sub-menu').classList.toggle('js-show');
+};
+
+function CookieBanner($module) {
+
+this.$dropCookie = true;                      // false disables the Cookie, allowing you to style the banner
+this.$cookieDuration = 365;                    // Number of days before the cookie expires, and the banner reappears
+this.$cookieName = 'CookieConsent';        // Name of our cookie
+this.$cookieValue = 'true';                     // Value of cookie
+this.$cookieBanner = $module;
+this.$cookieBannerContinue = document.querySelector(".cookiebanner__button--continue");
+this.$cookieBannerClose = document.querySelector(".cookiebanner--close");
+
+this.$MarketingcookieName = 'MarketingConsent';        // Name of our cookie
+this.$MarketingcookieValue = 'false';
+this.$Marketingcheckbox =  document.getElementById('cbxMarketingConsent');
+
+this.$AnalyticscookieName = 'AnalyticsConsent';        // Name of our cookie
+this.$AnalyticscookieValue = 'true';
+this.$AnalyticsCheckbox =  document.getElementById('cbxAnalyticsConsent');
+}
+
+CookieBanner.prototype.init = function () {
+
+    //if cookies dont exist, create them.
+    if (this.checkCookie(this.$MarketingcookieName) == null) {
+        this.createCookie(this.$MarketingcookieName, this.$MarketingcookieValue, this.$cookieDuration); // Create the cookie
+    }
+    if (this.checkCookie(this.$AnalyticscookieName) == null) {
+        this.createCookie(this.$AnalyticscookieName, this.$AnalyticscookieValue, this.$cookieDuration); // Create the cookie
+    }
+
+    //hide cookie notice if already been displayed
+    if (this.checkCookie(this.$cookieName) == this.$cookieValue) {
+        this.removeBanner();
+    } else {
+        this.showBanner();
+
+        this.$cookieBannerContinue.addEventListener('click', this.removeBannerEvent.bind(this,true));
+        this.$cookieBannerClose.addEventListener('click', this.removeBannerEvent.bind(this,false));
+    }
+
+    //if cookie setting check boxes are present, make sure they have correct value
+    if (this.$Marketingcheckbox != null && this.$AnalyticsCheckbox != null) {
+        this.$Marketingcheckbox.checked = (this.checkCookie(this.$MarketingcookieName) === "true");
+        this.$AnalyticsCheckbox.checked = (this.checkCookie(this.$AnalyticscookieName) === "true");
+    }
+};
+
+CookieBanner.prototype.removeBannerEvent = function(enableAll,event) {
+    event.preventDefault();
+    this.createCookie(this.$cookieName, this.$cookieValue, this.$cookieDuration); // Create the cookie
+
+    //if clicked continue, make sure all cookies are enabled
+    if (enableAll){
+        this.createCookie(this.$MarketingcookieName, 'true', this.$cookieDuration);
+        this.createCookie(this.$AnalyticscookieName, 'true', this.$cookieDuration);
+    }
+
+    this.removeBanner();
+};
+
+CookieBanner.prototype.showBanner = function() {
+    if (this.$cookieBanner !== null) {
+        var bannerClass = this.$cookieBanner.getAttribute('class').replace(' visually-hidden', '');
+        this.$cookieBanner.setAttribute('class', bannerClass);
+    }
+};
+CookieBanner.prototype.setChecked = function(elem, cookie) {
+    value = elem.checked ? "true" : "false";
+    this.createCookie(cookie, value, this.$cookieDuration);
+};
+
+CookieBanner.prototype.createCookie = function(name, value, days) {
+    if (days) {
+        var date = new Date();
+        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+        var expires = "; expires=" + date.toGMTString();
+    }
+    else var expires = "";
+    if (this.$dropCookie) {
+        document.cookie = name + "=" + value + expires + "; path=/";
+    }
+};
+
+CookieBanner.prototype.checkCookie = function(name) {
+    var nameEQ = name + "=";
+    var ca = document.cookie.split(';');
+    for (var i = 0; i < ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0) == ' ') c = c.substring(1, c.length);
+        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
+    }
+    return null;
+};
+
+CookieBanner.prototype.eraseCookie = function(name) {
+    this.createCookie(name, "", -1);
+};
+
+CookieBanner.prototype.removeBanner = function() {
+    if (this.$cookieBanner !== null)
+    this.$cookieBanner.parentNode.removeChild(this.$cookieBanner);
+};
+
+function nodeListForEach$2(nodes, callback) {
+  if (window.NodeList.prototype.forEach) {
+    return nodes.forEach(callback)
+  }
+  for (var i = 0; i < nodes.length; i++) {
+    callback.call(window, nodes[i], i, nodes);
+  }
+}
+
+function initAll() {
   var $accordions = document.querySelectorAll('[data-module="accordion"]');
-  nodeListForEach$1($accordions, function ($accordion) {
+  nodeListForEach$2($accordions, function ($accordion) {
     new Accordion($accordion).init();
   });
+
+  var $navs = document.querySelectorAll('[data-module="navigation"]');
+  nodeListForEach$2($navs, function ($navs) {
+    new Navigation($navs).init();
+  });
+
+  var $cookieBanner = document.querySelector('[data-module="cookieBanner"]');
+  if ($cookieBanner != null){
+    new CookieBanner($cookieBanner).init();
+  }
+
 }
 
 exports.initAll = initAll;
 exports.Accordion = Accordion;
+exports.Navigation = Navigation;
+exports.CookieBanner = CookieBanner;
 
 })));

@@ -1,49 +1,86 @@
-var dropCookie = true;                      // false disables the Cookie, allowing you to style the banner
-var cookieDuration = 365;                    // Number of days before the cookie expires, and the banner reappears
-var cookieName = 'CookieConsent';        // Name of our cookie
-var cookieValue = 'true';                     // Value of cookie
-var cookieBannerId = "cookieBanner";
+function CookieBanner($module) {
 
-var MarketingcookieName = 'MarketingConsent';        // Name of our cookie
-var MarketingcookieValue = 'true';
-var MarketingcheckboxId = 'cbxMarketingConsent';
+this.$dropCookie = true;                      // false disables the Cookie, allowing you to style the banner
+this.$cookieDuration = 365;                    // Number of days before the cookie expires, and the banner reappears
+this.$cookieName = 'CookieConsent';        // Name of our cookie
+this.$cookieValue = 'true';                     // Value of cookie
+this.$cookieBanner = $module;
+this.$cookieBannerContinue = document.querySelector(".cookiebanner__button--continue");
+this.$cookieBannerClose = document.querySelector(".cookiebanner--close");
 
-var AnalyticscookieName = 'AnalyticsConsent';        // Name of our cookie
-var AnalyticscookieValue = 'true';
-var AnalyticsCheckboxId = 'cbxAnalyticsConsent';
+this.$MarketingcookieName = 'MarketingConsent';        // Name of our cookie
+this.$MarketingcookieValue = 'false';
+this.$Marketingcheckbox =  document.getElementById('cbxMarketingConsent');
 
-function removeBanner() {
-    createCookie(window.cookieName, window.cookieValue, window.cookieDuration); // Create the cookie
-    createCookie(window.MarketingcookieName, window.MarketingcookieValue, window.cookieDuration); // Create the cookie
-    createCookie(window.AnalyticscookieName, window.AnalyticscookieValue, window.cookieDuration); // Create the cookie
-    removeMe();
+this.$AnalyticscookieName = 'AnalyticsConsent';        // Name of our cookie
+this.$AnalyticscookieValue = 'true';
+this.$AnalyticsCheckbox =  document.getElementById('cbxAnalyticsConsent');
 }
 
-function showMe() {
-    var banner = document.getElementById(cookieBannerId);
-    if (banner !== null) {
-        var bannerClass = banner.getAttribute('class').replace(' visually-hidden', '');
-        banner.setAttribute('class', bannerClass);
+CookieBanner.prototype.init = function () {
+
+    //if cookies dont exist, create them.
+    if (this.checkCookie(this.$MarketingcookieName) == null) {
+        this.createCookie(this.$MarketingcookieName, this.$MarketingcookieValue, this.$cookieDuration); // Create the cookie
+    }
+    if (this.checkCookie(this.$AnalyticscookieName) == null) {
+        this.createCookie(this.$AnalyticscookieName, this.$AnalyticscookieValue, this.$cookieDuration); // Create the cookie
+    }
+
+    //hide cookie notice if already been displayed
+    if (this.checkCookie(this.$cookieName) == this.$cookieValue) {
+        this.removeBanner();
+    } else {
+        this.showBanner();
+
+        this.$cookieBannerContinue.addEventListener('click', this.removeBannerEvent.bind(this,true));
+        this.$cookieBannerClose.addEventListener('click', this.removeBannerEvent.bind(this,false));
+    }
+
+    //if cookie setting check boxes are present, make sure they have correct value
+    if (this.$Marketingcheckbox != null && this.$AnalyticsCheckbox != null) {
+        this.$Marketingcheckbox.checked = (this.checkCookie(this.$MarketingcookieName) === "true");
+        this.$AnalyticsCheckbox.checked = (this.checkCookie(this.$AnalyticscookieName) === "true");
     }
 }
-function setChecked(elem, cookie) {
-    value = elem.checked ? "true" : "false";
-    createCookie(cookie, value, cookieDuration);
+
+CookieBanner.prototype.removeBannerEvent = function(enableAll,event) {
+    event.preventDefault();
+    this.createCookie(this.$cookieName, this.$cookieValue, this.$cookieDuration); // Create the cookie
+
+    //if clicked continue, make sure all cookies are enabled
+    if (enableAll){
+        this.createCookie(this.$MarketingcookieName, 'true', this.$cookieDuration);
+        this.createCookie(this.$AnalyticscookieName, 'true', this.$cookieDuration);
+    }
+
+    this.removeBanner();
 }
 
-function createCookie(name, value, days) {
+CookieBanner.prototype.showBanner = function() {
+    if (this.$cookieBanner !== null) {
+        var bannerClass = this.$cookieBanner.getAttribute('class').replace(' visually-hidden', '');
+        this.$cookieBanner.setAttribute('class', bannerClass);
+    }
+}
+CookieBanner.prototype.setChecked = function(elem, cookie) {
+    value = elem.checked ? "true" : "false";
+    this.createCookie(cookie, value, this.$cookieDuration);
+}
+
+CookieBanner.prototype.createCookie = function(name, value, days) {
     if (days) {
         var date = new Date();
         date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
         var expires = "; expires=" + date.toGMTString();
     }
     else var expires = "";
-    if (window.dropCookie) {
+    if (this.$dropCookie) {
         document.cookie = name + "=" + value + expires + "; path=/";
     }
 }
 
-function checkCookie(name) {
+CookieBanner.prototype.checkCookie = function(name) {
     var nameEQ = name + "=";
     var ca = document.cookie.split(';');
     for (var i = 0; i < ca.length; i++) {
@@ -54,28 +91,13 @@ function checkCookie(name) {
     return null;
 }
 
-function eraseCookie(name) {
-    createCookie(name, "", -1);
+CookieBanner.prototype.eraseCookie = function(name) {
+    this.createCookie(name, "", -1);
 }
 
-window.onload = function () {
-
-    var mCheckbox = document.getElementById(MarketingcheckboxId);
-    var aCheckbox = document.getElementById(AnalyticsCheckboxId);
-
-    if (checkCookie(window.cookieName) == window.cookieValue) {
-        removeMe();
-    } else {
-        showMe();
-    }
-    if (mCheckbox !== null && aCheckbox !== null) {
-        mCheckbox.checked = (checkCookie(MarketingcookieName) === "true");
-        aCheckbox.checked = (checkCookie(AnalyticscookieName) === "true");
-    }
+CookieBanner.prototype.removeBanner = function() {
+    if (this.$cookieBanner !== null)
+    this.$cookieBanner.parentNode.removeChild(this.$cookieBanner);
 }
 
-function removeMe() {
-    var element = document.getElementById(cookieBannerId);
-    if (element !== null)
-        element.parentNode.removeChild(element);
-}
+export default CookieBanner
