@@ -45,7 +45,7 @@ CookieBanner.prototype.init = function () {
 }
 
 CookieBanner.prototype.removeBannerEvent = function(enableAll,event) {
-    event.preventDefault();
+
     this.createCookie(this.$cookieName, this.$cookieValue, this.$cookieDuration); // Create the cookie
 
     //if clicked continue, make sure all cookies are enabled
