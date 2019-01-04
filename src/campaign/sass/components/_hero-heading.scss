@@ -59,7 +59,7 @@
     right: -40px;
     margin-bottom: -80px;
     clip-path: polygon(0 100%, 100% 93.1%, 100% 0, 0 6.9%);
-  //  -webkit-clip-path: polygon(0 100%, 100% 93.1%, 100% 0, 0 6.9%);
+    -webkit-clip-path: polygon(0 100%, 100% 93.1%, 100% 0, 0 6.9%);
   }
   @include media-query($from: desktop) {
     right: -80px;

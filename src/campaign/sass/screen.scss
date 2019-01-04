@@ -1,4 +1,4 @@
-
+@import "vendors/normalize";
 
 @import "helpers";
 @import "settings";
@@ -9,7 +9,7 @@
 @import "grid";
 @import "typography";
 
-@import "vendors/normalize";
 @import "components/all";
+@import "pages/all";
 
 @import "overrides";

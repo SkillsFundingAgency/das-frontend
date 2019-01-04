@@ -1,31 +1,65 @@
 
-.cookiebanner{
+.cookiebanner {
   position: fixed;
   left: 0;
   bottom: 0;
-  width: 100%;
-  background-color: #FFFFFF;
-  color: $grey-5;
-  @include responsive-padding(4, "top");
-  @include responsive-padding(4, "bottom");
-  @include responsive-padding(8, "left");
-  @include responsive-padding(8, "right");
-
-  & .button{
-    display: initial;
+  right: 0;
+  border-top: 1px solid $border-colour;
+  background-color: #fff;
+  color: $text-colour;
+  box-sizing: border-box;
+  z-index: 1000;
+  padding: 20px 30px;
+  @include media-query($from: tablet) {
+    padding: 20px 50px;
   }
 }
 
-.cookiebanner__text p{
-  font-size: 18px;
+.cookiebanner__heading {
+  margin: 10px 0 0;
+  @include typography-common;
+  color: $black;
+  text-transform: uppercase;
 }
 
-.cookiebanner__content{
-  display: flex;
-  align-items: center;
+.cookiebanner__button {
+  display: block;
+  width: 100%;
+  @include media-query($from: wide) {
+    display: inline-block;
+    width: auto;
+  }
 }
 
-.cookiebanner__link{
+.cookiebanner_actions {
+  text-align: center;
+}
+
+.cookiebanner__link {
+  display: block;
+  text-align: center;
+  padding: 10px 20px;
   color: $apprentice;
+  margin-top: 5px;
   @include font($size: 18);
+  @include media-query($from: tablet) {
+    margin-top: 0;
+  }
+  @include media-query($from: wide) {
+    display: inline-block;
+  }
+}
+
+.cookiebanner__text p {
+  font-size: 18px;
+  & > a {
+    color: $apprentice;
+  }
+}
+
+.cookiebanner__content {
+  @include media-query($from: tablet) {
+    display: flex;
+    align-items: center;
+  }
 }
