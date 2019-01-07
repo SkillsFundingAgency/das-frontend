@@ -345,7 +345,7 @@ CookieBanner.prototype.init = function () {
 };
 
 CookieBanner.prototype.removeBannerEvent = function(enableAll,event) {
-    event.preventDefault();
+
     this.createCookie(this.$cookieName, this.$cookieValue, this.$cookieDuration); // Create the cookie
 
     //if clicked continue, make sure all cookies are enabled
@@ -425,7 +425,7 @@ function initAll() {
     new CookieBanner($cookieBanner).init();
   }
 
-  if (aspnetValidation != null){
+  if (typeof aspnetValidation != "undefined"){
     let validationService = new aspnetValidation.ValidationService();
     validationService.bootstrap();
   }

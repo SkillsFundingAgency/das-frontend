@@ -27,7 +27,7 @@ function initAll() {
     new CookieBanner($cookieBanner).init();
   }
 
-  if (aspnetValidation != null){
+  if (typeof aspnetValidation != "undefined"){
     let validationService = new aspnetValidation.ValidationService();
     validationService.bootstrap();
   }

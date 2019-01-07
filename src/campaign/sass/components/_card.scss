@@ -33,6 +33,7 @@
   right: 0;
   bottom: 0;
   background-size: cover;
+  background-position: center;
   transition: all .3s ease;
 }
 
@@ -44,13 +45,28 @@
   transform: scale(1.1);
 }
 
-.card__img--1 { background-image: url("../images/card-1.jpg") }
-.card__img--2 { background-image: url("../images/card-2.jpg") }
-.card__img--3 { background-image: url("../images/card-3.jpg") }
-.card__img--4 { background-image: url("../images/card-4.jpg") }
+.card__img--agriculture-environment-animal-care { background-image: url("../images/industries/industry-card-agriculture-environment-animal-care.jpg") }
+.card__img--business-administration { background-image: url("../images/industries/industry-card-business-administration.jpg") }
+.card__img--care-services { background-image: url("../images/industries/industry-card-care-services.jpg") }
+.card__img--catering-hospitality { background-image: url("../images/industries/industry-card-catering-hospitality.jpg") }
+.card__img--construction { background-image: url("../images/industries/industry-card-construction.jpg") }
+.card__img--creative-design { background-image: url("../images/industries/industry-card-creative-design.jpg") }
+.card__img--digital { background-image: url("../images/industries/industry-card-digital.jpg") }
+.card__img--education-childcare { background-image: url("../images/industries/industry-card-education-childcare.jpg") }
+.card__img--engineering-manufacturing { background-image: url("../images/industries/industry-card-engineering-manufacturing.jpg") }
+.card__img--hair-beauty { background-image: url("../images/industries/industry-card-hair-beauty.jpg") }
+.card__img--health-science { background-image: url("../images/industries/industry-card-health-science.jpg") }
+.card__img--legal-finance-accounting { background-image: url("../images/industries/industry-card-legal-finance-accounting.jpg") }
+.card__img--protective-services { background-image: url("../images/industries/industry-card-protective-services.jpg") }
+.card__img--sales-marketing-procurement { background-image: url("../images/industries/industry-card-sales-marketing-procurement.jpg") }
+.card__img--transport-logistics { background-image: url("../images/industries/industry-card-transport-logistics.jpg") }
 
 .card__content {
   padding: 20px 40px 70px;
+}
+
+.card__summary {
+  color: $text-colour;
 }
 
 .card__link {
@@ -64,6 +80,7 @@
   position: absolute;
   color: #000;
   bottom: 0;
+  text-decoration: underline;
   &:before {
     content: "";
     display: block;
