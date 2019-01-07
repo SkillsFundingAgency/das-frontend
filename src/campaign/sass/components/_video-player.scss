@@ -1,0 +1,44 @@
+.plyr {
+  display: none;
+}
+
+.plyr--playing {
+  background: $black;
+  display: block;
+  width: 94%;
+  position: fixed;
+  z-index: 1000;
+  left: 3%;
+  top: 30px;
+}
+
+.video-player__close {
+  color: #fff;
+  font-weight: $font-weight-bold;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: $black;
+  display: block;
+  padding: 10px 20px;
+  border-radius: 0 0 0 10px;
+  z-index: 1;
+}
+
+.page a.video-player__close {
+  color: #fff;
+}
+
+.plyr__control--overlaid {
+  background: $apprentice;
+}
+
+.plyr--full-ui input[type=range] {
+  color: $apprentice;
+}
+
+.plyr--video .plyr__control.plyr__tab-focus,
+.plyr--video .plyr__control:hover,
+.plyr--video .plyr__control[aria-expanded=true] {
+  background: $apprentice;
+}

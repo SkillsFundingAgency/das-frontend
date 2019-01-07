@@ -14,7 +14,7 @@
   <link rel="apple-touch-icon" href="/dist/campaign/images/apple-touch-icon.png">
 
   <!--[if !IE 8]><!-->
-
+  <link rel="stylesheet" href="https://cdn.plyr.io/3.4.7/plyr.css">
   <link href="/dist/campaign/css/screen.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://use.typekit.net/tyj1hwm.css">
 
@@ -22,7 +22,7 @@
 
   <meta property="og:image" content="/dist/campaign/images/opengraph.png">
 
-  <link href="https://unpkg.com/plyr@3/dist/plyr.css" rel="stylesheet" />
+
 
 </head>
 
@@ -32,16 +32,32 @@
     document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');
   </script>
 
-  <script src="https://cdn.plyr.io/3.4.6/plyr.js"></script>
+  <script src="https://cdn.plyr.io/3.4.7/plyr.js"></script>
+
+  <script
+    src="https://code.jquery.com/jquery-3.3.1.min.js"
+    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
 
   <script>
-  document.addEventListener('DOMContentLoaded', () => {
-const player = new Plyr('#player', {});
 
-// Expose player so it can be used from the console
-window.player = player;
+  var player;
+  
+  $(function() {
 
+        player = new Plyr('#player', {
+
+        });
+
+        $('.play').on('click', function() {
+            player.play()
+        });
+
+        $('.video-player__close').on('click', function() {
+           player.stop()
+       });
   });
+  
 </script>
 
   <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -59,9 +75,15 @@ window.player = player;
                     <div class="page">
                         <h2 class="heading-l" id="heading1">Introduction to apprenticeships</h2>
 
-                        <div class="container">
-                      	    <div id="player" data-plyr-provider="youtube" data-plyr-embed-id="VSeiSg9WPtE"></div>
-                      	</div>
+
+
+                        <div class="video-player plyr__video-embed js-player visually-hidden" id="player">
+                            <a class="video-player__close" href="#">Close</a>
+                            <iframe src="https://www.youtube.com/embed/VSeiSg9WPtE?iv_load_policy=3&amp;modestbranding=1&amp;playsinline=1&amp;showinfo=0&amp;rel=0&amp;enablejsapi=1" allowfullscreen allowtransparency allow="autoplay"></iframe>
+
+                        </div>
+
+                         <p><a href="#player" class="play">Play</a></p>
 
                         <p>It's a real job,  with hands-on experience, a salary and the chance to train while you work. You get the same as other employees - a contract of employment, holiday leave, even sick pay.</p>
                         <p>If you're 16 or over, you can become an apprentice as long as you live in England and aren't in full-time education.</p>
