@@ -25,10 +25,6 @@ $hero-text-colour: #fff;
   }
 }
 
-.hero-banner__caption svg {
-  fill: red
-}
-
 .hero-banner__caption-text {
   font-weight: $font-weight-bold;
   font-size: 14px;
@@ -36,7 +32,7 @@ $hero-text-colour: #fff;
   padding-bottom: 5px;
   text-transform: uppercase;
   padding-left: $edgeGutterDesktop;
-  margin-left: $edgeGutterDesktop * -1;
+  margin-left: $edgeGutterDesktop * -1 - 26;
   .hero-banner--right-aligned & {
     padding-left: 0;
     margin-left: 0;
@@ -45,6 +41,21 @@ $hero-text-colour: #fff;
   }
   .hero-banner--employer & {
     border-color: $employer;
+  }
+}
+
+.hero-banner__caption-icon {
+  width: 26px;
+  height: 26px;
+  display: inline-block;
+  background: url('../images/icon-quote-white.svg') no-repeat 0 0;
+  margin: 0;
+  position: relative;
+  top: 12px;
+  right: -180px;
+  .hero-banner--right-aligned & {
+    right: 0;
+    left: -5px;
   }
 }
 
@@ -81,6 +92,7 @@ $hero-text-colour: #fff;
 .hero-banner__header {
   font-weight: $font-weight-bold;
   font-size: 36px;
+  margin-top: 0;
   @include mq ($from: tablet) {
     margin-top: 100px;
   }
@@ -135,14 +147,16 @@ $hero-text-colour: #fff;
 
 .hero-banner__icon-play {
   position: relative;
-  height: 70px;
-  width: 70px;
+  height: 80px;
+  width: 80px;
   display: block;
   margin-top: 40px;
+  margin-bottom: 20px;
   background: $apprentice;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   border-radius: 50%;
+  transition: box-shadow 0.2s ease;
   .hero-banner--employer & {
     background: $employer;
   }
@@ -154,18 +168,28 @@ $hero-text-colour: #fff;
   }
   @include mq ($from: tablet) {
     margin: 140px auto;
+    height: 110px;
+    width: 110px;
   }
   &:before {
     content: "";
     position: absolute;
-    border-top: 12px solid transparent;
-    border-left: 18px solid #fff;
-    border-bottom: 12px solid transparent;
-    left: 29px;
-    top: 23px;
+    background: url("../images/hero-play-apprentice.svg") no-repeat;
+    background-size: cover;
+    display: inline-block;
+    z-index: 1;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    top: 0;
     .hero-banner--employer & {
-      border-left-color: #000;
+      background-image: url("../images/hero-play-apprentice.svg");
     }
+  }
+  &:hover {
+    -webkit-box-shadow: 0px 0px 31px 9px rgba(255,255,255,.3);
+    -moz-box-shadow: 0px 0px 31px 9px rgba(255,255,255,.3);
+    box-shadow: 0px 0px 31px 9px rgba(255,255,255,.3);
   }
 }
 
