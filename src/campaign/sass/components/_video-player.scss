@@ -2,43 +2,86 @@
   display: none;
 }
 
+.plyr--paused,
 .plyr--playing {
-  background: $black;
-  display: block;
-  width: 94%;
-  position: fixed;
-  z-index: 1000;
-  left: 3%;
-  top: 30px;
+
+    display: block;
+    clear: both;
+    border: none;
+    margin: 0;
+    border-radius: 2px;
+    position: fixed;
+    z-index: 10000;
+    top: 0;
+    width: 100%;
+    max-height: 100%;
+    left: 0;
+
 }
 
-.video-player__close {
+.plyr--stopped {
+  display: none;
+}
+
+.video-player__close-mobile,
+.video-player__close-desktop {
   color: #fff;
   font-weight: $font-weight-bold;
   position: absolute;
+  text-transform: uppercase;
+  background: $black;
+  text-decoration: none;
+  line-height: 1;
   top: 0;
   right: 0;
-  background: $black;
-  display: block;
-  padding: 10px 20px;
+  padding: 20px 30px;
   border-radius: 0 0 0 10px;
+  display: flex;
   z-index: 1;
+  align-items: center;
 }
 
-.page a.video-player__close {
-  color: #fff;
+.video-player__close-mobile {
+  @include mq($from: tablet) {
+    display: none;
+  }
+}
+
+.video-player__close-desktop {
+  display: none;
+  @include mq($from: tablet) {
+    display: flex;
+  }
+}
+
+.video-player__close-icon {
+  display: inline-block;
+  height: 20px;
+  width: 20px;
+  margin-right: 5px;
+  background: url("../images/icon-cross-white.svg") no-repeat;
+  background-size: cover;
 }
 
 .plyr__control--overlaid {
   background: $apprentice;
+  .video-player--employer & {
+    background: $employer;
+  }
 }
 
 .plyr--full-ui input[type=range] {
   color: $apprentice;
+  .video-player--employer & {
+    color: $employer;
+  }
 }
 
 .plyr--video .plyr__control.plyr__tab-focus,
 .plyr--video .plyr__control:hover,
 .plyr--video .plyr__control[aria-expanded=true] {
   background: $apprentice;
+  .video-player--employer & {
+    background: $employer;
+  }
 }

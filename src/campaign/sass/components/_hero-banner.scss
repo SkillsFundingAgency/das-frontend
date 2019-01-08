@@ -145,7 +145,8 @@ $hero-text-colour: #fff;
   }
 }
 
-.hero-banner__icon-play {
+.hero-banner__icon-play-mobile,
+.hero-banner__icon-play-desktop {
   position: relative;
   height: 80px;
   width: 80px;
@@ -166,11 +167,6 @@ $hero-text-colour: #fff;
       float: none;
     }
   }
-  @include mq ($from: tablet) {
-    margin: 140px auto;
-    height: 110px;
-    width: 110px;
-  }
   &:before {
     content: "";
     position: absolute;
@@ -183,13 +179,30 @@ $hero-text-colour: #fff;
     left: 0;
     top: 0;
     .hero-banner--employer & {
-      background-image: url("../images/hero-play-apprentice.svg");
+      background-image: url("../images/hero-play-employer.svg");
     }
   }
   &:hover {
     -webkit-box-shadow: 0px 0px 31px 9px rgba(255,255,255,.3);
     -moz-box-shadow: 0px 0px 31px 9px rgba(255,255,255,.3);
     box-shadow: 0px 0px 31px 9px rgba(255,255,255,.3);
+  }
+}
+
+.hero-banner__icon-play-mobile {
+  display: block;
+  @include mq ($from: tablet) {
+    display: none;
+  }
+}
+
+.hero-banner__icon-play-desktop {
+  display: none;
+  @include mq ($from: tablet) {
+    display: block;
+    margin: 140px auto;
+    height: 110px;
+    width: 110px;
   }
 }
 
@@ -200,11 +213,24 @@ $hero-text-colour: #fff;
   right: 0;
   bottom: 0;
   z-index: -1;
-  background-image: linear-gradient(225deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%), url("../images/hero-banner-bg.jpg");
+  background-image: linear-gradient(225deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%), url("../images/heroes/homepage-employer.jpg");
   background-size: cover;
   background-position: center;
+  background-repeat: no-repeat;
   .hero-banner--right-aligned & {
-    background-image:  linear-gradient(-225deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%), url("../images/hero-banner-bg-right-aligned.jpg");
+    background-image:  linear-gradient(-225deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%), url("../images/heroes/homepage-apprentice.jpg");
   }
 }
 
+.hero-banner--apprentice .hero-banner__background {
+  background-image:  linear-gradient(-225deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%), url("../images/heroes/homepage-apprentice-sarah.jpg");
+  background-position: 0 0;
+  @include mq ($from: desktop) {
+    background-size: contain;
+  }
+}
+
+.hero-banner--employer .hero-banner__background {
+  background-image: linear-gradient(225deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%), url("../images/heroes/homepage-employer.jpg");
+  background-position: 0 0;
+}

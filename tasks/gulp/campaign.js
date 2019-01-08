@@ -19,6 +19,10 @@ gulp.task('js-campaign', function() {
     .pipe(gulp.dest(paths.dist.campaignJs));
 });
 
+gulp.task('copy-plyr-js', () => {
+  gulp.src('./node_modules/plyr/dist/plyr.min.js').pipe(gulp.dest('./dist/campaign/js/'));
+});
+
 gulp.task('sass-campaign', () => gulp
   .src(paths.src.campaign)
   .pipe(sass(sassOptions))

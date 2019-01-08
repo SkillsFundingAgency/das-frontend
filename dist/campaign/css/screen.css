@@ -2727,7 +2727,8 @@ p {
     .hero-banner--right-aligned .hero-banner__icon-play-container {
       float: left; } }
 
-.hero-banner__icon-play {
+.hero-banner__icon-play-mobile,
+.hero-banner__icon-play-desktop {
   position: relative;
   height: 80px;
   width: 80px;
@@ -2739,19 +2740,18 @@ p {
   -moz-border-radius: 50%;
   border-radius: 50%;
   transition: box-shadow 0.2s ease; }
-  .hero-banner--employer .hero-banner__icon-play {
+  .hero-banner--employer .hero-banner__icon-play-mobile, .hero-banner--employer
+  .hero-banner__icon-play-desktop {
     background: #ffb007; }
-  .hero-banner--right-aligned .hero-banner__icon-play {
+  .hero-banner--right-aligned .hero-banner__icon-play-mobile, .hero-banner--right-aligned
+  .hero-banner__icon-play-desktop {
     float: right; }
     @media (min-width: 46.25em) {
-      .hero-banner--right-aligned .hero-banner__icon-play {
+      .hero-banner--right-aligned .hero-banner__icon-play-mobile, .hero-banner--right-aligned
+      .hero-banner__icon-play-desktop {
         float: none; } }
-  @media (min-width: 46.25em) {
-    .hero-banner__icon-play {
-      margin: 140px auto;
-      height: 110px;
-      width: 110px; } }
-  .hero-banner__icon-play:before {
+  .hero-banner__icon-play-mobile:before,
+  .hero-banner__icon-play-desktop:before {
     content: "";
     position: absolute;
     background: url("../images/hero-play-apprentice.svg") no-repeat;
@@ -2762,12 +2762,29 @@ p {
     right: 0;
     left: 0;
     top: 0; }
-    .hero-banner--employer .hero-banner__icon-play:before {
-      background-image: url("../images/hero-play-apprentice.svg"); }
-  .hero-banner__icon-play:hover {
+    .hero-banner--employer .hero-banner__icon-play-mobile:before, .hero-banner--employer
+    .hero-banner__icon-play-desktop:before {
+      background-image: url("../images/hero-play-employer.svg"); }
+  .hero-banner__icon-play-mobile:hover,
+  .hero-banner__icon-play-desktop:hover {
     -webkit-box-shadow: 0px 0px 31px 9px rgba(255, 255, 255, 0.3);
     -moz-box-shadow: 0px 0px 31px 9px rgba(255, 255, 255, 0.3);
     box-shadow: 0px 0px 31px 9px rgba(255, 255, 255, 0.3); }
+
+.hero-banner__icon-play-mobile {
+  display: block; }
+  @media (min-width: 46.25em) {
+    .hero-banner__icon-play-mobile {
+      display: none; } }
+
+.hero-banner__icon-play-desktop {
+  display: none; }
+  @media (min-width: 46.25em) {
+    .hero-banner__icon-play-desktop {
+      display: block;
+      margin: 140px auto;
+      height: 110px;
+      width: 110px; } }
 
 .hero-banner__background {
   position: absolute;
@@ -2776,11 +2793,23 @@ p {
   right: 0;
   bottom: 0;
   z-index: -1;
-  background-image: linear-gradient(225deg, rgba(0, 0, 0, 0) 0%, black 100%), url("../images/hero-banner-bg.jpg");
+  background-image: linear-gradient(225deg, rgba(0, 0, 0, 0) 0%, black 100%), url("../images/heroes/homepage-employer.jpg");
   background-size: cover;
-  background-position: center; }
+  background-position: center;
+  background-repeat: no-repeat; }
   .hero-banner--right-aligned .hero-banner__background {
-    background-image: linear-gradient(-225deg, rgba(0, 0, 0, 0) 0%, black 100%), url("../images/hero-banner-bg-right-aligned.jpg"); }
+    background-image: linear-gradient(-225deg, rgba(0, 0, 0, 0) 0%, black 100%), url("../images/heroes/homepage-apprentice.jpg"); }
+
+.hero-banner--apprentice .hero-banner__background {
+  background-image: linear-gradient(-225deg, rgba(0, 0, 0, 0) 0%, black 100%), url("../images/heroes/homepage-apprentice-sarah.jpg");
+  background-position: 0 0; }
+  @media (min-width: 61.25em) {
+    .hero-banner--apprentice .hero-banner__background {
+      background-size: contain; } }
+
+.hero-banner--employer .hero-banner__background {
+  background-image: linear-gradient(225deg, rgba(0, 0, 0, 0) 0%, black 100%), url("../images/heroes/homepage-employer.jpg");
+  background-position: 0 0; }
 
 .hero-heading {
   transform: rotate(-6deg) skewX(-6deg);
@@ -3110,7 +3139,6 @@ p {
   top: -100%;
   z-index: 2010;
   width: 60%;
-  height: 90%;
   -webkit-transform: translate(0, -500%);
   -ms-transform: translate(0, -500%);
   transform: translate(0, -500%);
@@ -3118,7 +3146,7 @@ p {
   -moz-transition: -moz-transform 0.3s ease-out;
   -o-transition: -o-transform 0.3s ease-out;
   transition: transform 0.3s ease-out;
-  overflow-y: scroll;
+  overflow-y: auto;
   overflow-x: hidden; }
   @media (max-width: 46.24em) {
     .modal-dialog {
@@ -4252,38 +4280,74 @@ p {
 .plyr {
   display: none; }
 
+.plyr--paused,
 .plyr--playing {
   display: block;
-  position: relative;
-  margin-top: 20px;
-  margin-bottom: 20px;
   clear: both;
-  border: 2px solid #fff;
-  border-radius: 2px; }
+  border: none;
+  margin: 0;
+  border-radius: 2px;
+  position: fixed;
+  z-index: 10000;
+  top: 0;
+  width: 100%;
+  max-height: 100%;
+  left: 0; }
 
-.video-player__close {
+.plyr--stopped {
+  display: none; }
+
+.video-player__close-mobile,
+.video-player__close-desktop {
   color: #fff;
   font-weight: 700;
   position: absolute;
+  text-transform: uppercase;
+  background: #0B0C0C;
+  text-decoration: none;
+  line-height: 1;
   top: 0;
   right: 0;
-  background: #0B0C0C;
-  display: block;
-  padding: 10px 20px;
+  padding: 20px 30px;
   border-radius: 0 0 0 10px;
-  z-index: 1; }
+  display: flex;
+  z-index: 1;
+  align-items: center; }
 
-.page a.video-player__close {
-  color: #fff; }
+@media (min-width: 46.25em) {
+  .video-player__close-mobile {
+    display: none; } }
+
+.video-player__close-desktop {
+  display: none; }
+  @media (min-width: 46.25em) {
+    .video-player__close-desktop {
+      display: flex; } }
+
+.video-player__close-icon {
+  display: inline-block;
+  height: 20px;
+  width: 20px;
+  margin-right: 5px;
+  background: url("../images/icon-cross-white.svg") no-repeat;
+  background-size: cover; }
 
 .plyr__control--overlaid {
   background: #006dff; }
+  .video-player--employer .plyr__control--overlaid {
+    background: #ffb007; }
 
 .plyr--full-ui input[type='range'] {
   color: #006dff; }
+  .video-player--employer .plyr--full-ui input[type=range] {
+    color: #ffb007; }
 
 .plyr--video .plyr__control.plyr__tab-focus, .plyr--video .plyr__control:hover, .plyr--video .plyr__control[aria-expanded='true'] {
   background: #006dff; }
+  .video-player--employer .plyr--video .plyr__control.plyr__tab-focus, .video-player--employer
+  .plyr--video .plyr__control:hover, .video-player--employer
+  .plyr--video .plyr__control[aria-expanded=true] {
+    background: #ffb007; }
 
 .cssmask .launcher--apprentices {
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 94%);
