@@ -1203,9 +1203,11 @@ p {
 .cta-faa {
   background-color: #006dff;
   color: #FFFFFF;
-  display: flex;
   align-items: center;
   padding: 30px; }
+  @media (max-width: 46.24em) {
+    .cta-faa {
+      display: flex; } }
 
 .cta-faa__heading {
   color: #FFFFFF; }
