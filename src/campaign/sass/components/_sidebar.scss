@@ -92,11 +92,15 @@
 
     & .sidebar__heading{
       color:$black;
+      padding-bottom: 10px;
     }
 
    
 }
 
+.sidebar__sub-content-crown-logo{
+  height:20px;
+}
 
 .trimmer {
   overflow: hidden;
