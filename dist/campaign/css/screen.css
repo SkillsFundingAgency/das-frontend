@@ -2443,6 +2443,14 @@ p {
       font-size: 14px; } }
 
 @media (min-width: 56.25em) {
+  .navigation__list-item:first-child .navigation__link--top-level {
+    padding-left: 80px; } }
+
+@media (min-width: 75em) {
+  .navigation__list-item:first-child .navigation__link--top-level {
+    padding-left: 120px; } }
+
+@media (min-width: 56.25em) {
   .navigation__list-item:hover .navigation__link--top-level {
     color: #0B0C0C; } }
 
