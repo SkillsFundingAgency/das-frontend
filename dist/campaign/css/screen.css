@@ -2259,7 +2259,7 @@ p {
   color: #FFFFFF;
   align-items: center;
   padding: 30px; }
-  @media (max-width: 46.24em) {
+  @media (min-width: 46.25em) {
     .cta-faa {
       display: flex; } }
 
