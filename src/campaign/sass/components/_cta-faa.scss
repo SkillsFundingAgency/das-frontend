@@ -4,7 +4,7 @@
   align-items: center;
   padding: 30px;
 
-  @include mq($until:tablet){
+  @include mq($from:tablet){
     display: flex;
   }
 }

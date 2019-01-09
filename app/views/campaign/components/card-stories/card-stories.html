@@ -1,0 +1,25 @@
+{% extends '../template.html'%}
+
+{% block content %}
+
+<div class="grid-row-full-width card__collection--grey card-stories__collection card-stories--apprentice">
+
+            {% include './_card-stories.html'%}
+            {% include './_card-stories.html'%}
+
+</div>
+
+<div class="grid-row-full-width card__collection--grey card-stories__collection card-stories--employer">
+
+        {% include './_card-stories.html'%}
+        {% include './_card-stories.html'%}
+
+</div>
+
+<style>
+.main-content{
+    background: #F8F8F8;
+}
+
+</style>
+{% endblock %}
