@@ -1,0 +1,100 @@
+.plyr {
+  display: none;
+}
+
+.plyr--paused,
+.plyr--playing {
+  display: block;
+  clear: both;
+  border: none;
+  margin: 0;
+  border-radius: 2px;
+  position: fixed;
+  z-index: 10000;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  left: 0;
+}
+
+.plyr--stopped {
+  display: none;
+}
+
+.video-player--inner-wrap {
+  height: 100%;
+  @include mq ($from: tablet) {
+    padding: 40px;
+  }
+  @include mq ($from: desktop) {
+    padding: 60px;
+  }
+}
+
+.plyr__video-wrapper {
+  
+}
+
+
+.video-player__close-mobile,
+.video-player__close-desktop {
+  color: #fff;
+  font-weight: $font-weight-bold;
+  position: absolute;
+  text-transform: uppercase;
+  background: $black;
+  text-decoration: none;
+  line-height: 1;
+  top: 0;
+  right: 0;
+  padding: 20px 30px;
+  border-radius: 0 0 0 10px;
+  display: flex;
+  z-index: 1;
+  align-items: center;
+}
+
+.video-player__close-mobile {
+  @include mq($from: tablet) {
+    display: none;
+  }
+}
+
+.video-player__close-desktop {
+  display: none;
+  @include mq($from: tablet) {
+    display: flex;
+  }
+}
+
+.video-player__close-icon {
+  display: inline-block;
+  height: 20px;
+  width: 20px;
+  margin-right: 5px;
+  background: url("../images/icon-cross-white.svg") no-repeat;
+  background-size: cover;
+}
+
+.plyr__control--overlaid {
+  background: $apprentice;
+  .video-player--employer & {
+    background: $employer;
+  }
+}
+
+.plyr--full-ui input[type=range] {
+  color: $apprentice;
+  .video-player--employer & {
+    color: $employer;
+  }
+}
+
+.plyr--video .plyr__control.plyr__tab-focus,
+.plyr--video .plyr__control:hover,
+.plyr--video .plyr__control[aria-expanded=true] {
+  background: $apprentice;
+  .video-player--employer & {
+    background: $employer;
+  }
+}

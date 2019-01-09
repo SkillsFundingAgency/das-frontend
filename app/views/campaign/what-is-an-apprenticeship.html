@@ -14,13 +14,16 @@
   <link rel="apple-touch-icon" href="/dist/campaign/images/apple-touch-icon.png">
 
   <!--[if !IE 8]><!-->
-
+  <link rel="stylesheet" href="https://cdn.plyr.io/3.4.7/plyr.css">
   <link href="/dist/campaign/css/screen.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://use.typekit.net/tyj1hwm.css">
 
   <!--<![endif]-->
 
   <meta property="og:image" content="/dist/campaign/images/opengraph.png">
+
+
+
 </head>
 
 <body class="page-template">
@@ -43,6 +46,16 @@
 
                     <div class="page">
                         <h2 class="heading-l" id="heading1">Introduction to apprenticeships</h2>
+
+
+
+                        <div class="video-player plyr__video-embed js-player visually-hidden" id="player">
+                            <a class="video-player__close" href="#">Close</a>
+                            <iframe src="https://www.youtube.com/embed/VSeiSg9WPtE?iv_load_policy=3&amp;modestbranding=1&amp;playsinline=1&amp;showinfo=0&amp;rel=0&amp;enablejsapi=1" allowfullscreen allowtransparency allow="autoplay"></iframe>
+
+                        </div>
+
+                         <p><a href="#player" class="play">Play</a></p>
 
                         <p>It's a real job,  with hands-on experience, a salary and the chance to train while you work. You get the same as other employees - a contract of employment, holiday leave, even sick pay.</p>
                         <p>If you're 16 or over, you can become an apprentice as long as you live in England and aren't in full-time education.</p>
@@ -105,18 +118,11 @@
 
     </div>
 
-    <script
-      src="https://code.jquery.com/jquery-3.3.1.min.js"
-      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-      crossorigin="anonymous"></script>
-        <script src="/dist/campaign/js/app.min.js"></script>
-      <script src="/dist/js/das-all.js"></script>
-        <script>
-          window.DASFrontend.initAll()
-        </script>
-
-
-
+    <script src="/dist/campaign/js/app.min.js"></script>
+    <script src="/dist/js/das-all.js"></script>
+    <script>
+        window.DASFrontend.initAll()
+    </script>
 
 </body>
 
