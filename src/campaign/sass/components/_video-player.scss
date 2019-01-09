@@ -4,24 +4,37 @@
 
 .plyr--paused,
 .plyr--playing {
-
-    display: block;
-    clear: both;
-    border: none;
-    margin: 0;
-    border-radius: 2px;
-    position: fixed;
-    z-index: 10000;
-    top: 0;
-    width: 100%;
-    max-height: 100%;
-    left: 0;
-
+  display: block;
+  clear: both;
+  border: none;
+  margin: 0;
+  border-radius: 2px;
+  position: fixed;
+  z-index: 10000;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  left: 0;
 }
 
 .plyr--stopped {
   display: none;
 }
+
+.video-player--inner-wrap {
+  height: 100%;
+  @include mq ($from: tablet) {
+    padding: 40px;
+  }
+  @include mq ($from: desktop) {
+    padding: 60px;
+  }
+}
+
+.plyr__video-wrapper {
+  
+}
+
 
 .video-player__close-mobile,
 .video-player__close-desktop {
