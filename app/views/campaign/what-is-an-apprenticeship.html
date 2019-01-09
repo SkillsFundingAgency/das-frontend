@@ -32,34 +32,6 @@
     document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');
   </script>
 
-  <script src="https://cdn.plyr.io/3.4.7/plyr.js"></script>
-
-  <script
-    src="https://code.jquery.com/jquery-3.3.1.min.js"
-    integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-    crossorigin="anonymous"></script>
-
-  <script>
-
-  var player;
-  
-  $(function() {
-
-        player = new Plyr('#player', {
-
-        });
-
-        $('.play').on('click', function() {
-            player.play()
-        });
-
-        $('.video-player__close').on('click', function() {
-           player.stop()
-       });
-  });
-  
-</script>
-
   <a href="#main-content" class="skip-link">Skip to main content</a>
 
     <div class="wrap">
@@ -146,18 +118,11 @@
 
     </div>
 
-    <script
-      src="https://code.jquery.com/jquery-3.3.1.min.js"
-      integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-      crossorigin="anonymous"></script>
-        <script src="/dist/campaign/js/app.min.js"></script>
-      <script src="/dist/js/das-all.js"></script>
-        <script>
-          window.DASFrontend.initAll()
-        </script>
-
-
-
+    <script src="/dist/campaign/js/app.min.js"></script>
+    <script src="/dist/js/das-all.js"></script>
+    <script>
+        window.DASFrontend.initAll()
+    </script>
 
 </body>
 
