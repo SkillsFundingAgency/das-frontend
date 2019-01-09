@@ -9,6 +9,7 @@
   list-style-type: none;
 }
 
+
 .list > li {
   font-size: 21px;
   @include media-query($from: tablet) {
