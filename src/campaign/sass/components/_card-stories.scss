@@ -1,0 +1,130 @@
+
+.card-stories {
+  @extend .card;
+  padding: 20px;
+  
+}
+.card-stories__collection {
+  & :first-child(){
+    padding-left: 0px;
+  }
+  & :last-child(){
+    padding-right:0px;
+  }
+}
+
+.card-stories__image {
+  @extend .card__image;
+  height: 300px;
+  @include media-query($from: tablet) {
+    height: 300px;
+  }
+  @include media-query($from: desktop) {
+    height: 450px;
+  }
+}
+
+.card-stories__img {
+  @extend .card__img;
+}
+.card-stories__content {
+  padding: 20px 40px 70px;
+}
+
+.card-stories__summary {
+  color: $text-colour;
+}
+.card-stories__content{
+  background: #FFFFFF;
+}
+.card-stories__headline{
+  &:before {
+    margin-right:15px;
+    width: 33px;
+    height: 27px;
+    .card-stories--apprentice & {
+      color: $apprentice;
+    content: url("data:image/svg+xml,%3Csvg width='33' height='27' viewBox='0 0 33 27' fill='%23006dff' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M15.3647 5.73648C15.1685 6.00899 14.9526 6.14539 14.7171 6.14539C10.6748 6.72956 8.65367 8.5794 8.65367 11.6949H12.2447C12.8726 11.6949 13.1865 12.0065 13.1865 12.6296V26.0653C13.1865 26.6884 12.8726 27 12.2447 27H0.941897C0.313967 27 0 26.6884 0 26.0653V14.4405C0 5.28862 4.51325 0.479014 13.5398 0.0116833C13.7752 -0.0272609 13.9813 0.0311549 14.1579 0.186932C14.3345 0.342708 14.462 0.537429 14.5405 0.771095L15.4824 5.03548C15.5609 5.30809 15.5217 5.54176 15.3647 5.73648ZM32.7898 5.73648C32.6328 6.00899 32.4169 6.14539 32.1425 6.14539C28.1787 6.72956 26.1572 8.5794 26.079 11.6949H29.67C29.9445 11.6949 30.1802 11.7826 30.3764 11.9578C30.5727 12.1331 30.6711 12.357 30.6711 12.6296V26.0653C30.6711 26.3379 30.5729 26.5619 30.3764 26.7371C30.18 26.9124 29.9446 27 29.67 27H18.4258C18.1513 27 17.9156 26.9124 17.7194 26.7371C17.5232 26.5619 17.4251 26.3379 17.4251 26.0653V14.4405C17.4251 5.28862 21.958 0.479014 31.0237 0.0116833C31.2589 -0.0272609 31.4652 0.0311549 31.6418 0.186932C31.8184 0.342708 31.9461 0.537429 32.0245 0.771095L32.9664 5.03548C33.0449 5.30809 32.986 5.54176 32.7898 5.73648Z' /%3E%3C/svg%3E%0A");
+
+    }
+    .card-stories--employer & {
+      color: $employer;
+    content: url("data:image/svg+xml,%3Csvg width='33' height='27' viewBox='0 0 33 27' fill='%23ffb007' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M15.3647 5.73648C15.1685 6.00899 14.9526 6.14539 14.7171 6.14539C10.6748 6.72956 8.65367 8.5794 8.65367 11.6949H12.2447C12.8726 11.6949 13.1865 12.0065 13.1865 12.6296V26.0653C13.1865 26.6884 12.8726 27 12.2447 27H0.941897C0.313967 27 0 26.6884 0 26.0653V14.4405C0 5.28862 4.51325 0.479014 13.5398 0.0116833C13.7752 -0.0272609 13.9813 0.0311549 14.1579 0.186932C14.3345 0.342708 14.462 0.537429 14.5405 0.771095L15.4824 5.03548C15.5609 5.30809 15.5217 5.54176 15.3647 5.73648ZM32.7898 5.73648C32.6328 6.00899 32.4169 6.14539 32.1425 6.14539C28.1787 6.72956 26.1572 8.5794 26.079 11.6949H29.67C29.9445 11.6949 30.1802 11.7826 30.3764 11.9578C30.5727 12.1331 30.6711 12.357 30.6711 12.6296V26.0653C30.6711 26.3379 30.5729 26.5619 30.3764 26.7371C30.18 26.9124 29.9446 27 29.67 27H18.4258C18.1513 27 17.9156 26.9124 17.7194 26.7371C17.5232 26.5619 17.4251 26.3379 17.4251 26.0653V14.4405C17.4251 5.28862 21.958 0.479014 31.0237 0.0116833C31.2589 -0.0272609 31.4652 0.0311549 31.6418 0.186932C31.8184 0.342708 31.9461 0.537429 32.0245 0.771095L32.9664 5.03548C33.0449 5.30809 32.986 5.54176 32.7898 5.73648Z' /%3E%3C/svg%3E%0A");
+
+    }
+  }
+}
+
+.card-stories__cite {
+  text-transform: uppercase;
+  @include font($size: 12, $weight: bold);
+  color: $grey-3;
+  line-height: 20px;
+  margin-bottom: 20px;
+}
+
+.card-stories__cite-detail {
+  display: block;
+  .card-stories--apprentice & {
+    color: $apprentice;
+  }
+  .card-stories--employer & {
+    color: $employer;
+  }
+}
+
+.card-stories__icon-play-mobile,
+.card-stories__icon-play-desktop {
+  position: relative;
+  height: 80px;
+  width: 80px;
+  display: block;
+  margin-top: 40px;
+  margin-bottom: 20px;
+  background: $apprentice;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  border-radius: 50%;
+  transition: box-shadow 0.2s ease;
+  .card-stories--employer & {
+    background: $employer;
+  }
+ 
+  &:before {
+    content: "";
+    position: absolute;
+    background: url("../images/hero-play-apprentice.svg") no-repeat;
+    background-size: cover;
+    display: inline-block;
+    z-index: 1;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    top: 0;
+    .card-stories--employer & {
+      background-image: url("../images/hero-play-employer.svg");
+    }
+  }
+  &:hover {
+    -webkit-box-shadow: 0px 0px 31px 9px rgba(255,255,255,.3);
+    -moz-box-shadow: 0px 0px 31px 9px rgba(255,255,255,.3);
+    box-shadow: 0px 0px 31px 9px rgba(255,255,255,.3);
+  }
+}
+
+.card-stories__icon-play-mobile {
+  display: block;
+  @include mq ($from: tablet) {
+    display: none;
+  }
+}
+
+.card-stories__icon-play-desktop {
+  display: none;
+  @include mq ($from: tablet) {
+    display: block;
+    margin: 140px auto;
+    height: 110px;
+    width: 110px;
+  }
+}
