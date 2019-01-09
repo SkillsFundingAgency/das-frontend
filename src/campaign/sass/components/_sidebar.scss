@@ -60,22 +60,46 @@
   @extend .sidebar__header;
   margin-top: 120px;
   padding-bottom:70px;
+  
   & p{
     color: #FFFFFF;
   }
   &:after {
-    border-color: transparent transparent #FFFFFF;
+    border-color: transparent transparent #FFFFFF !important;
+    border-bottom-color: #FFFFFF;
   }
   .button{
     display: flex;
       justify-content: center;
   }
-
-  .sidebar--employer & {
-    &:after {
-      border-bottom-color: #FFFFFF;
-    }
+}
+.sidebar__sub-content--mid{
+  margin-top:165px;
+  &:before {
+    border-color: transparent transparent $employer-mid !important;
+    border-bottom-color: $employer-mid !important;
   }
+
+  &:after {
+    border-color: transparent transparent #FFFFFF;
+    border-bottom-color: #FFFFFF;
+  }
+  .sidebar--employer & {
+   
+      background-color: $employer-mid;
+    }
+
+
+    & .sidebar__heading{
+      color:$black;
+      padding-bottom: 10px;
+    }
+
+   
+}
+
+.sidebar__sub-content-crown-logo{
+  height:20px;
 }
 
 .trimmer {

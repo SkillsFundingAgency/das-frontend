@@ -1,0 +1,14 @@
+.cta-faa{
+  background-color: $apprentice;
+  color: #FFFFFF;
+  align-items: center;
+  padding: 30px;
+
+  @include mq($until:tablet){
+    display: flex;
+  }
+}
+
+.cta-faa__heading{
+  color: #FFFFFF;
+}
