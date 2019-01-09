@@ -2835,23 +2835,28 @@ p {
   right: 0;
   bottom: 0;
   z-index: -1;
-  background-image: linear-gradient(225deg, rgba(0, 0, 0, 0) 0%, black 100%), url("../images/heroes/homepage-employer.jpg");
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat; }
-  .hero-banner--right-aligned .hero-banner__background {
-    background-image: linear-gradient(-225deg, rgba(0, 0, 0, 0) 0%, black 100%), url("../images/heroes/homepage-apprentice.jpg"); }
 
 .hero-banner--apprentice .hero-banner__background {
-  background-image: linear-gradient(-225deg, rgba(0, 0, 0, 0) 0%, black 100%), url("../images/heroes/homepage-apprentice-sarah.jpg");
-  background-position: 0 0; }
+  background-image: linear-gradient(-225deg, rgba(0, 0, 0, 0) 0%, black 100%), url("../images/homepage/home-hero-apprentice.jpg");
+  background-position: 40% 80%;
+  background-size: auto; }
   @media (min-width: 61.25em) {
     .hero-banner--apprentice .hero-banner__background {
-      background-position: center; } }
+      background-position: 0 0;
+      background-size: cover; } }
+  @media (min-width: 81.25em) {
+    .hero-banner--apprentice .hero-banner__background {
+      background-position: 40% 80%; } }
 
 .hero-banner--employer .hero-banner__background {
-  background-image: linear-gradient(225deg, rgba(0, 0, 0, 0) 0%, black 100%), url("../images/heroes/homepage-employer.jpg");
-  background-position: 0 0; }
+  background-image: linear-gradient(225deg, rgba(0, 0, 0, 0) 0%, black 100%), url("../images/homepage/home-hero-employer.jpg");
+  background-position: auto; }
+  @media (min-width: 46.25em) {
+    .hero-banner--employer .hero-banner__background {
+      background-position: 0 0; } }
 
 .hero-heading {
   transform: rotate(-6deg) skewX(-6deg);
@@ -2971,17 +2976,24 @@ p {
 .launcher {
   position: relative;
   overflow: hidden;
-  height: 100%; }
+  height: 100%;
+  background: #0B0C0C; }
 
 .launcher__content {
-  padding: 160px 20px 80px;
-  color: #fff; }
+  padding: 160px 20px 50px;
+  color: #fff;
+  background-image: linear-gradient(225deg, rgba(0, 0, 0, 0) 0%, black 100%); }
   @media (min-width: 46.25em) {
     .launcher__content {
       padding-left: 40px;
       padding-right: 40px;
-      padding-top: 200px; } }
+      padding-top: 200px;
+      padding-bottom: 80px; } }
   @media (min-width: 61.25em) {
+    .launcher__content {
+      padding-left: 80px;
+      padding-right: 120px; } }
+  @media (min-width: 81.25em) {
     .launcher__content {
       padding-left: 80px;
       padding-right: 240px; } }
@@ -2996,7 +3008,6 @@ p {
 .launcher__bg {
   background-repeat: no-repeat;
   background-size: cover;
-  background-image: linear-gradient(225deg, rgba(0, 0, 0, 0) 0%, black 100%), url("../images/stock-apprentice.jpg");
   position: absolute;
   top: 0;
   left: 0;
@@ -3005,17 +3016,31 @@ p {
   display: block;
   z-index: -1;
   transition: all .3s ease; }
-  .launcher--employer .launcher__bg {
-    background-image: linear-gradient(225deg, rgba(0, 0, 0, 0) 0%, black 100%), url("../images/stock-employer.jpg"); }
+
+.launcher--apprentice .launcher__bg {
+  background-image: url("../images/homepage/home-launch-apprentice.jpg");
+  background-position: -250px -60px; }
+  @media (min-width: 20em) {
+    .launcher--apprentice .launcher__bg {
+      background-position: 25%; } }
+  @media (min-width: 46.25em) {
+    .launcher--apprentice .launcher__bg {
+      background-position: 30%; } }
+  @media (min-width: 61.25em) {
+    .launcher--apprentice .launcher__bg {
+      background-position: 10%; } }
+
+.launcher--employer .launcher__bg {
+  background-image: url("../images/homepage/home-launch-employer.jpg");
+  background-position: center; }
 
 .launcher:hover .launcher__bg {
   transform: scale(1.1); }
 
 .launcher__section-heading {
   background: #006dff;
-  text-transform: uppercase;
   font-family: nobel, sans-serif;
-  font-size: 14px;
+  font-size: 18px;
   display: inline-block;
   padding: 10px 20px; }
   .launcher--employer .launcher__section-heading {
@@ -3024,8 +3049,11 @@ p {
 .launcher__heading {
   text-transform: uppercase;
   font-family: nobel, sans-serif;
-  font-size: 36px;
+  font-size: 30px;
   margin: 10px 0 15px; }
+  @media (min-width: 46.25em) {
+    .launcher__heading {
+      font-size: 36px; } }
 
 .launcher__intro {
   color: #fff; }
@@ -4424,13 +4452,13 @@ p {
   .plyr--video .plyr__control[aria-expanded=true] {
     background: #ffb007; }
 
-.cssmask .launcher--apprentices {
+.cssmask .launcher--apprentice {
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 94%);
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 94%);
   margin-bottom: -80px;
   z-index: 4; }
   @media (min-width: 46.25em) {
-    .cssmask .launcher--apprentices {
+    .cssmask .launcher--apprentice {
       -webkit-clip-path: none;
       clip-path: none;
       margin-bottom: 0; } }
