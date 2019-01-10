@@ -4047,7 +4047,6 @@ p {
   padding-bottom: 20px;
   margin-bottom: 25px; }
   .resources--employer .resources__heading {
-    color: #ffb007;
     border-bottom-color: #ffe9c1; }
 
 .resources__list {
@@ -4085,7 +4084,7 @@ p {
 
 .resources__description {
   margin-top: 0;
-  color: #6F777B;
+  color: #646c6f;
   font-size: 19px; }
 
 .section {
