@@ -46,6 +46,9 @@
     padding-bottom: 80px;
     margin-bottom: -80px;
     z-index: 2;
+    @include media-query($from: tablet) {
+    border-width: 0px 0px 32px 671px;
+    }
     @include media-query($from: desktop) {
       -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 88%);
       clip-path: polygon(0 0, 100% 0, 100% 100%, 0 88%);
@@ -55,5 +58,18 @@
   .hero-banner--employer {
 
   }
+
+  .hero-banner--header-slant {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 94%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 94%, 0 100%);
+    padding-bottom: 80px;
+    margin-bottom: -80px;
+    z-index: 10;
+    @include media-query($from: desktop) {
+      -webkit-clip-path: polygon(0 0, 100% 0, 100% 88%, 0 100%);
+      clip-path: polygon(0 0, 100% 0, 100% 88%, 0 100%);
+    }
+  }
+
 
 }

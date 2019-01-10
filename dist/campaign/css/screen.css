@@ -1281,6 +1281,29 @@ a.plyr__control {
     .main-content {
       padding: 50px; } }
 
+.main-content-section {
+  padding: 20px;
+  background: #F8F8F8;
+  padding-top: 110px; }
+  @media (min-width: 46.25em) {
+    .main-content-section {
+      padding: 110px 50px  0px  50px; } }
+  .main-content-section:after {
+    content: '';
+    position: relative;
+    left: -20px;
+    right: 0;
+    bottom: -22px;
+    border-style: solid;
+    border-width: 0px 0px 32px 740px;
+    border-color: transparent #f8f8f8 transparent;
+    z-index: 10; }
+    @media (min-width: 46.25em) {
+      .main-content-section:after {
+        left: -50px;
+        border-width: 0px 0px 50px 1440px;
+        bottom: -15px; } }
+
 .main-content,
 .section,
 .resources,
@@ -1966,11 +1989,8 @@ p {
 .card-stories {
   padding: 20px; }
 
-.card-stories__collection :first-child {
+.card-stories__collection > :first-child {
   padding-left: 0px; }
-
-.card-stories__collection :last-child {
-  padding-right: 0px; }
 
 .card-stories__image {
   height: 300px; }
@@ -2741,6 +2761,9 @@ p {
   .hero-banner.hero-banner--right-aligned {
     text-align: right; }
 
+.hero-banner__caption {
+  margin-bottom: 80px; }
+
 .hero-banner__caption-text {
   font-weight: 700;
   font-size: 14px;
@@ -2803,7 +2826,7 @@ p {
   text-transform: uppercase; }
   @media (min-width: 46.25em) {
     .hero-banner__header {
-      margin-top: 100px; } }
+      margin-top: 20px; } }
 
 .hero-banner__sub-heading {
   color: #fff; }
@@ -4596,10 +4619,24 @@ p {
   padding-bottom: 80px;
   margin-bottom: -80px;
   z-index: 2; }
+  @media (min-width: 46.25em) {
+    .cssmask .hero-banner--apprentice {
+      border-width: 0px 0px 32px 671px; } }
   @media (min-width: 61.25em) {
     .cssmask .hero-banner--apprentice {
       -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 88%);
       clip-path: polygon(0 0, 100% 0, 100% 100%, 0 88%); } }
+
+.cssmask .hero-banner--header-slant {
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 94%, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 94%, 0 100%);
+  padding-bottom: 80px;
+  margin-bottom: -80px;
+  z-index: 10; }
+  @media (min-width: 61.25em) {
+    .cssmask .hero-banner--header-slant {
+      -webkit-clip-path: polygon(0 0, 100% 0, 100% 88%, 0 100%);
+      clip-path: polygon(0 0, 100% 0, 100% 88%, 0 100%); } }
 
 @media (min-width: 46.25em) {
   .hidden--desktop {
