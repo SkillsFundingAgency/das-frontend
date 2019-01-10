@@ -3308,6 +3308,8 @@ p {
   right: 0;
   bottom: 0;
   z-index: 2000; }
+  .show-modal .modal:before {
+    display: block; }
 
 .modal:target:before {
   display: block; }
@@ -3339,6 +3341,8 @@ p {
     .modal-dialog {
       left: 0;
       width: 100%; } }
+  .show-modal .modal-dialog {
+    top: 10%; }
 
 .modal-body {
   padding: 20px; }
