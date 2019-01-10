@@ -25,6 +25,10 @@ $hero-text-colour: #fff;
   }
 }
 
+.hero-banner__caption {
+  margin-bottom: 80px;
+}
+
 .hero-banner__caption-text {
   font-weight: $font-weight-bold;
   font-size: 14px;
@@ -94,7 +98,7 @@ $hero-text-colour: #fff;
   font-size: 36px;
   margin-top: 0;
   @include mq ($from: tablet) {
-    margin-top: 100px;
+    margin-top: 20px;
   }
   color: $hero-text-colour;
   text-transform: uppercase;

@@ -2803,6 +2803,9 @@ p {
   .hero-banner.hero-banner--right-aligned {
     text-align: right; }
 
+.hero-banner__caption {
+  margin-bottom: 80px; }
+
 .hero-banner__caption-text {
   font-weight: 700;
   font-size: 14px;
@@ -2865,7 +2868,7 @@ p {
   text-transform: uppercase; }
   @media (min-width: 46.25em) {
     .hero-banner__header {
-      margin-top: 100px; } }
+      margin-top: 20px; } }
 
 .hero-banner__sub-heading {
   color: #fff; }
