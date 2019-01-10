@@ -59,7 +59,7 @@ $blue-dark: darken($blue, 5%);
   overflow: auto;
 
   @include translate(0, -500%);
-  @include transition-transform(#{"0.3s ease-out"});
+  @include transition-transform(#{"0.6s ease"});
 
   @include media-query($from: tablet) {
     width: 60%;
