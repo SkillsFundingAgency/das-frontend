@@ -5,12 +5,10 @@
   
 }
 .card-stories__collection {
-  & :first-child(){
+  & >:first-child(){
     padding-left: 0px;
   }
-  & :last-child(){
-    padding-right:0px;
-  }
+ 
 }
 
 .card-stories__image {
