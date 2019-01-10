@@ -38,9 +38,7 @@ $blue-dark: darken($blue, 5%);
     position: fixed;
     top: 0; left: 0; right: 0; bottom: 0; 
     z-index: 2000;
-    .show-modal & {
-      display: block;
-    }
+
   }
   
   &:target{
@@ -55,6 +53,10 @@ $blue-dark: darken($blue, 5%);
      
   }
   
+}
+
+.show-modal:before {
+  display: block;
 }
 
 // Modal Dialog
@@ -78,6 +80,7 @@ $blue-dark: darken($blue, 5%);
   }
   .show-modal & {
     top: 10%;
+    @include translate(0, 0);
   }
 }
 
