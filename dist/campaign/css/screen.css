@@ -3148,6 +3148,7 @@ p {
 .launcher__heading {
   text-transform: uppercase;
   font-family: nobel, sans-serif;
+  font-weight: 700;
   font-size: 30px;
   margin: 10px 0 15px; }
   @media (min-width: 46.25em) {
@@ -4289,7 +4290,19 @@ p {
           color: #006dff; }
 
 .skip-link {
-  display: none; }
+  background: #ffbf47;
+  font-family: nobel, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  padding: 5px 10px;
+  color: #000;
+  position: absolute;
+  left: -9999em;
+  text-decoration: underline; }
+  .skip-link:focus {
+    display: inline-block;
+    z-index: 3000;
+    left: 10px; }
 
 .table {
   font-family: nobel, sans-serif;

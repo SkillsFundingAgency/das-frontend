@@ -100,6 +100,7 @@
 .launcher__heading {
   text-transform: uppercase;
   font-family: $font-family;
+  font-weight: $font-weight-bold;
   font-size: 30px;
   margin: 10px 0 15px;
   @include mq($from: tablet) {
