@@ -148,6 +148,92 @@
         {% include './components/footer/_footer.html'%}
         {% include './components/cookieBanner/_cookieBanner.html'%}
     </div>
+
+    <div class="modal" id="modal-RegisterInterest" aria-hidden="true">
+
+        <div class="modal-dialog">
+            <div class="modal-header">
+                <a href="#" class="close">
+                    <svg width="32" height="32" viewBox="0 0 32 32" class="">
+                        <rect class="modal--icon-close" x="1.58691" y="0.0893555" width="16.0371" height="2.16583" transform="rotate(45 1.58691 0.0893555)">
+
+                        </rect>
+                        <rect class="modal--icon-close" x="0.0966797" y="11.34" width="16.0371" height="2.16583" transform="rotate(-45 0.0966797 11.34)"></rect>
+                    </svg>
+                </a>
+            </div>
+
+    <div class="grid-row">
+        <div class="grid-column-full">
+            <form action="/RegisterInterest" method="post">
+                <section class="section">
+                    <div class="grid-row">
+                        <div class="grid-column-full">
+                            <span class="caption-s">Register interest</span>
+                            <h1 class="heading-m">Keep me up to date with the latest information</h1>
+                            <div class="form-validation-summary" style="display: none">
+                                <h3 class="heading-s">Sorry but there seems to be a problem with you registration</h3>
+
+                            </div>
+                            <div class="form-group">
+                                <label class="label visually-hidden" for="FirstName">
+                                    First name
+                                </label>
+                                <input id="FirstName" class="input" type="text" placeholder="First name" data-val="true" data-val-required="The First name field is required." name="FirstName" value="">
+                            </div>
+
+                            <div class="form-group">
+
+                                <label class="label visually-hidden" for="LastName">
+                                    Last name
+                                </label>
+                                <input class="input" type="text" placeholder="Last name" data-val="true" data-val-required="The Last name field is required." id="LastName" name="LastName" value="">
+                            </div>
+                            <div class="form-group">
+
+                                <label class="label visually-hidden" for="Email">
+                                    Email Address
+                                </label>
+                                <input class="input" type="text" placeholder="Email address" data-val="true" data-val-email="The Email address field is not a valid e-mail address." data-val-required="The Email address field is required." id="Email" name="Email" value="">
+                            </div>
+                            <div class="form-group radios">
+
+                                <div class="radios__item">
+
+                                    <input class="input radios__input" value="1" type="radio" id="rbApprentice" data-val="true" data-val-required="The Registration type field is required." name="Route">
+                                    <label class="label radios__label" for="rbApprentice">I want to become an <span class="text--apprentice">apprentice</span> </label>
+                                </div>
+                                <div class="radios__item">
+                                    <input class="input radios__input" value="2" type="radio" id="rbEmployer" name="Route">
+                                    <label class="label radios__label" for="rbEmployer">I want to <span class="text--employer">employ</span> an apprentice</label>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="checkboxes__item">
+                                    <input class="checkboxes__input" type="checkbox" value="true" data-val="true" data-val-range="You need to accept terms and conditions" data-val-range-max="True" data-val-range-min="True" data-val-required="The AcceptTandCs field is required." id="AcceptTandCs" name="AcceptTandCs">
+                                    <label class="label checkboxes__label" for="AcceptTandCs">
+                                        I would like to receive information via emails from the Education and Skills Funding Agency in relation to apprenticeships. I can confirm that I am over the age of 13
+                                    </label>
+                                </div>
+                            </div>
+
+                            <input type="hidden" value="/" id="ReturnUrl" name="ReturnUrl">
+
+    <button class="button button-inverted " name="registerInterestSubmit" type="submit">Register Interest </button>
+
+
+
+
+                        </div>
+                    </div>
+                </section>
+            <input name="__RequestVerificationToken" type="hidden" value="CfDJ8DxCGXkq2iFCrv4uZn1DSVVxA5cvEYuhtzUDvPBUCePJksSrRI2iq6Gk7Z7hY_W96kxJ9AxswVeWf1tzDLJIGwgLBJ0VHy7NwnXe3zO25-FZuBOMD7YlNL8L-NrFWqw_DLIIXGdIdTB_Wdh9yko5-I8"><input name="AcceptTandCs" type="hidden" value="false"></form>
+        </div>
+    </div>
+
+        </div>
+    </div>
+
     <script src="/dist/campaign/js/plyr.min.js"></script>
     <script src="/dist/campaign/js/app.min.js"></script>
     <script src="/dist/js/das-all.js"></script>
