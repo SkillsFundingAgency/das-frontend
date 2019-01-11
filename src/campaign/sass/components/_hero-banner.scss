@@ -149,8 +149,7 @@ $hero-text-colour: #fff;
   }
 }
 
-.hero-banner__icon-play-mobile,
-.hero-banner__icon-play-desktop {
+.hero-banner__icon-play {
   position: relative;
   height: 80px;
   width: 80px;
@@ -162,6 +161,15 @@ $hero-text-colour: #fff;
   -moz-border-radius: 50%;
   border-radius: 50%;
   transition: box-shadow 0.2s ease;
+  display: block;
+
+  @include mq ($from: tablet) {
+    display: block;
+    margin: 140px auto;
+    height: 110px;
+    width: 110px;
+  }
+
   .hero-banner--employer & {
     background: $employer;
   }
@@ -190,23 +198,6 @@ $hero-text-colour: #fff;
     -webkit-box-shadow: 0px 0px 31px 9px rgba(255,255,255,.3);
     -moz-box-shadow: 0px 0px 31px 9px rgba(255,255,255,.3);
     box-shadow: 0px 0px 31px 9px rgba(255,255,255,.3);
-  }
-}
-
-.hero-banner__icon-play-mobile {
-  display: block;
-  @include mq ($from: tablet) {
-    display: none;
-  }
-}
-
-.hero-banner__icon-play-desktop {
-  display: none;
-  @include mq ($from: tablet) {
-    display: block;
-    margin: 140px auto;
-    height: 110px;
-    width: 110px;
   }
 }
 
