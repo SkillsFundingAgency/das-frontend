@@ -1,3 +1,14 @@
 .skip-link {
-  display: none; // Hide for now
+  background: $focus-colour;
+  @include typography-common();
+  padding: 5px 10px;
+  color: #000;
+  position: absolute;
+  left: -9999em;
+  text-decoration: underline;
+  &:focus {
+    display: inline-block;
+    z-index: 3000;
+    left: 10px;
+  }
 }

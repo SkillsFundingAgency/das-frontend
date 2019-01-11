@@ -115,6 +115,9 @@
 .sidebar__heading {
   color: #fff;
   margin: .2em 0 0;
+  .sidebar--employer & {
+    color: $black;
+  }
 }
 
 .sidebar__content {
@@ -159,7 +162,7 @@ $timeline-width: 2px;
       height: 1em;
       font-size: 14px;
       background: #fff;
-      color: $apprentice;
+      color: $black;
       -webkit-border-radius: 50%;
       -moz-border-radius: 50%;
       border-radius: 50%;
@@ -172,9 +175,6 @@ $timeline-width: 2px;
       position: absolute;
       top: 0;
       left: -19px;
-      .sidebar--employer & {
-        color: $employer;
-      }
     }
 
     &.sidebar-nav__section--active {
@@ -183,6 +183,7 @@ $timeline-width: 2px;
         color: #fff;
         .sidebar--employer & {
           background-color: $employer;
+          color: $black;
         }
       }
     }

@@ -1,9 +1,5 @@
-//
-// Variables
-// ----------------------
-
 $space: 40px;
-$blue: #428bca;
+$blue: $apprentice;
 $blue-dark: darken($blue, 5%);
 
 // Mixin for transition/transform
@@ -23,65 +19,73 @@ $blue-dark: darken($blue, 5%);
           transition: transform $transition;
 }
 
-
-//
-// Modal
-// ----------------------
-
 .modal{
-   
-  // This is modal bg
   &:before{
     content: ""; 
     display: none;
     background: rgba(0,0,0,.6);
     position: fixed;
-    top: 0; left: 0; right: 0; bottom: 0; 
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
     z-index: 2000;
   }
   
-  &:target{
-     
-    // Active animate in modal
-    &:before{
+  &:target {
+    &:before {
       display: block;
     }  
     .modal-dialog{
       @include translate(0, 0); 
-      top: 10%;  
+      top: 0;
+      @include media-query($from: tablet) {
+        top: 5%;
+      }
     }
-     
   }
-  
 }
 
-// Modal Dialog
-// ----------------------
+.show-modal:before {
+  display: block;
+}
 
-.modal-dialog{
+.modal-dialog {
   background: #fefefe;
-  border: $grey-2 solid 1px;
-  position: fixed; 
-  left: 20%; 
+  position: fixed;
   top: -100%;  
-  z-index: 2010; 
-  width: 60%;
-  @include translate(0, -500%);
-  @include transition-transform(#{"0.3s ease-out"});
-  overflow-y: auto;
-  overflow-x: hidden;
-  @include media-query($until: tablet) {
-   left:0;
-   width: 100%;
-  }
-}
+  z-index: 2010;
+  max-height: 100%;
+  overflow: auto;
 
-.modal-body{
-  padding: $space/2;
+  @include translate(0, -500%);
+  @include transition-transform(#{"0.6s ease"});
+
+  @include media-query($from: tablet) {
+    width: 60%;
+    left: 20%;
+  }
+  .show-modal & {
+    top: 0;
+    @include translate(0, 0);
+    @include media-query($from: tablet) {
+      top: 5%;
+    }
+  }
+  & .section {
+    @include media-query($from: tablet) {
+      padding-top: 0;
+    }
+  }
 }
 
 .modal-header{
   padding: 20px 10px 0 0;
   float: right;
 }
+
+.modal-body{
+  padding: 20px;
+}
+
 

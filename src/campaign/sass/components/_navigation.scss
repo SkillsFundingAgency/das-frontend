@@ -104,6 +104,7 @@
     right: 0;
   }
 }
+
 .navigation__menu {
   padding: 0 0 100px;
   margin: 0;
@@ -115,7 +116,7 @@
   margin: 0 -20px 20px;
   list-style: none;
   border-bottom: 1px solid $border-colour;
-  @include media-query($from: $nav-breakpoint) {
+  @include media-query($from: tablet) {
     border-bottom: none;
   }
 }
@@ -140,12 +141,6 @@
       position: absolute;
       top: 17px;
       left: 0px;
-      .navigation__sub-menu--apprentice & {
-        color: $apprentice;
-      }
-      .navigation__sub-menu--employer & {
-        color: $employer;
-      }
     }
     & > a {
       padding-left: 22px;
@@ -237,6 +232,15 @@
   }
 }
 
+.navigation__list-item:first-child .navigation__link--top-level {
+  @include media-query($from: $nav-breakpoint) {
+    padding-left: 80px;
+  }
+  @include media-query($from: $nav-breakpoint-desktop) {
+    padding-left: 120px;
+  }
+}
+
 .navigation__list-item:hover .navigation__link--top-level {
   @include media-query($from: $nav-breakpoint) {
     color: $black;
@@ -257,6 +261,7 @@
 
 .navigation__sub-menu {
   background: #efefef;
+  background: $employer-pale;
   margin: 0;
   padding: 10px 0 10px;
   list-style: none;
@@ -274,6 +279,7 @@
 .navigation__sub-menu--employer
 {
   color: $employer;
+  background: $apprentice-pale;
   @include media-query($from: $nav-breakpoint) {
     border-top: 10px solid $employer;
   }
@@ -293,14 +299,6 @@
     margin: 0 0 10px;
   }
   & > .highlight {
-    @include media-query($from: $nav-breakpoint) {
-      .navigation__sub-menu--apprentice & {
-        color: $apprentice;
-      }
-      .navigation__sub-menu--employer & {
-        color: $employer;
-      }
-    }
     :after {
       content: '...';
       @include media-query($from: $nav-breakpoint) {
@@ -383,13 +381,11 @@
   }
 }
 
-
-
 .navigation__link {
   font-family: $font-family;
   font-size: 18px;
   font-weight: 300;
-  color: $grey-5;
+  color: #5d6467;
   text-decoration: none;
   display: block;
   padding: 15px 20px;
@@ -397,6 +393,10 @@
     text-decoration: underline;
     line-height: 1.3;
     padding: 10px 20px;
+  }
+  &:hover,
+  &:focus {
+    color: $black;
   }
 }
 

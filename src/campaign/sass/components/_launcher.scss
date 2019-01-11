@@ -3,18 +3,26 @@
   position: relative;
   overflow: hidden;
   height: 100%;
+  background: $black;
 }
 
 .launcher__content {
-  padding: 160px $edgeGutter 80px;
+  padding: 160px $edgeGutter 50px;
   color: #fff;
+  background-image: linear-gradient(225deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%);
   @include media-query($from: tablet) {
     padding-left: $edgeGutterTablet;
     padding-right: $edgeGutterTablet;
     padding-top: 200px;
+    padding-bottom: 80px;
   }
 
   @include media-query($from: desktop) {
+    padding-left: $edgeGutterDesktop;
+    padding-right: $edgeGutterDesktop * 1.5;
+  }
+
+  @include media-query($from: wide) {
     padding-left: $edgeGutterDesktop;
     padding-right: $edgeGutterDesktop * 3;
   }
@@ -32,7 +40,6 @@
 .launcher__bg {
   background-repeat: no-repeat;
   background-size: cover;
-  background-image: linear-gradient(225deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%), url("../images/stock-apprentice.jpg");
   position: absolute;
   top: 0;
   left: 0;
@@ -41,8 +48,36 @@
   display: block;
   z-index: -1;
   transition:all .3s ease;
-  .launcher--employer & {
-    background-image: linear-gradient(225deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%), url("../images/stock-employer.jpg");
+}
+
+.launcher--apprentice .launcher__bg {
+  background-image: url("../images/homepage/home-launch-apprentice.jpg");
+  background-position: -250px -60px;
+  @include mq($from: 320px) {
+    background-position: 25%;
+  }
+  @include mq($from: tablet) {
+    background-position: 30%;
+  }
+  @include mq($from: desktop) {
+    background-position: 10%;
+  }
+  @include mq($from: wide) {
+
+  }
+}
+
+.launcher--employer .launcher__bg {
+  background-image: url("../images/homepage/home-launch-employer.jpg");
+  background-position: center;
+  @include mq($from: tablet) {
+
+  }
+  @include mq($from: desktop) {
+
+  }
+  @include mq($from: wide) {
+
   }
 }
 
@@ -52,21 +87,25 @@
 
 .launcher__section-heading {
   background: $apprentice;
-  text-transform: uppercase;
   font-family: $font-family;
-  font-size: 14px;
+  font-size: 18px;
   display: inline-block;
   padding: 10px 20px;
   .launcher--employer & {
     background: $employer;
+    color: $black;
   }
 }
 
 .launcher__heading {
   text-transform: uppercase;
   font-family: $font-family;
-  font-size: 36px;
+  font-weight: $font-weight-bold;
+  font-size: 30px;
   margin: 10px 0 15px;
+  @include mq($from: tablet) {
+    font-size: 36px;
+  }
 }
 
 .launcher__intro {
