@@ -2941,7 +2941,6 @@ p {
   background-repeat: no-repeat; }
 
 .hero-banner--apprentice .hero-banner__background {
-  background-image: linear-gradient(-225deg, rgba(0, 0, 0, 0) 0%, black 100%), url("../images/homepage/home-hero-apprentice.jpg");
   background-position: 40% 80%;
   background-size: auto; }
   @media (min-width: 61.25em) {
@@ -2953,7 +2952,6 @@ p {
       background-position: 40% 80%; } }
 
 .hero-banner--employer .hero-banner__background {
-  background-image: linear-gradient(225deg, rgba(0, 0, 0, 0) 0%, black 100%), url("../images/homepage/home-hero-employer.jpg");
   background-position: auto; }
   @media (min-width: 46.25em) {
     .hero-banner--employer .hero-banner__background {
