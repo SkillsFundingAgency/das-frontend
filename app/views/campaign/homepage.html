@@ -80,10 +80,9 @@
                         <span class="hero-banner__caption-text">Real apprentice stories</span>
                     </div>
                     <div class="grid-row hero-banner__content">
-                        <div class="grid-column-one-half  hero-banner__icon-play-container">
+                        <div class="grid-column-one-half  hero-banner__icon-play-container visually-hidden">
 
-                            <a class="hero-banner__icon-play-mobile" href="#player-1" id="play-mobile-1"></a>
-                            <a class="hero-banner__icon-play-desktop" href="#player-1" id="play-desktop-1"></a>
+                            <a class="hero-banner__icon-play" href="#player-1" id="play-1" data-module="videoPlayer" data-videoplayerid="plyr-1" data-videourl="https://www.youtube.com/embed/F9tEf9j4-GA?iv_load_policy=3&amp;modestbranding=1&amp;playsinline=1&amp;showinfo=0&amp;rel=0&amp;enablejsapi=1"></a>
 
                         </div>
                         <div class="grid-column-one-half hero-banner__content-main">
@@ -109,12 +108,8 @@
                         <span class="hero-banner__caption-text">Real employer stories</span>
                     </div>
                     <div class="grid-row hero-banner__content">
-                        <div class="grid-column-one-half  hero-banner__icon-play-container">
-
-                            <a class="hero-banner__icon-play-mobile" href="#player-2" id="play-mobile-2"></a>
-                            <a class="hero-banner__icon-play-desktop" href="#player-2" id="play-desktop-2"></a>
-
-
+                        <div class="grid-column-one-half  hero-banner__icon-play-container visually-hidden">
+                            <a class="hero-banner__icon-play" href="#player-2" id="play-2" data-module="videoPlayer" data-playerclass="video-player--employer" data-videoplayerid="plyr-2" data-videourl="https://www.youtube.com/embed/F9tEf9j4-GA?iv_load_policy=3&amp;modestbranding=1&amp;playsinline=1&amp;showinfo=0&amp;rel=0&amp;enablejsapi=1"></a>
                         </div>
                         <div class="grid-column-one-half hero-banner__content-main">
                             <h3 class="hero-banner__header">The very best candidates</h3>
@@ -129,21 +124,6 @@
                 </div>
             </div>
 
-        <div class="video-player plyr__video-embed js-player visually-hidden" id="player-1">
-            <div class="video-player--inner-wrap">
-                <a class="video-player__close-mobile" href="#" id="close-mobile-1"><span class="video-player__close-icon"></span> Close</a>
-                <a class="video-player__close-desktop" href="#" id="close-desktop-1"><span class="video-player__close-icon"></span> Close</a>
-                <iframe src="https://www.youtube.com/embed/VSeiSg9WPtE?iv_load_policy=3&amp;modestbranding=1&amp;playsinline=1&amp;showinfo=0&amp;rel=0&amp;enablejsapi=1" allowfullscreen allowtransparency allow="autoplay"></iframe>
-            </div>
-        </div>
-
-        <div class="video-player video-player--employer plyr__video-embed js-player visually-hidden" id="player-2" data-video="2">
-            <div class="video-player--inner-wrap">
-                <a class="video-player__close-mobile" href="#" id="close-mobile-2"><span class="video-player__close-icon"></span> Close</a>
-                <a class="video-player__close-desktop" href="#" id="close-desktop-2"><span class="video-player__close-icon"></span> Close</a>
-                <iframe src="https://www.youtube.com/embed/F9tEf9j4-GA?iv_load_policy=3&amp;modestbranding=1&amp;playsinline=1&amp;showinfo=0&amp;rel=0&amp;enablejsapi=1" allowfullscreen allowtransparency allow="autoplay"></iframe>
-            </div>
-        </div>
 
         {% include './components/footer/_footer.html'%}
         {% include './components/cookieBanner/_cookieBanner.html'%}

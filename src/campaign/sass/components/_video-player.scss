@@ -36,8 +36,7 @@
 }
 
 
-.video-player__close-mobile,
-.video-player__close-desktop {
+.video-player__close{
   color: #fff;
   font-weight: $font-weight-bold;
   position: absolute;
@@ -52,21 +51,10 @@
   display: flex;
   z-index: 1;
   align-items: center;
-}
-
-.video-player__close-mobile {
-  @include mq($from: tablet) {
-    display: none;
-  }
-}
-
-.video-player__close-desktop {
-  display: none;
   @include mq($from: tablet) {
     display: flex;
   }
 }
-
 .video-player__close-icon {
   display: inline-block;
   height: 20px;
