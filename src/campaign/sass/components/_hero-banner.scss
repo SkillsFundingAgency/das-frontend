@@ -214,7 +214,6 @@ $hero-text-colour: #fff;
 }
 
 .hero-banner--apprentice .hero-banner__background {
-  background-image:  linear-gradient(-225deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%), url("../images/homepage/home-hero-apprentice.jpg");
   background-position: 40% 80%;
   background-size: auto;
   @include mq($from: tablet) {
@@ -230,8 +229,7 @@ $hero-text-colour: #fff;
 }
 
 .hero-banner--employer .hero-banner__background {
-  background-image: linear-gradient(225deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%), url("../images/homepage/home-hero-employer.jpg");
-  background-position: auto;
+   background-position: auto;
   @include mq($from: tablet) {
     background-position: 0 0;
   }
