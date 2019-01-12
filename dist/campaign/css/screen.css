@@ -1987,7 +1987,11 @@ p {
       background: #ffb007; }
 
 .card-stories {
-  padding: 20px; }
+  padding: 20px 0px;
+  flex: 1 1 0; }
+  @media (min-width: 46.25em) {
+    .card-stories {
+      padding: 20px; } }
 
 .card-stories__collection > :first-child {
   padding-left: 0px; }
@@ -2001,14 +2005,13 @@ p {
     .card-stories__image {
       height: 450px; } }
 
-.card-stories__content {
-  padding: 20px 40px 70px; }
-
 .card-stories__summary {
   color: #6F777B; }
 
 .card-stories__content {
-  background: #FFFFFF; }
+  background: #FFFFFF;
+  min-height: 380px;
+  padding: 20px 40px 70px; }
 
 .card-stories__headline:before {
   margin-right: 15px;
@@ -2048,8 +2051,7 @@ p {
   .card-stories--employer .card-stories__cite-detail {
     color: #ffb007; }
 
-.card-stories__icon-play-mobile,
-.card-stories__icon-play-desktop {
+.card-stories__icon-play {
   position: relative;
   height: 80px;
   width: 80px;
@@ -2061,11 +2063,14 @@ p {
   -moz-border-radius: 50%;
   border-radius: 50%;
   transition: box-shadow 0.2s ease; }
-  .card-stories--employer .card-stories__icon-play-mobile, .card-stories--employer
-  .card-stories__icon-play-desktop {
+  @media (min-width: 46.25em) {
+    .card-stories__icon-play {
+      margin: 140px auto;
+      height: 110px;
+      width: 110px; } }
+  .card-stories--employer .card-stories__icon-play {
     background: #ffb007; }
-  .card-stories__icon-play-mobile:before,
-  .card-stories__icon-play-desktop:before {
+  .card-stories__icon-play:before {
     content: "";
     position: absolute;
     background: url("../images/hero-play-apprentice.svg") no-repeat;
@@ -2076,29 +2081,12 @@ p {
     right: 0;
     left: 0;
     top: 0; }
-    .card-stories--employer .card-stories__icon-play-mobile:before, .card-stories--employer
-    .card-stories__icon-play-desktop:before {
+    .card-stories--employer .card-stories__icon-play:before {
       background-image: url("../images/hero-play-employer.svg"); }
-  .card-stories__icon-play-mobile:hover,
-  .card-stories__icon-play-desktop:hover {
+  .card-stories__icon-play:hover {
     -webkit-box-shadow: 0px 0px 31px 9px rgba(255, 255, 255, 0.3);
     -moz-box-shadow: 0px 0px 31px 9px rgba(255, 255, 255, 0.3);
     box-shadow: 0px 0px 31px 9px rgba(255, 255, 255, 0.3); }
-
-.card-stories__icon-play-mobile {
-  display: block; }
-  @media (min-width: 46.25em) {
-    .card-stories__icon-play-mobile {
-      display: none; } }
-
-.card-stories__icon-play-desktop {
-  display: none; }
-  @media (min-width: 46.25em) {
-    .card-stories__icon-play-desktop {
-      display: block;
-      margin: 140px auto;
-      height: 110px;
-      width: 110px; } }
 
 .card-stories__img--apprentice-ella {
   background-image: url("../images/apprentice/ella-card-1.jpg"); }
