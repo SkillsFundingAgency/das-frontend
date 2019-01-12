@@ -214,7 +214,6 @@ $hero-text-colour: #fff;
 }
 
 .hero-banner--apprentice .hero-banner__background {
-  background-image:  linear-gradient(-225deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%), url("../images/homepage/home-hero-apprentice.jpg");
   background-position: 40% 80%;
   background-size: auto;
   @include mq($from: tablet) {
@@ -230,8 +229,7 @@ $hero-text-colour: #fff;
 }
 
 .hero-banner--employer .hero-banner__background {
-  background-image: linear-gradient(225deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%), url("../images/homepage/home-hero-employer.jpg");
-  background-position: auto;
+   background-position: auto;
   @include mq($from: tablet) {
     background-position: 0 0;
   }
@@ -242,3 +240,26 @@ $hero-text-colour: #fff;
 
   }
 }
+
+.hero-banner__background--apprentice-alim{
+  background-image: linear-gradient(225deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%), url("../images/apprentice/alim-hero-1.jpg");
+}
+.hero-banner__background--apprentice-hosanna{
+  background-image: linear-gradient(225deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%), url("../images/apprentice/hozanna-hero-1.jpg");
+}
+.hero-banner__background--apprentice-sarah{
+  background-image: linear-gradient(225deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%), url("../images/apprentice/sarah-hero-1.jpg");
+}
+.hero-banner__background--apprentice-ella{
+  background-image: linear-gradient(225deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%), url("../images/apprentice/ella-hero-1.jpg");
+}
+.hero-banner__background--employer-gail{
+  background-image: linear-gradient(225deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%), url("../images/employer/gail-hero-1.jpg");
+}
+.hero-banner__background--employer-bendy{
+  background-image: linear-gradient(225deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%), url("../images/employer/bendy-hero-1.jpg");
+}
+.hero-banner__background--employer-annie{
+  background-image: linear-gradient(225deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%), url("../images/employer/annie-hero-1.jpg");
+}
+
