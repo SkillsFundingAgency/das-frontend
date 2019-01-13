@@ -2889,7 +2889,7 @@ p {
   @media (min-width: 46.25em) {
     .hero-banner__icon-play {
       display: block;
-      margin: 140px auto;
+      margin: 60px auto 180px;
       height: 110px;
       width: 110px; } }
   .hero-banner--employer .hero-banner__icon-play {

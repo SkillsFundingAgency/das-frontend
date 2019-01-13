@@ -165,7 +165,7 @@ $hero-text-colour: #fff;
 
   @include mq ($from: tablet) {
     display: block;
-    margin: 140px auto;
+    margin: 60px auto 180px;
     height: 110px;
     width: 110px;
   }
