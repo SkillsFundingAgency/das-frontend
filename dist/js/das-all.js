@@ -489,7 +489,7 @@ function initAll() {
     new CookieBanner($cookieBanner).init();
   }
 
-  var $videoPlayer = document.querySelectorAll('[data-module="videoPlayer"');
+  var $videoPlayer = document.querySelectorAll('[data-module="videoPlayer"]');
   nodeListForEach$2($videoPlayer, function ($videoPlayer) {
     new VideoPlayer($videoPlayer).init();
   });
