@@ -196,6 +196,19 @@ $timeline-width: 2px;
       padding: 6px 0 0 30px;
       display: block;
       font-size: 16px;
+      &[rel~="external"] {
+        &:after {
+          content: '';
+          display: inline-block;
+          height: 20px;
+          width: 20px;
+          background-image: url("../images/icon-link-external-black.svg");
+          background-size: contain;
+          background-repeat: no-repeat;
+          vertical-align: bottom;
+          margin-left: 3px;
+        }
+      }
     }
     & > ul {
       padding-bottom: 30px;

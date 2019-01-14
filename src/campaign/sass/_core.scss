@@ -82,6 +82,19 @@
     &:visited {
       color: $link-visited-colour;
     }
+    &[rel~="external"] {
+      &:after {
+        content: '';
+        display: inline-block;
+        height: 20px;
+        width: 20px;
+        background-image: url("../images/icon-link-external-blue.svg");
+        background-size: contain;
+        background-repeat: no-repeat;
+        vertical-align: bottom;
+        margin-left: 3px;
+      }
+    }
   }
 }
 
