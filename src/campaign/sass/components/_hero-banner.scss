@@ -242,7 +242,7 @@ $hero-text-colour: #fff;
 }
 
 .hero-banner__background--apprentice-alim{
-  background-image: linear-gradient(140deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%), url("../images/apprentice/alim-hero-1.jpg");
+  background-image: linear-gradient(255deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%), url("../images/apprentice/alim-hero-1.jpg");
   -moz-transform: scaleX(-1);
   -o-transform: scaleX(-1);
   -webkit-transform: scaleX(-1);
@@ -250,12 +250,12 @@ $hero-text-colour: #fff;
   filter: FlipH;
   -ms-filter: "FlipH";
   .hero-banner--right-aligned & {
-    background-image: linear-gradient(225deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%), url("../images/apprentice/alim-hero-1.jpg");
+    background-image: linear-gradient(140deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%), url("../images/apprentice/alim-hero-1.jpg");
   }
 }
 
 .hero-banner__background--apprentice-hosanna{
-  background-image: linear-gradient(140deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%), url("../images/apprentice/hozanna-hero-1.jpg");
+  background-image: linear-gradient(255deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%), url("../images/apprentice/hozanna-hero-1.jpg");
   -moz-transform: scaleX(-1);
   -o-transform: scaleX(-1);
   -webkit-transform: scaleX(-1);
@@ -263,14 +263,14 @@ $hero-text-colour: #fff;
   filter: FlipH;
   -ms-filter: "FlipH";
   .hero-banner--right-aligned & {
-    background-image: linear-gradient(-225deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 80%), url("../images/apprentice/hozanna-hero-1.jpg");
+    background-image: linear-gradient(140deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 80%), url("../images/apprentice/hozanna-hero-1.jpg");
   }
 }
 
 .hero-banner__background--apprentice-sarah{
-  background-image: linear-gradient(225deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%), url("../images/apprentice/sarah-hero-1.jpg");
+  background-image: linear-gradient(140deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%), url("../images/apprentice/sarah-hero-1.jpg");
   .hero-banner--right-aligned & {
-    background-image: linear-gradient(140deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%), url("../images/apprentice/sarah-hero-1.jpg");
+    background-image: linear-gradient(225deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%), url("../images/apprentice/sarah-hero-1.jpg");
   -moz-transform: scaleX(-1);
   -o-transform: scaleX(-1);
   -webkit-transform: scaleX(-1);
