@@ -2939,11 +2939,10 @@ p {
   bottom: 0;
   z-index: -1;
   background-size: cover;
-  background-position: center;
+  background-position: 80% 0%;
   background-repeat: no-repeat; }
 
 .hero-banner--apprentice .hero-banner__background {
-  background-position: 80% 0%;
   background-size: auto; }
   @media (min-width: 61.25em) {
     .hero-banner--apprentice .hero-banner__background {

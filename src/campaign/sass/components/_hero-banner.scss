@@ -213,13 +213,13 @@ $hero-text-colour: #fff;
   right: 0;
   bottom: 0;
   z-index: -1;
-  background-size: cover;
-  background-position: center;
+  background-size: cover;  
+  background-position: 80% 0%;
   background-repeat: no-repeat;
 }
 
 .hero-banner--apprentice .hero-banner__background {
-  background-position: 80% 0%;
+
   background-size: auto;
   @include mq($from: tablet) {
 
