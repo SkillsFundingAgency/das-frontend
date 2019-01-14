@@ -173,6 +173,17 @@ $hero-text-colour: #fff;
     margin: 120px auto 120px;
   }
 
+  #homepage &{
+    @include mq ($from: tablet) {
+      display: block;
+      margin: 120px auto 120px;
+      height: 110px;
+      width: 110px;
+    }
+    @include mq ($from: desktop) {
+      margin: 60px auto 120px;
+    }
+  }
 
 
   .hero-banner--employer & {
