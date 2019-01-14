@@ -11,6 +11,7 @@
 
 .list > li {
   font-size: 21px;
+  padding-left: 5px;
   @include media-query($from: tablet) {
     margin-bottom: spacing(1);
   }
