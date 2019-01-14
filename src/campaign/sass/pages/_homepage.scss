@@ -45,7 +45,7 @@
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 94%);
     padding-bottom: 80px;
     margin-bottom: -80px;
-    z-index: 2;
+    z-index: 3;
     @include media-query($from: tablet) {
     border-width: 0px 0px 32px 671px;
     }
