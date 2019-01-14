@@ -209,6 +209,9 @@ $timeline-width: 2px;
           margin-left: 3px;
         }
       }
+      &:hover {
+        text-decoration: underline;
+      }
     }
     & > ul {
       padding-bottom: 30px;

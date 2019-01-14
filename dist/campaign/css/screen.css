@@ -1336,8 +1336,20 @@ a.plyr__control {
     color: #006dff; }
     .page a:hover, .page a:focus {
       text-decoration: none; }
+    .page a:focus {
+      outline: 3px solid #ffbf47; }
     .page a:visited {
       color: #006dff; }
+    .page a[rel~="external"]:after {
+      content: '';
+      display: inline-block;
+      height: 20px;
+      width: 20px;
+      background-image: url("../images/icon-link-external-blue.svg");
+      background-size: contain;
+      background-repeat: no-repeat;
+      vertical-align: bottom;
+      margin-left: 3px; }
 
 .section-break {
   margin: 0;
@@ -2354,11 +2366,6 @@ p {
     .footer__hm-government-logo {
       margin-bottom: 30px; } }
 
-.footer__link:focus {
-  outline: 3px solid #ffbf47;
-  outline-offset: 0;
-  background-color: #ffbf47; }
-
 .footer__link:link, .footer__link:visited {
   color: #bfc1c3; }
 
@@ -2366,7 +2373,8 @@ p {
   color: #eee; }
 
 .footer__link:focus {
-  color: #eee; }
+  color: #eee;
+  outline: 3px solid #ffbf47; }
 
 .footer__section-break {
   margin: 0;
@@ -2700,6 +2708,8 @@ p {
         background-image: url("../images/apprenticeships-logo-black.png");
         background-size: contain;
         background-repeat: no-repeat; } }
+  .header__logo > a:focus {
+    outline: 3px solid #ffbf47; }
 
 .header__logo-image {
   max-height: 100%; }
@@ -3229,6 +3239,8 @@ p {
       font-size: 16px; }
       .list--links > li > a:hover, .list--links > li > a:focus {
         text-decoration: underline; }
+      .list--links > li > a:focus {
+        outline: 3px solid #ffbf47; }
 
 .list--apprentice > li > a {
   color: #006dff; }
@@ -3270,6 +3282,8 @@ p {
 .list--arrows > li {
   position: relative;
   margin-bottom: 10px; }
+  .list--arrows > li > a:focus {
+    outline: 3px solid #ffbf47; }
 
 .list--arrows > li:before {
   content: ">";
@@ -3585,6 +3599,8 @@ p {
     .navigation__link--top-level {
       padding: 25px 25px 60px;
       font-size: 14px; } }
+  .navigation__link--top-level:focus {
+    outline: 3px solid #ffbf47; }
 
 @media (min-width: 56.25em) {
   .navigation__list-item:first-child .navigation__link--top-level {
@@ -3725,6 +3741,8 @@ p {
       padding: 10px 20px; } }
   .navigation__link:hover, .navigation__link:focus {
     color: #0B0C0C; }
+  .navigation__link:focus {
+    outline: 3px solid #ffbf47; }
 
 .navigation__link-caption {
   display: none; }
@@ -3774,9 +3792,9 @@ p {
     text-decoration: underline; }
 
 .page .pagination--employer .pagination__link {
-  color: #ffb007; }
+  color: #0B0C0C; }
   .page .pagination--employer .pagination__link:visited {
-    color: #ffb007; }
+    color: #0B0C0C; }
 
 @media (min-width: 46.25em) {
   .pagination__list-item--next {
@@ -4269,6 +4287,18 @@ p {
       padding: 6px 0 0 30px;
       display: block;
       font-size: 16px; }
+      .sidebar-nav > li > a[rel~="external"]:after {
+        content: '';
+        display: inline-block;
+        height: 20px;
+        width: 20px;
+        background-image: url("../images/icon-link-external-black.svg");
+        background-size: contain;
+        background-repeat: no-repeat;
+        vertical-align: bottom;
+        margin-left: 3px; }
+      .sidebar-nav > li > a:hover {
+        text-decoration: underline; }
     .sidebar-nav > li > ul {
       padding-bottom: 30px;
       list-style: none;

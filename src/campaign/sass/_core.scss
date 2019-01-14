@@ -79,6 +79,9 @@
     &:focus {
       text-decoration: none;
     }
+    &:focus {
+      outline: 3px solid $focus-colour;
+    }
     &:visited {
       color: $link-visited-colour;
     }
