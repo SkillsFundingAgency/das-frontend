@@ -1328,7 +1328,7 @@ a.plyr__control {
   @media (min-width: 46.25em) {
     .page {
       padding-right: 40px;
-      min-height: 800px; } }
+      min-height: 1100px; } }
   @media (min-width: 61.25em) {
     .page {
       padding-right: 80px; } }
@@ -2900,9 +2900,12 @@ p {
   @media (min-width: 46.25em) {
     .hero-banner__icon-play {
       display: block;
-      margin: 60px auto 180px;
+      margin: 120px auto 180px;
       height: 110px;
       width: 110px; } }
+  @media (min-width: 61.25em) {
+    .hero-banner__icon-play {
+      margin: 60px auto 180px; } }
   .hero-banner--employer .hero-banner__icon-play {
     background: #ffb007; }
   .hero-banner--right-aligned .hero-banner__icon-play {
@@ -2936,22 +2939,22 @@ p {
   bottom: 0;
   z-index: -1;
   background-size: cover;
-  background-position: center;
+  background-position: 80% 0%;
   background-repeat: no-repeat; }
 
 .hero-banner--apprentice .hero-banner__background {
-  background-position: 25% 40%;
   background-size: auto; }
   @media (min-width: 61.25em) {
     .hero-banner--apprentice .hero-banner__background {
-      background-position: 0 0;
+      background-position: 0 20%;
       background-size: cover; } }
 
 .hero-banner--employer .hero-banner__background {
-  background-position: auto; }
-  @media (min-width: 46.25em) {
+  background-position: 80% 0%; }
+  @media (min-width: 61.25em) {
     .hero-banner--employer .hero-banner__background {
-      background-position: 0 0; } }
+      background-position: 0 20%;
+      background-size: cover; } }
 
 .hero-banner__background--apprentice-alim {
   background-image: linear-gradient(255deg, rgba(0, 0, 0, 0) 0%, black 100%), url("../images/apprentice/alim-hero-1.jpg"); }
@@ -2985,6 +2988,12 @@ p {
 
 .hero-banner__background--apprentice-ella {
   background-image: linear-gradient(255deg, rgba(0, 0, 0, 0) 0%, black 100%), url("../images/apprentice/ella-hero-1.jpg"); }
+  @media (min-width: 20em) {
+    .hero-banner__background--apprentice-ella {
+      background-position: 0 10%; } }
+  @media (min-width: 46.25em) {
+    .hero-banner__background--apprentice-ella {
+      background-position: 0 0; } }
   .hero-banner--right-aligned .hero-banner__background--apprentice-ella {
     -moz-transform: scaleX(-1);
     -o-transform: scaleX(-1);
@@ -3036,6 +3045,16 @@ p {
 .hero-banner__background--employer-matt {
   background-image: linear-gradient(225deg, rgba(0, 0, 0, 0) 0%, black 100%), url("../images/employer/matt-hero-1.jpg"); }
   .hero-banner--right-aligned .hero-banner__background--employer-matt {
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    filter: FlipH;
+    -ms-filter: "FlipH"; }
+
+.hero-banner__background--industry {
+  background-image: linear-gradient(225deg, rgba(0, 0, 0, 0) 0%, black 100%), url("../images/hero-banner-bg.jpg"); }
+  .hero-banner--right-aligned .hero-banner__background--industry {
     -moz-transform: scaleX(-1);
     -o-transform: scaleX(-1);
     -webkit-transform: scaleX(-1);
@@ -3166,7 +3185,7 @@ p {
   z-index: 0; }
 
 .launcher__content {
-  padding: 160px 20px 50px;
+  padding: 180px 20px 50px;
   color: #fff;
   background-image: linear-gradient(225deg, rgba(0, 0, 0, 0) 0%, black 100%); }
   @media (min-width: 46.25em) {
@@ -3178,7 +3197,8 @@ p {
   @media (min-width: 61.25em) {
     .launcher__content {
       padding-left: 80px;
-      padding-right: 120px; } }
+      padding-right: 120px;
+      padding-top: 260px; } }
   @media (min-width: 81.25em) {
     .launcher__content {
       padding-left: 80px;
@@ -4651,6 +4671,54 @@ p {
   .plyr--video .plyr__control[aria-expanded=true] {
     background: #ffb007; }
 
+.homepage-title {
+  transform: rotate(-6deg) skewX(-6deg);
+  color: #fff;
+  margin: 0;
+  line-height: 1;
+  font-size: 50px;
+  position: absolute;
+  top: 110px;
+  left: 16px;
+  font-family: nobel, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-transform: uppercase;
+  letter-spacing: -0.08em;
+  z-index: 6; }
+  @media (min-width: 46.25em) {
+    .homepage-title {
+      font-size: 70px;
+      left: 36px; } }
+  @media (min-width: 61.25em) {
+    .homepage-title {
+      font-size: 80px;
+      left: 76px; }
+      .homepage-title span {
+        display: block;
+        margin-left: 84px;
+        position: relative;
+        top: -15px; } }
+  .homepage-title:after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border: 5px solid transparent;
+    border-image-slice: 700 0;
+    border-image-width: 66px;
+    border-image-outset: 10 25;
+    opacity: .5;
+    border-image-source: url("../images/button-border.png"); }
+    @media (min-width: 61.25em) {
+      .homepage-title:after {
+        border-image-slice: 847 0;
+        border-image-width: 140px;
+        border-image-outset: 0 25; } }
+
 .cssmask .launcher--apprentice {
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 94%);
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 94%);
@@ -4703,29 +4771,43 @@ p {
       clip-path: polygon(0 0, 100% 0, 100% 100%, 0 88%); } }
 
 .cssmask .hero-banner--employer {
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 94%);
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 94%);
-  padding-bottom: 80px;
-  margin-bottom: -80px;
-  z-index: 2; }
-  @media (min-width: 46.25em) {
-    .cssmask .hero-banner--employer {
-      border-width: 0px 0px 32px 671px; } }
-  @media (min-width: 61.25em) {
-    .cssmask .hero-banner--employer {
-      -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 88%);
-      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 88%); } }
-
-.cssmask .hero-banner--header-slant {
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 94%, 0 100%);
   clip-path: polygon(0 0, 100% 0, 100% 94%, 0 100%);
   padding-bottom: 80px;
   margin-bottom: -80px;
   z-index: 10; }
   @media (min-width: 61.25em) {
-    .cssmask .hero-banner--header-slant {
+    .cssmask .hero-banner--employer {
       -webkit-clip-path: polygon(0 0, 100% 0, 100% 88%, 0 100%);
       clip-path: polygon(0 0, 100% 0, 100% 88%, 0 100%); } }
+  .cssmask .hero-banner--employer.hero-banner--right-aligned {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 94%);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 94%);
+    padding-bottom: 80px;
+    margin-bottom: -80px;
+    z-index: 2; }
+    @media (min-width: 46.25em) {
+      .cssmask .hero-banner--employer.hero-banner--right-aligned {
+        border-width: 0px 0px 32px 671px; } }
+    @media (min-width: 61.25em) {
+      .cssmask .hero-banner--employer.hero-banner--right-aligned {
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 88%);
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 88%); } }
+
+.cssmask .hero-banner--header-slant, .cssmask .hero-banner--footer-slant {
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 94%, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 94%, 0 100%);
+  padding-bottom: 80px;
+  margin-bottom: -80px;
+  z-index: 10; }
+  @media (min-width: 61.25em) {
+    .cssmask .hero-banner--header-slant, .cssmask .hero-banner--footer-slant {
+      -webkit-clip-path: polygon(0 0, 100% 0, 100% 88%, 0 100%);
+      clip-path: polygon(0 0, 100% 0, 100% 88%, 0 100%); } }
+
+.cssmask .cssmask-remove {
+  clip-path: none;
+  -webkit-clip-path: none; }
 
 @media (min-width: 46.25em) {
   .hidden--desktop {
