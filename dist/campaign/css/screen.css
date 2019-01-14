@@ -3857,7 +3857,7 @@ p {
     background: #ffb007; }
 
 .pagination {
-  margin-top: 80px;
+  margin: 30px 0;
   border-top: 1px solid #ddd;
   padding: 30px 0 0 0;
   list-style: none; }
@@ -3865,6 +3865,9 @@ p {
     content: "";
     display: block;
     clear: both; }
+  @media (min-width: 46.25em) {
+    .pagination {
+      margin-top: 80px; } }
 
 .pagination__list-item {
   margin: 10px 0; }
@@ -3887,9 +3890,8 @@ p {
   .page .pagination--employer .pagination__link:visited {
     color: #0B0C0C; }
 
-@media (min-width: 46.25em) {
-  .pagination__list-item--next {
-    float: right; } }
+.pagination__list-item--next {
+  float: right; }
 
 .pagination__link--previous,
 .pagination__link--next {
@@ -4231,26 +4233,29 @@ p {
 
 .sidebar__header, .sidebar__sub-content {
   background: #006dff;
-  padding: 20px 30px 40px 30px;
+  padding: 20px 30px 20px 30px;
   position: relative; }
-  .sidebar__header:before, .sidebar__sub-content:before {
-    content: '';
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: -50px;
-    border-style: solid;
-    border-width: 0 0 50px 475px;
-    border-color: transparent transparent #006dff; }
-  .sidebar__header:after, .sidebar__sub-content:after {
-    content: '';
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    border-style: solid;
-    border-width: 0 0 50px 475px;
-    border-color: transparent transparent #d1e6fb; }
+  @media (min-width: 46.25em) {
+    .sidebar__header, .sidebar__sub-content {
+      padding-bottom: 40px; }
+      .sidebar__header:before, .sidebar__sub-content:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: -50px;
+        border-style: solid;
+        border-width: 0 0 50px 475px;
+        border-color: transparent transparent #006dff; }
+      .sidebar__header:after, .sidebar__sub-content:after {
+        content: '';
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        border-style: solid;
+        border-width: 0 0 50px 475px;
+        border-color: transparent transparent #d1e6fb; } }
   .sidebar--employer .sidebar__header, .sidebar--employer .sidebar__sub-content {
     background: #ffb007; }
     .sidebar--employer .sidebar__header:before, .sidebar--employer .sidebar__sub-content:before {
@@ -4259,38 +4264,52 @@ p {
       border-bottom-color: #ffe9c1; }
 
 .sidebar__sub-content {
-  margin-top: 120px;
-  padding-bottom: 70px; }
-  .sidebar__sub-content p {
-    color: #FFFFFF; }
+  margin-top: 20px;
+  padding-bottom: 30px; }
+  @media (min-width: 46.25em) {
+    .sidebar__sub-content {
+      margin-top: 120px;
+      padding-bottom: 60px; } }
   .sidebar__sub-content:after {
-    border-color: transparent transparent #FFFFFF !important;
-    border-bottom-color: #FFFFFF; }
+    border-color: transparent transparent #fff; }
   .sidebar__sub-content .button {
     display: flex;
     justify-content: center; }
+  .sidebar__sub-content p {
+    color: #fff; }
+    .sidebar--employer .sidebar__sub-content p {
+      color: #0B0C0C; }
+
+.sidebar--employer .sidebar__sub-content:after {
+  border-bottom-color: #fff; }
 
 .sidebar__sub-content--mid {
-  margin-top: 165px; }
+  margin-top: 20px; }
+  @media (min-width: 46.25em) {
+    .sidebar__sub-content--mid {
+      margin-top: 165px;
+      padding-bottom: 60px; } }
   .sidebar__sub-content--mid:before {
-    border-color: transparent transparent #ffe9c1 !important;
-    border-bottom-color: #ffe9c1 !important; }
+    border-color: transparent transparent #ffe9c1; }
   .sidebar__sub-content--mid:after {
-    border-color: transparent transparent #FFFFFF;
-    border-bottom-color: #FFFFFF; }
+    border-color: transparent transparent #fff; }
   .sidebar--employer .sidebar__sub-content--mid {
     background-color: #ffe9c1; }
   .sidebar__sub-content--mid .sidebar__heading {
     color: #0B0C0C;
     padding-bottom: 10px; }
 
+.sidebar--employer .sidebar__sub-content--mid:before {
+  border-bottom-color: #ffe9c1; }
+
 .sidebar__sub-content-crown-logo {
   height: 20px; }
 
-.trimmer {
-  overflow: hidden;
-  margin-top: -172px;
-  padding-top: 50px; }
+@media (min-width: 46.25em) {
+  .trimmer {
+    overflow: hidden;
+    margin-top: -172px;
+    padding-top: 50px; } }
 
 .sidebar__caption {
   color: rgba(255, 255, 255, 0.6); }
@@ -4391,7 +4410,6 @@ p {
       .sidebar-nav > li > a:hover {
         text-decoration: underline; }
     .sidebar-nav > li > ul {
-      padding-bottom: 30px;
       list-style: none;
       padding: 0 0 30px 30px; }
       .sidebar-nav > li > ul > li {

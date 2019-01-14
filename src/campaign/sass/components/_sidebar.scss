@@ -23,27 +23,30 @@
 
 .sidebar__header {
   background: $apprentice;
-  padding: 20px 30px 40px 30px;
+  padding: 20px 30px 20px 30px;
   position: relative;
-  &:before {
-    content: '';
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: -50px;
-    border-style: solid;
-    border-width: 0 0 50px 475px;
-    border-color: transparent transparent $apprentice;
-  }
-  &:after {
-    content: '';
-    position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    border-style: solid;
-    border-width: 0 0 50px 475px;
-    border-color: transparent transparent $apprentice-mid;
+  @include media-query($from: tablet) {
+    padding-bottom: 40px;
+    &:before {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: -50px;
+      border-style: solid;
+      border-width: 0 0 50px 475px;
+      border-color: transparent transparent $apprentice;
+    }
+    &:after {
+      content: '';
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      border-style: solid;
+      border-width: 0 0 50px 475px;
+      border-color: transparent transparent $apprentice-mid;
+    }
   }
   .sidebar--employer & {
     background: $employer;
@@ -58,54 +61,68 @@
 
 .sidebar__sub-content {
   @extend .sidebar__header;
-  margin-top: 120px;
-  padding-bottom:70px;
-  
-  & p{
-    color: #FFFFFF;
+  margin-top: 20px;
+  padding-bottom: 30px;
+  @include media-query($from: tablet) {
+    margin-top: 120px;
+    padding-bottom: 60px;
   }
   &:after {
-    border-color: transparent transparent #FFFFFF !important;
-    border-bottom-color: #FFFFFF;
+      border-color: transparent transparent #fff;
   }
   .button{
-    display: flex;
+      display: flex;
       justify-content: center;
   }
+  p {
+    color: #fff;
+    .sidebar--employer & {
+      color: $black;
+    }
+  }
 }
-.sidebar__sub-content--mid{
-  margin-top:165px;
+
+.sidebar--employer .sidebar__sub-content:after {
+  border-bottom-color: #fff;
+}
+
+.sidebar__sub-content--mid {
+  margin-top: 20px;
+  @include media-query($from: tablet) {
+    margin-top: 165px;
+    padding-bottom: 60px;
+  }
   &:before {
-    border-color: transparent transparent $employer-mid !important;
-    border-bottom-color: $employer-mid !important;
+    border-color: transparent transparent $employer-mid;
   }
 
   &:after {
-    border-color: transparent transparent #FFFFFF;
-    border-bottom-color: #FFFFFF;
+    border-color: transparent transparent #fff;
   }
   .sidebar--employer & {
-   
       background-color: $employer-mid;
-    }
+  }
 
+  .sidebar__heading{
+    color:$black;
+    padding-bottom: 10px;
+  }
+}
 
-    & .sidebar__heading{
-      color:$black;
-      padding-bottom: 10px;
-    }
-
-   
+.sidebar--employer .sidebar__sub-content--mid:before {
+  border-bottom-color: $employer-mid;;
 }
 
 .sidebar__sub-content-crown-logo{
   height:20px;
 }
 
-.trimmer {
-  overflow: hidden;
-  margin-top: -172px;
-  padding-top: 50px;
+@include media-query($from: tablet) {
+  .trimmer {
+    overflow: hidden;
+    margin-top: -172px;
+    padding-top: 50px;
+  }
 }
 
 .sidebar__caption {
@@ -214,7 +231,6 @@ $timeline-width: 2px;
       }
     }
     & > ul {
-      padding-bottom: 30px;
       list-style: none;
       padding: 0 0 30px 30px;
       & > li {
@@ -241,7 +257,6 @@ $timeline-width: 2px;
         }
         & > a {
           color: $apprentice;
-
         }
       }
     }
