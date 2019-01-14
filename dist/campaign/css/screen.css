@@ -4746,7 +4746,7 @@ p {
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 94%);
   clip-path: polygon(0 0, 100% 0, 100% 100%, 0 94%);
   margin-bottom: -80px;
-  z-index: 4; }
+  z-index: 6; }
   @media (min-width: 46.25em) {
     .cssmask .launcher--apprentice {
       -webkit-clip-path: none;
