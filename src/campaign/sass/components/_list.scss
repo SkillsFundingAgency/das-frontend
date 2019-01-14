@@ -30,6 +30,9 @@
       &:focus {
         text-decoration: underline;
       }
+      &:focus {
+        outline: 3px solid $focus-colour;
+      }
     }
   }
 }
@@ -86,6 +89,11 @@
 .list--arrows > li {
   position: relative;
   margin-bottom: spacing(2);
+  & > a {
+    &:focus {
+      outline: 3px solid $focus-colour;
+    }
+  }
 }
 
 .list--arrows > li:before {

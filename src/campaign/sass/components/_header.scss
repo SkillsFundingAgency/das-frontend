@@ -51,6 +51,11 @@
       background-repeat: no-repeat;
     }
   }
+  & > a {
+    &:focus {
+      outline: 3px solid $focus-colour;
+    }
+  }
 }
 
 .header__logo-image {

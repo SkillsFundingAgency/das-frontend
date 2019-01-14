@@ -230,6 +230,9 @@
     padding: 25px 25px 60px;
     font-size: 14px;
   }
+  &:focus {
+    outline: 3px solid $focus-colour;
+  }
 }
 
 .navigation__list-item:first-child .navigation__link--top-level {
@@ -397,6 +400,9 @@
   &:hover,
   &:focus {
     color: $black;
+  }
+  &:focus {
+    outline: 3px solid $focus-colour;
   }
 }
 

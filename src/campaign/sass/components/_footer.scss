@@ -44,7 +44,6 @@
 }
 
 .footer__link {
-  @include focusable-fill;
   &:link,
   &:visited {
     color: $footer-link;
@@ -57,6 +56,7 @@
 
   &:focus {
     color: $focus-text-colour;
+    outline: 3px solid $focus-colour;
   }
 }
 

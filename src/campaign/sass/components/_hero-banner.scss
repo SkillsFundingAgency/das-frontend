@@ -165,7 +165,7 @@ $hero-text-colour: #fff;
 
   @include mq ($from: tablet) {
     display: block;
-    margin: 140px auto;
+    margin: 60px auto 180px;
     height: 110px;
     width: 110px;
   }
@@ -214,7 +214,7 @@ $hero-text-colour: #fff;
 }
 
 .hero-banner--apprentice .hero-banner__background {
-  background-position: 40% 80%;
+  background-position: 25% 40%;
   background-size: auto;
   @include mq($from: tablet) {
 
@@ -224,7 +224,7 @@ $hero-text-colour: #fff;
     background-size: cover;
   }
   @include mq($from: wide) {
-    background-position: 40% 80%;
+
   }
 }
 
@@ -245,7 +245,7 @@ $hero-text-colour: #fff;
   background-image: linear-gradient(225deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%), url("../images/apprentice/alim-hero-1.jpg");
 }
 .hero-banner__background--apprentice-hosanna{
-  background-image: linear-gradient(225deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%), url("../images/apprentice/hozanna-hero-1.jpg");
+  background-image: linear-gradient(-225deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 80%), url("../images/apprentice/hozanna-hero-1.jpg");
 }
 .hero-banner__background--apprentice-sarah{
   background-image: linear-gradient(225deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%), url("../images/apprentice/sarah-hero-1.jpg");

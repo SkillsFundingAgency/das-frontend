@@ -1,57 +1,46 @@
 .table{
-  @include font($size: 14, $weight: light);
+  @include font($size: 14);
   width: 100%;
   @include responsive-margin(6, "bottom");
   color: $grey-3;
   border-collapse: collapse;
-  border-top: $grey-3 2px solid;
+  border-top: 1px solid $border-colour;
 }
 
 .table__cell {
-  @include responsive-padding(4, "bottom");
-  @include responsive-padding(4, "top");
-  @include responsive-padding(2, "left");
-  @include responsive-padding(2, "right");
+  padding: 20px;
 }
 .table__row{
   border-bottom: 1px solid $border-colour;
 }
-.table__row-title{
+.table__row-title {
   text-transform: uppercase;
-  @include font($size: 12, $weight: bold);
+  @include font($size: 14, $weight: bold);
   letter-spacing: 0.05em;
+  text-align: left;
 }
 
 .table__header{
   background-color: $grey-7;
   text-align: left;
 }
+
 .table__row-title--header{
   color: $black;
 }
+
 .table__row-value--header{
-  @include font($size: 14, $weight: light);
+  text-transform: uppercase;
+  color: $black;
 }
 
 .table__footer{
   background-color: $grey-7;
   color: $grey-2;
-}
-
-.table--apprentice{
-    border-top-color:$apprentice;
-
-  .table__footer{
-  background-color: $apprentice-light;
-  color: $apprentice;
+  .table--apprentice & {
+    background-color: $apprentice-light;
   }
-}
-
-.table--employer{
-  border-top-color:$employer;
-
-  .table__footer{
-  background-color: $employer-light;
-  color: $employer;
+  .table--employer & {
+    background-color: $employer-light;
   }
 }
