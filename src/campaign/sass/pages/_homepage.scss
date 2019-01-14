@@ -109,21 +109,32 @@
   }
 
   .hero-banner--employer {
-    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 94%);
-    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 94%);
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 94%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 94%, 0 100%);
     padding-bottom: 80px;
     margin-bottom: -80px;
-    z-index: 2;
-    @include media-query($from: tablet) {
-    border-width: 0px 0px 32px 671px;
-    }
+    z-index: 10;
     @include media-query($from: desktop) {
-      -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 88%);
-      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 88%);
+      -webkit-clip-path: polygon(0 0, 100% 0, 100% 88%, 0 100%);
+      clip-path: polygon(0 0, 100% 0, 100% 88%, 0 100%);
+    }
+    &.hero-banner--right-aligned{
+      -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 94%);
+      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 94%);
+      padding-bottom: 80px;
+      margin-bottom: -80px;
+      z-index: 2;
+      @include media-query($from: tablet) {
+      border-width: 0px 0px 32px 671px;
+      }
+      @include media-query($from: desktop) {
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 88%);
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 88%);
+      }
     }
   }
 
-  .hero-banner--header-slant {
+  .hero-banner--header-slant, .hero-banner--footer-slant {
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 94%, 0 100%);
     clip-path: polygon(0 0, 100% 0, 100% 94%, 0 100%);
     padding-bottom: 80px;
@@ -135,5 +146,8 @@
     }
   }
 
-
+  .cssmask-remove{
+    clip-path: none;
+    -webkit-clip-path:none;
+  }
 }
