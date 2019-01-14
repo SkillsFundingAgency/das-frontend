@@ -4757,7 +4757,7 @@ p {
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 94%, 0 100%);
   clip-path: polygon(0 0, 100% 0, 100% 94%, 0 100%);
   margin-bottom: -80px;
-  z-index: 3; }
+  z-index: 5; }
   @media (min-width: 46.25em) {
     .cssmask .launcher--employer {
       -webkit-clip-path: none;
