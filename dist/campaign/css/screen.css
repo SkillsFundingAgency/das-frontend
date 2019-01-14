@@ -3054,7 +3054,7 @@ p {
     -ms-filter: "FlipH"; }
 
 .hero-banner__background--industry {
-  background-image: linear-gradient(225deg, rgba(0, 0, 0, 0) 0%, black 100%), url("../images/employer/matt-hero-1.jpg"); }
+  background-image: linear-gradient(225deg, rgba(0, 0, 0, 0) 0%, black 100%), url("../images/hero-banner-bg.jpg"); }
   .hero-banner--right-aligned .hero-banner__background--industry {
     -moz-transform: scaleX(-1);
     -o-transform: scaleX(-1);
