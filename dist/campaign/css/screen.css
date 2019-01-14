@@ -3024,11 +3024,11 @@ p {
   filter: FlipH;
   -ms-filter: "FlipH"; }
 
-.hero-banner__background--employer-bendy {
+.hero-banner__background--employer-annie {
   background-image: linear-gradient(225deg, rgba(0, 0, 0, 0) 0%, black 100%), url("../images/employer/annie-hero-1.jpg"); }
 
-.hero-banner__background--apprentice-bendy-inverted {
-  background-image: linear-gradient(140deg, rgba(0, 0, 0, 0) 0%, black 100%), url("../images/apprentice/bendy-hero-1.jpg");
+.hero-banner__background--apprentice-annie-inverted {
+  background-image: linear-gradient(140deg, rgba(0, 0, 0, 0) 0%, black 100%), url("../images/apprentice/annie-hero-1.jpg");
   -moz-transform: scaleX(-1);
   -o-transform: scaleX(-1);
   -webkit-transform: scaleX(-1);
