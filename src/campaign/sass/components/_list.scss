@@ -2,7 +2,6 @@
 
 .list {
   @include font($size: 19, $weight: light);
-  color: $text-colour;
   margin-top: 0;
   @include responsive-margin(4, "bottom");
   padding-left: 0;
@@ -78,7 +77,7 @@
 }
 
 .list--number {
-  padding-left: spacing(4);
+  padding-left: spacing(5);
   list-style-type: decimal;
 }
 

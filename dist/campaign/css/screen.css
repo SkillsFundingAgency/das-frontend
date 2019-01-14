@@ -3302,7 +3302,6 @@ p {
   font-weight: 300;
   font-size: 16px;
   line-height: 1.25;
-  color: #6F777B;
   margin-top: 0;
   margin-bottom: 15px;
   padding-left: 0;
@@ -3370,7 +3369,7 @@ p {
   background-color: #ffb007; }
 
 .list--number {
-  padding-left: 20px;
+  padding-left: 25px;
   list-style-type: decimal; }
 
 .list--arrows {
