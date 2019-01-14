@@ -2988,12 +2988,6 @@ p {
 
 .hero-banner__background--apprentice-ella {
   background-image: linear-gradient(255deg, rgba(0, 0, 0, 0) 0%, black 100%), url("../images/apprentice/ella-hero-1.jpg"); }
-  @media (min-width: 20em) {
-    .hero-banner__background--apprentice-ella {
-      background-position: 0 10%; } }
-  @media (min-width: 46.25em) {
-    .hero-banner__background--apprentice-ella {
-      background-position: 0 0; } }
   .hero-banner--right-aligned .hero-banner__background--apprentice-ella {
     -moz-transform: scaleX(-1);
     -o-transform: scaleX(-1);
@@ -4807,7 +4801,8 @@ p {
 
 .cssmask .cssmask-remove {
   clip-path: none;
-  -webkit-clip-path: none; }
+  -webkit-clip-path: none;
+  margin-bottom: 0px; }
 
 @media (min-width: 46.25em) {
   .hidden--desktop {
