@@ -165,12 +165,12 @@ $hero-text-colour: #fff;
 
   @include mq ($from: tablet) {
     display: block;
-    margin:   120px auto 180px;
+    margin: 135px auto 120px;
     height: 110px;
     width: 110px;
   }
   @include mq ($from: desktop) {
-    margin: 60px auto 180px;
+    margin: 120px auto 120px;
   }
 
 
