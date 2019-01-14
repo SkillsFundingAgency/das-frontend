@@ -68,7 +68,7 @@
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 94%, 0 100%);
     clip-path: polygon(0 0, 100% 0, 100% 94%, 0 100%);
     margin-bottom: -80px;
-    z-index: 3;
+    z-index: 5;
     @include media-query($from: tablet) {
       -webkit-clip-path: none;
       clip-path: none;
