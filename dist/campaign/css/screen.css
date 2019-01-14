@@ -4722,29 +4722,43 @@ p {
       clip-path: polygon(0 0, 100% 0, 100% 100%, 0 88%); } }
 
 .cssmask .hero-banner--employer {
-  -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 94%);
-  clip-path: polygon(0 0, 100% 0, 100% 100%, 0 94%);
-  padding-bottom: 80px;
-  margin-bottom: -80px;
-  z-index: 2; }
-  @media (min-width: 46.25em) {
-    .cssmask .hero-banner--employer {
-      border-width: 0px 0px 32px 671px; } }
-  @media (min-width: 61.25em) {
-    .cssmask .hero-banner--employer {
-      -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 88%);
-      clip-path: polygon(0 0, 100% 0, 100% 100%, 0 88%); } }
-
-.cssmask .hero-banner--header-slant {
   -webkit-clip-path: polygon(0 0, 100% 0, 100% 94%, 0 100%);
   clip-path: polygon(0 0, 100% 0, 100% 94%, 0 100%);
   padding-bottom: 80px;
   margin-bottom: -80px;
   z-index: 10; }
   @media (min-width: 61.25em) {
-    .cssmask .hero-banner--header-slant {
+    .cssmask .hero-banner--employer {
       -webkit-clip-path: polygon(0 0, 100% 0, 100% 88%, 0 100%);
       clip-path: polygon(0 0, 100% 0, 100% 88%, 0 100%); } }
+  .cssmask .hero-banner--employer.hero-banner--right-aligned {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 94%);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 94%);
+    padding-bottom: 80px;
+    margin-bottom: -80px;
+    z-index: 2; }
+    @media (min-width: 46.25em) {
+      .cssmask .hero-banner--employer.hero-banner--right-aligned {
+        border-width: 0px 0px 32px 671px; } }
+    @media (min-width: 61.25em) {
+      .cssmask .hero-banner--employer.hero-banner--right-aligned {
+        -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 88%);
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 88%); } }
+
+.cssmask .hero-banner--header-slant, .cssmask .hero-banner--footer-slant {
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 94%, 0 100%);
+  clip-path: polygon(0 0, 100% 0, 100% 94%, 0 100%);
+  padding-bottom: 80px;
+  margin-bottom: -80px;
+  z-index: 10; }
+  @media (min-width: 61.25em) {
+    .cssmask .hero-banner--header-slant, .cssmask .hero-banner--footer-slant {
+      -webkit-clip-path: polygon(0 0, 100% 0, 100% 88%, 0 100%);
+      clip-path: polygon(0 0, 100% 0, 100% 88%, 0 100%); } }
+
+.cssmask .cssmask-remove {
+  clip-path: none;
+  -webkit-clip-path: none; }
 
 @media (min-width: 46.25em) {
   .hidden--desktop {
