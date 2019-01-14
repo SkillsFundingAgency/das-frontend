@@ -3203,7 +3203,8 @@ p {
     .launcher__content {
       padding-left: 80px;
       padding-right: 120px;
-      padding-top: 260px; } }
+      padding-top: 260px;
+      min-height: 410px; } }
   @media (min-width: 81.25em) {
     .launcher__content {
       padding-left: 80px;

@@ -22,6 +22,7 @@
     padding-left: $edgeGutterDesktop;
     padding-right: $edgeGutterDesktop * 1.5;
     padding-top: 260px;
+    min-height: 410px;
   }
 
   @include media-query($from: wide) {
