@@ -98,6 +98,15 @@ CookieBanner.prototype.eraseCookie = function(name) {
 CookieBanner.prototype.removeBanner = function() {
     if (this.$cookieBanner !== null)
     this.$cookieBanner.parentNode.removeChild(this.$cookieBanner);
+
+
+    if (this.$Marketingcheckbox != null){
+        this.$Marketingcheckbox.addEventListener('click', this.setChecked.bind(this,this.$MarketingcookieName));
+    }
+    if (this.$AnalyticsCheckbox){
+        this.$AnalyticsCheckbox.addEventListener('click', this.setChecked.bind(this,this.$AnalyticscookieName));
+    }
+    
 }
 
 export default CookieBanner
