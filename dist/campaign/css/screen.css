@@ -3834,6 +3834,16 @@ p {
     color: #0B0C0C; }
   .navigation__link:focus {
     outline: 3px solid #ffbf47; }
+  .navigation__link[rel~="external"]:after {
+    content: '';
+    display: inline-block;
+    height: 20px;
+    width: 20px;
+    background-image: url("../images/icon-link-external-grey.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    vertical-align: bottom;
+    margin-left: 3px; }
 
 .navigation__link-caption {
   display: none; }
