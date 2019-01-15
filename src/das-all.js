@@ -28,9 +28,11 @@ function initAll() {
     new CookieBanner($cookieBanner).init();
   }
 
+  var $gtmDataLayer = window.dataLayer;
+
   var $videoPlayer = document.querySelectorAll('[data-module="videoPlayer"]')
-  nodeListForEach($videoPlayer, function ($videoPlayer) {
-    new VideoPlayer($videoPlayer).init();
+  $videoPlayer.forEach(function ($videoPlayer) {
+    new VideoPlayer($videoPlayer,$gtmDataLayer).init();
   });
 
   if (typeof aspnetValidation != "undefined") {
