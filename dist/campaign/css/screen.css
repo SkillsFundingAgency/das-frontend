@@ -1562,6 +1562,20 @@ html {
       font-size: 12pt;
       line-height: 1.2; } }
 
+.heading--success {
+  color: #28A197; }
+
+.heading__icon {
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  vertical-align: center;
+  background-size: cover;
+  background-repeat: no-repeat; }
+
+.heading__icon--tick {
+  background-image: url("../images/icon-circle-tick-green.svg"); }
+
 .caption-xl {
   font-family: nobel, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -1654,6 +1668,9 @@ p {
   font-size: 26px; }
 
 .caption-s + .heading-m {
+  margin-top: .2em; }
+
+.caption-s + .heading-l {
   margin-top: .2em; }
 
 .hr {
@@ -1827,6 +1844,10 @@ p {
   height: 30px;
   margin-right: 10px; }
 
+.button__icon--close {
+  height: 15px;
+  margin-right: 5px; }
+
 .button--sparks {
   border-image-slice: 915 0 850 0;
   border-image-width: 4em 0px 4em 0.1em;
@@ -1881,6 +1902,17 @@ p {
     text-decoration: none; }
   .button-inverted:hover, .button-inverted:focus {
     background-color: #1a1a1a; }
+
+.button--success {
+  color: #fff;
+  background-color: #28A197; }
+  .button--success:link, .button--success:visited, .button--success:active, .button--success:hover {
+    color: #fff;
+    text-decoration: none; }
+  .button--success:hover, .button--success:focus {
+    background-color: #238d84; }
+  .page .button--success {
+    color: #fff; }
 
 .card__collection {
   background: #fff; }
