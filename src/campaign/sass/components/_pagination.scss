@@ -1,9 +1,12 @@
 .pagination {
-  margin-top: 80px;
+  margin: 30px 0;
   border-top: 1px solid #ddd;
   padding: 30px 0 0 0;
   list-style: none;
   @include clearfix();
+  @include media-query($from: tablet) {
+    margin-top: 80px;
+  }
 }
 
 .pagination__list-item {
@@ -34,9 +37,7 @@
 }
 
 .pagination__list-item--next {
-  @include media-query($from: tablet) {
     float: right;
-  }
 }
 
 .pagination__link--previous,

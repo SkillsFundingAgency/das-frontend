@@ -77,8 +77,7 @@
   height: 80px;
   width: 80px;
   display: block;
-  margin-top: 40px;
-  margin-bottom: 20px;
+  margin: 100px auto;
   background: $apprentice;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
@@ -86,9 +85,12 @@
   transition: box-shadow 0.2s ease;
 
   @include mq ($from: tablet) {
-    margin: 140px auto;
+    margin: 95px auto;
     height: 110px;
     width: 110px;
+  }
+  @include mq ($from: desktop) {
+    margin: 140px auto;
   }
 
   .card-stories--employer & {

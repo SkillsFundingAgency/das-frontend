@@ -1,9 +1,62 @@
+.homepage-title {
+  transform: rotate(-6deg) skewX(-6deg);
+  color: #fff;
+  margin: 0;
+  line-height: 1;
+  font-size: 50px;
+  position: absolute;
+  top: 110px;
+  left: 16px;
+  @include typography-common();
+  text-transform: uppercase;
+  letter-spacing: -0.08em;
+  z-index: 6;
+  @include media-query($from: tablet) {
+    font-size: 70px;
+    left: 36px;
+  }
+  @include media-query($from: desktop) {
+    font-size: 80px;
+    left: 76px;
+    span {
+      display: block;
+      margin-left: 84px;
+      position: relative;
+      top: -15px;
+    }
+  }
+  &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border: 5px solid transparent;
+    border-image-slice: 700 0;
+    border-image-width: 66px;
+    border-image-outset: 10 25;
+    opacity: .5;
+    border-image-source: url('../images/button-border.png');
+    @include media-query($from: tablet) {
+
+    }
+    @include media-query($from: desktop) {
+      border-image-slice: 847 0;
+      border-image-width: 140px;
+      border-image-outset: 0 25;
+
+    }
+  }
+}
+
 .cssmask {
   .launcher--apprentice {
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 94%);
     clip-path: polygon(0 0, 100% 0, 100% 100%, 0 94%);
     margin-bottom: -80px;
-    z-index: 4;
+    z-index: 6;
     @include media-query($from: tablet) {
       -webkit-clip-path: none;
       clip-path: none;
@@ -15,7 +68,7 @@
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 94%, 0 100%);
     clip-path: polygon(0 0, 100% 0, 100% 94%, 0 100%);
     margin-bottom: -80px;
-    z-index: 3;
+    z-index: 5;
     @include media-query($from: tablet) {
       -webkit-clip-path: none;
       clip-path: none;
@@ -60,7 +113,7 @@
     clip-path: polygon(0 0, 100% 0, 100% 94%, 0 100%);
     padding-bottom: 80px;
     margin-bottom: -80px;
-    z-index: 10;
+    z-index: 2;
     @include media-query($from: desktop) {
       -webkit-clip-path: polygon(0 0, 100% 0, 100% 88%, 0 100%);
       clip-path: polygon(0 0, 100% 0, 100% 88%, 0 100%);
@@ -96,5 +149,6 @@
   .cssmask-remove{
     clip-path: none;
     -webkit-clip-path:none;
+    margin-bottom:0px;
   }
 }
