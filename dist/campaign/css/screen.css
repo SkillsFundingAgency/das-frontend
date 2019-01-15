@@ -2196,7 +2196,8 @@ p {
   padding: 8px 15px 5px;
   cursor: pointer;
   -ms-touch-action: manipulation;
-  touch-action: manipulation; }
+  touch-action: manipulation;
+  color: #0B0C0C; }
 
 .checkboxes__hint {
   display: block;
@@ -2673,18 +2674,14 @@ p {
   @media (min-width: 46.25em) {
     .form-validation-summary {
       padding: 15px; } }
+  .form-validation-summary > a {
+    color: #C42B3A; }
+    .form-validation-summary > a:visited {
+      color: #C42B3A; }
 
 .form-group-validation-error {
   border-left: 8px solid #C42B3A;
-  padding-left: 15px;
-  padding-bottom: 20px;
-  margin-bottom: 10px; }
-  @media (min-width: 46.25em) {
-    .form-group-validation-error {
-      padding-bottom: 25px; } }
-  @media (min-width: 46.25em) {
-    .form-group-validation-error {
-      margin-bottom: 10px; } }
+  padding-left: 15px; }
 
 .validation-summary-valid {
   display: none; }
@@ -4102,7 +4099,8 @@ p {
   padding: 8px 15px 5px;
   cursor: pointer;
   -ms-touch-action: manipulation;
-  touch-action: manipulation; }
+  touch-action: manipulation;
+  color: #0B0C0C; }
 
 .radios__hint {
   display: block;
@@ -4120,6 +4118,9 @@ p {
   border: 5px solid currentColor;
   border-radius: 50%;
   background: transparent; }
+
+.radios__input.input-validation-error + .radios__label::before {
+  border-color: #C42B3A; }
 
 .radios__input + .radios__label::after {
   content: "";
