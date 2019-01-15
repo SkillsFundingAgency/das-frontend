@@ -450,6 +450,9 @@ function VideoPlayer($module, $gtmDataLayer) {
     this.$trackingEnabled = $gtmDataLayer != null;
     this.$gtmDataLayer = $gtmDataLayer;
     this.$gtm = null;
+
+    this.$playingTimer = null;
+    this.$playingTimerTimespan = 5000;
 }
 
 VideoPlayer.prototype.init = function () {
@@ -524,7 +527,7 @@ VideoPlayer.prototype.enableEvents = function () {
             this.sendEvent('video_play');
         }
 
-        this.$playingTimer = setInterval(this.sendEvent('video_playing'), 5000);
+        this.$playingTimer = setInterval(this.sendPlayingEvent.bind(this,this), this.$playingTimerTimespan);
     });
 
     this.$player.on('ended', event => {
@@ -546,10 +549,11 @@ VideoPlayer.prototype.sendEvent = function (event) {
         'totalVideoDuration': this.$player.duration,
         'videoId': this.$player.embed.getVideoData().video_id
     };
-
-
     this.$gtm.sendEvent(event, properties);
+};
 
+VideoPlayer.prototype.sendPlayingEvent = function (vp) {
+    vp.sendEvent('video_playing');
 };
 
 function nodeListForEach$2(nodes, callback) {
