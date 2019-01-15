@@ -63,12 +63,6 @@
   @include mq($from: tablet) {
     background-position: 30%;
   }
-  @include mq($from: desktop) {
-    background-position: 10%;
-  }
-  @include mq($from: wide) {
-
-  }
 }
 
 .launcher--employer .launcher__bg {
