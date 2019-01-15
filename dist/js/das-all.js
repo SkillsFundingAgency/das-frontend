@@ -300,21 +300,25 @@ Navigation.prototype.onToggleSubNav = function ($navItem,event) {
 
 function CookieBanner($module) {
 
-this.$dropCookie = true;                      // false disables the Cookie, allowing you to style the banner
-this.$cookieDuration = 365;                    // Number of days before the cookie expires, and the banner reappears
-this.$cookieName = 'CookieConsent';        // Name of our cookie
-this.$cookieValue = 'true';                     // Value of cookie
-this.$cookieBanner = $module;
-this.$cookieBannerContinue = document.querySelector(".cookiebanner__button--continue");
-this.$cookieBannerClose = document.querySelector(".cookiebanner--close");
+    this.$dropCookie = true;                      // false disables the Cookie, allowing you to style the banner
+    this.$cookieDuration = 365;                    // Number of days before the cookie expires, and the banner reappears
+    this.$cookieName = 'CookieConsent';        // Name of our cookie
+    this.$cookieValue = 'true';                     // Value of cookie
 
-this.$MarketingcookieName = 'MarketingConsent';        // Name of our cookie
-this.$MarketingcookieValue = 'false';
-this.$Marketingcheckbox =  document.getElementById('cbxMarketingConsent');
+    this.$cookieBanner = $module;
+    this.$cookieBannerParent = this.$cookieBanner.parentNode;
+    this.$cookieBannerContinue = document.querySelector(".cookiebanner__button--continue");
+    this.$cookieBannerClose = document.querySelector(".cookiebanner--close");
 
-this.$AnalyticscookieName = 'AnalyticsConsent';        // Name of our cookie
-this.$AnalyticscookieValue = 'true';
-this.$AnalyticsCheckbox =  document.getElementById('cbxAnalyticsConsent');
+    this.$cookieModal = document.getElementById("modal-cookiesettings");
+
+    this.$MarketingcookieName = 'MarketingConsent';        // Name of our cookie
+    this.$MarketingcookieValue = 'false';
+    this.$Marketingcheckbox = document.getElementById('cbxMarketingConsent');
+
+    this.$AnalyticscookieName = 'AnalyticsConsent';        // Name of our cookie
+    this.$AnalyticscookieValue = 'true';
+    this.$AnalyticsCheckbox = document.getElementById('cbxAnalyticsConsent');
 }
 
 CookieBanner.prototype.init = function () {
@@ -330,11 +334,12 @@ CookieBanner.prototype.init = function () {
     //hide cookie notice if already been displayed
     if (this.checkCookie(this.$cookieName) == this.$cookieValue) {
         this.removeBanner();
+        this.removeModal();
     } else {
         this.showBanner();
 
-        this.$cookieBannerContinue.addEventListener('click', this.removeBannerEvent.bind(this,true));
-        this.$cookieBannerClose.addEventListener('click', this.removeBannerEvent.bind(this,false));
+        this.$cookieBannerContinue.addEventListener('click', this.removeBannerEvent.bind(this, true));
+        this.$cookieBannerClose.addEventListener('click', this.removeBannerEvent.bind(this, false));
     }
 
     //if cookie setting check boxes are present, make sure they have correct value
@@ -344,31 +349,32 @@ CookieBanner.prototype.init = function () {
     }
 };
 
-CookieBanner.prototype.removeBannerEvent = function(enableAll,event) {
+CookieBanner.prototype.removeBannerEvent = function (enableAll, event) {
 
     this.createCookie(this.$cookieName, this.$cookieValue, this.$cookieDuration); // Create the cookie
 
     //if clicked continue, make sure all cookies are enabled
-    if (enableAll){
+    if (enableAll) {
         this.createCookie(this.$MarketingcookieName, 'true', this.$cookieDuration);
         this.createCookie(this.$AnalyticscookieName, 'true', this.$cookieDuration);
+        this.removeModal();
     }
 
     this.removeBanner();
 };
 
-CookieBanner.prototype.showBanner = function() {
+CookieBanner.prototype.showBanner = function () {
     if (this.$cookieBanner !== null) {
         var bannerClass = this.$cookieBanner.getAttribute('class').replace(' visually-hidden', '');
         this.$cookieBanner.setAttribute('class', bannerClass);
     }
 };
-CookieBanner.prototype.setChecked = function(elem, cookie) {
-    value = elem.checked ? "true" : "false";
+CookieBanner.prototype.setChecked = function (elem, cookie) {
+    var value = elem.checked ? "true" : "false";
     this.createCookie(cookie, value, this.$cookieDuration);
 };
 
-CookieBanner.prototype.createCookie = function(name, value, days) {
+CookieBanner.prototype.createCookie = function (name, value, days) {
     if (days) {
         var date = new Date();
         date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
@@ -380,7 +386,7 @@ CookieBanner.prototype.createCookie = function(name, value, days) {
     }
 };
 
-CookieBanner.prototype.checkCookie = function(name) {
+CookieBanner.prototype.checkCookie = function (name) {
     var nameEQ = name + "=";
     var ca = document.cookie.split(';');
     for (var i = 0; i < ca.length; i++) {
@@ -391,22 +397,26 @@ CookieBanner.prototype.checkCookie = function(name) {
     return null;
 };
 
-CookieBanner.prototype.eraseCookie = function(name) {
+CookieBanner.prototype.eraseCookie = function (name) {
     this.createCookie(name, "", -1);
 };
 
-CookieBanner.prototype.removeBanner = function() {
+CookieBanner.prototype.removeBanner = function () {
     if (this.$cookieBanner !== null)
-    this.$cookieBanner.parentNode.removeChild(this.$cookieBanner);
+        this.$cookieBannerParent.removeChild(this.$cookieBanner);
 
 
-    if (this.$Marketingcheckbox != null){
-        this.$Marketingcheckbox.addEventListener('click', this.setChecked.bind(this,this.$MarketingcookieName));
+    if (this.$Marketingcheckbox != null) {
+        this.$Marketingcheckbox.addEventListener('click', this.setChecked.bind(this, this.$Marketingcheckbox, this.$MarketingcookieName));
     }
-    if (this.$AnalyticsCheckbox){
-        this.$AnalyticsCheckbox.addEventListener('click', this.setChecked.bind(this,this.$AnalyticscookieName));
+    if (this.$AnalyticsCheckbox) {
+        this.$AnalyticsCheckbox.addEventListener('click', this.setChecked.bind(this, this.$AnalyticsCheckbox, this.$AnalyticscookieName));
     }
-    
+};
+
+CookieBanner.prototype.removeModal = function () {
+    if (this.$cookieModal !== null)
+        this.$cookieBannerParent.removeChild(this.$cookieModal);
 };
 
 function GoogleTagManager($DataLayer) {
