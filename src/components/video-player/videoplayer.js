@@ -109,7 +109,8 @@ VideoPlayer.prototype.enableEvents = function () {
 VideoPlayer.prototype.sendEvent = function (event) {
 
     var properties = {
-        'currentTimestamp': this.$player.currentTime,
+        'currentTimestamp': round(this.$player.currentTime,1),
+        'totalVideoPlayed': round(this.$player.currentTime/this.$player.duration,2),
         'totalVideoDuration': this.$player.duration,
         'videoId': this.$player.embed.getVideoData().video_id
     }
@@ -118,6 +119,11 @@ VideoPlayer.prototype.sendEvent = function (event) {
 
 VideoPlayer.prototype.sendPlayingEvent = function (vp) {
     vp.sendEvent('video_playing')
+}
+
+function round(value, precision) {
+    var multiplier = Math.pow(10, precision || 0);
+    return Math.round(value * multiplier) / multiplier;
 }
 
 export default VideoPlayer
