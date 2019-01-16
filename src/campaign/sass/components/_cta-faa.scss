@@ -3,9 +3,11 @@
   color: #FFFFFF;
   align-items: center;
   padding: 30px;
+  margin-top: 20px;
 
   @include mq($from:tablet){
     display: flex;
+    margin-top: 0;
   }
 }
 
