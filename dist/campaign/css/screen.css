@@ -2144,14 +2144,16 @@ p {
   background-image: url("../images/apprentice/hozanna-card-1.jpg"); }
 
 .card-stories__img--employer-annie {
-  background-image: url("../images/employer/annie-card-1.jpg");
-  background-position: 20% 30%; }
+  background-image: url("../images/employer/annie-card-1.jpg"); }
 
 .card-stories__img--employer-gail {
   background-image: url("../images/employer/gail-card-1.jpg"); }
 
 .card-stories__img--employer-bendy {
   background-image: url("../images/employer/bendy-card-1.jpg"); }
+
+.card-stories__img--employer-laura {
+  background-image: url("../images/employer/laura-card-1.jpg"); }
 
 .checkboxes__item {
   font-family: nobel, sans-serif;
