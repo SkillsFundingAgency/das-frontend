@@ -546,6 +546,7 @@ VideoPlayer.prototype.sendEvent = function (event) {
 
     var properties = {
         'currentTimestamp': round(this.$player.currentTime,1),
+        'totalVideoPlayed': round(this.$player.currentTime/this.$player.duration,2),
         'totalVideoDuration': this.$player.duration,
         'videoId': this.$player.embed.getVideoData().video_id
     };
