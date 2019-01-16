@@ -9,7 +9,7 @@ function VideoPlayer($module, $gtmDataLayer) {
     this.$player = null;
     this.$playerElement = null;
     this.$playerClass = this.$module.dataset.playerclass;
-    this.$videoPlayerTemplate = '<div class="video-player plyr__video-embed js-player visually-hidden" id="{videoPlayerId}"><div class="video-player--inner-wrap"><a class="video-player__close" href="#"><span class="video-player__close-icon"></span> Close</a><iframe src="{videoUrl}" allowfullscreen allowtransparency allow="autoplay"></iframe></div></div>';
+    this.$videoPlayerTemplate = '<div class="video-player plyr__video-embed js-player visually-hidden" id="{videoPlayerId}"><div class="video-player--inner-wrap"><iframe src="{videoUrl}" allowfullscreen allowtransparency allow="autoplay"></iframe></div></div>';
 
     this.$trackingEnabled = $gtmDataLayer != null;
     this.$gtmDataLayer = $gtmDataLayer;
@@ -43,9 +43,8 @@ VideoPlayer.prototype.init = function () {
 
     this.$module.addEventListener(event, this.play.bind(this));
 
-    this.$closeButton = this.$playerElement.querySelector('.video-player__close');
-
-    this.$closeButton.addEventListener(event, this.close.bind(this));
+    //this.$closeButton = this.$playerElement.querySelector('.video-player__close');
+    //this.$closeButton.addEventListener('click', this.close.bind(this));
 
     this.$module.classList.remove('visually-hidden');
 
@@ -57,24 +56,20 @@ VideoPlayer.prototype.init = function () {
 }
 
 VideoPlayer.prototype.appendPlayer = function () {
-
     var playerHtml = this.$videoPlayerTemplate.replace('{videoPlayerId}', this.$videoPlayerId).replace('{videoUrl}', this.$videoUrl);
-
-    window.document.body.insertAdjacentHTML('beforeend', playerHtml);
+    this.$module.insertAdjacentHTML('afterend', playerHtml);
 }
 
 VideoPlayer.prototype.close = function (event) {
+    this.$module.classList.remove('js-video-player__playing');
     this.$player.stop();
     event.preventDefault();
 }
 
 VideoPlayer.prototype.play = function (event) {
+    this.$module.classList.add('js-video-player__playing');
     this.$player.play();
     event.preventDefault();
-}
-
-VideoPlayer.prototype.isSmallScreen = function () {
-    return window.innerWidth < 900;
 }
 
 VideoPlayer.prototype.enableEvents = function () {

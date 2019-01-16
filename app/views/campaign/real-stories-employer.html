@@ -41,7 +41,7 @@
     var appInsights=window.appInsights||function(a){
         function b(a){c[a]=function(){var b=arguments;c.queue.push(function(){c[a].apply(c,b)})}}var c={config:a},d=document,e=window;setTimeout(function(){var b=d.createElement("script");b.src=a.url||"https://az416426.vo.msecnd.net/scripts/a/ai.0.js",d.getElementsByTagName("script")[0].parentNode.appendChild(b)});try{c.cookie=d.cookie}catch(a){}c.queue=[];for(var f=["Event","Exception","Metric","PageView","Trace","Dependency"];f.length;)b("track"+f.pop());if(b("setAuthenticatedUserContext"),b("clearAuthenticatedUserContext"),b("startTrackEvent"),b("stopTrackEvent"),b("startTrackPage"),b("stopTrackPage"),b("flush"),!a.disableExceptionTracking){f="onerror",b("_"+f);var g=e[f];e[f]=function(a,b,d,e,h){var i=g&&g(a,b,d,e,h);return!0!==i&&c["_"+f](a,b,d,e,h),i}}return c
     }({
-        instrumentationKey: 'd46da3d3-cfa3-4aa9-8d3b-a2f397f1e4fd'
+        instrumentationKey: '9b18d9d0-0548-4842-83e0-86454414a8a5'
     });
 
     window.appInsights=appInsights,appInsights.queue&&0===appInsights.queue.length&&appInsights.trackPageView();
@@ -243,7 +243,7 @@
             <div class="hero-heading__content">
                 <p class="lead-paragraph">
                     Have you ever thought about hiring an apprentice?
-                    Have a look at the real stories from other employers, and see how taking on an apprentice can benefit your organisation.
+                    Have a look at real stories from other employers, and see how taking on an apprentice can benefit your organisation.
                 </p>
             </div>
         </div>
@@ -256,7 +256,7 @@
     <div class="grid-column-full">
         <div class="grid-row hero-banner__content">
             <div class="grid-column-one-half  hero-banner__icon-play-container">
-                <a class="hero-banner__icon-play" href="#player-1" id="play--1"></a>
+                <a class="hero-banner__icon-play" href="#player-1" id="play-1" data-module="videoPlayer" data-playerclass="video-player--employer" data-videoplayerid="plyr-1" data-videourl="https://www.youtube.com/embed/5hGuBfCx85M?origin=https://www.apprenticeships.gov.uk&amp;iv_load_policy=3&amp;modestbranding=1&amp;playsinline=1&amp;showinfo=0&amp;rel=0&amp;enablejsapi=1"></a>
             </div>
             <div class="grid-column-one-half hero-banner__content-main">
                 <h3 class="hero-banner__header">Your new workforce awaits</h3>
@@ -283,7 +283,8 @@
             <div class="card-stories__image">
                 <span class="card-stories__img card-stories__img--employer-annie"></span>
 
-                <a class="card-stories__icon-play" href="#player-1" id="play-mobile-1"></a>
+                <a class="card-stories__icon-play" href="#player-3" id="play-3" data-module="videoPlayer" data-playerclass="video-player--employer" data-videoplayerid="plyr-3" data-videourl="https://www.youtube.com/embed/jAoi3oE8klw?origin=https://www.apprenticeships.gov.uk&amp;iv_load_policy=3&amp;modestbranding=1&amp;playsinline=1&amp;showinfo=0&amp;rel=0&amp;enablejsapi=1"></a>
+
             </div>
             <div class="card-stories__content">
                 <h2 class="card-stories__headline heading-l">A real win-win for businesses, large and small.</h2>
@@ -301,6 +302,24 @@
                 </div>
 
             </div>
+        </div> <div class="card-stories">
+            <div class="card-stories__image">
+                <span class="card-stories__img card-stories__img--employer-laura"></span>
+            </div>
+            <div class="card-stories__content">
+                <h2 class="card-stories__headline heading-l">Brilliant new perspectives across the business.</h2>
+                <p class="card-stories__summary">
+                    Apprentices have had an amazing impact across our business and bring a fresh perspective to everything we do here at Channel 4.
+                    They really challenge the status quo, and we empower them to do just that.
+                </p>
+                <div class="card-stories__cite">
+                    Laura Boswell
+                    <span class="card-stories__cite-detail">
+                    Industry Talent Specialist, Channel 4
+                    </span>
+                </div>
+
+            </div>
         </div>
     </div>
 
@@ -310,7 +329,7 @@
     <div class="grid-column-full">
         <div class="grid-row hero-banner__content">
             <div class="grid-column-one-half  hero-banner__icon-play-container">
-                <a class="hero-banner__icon-play" href="#player-2" id="play-2"></a>
+                <a class="hero-banner__icon-play" href="#player-2" id="play-2" data-module="videoPlayer" data-playerclass="video-player--employer" data-videoplayerid="plyr-2" data-videourl="https://www.youtube.com/embed/5qnghDBPLHo?origin=https://www.apprenticeships.gov.uk&amp;iv_load_policy=3&amp;modestbranding=1&amp;playsinline=1&amp;showinfo=0&amp;rel=0&amp;enablejsapi=1"></a>
             </div>
             <div class="grid-column-one-half hero-banner__content-main">
                 <h3 class="hero-banner__header">Fire up your business future</h3>
@@ -318,8 +337,10 @@
                     "If you’re starting to offer apprenticeships for the first time, talking to other people in your
                     industry about training providers is an invaluable resource."
                 </p>
-                <div class="hero-banner__cite">Bendy Ashfield
-                    <span class="hero-banner__cite-detail">Apprenticeship Manager, Royal Opera House</span></div>
+                <div class="hero-banner__cite">
+                    Bendy Ashfield
+                    <span class="hero-banner__cite-detail">Apprenticeship Manager, Royal Opera House</span>
+                </div>
             </div>
         </div>
         <span class="hero-banner__background hero-banner__background--employer-bendy"></span>
@@ -337,7 +358,7 @@
                 <div class="grid-column-one-half footer__section govuk-accordion__section accordion__section">
                     <h2 class="footer__list-header govuk-accordion__section-header accordion__section-header">
                         <span class="govuk-accordion__section-header-button" id="accordion-footer-heading-1"></span>
-                        Apprenticeships
+                        Apprentices
                     </h2>
                     <div class="grid-row govuk-accordion__section-panel accordion__section-panel">
                         <div class="grid-column-one-half">
@@ -533,60 +554,56 @@
 
 <form action="/register-interest" method="post">
 
-        <h2 class="heading-m">Keep me up to date with the latest information</h2>
-        <div class="form-validation-summary" style="display: none">
-            <h3 class="heading-s">Sorry but there seems to be a problem with you registration</h3>
+    <h2 class="heading-m">Keep me up to date with the latest information</h2>
+    <div class="form-validation-summary" style="display: none">
+        <h3 class="heading-s">Sorry but there seems to be a problem with you registration</h3>
 
+    </div>
+    <div class="form-group">
+        <label class="label visually-hidden" for="FirstName">
+            First name
+        </label>
+        <input id="FirstName" class="input" type="text" placeholder="First name" autocomplete="given-name" data-val="true" data-val-required="The First name field is required." name="FirstName" value="">
+    </div>
+
+    <div class="form-group">
+
+        <label class="label visually-hidden" for="LastName">
+            Last name
+        </label>
+        <input class="input" type="text" placeholder="Last name" autocomplete="family-name" data-val="true" data-val-required="The Last name field is required." id="LastName" name="LastName" value="">
+    </div>
+    <div class="form-group">
+
+        <label class="label visually-hidden" for="Email">
+            Email Address
+        </label>
+        <input class="input" type="text" placeholder="Email address" autocomplete="email" data-val="true" data-val-email="The Email address field is not a valid e-mail address." data-val-required="The Email address field is required." id="Email" name="Email" value="">
+    </div>
+    <div class="form-group radios">
+
+        <div class="radios__item">
+
+            <input class="input radios__input" value="1" type="radio" id="rbApprentice" data-val="true" data-val-required="The Registration type field is required." name="Route" />
+            <label class="label radios__label" for="rbApprentice">I want to become an <span class="text--apprentice">apprentice</span> </label>
         </div>
-        <div class="form-group">
-            <label class="label visually-hidden" for="FirstName">
-                First name
+        <div class="radios__item">
+            <input class="input radios__input" value="2" type="radio" id="rbEmployer" name="Route" />
+            <label class="label radios__label" for="rbEmployer">I want to <span class="text--employer">employ</span> an apprentice</label>
+        </div>
+    </div>
+    <div class="form-group">
+        <div class="checkboxes__item">
+            <input class="checkboxes__input" type="checkbox" value="true" data-val="true" data-val-range="You need to accept terms and conditions" data-val-range-max="True" data-val-range-min="True" data-val-required="The AcceptTandCs field is required." id="AcceptTandCs" name="AcceptTandCs">
+            <label class="label checkboxes__label" for="AcceptTandCs">
+                I would like to receive information via emails from the Education and Skills Funding Agency in relation to apprenticeships. I can confirm that I am over the age of 13
             </label>
-            <input id="FirstName" class="input" type="text" placeholder="First name" autocomplete="given-name" data-val="true" data-val-required="The First name field is required." name="FirstName" value="">
         </div>
+    </div>
 
-        <div class="form-group">
-
-            <label class="label visually-hidden" for="LastName">
-                Last name
-            </label>
-            <input class="input" type="text" placeholder="Last name" autocomplete="family-name" data-val="true" data-val-required="The Last name field is required." id="LastName" name="LastName" value="">
-        </div>
-        <div class="form-group">
-
-            <label class="label visually-hidden" for="Email">
-                Email Address
-            </label>
-            <input class="input" type="text" placeholder="Email address" autocomplete="email" data-val="true" data-val-email="The Email address field is not a valid e-mail address." data-val-required="The Email address field is required." id="Email" name="Email" value="">
-        </div>
-        <div class="form-group radios">
-
-            <div class="radios__item">
-
-                <input class="input radios__input" value="1" type="radio" id="rbApprentice" data-val="true" data-val-required="The Registration type field is required." name="Route" />
-                <label class="label radios__label" for="rbApprentice">I want to become an <span class="text--apprentice">apprentice</span> </label>
-            </div>
-            <div class="radios__item">
-                <input class="input radios__input" value="2" type="radio" id="rbEmployer" name="Route" />
-                <label class="label radios__label" for="rbEmployer">I want to <span class="text--employer">employ</span> an apprentice</label>
-            </div>
-        </div>
-        <div class="form-group">
-            <div class="checkboxes__item">
-                <input class="checkboxes__input" type="checkbox" value="true" data-val="true" data-val-range="You need to accept terms and conditions" data-val-range-max="True" data-val-range-min="True" data-val-required="The AcceptTandCs field is required." id="AcceptTandCs" name="AcceptTandCs">
-                <label class="label checkboxes__label" for="AcceptTandCs">
-                    I would like to receive information via emails from the Education and Skills Funding Agency in relation to apprenticeships. I can confirm that I am over the age of 13
-                </label>
-            </div>
-        </div>
-
-        <input type="hidden" value="/real-stories/employer" id="ReturnUrl" name="ReturnUrl" />
-
-<button class="button button-inverted " name="registerInterestSubmit" type="submit">Register Interest </button>
-
-
-
-<input name="__RequestVerificationToken" type="hidden" value="CfDJ8G6_JBOdgKhBlmnQu632zYspOkpUo9aHC8FmYrX18XfwG_BLQueE9SBOGWKPVgBmj05RaHMH57cncsOPT9d62GA9XpOVd5Om5rTPr-XDyC-3_7vwGhz46z2_nh33VVDabyL0lSjksblFd4_9FZT9QCA" /><input name="AcceptTandCs" type="hidden" value="false"></form>
+    <input type="hidden" value="/real-stories/employer" id="ReturnUrl" name="ReturnUrl" />
+    <button class="button button-inverted " name="registerInterestSubmit" type="submit" id="btn-register-interest-complete">Register Interest </button>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8FAQy47DjdRPmtacVXCXeg-cuXLO8eoRTFSuh-V7eweaaoOjCIXULF30EsvXFjq36-efmSzHIdS7bkVRWain67N44QpB-siB7DhsuAgGbbzNCbRhFDCX_cGBDE8pTf1Jb_vwZ7VdmE-5xmoIGy66Ax4" /><input name="AcceptTandCs" type="hidden" value="false"></form>
 
     </div>
 </div>
@@ -606,24 +623,13 @@
         </div>
 
 
-    <section class="section">
-        <div class="grid-row">
-            <div class="grid-column-full">
-                <span class="caption-s">Registration complete</span>
-                <h2 class="heading-m">Thanks for registering</h2>
-
-                <p>You will hear from us soon......</p>
-
-
-<a class="button button-inverted " href="#">Close</a>
-
-
-
-
-            </div>
-        </div>
-    </section>
-
+<span class="caption-s">Register interest</span>
+<h2 class="heading-l heading--success"><span class="heading__icon heading__icon--tick"></span> Success</h2>
+<p>Keep an eye on your inbox for all details of future updates to the site.</p>
+<a role="button" class="button button--with-icon button--success" href="#" id="btn-register-interest-success">
+    <img src="/dist/campaign/images/icon-cross-white.svg" class="button__icon button__icon--close" alt="" />
+    <span class="button__text">Close</span>
+</a>
 
     </div>
 </div>
@@ -659,66 +665,57 @@
             </a>
         </div>
 
-<section class="section cookiesettings-text">
-    <div class="grid-row">
-        <div class="grid-column-full">
-            <span class="caption-s">Cookie settings</span>
-            <h2 class="heading-m">Manage cookies on this website</h2>
-            <p>
-                Cookies are small text files that can be used by websites to make a user's experience more efficient.
-            </p>
-            <p>
-                The law states that we can store cookies on your device if they are strictly necessary for the operation of
-                this site. For all other types of cookies we need your permission.
-            </p>
-            <p>
-                You can at any time change or withdraw your consent below.
-            </p>
-            <hr />
-            <div class="form-group">
-                <div class="grid-row toggleContainer">
-                    <div class="grid-column-one-quarter">
-                    </div>
-                    <div class="grid-column-three-quarters">
-                        <h3 class="heading-xs">Necessary cookies</h3>
-                        <p> Ensure the basic performance and user friendliness of the website. The website cannot function properly without these cookies, which can only be disabled by changing your browser preferences. </p>
-                    </div>
-                </div>
-            </div>
-            <hr />
-            <div class="form-group">
-                <div class="grid-row toggleContainer">
-                    <div class="grid-column-one-quarter">
 
-                        <input type="checkbox" name="cbxMarketingConsent" id="cbxMarketingConsent" checked>
-                        <label for="cbxMarketingConsent" data-on="ON" data-off="OFF"></label>
-
-                    </div>
-                    <div class="grid-column-three-quarters">
-                        <h3 class="heading-xs">Marketing cookies</h3>
-                        <p>We use these to inform the relevancy of advertising campaigns you receive and to tailor certain content on our website.</p>
-                    </div>
-                </div>
-            </div>
-            <hr />
-            <div class="form-group">
-                <div class="grid-row toggleContainer">
-                    <div class="grid-column-one-quarter">
-
-                        <input type="checkbox" name="cbxAnalyticsConsent" id="cbxAnalyticsConsent" checked>
-                        <label for="cbxAnalyticsConsent" data-on="ON" data-off="OFF"></label>
-
-                    </div>
-                    <div class="grid-column-three-quarters">
-                        <h3 class="heading-xs">Analytics cookies</h3>
-                        <p>Help us to improve our website by collecting and reporting information on how it is being used.</p>
-                    </div>
-                </div>
-            </div>
-
+<span class="caption-s">Cookie settings</span>
+<h2 class="heading-l">Manage cookies on this website</h2>
+<p>
+    Cookies are small text files that can be used by websites to make a user's experience more efficient.
+</p>
+<p>
+    The law states that we can store cookies on your device if they are strictly necessary for the operation of
+    this site. For all other types of cookies we need your permission.
+</p>
+<p>
+    You can at any time change or withdraw your consent below.
+</p>
+<hr />
+<div class="form-group">
+    <div class="grid-row toggleContainer">
+        <div class="grid-column-one-quarter">
+        </div>
+        <div class="grid-column-three-quarters grid-column--pull-right">
+            <h3 class="heading-xs">Necessary cookies</h3>
+            <p> Ensure the basic performance and user friendliness of the website. The website cannot function properly without these cookies, which can only be disabled by changing your browser preferences. </p>
         </div>
     </div>
-</section>
+</div>
+<hr />
+<div class="form-group">
+    <div class="grid-row toggleContainer">
+        <div class="grid-column-three-quarters grid-column--pull-right">
+            <h3 class="heading-xs">Marketing cookies</h3>
+            <p>We use these to inform the relevancy of advertising campaigns you receive and to tailor certain content on our website.</p>
+        </div>
+        <div class="grid-column-one-quarter">
+            <input type="checkbox" name="cbxMarketingConsent" id="cbxMarketingConsent" checked>
+            <label for="cbxMarketingConsent" data-on="ON" data-off="OFF"><span class="vh">Marketing cookies</span></label>
+        </div>
+    </div>
+</div>
+<hr />
+<div class="form-group">
+    <div class="grid-row toggleContainer">
+        <div class="grid-column-three-quarters grid-column--pull-right">
+            <h3 class="heading-xs">Analytics cookies</h3>
+            <p>Help us to improve our website by collecting and reporting information on how it is being used.</p>
+        </div>
+        <div class="grid-column-one-quarter">
+            <input type="checkbox" name="cbxAnalyticsConsent" id="cbxAnalyticsConsent" checked>
+            <label for="cbxAnalyticsConsent" data-on="ON" data-off="OFF"><span class="vh">Analytics cookies</span></label>
+        </div>
+    </div>
+</div>
+
     </div>
 </div>
 
