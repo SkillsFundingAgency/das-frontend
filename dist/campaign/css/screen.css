@@ -2338,10 +2338,12 @@ p {
   background-color: #006dff;
   color: #FFFFFF;
   align-items: center;
-  padding: 30px; }
+  padding: 30px;
+  margin-top: 20px; }
   @media (min-width: 46.25em) {
     .cta-faa {
-      display: flex; } }
+      display: flex;
+      margin-top: 0; } }
 
 .cta-faa__heading {
   color: #FFFFFF; }
