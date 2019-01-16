@@ -3040,6 +3040,9 @@ p {
 
 .hero-banner__background--apprentice-michelle {
   background-image: linear-gradient(255deg, rgba(0, 0, 0, 0) 0%, black 100%), url("../images/apprentice/michelle-hero-1.jpg"); }
+  @media (max-width: 61.24em) {
+    .hero-banner__background--apprentice-michelle {
+      background-position: 35% 0%; } }
   .hero-banner--right-aligned .hero-banner__background--apprentice-michelle {
     -moz-transform: scaleX(-1);
     -o-transform: scaleX(-1);
