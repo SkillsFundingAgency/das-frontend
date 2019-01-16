@@ -99,6 +99,11 @@ $offset: 2;
   margin-right: 10px;
 }
 
+.button__icon--close {
+  height: 15px;
+  margin-right: 5px;
+}
+
 .button--sparks{
   border-image-slice: 915 0 850 0; 
   border-image-width: 4em 0px 4em 0.1em; 
@@ -188,4 +193,26 @@ $offset: 2;
     background-color: lighten($button-text-colour, 10%);
   }
 
+}
+
+.button--success
+{
+  color: #fff;
+  background-color: $green;
+
+  &:link,
+  &:visited,
+  &:active,
+  &:hover {
+    color: #fff;
+    text-decoration: none;
+  }
+
+  &:hover,
+  &:focus {
+    background-color: darken($green, 5%);
+  }
+  .page & {
+    color: #fff;
+  }
 }

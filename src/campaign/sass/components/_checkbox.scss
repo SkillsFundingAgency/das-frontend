@@ -46,6 +46,7 @@ $cbk-primary-colour: #000000;
     // remove 300ms pause on mobile
     -ms-touch-action: manipulation;
     touch-action: manipulation;
+    color: $black;
   }
 
   .checkboxes__hint {

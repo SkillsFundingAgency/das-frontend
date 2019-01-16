@@ -3,8 +3,7 @@
   background: linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(0,0,0,.8) 50%, rgba(0,0,0,1) 100%);
   padding: 20px;
   position: fixed;
-  left: 0;
-  right: 0;
+  width: 100%;
   top: 0;
   z-index: 1000;
   max-width: $page-width;

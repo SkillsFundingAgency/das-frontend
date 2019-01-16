@@ -31,18 +31,8 @@ $radios-size: spacing(7);
 
     cursor: pointer;
 
-    // // IE8 doesn’t support pseudoelements, so we don’t want to hide native elements there. Double colons get ommited by IE8.
-    // @include not-ie8 {
       margin: 0;
       opacity: 0;
-    // }
-
-    // // add focus outline to input element for IE8
-    // @include if-ie8 {
-    //   &:focus {
-    //     outline: $focus-width solid $focus-colour;
-    //   }
-    // }
   }
 
   .radios__label {
@@ -53,6 +43,7 @@ $radios-size: spacing(7);
     // remove 300ms pause on mobile
     -ms-touch-action: manipulation;
     touch-action: manipulation;
+    color: $black;
   }
 
   .radios__hint {
@@ -74,6 +65,11 @@ $radios-size: spacing(7);
     border: $border-width-form-element solid currentColor;
     border-radius: 50%;
     background: transparent;
+
+  }
+
+  .radios__input.input-validation-error + .radios__label::before {
+    border-color: $error-colour;
   }
 
   .radios__input + .radios__label::after {
