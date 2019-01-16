@@ -14,6 +14,7 @@ function nodeListForEach(nodes, callback) {
 }
 
 function initAll() {
+
   var $accordions = document.querySelectorAll('[data-module="accordion"]');
   nodeListForEach($accordions, function ($accordion) {
     new Accordion($accordion).init();
@@ -29,6 +30,11 @@ function initAll() {
     new CookieBanner($cookieBanner).init();
   }
 
+  var $smoothScroll = document.querySelectorAll('[data-module="smoothScroll"]')
+  $smoothScroll.forEach(function ($smoothScroll) {
+    new SmoothScroll($smoothScroll).init();
+  });
+
   var $gtmDataLayer = window.dataLayer;
 
   var $videoPlayer = document.querySelectorAll('[data-module="videoPlayer"]')
@@ -36,14 +42,10 @@ function initAll() {
     new VideoPlayer($videoPlayer,$gtmDataLayer).init();
   });
 
-  var $smoothScroll = document.querySelectorAll('[data-module="smoothScroll"]')
-  $smoothScroll.forEach(function ($smoothScroll) {
-    new SmoothScroll($smoothScroll).init();
-  });
-
-  if (typeof aspnetValidation != "undefined") {
-    let validationService = new aspnetValidation.ValidationService();
-    validationService.bootstrap();
+  window.onload = function() {
+    $videoPlayer.forEach(function ($videoPlayer) {
+      $videoPlayer.classList.add('js-video-player__ready');
+    });
   }
 
 }

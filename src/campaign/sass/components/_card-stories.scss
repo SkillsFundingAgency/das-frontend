@@ -11,7 +11,6 @@
   & >:first-child(){
     padding-left: 0px;
   }
- 
 }
 
 .card-stories__image {
@@ -22,6 +21,9 @@
   }
   @include media-query($from: desktop) {
     height: 450px;
+  }
+  .plyr--paused, .plyr--playing {
+    margin: 10px
   }
 }
 
@@ -73,6 +75,7 @@
 }
 
 .card-stories__icon-play {
+  visibility: hidden;
   position: relative;
   height: 80px;
   width: 80px;
@@ -116,6 +119,9 @@
     -webkit-box-shadow: 0px 0px 31px 9px rgba(255,255,255,.3);
     -moz-box-shadow: 0px 0px 31px 9px rgba(255,255,255,.3);
     box-shadow: 0px 0px 31px 9px rgba(255,255,255,.3);
+  }
+  &.js-video-player__playing {
+    display: none;
   }
 }
 
