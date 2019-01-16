@@ -64,18 +64,12 @@ VideoPlayer.prototype.appendPlayer = function () {
 }
 
 VideoPlayer.prototype.close = function (event) {
-    if (this.$player.fullscreen.active) {
-        this.$player.fullscreen.exit();
-    }
     this.$player.stop();
     event.preventDefault();
 }
 
 VideoPlayer.prototype.play = function (event) {
     this.$player.play();
-    if (this.isSmallScreen()) {
-        this.$player.fullscreen.enter();
-    }
     event.preventDefault();
 }
 
