@@ -67,8 +67,7 @@ VideoPlayer.prototype.close = function () {
     if (this.$player.fullscreen.active) {
         this.$player.fullscreen.exit();
     }
-    var locOrientation = screen.lockOrientation || screen.mozLockOrientation || screen.msLockOrientation || screen.orientation.lock;
-        locOrientation('default');
+    locOrientation('default');
 
     this.$player.stop();
 }
@@ -77,15 +76,13 @@ VideoPlayer.prototype.play = function (event) {
     this.$player.play();
     if (this.isSmallScreen()) {
         this.$player.fullscreen.enter();
-        var locOrientation = screen.lockOrientation || screen.mozLockOrientation || screen.msLockOrientation || screen.orientation.lock;
         locOrientation('landscape');
     }
     event.preventDefault();
 }
 
 VideoPlayer.prototype.isSmallScreen = function () {
-    // return window.innerWidth < 900;
-    return true;
+    return window.innerWidth < 900;
 }
 
 VideoPlayer.prototype.enableEvents = function () {
@@ -130,6 +127,14 @@ VideoPlayer.prototype.sendPlayingEvent = function (vp) {
 function round(value, precision) {
     var multiplier = Math.pow(10, precision || 0);
     return Math.round(value * multiplier) / multiplier;
+}
+function locOrientation(orientation){
+    var lockFunction =  window.screen.orientation.lock;
+if (lockFunction.call(window.screen.orientation, orientation)) {
+           console.log('Orientation locked')
+        } else {
+            console.error('There was a problem in locking the orientation')
+        }
 }
 
 export default VideoPlayer
