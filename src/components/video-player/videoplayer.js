@@ -63,12 +63,12 @@ VideoPlayer.prototype.appendPlayer = function () {
     window.document.body.insertAdjacentHTML('beforeend', playerHtml);
 }
 
-VideoPlayer.prototype.close = function () {
+VideoPlayer.prototype.close = function (event) {
     if (this.$player.fullscreen.active) {
         this.$player.fullscreen.exit();
     }
-
     this.$player.stop();
+    event.preventDefault();
 }
 
 VideoPlayer.prototype.play = function (event) {
