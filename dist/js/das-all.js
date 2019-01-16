@@ -566,7 +566,7 @@ function round(value, precision) {
 }
 function locOrientation(orientation){
     var lockFunction =  window.screen.orientation.lock;
-if (lockFunction.call(window.screen.orientation, 'landscape')) {
+if (lockFunction.call(window.screen.orientation, orientation)) {
            console.log('Orientation locked');
         } else {
             console.error('There was a problem in locking the orientation');
