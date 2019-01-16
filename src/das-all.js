@@ -2,6 +2,7 @@ import Accordion from './components/accordion/accordion'
 import Navigation from './components/navigation/_navigation'
 import CookieBanner from './components/cookieBanner/_cookieBanner'
 import VideoPlayer from './components/video-player/videoplayer'
+import SmoothScroll from './components/smoothScroll/_smoothScroll'
 
 function nodeListForEach(nodes, callback) {
   if (window.NodeList.prototype.forEach) {
@@ -33,6 +34,11 @@ function initAll() {
   var $videoPlayer = document.querySelectorAll('[data-module="videoPlayer"]')
   $videoPlayer.forEach(function ($videoPlayer) {
     new VideoPlayer($videoPlayer,$gtmDataLayer).init();
+  });
+
+  var $smoothScroll = document.querySelectorAll('[data-module="smoothScroll"]')
+  $smoothScroll.forEach(function ($smoothScroll) {
+    new SmoothScroll($smoothScroll).init();
   });
 
   if (typeof aspnetValidation != "undefined") {
