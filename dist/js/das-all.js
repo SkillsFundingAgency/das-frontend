@@ -545,7 +545,7 @@ VideoPlayer.prototype.enableEvents = function () {
 VideoPlayer.prototype.sendEvent = function (event) {
 
     var properties = {
-        'currentTimestamp': this.$player.currentTime,
+        'currentTimestamp': round(this.$player.currentTime,1),
         'totalVideoDuration': this.$player.duration,
         'videoId': this.$player.embed.getVideoData().video_id
     };
@@ -556,6 +556,11 @@ VideoPlayer.prototype.sendPlayingEvent = function (vp) {
     vp.sendEvent('video_playing');
 };
 
+function round(value, precision) {
+    var multiplier = Math.pow(10, precision || 0);
+    return Math.round(value * multiplier) / multiplier;
+}
+
 function SmoothScroll($module) {
     this.$module = $module;
     this.$anchorLinks = $module.querySelectorAll('a[href^="#"]');
@@ -563,17 +568,13 @@ function SmoothScroll($module) {
 
 
 SmoothScroll.prototype.init = function (event, properties) {
-
     this.$anchorLinks.forEach(element => {
-
         var anchor = document.querySelector(element.hash);
 
         if (anchor != null) {
             element.addEventListener('click', this.smoothScroll.bind(this, anchor, 500,'easeInOutQuart',null));
         }
     });
-
-
 };
 
 SmoothScroll.prototype.smoothScroll = function(destination, duration = 500, easing = 'easeInOutQuart', callback) {
@@ -612,10 +613,8 @@ SmoothScroll.prototype.smoothScroll = function(destination, duration = 500, easi
         }
         return;
       }
-  
       requestAnimationFrame(scroll);
     }
-  
     scroll();
   };
 
