@@ -67,7 +67,6 @@ VideoPlayer.prototype.close = function () {
     if (this.$player.fullscreen.active) {
         this.$player.fullscreen.exit();
     }
-    locOrientation('default');
 
     this.$player.stop();
 }
@@ -76,7 +75,6 @@ VideoPlayer.prototype.play = function (event) {
     this.$player.play();
     if (this.isSmallScreen()) {
         this.$player.fullscreen.enter();
-        locOrientation('landscape');
     }
     event.preventDefault();
 }
