@@ -503,6 +503,9 @@ VideoPlayer.prototype.close = function () {
     if (this.$player.fullscreen.active) {
         this.$player.fullscreen.exit();
     }
+    var locOrientation = screen.lockOrientation || screen.mozLockOrientation || screen.msLockOrientation || screen.orientation.lock;
+        locOrientation('default');
+
     this.$player.stop();
 };
 
@@ -510,12 +513,15 @@ VideoPlayer.prototype.play = function (event) {
     this.$player.play();
     if (this.isSmallScreen()) {
         this.$player.fullscreen.enter();
+        var locOrientation = screen.lockOrientation || screen.mozLockOrientation || screen.msLockOrientation || screen.orientation.lock;
+        locOrientation('landscape');
     }
     event.preventDefault();
 };
 
 VideoPlayer.prototype.isSmallScreen = function () {
-    return window.innerWidth < 900;
+    // return window.innerWidth < 900;
+    return true;
 };
 
 VideoPlayer.prototype.enableEvents = function () {
