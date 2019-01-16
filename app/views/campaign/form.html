@@ -16,10 +16,10 @@
     <!-- End Google Tag Manager -->
 
     <meta charset="utf-8" />
-    <title>Cookies policy</title>
+    <title>Register Interest</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="theme-color" content="#0b0c0c" />
-    <meta name="description" content="" />
+    <meta name="description" />
 
     <link rel="shortcut icon" sizes="16x16 32x32 48x48" href="/dist/campaign/images/favicon.ico" type="image/x-icon" />
     <link rel="apple-touch-icon" sizes="180x180" href="/dist/campaign/images/apple-touch-icon-180x180.png" />
@@ -36,12 +36,22 @@
 
     <meta property="og:image" content="/campaign/images/opengraph.png" />
 
+    <script type="text/javascript">
+	
+    var appInsights=window.appInsights||function(a){
+        function b(a){c[a]=function(){var b=arguments;c.queue.push(function(){c[a].apply(c,b)})}}var c={config:a},d=document,e=window;setTimeout(function(){var b=d.createElement("script");b.src=a.url||"https://az416426.vo.msecnd.net/scripts/a/ai.0.js",d.getElementsByTagName("script")[0].parentNode.appendChild(b)});try{c.cookie=d.cookie}catch(a){}c.queue=[];for(var f=["Event","Exception","Metric","PageView","Trace","Dependency"];f.length;)b("track"+f.pop());if(b("setAuthenticatedUserContext"),b("clearAuthenticatedUserContext"),b("startTrackEvent"),b("stopTrackEvent"),b("startTrackPage"),b("stopTrackPage"),b("flush"),!a.disableExceptionTracking){f="onerror",b("_"+f);var g=e[f];e[f]=function(a,b,d,e,h){var i=g&&g(a,b,d,e,h);return!0!==i&&c["_"+f](a,b,d,e,h),i}}return c
+    }({
+        instrumentationKey: 'd46da3d3-cfa3-4aa9-8d3b-a2f397f1e4fd'
+    });
 
+    window.appInsights=appInsights,appInsights.queue&&0===appInsights.queue.length&&appInsights.trackPageView();
+	
+    </script>
 </head>
 
 
 
-<body class="page-template" id="cookies">
+<body class="page-template">
 
     <!-- Google Tag Manager (noscript) -->
     <noscript>
@@ -62,7 +72,7 @@
     <div class="header__logo">
         <a href="/"><img src="/dist/campaign/images/apprenticeships-logo.png" alt="Apprenticeships Logo" class="header__logo-image" /></a>
     </div>
-
+    
 
 <a href="#navigation" class="navigation__toggle">
     <span class="navigation__toggle-label" id="nav-label">Menu</span>
@@ -122,8 +132,8 @@
                                 Application
                             </a>
                         </li>
-
-
+                        
+                         
                     </ol>
                     <ol class="navigation__ordered-list navigation__ordered-list--reset-3" start="3">
                         <li>
@@ -138,8 +148,8 @@
                         </li>
                         <li>
                             <a class="navigation__link" id="link-nav-app-step-6" href="/apprentice/assessment-and-certification">Assessment and certification</a>
-
-
+                               
+        
                         </li>
                     </ol>
                 </div>
@@ -222,7 +232,7 @@
 </nav>
 </header>
 
-
+        
 <main id="main-content">
 
 
@@ -231,70 +241,77 @@
         <div class="grid-column-one-half">
             <div class="hero-heading">
                 <span class="caption-m hero-heading__caption"></span>
-                <h1 class="heading-xl hero-heading__heading">Cookies policy</h1>
+                <h1 class="heading-xl hero-heading__heading">Register Interest</h1>
             </div>
-
-
-
+           
+            
+          
         </div>
     </div>
 </div>
     <div class="main-content">
         <div class="page">
+            
 
 
-<span class="caption-s">Cookie settings</span>
-<h2 class="heading-l">Manage cookies on this website</h2>
-<p>
-    Cookies are small text files that can be used by websites to make a user's experience more efficient.
-</p>
-<p>
-    The law states that we can store cookies on your device if they are strictly necessary for the operation of
-    this site. For all other types of cookies we need your permission.
-</p>
-<p>
-    You can at any time change or withdraw your consent below.
-</p>
-<hr />
-<div class="form-group">
-    <div class="grid-row toggleContainer">
-        <div class="grid-column-one-quarter">
+<form action="/register-interest" method="post">
+
+        <h2 class="heading-m">Keep me up to date with the latest information</h2>
+        <div class="form-validation-summary" style="display: none">
+            <h3 class="heading-s">Sorry but there seems to be a problem with you registration</h3>
+            
         </div>
-        <div class="grid-column-three-quarters grid-column--pull-right">
-            <h3 class="heading-xs">Necessary cookies</h3>
-            <p> Ensure the basic performance and user friendliness of the website. The website cannot function properly without these cookies, which can only be disabled by changing your browser preferences. </p>
+        <div class="form-group">
+            <label class="label visually-hidden" for="FirstName">
+                First name
+            </label>
+            <input id="FirstName" class="input" type="text" placeholder="First name" autocomplete="given-name" data-val="true" data-val-required="The First name field is required." name="FirstName" value="">
         </div>
-    </div>
-</div>
-<hr />
-<div class="form-group">
-    <div class="grid-row toggleContainer">
-        <div class="grid-column-three-quarters grid-column--pull-right">
-            <h3 class="heading-xs">Marketing cookies</h3>
-            <p>We use these to inform the relevancy of advertising campaigns you receive and to tailor certain content on our website.</p>
+
+        <div class="form-group">
+
+            <label class="label visually-hidden" for="LastName">
+                Last name
+            </label>
+            <input class="input" type="text" placeholder="Last name" autocomplete="family-name" data-val="true" data-val-required="The Last name field is required." id="LastName" name="LastName" value="">
         </div>
-        <div class="grid-column-one-quarter">
-            <input type="checkbox" name="cbxMarketingConsent" id="cbxMarketingConsent" checked>
-            <label for="cbxMarketingConsent" data-on="ON" data-off="OFF"><span class="vh">Marketing cookies</span></label>
+        <div class="form-group">
+
+            <label class="label visually-hidden" for="Email">
+                Email Address
+            </label>
+            <input class="input" type="text" placeholder="Email address" autocomplete="email" data-val="true" data-val-email="The Email address field is not a valid e-mail address." data-val-required="The Email address field is required." id="Email" name="Email" value="">
         </div>
-    </div>
-</div>
-<hr />
-<div class="form-group">
-    <div class="grid-row toggleContainer">
-        <div class="grid-column-three-quarters grid-column--pull-right">
-            <h3 class="heading-xs">Analytics cookies</h3>
-            <p>Help us to improve our website by collecting and reporting information on how it is being used.</p>
+        <div class="form-group radios">
+                            
+            <div class="radios__item">
+
+                <input class="input radios__input" value="1" type="radio" id="rbApprentice" data-val="true" data-val-required="The Registration type field is required." name="Route" />
+                <label class="label radios__label" for="rbApprentice">I want to become an <span class="text--apprentice">apprentice</span> </label>
+            </div>
+            <div class="radios__item">
+                <input class="input radios__input" value="2" type="radio" id="rbEmployer" name="Route" />
+                <label class="label radios__label" for="rbEmployer">I want to <span class="text--employer">employ</span> an apprentice</label>
+            </div>
         </div>
-        <div class="grid-column-one-quarter">
-            <input type="checkbox" name="cbxAnalyticsConsent" id="cbxAnalyticsConsent" checked>
-            <label for="cbxAnalyticsConsent" data-on="ON" data-off="OFF"><span class="vh">Analytics cookies</span></label>
+        <div class="form-group">
+            <div class="checkboxes__item">
+                <input class="checkboxes__input" type="checkbox" value="true" data-val="true" data-val-range="You need to accept terms and conditions" data-val-range-max="True" data-val-range-min="True" data-val-required="The AcceptTandCs field is required." id="AcceptTandCs" name="AcceptTandCs">
+                <label class="label checkboxes__label" for="AcceptTandCs">
+                    I would like to receive information via emails from the Education and Skills Funding Agency in relation to apprenticeships. I can confirm that I am over the age of 13
+                </label>
+            </div>
         </div>
-    </div>
-</div>
+
+        <input type="hidden" value="/" id="ReturnUrl" name="ReturnUrl" />
+        
+<button class="button button-inverted " name="registerInterestSubmit" type="submit">Register Interest </button>
 
 
-        </div>
+
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8DxCGXkq2iFCrv4uZn1DSVUE2mCOW1Ephj-FST1PERUNNw71cKBLCkVIihHbw1jglET-kVwsn0HZfTYhZ03nd27X2XADtyRwVxKkuN7pFAsEHUGQOqyrHpVE1_-CjCdgjNwP9tfaLAeSv9GaF3MzKXc" /><input name="AcceptTandCs" type="hidden" value="false"></form>
+
+        </div>  
     </div>
 </main>
 
@@ -382,7 +399,7 @@
                                 </li>
                                 <li class="footer__list-item">
                                     <a class="footer__link" id="link-footer-emp-real-stories" href="/real-stories/employer">
-                                        Real stories
+                                        Real stories 
                                     </a>
                                 </li>
                             </ul>
@@ -486,9 +503,9 @@
 
     </div>
 
-    <script async="async" id="mini-profiler" src="/profiler/includes.min.js?v=4.0.138+gcc91adf599" data-version="4.0.138+gcc91adf599" data-path="/profiler/" data-current-id="965e498c-ffe1-4c40-9c1c-e40642826d58" data-ids="965e498c-ffe1-4c40-9c1c-e40642826d58" data-position="Left" data-authorized="true" data-max-traces="15" data-toggle-shortcut="Alt+P" data-trivial-milliseconds="2.0" data-ignored-duplicate-execute-types="Open,OpenAsync,Close,CloseAsync"></script>
+    
 
-
+    
 <div class="modal" id="modal-RegisterInterest" aria-hidden="true">
 
     <div class="modal-dialog">
@@ -508,7 +525,7 @@
         <h2 class="heading-m">Keep me up to date with the latest information</h2>
         <div class="form-validation-summary" style="display: none">
             <h3 class="heading-s">Sorry but there seems to be a problem with you registration</h3>
-
+            
         </div>
         <div class="form-group">
             <label class="label visually-hidden" for="FirstName">
@@ -532,7 +549,7 @@
             <input class="input" type="text" placeholder="Email address" autocomplete="email" data-val="true" data-val-email="The Email address field is not a valid e-mail address." data-val-required="The Email address field is required." id="Email" name="Email" value="">
         </div>
         <div class="form-group radios">
-
+                            
             <div class="radios__item">
 
                 <input class="input radios__input" value="1" type="radio" id="rbApprentice" data-val="true" data-val-required="The Registration type field is required." name="Route" />
@@ -552,18 +569,18 @@
             </div>
         </div>
 
-        <input type="hidden" value="/cookies" id="ReturnUrl" name="ReturnUrl" />
-
+        <input type="hidden" value="/register-interest" id="ReturnUrl" name="ReturnUrl" />
+        
 <button class="button button-inverted " name="registerInterestSubmit" type="submit">Register Interest </button>
 
 
 
-<input name="__RequestVerificationToken" type="hidden" value="CfDJ8Gjzma717idBgBPTsnM18d4_gzKiVQjpGfeTE7ZLvFD_YVc3bC6nDq1-CkQJiR5Fgp49YyQASxeR6axzCSAZmZlkaUamhWfR8WFF3TDPZ4NViT24napK_7jnmL79h7djQYfFnQPXf4lhI7DHUGvRE0Q" /><input name="AcceptTandCs" type="hidden" value="false"></form>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8DxCGXkq2iFCrv4uZn1DSVUE2mCOW1Ephj-FST1PERUNNw71cKBLCkVIihHbw1jglET-kVwsn0HZfTYhZ03nd27X2XADtyRwVxKkuN7pFAsEHUGQOqyrHpVE1_-CjCdgjNwP9tfaLAeSv9GaF3MzKXc" /><input name="AcceptTandCs" type="hidden" value="false"></form>
 
     </div>
 </div>
 
-
+    
 <div class="modal" id="modal-register-thanks" aria-hidden="true">
 
     <div class="modal-dialog">
@@ -577,18 +594,18 @@
             </a>
         </div>
 
-
+                
     <section class="section">
         <div class="grid-row">
             <div class="grid-column-full">
                 <span class="caption-s">Registration complete</span>
                 <h2 class="heading-m">Thanks for registering</h2>
-
+                
                 <p>You will hear from us soon......</p>
-
-
+               
+                
 <a class="button button-inverted " href="#">Close</a>
-
+             
 
 
 
@@ -631,57 +648,66 @@
             </a>
         </div>
 
+<section class="section cookiesettings-text">
+    <div class="grid-row">
+        <div class="grid-column-full">
+            <span class="caption-s">Cookie settings</span>
+            <h2 class="heading-m">Manage cookies on this website</h2>
+            <p>
+                Cookies are small text files that can be used by websites to make a user's experience more efficient.
+            </p>
+            <p>
+                The law states that we can store cookies on your device if they are strictly necessary for the operation of
+                this site. For all other types of cookies we need your permission.
+            </p>
+            <p>
+                You can at any time change or withdraw your consent below.
+            </p>
+            <hr />
+            <div class="form-group">
+                <div class="grid-row toggleContainer">
+                    <div class="grid-column-one-quarter">
+                    </div>
+                    <div class="grid-column-three-quarters">
+                        <h3 class="heading-xs">Necessary cookies</h3>
+                        <p> Ensure the basic performance and user friendliness of the website. The website cannot function properly without these cookies, which can only be disabled by changing your browser preferences. </p>
+                    </div>
+                </div>
+            </div>
+            <hr />
+            <div class="form-group">
+                <div class="grid-row toggleContainer">
+                    <div class="grid-column-one-quarter">
 
-<span class="caption-s">Cookie settings</span>
-<h2 class="heading-l">Manage cookies on this website</h2>
-<p>
-    Cookies are small text files that can be used by websites to make a user's experience more efficient.
-</p>
-<p>
-    The law states that we can store cookies on your device if they are strictly necessary for the operation of
-    this site. For all other types of cookies we need your permission.
-</p>
-<p>
-    You can at any time change or withdraw your consent below.
-</p>
-<hr />
-<div class="form-group">
-    <div class="grid-row toggleContainer">
-        <div class="grid-column-one-quarter">
-        </div>
-        <div class="grid-column-three-quarters grid-column--pull-right">
-            <h3 class="heading-xs">Necessary cookies</h3>
-            <p> Ensure the basic performance and user friendliness of the website. The website cannot function properly without these cookies, which can only be disabled by changing your browser preferences. </p>
-        </div>
-    </div>
-</div>
-<hr />
-<div class="form-group">
-    <div class="grid-row toggleContainer">
-        <div class="grid-column-three-quarters grid-column--pull-right">
-            <h3 class="heading-xs">Marketing cookies</h3>
-            <p>We use these to inform the relevancy of advertising campaigns you receive and to tailor certain content on our website.</p>
-        </div>
-        <div class="grid-column-one-quarter">
-            <input type="checkbox" name="cbxMarketingConsent" id="cbxMarketingConsent" checked>
-            <label for="cbxMarketingConsent" data-on="ON" data-off="OFF"><span class="vh">Marketing cookies</span></label>
-        </div>
-    </div>
-</div>
-<hr />
-<div class="form-group">
-    <div class="grid-row toggleContainer">
-        <div class="grid-column-three-quarters grid-column--pull-right">
-            <h3 class="heading-xs">Analytics cookies</h3>
-            <p>Help us to improve our website by collecting and reporting information on how it is being used.</p>
-        </div>
-        <div class="grid-column-one-quarter">
-            <input type="checkbox" name="cbxAnalyticsConsent" id="cbxAnalyticsConsent" checked>
-            <label for="cbxAnalyticsConsent" data-on="ON" data-off="OFF"><span class="vh">Analytics cookies</span></label>
-        </div>
-    </div>
-</div>
+                        <input type="checkbox" name="cbxMarketingConsent" id="cbxMarketingConsent" checked>
+                        <label for="cbxMarketingConsent" data-on="ON" data-off="OFF"></label>
 
+                    </div>
+                    <div class="grid-column-three-quarters">
+                        <h3 class="heading-xs">Marketing cookies</h3>
+                        <p>We use these to inform the relevancy of advertising campaigns you receive and to tailor certain content on our website.</p>
+                    </div>
+                </div>
+            </div>
+            <hr />
+            <div class="form-group">
+                <div class="grid-row toggleContainer">
+                    <div class="grid-column-one-quarter">
+
+                        <input type="checkbox" name="cbxAnalyticsConsent" id="cbxAnalyticsConsent" checked>
+                        <label for="cbxAnalyticsConsent" data-on="ON" data-off="OFF"></label>
+
+                    </div>
+                    <div class="grid-column-three-quarters">
+                        <h3 class="heading-xs">Analytics cookies</h3>
+                        <p>Help us to improve our website by collecting and reporting information on how it is being used.</p>
+                    </div>
+                </div>
+            </div>
+           
+        </div>
+    </div>
+</section>
     </div>
 </div>
 
