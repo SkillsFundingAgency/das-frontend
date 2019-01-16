@@ -39,8 +39,10 @@ $blue-dark: darken($blue, 5%);
     .modal-dialog{
       @include translate(0, 0); 
       top: 0;
+      bottom: 0;
       @include media-query($from: tablet) {
         top: 5%;
+        bottom: 5%;
       }
     }
   }
@@ -57,19 +59,23 @@ $blue-dark: darken($blue, 5%);
   z-index: 2010;
   max-height: 100%;
   overflow: auto;
+  padding: 20px;
 
   @include translate(0, -500%);
   @include transition-transform(#{"0.6s ease"});
 
   @include media-query($from: tablet) {
-    width: 60%;
+    width: 45%;
     left: 20%;
+    padding: 7.5%;
   }
   .show-modal & {
     top: 0;
+    bottom: 0;
     @include translate(0, 0);
     @include media-query($from: tablet) {
       top: 5%;
+      bottom: 5%;
     }
   }
   & .section {
@@ -80,8 +86,14 @@ $blue-dark: darken($blue, 5%);
 }
 
 .modal-header{
-  padding: 20px 10px 0 0;
-  float: right;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  a.close {
+    display: block;
+    height: 30px;
+    width: 30px;
+  }
 }
 
 .modal-body{

@@ -1,10 +1,4 @@
 
-.toggleContainer{
-  display: flex;
-  align-items: center;
-  margin: 0px 0px;
-  justify-items: center;
-}
 .toggleContainer input[type=checkbox] {display: none;}
 
 .toggleContainer .q {font-size: 15px; margin-bottom: 6px;}
@@ -13,12 +7,19 @@
 	display: block;
 	width: 60px;
 	height: 30px;
-  border:3px solid #333333;
-  left:25%;
+	  border:3px solid #333333;
+
+	  left:50%;
+	margin-left: -30px;
 	cursor: pointer;
 	position: relative;
 	-webkit-border-radius: 30px;
 	        border-radius: 30px;
+	@include media-query($from: tablet) {
+		left: 25%;
+		margin-left: 0;
+		margin-top: 60px;
+	}
 }
 
 .toggleContainer label:after{
