@@ -2981,7 +2981,7 @@ p {
   bottom: 0;
   z-index: -1;
   background-size: cover;
-  background-position: 80% 0%;
+  background-position: 60% 0%;
   background-repeat: no-repeat; }
 
 .hero-banner--apprentice .hero-banner__background {
@@ -3072,7 +3072,8 @@ p {
     -ms-filter: "FlipH"; }
 
 .hero-banner__background--employer-annie {
-  background-image: linear-gradient(225deg, rgba(0, 0, 0, 0) 0%, black 100%), url("../images/employer/annie-hero-1.jpg"); }
+  background-image: linear-gradient(225deg, rgba(0, 0, 0, 0) 0%, black 100%), url("../images/employer/annie-hero-1.jpg");
+  background-position: 60% 0% !important; }
   .hero-banner--right-aligned .hero-banner__background--employer-annie {
     -moz-transform: scaleX(-1);
     -o-transform: scaleX(-1);
