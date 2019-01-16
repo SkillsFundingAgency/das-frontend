@@ -39,8 +39,10 @@
     "gulp-rename": "^1.4.0",
     "gulp-sass-lint": "^1.4.0",
     "gulp-task-listing": "^1.1.0",
+    "gulp-terser": "^1.1.7",
     "gulp-to-markdown": "^1.0.0",
     "gulp-uglify": "^3.0.1",
+    "gulp-uglify-es": "^1.0.4",
     "rollup-plugin-commonjs": "^9.2.0",
     "rollup-plugin-node-resolve": "^3.4.0"
   },

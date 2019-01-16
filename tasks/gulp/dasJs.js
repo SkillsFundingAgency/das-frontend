@@ -9,6 +9,7 @@ const eol = require('gulp-eol')
 const rename = require('gulp-rename')
 const resolve = require('rollup-plugin-node-resolve')
 const commonjs = require('rollup-plugin-commonjs');
+const terser = require('gulp-terser');
 
 const isDist = false
 
@@ -38,12 +39,10 @@ gulp.task('js:compile', () => {
         // UMD allows the published bundle to work in CommonJS and in the browser.
         format: 'umd',
       }))
-      .pipe(gulpif(isDist, uglify({
-        ie8: true
-      })))
+      .pipe(gulpif(isDist, terser({module:true})))
       .pipe(gulpif(isDist,
         rename({
-          basename: 'das-frontend',
+          basename: 'das-all',
           extname: '.min.js'
         })
       ))
