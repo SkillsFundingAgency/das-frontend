@@ -35,7 +35,7 @@ VideoPlayer.prototype.init = function () {
     }
 
     this.$player = new Plyr(this.$playerElement, {
-        fullscreen: { enabled: false }
+        fullscreen: { enabled: true }
     });
 
     var event = 'click';
@@ -52,7 +52,7 @@ VideoPlayer.prototype.init = function () {
 
     if (this.$trackingEnabled) {
         this.$gtm = new GoogleTagManager(this.$gtmDataLayer);
-        this.enableEvents();
+        this.enableTrackingEvents();
     }
 
 }
@@ -74,8 +74,8 @@ VideoPlayer.prototype.play = function (event) {
     event.preventDefault();
 }
 
-VideoPlayer.prototype.enableEvents = function () {
-    this.$player.on('play', event => {
+VideoPlayer.prototype.enableTrackingEvents = function () {
+    this.$player.on('play', function(event) {
         if (this.$player.currentTime == 0) {
             this.sendEvent('video_started');
         }
@@ -86,12 +86,12 @@ VideoPlayer.prototype.enableEvents = function () {
         this.$playingTimer = setInterval(this.sendPlayingEvent.bind(this,this), this.$playingTimerTimespan);
     });
 
-    this.$player.on('ended', event => {
+    this.$player.on('ended', function(event) {
         this.sendEvent('video_ended');
         clearInterval(this.$playingTimer);
     });
 
-    this.$player.on('pause', event => {
+    this.$player.on('pause', function(event) {
         this.sendEvent('video_paused');
         clearInterval(this.$playingTimer);
     });

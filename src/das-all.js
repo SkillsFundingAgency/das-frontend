@@ -31,19 +31,19 @@ function initAll() {
   }
 
   var $smoothScroll = document.querySelectorAll('[data-module="smoothScroll"]')
-  $smoothScroll.forEach(function ($smoothScroll) {
+  nodeListForEach($smoothScroll,function ($smoothScroll) {
     new SmoothScroll($smoothScroll).init();
   });
 
   var $gtmDataLayer = window.dataLayer;
 
   var $videoPlayer = document.querySelectorAll('[data-module="videoPlayer"]')
-  $videoPlayer.forEach(function ($videoPlayer) {
+  nodeListForEach($videoPlayer,function ($videoPlayer) {
     new VideoPlayer($videoPlayer,$gtmDataLayer).init();
   });
 
   window.onload = function() {
-    $videoPlayer.forEach(function ($videoPlayer) {
+    nodeListForEach($videoPlayer,function ($videoPlayer) {
       $videoPlayer.classList.add('js-video-player__ready');
     });
   }
