@@ -10,7 +10,7 @@
   @include typography-common();
   text-transform: uppercase;
   letter-spacing: -0.08em;
-  z-index: 6;
+  z-index: 7;
   @include media-query($from: tablet) {
     font-size: 70px;
     left: 36px;
