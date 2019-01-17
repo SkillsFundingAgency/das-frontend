@@ -34,7 +34,9 @@ VideoPlayer.prototype.init = function () {
         this.$playerElement.classList.add(this.$playerClass);
     }
 
-    this.$player = new Plyr(this.$playerElement);
+    this.$player = new Plyr(this.$playerElement, {
+        fullscreen: { enabled: false }
+    });
 
     var event = 'click';
     if (this.$player.touch == true) {
