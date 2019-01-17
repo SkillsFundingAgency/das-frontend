@@ -3,9 +3,7 @@
 }
 
 .js-video-player__playing {
-  @include mq ($from: tablet) {
-    display: none;
-  }
+  display: none;
 }
 
 .plyr {
