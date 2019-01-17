@@ -1,26 +1,27 @@
 .input {
-    @include font($size: 19, $weight: light);
+    @include typography-common();
     @include focusable;
-
+    font-size: 19px;
+  font-weight: $font-weight-light;
     box-sizing: border-box;
     width: 100%;
-    height: 40px;
     margin-top: 0;
 
-    padding: spacing(1);
+    padding: 8px;
     // setting any background-color makes text invisible when changing colours to dark backgrounds in Firefox (https://bugzilla.mozilla.org/show_bug.cgi?id=1335476)
     // as background-color and color need to always be set together, color should not be set either
     border: 0;
-    color: $input-border-colour;
+    color: $black;
     border-bottom: $border-width-form-element solid $input-border-colour;
     border-radius: 0;
 
     // Disable inner shadow and remove rounded corners
     appearance: none;
   }
-  .input::placeholder{
-    color: $input-border-colour;
-    padding: 5px 0;
+  .input::placeholder {
+    color: $grey-3;
+
+  }
 
   .input::-webkit-outer-spin-button,
   .input::-webkit-inner-spin-button {
@@ -67,4 +68,3 @@
   .input--width-2 {
     max-width: 5.4ex;
   }
-}
