@@ -511,25 +511,26 @@ VideoPlayer.prototype.play = function (event) {
 };
 
 VideoPlayer.prototype.enableTrackingEvents = function () {
+    var that = this;
     this.$player.on('play', function(event) {
-        if (this.$player.currentTime == 0) {
-            this.sendEvent('video_started');
+        if (that.$player.currentTime == 0) {
+            that.sendEvent('video_started');
         }
         else {
-            this.sendEvent('video_play');
+            that.sendEvent('video_play');
         }
 
-        this.$playingTimer = setInterval(this.sendPlayingEvent.bind(this,this), this.$playingTimerTimespan);
+        that.$playingTimer = setInterval(that.sendPlayingEvent.bind(that,that), that.$playingTimerTimespan);
     });
 
     this.$player.on('ended', function(event) {
-        this.sendEvent('video_ended');
-        clearInterval(this.$playingTimer);
+        that.sendEvent('video_ended');
+        clearInterval(that.$playingTimer);
     });
 
     this.$player.on('pause', function(event) {
-        this.sendEvent('video_paused');
-        clearInterval(this.$playingTimer);
+        that.sendEvent('video_paused');
+        clearInterval(that.$playingTimer);
     });
 
 
