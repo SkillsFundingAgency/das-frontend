@@ -35,7 +35,7 @@ VideoPlayer.prototype.init = function () {
     }
 
     this.$player = new Plyr(this.$playerElement, {
-        fullscreen: { enabled: true }
+        fullscreen: { enabled: true, iosNative: true }
     });
 
     var event = 'click';
