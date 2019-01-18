@@ -1,20 +1,25 @@
+.js-video-player__ready {
+  visibility: visible;
+}
+
+.js-video-player__playing {
+  display: none;
+}
+
 .plyr {
   display: none;
+  transition: none;
+  @include mq ($from: tablet) {
+    z-index: 1;
+  }
 }
 
 .plyr--paused,
 .plyr--playing {
   display: block;
   clear: both;
-  border: none;
-  margin: 0;
-  border-radius: 2px;
-  position: fixed;
-  z-index: 10000;
-  top: 0;
-  bottom: 0;
-  width: 100%;
-  left: 0;
+  border: 1px solid #fff;
+  margin: 0 0 20px;
 }
 
 .plyr--stopped {
@@ -22,13 +27,7 @@
 }
 
 .video-player--inner-wrap {
-  height: 100%;
-  @include mq ($from: tablet) {
-    padding: 40px;
-  }
-  @include mq ($from: desktop) {
-    padding: 60px;
-  }
+
 }
 
 .plyr__video-wrapper {
@@ -36,7 +35,7 @@
 }
 
 
-.video-player__close{
+.video-player__close {
   color: #fff;
   font-weight: $font-weight-bold;
   position: absolute;
@@ -46,7 +45,7 @@
   line-height: 1;
   top: 0;
   right: 0;
-  padding: 20px 30px;
+  padding: 15px 20px;
   border-radius: 0 0 0 10px;
   display: flex;
   z-index: 1;

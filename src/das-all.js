@@ -14,6 +14,7 @@ function nodeListForEach(nodes, callback) {
 }
 
 function initAll() {
+
   var $accordions = document.querySelectorAll('[data-module="accordion"]');
   nodeListForEach($accordions, function ($accordion) {
     new Accordion($accordion).init();
@@ -29,21 +30,22 @@ function initAll() {
     new CookieBanner($cookieBanner).init();
   }
 
-  var $gtmDataLayer = window.dataLayer;
-
-  var $videoPlayer = document.querySelectorAll('[data-module="videoPlayer"]')
-  $videoPlayer.forEach(function ($videoPlayer) {
-    new VideoPlayer($videoPlayer,$gtmDataLayer).init();
-  });
-
   var $smoothScroll = document.querySelectorAll('[data-module="smoothScroll"]')
-  $smoothScroll.forEach(function ($smoothScroll) {
+  nodeListForEach($smoothScroll,function ($smoothScroll) {
     new SmoothScroll($smoothScroll).init();
   });
 
-  if (typeof aspnetValidation != "undefined") {
-    let validationService = new aspnetValidation.ValidationService();
-    validationService.bootstrap();
+  var $gtmDataLayer = window.dataLayer;
+
+  var $videoPlayer = document.querySelectorAll('[data-module="videoPlayer"]')
+  nodeListForEach($videoPlayer,function ($videoPlayer) {
+    new VideoPlayer($videoPlayer,$gtmDataLayer).init();
+  });
+
+  window.onload = function() {
+    nodeListForEach($videoPlayer,function ($videoPlayer) {
+      $videoPlayer.classList.add('js-video-player__ready');
+    });
   }
 
 }

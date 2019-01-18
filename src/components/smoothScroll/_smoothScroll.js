@@ -5,7 +5,7 @@ function SmoothScroll($module) {
 
 
 SmoothScroll.prototype.init = function (event, properties) {
-    this.$anchorLinks.forEach(element => {
+    this.$anchorLinks.forEach(function(element) {
         var anchor = document.querySelector(element.hash);
 
         if (anchor != null) {
@@ -14,10 +14,10 @@ SmoothScroll.prototype.init = function (event, properties) {
     });
 }
 
-SmoothScroll.prototype.smoothScroll = function(destination, duration = 500, easing = 'easeInOutQuart', callback) {
+SmoothScroll.prototype.smoothScroll = function(destination, duration, easing, callback) {
 
     const easings = {
-      easeInOutQuart(t) {
+      easeInOutQuart : function(t) {
         return t < 0.5 ? 8 * t * t * t * t : 1 - 8 * (--t) * t * t * t;
       }
     };

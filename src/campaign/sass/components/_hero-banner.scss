@@ -143,13 +143,29 @@ $hero-text-colour: #fff;
   @include clearfix;
   @include mq ($from: tablet) {
     float: right;
+    position: relative;
     .hero-banner--right-aligned & {
       float: left;
     }
   }
 }
 
+#homepage {
+  @include mq ($from: tablet) {
+    .plyr--paused, .plyr--playing {
+      margin-top: -30px;
+    }
+  }
+  @include mq ($from: desktop) {
+    .plyr--paused, .plyr--playing {
+      margin-top: -70px;
+    }
+  }
+}
+
+
 .hero-banner__icon-play {
+  visibility: hidden;
   position: relative;
   height: 80px;
   width: 80px;
@@ -161,10 +177,7 @@ $hero-text-colour: #fff;
   -moz-border-radius: 50%;
   border-radius: 50%;
   transition: box-shadow 0.2s ease;
-  display: block;
-
   @include mq ($from: tablet) {
-    display: block;
     margin: 135px auto 120px;
     height: 110px;
     width: 110px;
@@ -175,15 +188,16 @@ $hero-text-colour: #fff;
 
   #homepage &{
     @include mq ($from: tablet) {
-      display: block;
       margin: 120px auto 120px;
       height: 110px;
       width: 110px;
+
     }
     @include mq ($from: desktop) {
       margin: 60px auto 120px;
     }
   }
+
 
 
   .hero-banner--employer & {
