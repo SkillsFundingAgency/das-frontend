@@ -150,20 +150,6 @@ $hero-text-colour: #fff;
   }
 }
 
-#homepage {
-  @include mq ($from: tablet) {
-    .plyr--paused, .plyr--playing {
-      margin-top: -30px;
-    }
-  }
-  @include mq ($from: desktop) {
-    .plyr--paused, .plyr--playing {
-      margin-top: -70px;
-    }
-  }
-}
-
-
 .hero-banner__icon-play {
   visibility: hidden;
   position: relative;
@@ -197,9 +183,7 @@ $hero-text-colour: #fff;
       margin: 60px auto 120px;
     }
   }
-
-
-
+  
   .hero-banner--employer & {
     background: $employer;
   }
