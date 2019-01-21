@@ -2,15 +2,63 @@
   visibility: visible;
 }
 
-.js-video-player__playing {
+.video-player__wrap {
   display: none;
+  position: fixed;
+  top: 5%;
+  left: 20px;
+  right: 20px;
+  z-index: 1000;
+  max-height: 90%;
+
+  &.video-player__playing {
+    display: block;
+  }
+
+  .close {
+    display: inline-block;
+    background: $black;
+    color: #fff;
+    padding: 10px;
+    z-index: 1001;
+    position: relative;
+  }
+
+  &:before {
+    content: '';
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    background: rgba(0, 0, 0, .7);
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 999;
+  }
+
+  @include media-query($from: tablet) {
+    left: 40px;
+    right: 40px;
+  }
+  @include media-query($from: desktop) {
+    left: 80px;
+    right: 80px;
+  }
+  @include media-query($from: wide) {
+    left: 50%;
+    right: auto;
+    margin-left: -500px;
+    width: 1000px;
+  }
 }
 
 .plyr {
   display: none;
   transition: none;
+  z-index: 1001;
   @include mq ($from: tablet) {
-    z-index: 1;
+    z-index: 1001;
   }
 }
 
@@ -18,55 +66,51 @@
 .plyr--playing {
   display: block;
   clear: both;
-  border: 1px solid #fff;
-  margin: 0 0 20px;
+  border: 1px solid rgba(255, 255, 255, .4);
 }
 
 .plyr--stopped {
   display: none;
 }
 
-.video-player--inner-wrap {
-
-}
-
-.plyr__video-wrapper {
-  
-}
-
-
-.video-player__close {
-  color: #fff;
-  font-weight: $font-weight-bold;
-  position: absolute;
-  text-transform: uppercase;
-  background: $black;
-  text-decoration: none;
-  line-height: 1;
-  top: 0;
-  right: 0;
-  padding: 15px 20px;
-  border-radius: 0 0 0 10px;
-  display: flex;
-  z-index: 1;
-  align-items: center;
-  @include mq($from: tablet) {
-    display: flex;
-  }
-}
-.video-player__close-icon {
-  display: inline-block;
-  height: 20px;
-  width: 20px;
-  margin-right: 5px;
-  background: url("../images/icon-cross-white.svg") no-repeat;
-  background-size: cover;
-}
-
 .plyr__control--overlaid {
   background: $apprentice;
+  padding: 20px;
   .video-player--employer & {
     background: $employer;
+  }
+}
+
+.plyr__control {
+  padding: 15px;
+}
+
+.video-player__close {
+  display: block;
+  color: #fff;
+  z-index: 1001;
+  float: right;
+  position: relative;
+  width: 50px;
+  height: 50px;
+  overflow: hidden;
+  text-indent: -999px;
+  background-color: $apprentice;
+  background-image: url("../images/icon-cross-white.svg");
+  background-repeat: no-repeat;
+  background-size: 40%;
+  background-position: center;
+  &:active,
+  &:focus {
+    outline: 3px solid $focus-colour;
+  }
+  .video-player--employer & {
+    background-color: $employer;
+    background-image: url("../images/icon-cross-black.svg");
+    &:active,
+    &:focus {
+      outline: 3px solid #fff;
+    }
   }
 }
 
