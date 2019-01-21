@@ -4,6 +4,20 @@
 	(global.GOVUKFrontend = factory());
 }(this, (function () { 'use strict';
 
+/**
+ * TODO: Ideally this would be a NodeList.prototype.forEach polyfill
+ * This seems to fail in IE8, requires more investigation.
+ * See: https://github.com/imagitama/nodelist-foreach-polyfill
+ */
+function nodeListForEach (nodes, callback) {
+  if (window.NodeList.prototype.forEach) {
+    return nodes.forEach(callback)
+  }
+  for (var i = 0; i < nodes.length; i++) {
+    callback.call(window, nodes[i], i, nodes);
+  }
+}
+
 (function(undefined) {
 
 // Detection from https://github.com/Financial-Times/polyfill-service/blob/master/packages/polyfill-library/polyfills/Object/defineProperty/detect.js
@@ -246,416 +260,6 @@ if (detect) return
           return bound;
       }
   });
-})
-.call('object' === typeof window && window || 'object' === typeof self && self || 'object' === typeof global && global || {});
-
-(function(undefined) {
-
-// Detection from https://github.com/Financial-Times/polyfill-service/blob/master/packages/polyfill-library/polyfills/Window/detect.js
-var detect = ('Window' in this);
-
-if (detect) return
-
-// Polyfill from https://cdn.polyfill.io/v2/polyfill.js?features=Window&flags=always
-if ((typeof WorkerGlobalScope === "undefined") && (typeof importScripts !== "function")) {
-	(function (global) {
-		if (global.constructor) {
-			global.Window = global.constructor;
-		} else {
-			(global.Window = global.constructor = new Function('return function Window() {}')()).prototype = this;
-		}
-	}(this));
-}
-
-})
-.call('object' === typeof window && window || 'object' === typeof self && self || 'object' === typeof global && global || {});
-
-(function(undefined) {
-
-// Detection from https://github.com/Financial-Times/polyfill-service/blob/master/packages/polyfill-library/polyfills/Document/detect.js
-var detect = ("Document" in this);
-
-if (detect) return
-
-// Polyfill from https://cdn.polyfill.io/v2/polyfill.js?features=Document&flags=always
-if ((typeof WorkerGlobalScope === "undefined") && (typeof importScripts !== "function")) {
-
-	if (this.HTMLDocument) { // IE8
-
-		// HTMLDocument is an extension of Document.  If the browser has HTMLDocument but not Document, the former will suffice as an alias for the latter.
-		this.Document = this.HTMLDocument;
-
-	} else {
-
-		// Create an empty function to act as the missing constructor for the document object, attach the document object as its prototype.  The function needs to be anonymous else it is hoisted and causes the feature detect to prematurely pass, preventing the assignments below being made.
-		this.Document = this.HTMLDocument = document.constructor = (new Function('return function Document() {}')());
-		this.Document.prototype = document;
-	}
-}
-
-
-})
-.call('object' === typeof window && window || 'object' === typeof self && self || 'object' === typeof global && global || {});
-
-(function(undefined) {
-
-// Detection from https://github.com/Financial-Times/polyfill-service/blob/master/packages/polyfill-library/polyfills/Element/detect.js
-var detect = ('Element' in this && 'HTMLElement' in this);
-
-if (detect) return
-
-// Polyfill from https://cdn.polyfill.io/v2/polyfill.js?features=Element&flags=always
-(function () {
-
-	// IE8
-	if (window.Element && !window.HTMLElement) {
-		window.HTMLElement = window.Element;
-		return;
-	}
-
-	// create Element constructor
-	window.Element = window.HTMLElement = new Function('return function Element() {}')();
-
-	// generate sandboxed iframe
-	var vbody = document.appendChild(document.createElement('body'));
-	var frame = vbody.appendChild(document.createElement('iframe'));
-
-	// use sandboxed iframe to replicate Element functionality
-	var frameDocument = frame.contentWindow.document;
-	var prototype = Element.prototype = frameDocument.appendChild(frameDocument.createElement('*'));
-	var cache = {};
-
-	// polyfill Element.prototype on an element
-	var shiv = function (element, deep) {
-		var
-		childNodes = element.childNodes || [],
-		index = -1,
-		key, value, childNode;
-
-		if (element.nodeType === 1 && element.constructor !== Element) {
-			element.constructor = Element;
-
-			for (key in cache) {
-				value = cache[key];
-				element[key] = value;
-			}
-		}
-
-		while (childNode = deep && childNodes[++index]) {
-			shiv(childNode, deep);
-		}
-
-		return element;
-	};
-
-	var elements = document.getElementsByTagName('*');
-	var nativeCreateElement = document.createElement;
-	var interval;
-	var loopLimit = 100;
-
-	prototype.attachEvent('onpropertychange', function (event) {
-		var
-		propertyName = event.propertyName,
-		nonValue = !cache.hasOwnProperty(propertyName),
-		newValue = prototype[propertyName],
-		oldValue = cache[propertyName],
-		index = -1,
-		element;
-
-		while (element = elements[++index]) {
-			if (element.nodeType === 1) {
-				if (nonValue || element[propertyName] === oldValue) {
-					element[propertyName] = newValue;
-				}
-			}
-		}
-
-		cache[propertyName] = newValue;
-	});
-
-	prototype.constructor = Element;
-
-	if (!prototype.hasAttribute) {
-		// <Element>.hasAttribute
-		prototype.hasAttribute = function hasAttribute(name) {
-			return this.getAttribute(name) !== null;
-		};
-	}
-
-	// Apply Element prototype to the pre-existing DOM as soon as the body element appears.
-	function bodyCheck() {
-		if (!(loopLimit--)) clearTimeout(interval);
-		if (document.body && !document.body.prototype && /(complete|interactive)/.test(document.readyState)) {
-			shiv(document, true);
-			if (interval && document.body.prototype) clearTimeout(interval);
-			return (!!document.body.prototype);
-		}
-		return false;
-	}
-	if (!bodyCheck()) {
-		document.onreadystatechange = bodyCheck;
-		interval = setInterval(bodyCheck, 25);
-	}
-
-	// Apply to any new elements created after load
-	document.createElement = function createElement(nodeName) {
-		var element = nativeCreateElement(String(nodeName).toLowerCase());
-		return shiv(element);
-	};
-
-	// remove sandboxed iframe
-	document.removeChild(vbody);
-}());
-
-})
-.call('object' === typeof window && window || 'object' === typeof self && self || 'object' === typeof global && global || {});
-
-(function(undefined) {
-
-// Detection from https://github.com/Financial-Times/polyfill-service/blob/master/packages/polyfill-library/polyfills/Event/detect.js
-var detect = (
-  (function(global) {
-
-  	if (!('Event' in global)) return false;
-  	if (typeof global.Event === 'function') return true;
-
-  	try {
-
-  		// In IE 9-11, the Event object exists but cannot be instantiated
-  		new Event('click');
-  		return true;
-  	} catch(e) {
-  		return false;
-  	}
-  }(this))
-);
-
-if (detect) return
-
-// Polyfill from https://cdn.polyfill.io/v2/polyfill.js?features=Event&flags=always
-(function () {
-	var unlistenableWindowEvents = {
-		click: 1,
-		dblclick: 1,
-		keyup: 1,
-		keypress: 1,
-		keydown: 1,
-		mousedown: 1,
-		mouseup: 1,
-		mousemove: 1,
-		mouseover: 1,
-		mouseenter: 1,
-		mouseleave: 1,
-		mouseout: 1,
-		storage: 1,
-		storagecommit: 1,
-		textinput: 1
-	};
-
-	// This polyfill depends on availability of `document` so will not run in a worker
-	// However, we asssume there are no browsers with worker support that lack proper
-	// support for `Event` within the worker
-	if (typeof document === 'undefined' || typeof window === 'undefined') return;
-
-	function indexOf(array, element) {
-		var
-		index = -1,
-		length = array.length;
-
-		while (++index < length) {
-			if (index in array && array[index] === element) {
-				return index;
-			}
-		}
-
-		return -1;
-	}
-
-	var existingProto = (window.Event && window.Event.prototype) || null;
-	window.Event = Window.prototype.Event = function Event(type, eventInitDict) {
-		if (!type) {
-			throw new Error('Not enough arguments');
-		}
-
-		var event;
-		// Shortcut if browser supports createEvent
-		if ('createEvent' in document) {
-			event = document.createEvent('Event');
-			var bubbles = eventInitDict && eventInitDict.bubbles !== undefined ? eventInitDict.bubbles : false;
-			var cancelable = eventInitDict && eventInitDict.cancelable !== undefined ? eventInitDict.cancelable : false;
-
-			event.initEvent(type, bubbles, cancelable);
-
-			return event;
-		}
-
-		event = document.createEventObject();
-
-		event.type = type;
-		event.bubbles = eventInitDict && eventInitDict.bubbles !== undefined ? eventInitDict.bubbles : false;
-		event.cancelable = eventInitDict && eventInitDict.cancelable !== undefined ? eventInitDict.cancelable : false;
-
-		return event;
-	};
-	if (existingProto) {
-		Object.defineProperty(window.Event, 'prototype', {
-			configurable: false,
-			enumerable: false,
-			writable: true,
-			value: existingProto
-		});
-	}
-
-	if (!('createEvent' in document)) {
-		window.addEventListener = Window.prototype.addEventListener = Document.prototype.addEventListener = Element.prototype.addEventListener = function addEventListener() {
-			var
-			element = this,
-			type = arguments[0],
-			listener = arguments[1];
-
-			if (element === window && type in unlistenableWindowEvents) {
-				throw new Error('In IE8 the event: ' + type + ' is not available on the window object. Please see https://github.com/Financial-Times/polyfill-service/issues/317 for more information.');
-			}
-
-			if (!element._events) {
-				element._events = {};
-			}
-
-			if (!element._events[type]) {
-				element._events[type] = function (event) {
-					var
-					list = element._events[event.type].list,
-					events = list.slice(),
-					index = -1,
-					length = events.length,
-					eventElement;
-
-					event.preventDefault = function preventDefault() {
-						if (event.cancelable !== false) {
-							event.returnValue = false;
-						}
-					};
-
-					event.stopPropagation = function stopPropagation() {
-						event.cancelBubble = true;
-					};
-
-					event.stopImmediatePropagation = function stopImmediatePropagation() {
-						event.cancelBubble = true;
-						event.cancelImmediate = true;
-					};
-
-					event.currentTarget = element;
-					event.relatedTarget = event.fromElement || null;
-					event.target = event.target || event.srcElement || element;
-					event.timeStamp = new Date().getTime();
-
-					if (event.clientX) {
-						event.pageX = event.clientX + document.documentElement.scrollLeft;
-						event.pageY = event.clientY + document.documentElement.scrollTop;
-					}
-
-					while (++index < length && !event.cancelImmediate) {
-						if (index in events) {
-							eventElement = events[index];
-
-							if (indexOf(list, eventElement) !== -1 && typeof eventElement === 'function') {
-								eventElement.call(element, event);
-							}
-						}
-					}
-				};
-
-				element._events[type].list = [];
-
-				if (element.attachEvent) {
-					element.attachEvent('on' + type, element._events[type]);
-				}
-			}
-
-			element._events[type].list.push(listener);
-		};
-
-		window.removeEventListener = Window.prototype.removeEventListener = Document.prototype.removeEventListener = Element.prototype.removeEventListener = function removeEventListener() {
-			var
-			element = this,
-			type = arguments[0],
-			listener = arguments[1],
-			index;
-
-			if (element._events && element._events[type] && element._events[type].list) {
-				index = indexOf(element._events[type].list, listener);
-
-				if (index !== -1) {
-					element._events[type].list.splice(index, 1);
-
-					if (!element._events[type].list.length) {
-						if (element.detachEvent) {
-							element.detachEvent('on' + type, element._events[type]);
-						}
-						delete element._events[type];
-					}
-				}
-			}
-		};
-
-		window.dispatchEvent = Window.prototype.dispatchEvent = Document.prototype.dispatchEvent = Element.prototype.dispatchEvent = function dispatchEvent(event) {
-			if (!arguments.length) {
-				throw new Error('Not enough arguments');
-			}
-
-			if (!event || typeof event.type !== 'string') {
-				throw new Error('DOM Events Exception 0');
-			}
-
-			var element = this, type = event.type;
-
-			try {
-				if (!event.bubbles) {
-					event.cancelBubble = true;
-
-					var cancelBubbleEvent = function (event) {
-						event.cancelBubble = true;
-
-						(element || window).detachEvent('on' + type, cancelBubbleEvent);
-					};
-
-					this.attachEvent('on' + type, cancelBubbleEvent);
-				}
-
-				this.fireEvent('on' + type, event);
-			} catch (error) {
-				event.target = element;
-
-				do {
-					event.currentTarget = element;
-
-					if ('_events' in element && typeof element._events[type] === 'function') {
-						element._events[type].call(element, event);
-					}
-
-					if (typeof element['on' + type] === 'function') {
-						element['on' + type].call(element, event);
-					}
-
-					element = element.nodeType === 9 ? element.parentWindow : element.parentNode;
-				} while (element && !event.cancelBubble);
-			}
-
-			return true;
-		};
-
-		// Add the DOMContentLoaded Event
-		document.attachEvent('onreadystatechange', function() {
-			if (document.readyState === 'complete') {
-				document.dispatchEvent(new Event('DOMContentLoaded', {
-					bubbles: true
-				}));
-			}
-		});
-	}
-}());
-
 })
 .call('object' === typeof window && window || 'object' === typeof self && self || 'object' === typeof global && global || {});
 
@@ -926,6 +530,146 @@ if (detect) return
 
 (function(undefined) {
 
+// Detection from https://github.com/Financial-Times/polyfill-service/blob/master/packages/polyfill-library/polyfills/Document/detect.js
+var detect = ("Document" in this);
+
+if (detect) return
+
+// Polyfill from https://cdn.polyfill.io/v2/polyfill.js?features=Document&flags=always
+if ((typeof WorkerGlobalScope === "undefined") && (typeof importScripts !== "function")) {
+
+	if (this.HTMLDocument) { // IE8
+
+		// HTMLDocument is an extension of Document.  If the browser has HTMLDocument but not Document, the former will suffice as an alias for the latter.
+		this.Document = this.HTMLDocument;
+
+	} else {
+
+		// Create an empty function to act as the missing constructor for the document object, attach the document object as its prototype.  The function needs to be anonymous else it is hoisted and causes the feature detect to prematurely pass, preventing the assignments below being made.
+		this.Document = this.HTMLDocument = document.constructor = (new Function('return function Document() {}')());
+		this.Document.prototype = document;
+	}
+}
+
+
+})
+.call('object' === typeof window && window || 'object' === typeof self && self || 'object' === typeof global && global || {});
+
+(function(undefined) {
+
+// Detection from https://github.com/Financial-Times/polyfill-service/blob/master/packages/polyfill-library/polyfills/Element/detect.js
+var detect = ('Element' in this && 'HTMLElement' in this);
+
+if (detect) return
+
+// Polyfill from https://cdn.polyfill.io/v2/polyfill.js?features=Element&flags=always
+(function () {
+
+	// IE8
+	if (window.Element && !window.HTMLElement) {
+		window.HTMLElement = window.Element;
+		return;
+	}
+
+	// create Element constructor
+	window.Element = window.HTMLElement = new Function('return function Element() {}')();
+
+	// generate sandboxed iframe
+	var vbody = document.appendChild(document.createElement('body'));
+	var frame = vbody.appendChild(document.createElement('iframe'));
+
+	// use sandboxed iframe to replicate Element functionality
+	var frameDocument = frame.contentWindow.document;
+	var prototype = Element.prototype = frameDocument.appendChild(frameDocument.createElement('*'));
+	var cache = {};
+
+	// polyfill Element.prototype on an element
+	var shiv = function (element, deep) {
+		var
+		childNodes = element.childNodes || [],
+		index = -1,
+		key, value, childNode;
+
+		if (element.nodeType === 1 && element.constructor !== Element) {
+			element.constructor = Element;
+
+			for (key in cache) {
+				value = cache[key];
+				element[key] = value;
+			}
+		}
+
+		while (childNode = deep && childNodes[++index]) {
+			shiv(childNode, deep);
+		}
+
+		return element;
+	};
+
+	var elements = document.getElementsByTagName('*');
+	var nativeCreateElement = document.createElement;
+	var interval;
+	var loopLimit = 100;
+
+	prototype.attachEvent('onpropertychange', function (event) {
+		var
+		propertyName = event.propertyName,
+		nonValue = !cache.hasOwnProperty(propertyName),
+		newValue = prototype[propertyName],
+		oldValue = cache[propertyName],
+		index = -1,
+		element;
+
+		while (element = elements[++index]) {
+			if (element.nodeType === 1) {
+				if (nonValue || element[propertyName] === oldValue) {
+					element[propertyName] = newValue;
+				}
+			}
+		}
+
+		cache[propertyName] = newValue;
+	});
+
+	prototype.constructor = Element;
+
+	if (!prototype.hasAttribute) {
+		// <Element>.hasAttribute
+		prototype.hasAttribute = function hasAttribute(name) {
+			return this.getAttribute(name) !== null;
+		};
+	}
+
+	// Apply Element prototype to the pre-existing DOM as soon as the body element appears.
+	function bodyCheck() {
+		if (!(loopLimit--)) clearTimeout(interval);
+		if (document.body && !document.body.prototype && /(complete|interactive)/.test(document.readyState)) {
+			shiv(document, true);
+			if (interval && document.body.prototype) clearTimeout(interval);
+			return (!!document.body.prototype);
+		}
+		return false;
+	}
+	if (!bodyCheck()) {
+		document.onreadystatechange = bodyCheck;
+		interval = setInterval(bodyCheck, 25);
+	}
+
+	// Apply to any new elements created after load
+	document.createElement = function createElement(nodeName) {
+		var element = nativeCreateElement(String(nodeName).toLowerCase());
+		return shiv(element);
+	};
+
+	// remove sandboxed iframe
+	document.removeChild(vbody);
+}());
+
+})
+.call('object' === typeof window && window || 'object' === typeof self && self || 'object' === typeof global && global || {});
+
+(function(undefined) {
+
     // Detection from https://raw.githubusercontent.com/Financial-Times/polyfill-service/8717a9e04ac7aff99b4980fbedead98036b0929a/packages/polyfill-library/polyfills/Element/prototype/classList/detect.js
     var detect = (
       'document' in this && "classList" in document.documentElement && 'Element' in this && 'classList' in Element.prototype && (function () {
@@ -1014,72 +758,254 @@ if (detect) return
 
 }).call('object' === typeof window && window || 'object' === typeof self && self || 'object' === typeof global && global || {});
 
-/**
- * TODO: Ideally this would be a NodeList.prototype.forEach polyfill
- * This seems to fail in IE8, requires more investigation.
- * See: https://github.com/imagitama/nodelist-foreach-polyfill
- */
-function nodeListForEach (nodes, callback) {
-  if (window.NodeList.prototype.forEach) {
-    return nodes.forEach(callback)
-  }
-  for (var i = 0; i < nodes.length; i++) {
-    callback.call(window, nodes[i], i, nodes);
-  }
-}
-
-function Radios ($module) {
+function Accordion ($module) {
   this.$module = $module;
-  this.$inputs = $module.querySelectorAll('input[type="radio"]');
+  this.moduleId = $module.getAttribute('id');
+  this.$sections = $module.querySelectorAll('.govuk-accordion__section');
+  this.$openAllButton = '';
+  this.browserSupportsSessionStorage = helper.checkForSessionStorage();
+
+  this.controlsClass = 'govuk-accordion__controls';
+  this.openAllClass = 'govuk-accordion__open-all';
+  this.iconClass = 'govuk-accordion__icon';
+
+  this.sectionHeaderClass = 'govuk-accordion__section-header';
+  this.sectionHeaderFocusedClass = 'govuk-accordion__section-header--focused';
+  this.sectionHeadingClass = 'govuk-accordion__section-heading';
+  this.sectionSummaryClass = 'govuk-accordion__section-summary';
+  this.sectionButtonClass = 'govuk-accordion__section-button';
+  this.sectionExpandedClass = 'govuk-accordion__section--expanded';
 }
 
-Radios.prototype.init = function () {
-  var $module = this.$module;
-  var $inputs = this.$inputs;
+// Initialize component
+Accordion.prototype.init = function () {
+  // Check for module
+  if (!this.$module) {
+    return
+  }
 
-  /**
-  * Loop over all items with [data-controls]
-  * Check if they have a matching conditional reveal
-  * If they do, assign attributes.
-  **/
-  nodeListForEach($inputs, function ($input) {
-    var controls = $input.getAttribute('data-aria-controls');
+  this.initControls();
 
-    // Check if input controls anything
-    // Check if content exists, before setting attributes.
-    if (!controls || !$module.querySelector('#' + controls)) {
-      return
-    }
+  this.initSectionHeaders();
 
-    // If we have content that is controlled, set attributes.
-    $input.setAttribute('aria-controls', controls);
-    $input.removeAttribute('data-aria-controls');
-    this.setAttributes($input);
+  // See if "Open all" button text should be updated
+  var areAllSectionsOpen = this.checkIfAllSectionsOpen();
+  this.updateOpenAllButton(areAllSectionsOpen);
+};
+
+// Initialise controls and set attributes
+Accordion.prototype.initControls = function () {
+  // Create "Open all" button and set attributes
+  this.$openAllButton = document.createElement('button');
+  this.$openAllButton.setAttribute('type', 'button');
+  this.$openAllButton.innerHTML = 'Open all <span class="govuk-visually-hidden">sections</span>';
+  this.$openAllButton.setAttribute('class', this.openAllClass);
+  this.$openAllButton.setAttribute('aria-expanded', 'false');
+  this.$openAllButton.setAttribute('type', 'button');
+
+  // Create control wrapper and add controls to it
+  var accordionControls = document.createElement('div');
+  accordionControls.setAttribute('class', this.controlsClass);
+  accordionControls.appendChild(this.$openAllButton);
+  this.$module.insertBefore(accordionControls, this.$module.firstChild);
+
+  // Handle events for the controls
+  this.$openAllButton.addEventListener('click', this.onOpenOrCloseAllToggle.bind(this));
+};
+
+// Initialise section headers
+Accordion.prototype.initSectionHeaders = function () {
+  // Loop through section headers
+  nodeListForEach(this.$sections, function ($section, i) {
+    // Set header attributes
+    var header = $section.querySelector('.' + this.sectionHeaderClass);
+    this.initHeaderAttributes(header, i);
+
+    this.setExpanded(this.isExpanded($section), $section);
+
+    // Handle events
+    header.addEventListener('click', this.onSectionToggle.bind(this, $section));
+
+    // See if there is any state stored in sessionStorage and set the sections to
+    // open or closed.
+    this.setInitialState($section);
   }.bind(this));
-
-  // Handle events
-  $module.addEventListener('click', this.handleClick.bind(this));
 };
 
-Radios.prototype.setAttributes = function ($input) {
-  var inputIsChecked = $input.checked;
-  $input.setAttribute('aria-expanded', inputIsChecked);
+// Set individual header attributes
+Accordion.prototype.initHeaderAttributes = function ($headerWrapper, index) {
+  var $module = this;
+  var $span = $headerWrapper.querySelector('.' + this.sectionButtonClass);
+  var $heading = $headerWrapper.querySelector('.' + this.sectionHeadingClass);
+  var $summary = $headerWrapper.querySelector('.' + this.sectionSummaryClass);
 
-  var $content = document.querySelector('#' + $input.getAttribute('aria-controls'));
-  $content.classList.toggle('govuk-radios__conditional--hidden', !inputIsChecked);
-};
+  // Copy existing span element to an actual button element, for improved accessibility.
+  var $button = document.createElement('button');
+  $button.setAttribute('type', 'button');
+  $button.setAttribute('id', this.moduleId + '-heading-' + (index + 1));
+  $button.setAttribute('aria-controls', this.moduleId + '-content-' + (index + 1));
 
-Radios.prototype.handleClick = function (event) {
-  nodeListForEach(this.$inputs, function ($input) {
-    // If a radio with aria-controls, handle click
-    var isRadio = $input.getAttribute('type') === 'radio';
-    var hasAriaControls = $input.getAttribute('aria-controls');
-    if (isRadio && hasAriaControls) {
-      this.setAttributes($input);
+  // Copy all attributes (https://developer.mozilla.org/en-US/docs/Web/API/Element/attributes) from $span to $button
+  for (var i = 0; i < $span.attributes.length; i++) {
+    var attr = $span.attributes.item(i);
+    $button.setAttribute(attr.nodeName, attr.nodeValue);
+  }
+
+  $button.addEventListener('focusin', function (e) {
+    if (!$headerWrapper.classList.contains($module.sectionHeaderFocusedClass)) {
+      $headerWrapper.className += ' ' + $module.sectionHeaderFocusedClass;
     }
-  }.bind(this));
+  });
+
+  $button.addEventListener('blur', function (e) {
+    $headerWrapper.classList.remove($module.sectionHeaderFocusedClass);
+  });
+
+  if (typeof ($summary) !== 'undefined' && $summary !== null) {
+    $button.setAttribute('aria-describedby', this.moduleId + '-summary-' + (index + 1));
+  }
+
+  // $span could contain HTML elements (see https://www.w3.org/TR/2011/WD-html5-20110525/content-models.html#phrasing-content)
+  $button.innerHTML = $span.innerHTML;
+
+  $heading.removeChild($span);
+  $heading.appendChild($button);
+
+  // Add "+/-" icon
+  var icon = document.createElement('span');
+  icon.className = this.iconClass;
+  icon.setAttribute('aria-hidden', 'true');
+
+  $heading.appendChild(icon);
 };
 
-return Radios;
+// When section toggled, set and store state
+Accordion.prototype.onSectionToggle = function ($section) {
+  var expanded = this.isExpanded($section);
+  this.setExpanded(!expanded, $section);
+
+  // Store the state in sessionStorage when a change is triggered
+  this.storeState($section);
+};
+
+// When Open/Close All toggled, set and store state
+Accordion.prototype.onOpenOrCloseAllToggle = function () {
+  var $module = this;
+  var $sections = this.$sections;
+
+  var nowExpanded = !this.checkIfAllSectionsOpen();
+
+  nodeListForEach($sections, function ($section) {
+    $module.setExpanded(nowExpanded, $section);
+    // Store the state in sessionStorage when a change is triggered
+    $module.storeState($section);
+  });
+
+  $module.updateOpenAllButton(nowExpanded);
+};
+
+// Set section attributes when opened/closed
+Accordion.prototype.setExpanded = function (expanded, $section) {
+  var $button = $section.querySelector('.' + this.sectionButtonClass);
+  $button.setAttribute('aria-expanded', expanded);
+
+  if (expanded) {
+    $section.classList.add(this.sectionExpandedClass);
+  } else {
+    $section.classList.remove(this.sectionExpandedClass);
+  }
+
+  // See if "Open all" button text should be updated
+  var areAllSectionsOpen = this.checkIfAllSectionsOpen();
+  this.updateOpenAllButton(areAllSectionsOpen);
+};
+
+// Get state of section
+Accordion.prototype.isExpanded = function ($section) {
+  return $section.classList.contains(this.sectionExpandedClass)
+};
+
+// Check if all sections are open
+Accordion.prototype.checkIfAllSectionsOpen = function () {
+  // Get a count of all the Accordion sections
+  var sectionsCount = this.$sections.length;
+  // Get a count of all Accordion sections that are expanded
+  var expandedSectionCount = this.$module.querySelectorAll('.' + this.sectionExpandedClass).length;
+  var areAllSectionsOpen = sectionsCount === expandedSectionCount;
+
+  return areAllSectionsOpen
+};
+
+// Update "Open all" button
+Accordion.prototype.updateOpenAllButton = function (expanded) {
+  var newButtonText = expanded ? 'Close all' : 'Open all';
+  newButtonText += '<span class="govuk-visually-hidden"> sections</span>';
+  this.$openAllButton.setAttribute('aria-expanded', expanded);
+  this.$openAllButton.innerHTML = newButtonText;
+};
+
+// Check for `window.sessionStorage`, and that it actually works.
+var helper = {
+  checkForSessionStorage: function () {
+    var testString = 'this is the test string';
+    var result;
+    try {
+      window.sessionStorage.setItem(testString, testString);
+      result = window.sessionStorage.getItem(testString) === testString.toString();
+      window.sessionStorage.removeItem(testString);
+      return result
+    } catch (exception) {
+      if ((typeof console === 'undefined' || typeof console.log === 'undefined')) {
+        console.log('Notice: sessionStorage not available.');
+      }
+    }
+  }
+};
+
+// Set the state of the accordions in sessionStorage
+Accordion.prototype.storeState = function ($section) {
+  if (this.browserSupportsSessionStorage) {
+    // We need a unique way of identifying each content in the accordion. Since
+    // an `#id` should be unique and an `id` is required for `aria-` attributes
+    // `id` can be safely used.
+    var $button = $section.querySelector('.' + this.sectionButtonClass);
+
+    if ($button) {
+      var contentId = $button.getAttribute('aria-controls');
+      var contentState = $button.getAttribute('aria-expanded');
+
+      if (typeof contentId === 'undefined' && (typeof console === 'undefined' || typeof console.log === 'undefined')) {
+        console.error(new Error('No aria controls present in accordion section heading.'));
+      }
+
+      if (typeof contentState === 'undefined' && (typeof console === 'undefined' || typeof console.log === 'undefined')) {
+        console.error(new Error('No aria expanded present in accordion section heading.'));
+      }
+
+      // Only set the state when both `contentId` and `contentState` are taken from the DOM.
+      if (contentId && contentState) {
+        window.sessionStorage.setItem(contentId, contentState);
+      }
+    }
+  }
+};
+
+// Read the state of the accordions from sessionStorage
+Accordion.prototype.setInitialState = function ($section) {
+  if (this.browserSupportsSessionStorage) {
+    var $button = $section.querySelector('.' + this.sectionButtonClass);
+
+    if ($button) {
+      var contentId = $button.getAttribute('aria-controls');
+      var contentState = contentId ? window.sessionStorage.getItem(contentId) : null;
+
+      if (contentState !== null) {
+        this.setExpanded(contentState === 'true', $section);
+      }
+    }
+  }
+};
+
+return Accordion;
 
 })));

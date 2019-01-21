@@ -35,24 +35,513 @@ function generateUniqueID () {
 
 (function(undefined) {
 
-// Detection from https://github.com/Financial-Times/polyfill-service/blob/master/packages/polyfill-library/polyfills/Window/detect.js
-var detect = ('Window' in this);
+// Detection from https://github.com/Financial-Times/polyfill-service/blob/master/packages/polyfill-library/polyfills/Object/defineProperty/detect.js
+var detect = (
+  // In IE8, defineProperty could only act on DOM elements, so full support
+  // for the feature requires the ability to set a property on an arbitrary object
+  'defineProperty' in Object && (function() {
+  	try {
+  		var a = {};
+  		Object.defineProperty(a, 'test', {value:42});
+  		return true;
+  	} catch(e) {
+  		return false
+  	}
+  }())
+);
 
 if (detect) return
 
-// Polyfill from https://cdn.polyfill.io/v2/polyfill.js?features=Window&flags=always
-if ((typeof WorkerGlobalScope === "undefined") && (typeof importScripts !== "function")) {
-	(function (global) {
-		if (global.constructor) {
-			global.Window = global.constructor;
-		} else {
-			(global.Window = global.constructor = new Function('return function Window() {}')()).prototype = this;
-		}
-	}(this));
-}
+// Polyfill from https://cdn.polyfill.io/v2/polyfill.js?features=Object.defineProperty&flags=always
+(function (nativeDefineProperty) {
 
+	var supportsAccessors = Object.prototype.hasOwnProperty('__defineGetter__');
+	var ERR_ACCESSORS_NOT_SUPPORTED = 'Getters & setters cannot be defined on this javascript engine';
+	var ERR_VALUE_ACCESSORS = 'A property cannot both have accessors and be writable or have a value';
+
+	Object.defineProperty = function defineProperty(object, property, descriptor) {
+
+		// Where native support exists, assume it
+		if (nativeDefineProperty && (object === window || object === document || object === Element.prototype || object instanceof Element)) {
+			return nativeDefineProperty(object, property, descriptor);
+		}
+
+		if (object === null || !(object instanceof Object || typeof object === 'object')) {
+			throw new TypeError('Object.defineProperty called on non-object');
+		}
+
+		if (!(descriptor instanceof Object)) {
+			throw new TypeError('Property description must be an object');
+		}
+
+		var propertyString = String(property);
+		var hasValueOrWritable = 'value' in descriptor || 'writable' in descriptor;
+		var getterType = 'get' in descriptor && typeof descriptor.get;
+		var setterType = 'set' in descriptor && typeof descriptor.set;
+
+		// handle descriptor.get
+		if (getterType) {
+			if (getterType !== 'function') {
+				throw new TypeError('Getter must be a function');
+			}
+			if (!supportsAccessors) {
+				throw new TypeError(ERR_ACCESSORS_NOT_SUPPORTED);
+			}
+			if (hasValueOrWritable) {
+				throw new TypeError(ERR_VALUE_ACCESSORS);
+			}
+			Object.__defineGetter__.call(object, propertyString, descriptor.get);
+		} else {
+			object[propertyString] = descriptor.value;
+		}
+
+		// handle descriptor.set
+		if (setterType) {
+			if (setterType !== 'function') {
+				throw new TypeError('Setter must be a function');
+			}
+			if (!supportsAccessors) {
+				throw new TypeError(ERR_ACCESSORS_NOT_SUPPORTED);
+			}
+			if (hasValueOrWritable) {
+				throw new TypeError(ERR_VALUE_ACCESSORS);
+			}
+			Object.__defineSetter__.call(object, propertyString, descriptor.set);
+		}
+
+		// OK to define value unconditionally - if a getter has been specified as well, an error would be thrown above
+		if ('value' in descriptor) {
+			object[propertyString] = descriptor.value;
+		}
+
+		return object;
+	};
+}(Object.defineProperty));
 })
 .call('object' === typeof window && window || 'object' === typeof self && self || 'object' === typeof global && global || {});
+
+(function(undefined) {
+  // Detection from https://github.com/Financial-Times/polyfill-service/blob/master/packages/polyfill-library/polyfills/Function/prototype/bind/detect.js
+  var detect = 'bind' in Function.prototype;
+
+  if (detect) return
+
+  // Polyfill from https://cdn.polyfill.io/v2/polyfill.js?features=Function.prototype.bind&flags=always
+  Object.defineProperty(Function.prototype, 'bind', {
+      value: function bind(that) { // .length is 1
+          // add necessary es5-shim utilities
+          var $Array = Array;
+          var $Object = Object;
+          var ObjectPrototype = $Object.prototype;
+          var ArrayPrototype = $Array.prototype;
+          var Empty = function Empty() {};
+          var to_string = ObjectPrototype.toString;
+          var hasToStringTag = typeof Symbol === 'function' && typeof Symbol.toStringTag === 'symbol';
+          var isCallable; /* inlined from https://npmjs.com/is-callable */ var fnToStr = Function.prototype.toString, tryFunctionObject = function tryFunctionObject(value) { try { fnToStr.call(value); return true; } catch (e) { return false; } }, fnClass = '[object Function]', genClass = '[object GeneratorFunction]'; isCallable = function isCallable(value) { if (typeof value !== 'function') { return false; } if (hasToStringTag) { return tryFunctionObject(value); } var strClass = to_string.call(value); return strClass === fnClass || strClass === genClass; };
+          var array_slice = ArrayPrototype.slice;
+          var array_concat = ArrayPrototype.concat;
+          var array_push = ArrayPrototype.push;
+          var max = Math.max;
+          // /add necessary es5-shim utilities
+
+          // 1. Let Target be the this value.
+          var target = this;
+          // 2. If IsCallable(Target) is false, throw a TypeError exception.
+          if (!isCallable(target)) {
+              throw new TypeError('Function.prototype.bind called on incompatible ' + target);
+          }
+          // 3. Let A be a new (possibly empty) internal list of all of the
+          //   argument values provided after thisArg (arg1, arg2 etc), in order.
+          // XXX slicedArgs will stand in for "A" if used
+          var args = array_slice.call(arguments, 1); // for normal call
+          // 4. Let F be a new native ECMAScript object.
+          // 11. Set the [[Prototype]] internal property of F to the standard
+          //   built-in Function prototype object as specified in 15.3.3.1.
+          // 12. Set the [[Call]] internal property of F as described in
+          //   15.3.4.5.1.
+          // 13. Set the [[Construct]] internal property of F as described in
+          //   15.3.4.5.2.
+          // 14. Set the [[HasInstance]] internal property of F as described in
+          //   15.3.4.5.3.
+          var bound;
+          var binder = function () {
+
+              if (this instanceof bound) {
+                  // 15.3.4.5.2 [[Construct]]
+                  // When the [[Construct]] internal method of a function object,
+                  // F that was created using the bind function is called with a
+                  // list of arguments ExtraArgs, the following steps are taken:
+                  // 1. Let target be the value of F's [[TargetFunction]]
+                  //   internal property.
+                  // 2. If target has no [[Construct]] internal method, a
+                  //   TypeError exception is thrown.
+                  // 3. Let boundArgs be the value of F's [[BoundArgs]] internal
+                  //   property.
+                  // 4. Let args be a new list containing the same values as the
+                  //   list boundArgs in the same order followed by the same
+                  //   values as the list ExtraArgs in the same order.
+                  // 5. Return the result of calling the [[Construct]] internal
+                  //   method of target providing args as the arguments.
+
+                  var result = target.apply(
+                      this,
+                      array_concat.call(args, array_slice.call(arguments))
+                  );
+                  if ($Object(result) === result) {
+                      return result;
+                  }
+                  return this;
+
+              } else {
+                  // 15.3.4.5.1 [[Call]]
+                  // When the [[Call]] internal method of a function object, F,
+                  // which was created using the bind function is called with a
+                  // this value and a list of arguments ExtraArgs, the following
+                  // steps are taken:
+                  // 1. Let boundArgs be the value of F's [[BoundArgs]] internal
+                  //   property.
+                  // 2. Let boundThis be the value of F's [[BoundThis]] internal
+                  //   property.
+                  // 3. Let target be the value of F's [[TargetFunction]] internal
+                  //   property.
+                  // 4. Let args be a new list containing the same values as the
+                  //   list boundArgs in the same order followed by the same
+                  //   values as the list ExtraArgs in the same order.
+                  // 5. Return the result of calling the [[Call]] internal method
+                  //   of target providing boundThis as the this value and
+                  //   providing args as the arguments.
+
+                  // equiv: target.call(this, ...boundArgs, ...args)
+                  return target.apply(
+                      that,
+                      array_concat.call(args, array_slice.call(arguments))
+                  );
+
+              }
+
+          };
+
+          // 15. If the [[Class]] internal property of Target is "Function", then
+          //     a. Let L be the length property of Target minus the length of A.
+          //     b. Set the length own property of F to either 0 or L, whichever is
+          //       larger.
+          // 16. Else set the length own property of F to 0.
+
+          var boundLength = max(0, target.length - args.length);
+
+          // 17. Set the attributes of the length own property of F to the values
+          //   specified in 15.3.5.1.
+          var boundArgs = [];
+          for (var i = 0; i < boundLength; i++) {
+              array_push.call(boundArgs, '$' + i);
+          }
+
+          // XXX Build a dynamic function with desired amount of arguments is the only
+          // way to set the length property of a function.
+          // In environments where Content Security Policies enabled (Chrome extensions,
+          // for ex.) all use of eval or Function costructor throws an exception.
+          // However in all of these environments Function.prototype.bind exists
+          // and so this code will never be executed.
+          bound = Function('binder', 'return function (' + boundArgs.join(',') + '){ return binder.apply(this, arguments); }')(binder);
+
+          if (target.prototype) {
+              Empty.prototype = target.prototype;
+              bound.prototype = new Empty();
+              // Clean up dangling references.
+              Empty.prototype = null;
+          }
+
+          // TODO
+          // 18. Set the [[Extensible]] internal property of F to true.
+
+          // TODO
+          // 19. Let thrower be the [[ThrowTypeError]] function Object (13.2.3).
+          // 20. Call the [[DefineOwnProperty]] internal method of F with
+          //   arguments "caller", PropertyDescriptor {[[Get]]: thrower, [[Set]]:
+          //   thrower, [[Enumerable]]: false, [[Configurable]]: false}, and
+          //   false.
+          // 21. Call the [[DefineOwnProperty]] internal method of F with
+          //   arguments "arguments", PropertyDescriptor {[[Get]]: thrower,
+          //   [[Set]]: thrower, [[Enumerable]]: false, [[Configurable]]: false},
+          //   and false.
+
+          // TODO
+          // NOTE Function objects created using Function.prototype.bind do not
+          // have a prototype property or the [[Code]], [[FormalParameters]], and
+          // [[Scope]] internal properties.
+          // XXX can't delete prototype in pure-js.
+
+          // 22. Return F.
+          return bound;
+      }
+  });
+})
+.call('object' === typeof window && window || 'object' === typeof self && self || 'object' === typeof global && global || {});
+
+(function(undefined) {
+
+    // Detection from https://raw.githubusercontent.com/Financial-Times/polyfill-service/master/packages/polyfill-library/polyfills/DOMTokenList/detect.js
+    var detect = (
+      'DOMTokenList' in this && (function (x) {
+        return 'classList' in x ? !x.classList.toggle('x', false) && !x.className : true;
+      })(document.createElement('x'))
+    );
+
+    if (detect) return
+
+    // Polyfill from https://raw.githubusercontent.com/Financial-Times/polyfill-service/master/packages/polyfill-library/polyfills/DOMTokenList/polyfill.js
+    (function (global) {
+      var nativeImpl = "DOMTokenList" in global && global.DOMTokenList;
+
+      if (
+          !nativeImpl ||
+          (
+            !!document.createElementNS &&
+            !!document.createElementNS('http://www.w3.org/2000/svg', 'svg') &&
+            !(document.createElementNS("http://www.w3.org/2000/svg", "svg").classList instanceof DOMTokenList)
+          )
+        ) {
+        global.DOMTokenList = (function() { // eslint-disable-line no-unused-vars
+          var dpSupport = true;
+          var defineGetter = function (object, name, fn, configurable) {
+            if (Object.defineProperty)
+              Object.defineProperty(object, name, {
+                configurable: false === dpSupport ? true : !!configurable,
+                get: fn
+              });
+
+            else object.__defineGetter__(name, fn);
+          };
+
+          /** Ensure the browser allows Object.defineProperty to be used on native JavaScript objects. */
+          try {
+            defineGetter({}, "support");
+          }
+          catch (e) {
+            dpSupport = false;
+          }
+
+
+          var _DOMTokenList = function (el, prop) {
+            var that = this;
+            var tokens = [];
+            var tokenMap = {};
+            var length = 0;
+            var maxLength = 0;
+            var addIndexGetter = function (i) {
+              defineGetter(that, i, function () {
+                preop();
+                return tokens[i];
+              }, false);
+
+            };
+            var reindex = function () {
+
+              /** Define getter functions for array-like access to the tokenList's contents. */
+              if (length >= maxLength)
+                for (; maxLength < length; ++maxLength) {
+                  addIndexGetter(maxLength);
+                }
+            };
+
+            /** Helper function called at the start of each class method. Internal use only. */
+            var preop = function () {
+              var error;
+              var i;
+              var args = arguments;
+              var rSpace = /\s+/;
+
+              /** Validate the token/s passed to an instance method, if any. */
+              if (args.length)
+                for (i = 0; i < args.length; ++i)
+                  if (rSpace.test(args[i])) {
+                    error = new SyntaxError('String "' + args[i] + '" ' + "contains" + ' an invalid character');
+                    error.code = 5;
+                    error.name = "InvalidCharacterError";
+                    throw error;
+                  }
+
+
+              /** Split the new value apart by whitespace*/
+              if (typeof el[prop] === "object") {
+                tokens = ("" + el[prop].baseVal).replace(/^\s+|\s+$/g, "").split(rSpace);
+              } else {
+                tokens = ("" + el[prop]).replace(/^\s+|\s+$/g, "").split(rSpace);
+              }
+
+              /** Avoid treating blank strings as single-item token lists */
+              if ("" === tokens[0]) tokens = [];
+
+              /** Repopulate the internal token lists */
+              tokenMap = {};
+              for (i = 0; i < tokens.length; ++i)
+                tokenMap[tokens[i]] = true;
+              length = tokens.length;
+              reindex();
+            };
+
+            /** Populate our internal token list if the targeted attribute of the subject element isn't empty. */
+            preop();
+
+            /** Return the number of tokens in the underlying string. Read-only. */
+            defineGetter(that, "length", function () {
+              preop();
+              return length;
+            });
+
+            /** Override the default toString/toLocaleString methods to return a space-delimited list of tokens when typecast. */
+            that.toLocaleString =
+              that.toString = function () {
+                preop();
+                return tokens.join(" ");
+              };
+
+            that.item = function (idx) {
+              preop();
+              return tokens[idx];
+            };
+
+            that.contains = function (token) {
+              preop();
+              return !!tokenMap[token];
+            };
+
+            that.add = function () {
+              preop.apply(that, args = arguments);
+
+              for (var args, token, i = 0, l = args.length; i < l; ++i) {
+                token = args[i];
+                if (!tokenMap[token]) {
+                  tokens.push(token);
+                  tokenMap[token] = true;
+                }
+              }
+
+              /** Update the targeted attribute of the attached element if the token list's changed. */
+              if (length !== tokens.length) {
+                length = tokens.length >>> 0;
+                if (typeof el[prop] === "object") {
+                  el[prop].baseVal = tokens.join(" ");
+                } else {
+                  el[prop] = tokens.join(" ");
+                }
+                reindex();
+              }
+            };
+
+            that.remove = function () {
+              preop.apply(that, args = arguments);
+
+              /** Build a hash of token names to compare against when recollecting our token list. */
+              for (var args, ignore = {}, i = 0, t = []; i < args.length; ++i) {
+                ignore[args[i]] = true;
+                delete tokenMap[args[i]];
+              }
+
+              /** Run through our tokens list and reassign only those that aren't defined in the hash declared above. */
+              for (i = 0; i < tokens.length; ++i)
+                if (!ignore[tokens[i]]) t.push(tokens[i]);
+
+              tokens = t;
+              length = t.length >>> 0;
+
+              /** Update the targeted attribute of the attached element. */
+              if (typeof el[prop] === "object") {
+                el[prop].baseVal = tokens.join(" ");
+              } else {
+                el[prop] = tokens.join(" ");
+              }
+              reindex();
+            };
+
+            that.toggle = function (token, force) {
+              preop.apply(that, [token]);
+
+              /** Token state's being forced. */
+              if (undefined !== force) {
+                if (force) {
+                  that.add(token);
+                  return true;
+                } else {
+                  that.remove(token);
+                  return false;
+                }
+              }
+
+              /** Token already exists in tokenList. Remove it, and return FALSE. */
+              if (tokenMap[token]) {
+                that.remove(token);
+                return false;
+              }
+
+              /** Otherwise, add the token and return TRUE. */
+              that.add(token);
+              return true;
+            };
+
+            return that;
+          };
+
+          return _DOMTokenList;
+        }());
+      }
+
+      // Add second argument to native DOMTokenList.toggle() if necessary
+      (function () {
+        var e = document.createElement('span');
+        if (!('classList' in e)) return;
+        e.classList.toggle('x', false);
+        if (!e.classList.contains('x')) return;
+        e.classList.constructor.prototype.toggle = function toggle(token /*, force*/) {
+          var force = arguments[1];
+          if (force === undefined) {
+            var add = !this.contains(token);
+            this[add ? 'add' : 'remove'](token);
+            return add;
+          }
+          force = !!force;
+          this[force ? 'add' : 'remove'](token);
+          return force;
+        };
+      }());
+
+      // Add multiple arguments to native DOMTokenList.add() if necessary
+      (function () {
+        var e = document.createElement('span');
+        if (!('classList' in e)) return;
+        e.classList.add('a', 'b');
+        if (e.classList.contains('b')) return;
+        var native = e.classList.constructor.prototype.add;
+        e.classList.constructor.prototype.add = function () {
+          var args = arguments;
+          var l = arguments.length;
+          for (var i = 0; i < l; i++) {
+            native.call(this, args[i]);
+          }
+        };
+      }());
+
+      // Add multiple arguments to native DOMTokenList.remove() if necessary
+      (function () {
+        var e = document.createElement('span');
+        if (!('classList' in e)) return;
+        e.classList.add('a');
+        e.classList.add('b');
+        e.classList.remove('a', 'b');
+        if (!e.classList.contains('b')) return;
+        var native = e.classList.constructor.prototype.remove;
+        e.classList.constructor.prototype.remove = function () {
+          var args = arguments;
+          var l = arguments.length;
+          for (var i = 0; i < l; i++) {
+            native.call(this, args[i]);
+          }
+        };
+      }());
+
+    }(this));
+
+}).call('object' === typeof window && window || 'object' === typeof self && self || 'object' === typeof global && global || {});
 
 (function(undefined) {
 
@@ -196,88 +685,360 @@ if (detect) return
 
 (function(undefined) {
 
-// Detection from https://github.com/Financial-Times/polyfill-service/blob/master/packages/polyfill-library/polyfills/Object/defineProperty/detect.js
-var detect = (
-  // In IE8, defineProperty could only act on DOM elements, so full support
-  // for the feature requires the ability to set a property on an arbitrary object
-  'defineProperty' in Object && (function() {
-  	try {
-  		var a = {};
-  		Object.defineProperty(a, 'test', {value:42});
-  		return true;
-  	} catch(e) {
-  		return false
-  	}
-  }())
-);
+    // Detection from https://raw.githubusercontent.com/Financial-Times/polyfill-service/8717a9e04ac7aff99b4980fbedead98036b0929a/packages/polyfill-library/polyfills/Element/prototype/classList/detect.js
+    var detect = (
+      'document' in this && "classList" in document.documentElement && 'Element' in this && 'classList' in Element.prototype && (function () {
+        var e = document.createElement('span');
+        e.classList.add('a', 'b');
+        return e.classList.contains('b');
+      }())
+    );
+
+    if (detect) return
+
+    // Polyfill from https://cdn.polyfill.io/v2/polyfill.js?features=Element.prototype.classList&flags=always
+    (function (global) {
+      var dpSupport = true;
+      var defineGetter = function (object, name, fn, configurable) {
+        if (Object.defineProperty)
+          Object.defineProperty(object, name, {
+            configurable: false === dpSupport ? true : !!configurable,
+            get: fn
+          });
+
+        else object.__defineGetter__(name, fn);
+      };
+      /** Ensure the browser allows Object.defineProperty to be used on native JavaScript objects. */
+      try {
+        defineGetter({}, "support");
+      }
+      catch (e) {
+        dpSupport = false;
+      }
+      /** Polyfills a property with a DOMTokenList */
+      var addProp = function (o, name, attr) {
+
+        defineGetter(o.prototype, name, function () {
+          var tokenList;
+
+          var THIS = this,
+
+          /** Prevent this from firing twice for some reason. What the hell, IE. */
+          gibberishProperty = "__defineGetter__" + "DEFINE_PROPERTY" + name;
+          if(THIS[gibberishProperty]) return tokenList;
+          THIS[gibberishProperty] = true;
+
+          /**
+           * IE8 can't define properties on native JavaScript objects, so we'll use a dumb hack instead.
+           *
+           * What this is doing is creating a dummy element ("reflection") inside a detached phantom node ("mirror")
+           * that serves as the target of Object.defineProperty instead. While we could simply use the subject HTML
+           * element instead, this would conflict with element types which use indexed properties (such as forms and
+           * select lists).
+           */
+          if (false === dpSupport) {
+
+            var visage;
+            var mirror = addProp.mirror || document.createElement("div");
+            var reflections = mirror.childNodes;
+            var l = reflections.length;
+
+            for (var i = 0; i < l; ++i)
+              if (reflections[i]._R === THIS) {
+                visage = reflections[i];
+                break;
+              }
+
+            /** Couldn't find an element's reflection inside the mirror. Materialise one. */
+            visage || (visage = mirror.appendChild(document.createElement("div")));
+
+            tokenList = DOMTokenList.call(visage, THIS, attr);
+          } else tokenList = new DOMTokenList(THIS, attr);
+
+          defineGetter(THIS, name, function () {
+            return tokenList;
+          });
+          delete THIS[gibberishProperty];
+
+          return tokenList;
+        }, true);
+      };
+
+      addProp(global.Element, "classList", "className");
+      addProp(global.HTMLElement, "classList", "className");
+      addProp(global.HTMLLinkElement, "relList", "rel");
+      addProp(global.HTMLAnchorElement, "relList", "rel");
+      addProp(global.HTMLAreaElement, "relList", "rel");
+    }(this));
+
+}).call('object' === typeof window && window || 'object' === typeof self && self || 'object' === typeof global && global || {});
+
+function Accordion ($module) {
+  this.$module = $module;
+  this.moduleId = $module.getAttribute('id');
+  this.$sections = $module.querySelectorAll('.govuk-accordion__section');
+  this.$openAllButton = '';
+  this.browserSupportsSessionStorage = helper.checkForSessionStorage();
+
+  this.controlsClass = 'govuk-accordion__controls';
+  this.openAllClass = 'govuk-accordion__open-all';
+  this.iconClass = 'govuk-accordion__icon';
+
+  this.sectionHeaderClass = 'govuk-accordion__section-header';
+  this.sectionHeaderFocusedClass = 'govuk-accordion__section-header--focused';
+  this.sectionHeadingClass = 'govuk-accordion__section-heading';
+  this.sectionSummaryClass = 'govuk-accordion__section-summary';
+  this.sectionButtonClass = 'govuk-accordion__section-button';
+  this.sectionExpandedClass = 'govuk-accordion__section--expanded';
+}
+
+// Initialize component
+Accordion.prototype.init = function () {
+  // Check for module
+  if (!this.$module) {
+    return
+  }
+
+  this.initControls();
+
+  this.initSectionHeaders();
+
+  // See if "Open all" button text should be updated
+  var areAllSectionsOpen = this.checkIfAllSectionsOpen();
+  this.updateOpenAllButton(areAllSectionsOpen);
+};
+
+// Initialise controls and set attributes
+Accordion.prototype.initControls = function () {
+  // Create "Open all" button and set attributes
+  this.$openAllButton = document.createElement('button');
+  this.$openAllButton.setAttribute('type', 'button');
+  this.$openAllButton.innerHTML = 'Open all <span class="govuk-visually-hidden">sections</span>';
+  this.$openAllButton.setAttribute('class', this.openAllClass);
+  this.$openAllButton.setAttribute('aria-expanded', 'false');
+  this.$openAllButton.setAttribute('type', 'button');
+
+  // Create control wrapper and add controls to it
+  var accordionControls = document.createElement('div');
+  accordionControls.setAttribute('class', this.controlsClass);
+  accordionControls.appendChild(this.$openAllButton);
+  this.$module.insertBefore(accordionControls, this.$module.firstChild);
+
+  // Handle events for the controls
+  this.$openAllButton.addEventListener('click', this.onOpenOrCloseAllToggle.bind(this));
+};
+
+// Initialise section headers
+Accordion.prototype.initSectionHeaders = function () {
+  // Loop through section headers
+  nodeListForEach(this.$sections, function ($section, i) {
+    // Set header attributes
+    var header = $section.querySelector('.' + this.sectionHeaderClass);
+    this.initHeaderAttributes(header, i);
+
+    this.setExpanded(this.isExpanded($section), $section);
+
+    // Handle events
+    header.addEventListener('click', this.onSectionToggle.bind(this, $section));
+
+    // See if there is any state stored in sessionStorage and set the sections to
+    // open or closed.
+    this.setInitialState($section);
+  }.bind(this));
+};
+
+// Set individual header attributes
+Accordion.prototype.initHeaderAttributes = function ($headerWrapper, index) {
+  var $module = this;
+  var $span = $headerWrapper.querySelector('.' + this.sectionButtonClass);
+  var $heading = $headerWrapper.querySelector('.' + this.sectionHeadingClass);
+  var $summary = $headerWrapper.querySelector('.' + this.sectionSummaryClass);
+
+  // Copy existing span element to an actual button element, for improved accessibility.
+  var $button = document.createElement('button');
+  $button.setAttribute('type', 'button');
+  $button.setAttribute('id', this.moduleId + '-heading-' + (index + 1));
+  $button.setAttribute('aria-controls', this.moduleId + '-content-' + (index + 1));
+
+  // Copy all attributes (https://developer.mozilla.org/en-US/docs/Web/API/Element/attributes) from $span to $button
+  for (var i = 0; i < $span.attributes.length; i++) {
+    var attr = $span.attributes.item(i);
+    $button.setAttribute(attr.nodeName, attr.nodeValue);
+  }
+
+  $button.addEventListener('focusin', function (e) {
+    if (!$headerWrapper.classList.contains($module.sectionHeaderFocusedClass)) {
+      $headerWrapper.className += ' ' + $module.sectionHeaderFocusedClass;
+    }
+  });
+
+  $button.addEventListener('blur', function (e) {
+    $headerWrapper.classList.remove($module.sectionHeaderFocusedClass);
+  });
+
+  if (typeof ($summary) !== 'undefined' && $summary !== null) {
+    $button.setAttribute('aria-describedby', this.moduleId + '-summary-' + (index + 1));
+  }
+
+  // $span could contain HTML elements (see https://www.w3.org/TR/2011/WD-html5-20110525/content-models.html#phrasing-content)
+  $button.innerHTML = $span.innerHTML;
+
+  $heading.removeChild($span);
+  $heading.appendChild($button);
+
+  // Add "+/-" icon
+  var icon = document.createElement('span');
+  icon.className = this.iconClass;
+  icon.setAttribute('aria-hidden', 'true');
+
+  $heading.appendChild(icon);
+};
+
+// When section toggled, set and store state
+Accordion.prototype.onSectionToggle = function ($section) {
+  var expanded = this.isExpanded($section);
+  this.setExpanded(!expanded, $section);
+
+  // Store the state in sessionStorage when a change is triggered
+  this.storeState($section);
+};
+
+// When Open/Close All toggled, set and store state
+Accordion.prototype.onOpenOrCloseAllToggle = function () {
+  var $module = this;
+  var $sections = this.$sections;
+
+  var nowExpanded = !this.checkIfAllSectionsOpen();
+
+  nodeListForEach($sections, function ($section) {
+    $module.setExpanded(nowExpanded, $section);
+    // Store the state in sessionStorage when a change is triggered
+    $module.storeState($section);
+  });
+
+  $module.updateOpenAllButton(nowExpanded);
+};
+
+// Set section attributes when opened/closed
+Accordion.prototype.setExpanded = function (expanded, $section) {
+  var $button = $section.querySelector('.' + this.sectionButtonClass);
+  $button.setAttribute('aria-expanded', expanded);
+
+  if (expanded) {
+    $section.classList.add(this.sectionExpandedClass);
+  } else {
+    $section.classList.remove(this.sectionExpandedClass);
+  }
+
+  // See if "Open all" button text should be updated
+  var areAllSectionsOpen = this.checkIfAllSectionsOpen();
+  this.updateOpenAllButton(areAllSectionsOpen);
+};
+
+// Get state of section
+Accordion.prototype.isExpanded = function ($section) {
+  return $section.classList.contains(this.sectionExpandedClass)
+};
+
+// Check if all sections are open
+Accordion.prototype.checkIfAllSectionsOpen = function () {
+  // Get a count of all the Accordion sections
+  var sectionsCount = this.$sections.length;
+  // Get a count of all Accordion sections that are expanded
+  var expandedSectionCount = this.$module.querySelectorAll('.' + this.sectionExpandedClass).length;
+  var areAllSectionsOpen = sectionsCount === expandedSectionCount;
+
+  return areAllSectionsOpen
+};
+
+// Update "Open all" button
+Accordion.prototype.updateOpenAllButton = function (expanded) {
+  var newButtonText = expanded ? 'Close all' : 'Open all';
+  newButtonText += '<span class="govuk-visually-hidden"> sections</span>';
+  this.$openAllButton.setAttribute('aria-expanded', expanded);
+  this.$openAllButton.innerHTML = newButtonText;
+};
+
+// Check for `window.sessionStorage`, and that it actually works.
+var helper = {
+  checkForSessionStorage: function () {
+    var testString = 'this is the test string';
+    var result;
+    try {
+      window.sessionStorage.setItem(testString, testString);
+      result = window.sessionStorage.getItem(testString) === testString.toString();
+      window.sessionStorage.removeItem(testString);
+      return result
+    } catch (exception) {
+      if ((typeof console === 'undefined' || typeof console.log === 'undefined')) {
+        console.log('Notice: sessionStorage not available.');
+      }
+    }
+  }
+};
+
+// Set the state of the accordions in sessionStorage
+Accordion.prototype.storeState = function ($section) {
+  if (this.browserSupportsSessionStorage) {
+    // We need a unique way of identifying each content in the accordion. Since
+    // an `#id` should be unique and an `id` is required for `aria-` attributes
+    // `id` can be safely used.
+    var $button = $section.querySelector('.' + this.sectionButtonClass);
+
+    if ($button) {
+      var contentId = $button.getAttribute('aria-controls');
+      var contentState = $button.getAttribute('aria-expanded');
+
+      if (typeof contentId === 'undefined' && (typeof console === 'undefined' || typeof console.log === 'undefined')) {
+        console.error(new Error('No aria controls present in accordion section heading.'));
+      }
+
+      if (typeof contentState === 'undefined' && (typeof console === 'undefined' || typeof console.log === 'undefined')) {
+        console.error(new Error('No aria expanded present in accordion section heading.'));
+      }
+
+      // Only set the state when both `contentId` and `contentState` are taken from the DOM.
+      if (contentId && contentState) {
+        window.sessionStorage.setItem(contentId, contentState);
+      }
+    }
+  }
+};
+
+// Read the state of the accordions from sessionStorage
+Accordion.prototype.setInitialState = function ($section) {
+  if (this.browserSupportsSessionStorage) {
+    var $button = $section.querySelector('.' + this.sectionButtonClass);
+
+    if ($button) {
+      var contentId = $button.getAttribute('aria-controls');
+      var contentState = contentId ? window.sessionStorage.getItem(contentId) : null;
+
+      if (contentState !== null) {
+        this.setExpanded(contentState === 'true', $section);
+      }
+    }
+  }
+};
+
+(function(undefined) {
+
+// Detection from https://github.com/Financial-Times/polyfill-service/blob/master/packages/polyfill-library/polyfills/Window/detect.js
+var detect = ('Window' in this);
 
 if (detect) return
 
-// Polyfill from https://cdn.polyfill.io/v2/polyfill.js?features=Object.defineProperty&flags=always
-(function (nativeDefineProperty) {
-
-	var supportsAccessors = Object.prototype.hasOwnProperty('__defineGetter__');
-	var ERR_ACCESSORS_NOT_SUPPORTED = 'Getters & setters cannot be defined on this javascript engine';
-	var ERR_VALUE_ACCESSORS = 'A property cannot both have accessors and be writable or have a value';
-
-	Object.defineProperty = function defineProperty(object, property, descriptor) {
-
-		// Where native support exists, assume it
-		if (nativeDefineProperty && (object === window || object === document || object === Element.prototype || object instanceof Element)) {
-			return nativeDefineProperty(object, property, descriptor);
-		}
-
-		if (object === null || !(object instanceof Object || typeof object === 'object')) {
-			throw new TypeError('Object.defineProperty called on non-object');
-		}
-
-		if (!(descriptor instanceof Object)) {
-			throw new TypeError('Property description must be an object');
-		}
-
-		var propertyString = String(property);
-		var hasValueOrWritable = 'value' in descriptor || 'writable' in descriptor;
-		var getterType = 'get' in descriptor && typeof descriptor.get;
-		var setterType = 'set' in descriptor && typeof descriptor.set;
-
-		// handle descriptor.get
-		if (getterType) {
-			if (getterType !== 'function') {
-				throw new TypeError('Getter must be a function');
-			}
-			if (!supportsAccessors) {
-				throw new TypeError(ERR_ACCESSORS_NOT_SUPPORTED);
-			}
-			if (hasValueOrWritable) {
-				throw new TypeError(ERR_VALUE_ACCESSORS);
-			}
-			Object.__defineGetter__.call(object, propertyString, descriptor.get);
+// Polyfill from https://cdn.polyfill.io/v2/polyfill.js?features=Window&flags=always
+if ((typeof WorkerGlobalScope === "undefined") && (typeof importScripts !== "function")) {
+	(function (global) {
+		if (global.constructor) {
+			global.Window = global.constructor;
 		} else {
-			object[propertyString] = descriptor.value;
+			(global.Window = global.constructor = new Function('return function Window() {}')()).prototype = this;
 		}
+	}(this));
+}
 
-		// handle descriptor.set
-		if (setterType) {
-			if (setterType !== 'function') {
-				throw new TypeError('Setter must be a function');
-			}
-			if (!supportsAccessors) {
-				throw new TypeError(ERR_ACCESSORS_NOT_SUPPORTED);
-			}
-			if (hasValueOrWritable) {
-				throw new TypeError(ERR_VALUE_ACCESSORS);
-			}
-			Object.__defineSetter__.call(object, propertyString, descriptor.set);
-		}
-
-		// OK to define value unconditionally - if a getter has been specified as well, an error would be thrown above
-		if ('value' in descriptor) {
-			object[propertyString] = descriptor.value;
-		}
-
-		return object;
-	};
-}(Object.defineProperty));
 })
 .call('object' === typeof window && window || 'object' === typeof self && self || 'object' === typeof global && global || {});
 
@@ -572,164 +1333,6 @@ Button.prototype.init = function () {
   this.$module.addEventListener('keydown', this.handleKeyDown);
 };
 
-(function(undefined) {
-  // Detection from https://github.com/Financial-Times/polyfill-service/blob/master/packages/polyfill-library/polyfills/Function/prototype/bind/detect.js
-  var detect = 'bind' in Function.prototype;
-
-  if (detect) return
-
-  // Polyfill from https://cdn.polyfill.io/v2/polyfill.js?features=Function.prototype.bind&flags=always
-  Object.defineProperty(Function.prototype, 'bind', {
-      value: function bind(that) { // .length is 1
-          // add necessary es5-shim utilities
-          var $Array = Array;
-          var $Object = Object;
-          var ObjectPrototype = $Object.prototype;
-          var ArrayPrototype = $Array.prototype;
-          var Empty = function Empty() {};
-          var to_string = ObjectPrototype.toString;
-          var hasToStringTag = typeof Symbol === 'function' && typeof Symbol.toStringTag === 'symbol';
-          var isCallable; /* inlined from https://npmjs.com/is-callable */ var fnToStr = Function.prototype.toString, tryFunctionObject = function tryFunctionObject(value) { try { fnToStr.call(value); return true; } catch (e) { return false; } }, fnClass = '[object Function]', genClass = '[object GeneratorFunction]'; isCallable = function isCallable(value) { if (typeof value !== 'function') { return false; } if (hasToStringTag) { return tryFunctionObject(value); } var strClass = to_string.call(value); return strClass === fnClass || strClass === genClass; };
-          var array_slice = ArrayPrototype.slice;
-          var array_concat = ArrayPrototype.concat;
-          var array_push = ArrayPrototype.push;
-          var max = Math.max;
-          // /add necessary es5-shim utilities
-
-          // 1. Let Target be the this value.
-          var target = this;
-          // 2. If IsCallable(Target) is false, throw a TypeError exception.
-          if (!isCallable(target)) {
-              throw new TypeError('Function.prototype.bind called on incompatible ' + target);
-          }
-          // 3. Let A be a new (possibly empty) internal list of all of the
-          //   argument values provided after thisArg (arg1, arg2 etc), in order.
-          // XXX slicedArgs will stand in for "A" if used
-          var args = array_slice.call(arguments, 1); // for normal call
-          // 4. Let F be a new native ECMAScript object.
-          // 11. Set the [[Prototype]] internal property of F to the standard
-          //   built-in Function prototype object as specified in 15.3.3.1.
-          // 12. Set the [[Call]] internal property of F as described in
-          //   15.3.4.5.1.
-          // 13. Set the [[Construct]] internal property of F as described in
-          //   15.3.4.5.2.
-          // 14. Set the [[HasInstance]] internal property of F as described in
-          //   15.3.4.5.3.
-          var bound;
-          var binder = function () {
-
-              if (this instanceof bound) {
-                  // 15.3.4.5.2 [[Construct]]
-                  // When the [[Construct]] internal method of a function object,
-                  // F that was created using the bind function is called with a
-                  // list of arguments ExtraArgs, the following steps are taken:
-                  // 1. Let target be the value of F's [[TargetFunction]]
-                  //   internal property.
-                  // 2. If target has no [[Construct]] internal method, a
-                  //   TypeError exception is thrown.
-                  // 3. Let boundArgs be the value of F's [[BoundArgs]] internal
-                  //   property.
-                  // 4. Let args be a new list containing the same values as the
-                  //   list boundArgs in the same order followed by the same
-                  //   values as the list ExtraArgs in the same order.
-                  // 5. Return the result of calling the [[Construct]] internal
-                  //   method of target providing args as the arguments.
-
-                  var result = target.apply(
-                      this,
-                      array_concat.call(args, array_slice.call(arguments))
-                  );
-                  if ($Object(result) === result) {
-                      return result;
-                  }
-                  return this;
-
-              } else {
-                  // 15.3.4.5.1 [[Call]]
-                  // When the [[Call]] internal method of a function object, F,
-                  // which was created using the bind function is called with a
-                  // this value and a list of arguments ExtraArgs, the following
-                  // steps are taken:
-                  // 1. Let boundArgs be the value of F's [[BoundArgs]] internal
-                  //   property.
-                  // 2. Let boundThis be the value of F's [[BoundThis]] internal
-                  //   property.
-                  // 3. Let target be the value of F's [[TargetFunction]] internal
-                  //   property.
-                  // 4. Let args be a new list containing the same values as the
-                  //   list boundArgs in the same order followed by the same
-                  //   values as the list ExtraArgs in the same order.
-                  // 5. Return the result of calling the [[Call]] internal method
-                  //   of target providing boundThis as the this value and
-                  //   providing args as the arguments.
-
-                  // equiv: target.call(this, ...boundArgs, ...args)
-                  return target.apply(
-                      that,
-                      array_concat.call(args, array_slice.call(arguments))
-                  );
-
-              }
-
-          };
-
-          // 15. If the [[Class]] internal property of Target is "Function", then
-          //     a. Let L be the length property of Target minus the length of A.
-          //     b. Set the length own property of F to either 0 or L, whichever is
-          //       larger.
-          // 16. Else set the length own property of F to 0.
-
-          var boundLength = max(0, target.length - args.length);
-
-          // 17. Set the attributes of the length own property of F to the values
-          //   specified in 15.3.5.1.
-          var boundArgs = [];
-          for (var i = 0; i < boundLength; i++) {
-              array_push.call(boundArgs, '$' + i);
-          }
-
-          // XXX Build a dynamic function with desired amount of arguments is the only
-          // way to set the length property of a function.
-          // In environments where Content Security Policies enabled (Chrome extensions,
-          // for ex.) all use of eval or Function costructor throws an exception.
-          // However in all of these environments Function.prototype.bind exists
-          // and so this code will never be executed.
-          bound = Function('binder', 'return function (' + boundArgs.join(',') + '){ return binder.apply(this, arguments); }')(binder);
-
-          if (target.prototype) {
-              Empty.prototype = target.prototype;
-              bound.prototype = new Empty();
-              // Clean up dangling references.
-              Empty.prototype = null;
-          }
-
-          // TODO
-          // 18. Set the [[Extensible]] internal property of F to true.
-
-          // TODO
-          // 19. Let thrower be the [[ThrowTypeError]] function Object (13.2.3).
-          // 20. Call the [[DefineOwnProperty]] internal method of F with
-          //   arguments "caller", PropertyDescriptor {[[Get]]: thrower, [[Set]]:
-          //   thrower, [[Enumerable]]: false, [[Configurable]]: false}, and
-          //   false.
-          // 21. Call the [[DefineOwnProperty]] internal method of F with
-          //   arguments "arguments", PropertyDescriptor {[[Get]]: thrower,
-          //   [[Set]]: thrower, [[Enumerable]]: false, [[Configurable]]: false},
-          //   and false.
-
-          // TODO
-          // NOTE Function objects created using Function.prototype.bind do not
-          // have a prototype property or the [[Code]], [[FormalParameters]], and
-          // [[Scope]] internal properties.
-          // XXX can't delete prototype in pure-js.
-
-          // 22. Return F.
-          return bound;
-      }
-  });
-})
-.call('object' === typeof window && window || 'object' === typeof self && self || 'object' === typeof global && global || {});
-
 /**
  * JavaScript 'polyfill' for HTML5's <details> and <summary> elements
  * and 'shim' to add accessiblity enhancements for all browsers
@@ -881,360 +1484,187 @@ Details.prototype.destroy = function (node) {
   node.removeEventListener('click');
 };
 
-(function(undefined) {
+function CharacterCount ($module) {
+  this.$module = $module;
+  this.$textarea = $module.querySelector('.js-character-count');
+}
 
-    // Detection from https://raw.githubusercontent.com/Financial-Times/polyfill-service/master/packages/polyfill-library/polyfills/DOMTokenList/detect.js
-    var detect = (
-      'DOMTokenList' in this && (function (x) {
-        return 'classList' in x ? !x.classList.toggle('x', false) && !x.className : true;
-      })(document.createElement('x'))
-    );
+CharacterCount.prototype.defaults = {
+  characterCountAttribute: 'data-maxlength',
+  wordCountAttribute: 'data-maxwords'
+};
 
-    if (detect) return
+// Initialize component
+CharacterCount.prototype.init = function () {
+  // Check for module
+  var $module = this.$module;
+  var $textarea = this.$textarea;
+  if (!$textarea) {
+    return
+  }
 
-    // Polyfill from https://raw.githubusercontent.com/Financial-Times/polyfill-service/master/packages/polyfill-library/polyfills/DOMTokenList/polyfill.js
-    (function (global) {
-      var nativeImpl = "DOMTokenList" in global && global.DOMTokenList;
+  // Read options set using dataset ('data-' values)
+  this.options = this.getDataset($module);
 
-      if (
-          !nativeImpl ||
-          (
-            !!document.createElementNS &&
-            !!document.createElementNS('http://www.w3.org/2000/svg', 'svg') &&
-            !(document.createElementNS("http://www.w3.org/2000/svg", "svg").classList instanceof DOMTokenList)
-          )
-        ) {
-        global.DOMTokenList = (function() { // eslint-disable-line no-unused-vars
-          var dpSupport = true;
-          var defineGetter = function (object, name, fn, configurable) {
-            if (Object.defineProperty)
-              Object.defineProperty(object, name, {
-                configurable: false === dpSupport ? true : !!configurable,
-                get: fn
-              });
+  // Determine the limit attribute (characters or words)
+  var countAttribute = this.defaults.characterCountAttribute;
+  if (this.options.maxwords) {
+    countAttribute = this.defaults.wordCountAttribute;
+  }
 
-            else object.__defineGetter__(name, fn);
-          };
+  // Save the element limit
+  this.maxLength = $module.getAttribute(countAttribute);
 
-          /** Ensure the browser allows Object.defineProperty to be used on native JavaScript objects. */
-          try {
-            defineGetter({}, "support");
-          }
-          catch (e) {
-            dpSupport = false;
-          }
+  // Check for limit
+  if (!this.maxLength) {
+    return
+  }
 
+  // Generate and reference message
+  var boundCreateCountMessage = this.createCountMessage.bind(this);
+  this.countMessage = boundCreateCountMessage();
 
-          var _DOMTokenList = function (el, prop) {
-            var that = this;
-            var tokens = [];
-            var tokenMap = {};
-            var length = 0;
-            var maxLength = 0;
-            var addIndexGetter = function (i) {
-              defineGetter(that, i, function () {
-                preop();
-                return tokens[i];
-              }, false);
+  // If there's a maximum length defined and the count message exists
+  if (this.countMessage) {
+    // Remove hard limit if set
+    $module.removeAttribute('maxlength');
 
-            };
-            var reindex = function () {
+    // Bind event changes to the textarea
+    var boundChangeEvents = this.bindChangeEvents.bind(this);
+    boundChangeEvents();
 
-              /** Define getter functions for array-like access to the tokenList's contents. */
-              if (length >= maxLength)
-                for (; maxLength < length; ++maxLength) {
-                  addIndexGetter(maxLength);
-                }
-            };
+    // Update count message
+    var boundUpdateCountMessage = this.updateCountMessage.bind(this);
+    boundUpdateCountMessage();
+  }
+};
 
-            /** Helper function called at the start of each class method. Internal use only. */
-            var preop = function () {
-              var error;
-              var i;
-              var args = arguments;
-              var rSpace = /\s+/;
-
-              /** Validate the token/s passed to an instance method, if any. */
-              if (args.length)
-                for (i = 0; i < args.length; ++i)
-                  if (rSpace.test(args[i])) {
-                    error = new SyntaxError('String "' + args[i] + '" ' + "contains" + ' an invalid character');
-                    error.code = 5;
-                    error.name = "InvalidCharacterError";
-                    throw error;
-                  }
-
-
-              /** Split the new value apart by whitespace*/
-              if (typeof el[prop] === "object") {
-                tokens = ("" + el[prop].baseVal).replace(/^\s+|\s+$/g, "").split(rSpace);
-              } else {
-                tokens = ("" + el[prop]).replace(/^\s+|\s+$/g, "").split(rSpace);
-              }
-
-              /** Avoid treating blank strings as single-item token lists */
-              if ("" === tokens[0]) tokens = [];
-
-              /** Repopulate the internal token lists */
-              tokenMap = {};
-              for (i = 0; i < tokens.length; ++i)
-                tokenMap[tokens[i]] = true;
-              length = tokens.length;
-              reindex();
-            };
-
-            /** Populate our internal token list if the targeted attribute of the subject element isn't empty. */
-            preop();
-
-            /** Return the number of tokens in the underlying string. Read-only. */
-            defineGetter(that, "length", function () {
-              preop();
-              return length;
-            });
-
-            /** Override the default toString/toLocaleString methods to return a space-delimited list of tokens when typecast. */
-            that.toLocaleString =
-              that.toString = function () {
-                preop();
-                return tokens.join(" ");
-              };
-
-            that.item = function (idx) {
-              preop();
-              return tokens[idx];
-            };
-
-            that.contains = function (token) {
-              preop();
-              return !!tokenMap[token];
-            };
-
-            that.add = function () {
-              preop.apply(that, args = arguments);
-
-              for (var args, token, i = 0, l = args.length; i < l; ++i) {
-                token = args[i];
-                if (!tokenMap[token]) {
-                  tokens.push(token);
-                  tokenMap[token] = true;
-                }
-              }
-
-              /** Update the targeted attribute of the attached element if the token list's changed. */
-              if (length !== tokens.length) {
-                length = tokens.length >>> 0;
-                if (typeof el[prop] === "object") {
-                  el[prop].baseVal = tokens.join(" ");
-                } else {
-                  el[prop] = tokens.join(" ");
-                }
-                reindex();
-              }
-            };
-
-            that.remove = function () {
-              preop.apply(that, args = arguments);
-
-              /** Build a hash of token names to compare against when recollecting our token list. */
-              for (var args, ignore = {}, i = 0, t = []; i < args.length; ++i) {
-                ignore[args[i]] = true;
-                delete tokenMap[args[i]];
-              }
-
-              /** Run through our tokens list and reassign only those that aren't defined in the hash declared above. */
-              for (i = 0; i < tokens.length; ++i)
-                if (!ignore[tokens[i]]) t.push(tokens[i]);
-
-              tokens = t;
-              length = t.length >>> 0;
-
-              /** Update the targeted attribute of the attached element. */
-              if (typeof el[prop] === "object") {
-                el[prop].baseVal = tokens.join(" ");
-              } else {
-                el[prop] = tokens.join(" ");
-              }
-              reindex();
-            };
-
-            that.toggle = function (token, force) {
-              preop.apply(that, [token]);
-
-              /** Token state's being forced. */
-              if (undefined !== force) {
-                if (force) {
-                  that.add(token);
-                  return true;
-                } else {
-                  that.remove(token);
-                  return false;
-                }
-              }
-
-              /** Token already exists in tokenList. Remove it, and return FALSE. */
-              if (tokenMap[token]) {
-                that.remove(token);
-                return false;
-              }
-
-              /** Otherwise, add the token and return TRUE. */
-              that.add(token);
-              return true;
-            };
-
-            return that;
-          };
-
-          return _DOMTokenList;
-        }());
+// Read data attributes
+CharacterCount.prototype.getDataset = function (element) {
+  var dataset = {};
+  var attributes = element.attributes;
+  if (attributes) {
+    for (var i = 0; i < attributes.length; i++) {
+      var attribute = attributes[i];
+      var match = attribute.name.match(/^data-(.+)/);
+      if (match) {
+        dataset[match[1]] = attribute.value;
       }
+    }
+  }
+  return dataset
+};
 
-      // Add second argument to native DOMTokenList.toggle() if necessary
-      (function () {
-        var e = document.createElement('span');
-        if (!('classList' in e)) return;
-        e.classList.toggle('x', false);
-        if (!e.classList.contains('x')) return;
-        e.classList.constructor.prototype.toggle = function toggle(token /*, force*/) {
-          var force = arguments[1];
-          if (force === undefined) {
-            var add = !this.contains(token);
-            this[add ? 'add' : 'remove'](token);
-            return add;
-          }
-          force = !!force;
-          this[force ? 'add' : 'remove'](token);
-          return force;
-        };
-      }());
+// Counts characters or words in text
+CharacterCount.prototype.count = function (text) {
+  var length;
+  if (this.options.maxwords) {
+    var tokens = text.match(/\S+/g) || []; // Matches consecutive non-whitespace chars
+    length = tokens.length;
+  } else {
+    length = text.length;
+  }
+  return length
+};
 
-      // Add multiple arguments to native DOMTokenList.add() if necessary
-      (function () {
-        var e = document.createElement('span');
-        if (!('classList' in e)) return;
-        e.classList.add('a', 'b');
-        if (e.classList.contains('b')) return;
-        var native = e.classList.constructor.prototype.add;
-        e.classList.constructor.prototype.add = function () {
-          var args = arguments;
-          var l = arguments.length;
-          for (var i = 0; i < l; i++) {
-            native.call(this, args[i]);
-          }
-        };
-      }());
+// Generate count message and bind it to the input
+// returns reference to the generated element
+CharacterCount.prototype.createCountMessage = function () {
+  var countElement = this.$textarea;
+  var elementId = countElement.id;
+  // Check for existing info count message
+  var countMessage = document.getElementById(elementId + '-info');
+  // If there is no existing info count message we add one right after the field
+  if (elementId && !countMessage) {
+    countElement.insertAdjacentHTML('afterend', '<span id="' + elementId + '-info" class="govuk-hint govuk-character-count__message" aria-live="polite"></span>');
+    this.describedBy = countElement.getAttribute('aria-describedby');
+    this.describedByInfo = this.describedBy + ' ' + elementId + '-info';
+    countElement.setAttribute('aria-describedby', this.describedByInfo);
+    countMessage = document.getElementById(elementId + '-info');
+  } else {
+  // If there is an existing info count message we move it right after the field
+    countElement.insertAdjacentElement('afterend', countMessage);
+  }
+  return countMessage
+};
 
-      // Add multiple arguments to native DOMTokenList.remove() if necessary
-      (function () {
-        var e = document.createElement('span');
-        if (!('classList' in e)) return;
-        e.classList.add('a');
-        e.classList.add('b');
-        e.classList.remove('a', 'b');
-        if (!e.classList.contains('b')) return;
-        var native = e.classList.constructor.prototype.remove;
-        e.classList.constructor.prototype.remove = function () {
-          var args = arguments;
-          var l = arguments.length;
-          for (var i = 0; i < l; i++) {
-            native.call(this, args[i]);
-          }
-        };
-      }());
+// Bind input propertychange to the elements and update based on the change
+CharacterCount.prototype.bindChangeEvents = function () {
+  var $textarea = this.$textarea;
+  $textarea.addEventListener('keyup', this.checkIfValueChanged.bind(this));
 
-    }(this));
+  // Bind focus/blur events to start/stop polling
+  $textarea.addEventListener('focus', this.handleFocus.bind(this));
+  $textarea.addEventListener('blur', this.handleBlur.bind(this));
+};
 
-}).call('object' === typeof window && window || 'object' === typeof self && self || 'object' === typeof global && global || {});
+// Speech recognition software such as Dragon NaturallySpeaking will modify the
+// fields by directly changing its `value`. These changes don't trigger events
+// in JavaScript, so we need to poll to handle when and if they occur.
+CharacterCount.prototype.checkIfValueChanged = function () {
+  if (!this.$textarea.oldValue) this.$textarea.oldValue = '';
+  if (this.$textarea.value !== this.$textarea.oldValue) {
+    this.$textarea.oldValue = this.$textarea.value;
+    var boundUpdateCountMessage = this.updateCountMessage.bind(this);
+    boundUpdateCountMessage();
+  }
+};
 
-(function(undefined) {
+// Update message box
+CharacterCount.prototype.updateCountMessage = function () {
+  var countElement = this.$textarea;
+  var options = this.options;
+  var countMessage = this.countMessage;
 
-    // Detection from https://raw.githubusercontent.com/Financial-Times/polyfill-service/8717a9e04ac7aff99b4980fbedead98036b0929a/packages/polyfill-library/polyfills/Element/prototype/classList/detect.js
-    var detect = (
-      'document' in this && "classList" in document.documentElement && 'Element' in this && 'classList' in Element.prototype && (function () {
-        var e = document.createElement('span');
-        e.classList.add('a', 'b');
-        return e.classList.contains('b');
-      }())
-    );
+  // Determine the remaining number of characters/words
+  var currentLength = this.count(countElement.value);
+  var maxLength = this.maxLength;
+  var remainingNumber = maxLength - currentLength;
 
-    if (detect) return
+  // Set threshold if presented in options
+  var thresholdPercent = options.threshold ? options.threshold : 0;
+  var thresholdValue = maxLength * thresholdPercent / 100;
+  if (thresholdValue > currentLength) {
+    countMessage.classList.add('govuk-character-count__message--disabled');
+  } else {
+    countMessage.classList.remove('govuk-character-count__message--disabled');
+  }
 
-    // Polyfill from https://raw.githubusercontent.com/Financial-Times/polyfill-service/8717a9e04ac7aff99b4980fbedead98036b0929a/packages/polyfill-library/polyfills/Element/prototype/classList/polyfill.js
-    (function (global) {
-      var dpSupport = true;
-      var defineGetter = function (object, name, fn, configurable) {
-        if (Object.defineProperty)
-          Object.defineProperty(object, name, {
-            configurable: false === dpSupport ? true : !!configurable,
-            get: fn
-          });
+  // Update styles
+  if (remainingNumber < 0) {
+    countElement.classList.add('govuk-textarea--error');
+    countMessage.classList.remove('govuk-hint');
+    countMessage.classList.add('govuk-error-message');
+  } else {
+    countElement.classList.remove('govuk-textarea--error');
+    countMessage.classList.remove('govuk-error-message');
+    countMessage.classList.add('govuk-hint');
+  }
 
-        else object.__defineGetter__(name, fn);
-      };
-      /** Ensure the browser allows Object.defineProperty to be used on native JavaScript objects. */
-      try {
-        defineGetter({}, "support");
-      }
-      catch (e) {
-        dpSupport = false;
-      }
-      /** Polyfills a property with a DOMTokenList */
-      var addProp = function (o, name, attr) {
+  // Update message
+  var charVerb = 'remaining';
+  var charNoun = 'character';
+  var displayNumber = remainingNumber;
+  if (options.maxwords) {
+    charNoun = 'word';
+  }
+  charNoun = charNoun + ((remainingNumber === -1 || remainingNumber === 1) ? '' : 's');
 
-        defineGetter(o.prototype, name, function () {
-          var tokenList;
+  charVerb = (remainingNumber < 0) ? 'too many' : 'remaining';
+  displayNumber = Math.abs(remainingNumber);
 
-          var THIS = this,
+  countMessage.innerHTML = 'You have ' + displayNumber + ' ' + charNoun + ' ' + charVerb;
+};
 
-          /** Prevent this from firing twice for some reason. What the hell, IE. */
-          gibberishProperty = "__defineGetter__" + "DEFINE_PROPERTY" + name;
-          if(THIS[gibberishProperty]) return tokenList;
-          THIS[gibberishProperty] = true;
+CharacterCount.prototype.handleFocus = function () {
+  // Check if value changed on focus
+  this.valueChecker = setInterval(this.checkIfValueChanged.bind(this), 1000);
+};
 
-          /**
-           * IE8 can't define properties on native JavaScript objects, so we'll use a dumb hack instead.
-           *
-           * What this is doing is creating a dummy element ("reflection") inside a detached phantom node ("mirror")
-           * that serves as the target of Object.defineProperty instead. While we could simply use the subject HTML
-           * element instead, this would conflict with element types which use indexed properties (such as forms and
-           * select lists).
-           */
-          if (false === dpSupport) {
-
-            var visage;
-            var mirror = addProp.mirror || document.createElement("div");
-            var reflections = mirror.childNodes;
-            var l = reflections.length;
-
-            for (var i = 0; i < l; ++i)
-              if (reflections[i]._R === THIS) {
-                visage = reflections[i];
-                break;
-              }
-
-            /** Couldn't find an element's reflection inside the mirror. Materialise one. */
-            visage || (visage = mirror.appendChild(document.createElement("div")));
-
-            tokenList = DOMTokenList.call(visage, THIS, attr);
-          } else tokenList = new DOMTokenList(THIS, attr);
-
-          defineGetter(THIS, name, function () {
-            return tokenList;
-          });
-          delete THIS[gibberishProperty];
-
-          return tokenList;
-        }, true);
-      };
-
-      addProp(global.Element, "classList", "className");
-      addProp(global.HTMLElement, "classList", "className");
-      addProp(global.HTMLLinkElement, "relList", "rel");
-      addProp(global.HTMLAnchorElement, "relList", "rel");
-      addProp(global.HTMLAreaElement, "relList", "rel");
-    }(this));
-
-}).call('object' === typeof window && window || 'object' === typeof self && self || 'object' === typeof global && global || {});
+CharacterCount.prototype.handleBlur = function () {
+  // Cancel value checking on blur
+  clearInterval(this.valueChecker);
+};
 
 function Checkboxes ($module) {
   this.$module = $module;
@@ -1288,6 +1718,53 @@ Checkboxes.prototype.handleClick = function (event) {
   }
 };
 
+(function(undefined) {
+
+  // Detection from https://raw.githubusercontent.com/Financial-Times/polyfill-service/1f3c09b402f65bf6e393f933a15ba63f1b86ef1f/packages/polyfill-library/polyfills/Element/prototype/matches/detect.js
+  var detect = (
+    'document' in this && "matches" in document.documentElement
+  );
+
+  if (detect) return
+
+  // Polyfill from https://raw.githubusercontent.com/Financial-Times/polyfill-service/1f3c09b402f65bf6e393f933a15ba63f1b86ef1f/packages/polyfill-library/polyfills/Element/prototype/matches/polyfill.js
+  Element.prototype.matches = Element.prototype.webkitMatchesSelector || Element.prototype.oMatchesSelector || Element.prototype.msMatchesSelector || Element.prototype.mozMatchesSelector || function matches(selector) {
+    var element = this;
+    var elements = (element.document || element.ownerDocument).querySelectorAll(selector);
+    var index = 0;
+
+    while (elements[index] && elements[index] !== element) {
+      ++index;
+    }
+
+    return !!elements[index];
+  };
+
+}).call('object' === typeof window && window || 'object' === typeof self && self || 'object' === typeof global && global || {});
+
+(function(undefined) {
+
+  // Detection from https://raw.githubusercontent.com/Financial-Times/polyfill-service/1f3c09b402f65bf6e393f933a15ba63f1b86ef1f/packages/polyfill-library/polyfills/Element/prototype/closest/detect.js
+  var detect = (
+    'document' in this && "closest" in document.documentElement
+  );
+
+  if (detect) return
+
+    // Polyfill from https://raw.githubusercontent.com/Financial-Times/polyfill-service/1f3c09b402f65bf6e393f933a15ba63f1b86ef1f/packages/polyfill-library/polyfills/Element/prototype/closest/polyfill.js
+  Element.prototype.closest = function closest(selector) {
+    var node = this;
+
+    while (node) {
+      if (node.matches(selector)) return node;
+      else node = 'SVGElement' in window && node instanceof SVGElement ? node.parentNode : node.parentElement;
+    }
+
+    return null;
+  };
+
+}).call('object' === typeof window && window || 'object' === typeof self && self || 'object' === typeof global && global || {});
+
 function ErrorSummary ($module) {
   this.$module = $module;
 }
@@ -1300,6 +1777,119 @@ ErrorSummary.prototype.init = function () {
   window.addEventListener('load', function () {
     $module.focus();
   });
+
+  $module.addEventListener('click', this.handleClick.bind(this));
+};
+
+/**
+* Click event handler
+*
+* @param {MouseEvent} event - Click event
+*/
+ErrorSummary.prototype.handleClick = function (event) {
+  var target = event.target;
+  if (this.focusTarget(target)) {
+    event.preventDefault();
+  }
+};
+
+/**
+ * Focus the target element
+ *
+ * By default, the browser will scroll the target into view. Because our labels
+ * or legends appear above the input, this means the user will be presented with
+ * an input without any context, as the label or legend will be off the top of
+ * the screen.
+ *
+ * Manually handling the click event, scrolling the question into view and then
+ * focussing the element solves this.
+ *
+ * This also results in the label and/or legend being announced correctly in
+ * NVDA (as tested in 2018.3.2) - without this only the field type is announced
+ * (e.g. "Edit, has autocomplete").
+ *
+ * @param {HTMLElement} $target - Event target
+ * @returns {boolean} True if the target was able to be focussed
+ */
+ErrorSummary.prototype.focusTarget = function ($target) {
+  // If the element that was clicked was not a link, return early
+  if ($target.tagName !== 'A' || $target.href === false) {
+    return false
+  }
+
+  var inputId = this.getFragmentFromUrl($target.href);
+  var $input = document.getElementById(inputId);
+  if (!$input) {
+    return false
+  }
+
+  var $legendOrLabel = this.getAssociatedLegendOrLabel($input);
+  if (!$legendOrLabel) {
+    return false
+  }
+
+  // Prefer using the history API where possible, as updating
+  // window.location.hash causes the viewport to jump to the input briefly
+  // before then scrolling to the label/legend in IE10, IE11 and Edge (as tested
+  // in Edge 17).
+  if (window.history.pushState) {
+    window.history.pushState(null, null, '#' + inputId);
+  } else {
+    window.location.hash = inputId;
+  }
+
+  // Scroll the legend or label into view *before* calling focus on the input to
+  // avoid extra scrolling in browsers that don't support `preventScroll` (which
+  // at time of writing is most of them...)
+  $legendOrLabel.scrollIntoView();
+  $input.focus({ preventScroll: true });
+
+  return true
+};
+
+/**
+ * Get fragment from URL
+ *
+ * Extract the fragment (everything after the hash) from a URL, but not including
+ * the hash.
+ *
+ * @param {string} url - URL
+ * @returns {string} Fragment from URL, without the hash
+ */
+ErrorSummary.prototype.getFragmentFromUrl = function (url) {
+  if (url.indexOf('#') === -1) {
+    return false
+  }
+
+  return url.split('#').pop()
+};
+
+/**
+ * Get associated legend or label
+ *
+ * Returns the first element that exists from this list:
+ *
+ * - The `<legend>` associated with the closest `<fieldset>` ancestor
+ * - The first `<label>` that is associated with the input using for="inputId"
+ * - The closest parent `<label>`
+ *
+ * @param {HTMLElement} $input - The input
+ * @returns {HTMLElement} Associated legend or label, or null if no associated
+ *                        legend or label can be found
+ */
+ErrorSummary.prototype.getAssociatedLegendOrLabel = function ($input) {
+  var $fieldset = $input.closest('fieldset');
+
+  if ($fieldset) {
+    var legends = $fieldset.getElementsByTagName('legend');
+
+    if (legends.length) {
+      return legends[0]
+    }
+  }
+
+  return document.querySelector("label[for='" + $input.getAttribute('id') + "']") ||
+    $input.closest('label')
 };
 
 function Header ($module) {
@@ -1509,9 +2099,11 @@ Tabs.prototype.teardown = function () {
 
 Tabs.prototype.onHashChange = function (e) {
   var hash = window.location.hash;
-  if (!this.hasTab(hash)) {
+  var $tabWithHash = this.getTab(hash);
+  if (!$tabWithHash) {
     return
   }
+
   // Prevent changing the hash
   if (this.changingHash) {
     this.changingHash = false;
@@ -1520,15 +2112,10 @@ Tabs.prototype.onHashChange = function (e) {
 
   // Show either the active tab according to the URL's hash or the first tab
   var $previousTab = this.getCurrentTab();
-  var $activeTab = this.getTab(hash) || this.$tabs[0];
 
   this.hideTab($previousTab);
-  this.showTab($activeTab);
-  $activeTab.focus();
-};
-
-Tabs.prototype.hasTab = function (hash) {
-  return this.$module.querySelector(hash)
+  this.showTab($tabWithHash);
+  $tabWithHash.focus();
 };
 
 Tabs.prototype.hideTab = function ($tab) {
@@ -1542,7 +2129,7 @@ Tabs.prototype.showTab = function ($tab) {
 };
 
 Tabs.prototype.getTab = function (hash) {
-  return this.$module.querySelector('a[role="tab"][href="' + hash + '"]')
+  return this.$module.querySelector('.govuk-tabs__tab[href="' + hash + '"]')
 };
 
 Tabs.prototype.setAttributes = function ($tab) {
@@ -1655,16 +2242,18 @@ Tabs.prototype.hidePanel = function (tab) {
 
 Tabs.prototype.unhighlightTab = function ($tab) {
   $tab.setAttribute('aria-selected', 'false');
+  $tab.classList.remove('govuk-tabs__tab--selected');
   $tab.setAttribute('tabindex', '-1');
 };
 
 Tabs.prototype.highlightTab = function ($tab) {
   $tab.setAttribute('aria-selected', 'true');
+  $tab.classList.add('govuk-tabs__tab--selected');
   $tab.setAttribute('tabindex', '0');
 };
 
 Tabs.prototype.getCurrentTab = function () {
-  return this.$module.querySelector('[role=tab][aria-selected=true]')
+  return this.$module.querySelector('.govuk-tabs__tab--selected')
 };
 
 // this is because IE doesn't always return the actual value but a relative full path
@@ -1680,10 +2269,21 @@ function initAll () {
   // Find all buttons with [role=button] on the document to enhance.
   new Button(document).init();
 
+  // Find all global accordion components to enhance.
+  var $accordions = document.querySelectorAll('[data-module="accordion"]');
+  nodeListForEach($accordions, function ($accordion) {
+    new Accordion($accordion).init();
+  });
+
   // Find all global details elements to enhance.
   var $details = document.querySelectorAll('details');
   nodeListForEach($details, function ($detail) {
     new Details($detail).init();
+  });
+
+  var $characterCount = document.querySelectorAll('[data-module="character-count"]');
+  nodeListForEach($characterCount, function ($characterCount) {
+    new CharacterCount($characterCount).init();
   });
 
   var $checkboxes = document.querySelectorAll('[data-module="checkboxes"]');
@@ -1713,6 +2313,7 @@ function initAll () {
 exports.initAll = initAll;
 exports.Button = Button;
 exports.Details = Details;
+exports.CharacterCount = CharacterCount;
 exports.Checkboxes = Checkboxes;
 exports.ErrorSummary = ErrorSummary;
 exports.Header = Header;
