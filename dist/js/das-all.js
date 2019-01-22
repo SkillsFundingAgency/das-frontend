@@ -576,16 +576,6 @@ function SmoothScroll($module) {
 }
 
 
-SmoothScroll.prototype.init = function (event, properties) {
-    this.$anchorLinks.forEach(function(element) {
-        var anchor = document.querySelector(element.hash);
-
-        if (anchor != null) {
-            element.addEventListener('click', this.smoothScroll.bind(this, anchor, 500,'easeInOutQuart',null));
-        }
-    });
-};
-
 SmoothScroll.prototype.smoothScroll = function(destination, duration, easing, callback) {
 
     const easings = {
@@ -626,6 +616,18 @@ SmoothScroll.prototype.smoothScroll = function(destination, duration, easing, ca
     }
     scroll();
   };
+
+
+SmoothScroll.prototype.init = function (event, properties) {
+  var that = this;
+  this.$anchorLinks.forEach(function(element) {
+    var anchor = document.querySelector(element.hash);
+
+    if (anchor != null) {
+      element.addEventListener('click', that.smoothScroll.bind(this, anchor, 500,'easeInOutQuart',null));
+    }
+  });
+};
 
 function nodeListForEach$2(nodes, callback) {
   if (window.NodeList.prototype.forEach) {
