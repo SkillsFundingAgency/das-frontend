@@ -41,7 +41,7 @@
     left: 40px;
     right: 40px;
   }
-  @include media-query($from: desktop) {
+  @include media-query($from: tablet) {
     left: 80px;
     right: 80px;
   }
@@ -67,6 +67,9 @@
   display: block;
   clear: both;
   border: 1px solid rgba(255, 255, 255, .4);
+  @include media-query($from: 500px) {
+    clear: none;
+  }
 }
 
 .plyr--stopped {
