@@ -3,14 +3,14 @@ const gulp = require('gulp')
 const sass = require('gulp-sass');
 const concat = require('gulp-concat');
 const paths = require('../../config/paths.json')
-const sassOptions = require('../../config/sassOptions.js')
+const sassOptionsCampaign = require('../../config/sassOptionsCampaign.js')
 
 gulp.task('watch-campaign', () => {
   gulp.watch(paths.src.campaign, ['sass-campaign'])
     .on('change', (event) => {
       console.log(`File ${event.path} was ${event.type}, running tasks...`);
     });
-})
+});
 
 
 gulp.task('js-campaign', function() {
@@ -25,7 +25,7 @@ gulp.task('copy-plyr-js', () => {
 
 gulp.task('sass-campaign', () => gulp
   .src(paths.src.campaign)
-  .pipe(sass(sassOptions))
+  .pipe(sass(sassOptionsCampaign))
   .pipe(gulp.dest(paths.dist.campaign)));
 
 gulp.task('image-campaign', () => {
