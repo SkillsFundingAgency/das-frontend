@@ -611,6 +611,16 @@ SmoothScroll.prototype.smoothScroll = function(destination, duration, easing, ca
     scroll();
   };
 
+function Template(template, data) {
+    for (var key in data) {
+        if (data.hasOwnProperty(key)) {
+            var value = data[key];
+            template = template.replace('((' + key + '))', value);
+        }
+    }
+    return template;
+}
+
 //import GoogleMapsApi from './_googleMapsApi';
 
 
@@ -620,10 +630,18 @@ function GoogleMaps($module, $apiKey) {
     this.$gmapApiKey = $apiKey;
     this.$map = null;
 
-    this.$markers = null;
+    if(this.$module.dataset.lat != null && this.$module.dataset.lon != null){
+        this.$center = {lat: parseFloat(this.$module.dataset.lat),lon: parseFloat(this.$module.dataset.lon)};
+    }
+
+this.$distance = 5;
+
+    this.$markers = new Array();
     this.$markersData = null;
     this.$MarkerDataUrl = this.$module.dataset.markerdataurl;
     this.$markerClusterer = null;
+
+    this.$infoboxTemplate = this.$module.querySelector("[data-google-map-infobox-template]").innerHTML;
 }
 
 GoogleMaps.prototype.init = function (markers) {
@@ -635,11 +653,16 @@ GoogleMaps.prototype.init = function (markers) {
 
     this.$markersData = markers;
 
-    var center = new google.maps.LatLng(48.2, 16.3667);
+    
 
+    if (this.$center != null){
+        this.$center = new google.maps.LatLng(this.$center.lat, this.$center.lon);
+    } else{
+        this.$center =  new google.maps.LatLng(52.4387, 1.6478);
+    }
     // safe to start using the API now
     this.$map = new google.maps.Map(this.$module, {
-        center: center,
+        center: this.$center,
         scrollwheel: false,
         zoom: 10,
         maxZoom: 14,
@@ -654,6 +677,10 @@ GoogleMaps.prototype.init = function (markers) {
         this.GetResults();
     }
 
+    if (this.$distance != null){
+        this.addRadius(this.$distance);
+    }
+
 
 };
 
@@ -664,14 +691,15 @@ GoogleMaps.prototype.initMarkers = function (data) {
 
 };
 GoogleMaps.prototype.addRadius = function (distance) {
+
     var circ = new google.maps.Circle({
         strokeColor: "#111111",
         strokeOpacity: 0.8,
         strokeWeight: 2,
         fillColor: "#111111",
         fillOpacity: 0.35,
-        map: this.map,
-        center: this.center,
+        map: this.$map,
+        center: this.$center,
         radius: distance * 1609.0
     });
     this.$map.fitBounds(circ.getBounds());
@@ -709,35 +737,35 @@ GoogleMaps.prototype.setMarkersOnMap = function (markerData, enableInfobox) {
         this.setMarkerOnMap(markerData[i], enableInfobox);
     }
     // initialize MarkerClusterer        
-   // this.initMarkerClusterer();
+    this.initMarkerClusterer();
     // Resize Event will be triggered once after markers are set.
     google.maps.event.trigger(this.$map, 'resize');
 };
 GoogleMaps.prototype.setMarkerOnMap = function (currentMarkerData, enableInfobox) {
-    var _this = this;
     if (enableInfobox === void 0) { enableInfobox = true; }
     var markerObject = {
         position: new google.maps.LatLng(currentMarkerData.Location.Latitude, currentMarkerData.Location.Longitude),
         //  icon: icon,
         map: this.$map
     };
-    if (infoBox && enableInfobox) {
+    if (window.InfoBox) {
         markerObject['infobox'] = this.getInfoBox(currentMarkerData);
     }
     var marker = new google.maps.Marker(markerObject);
-    if (infoBox && enableInfobox) {
+    if (window.InfoBox) {
         // add on click handler to the marker itself
         // so it will open our infobox.
+        var self = this;
         marker.addListener('click', function () {
-            if (_this.openInfoBox) {
-                _this.openInfoBox.close();
-                if (_this.openInfoBox === marker.infobox) {
-                    _this.openInfoBox = null;
+            if (this.openInfoBox) {
+                this.openInfoBox.close();
+                if (this.openInfoBox === marker.infobox) {
+                    this.openInfoBox = null;
                     return;
                 }
             }
-            marker.infobox.open(_this.map, marker);
-            _this.openInfoBox = marker.infobox;
+            marker.infobox.open(self.$map, marker);
+            this.openInfoBox = marker.infobox;
         });
     }
     // add to controllers markers array.
@@ -754,17 +782,17 @@ GoogleMaps.prototype.getLatLngByPostcode = function (postcode) {
 // * @returns Instance of an InfoBox
 // */
 GoogleMaps.prototype.getInfoBox = function (markerData) {
-    var infoBoxTemplate = this.$(MapController.infoboxTemplate)[0].innerHTML.trim();
+    var infoBoxTemplate = this.$infoboxTemplate;
     var infoBoxTemplateData = {
         Title: markerData.Title,
         ShortDescription: markerData.ShortDescription,
         Url: markerData.VacancyUrl
     };
-    var currentInfoBox = new infoBox({
-        content: template(infoBoxTemplate, infoBoxTemplateData),
+    var currentInfoBox = new InfoBox({
+        content: Template(infoBoxTemplate, infoBoxTemplateData),
         disableAutoPan: false,
         maxWidth: 'auto',
-        pixelOffset: new google.maps.Size(-132, 20),
+        pixelOffset: new google.maps.Size(-132, -120),
         infoBoxClearance: new google.maps.Size(1, 1),
         closeBoxMargin: "5px 5px 2px 2px",
         closeBoxURL: "http://www.google.com/intl/en_us/mapfiles/close.gif"
@@ -792,7 +820,7 @@ GoogleMaps.prototype.GetResults = function () {
     request.onload = function () {
         if (this.status >= 200 && this.status < 400) {
             // Success! 
-            map.$markersData = JSON.parse(this.response);
+            map.$markersData = JSON.parse(this.response).Results;
             map.initMarkers(map.$markersData);
         } else {
             // We reached our target server, but it returned an error

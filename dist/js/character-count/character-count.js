@@ -661,178 +661,541 @@ if (detect) return
 
 (function(undefined) {
 
-  // Detection from https://raw.githubusercontent.com/Financial-Times/polyfill-service/1f3c09b402f65bf6e393f933a15ba63f1b86ef1f/packages/polyfill-library/polyfills/Element/prototype/matches/detect.js
-  var detect = (
-    'document' in this && "matches" in document.documentElement
-  );
+    // Detection from https://raw.githubusercontent.com/Financial-Times/polyfill-service/master/packages/polyfill-library/polyfills/DOMTokenList/detect.js
+    var detect = (
+      'DOMTokenList' in this && (function (x) {
+        return 'classList' in x ? !x.classList.toggle('x', false) && !x.className : true;
+      })(document.createElement('x'))
+    );
 
-  if (detect) return
+    if (detect) return
 
-  // Polyfill from https://raw.githubusercontent.com/Financial-Times/polyfill-service/1f3c09b402f65bf6e393f933a15ba63f1b86ef1f/packages/polyfill-library/polyfills/Element/prototype/matches/polyfill.js
-  Element.prototype.matches = Element.prototype.webkitMatchesSelector || Element.prototype.oMatchesSelector || Element.prototype.msMatchesSelector || Element.prototype.mozMatchesSelector || function matches(selector) {
-    var element = this;
-    var elements = (element.document || element.ownerDocument).querySelectorAll(selector);
-    var index = 0;
+    // Polyfill from https://raw.githubusercontent.com/Financial-Times/polyfill-service/master/packages/polyfill-library/polyfills/DOMTokenList/polyfill.js
+    (function (global) {
+      var nativeImpl = "DOMTokenList" in global && global.DOMTokenList;
 
-    while (elements[index] && elements[index] !== element) {
-      ++index;
-    }
+      if (
+          !nativeImpl ||
+          (
+            !!document.createElementNS &&
+            !!document.createElementNS('http://www.w3.org/2000/svg', 'svg') &&
+            !(document.createElementNS("http://www.w3.org/2000/svg", "svg").classList instanceof DOMTokenList)
+          )
+        ) {
+        global.DOMTokenList = (function() { // eslint-disable-line no-unused-vars
+          var dpSupport = true;
+          var defineGetter = function (object, name, fn, configurable) {
+            if (Object.defineProperty)
+              Object.defineProperty(object, name, {
+                configurable: false === dpSupport ? true : !!configurable,
+                get: fn
+              });
 
-    return !!elements[index];
-  };
+            else object.__defineGetter__(name, fn);
+          };
+
+          /** Ensure the browser allows Object.defineProperty to be used on native JavaScript objects. */
+          try {
+            defineGetter({}, "support");
+          }
+          catch (e) {
+            dpSupport = false;
+          }
+
+
+          var _DOMTokenList = function (el, prop) {
+            var that = this;
+            var tokens = [];
+            var tokenMap = {};
+            var length = 0;
+            var maxLength = 0;
+            var addIndexGetter = function (i) {
+              defineGetter(that, i, function () {
+                preop();
+                return tokens[i];
+              }, false);
+
+            };
+            var reindex = function () {
+
+              /** Define getter functions for array-like access to the tokenList's contents. */
+              if (length >= maxLength)
+                for (; maxLength < length; ++maxLength) {
+                  addIndexGetter(maxLength);
+                }
+            };
+
+            /** Helper function called at the start of each class method. Internal use only. */
+            var preop = function () {
+              var error;
+              var i;
+              var args = arguments;
+              var rSpace = /\s+/;
+
+              /** Validate the token/s passed to an instance method, if any. */
+              if (args.length)
+                for (i = 0; i < args.length; ++i)
+                  if (rSpace.test(args[i])) {
+                    error = new SyntaxError('String "' + args[i] + '" ' + "contains" + ' an invalid character');
+                    error.code = 5;
+                    error.name = "InvalidCharacterError";
+                    throw error;
+                  }
+
+
+              /** Split the new value apart by whitespace*/
+              if (typeof el[prop] === "object") {
+                tokens = ("" + el[prop].baseVal).replace(/^\s+|\s+$/g, "").split(rSpace);
+              } else {
+                tokens = ("" + el[prop]).replace(/^\s+|\s+$/g, "").split(rSpace);
+              }
+
+              /** Avoid treating blank strings as single-item token lists */
+              if ("" === tokens[0]) tokens = [];
+
+              /** Repopulate the internal token lists */
+              tokenMap = {};
+              for (i = 0; i < tokens.length; ++i)
+                tokenMap[tokens[i]] = true;
+              length = tokens.length;
+              reindex();
+            };
+
+            /** Populate our internal token list if the targeted attribute of the subject element isn't empty. */
+            preop();
+
+            /** Return the number of tokens in the underlying string. Read-only. */
+            defineGetter(that, "length", function () {
+              preop();
+              return length;
+            });
+
+            /** Override the default toString/toLocaleString methods to return a space-delimited list of tokens when typecast. */
+            that.toLocaleString =
+              that.toString = function () {
+                preop();
+                return tokens.join(" ");
+              };
+
+            that.item = function (idx) {
+              preop();
+              return tokens[idx];
+            };
+
+            that.contains = function (token) {
+              preop();
+              return !!tokenMap[token];
+            };
+
+            that.add = function () {
+              preop.apply(that, args = arguments);
+
+              for (var args, token, i = 0, l = args.length; i < l; ++i) {
+                token = args[i];
+                if (!tokenMap[token]) {
+                  tokens.push(token);
+                  tokenMap[token] = true;
+                }
+              }
+
+              /** Update the targeted attribute of the attached element if the token list's changed. */
+              if (length !== tokens.length) {
+                length = tokens.length >>> 0;
+                if (typeof el[prop] === "object") {
+                  el[prop].baseVal = tokens.join(" ");
+                } else {
+                  el[prop] = tokens.join(" ");
+                }
+                reindex();
+              }
+            };
+
+            that.remove = function () {
+              preop.apply(that, args = arguments);
+
+              /** Build a hash of token names to compare against when recollecting our token list. */
+              for (var args, ignore = {}, i = 0, t = []; i < args.length; ++i) {
+                ignore[args[i]] = true;
+                delete tokenMap[args[i]];
+              }
+
+              /** Run through our tokens list and reassign only those that aren't defined in the hash declared above. */
+              for (i = 0; i < tokens.length; ++i)
+                if (!ignore[tokens[i]]) t.push(tokens[i]);
+
+              tokens = t;
+              length = t.length >>> 0;
+
+              /** Update the targeted attribute of the attached element. */
+              if (typeof el[prop] === "object") {
+                el[prop].baseVal = tokens.join(" ");
+              } else {
+                el[prop] = tokens.join(" ");
+              }
+              reindex();
+            };
+
+            that.toggle = function (token, force) {
+              preop.apply(that, [token]);
+
+              /** Token state's being forced. */
+              if (undefined !== force) {
+                if (force) {
+                  that.add(token);
+                  return true;
+                } else {
+                  that.remove(token);
+                  return false;
+                }
+              }
+
+              /** Token already exists in tokenList. Remove it, and return FALSE. */
+              if (tokenMap[token]) {
+                that.remove(token);
+                return false;
+              }
+
+              /** Otherwise, add the token and return TRUE. */
+              that.add(token);
+              return true;
+            };
+
+            return that;
+          };
+
+          return _DOMTokenList;
+        }());
+      }
+
+      // Add second argument to native DOMTokenList.toggle() if necessary
+      (function () {
+        var e = document.createElement('span');
+        if (!('classList' in e)) return;
+        e.classList.toggle('x', false);
+        if (!e.classList.contains('x')) return;
+        e.classList.constructor.prototype.toggle = function toggle(token /*, force*/) {
+          var force = arguments[1];
+          if (force === undefined) {
+            var add = !this.contains(token);
+            this[add ? 'add' : 'remove'](token);
+            return add;
+          }
+          force = !!force;
+          this[force ? 'add' : 'remove'](token);
+          return force;
+        };
+      }());
+
+      // Add multiple arguments to native DOMTokenList.add() if necessary
+      (function () {
+        var e = document.createElement('span');
+        if (!('classList' in e)) return;
+        e.classList.add('a', 'b');
+        if (e.classList.contains('b')) return;
+        var native = e.classList.constructor.prototype.add;
+        e.classList.constructor.prototype.add = function () {
+          var args = arguments;
+          var l = arguments.length;
+          for (var i = 0; i < l; i++) {
+            native.call(this, args[i]);
+          }
+        };
+      }());
+
+      // Add multiple arguments to native DOMTokenList.remove() if necessary
+      (function () {
+        var e = document.createElement('span');
+        if (!('classList' in e)) return;
+        e.classList.add('a');
+        e.classList.add('b');
+        e.classList.remove('a', 'b');
+        if (!e.classList.contains('b')) return;
+        var native = e.classList.constructor.prototype.remove;
+        e.classList.constructor.prototype.remove = function () {
+          var args = arguments;
+          var l = arguments.length;
+          for (var i = 0; i < l; i++) {
+            native.call(this, args[i]);
+          }
+        };
+      }());
+
+    }(this));
 
 }).call('object' === typeof window && window || 'object' === typeof self && self || 'object' === typeof global && global || {});
 
 (function(undefined) {
 
-  // Detection from https://raw.githubusercontent.com/Financial-Times/polyfill-service/1f3c09b402f65bf6e393f933a15ba63f1b86ef1f/packages/polyfill-library/polyfills/Element/prototype/closest/detect.js
-  var detect = (
-    'document' in this && "closest" in document.documentElement
-  );
+    // Detection from https://raw.githubusercontent.com/Financial-Times/polyfill-service/8717a9e04ac7aff99b4980fbedead98036b0929a/packages/polyfill-library/polyfills/Element/prototype/classList/detect.js
+    var detect = (
+      'document' in this && "classList" in document.documentElement && 'Element' in this && 'classList' in Element.prototype && (function () {
+        var e = document.createElement('span');
+        e.classList.add('a', 'b');
+        return e.classList.contains('b');
+      }())
+    );
 
-  if (detect) return
+    if (detect) return
 
-    // Polyfill from https://raw.githubusercontent.com/Financial-Times/polyfill-service/1f3c09b402f65bf6e393f933a15ba63f1b86ef1f/packages/polyfill-library/polyfills/Element/prototype/closest/polyfill.js
-  Element.prototype.closest = function closest(selector) {
-    var node = this;
+    // Polyfill from https://cdn.polyfill.io/v2/polyfill.js?features=Element.prototype.classList&flags=always
+    (function (global) {
+      var dpSupport = true;
+      var defineGetter = function (object, name, fn, configurable) {
+        if (Object.defineProperty)
+          Object.defineProperty(object, name, {
+            configurable: false === dpSupport ? true : !!configurable,
+            get: fn
+          });
 
-    while (node) {
-      if (node.matches(selector)) return node;
-      else node = 'SVGElement' in window && node instanceof SVGElement ? node.parentNode : node.parentElement;
-    }
+        else object.__defineGetter__(name, fn);
+      };
+      /** Ensure the browser allows Object.defineProperty to be used on native JavaScript objects. */
+      try {
+        defineGetter({}, "support");
+      }
+      catch (e) {
+        dpSupport = false;
+      }
+      /** Polyfills a property with a DOMTokenList */
+      var addProp = function (o, name, attr) {
 
-    return null;
-  };
+        defineGetter(o.prototype, name, function () {
+          var tokenList;
+
+          var THIS = this,
+
+          /** Prevent this from firing twice for some reason. What the hell, IE. */
+          gibberishProperty = "__defineGetter__" + "DEFINE_PROPERTY" + name;
+          if(THIS[gibberishProperty]) return tokenList;
+          THIS[gibberishProperty] = true;
+
+          /**
+           * IE8 can't define properties on native JavaScript objects, so we'll use a dumb hack instead.
+           *
+           * What this is doing is creating a dummy element ("reflection") inside a detached phantom node ("mirror")
+           * that serves as the target of Object.defineProperty instead. While we could simply use the subject HTML
+           * element instead, this would conflict with element types which use indexed properties (such as forms and
+           * select lists).
+           */
+          if (false === dpSupport) {
+
+            var visage;
+            var mirror = addProp.mirror || document.createElement("div");
+            var reflections = mirror.childNodes;
+            var l = reflections.length;
+
+            for (var i = 0; i < l; ++i)
+              if (reflections[i]._R === THIS) {
+                visage = reflections[i];
+                break;
+              }
+
+            /** Couldn't find an element's reflection inside the mirror. Materialise one. */
+            visage || (visage = mirror.appendChild(document.createElement("div")));
+
+            tokenList = DOMTokenList.call(visage, THIS, attr);
+          } else tokenList = new DOMTokenList(THIS, attr);
+
+          defineGetter(THIS, name, function () {
+            return tokenList;
+          });
+          delete THIS[gibberishProperty];
+
+          return tokenList;
+        }, true);
+      };
+
+      addProp(global.Element, "classList", "className");
+      addProp(global.HTMLElement, "classList", "className");
+      addProp(global.HTMLLinkElement, "relList", "rel");
+      addProp(global.HTMLAnchorElement, "relList", "rel");
+      addProp(global.HTMLAreaElement, "relList", "rel");
+    }(this));
 
 }).call('object' === typeof window && window || 'object' === typeof self && self || 'object' === typeof global && global || {});
 
-function ErrorSummary ($module) {
+function CharacterCount ($module) {
   this.$module = $module;
+  this.$textarea = $module.querySelector('.js-character-count');
 }
 
-ErrorSummary.prototype.init = function () {
+CharacterCount.prototype.defaults = {
+  characterCountAttribute: 'data-maxlength',
+  wordCountAttribute: 'data-maxwords'
+};
+
+// Initialize component
+CharacterCount.prototype.init = function () {
+  // Check for module
   var $module = this.$module;
-  if (!$module) {
+  var $textarea = this.$textarea;
+  if (!$textarea) {
     return
   }
-  window.addEventListener('load', function () {
-    $module.focus();
-  });
 
-  $module.addEventListener('click', this.handleClick.bind(this));
-};
+  // Read options set using dataset ('data-' values)
+  this.options = this.getDataset($module);
 
-/**
-* Click event handler
-*
-* @param {MouseEvent} event - Click event
-*/
-ErrorSummary.prototype.handleClick = function (event) {
-  var target = event.target;
-  if (this.focusTarget(target)) {
-    event.preventDefault();
+  // Determine the limit attribute (characters or words)
+  var countAttribute = this.defaults.characterCountAttribute;
+  if (this.options.maxwords) {
+    countAttribute = this.defaults.wordCountAttribute;
+  }
+
+  // Save the element limit
+  this.maxLength = $module.getAttribute(countAttribute);
+
+  // Check for limit
+  if (!this.maxLength) {
+    return
+  }
+
+  // Generate and reference message
+  var boundCreateCountMessage = this.createCountMessage.bind(this);
+  this.countMessage = boundCreateCountMessage();
+
+  // If there's a maximum length defined and the count message exists
+  if (this.countMessage) {
+    // Remove hard limit if set
+    $module.removeAttribute('maxlength');
+
+    // Bind event changes to the textarea
+    var boundChangeEvents = this.bindChangeEvents.bind(this);
+    boundChangeEvents();
+
+    // Update count message
+    var boundUpdateCountMessage = this.updateCountMessage.bind(this);
+    boundUpdateCountMessage();
   }
 };
 
-/**
- * Focus the target element
- *
- * By default, the browser will scroll the target into view. Because our labels
- * or legends appear above the input, this means the user will be presented with
- * an input without any context, as the label or legend will be off the top of
- * the screen.
- *
- * Manually handling the click event, scrolling the question into view and then
- * focussing the element solves this.
- *
- * This also results in the label and/or legend being announced correctly in
- * NVDA (as tested in 2018.3.2) - without this only the field type is announced
- * (e.g. "Edit, has autocomplete").
- *
- * @param {HTMLElement} $target - Event target
- * @returns {boolean} True if the target was able to be focussed
- */
-ErrorSummary.prototype.focusTarget = function ($target) {
-  // If the element that was clicked was not a link, return early
-  if ($target.tagName !== 'A' || $target.href === false) {
-    return false
-  }
-
-  var inputId = this.getFragmentFromUrl($target.href);
-  var $input = document.getElementById(inputId);
-  if (!$input) {
-    return false
-  }
-
-  var $legendOrLabel = this.getAssociatedLegendOrLabel($input);
-  if (!$legendOrLabel) {
-    return false
-  }
-
-  // Prefer using the history API where possible, as updating
-  // window.location.hash causes the viewport to jump to the input briefly
-  // before then scrolling to the label/legend in IE10, IE11 and Edge (as tested
-  // in Edge 17).
-  if (window.history.pushState) {
-    window.history.pushState(null, null, '#' + inputId);
-  } else {
-    window.location.hash = inputId;
-  }
-
-  // Scroll the legend or label into view *before* calling focus on the input to
-  // avoid extra scrolling in browsers that don't support `preventScroll` (which
-  // at time of writing is most of them...)
-  $legendOrLabel.scrollIntoView();
-  $input.focus({ preventScroll: true });
-
-  return true
-};
-
-/**
- * Get fragment from URL
- *
- * Extract the fragment (everything after the hash) from a URL, but not including
- * the hash.
- *
- * @param {string} url - URL
- * @returns {string} Fragment from URL, without the hash
- */
-ErrorSummary.prototype.getFragmentFromUrl = function (url) {
-  if (url.indexOf('#') === -1) {
-    return false
-  }
-
-  return url.split('#').pop()
-};
-
-/**
- * Get associated legend or label
- *
- * Returns the first element that exists from this list:
- *
- * - The `<legend>` associated with the closest `<fieldset>` ancestor
- * - The first `<label>` that is associated with the input using for="inputId"
- * - The closest parent `<label>`
- *
- * @param {HTMLElement} $input - The input
- * @returns {HTMLElement} Associated legend or label, or null if no associated
- *                        legend or label can be found
- */
-ErrorSummary.prototype.getAssociatedLegendOrLabel = function ($input) {
-  var $fieldset = $input.closest('fieldset');
-
-  if ($fieldset) {
-    var legends = $fieldset.getElementsByTagName('legend');
-
-    if (legends.length) {
-      return legends[0]
+// Read data attributes
+CharacterCount.prototype.getDataset = function (element) {
+  var dataset = {};
+  var attributes = element.attributes;
+  if (attributes) {
+    for (var i = 0; i < attributes.length; i++) {
+      var attribute = attributes[i];
+      var match = attribute.name.match(/^data-(.+)/);
+      if (match) {
+        dataset[match[1]] = attribute.value;
+      }
     }
   }
-
-  return document.querySelector("label[for='" + $input.getAttribute('id') + "']") ||
-    $input.closest('label')
+  return dataset
 };
 
-return ErrorSummary;
+// Counts characters or words in text
+CharacterCount.prototype.count = function (text) {
+  var length;
+  if (this.options.maxwords) {
+    var tokens = text.match(/\S+/g) || []; // Matches consecutive non-whitespace chars
+    length = tokens.length;
+  } else {
+    length = text.length;
+  }
+  return length
+};
+
+// Generate count message and bind it to the input
+// returns reference to the generated element
+CharacterCount.prototype.createCountMessage = function () {
+  var countElement = this.$textarea;
+  var elementId = countElement.id;
+  // Check for existing info count message
+  var countMessage = document.getElementById(elementId + '-info');
+  // If there is no existing info count message we add one right after the field
+  if (elementId && !countMessage) {
+    countElement.insertAdjacentHTML('afterend', '<span id="' + elementId + '-info" class="govuk-hint govuk-character-count__message" aria-live="polite"></span>');
+    this.describedBy = countElement.getAttribute('aria-describedby');
+    this.describedByInfo = this.describedBy + ' ' + elementId + '-info';
+    countElement.setAttribute('aria-describedby', this.describedByInfo);
+    countMessage = document.getElementById(elementId + '-info');
+  } else {
+  // If there is an existing info count message we move it right after the field
+    countElement.insertAdjacentElement('afterend', countMessage);
+  }
+  return countMessage
+};
+
+// Bind input propertychange to the elements and update based on the change
+CharacterCount.prototype.bindChangeEvents = function () {
+  var $textarea = this.$textarea;
+  $textarea.addEventListener('keyup', this.checkIfValueChanged.bind(this));
+
+  // Bind focus/blur events to start/stop polling
+  $textarea.addEventListener('focus', this.handleFocus.bind(this));
+  $textarea.addEventListener('blur', this.handleBlur.bind(this));
+};
+
+// Speech recognition software such as Dragon NaturallySpeaking will modify the
+// fields by directly changing its `value`. These changes don't trigger events
+// in JavaScript, so we need to poll to handle when and if they occur.
+CharacterCount.prototype.checkIfValueChanged = function () {
+  if (!this.$textarea.oldValue) this.$textarea.oldValue = '';
+  if (this.$textarea.value !== this.$textarea.oldValue) {
+    this.$textarea.oldValue = this.$textarea.value;
+    var boundUpdateCountMessage = this.updateCountMessage.bind(this);
+    boundUpdateCountMessage();
+  }
+};
+
+// Update message box
+CharacterCount.prototype.updateCountMessage = function () {
+  var countElement = this.$textarea;
+  var options = this.options;
+  var countMessage = this.countMessage;
+
+  // Determine the remaining number of characters/words
+  var currentLength = this.count(countElement.value);
+  var maxLength = this.maxLength;
+  var remainingNumber = maxLength - currentLength;
+
+  // Set threshold if presented in options
+  var thresholdPercent = options.threshold ? options.threshold : 0;
+  var thresholdValue = maxLength * thresholdPercent / 100;
+  if (thresholdValue > currentLength) {
+    countMessage.classList.add('govuk-character-count__message--disabled');
+  } else {
+    countMessage.classList.remove('govuk-character-count__message--disabled');
+  }
+
+  // Update styles
+  if (remainingNumber < 0) {
+    countElement.classList.add('govuk-textarea--error');
+    countMessage.classList.remove('govuk-hint');
+    countMessage.classList.add('govuk-error-message');
+  } else {
+    countElement.classList.remove('govuk-textarea--error');
+    countMessage.classList.remove('govuk-error-message');
+    countMessage.classList.add('govuk-hint');
+  }
+
+  // Update message
+  var charVerb = 'remaining';
+  var charNoun = 'character';
+  var displayNumber = remainingNumber;
+  if (options.maxwords) {
+    charNoun = 'word';
+  }
+  charNoun = charNoun + ((remainingNumber === -1 || remainingNumber === 1) ? '' : 's');
+
+  charVerb = (remainingNumber < 0) ? 'too many' : 'remaining';
+  displayNumber = Math.abs(remainingNumber);
+
+  countMessage.innerHTML = 'You have ' + displayNumber + ' ' + charNoun + ' ' + charVerb;
+};
+
+CharacterCount.prototype.handleFocus = function () {
+  // Check if value changed on focus
+  this.valueChecker = setInterval(this.checkIfValueChanged.bind(this), 1000);
+};
+
+CharacterCount.prototype.handleBlur = function () {
+  // Cancel value checking on blur
+  clearInterval(this.valueChecker);
+};
+
+return CharacterCount;
 
 })));

@@ -60,30 +60,34 @@
                                     </div>
                                 </div>
                                 <div class="grid-column-one-third">
-                                    <div class="form-group">
-                                        <label class="form-label-bold" for="Distance">Distance</label>
-                                        <select class="form-control" data-val="true" data-val-required="The Distance field is required."
-                                            id="Distance" name="Distance">
-                                            <option value="2">2 miles</option>
-                                            <option selected="selected" value="5">5 miles</option>
-                                            <option value="10">10 miles</option>
-                                            <option value="15">15 miles</option>
-                                            <option value="20">20 miles</option>
-                                            <option value="30">30 miles</option>
-                                            <option value="40">40 miles</option>
-                                        </select>
+                                    <div class="cta-faa__content">
+                                        <div class="form-group">
+                                            <label class="form-label-bold" for="Distance">Distance</label>
+                                            <select class="form-control" data-val="true" data-val-required="The Distance field is required."
+                                                id="Distance" name="Distance">
+                                                <option value="2">2 miles</option>
+                                                <option selected="selected" value="5">5 miles</option>
+                                                <option value="10">10 miles</option>
+                                                <option value="15">15 miles</option>
+                                                <option value="20">20 miles</option>
+                                                <option value="30">30 miles</option>
+                                                <option value="40">40 miles</option>
+                                            </select>
 
-                                        <span class="text-danger field-validation-valid" data-valmsg-for="Distance"
-                                            data-valmsg-replace="true"></span>
+                                            <span class="text-danger field-validation-valid" data-valmsg-for="Distance"
+                                                data-valmsg-replace="true"></span>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="grid-column-one-third">
-                                    <div class="form-group">
-                                        <input type="submit" value="Update results" class="button">
+                                    <div class="cta-faa__content">
+                                        <div class="form-group">
+                                            <input type="submit" value="Update results" class="button">
+                                        </div>
                                     </div>
                                 </div>
                             </section>
-                           <input id="Latitude" type="hidden" value="52.39967">
+                            <input id="Latitude" type="hidden" value="52.39967">
                             <input id="Longitude" type="hidden" value="-0.535045">
                             <input id="Postcode" type="hidden" value="nn144tn">
                             <input id="Distance" type="hidden" value="5">
@@ -92,9 +96,10 @@
                         <div class="grid-row">
                             <div class="column-full">
                                 <h1 class="heading-l">Your top 10 results...</h1>
-                                <ol id="vacancy-search-results" class="search-results-list" data-module="searchResults" data-form-id="search-results-filter" data-map-id="mapDev">
+                                <ol id="vacancy-search-results" class="search-results-list" data-form-id="search-results-filter"
+                                    data-map-id="mapDev">
                                     <li class="search-result" data-id="1488258" data-lat="52.352247" data-lon="-0.54626">
-                                        <h2 class="heading-medium">
+                                        <h2 class="heading-m">
                                             <a href="https://www.findapprenticeship.service.gov.uk/apprenticeship/reference/1488258"
                                                 target="_blank">Customer service practitioner</a>
                                         </h2>
@@ -110,7 +115,7 @@
                                         </p>
                                         <div class="grid-row">
                                             <div class="grid-column-one-half">
-                                                <ul class="list vacancy-details-list">
+                                                <ul class="list">
                                                     <li data-show="DisplayDistance">
                                                         <span class="bold">Distance:</span> <span id="distance-value">3.31</span>
                                                         miles <br>
@@ -147,7 +152,7 @@
 
                                     </li>
                                     <li class="search-result" data-id="1488254" data-lat="52.352247" data-lon="-0.54626">
-                                        <h2 class="heading-medium">
+                                        <h2 class="heading-m">
                                             <a href="https://www.findapprenticeship.service.gov.uk/apprenticeship/reference/1488254"
                                                 target="_blank">Hospitality team member</a>
                                         </h2>
@@ -208,24 +213,25 @@
                             </div>
                         </div>
 
-                        <div data-google-map-infobox-template="">
-                            <div class="infobox_container">
-                                <div class="arrow-up"></div>
-                                <div class="infobox">
-                                    <h1 class="heading-small">{{Title}}</h1>
-                                    <p>{{ShortDescription}}</p>
-                                    <img height="14px" src="https://www.findapprenticeship.service.gov.uk/Content/_assets/img/gov.uk_logotype_crown_invert_trans.png">
-                                    <a href="{{Url}}" target="_blank">View more details on gov.uk site</a>
-                                </div>
-                            </div>
-                        </div>
                     </div>
                 </div>
                 <div class="grid-column-one-third">
                     <div class="sidebar">
                         <div class="sidebar__hero">
-                            <div id="mapDev" class="sidebar__hero-image">
+                            <div id="mapDev" class="sidebar__hero-image" style="height:680px;" data-module="googleMaps"
+                                data-markerdataurl="/campaign/json/searchResults" data-lat="52.3996" data-lon="-0.536041">
 
+                                <div data-google-map-infobox-template="">
+                                    <div class="infobox_container">
+                                        <div class="arrow-up"></div>
+                                        <div class="infobox">
+                                            <h1 class="heading-small">((Title))</h1>
+                                            <p>((ShortDescription))</p>
+                                            <img height="14px" src="https://www.findapprenticeship.service.gov.uk/Content/_assets/img/gov.uk_logotype_crown_invert_trans.png">
+                                            <a href="((Url))" target="_blank">View more details on gov.uk site</a>
+                                        </div>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                         <div class="trimmer">
@@ -256,7 +262,9 @@
 
     </div>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCIhjmd9QkQXP_s9nULNsMRkPJgT8tv4_8" type="text/javascript"></script>
-    <script src="https://raw.githubusercontent.com/googlemaps/js-marker-clusterer/gh-pages/src/markerclusterer.js"></script>
+    <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
+    <script src="/dist/campaign/js/infobox.js"></script>
+
     <script src="/dist/campaign/js/app.min.js"></script>
     <script src="/dist/js/das-all.js"></script>
     <script>
