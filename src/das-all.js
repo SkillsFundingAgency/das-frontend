@@ -52,7 +52,7 @@ function initAll() {
       $videoPlayer.classList.add('js-video-player__ready');
     });
 
-    if (window.google.maps != null) {
+    if (window.google != null && window.google.maps != null) {
       var $googleMaps = document.querySelectorAll('[data-module="googleMaps"]')
       var $apiKey = 'AIzaSyCIhjmd9QkQXP_s9nULNsMRkPJgT8tv4_8';
       nodeListForEach($googleMaps, function ($map) {
