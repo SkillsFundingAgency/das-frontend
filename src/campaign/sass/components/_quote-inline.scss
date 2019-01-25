@@ -1,0 +1,66 @@
+.quote-inline {
+  @include typography-common();
+  margin: 20px 0;
+  @include media-query($from: desktop) {
+    clear: both;
+    float: left;
+    width: 45%;
+    margin: 10px 30px 10px 0;
+    &.quote-inline--right-aligned  {
+      float: right;
+      margin-left: 30px;
+      margin-right: 0;
+    }
+  }
+}
+
+.quote-inline__quote {
+  margin: 0;
+  font-size: 24px;
+  font-weight: $font-weight-bold;
+  color: $black;
+  margin-bottom: 1em;
+  &:before,
+  &:after {
+    width: 48px;
+    height: 48px;
+    content: '';
+    display: inline-block;
+    position: relative;
+    background-image: url("../images/icon-quote.svg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    margin-bottom: -.5em;
+    .quote-inline--apprentice & {
+      background-image: url("../images/icon-quote-blue.svg");
+    }
+    .quote-inline--employer & {
+      background-image: url("../images/icon-quote-yellow.svg");
+    }
+  }
+  &:after {
+    margin-bottom: -1em;
+    transform: rotate(180deg);
+  }
+}
+
+.quote-inline__cite {
+  text-transform: uppercase;
+  font-size: 16px;
+  color: $black;
+  font-weight: $font-weight-bold;
+}
+
+.quote-inline__cite-person {
+  display: block;
+  .quote-inline--apprentice & {
+    color: $apprentice;
+  }
+  .quote-inline--employer & {
+    color: $employer;
+  }
+}
+
+.quote-inline__cite-source {
+
+}

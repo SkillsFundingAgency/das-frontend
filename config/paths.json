@@ -1,20 +1,21 @@
 {
   "src": {
     "default": "./src/sass/**/*.scss",
+    "defaultJs": "./src/js/*.js",
     "legacy": "./src/legacy/sass/**/*.scss",
+    "legacyJs": "./src/legacy/javascript/*.js",
     "campaign": "./src/campaign/sass/**/*.scss",
     "campaignJs": "./src/campaign/javascript/*.js",
     "campaignImages": "./src/campaign/images/**/*",
-    "legacyJs": "./src/legacy/javascript/*.js",
     "dasJs": "./src/das-all.js"
   },
   "dist": {
     "default": "./dist/css/",
     "defaultJs": "./dist/js/",
     "legacy": "./dist/legacy/css/",
+    "legacyJs": "./dist/legacy/js",
     "campaign": "./dist/campaign/css/",
     "campaignJs": "./dist/campaign/js",
-    "campaignImages": "./dist/campaign/images/",
-    "legacyJs": "./dist/legacy/js"
+    "campaignImages": "./dist/campaign/images/"
   }
 }

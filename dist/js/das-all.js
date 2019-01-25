@@ -444,8 +444,9 @@ function VideoPlayer($module, $gtmDataLayer) {
     this.$videoUrl = this.$module.dataset.videourl;
     this.$player = null;
     this.$playerElement = null;
+    this.$videoWrap = null;
     this.$playerClass = this.$module.dataset.playerclass;
-    this.$videoPlayerTemplate = '<div class="video-player plyr__video-embed js-player visually-hidden" id="{videoPlayerId}"><div class="video-player--inner-wrap"><iframe src="{videoUrl}" allowfullscreen allowtransparency allow="autoplay"></iframe></div></div>';
+    this.$videoPlayerTemplate = '<div class="video-player__wrap"><a href="#" class="video-player__close" id="close-{videoPlayerId}" tabindex="0">Close</a><div class="video-player plyr__video-embed js-player visually-hidden" id="{videoPlayerId}"><div class="video-player--inner-wrap"><iframe src="{videoUrl}" allowfullscreen allowtransparency allow="autoplay"></iframe></div></div></div>';
 
     this.$trackingEnabled = $gtmDataLayer != null;
     this.$gtmDataLayer = $gtmDataLayer;
@@ -465,13 +466,14 @@ VideoPlayer.prototype.init = function () {
 
     this.appendPlayer();
     this.$playerElement = document.getElementById(this.$videoPlayerId);
+    this.$videoWrap = this.$playerElement.parentNode;
 
     if (this.$playerClass != null) {
-        this.$playerElement.classList.add(this.$playerClass);
+        this.$videoWrap.classList.add(this.$playerClass);
     }
 
     this.$player = new Plyr(this.$playerElement, {
-        fullscreen: { enabled: true, iosNative: true }
+        fullscreen: { enabled: true }
     });
 
     var event = 'click';
@@ -481,8 +483,8 @@ VideoPlayer.prototype.init = function () {
 
     this.$module.addEventListener(event, this.play.bind(this));
 
-    //this.$closeButton = this.$playerElement.querySelector('.video-player__close');
-    //this.$closeButton.addEventListener('click', this.close.bind(this));
+    this.$closeButton = document.getElementById('close-' + this.$videoPlayerId);
+    this.$closeButton.addEventListener('click', this.close.bind(this));
 
     this.$module.classList.remove('visually-hidden');
 
@@ -494,19 +496,32 @@ VideoPlayer.prototype.init = function () {
 };
 
 VideoPlayer.prototype.appendPlayer = function () {
-    var playerHtml = this.$videoPlayerTemplate.replace('{videoPlayerId}', this.$videoPlayerId).replace('{videoUrl}', this.$videoUrl);
-    this.$module.insertAdjacentHTML('afterend', playerHtml);
+    var playerHtml = this.$videoPlayerTemplate.replace(/{videoPlayerId}/g, this.$videoPlayerId).replace('{videoUrl}', this.$videoUrl);
+    window.document.body.insertAdjacentHTML('beforeend', playerHtml);
 };
 
 VideoPlayer.prototype.close = function (event) {
+    this.$videoWrap.classList.remove('video-player__playing');
     this.$module.classList.remove('js-video-player__playing');
     this.$player.stop();
     event.preventDefault();
 };
 
 VideoPlayer.prototype.play = function (event) {
+    var that = this;
+    this.$videoWrap.classList.add('video-player__playing');
     this.$module.classList.add('js-video-player__playing');
     this.$player.play();
+
+    window.addEventListener('keydown', function(e){
+        if((e.key=='Escape'||e.key=='Esc')){
+            that.close(e);
+            e.preventDefault();
+            return false;
+        }
+    }, true);
+
+    this.$closeButton.focus();
     event.preventDefault();
 };
 
@@ -560,16 +575,6 @@ function SmoothScroll($module) {
 }
 
 
-SmoothScroll.prototype.init = function (event, properties) {
-    this.$anchorLinks.forEach(function(element) {
-        var anchor = document.querySelector(element.hash);
-
-        if (anchor != null) {
-            element.addEventListener('click', this.smoothScroll.bind(this, anchor, 500,'easeInOutQuart',null));
-        }
-    });
-};
-
 SmoothScroll.prototype.smoothScroll = function(destination, duration, easing, callback) {
 
     const easings = {
@@ -610,6 +615,18 @@ SmoothScroll.prototype.smoothScroll = function(destination, duration, easing, ca
     }
     scroll();
   };
+
+
+SmoothScroll.prototype.init = function (event, properties) {
+  var that = this;
+  this.$anchorLinks.forEach(function(element) {
+    var anchor = document.querySelector(element.hash);
+
+    if (anchor != null) {
+      element.addEventListener('click', that.smoothScroll.bind(this, anchor, 500,'easeInOutQuart',null));
+    }
+  });
+};
 
 function Template(template, data) {
     for (var key in data) {
