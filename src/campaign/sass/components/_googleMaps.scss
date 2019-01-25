@@ -1,0 +1,15 @@
+.infobox {
+  background:#fff;
+  height: auto;
+  width: 300px; 
+  font-size:17px;
+  padding:12px;
+}
+
+.infobox > a {
+  font-size: 14px;
+}
+
+[data-google-map-infobox-template] {
+  display: none;
+}

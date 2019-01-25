@@ -1,0 +1,22 @@
+{% from "../button/macro.njk" import dasButton %}
+
+<div id="mapDev" data-module="googleMaps" style="height:500px; width:100%" data-markerdataurl="/campaign/json/searchResults"
+    data-lat="52.3996" data-lon="-0.536041">
+
+    <div data-google-map-infobox-template="">
+        <div class="infobox_container">
+            <div class="arrow-up"></div>
+            <div class="infobox">
+                <h1 class="heading-small">((Title))</h1>
+                <p>((ShortDescription))</p>
+                <img height="14px" src="https://www.findapprenticeship.service.gov.uk/Content/_assets/img/gov.uk_logotype_crown_invert_trans.png">
+                <a href="((Url))" target="_blank">View more details on gov.uk site</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCIhjmd9QkQXP_s9nULNsMRkPJgT8tv4_8" type="text/javascript"></script>
+<script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
+<script src="/dist/campaign/js/infobox.js"></script>
+

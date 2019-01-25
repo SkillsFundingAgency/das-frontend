@@ -3,6 +3,8 @@ import Navigation from './components/navigation/_navigation'
 import CookieBanner from './components/cookieBanner/_cookieBanner'
 import VideoPlayer from './components/video-player/videoplayer'
 import SmoothScroll from './components/smoothScroll/_smoothScroll'
+import GoogleMaps from './components/googleMaps/_googleMaps'
+import SearchResults from './components/SearchResults/_searchResults'
 
 function nodeListForEach(nodes, callback) {
   if (window.NodeList.prototype.forEach) {
@@ -42,9 +44,24 @@ function initAll() {
     new VideoPlayer($videoPlayer,$gtmDataLayer).init();
   });
 
+
+
+
   window.onload = function() {
     nodeListForEach($videoPlayer,function ($videoPlayer) {
       $videoPlayer.classList.add('js-video-player__ready');
+    });
+
+    var $googleMaps = document.querySelectorAll('[data-module="googleMaps"]')
+    var $apiKey = 'AIzaSyCIhjmd9QkQXP_s9nULNsMRkPJgT8tv4_8';
+    nodeListForEach($googleMaps,function ($map) {
+      new GoogleMaps($map,$apiKey).init();
+    });
+  
+    var $searchResults = document.querySelectorAll('[data-module="searchResults"]')
+    
+    nodeListForEach($searchResults,function ($searchResult) {
+      new SearchResults($searchResult,$apiKey).init();
     });
   }
 
