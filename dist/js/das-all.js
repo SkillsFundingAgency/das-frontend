@@ -917,35 +917,36 @@ function initAll() {
   }
 
   var $smoothScroll = document.querySelectorAll('[data-module="smoothScroll"]');
-  nodeListForEach$2($smoothScroll,function ($smoothScroll) {
+  nodeListForEach$2($smoothScroll, function ($smoothScroll) {
     new SmoothScroll($smoothScroll).init();
   });
 
   var $gtmDataLayer = window.dataLayer;
 
   var $videoPlayer = document.querySelectorAll('[data-module="videoPlayer"]');
-  nodeListForEach$2($videoPlayer,function ($videoPlayer) {
-    new VideoPlayer($videoPlayer,$gtmDataLayer).init();
+  nodeListForEach$2($videoPlayer, function ($videoPlayer) {
+    new VideoPlayer($videoPlayer, $gtmDataLayer).init();
   });
 
 
 
 
-  window.onload = function() {
-    nodeListForEach$2($videoPlayer,function ($videoPlayer) {
+  window.onload = function () {
+    nodeListForEach$2($videoPlayer, function ($videoPlayer) {
       $videoPlayer.classList.add('js-video-player__ready');
     });
 
-    var $googleMaps = document.querySelectorAll('[data-module="googleMaps"]');
-    var $apiKey = 'AIzaSyCIhjmd9QkQXP_s9nULNsMRkPJgT8tv4_8';
-    nodeListForEach$2($googleMaps,function ($map) {
-      new GoogleMaps($map,$apiKey).init();
-    });
-  
+    if (window.google.maps != null) {
+      var $googleMaps = document.querySelectorAll('[data-module="googleMaps"]');
+      var $apiKey = 'AIzaSyCIhjmd9QkQXP_s9nULNsMRkPJgT8tv4_8';
+      nodeListForEach$2($googleMaps, function ($map) {
+        new GoogleMaps($map, $apiKey).init();
+      });
+    }
     var $searchResults = document.querySelectorAll('[data-module="searchResults"]');
-    
-    nodeListForEach$2($searchResults,function ($searchResult) {
-      new SearchResults($searchResult,$apiKey).init();
+
+    nodeListForEach$2($searchResults, function ($searchResult) {
+      new SearchResults($searchResult, $apiKey).init();
     });
   };
 
