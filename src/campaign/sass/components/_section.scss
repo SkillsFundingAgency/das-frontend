@@ -1,9 +1,30 @@
 .section {
-  padding: 50px;
-  //MD - think the background colour should be set on modifier level as this is currently overriding other styles (we can use the !important flag if this is acceptable also?)
-  // background: $apprentice-light;
+
 }
 
-.section-grey {
+.section--slant {
+  position: relative;
+  margin-top: 50px;
+  &:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -50px;
+    border-style: solid;
+    border-width: 0 0 50px 1440px;
+    border-color: #fff #fff $apprentice;
+  }
+}
+
+.section--grey {
    background: $grey-6;
+}
+
+.section--apprentice {
+  background: $apprentice;
+}
+
+.section--employer {
+  background: $employer;
 }
