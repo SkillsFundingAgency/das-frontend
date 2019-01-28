@@ -52,7 +52,7 @@ $hero-text-colour: #fff;
   width: 26px;
   height: 26px;
   display: inline-block;
-  background: url('../images/icon-quote-circle-white.svg') no-repeat 0 0;
+  background: url("../images/icon-quote-circle-white.svg") no-repeat 0 0;
   margin: 0;
   position: relative;
   top: 12px;
@@ -265,11 +265,27 @@ $hero-text-colour: #fff;
 }
 
 .hero-banner__background--apprentice-hosanna{
-  background-image: linear-gradient(-255deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%), url("../images/apprentice/hozanna-hero-1.jpg");
+  background-image: linear-gradient(255deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%), url("../images/apprentice/hozanna-hero-1.jpg");
+  .hero-banner--right-aligned & {
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    filter: FlipH;
+    -ms-filter: "FlipH";
+  }
 }
 
 .hero-banner__background--apprentice-sarah{
-  background-image: linear-gradient(-255deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%), url("../images/apprentice/sarah-hero-1.jpg");
+  background-image: linear-gradient(255deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%), url("../images/apprentice/sarah-hero-1.jpg");
+  .hero-banner--right-aligned & {
+  -moz-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+  filter: FlipH;
+  -ms-filter: "FlipH";
+  }
 }
 
 .hero-banner__background--apprentice-ella{
@@ -299,7 +315,15 @@ background-image: linear-gradient(255deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%),
 }
 
 .hero-banner__background--employer-gail{
-  background-image: linear-gradient(-225deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%), url("../images/employer/gail-hero-1.jpg");
+  background-image: linear-gradient(225deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%), url("../images/employer/gail-hero-1.jpg");
+  .hero-banner--right-aligned & {
+  -moz-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+  filter: FlipH;
+  -ms-filter: "FlipH";
+  }
 }
 
 .hero-banner__background--employer-bendy{
