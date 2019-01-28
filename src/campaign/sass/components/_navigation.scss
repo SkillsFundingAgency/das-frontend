@@ -197,6 +197,7 @@
   .js-menu-open & {
     background: #000;
     color: #fff;
+    border-image-source: none;
   }
   @include media-query($from: $nav-breakpoint) {
     font-size: 12px;
