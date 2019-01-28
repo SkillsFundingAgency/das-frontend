@@ -38,7 +38,7 @@ gulp.task('js:compile', () => {
         legacy: true,
         // UMD allows the published bundle to work in CommonJS and in the browser.
         format: 'umd',
-      }))
+      })).on('error', function(e){ console.log(e)})
       .pipe(gulpif(isDist, terser({module:true})))
       .pipe(gulpif(isDist,
         rename({

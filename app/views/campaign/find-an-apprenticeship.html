@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <title>Campaign</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#0b0c0c" />
+
+    <link rel="shortcut icon" sizes="16x16 32x32 48x48" href="/dist/campaign/images/favicon.ico" type="image/x-icon" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/dist/campaign/images/apple-touch-icon-180x180.png">
+    <link rel="apple-touch-icon" sizes="167x167" href="/dist/campaign/images/apple-touch-icon-167x167.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/dist/campaign/images/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" href="/dist/campaign/images/apple-touch-icon.png">
+
+    <!--[if !IE 8]><!-->
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.4.7/plyr.css">
+    <link href="/dist/campaign/css/screen.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://use.typekit.net/tyj1hwm.css">
+
+    <!--<![endif]-->
+
+    <meta property="og:image" content="/dist/campaign/images/opengraph.png">
+
+
+
+</head>
+
+<body class="page-template">
+
+    <script>
+        document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');
+    </script>
+
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <div class="wrap">
+
+        {% include './components/header/_header.html'%}
+        {% include './components/hero-heading/_hero-heading.html' %}
+
+        <main id="main-content" class="main-content">
+
+            <div class="grid-row">
+                <div class="grid-column-two-thirds">
+
+                    <div class="page">
+                        <h2 class="heading-m">update search</h2>
+                        <form id="search-results-filter" action="/FindApprenticeship" method="post">
+                            <section class="grid-row cta-faa">
+
+                                <div class="grid-column-one-third">
+                                    <div class="cta-faa__content">
+                                        <div class="form-group">
+                                            <label class="form-label-bold" for="Postcode">Postcode</label>
+                                            <input class="form-control" type="text" id="Postcode" name="Postcode" value="nn144tn">
+                                            <span class="text-danger field-validation-valid" data-valmsg-for="Postcode"
+                                                data-valmsg-replace="true"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="grid-column-one-third">
+                                    <div class="cta-faa__content">
+                                        <div class="form-group">
+                                            <label class="form-label-bold" for="Distance">Distance</label>
+                                            <select class="form-control" data-val="true" data-val-required="The Distance field is required."
+                                                id="Distance" name="Distance">
+                                                <option value="2">2 miles</option>
+                                                <option selected="selected" value="5">5 miles</option>
+                                                <option value="10">10 miles</option>
+                                                <option value="15">15 miles</option>
+                                                <option value="20">20 miles</option>
+                                                <option value="30">30 miles</option>
+                                                <option value="40">40 miles</option>
+                                            </select>
+
+                                            <span class="text-danger field-validation-valid" data-valmsg-for="Distance"
+                                                data-valmsg-replace="true"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="grid-column-one-third">
+                                    <div class="cta-faa__content">
+                                        <div class="form-group">
+                                            <input type="submit" value="Update results" class="button">
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            <input id="Latitude" type="hidden" value="52.39967">
+                            <input id="Longitude" type="hidden" value="-0.535045">
+                            <input id="Postcode" type="hidden" value="nn144tn">
+                            <input id="Distance" type="hidden" value="5">
+                        </form>
+
+                        <div class="grid-row">
+                            <div class="column-full">
+                                <h1 class="heading-l">Your top 10 results...</h1>
+                                <ol id="vacancy-search-results" class="search-results-list" data-form-id="search-results-filter"
+                                    data-map-id="mapDev">
+                                    <li class="search-result" data-id="1488258" data-lat="52.352247" data-lon="-0.54626">
+                                        <h2 class="heading-m">
+                                            <a href="https://www.findapprenticeship.service.gov.uk/apprenticeship/reference/1488258"
+                                                target="_blank">Customer service practitioner</a>
+                                        </h2>
+                                        <ul class="list search-results__list-secondary">
+                                            <li>KAZPER RESTAURANTS LIMITED </li>
+                                            <li>(Added 04 Jan 2019)</li>
+                                        </ul>
+                                        <p>
+                                            As an employee of McDonald’s you will have access to a wide range of
+                                            benefits including; Holiday Pay, Free Lunch, Child Care Vouchers, and many
+                                            more! To see the full list, please follow this link:
+                                            https://people.mcdonalds.co.uk/restaurant-opportunities/customer-experience-leader/
+                                        </p>
+                                        <div class="grid-row">
+                                            <div class="grid-column-one-half">
+                                                <ul class="list">
+                                                    <li data-show="DisplayDistance">
+                                                        <span class="bold">Distance:</span> <span id="distance-value">3.31</span>
+                                                        miles <br>
+                                                    </li>
+
+                                                    <li data-show="DisplayClosingDate">
+                                                        <span class="bold">Closing date:</span> <span id="closing-date-value"
+                                                            data-date="1/31/2019">1/31/2019</span>
+                                                    </li>
+                                                    <li data-show="DisplayStartDate">
+                                                        <span class="bold">Possible start date:</span> <span id="start-date-value">2/7/2019</span>
+                                                    </li>
+                                                    <li>
+
+                                                        <a class="search-results__external-link" href="https://www.findapprenticeship.service.gov.uk/apprenticeship/reference/1488258"
+                                                            target="_blank">
+                                                            <img class="search-results__inline-icon" src="/dist/legacy/images/gov.uk_logotype_crown.svg">
+                                                            View more details on gov.uk site
+                                                        </a>
+                                                    </li>
+
+                                                </ul>
+
+
+                                            </div>
+                                            <div id="map-1488258" class="grid-column-one-half">
+                                                <img class="no-js" src="https://maps.googleapis.com/maps/api/staticmap?markers=52.352247,-0.54626&amp;size=190x120&amp;scale=2&amp;zoom=10&amp;key=AIzaSyCIhjmd9QkQXP_s9nULNsMRkPJgT8tv4_8&amp;signature=gP2DNRFaDD68Md_dbgSiYCqRNzc=">
+
+
+                                            </div>
+
+                                        </div>
+
+
+                                    </li>
+                                    <li class="search-result" data-id="1488254" data-lat="52.352247" data-lon="-0.54626">
+                                        <h2 class="heading-m">
+                                            <a href="https://www.findapprenticeship.service.gov.uk/apprenticeship/reference/1488254"
+                                                target="_blank">Hospitality team member</a>
+                                        </h2>
+                                        <ul class="list search-results__list-secondary">
+                                            <li>KAZPER RESTAURANTS LIMITED </li>
+                                            <li>(Added 04 Jan 2019)</li>
+                                        </ul>
+                                        <p>
+                                            If you have the desire to work with children in a homely Nursery setting,
+                                            why not to consider work-placed training with us to achieve a formal Level
+                                            2 qualification in Childcare.
+                                        </p>
+                                        <div class="grid-row">
+                                            <div class="grid-column-one-half">
+
+                                                <ul class="list sfa-no-margins vacancy-details-list">
+                                                    <li data-show="DisplayDistance">
+                                                        <span class="bold">Distance:</span> <span id="distance-value">3.31</span>
+                                                        miles <br>
+
+
+                                                    </li>
+
+                                                    <li data-show="DisplayClosingDate">
+                                                        <span class="bold">Closing date:</span> <span id="closing-date-value"
+                                                            data-date="1/31/2019">1/31/2019</span>
+                                                    </li>
+                                                    <li data-show="DisplayStartDate">
+                                                        <span class="bold">Possible start date:</span> <span id="start-date-value">2/7/2019</span>
+                                                    </li>
+                                                    <li>
+
+                                                        <a class="search-results__external-link" href="https://www.findapprenticeship.service.gov.uk/apprenticeship/reference/1488254"
+                                                            target="_blank">
+                                                            <img class="search-results__inline-icon" src="/dist/legacy/images/gov.uk_logotype_crown.svg">
+                                                            View more details on gov.uk site
+                                                        </a>
+                                                    </li>
+
+                                                </ul>
+
+
+                                            </div>
+                                            <div id="map-1488254" class="grid-column-one-half">
+                                                <div data-google-map-component="">
+                                                    <div data-google-map-canvas="" style="width: 100%; height: 150px">
+                                                        <img class="no-js" src="https://maps.googleapis.com/maps/api/staticmap?markers=52.352247,-0.54626&amp;size=190x120&amp;scale=2&amp;zoom=10&amp;key=AIzaSyCIhjmd9QkQXP_s9nULNsMRkPJgT8tv4_8&amp;signature=gP2DNRFaDD68Md_dbgSiYCqRNzc=">
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                        </div>
+
+
+                                    </li>
+                                </ol>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="grid-column-one-third">
+                    <div class="sidebar">
+                        <div class="sidebar__hero">
+                            <div id="mapDev" class="sidebar__hero-image" style="height:680px;" data-module="googleMaps"
+                                data-markerdataurl="/campaign/json/searchResults" data-lat="52.3996" data-lon="-0.536041">
+
+                                <div data-google-map-infobox-template="">
+                                    <div class="infobox_container">
+                                        <div class="arrow-up"></div>
+                                        <div class="infobox">
+                                            <h1 class="heading-small">((Title))</h1>
+                                            <p>((ShortDescription))</p>
+                                            <img height="14px" src="https://www.findapprenticeship.service.gov.uk/Content/_assets/img/gov.uk_logotype_crown_invert_trans.png">
+                                            <a href="((Url))" target="_blank">View more details on gov.uk site</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="trimmer">
+                            <div class="sidebar__header">
+                                <h3 class="heading-s sidebar__heading">The process to becoming an apprentice</h3>
+                            </div>
+                        </div>
+                        <div class="sidebar__content">
+                            {% include './components/sideBar/_sideBar.html'%}
+                        </div>
+                        <div class="trimmer">
+                            <div class="sidebar__sub-content">
+                                <h2 class="heading-s sidebar__heading">Find out more</h2>
+                                <p>Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis
+                                    euismod semper.</p>
+                                <a class="button button--sparks button--shadow " href="#modal-RegisterInterest">Register
+                                    Interest</a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </main>
+
+
+        {% include './components/footer/_footer.html'%}
+
+    </div>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCIhjmd9QkQXP_s9nULNsMRkPJgT8tv4_8" type="text/javascript"></script>
+    <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
+    <script src="/dist/campaign/js/infobox.js"></script>
+
+    <script src="/dist/campaign/js/app.min.js"></script>
+    <script src="/dist/js/das-all.js"></script>
+    <script>
+        window.DASFrontend.initAll()
+    </script>
+
+</body>
+
+</html>
