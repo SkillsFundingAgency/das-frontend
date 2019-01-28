@@ -58,7 +58,7 @@
   background-image: url("../images/homepage/home-launch-apprentice.jpg");
   background-position: -250px -60px;
   @include mq($from: 320px) {
-    background-position: 25%;
+    background-position: 37%;
   }
   @include mq($from: tablet) {
     background-position: 30%;
