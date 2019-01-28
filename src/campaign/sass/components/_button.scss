@@ -105,9 +105,9 @@ $offset: 2;
 }
 
 .button--sparks{
-  border-image-slice: 915 0 850 0; 
-  border-image-width: 4em 0px 4em 0.1em; 
-  border-image-outset: 4em 0px 4em 0em; 
+  border-image-slice: 28%;
+  border-image-width: 46px;
+  border-image-outset: 46px;
   border-image-repeat: stretch stretch;
   border-image-source: url('../images/button-border.png')
 }
