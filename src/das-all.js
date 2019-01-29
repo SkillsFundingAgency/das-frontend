@@ -52,26 +52,31 @@ function initAll() {
       $videoPlayer.classList.add('js-video-player__ready');
     });
 
-    if (window.google != null && window.google.maps != null) {
-      var $googleMaps = document.querySelectorAll('[data-module="googleMaps"]')
-      var $apiKey = 'AIzaSyCIhjmd9QkQXP_s9nULNsMRkPJgT8tv4_8';
-      nodeListForEach($googleMaps, function ($map) {
-        new GoogleMaps($map, $apiKey).init();
-      });
-    }
-    var $searchResults = document.querySelectorAll('[data-module="searchResults"]')
+    
+    // var $searchResults = document.querySelectorAll('[data-module="searchResults"]')
 
-    nodeListForEach($searchResults, function ($searchResult) {
-      new SearchResults($searchResult, $apiKey).init();
-    });
+    // nodeListForEach($searchResults, function ($searchResult) {
+    //   new SearchResults($searchResult, $apiKey).init();
+    // });
   }
 
 }
 
+function initMaps(){
+  if (window.google != null && window.google.maps != null) {
+    var $googleMaps = document.querySelectorAll('[data-module="googleMaps"]')
+    nodeListForEach($googleMaps, function ($map) {
+      new GoogleMaps($map).init();
+    });
+  }
+}
+
 export {
   initAll,
+  initMaps,
   Accordion,
   Navigation,
   CookieBanner,
-  VideoPlayer
+  VideoPlayer,
+  GoogleMaps
 }

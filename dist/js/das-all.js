@@ -639,20 +639,33 @@ function Template(template, data) {
     return template;
 }
 
+function Shim($name) {
+    var global = window;
+    return global[$name];
+
+}
+
+function MarkerClusterer(){
+return Shim('MarkerClusterer');
+}
+
+function Infobox(){
+    return Shim('InfoBox');
+}
+
 //import GoogleMapsApi from './_googleMapsApi';
 
 
-function GoogleMaps($module, $apiKey) {
+function GoogleMaps($module) {
     this.$module = $module;
     this.$gmapApi = null;
-    this.$gmapApiKey = $apiKey;
     this.$map = null;
 
     if(this.$module.dataset.lat != null && this.$module.dataset.lon != null){
         this.$center = {lat: parseFloat(this.$module.dataset.lat),lon: parseFloat(this.$module.dataset.lon)};
     }
 
-this.$distance = 5;
+this.$distance = this.$module.dataset.distance;
 
     this.$markers = new Array();
     this.$markersData = null;
@@ -766,11 +779,11 @@ GoogleMaps.prototype.setMarkerOnMap = function (currentMarkerData, enableInfobox
         //  icon: icon,
         map: this.$map
     };
-    if (window.InfoBox) {
+    if (Infobox && enableInfobox) {
         markerObject['infobox'] = this.getInfoBox(currentMarkerData);
     }
     var marker = new google.maps.Marker(markerObject);
-    if (window.InfoBox) {
+    if (Infobox && enableInfobox) {
         // add on click handler to the marker itself
         // so it will open our infobox.
         var self = this;
@@ -800,13 +813,15 @@ GoogleMaps.prototype.getLatLngByPostcode = function (postcode) {
 // * @returns Instance of an InfoBox
 // */
 GoogleMaps.prototype.getInfoBox = function (markerData) {
+
+    var _infoBox = Infobox();
     var infoBoxTemplate = this.$infoboxTemplate;
     var infoBoxTemplateData = {
         Title: markerData.Title,
         ShortDescription: markerData.ShortDescription,
         Url: markerData.VacancyUrl
     };
-    var currentInfoBox = new InfoBox({
+    var currentInfoBox = new _infoBox({
         content: Template(infoBoxTemplate, infoBoxTemplateData),
         disableAutoPan: false,
         maxWidth: 'auto',
@@ -825,7 +840,10 @@ GoogleMaps.prototype.getInfoBox = function (markerData) {
 // */
 GoogleMaps.prototype.initMarkerClusterer = function () {
     
-        this.$markerClusterer = new MarkerClusterer(this.$map, this.$markers, { imagePath: 'https://googlemaps.github.io/js-marker-clusterer/images/m' });
+    if (MarkerClusterer != null){
+        var _markerClusterer = MarkerClusterer();
+        this.$markerClusterer = new _markerClusterer(this.$map, this.$markers, { imagePath: 'https://googlemaps.github.io/js-marker-clusterer/images/m' });
+    }
     
 };
 
@@ -855,39 +873,6 @@ GoogleMaps.prototype.GetResults = function () {
 
 GoogleMaps.prototype.LoadMarkers = function (markers) {
 
-};
-
-function SearchResults($module, $apiKey) {
-    this.$module = $module;
-    this.$gmapApi = null;
-    this.$gmapApiKey = $apiKey;
-    this.$map = null;
-
-    this.$searchResultsUrl = this.$module.dataset.searchresultsurl;
-    this.$mapElementId = this.$module.dataset.mapId;
-
-    this.mainContentElement = $module;
-    this.searchResultsElement = document.getElementById("vacancy-search-results");
-    this.lat = parseFloat(document.getElementById("Latitude").value);
-    this.lon = parseFloat(document.getElementById("Longitude").value);
-    this.distance = parseFloat(document.getElementById("Distance").value);
-    this.center = { latitude: this.lat, longitude: this.lon };
-    this.markersData = null;
-}
-
-SearchResults.prototype.init = function () {
-
-    this.$map = new GoogleMaps(this.$mapElementId, this.center);
-
-     this.$map.init();
-   // map.addRadius(this.distance);
-
-   // this.GetResults();
-    // searchResults.forEach(function (element) {
-    //     var center = { latitude: element.dataset.lat, longitude: element.dataset.lon };
-    //     var resultMap = new MapController(element, center, null);
-    //     resultMap.addMarker(element.dataset.id, parseFloat(element.dataset.lat), parseFloat(element.dataset.lon), false);
-    // });
 };
 
 function nodeListForEach$2(nodes, callback) {
@@ -936,26 +921,31 @@ function initAll() {
       $videoPlayer.classList.add('js-video-player__ready');
     });
 
-    if (window.google != null && window.google.maps != null) {
-      var $googleMaps = document.querySelectorAll('[data-module="googleMaps"]');
-      var $apiKey = 'AIzaSyCIhjmd9QkQXP_s9nULNsMRkPJgT8tv4_8';
-      nodeListForEach$2($googleMaps, function ($map) {
-        new GoogleMaps($map, $apiKey).init();
-      });
-    }
-    var $searchResults = document.querySelectorAll('[data-module="searchResults"]');
+    
+    // var $searchResults = document.querySelectorAll('[data-module="searchResults"]')
 
-    nodeListForEach$2($searchResults, function ($searchResult) {
-      new SearchResults($searchResult, $apiKey).init();
-    });
+    // nodeListForEach($searchResults, function ($searchResult) {
+    //   new SearchResults($searchResult, $apiKey).init();
+    // });
   };
 
 }
 
+function initMaps(){
+  if (window.google != null && window.google.maps != null) {
+    var $googleMaps = document.querySelectorAll('[data-module="googleMaps"]');
+    nodeListForEach$2($googleMaps, function ($map) {
+      new GoogleMaps($map).init();
+    });
+  }
+}
+
 exports.initAll = initAll;
+exports.initMaps = initMaps;
 exports.Accordion = Accordion;
 exports.Navigation = Navigation;
 exports.CookieBanner = CookieBanner;
 exports.VideoPlayer = VideoPlayer;
+exports.GoogleMaps = GoogleMaps;
 
 })));
