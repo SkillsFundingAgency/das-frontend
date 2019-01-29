@@ -219,7 +219,7 @@
                     <div class="sidebar">
                         <div class="sidebar__hero">
                             <div id="mapDev" class="sidebar__hero-image" style="height:680px;" data-module="googleMaps"
-                                data-markerdataurl="/campaign/json/searchResults" data-lat="52.3996" data-lon="-0.536041">
+                                data-markerdataurl="/campaign/json/searchResults" data-lat="52.3996" data-lon="-0.536041" data-distance="10">
 
                                 <div data-google-map-infobox-template="">
                                     <div class="infobox_container">
@@ -261,9 +261,9 @@
         {% include './components/footer/_footer.html'%}
 
     </div>
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCIhjmd9QkQXP_s9nULNsMRkPJgT8tv4_8" type="text/javascript"></script>
-    <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
-    <script src="/dist/campaign/js/infobox.js"></script>
+    <script defer src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
+    <script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDvjlbjx6_-sz4utE2SVVNwc63PlUM_MLE&callback=DASFrontend.initMaps" type="text/javascript"></script>
+    <script defer src="/dist/campaign/js/infobox.js"></script>
 
     <script src="/dist/campaign/js/app.min.js"></script>
     <script src="/dist/js/das-all.js"></script>

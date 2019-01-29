@@ -1,18 +1,19 @@
 //import GoogleMapsApi from './_googleMapsApi';
 import Template from '../template/_template'
+import MarkerClusterer from './_markerClusterer'
+import InfoBox from './_infobox'
 
 
-function GoogleMaps($module, $apiKey) {
+function GoogleMaps($module) {
     this.$module = $module;
     this.$gmapApi = null;
-    this.$gmapApiKey = $apiKey;
     this.$map = null;
 
     if(this.$module.dataset.lat != null && this.$module.dataset.lon != null){
         this.$center = {lat: parseFloat(this.$module.dataset.lat),lon: parseFloat(this.$module.dataset.lon)}
     }
 
-this.$distance = 5;
+this.$distance = this.$module.dataset.distance;
 
     this.$markers = new Array();
     this.$markersData = null;
@@ -127,11 +128,11 @@ GoogleMaps.prototype.setMarkerOnMap = function (currentMarkerData, enableInfobox
         //  icon: icon,
         map: this.$map
     };
-    if (window.InfoBox) {
+    if (InfoBox && enableInfobox) {
         markerObject['infobox'] = this.getInfoBox(currentMarkerData);
     }
     var marker = new google.maps.Marker(markerObject);
-    if (window.InfoBox) {
+    if (InfoBox && enableInfobox) {
         // add on click handler to the marker itself
         // so it will open our infobox.
         var self = this;
@@ -161,13 +162,15 @@ GoogleMaps.prototype.getLatLngByPostcode = function (postcode) {
 // * @returns Instance of an InfoBox
 // */
 GoogleMaps.prototype.getInfoBox = function (markerData) {
+
+    var _infoBox = InfoBox();
     var infoBoxTemplate = this.$infoboxTemplate;
     var infoBoxTemplateData = {
         Title: markerData.Title,
         ShortDescription: markerData.ShortDescription,
         Url: markerData.VacancyUrl
     };
-    var currentInfoBox = new InfoBox({
+    var currentInfoBox = new _infoBox({
         content: Template(infoBoxTemplate, infoBoxTemplateData),
         disableAutoPan: false,
         maxWidth: 'auto',
@@ -186,7 +189,10 @@ GoogleMaps.prototype.getInfoBox = function (markerData) {
 // */
 GoogleMaps.prototype.initMarkerClusterer = function () {
     
-        this.$markerClusterer = new MarkerClusterer(this.$map, this.$markers, { imagePath: 'https://googlemaps.github.io/js-marker-clusterer/images/m' });
+    if (MarkerClusterer != null){
+        var _markerClusterer = MarkerClusterer();
+        this.$markerClusterer = new _markerClusterer(this.$map, this.$markers, { imagePath: 'https://googlemaps.github.io/js-marker-clusterer/images/m' });
+    }
     
 };
 
