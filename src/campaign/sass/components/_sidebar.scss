@@ -12,7 +12,10 @@
 }
 
 .sidebar__hero {
+  margin: 0 0 20px 0;
+  @include media-query($from: tablet) {
   margin: 0 -81px 0 -80px;
+  }
 }
 
 .sidebar__hero-image {
