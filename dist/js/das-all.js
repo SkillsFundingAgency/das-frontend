@@ -796,6 +796,8 @@ GoogleMaps.prototype.setMarkerOnMap = function (currentMarkerData, enableInfobox
                 }
             }
             marker.infobox.open(self.$map, marker);
+            var center = new google.maps.LatLng(marker.position.lat(), marker.position.lng());
+            self.$map.panTo(center);
             this.openInfoBox = marker.infobox;
         });
     }
@@ -825,7 +827,7 @@ GoogleMaps.prototype.getInfoBox = function (markerData) {
         content: Template(infoBoxTemplate, infoBoxTemplateData),
         disableAutoPan: false,
         maxWidth: 'auto',
-        pixelOffset: new google.maps.Size(0, 0),
+        pixelOffset: new google.maps.Size(-250,-100),
         infoBoxClearance: new google.maps.Size(1, 1),
         closeBoxMargin: "5px 5px 2px 2px",
         closeBoxURL: "http://www.google.com/intl/en_us/mapfiles/close.gif"
