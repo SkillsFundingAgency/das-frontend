@@ -823,11 +823,17 @@ GoogleMaps.prototype.getInfoBox = function (markerData) {
         ShortDescription: markerData.ShortDescription,
         Url: markerData.VacancyUrl
     };
+
+var pixelOffset = -250;
+if (window.innerWidth < 899){
+    pixelOffset = -200;
+}
+
     var currentInfoBox = new _infoBox({
         content: Template(infoBoxTemplate, infoBoxTemplateData),
         disableAutoPan: false,
         maxWidth: 'auto',
-        pixelOffset: new google.maps.Size(-250,-100),
+        pixelOffset: new google.maps.Size(pixelOffset,-100),
         infoBoxClearance: new google.maps.Size(1, 1),
         closeBoxMargin: "5px 5px 2px 2px",
         closeBoxURL: "http://www.google.com/intl/en_us/mapfiles/close.gif"

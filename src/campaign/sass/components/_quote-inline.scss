@@ -15,11 +15,10 @@
 }
 
 .quote-inline__quote {
-  margin: 0;
+  margin: 0 0 1em;
   font-size: 24px;
   font-weight: $font-weight-bold;
   color: $black;
-  margin-bottom: 1em;
   &:before,
   &:after {
     width: 48px;
