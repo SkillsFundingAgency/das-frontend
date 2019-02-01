@@ -1,4 +1,5 @@
 .section {
+  padding: 50px;
 
 }
 
@@ -44,8 +45,28 @@
 
 .section--apprentice {
   background: $apprentice;
+  color:#FFF;
+  & .heading-l{
+    color: #FFF;
+  }
 }
 
 .section--employer {
   background: $employer;
+}
+
+.section__faa-logo-header-inline{
+  height: 35px;
+}
+
+.section__faa_img{
+  width: 100%;
+}
+
+.section__faa-actions{
+  margin-top:50px;
+  display: flex;
+   & a{
+     margin: 0 auto;
+   }
 }

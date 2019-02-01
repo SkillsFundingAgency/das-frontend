@@ -1,16 +1,16 @@
-.app-masthead {
+.das-masthead {
   @include govuk-responsive-padding(6, "top");
   @include govuk-responsive-padding(6, "bottom");
   color: govuk-colour("white");
   background-color: govuk-colour("blue");
 }
 
-.app-masthead__heading {
+.das-masthead__heading {
   color: govuk-colour("white");
   @include govuk-responsive-margin(6, "bottom");
 }
 
-.app-masthead__body {
+.das-masthead__body {
   color: govuk-colour("white");
   @include govuk-font(24);
   margin-bottom: 0;
