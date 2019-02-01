@@ -9,6 +9,25 @@
     display: flex;
     margin-top: 0;
   }
+
+  & .button{
+    display: inline-block;
+    float: left;
+    background-color: #000;
+    color: #FFF;
+    height: 51px;
+  }
+
+  & .input .input__postcode
+  {
+    display: inline-block;
+    border: none;
+    height: 51px;
+    width: 100%;
+    @include mq($from:tablet){
+    width: 61%;
+    }
+  }
 }
 
 .cta-faa__heading{
