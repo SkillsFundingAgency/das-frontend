@@ -1,0 +1,103 @@
+{% extends "template.html" %}
+
+{% set loggedIn = false %}
+
+{% block content %}
+
+<main class="govuk-main-wrapper " id="main-content" role="main">
+ <h1 class="govuk-heading-l">Select providers</h1>
+
+<form class="form" method="post">
+
+    <div class="govuk-option-select filter-field-text">
+
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-one-quarter">
+          <div class="govuk-form-group" style="margin-bottom: 15px">
+            <label class="govuk-label govuk-!-font-weight-bold" for="postcode">
+              Employer postcode
+            </label>
+            <input class="govuk-input govuk-input--width-5" id="postcode" name="postcode" value="CV5 6NP" type="text">
+          </div>
+        </div>
+
+        <div class="govuk-grid-column-one-quarter">
+          <div class="govuk-form-group" style="margin-bottom: 15px">
+            <label class="govuk-label govuk-!-font-weight-bold" for="radius">
+              Providers within
+            </label>
+            <select class="govuk-select govuk-!-width-two-thirds" id="radius" name="radius">
+              <option value="5 mile">5 mile</option>
+              <option selected="" value="10 miles">10 miles</option>
+              <option value="15 miles">15 miles</option>
+              <option value="20 miles">20 miles</option>
+              <option value="25 miles">25 miles</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="govuk-grid-column-one-half">
+          <div class="govuk-form-group" style="margin-bottom: 15px">
+            <label class="govuk-label govuk-!-font-weight-bold" for="route">
+              Skill area
+            </label>
+            <select class="govuk-select govuk-!-width-full" id="route" name="route">
+              <option value="agriculture, environmental and animal care">Agriculture, environmental and animal care</option>
+              <option value="business and administration">Business and administration</option>
+              <option value="care services">Care services</option>
+              <option value="catering and hospitality">Catering and hospitality</option>
+              <option value="construction">Construction</option>
+              <option value="creative and design">Creative and design</option>
+              <option value="digital">Digital</option>
+              <option value="education and childcare">Education and childcare</option>
+              <option value="engineering and manufacturing">Engineering and manufacturing</option>
+              <option selected="" value="hair and beauty">Hair and beauty</option>
+              <option value="health and science">Health and science</option>
+              <option value="legal, financial and accounting">Legal, financial and accounting</option>
+              <option value="protective services">Protective services</option>
+              <option value="sales, marketing and procurement">Sales, marketing and procurement</option>
+              <option value="transport and logistics">Transport and logistics</option>
+            </select>
+          </div>
+        </div>
+    </div>
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-quarter">
+        <button class="govuk-button" style="background-color: #005ea5; margin-bottom: 5px" name="resultsAction" value="searchAgain">Search again</button>
+      </div>
+      <div class="govuk-grid-column-three-quarters">
+        <!-- <p style="margin-top: 8px"><a href="employer-name">Not enough suitable providers? Let us know</a></p> -->
+      </div>
+    </div>
+
+
+</div>
+
+
+    <!-- results -->
+
+
+      <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+          <div class="form-group">
+            <p class="govuk-body">
+              <span class="govuk-body govuk-!-font-size-36 govuk-!-font-weight-bold">0 </span>results for <span class="govuk-body govuk-!-font-weight-bold"> </span>in
+              <span class="govuk-body govuk-!-font-weight-bold">hair and beauty </span>within
+              <span class="govuk-body govuk-!-font-weight-bold">10 miles  </span>of
+              <span class="govuk-body govuk-!-font-weight-bold" style="text-transform: uppercase">CV5 6NP</span></p>
+            <p class="govuk-body">You can:</p>
+            <ul class="govuk-list govuk-list--bullet">
+              <li>increase the distance from the employer's postcode</li>
+              <li>try a different skill area</li>
+            </ul>
+            <p class="govuk-body">If neither of these work, <a href="employer-name">tell us that there are no suitable providers</a>.</p>
+          </div>
+        </div>
+      </div>
+
+
+
+      </form></main>
+
+{% endblock %}

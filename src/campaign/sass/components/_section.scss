@@ -13,8 +13,29 @@
     right: 0;
     top: -50px;
     border-style: solid;
-    border-width: 0 0 50px 1440px;
+    border-width: 0 0 50px 500px;
     border-color: #fff #fff $apprentice;
+  }
+  @include media-query($from: 500px) {
+    margin-top: 77px;
+    &:before {
+      top: -77px;
+      border-width: 0 0 77px 740px;
+    }
+  }
+  @include media-query($from: tablet) {
+    margin-top: 100px;
+    &:before {
+      top: -100px;
+      border-width: 0 0 100px 980px;
+    }
+  }
+  @include media-query($from: desktop) {
+    margin-top: 150px;
+    &:before {
+      top: -150px;
+      border-width: 0 0 150px 1440px;
+    }
   }
 }
 
