@@ -1,3 +1,8 @@
+.search-results{
+  margin-top:70px;
+
+}
+
 .search-results-list{
   list-style: none;
   color: $black;
@@ -38,3 +43,41 @@
   border-bottom: 1px solid;
 }
 
+
+.search-results-filter{
+  background-color: $grey-4;
+  padding: 20px;
+  @include media-query($from: tablet) {
+   padding-top:45px;
+  }
+  &--apprentice{
+    // color: #fff;
+    background-color: #ddd;
+  }
+  &--employer{
+    color: $black;
+    background-color: $employer;
+  }
+  & .heading-m{
+// color: #fff;
+  }
+
+
+  .sidebar & {
+    @include media-query($from: tablet) {
+      height: 500px;
+      clip-path: polygon(0 100%, 100% 89.4%, 100% 0, 0 8.6%);
+      -webkit-clip-path: polygon(0 100%, 100% 89.4%, 100% 0, 0 8.6%);
+    }
+
+  }
+}
+.search-results-filter__form{
+  // @include media-query($from: tablet) {
+  //   display: flex;
+  //   align-items: flex-end;
+  //   justify-content: flex-end;
+  // }
+
+
+}
