@@ -373,3 +373,34 @@ background-image: linear-gradient(255deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%),
     -ms-filter: "FlipH";
   }
 }
+.hero-banner__map{
+  min-height:500px;
+//  clip-path: polygon(0 0%, 100% 0%, 100% 100%, 0% 93%);
+ color: $black;
+ z-index: 1;
+  & .hero-heading__heading{
+    color: $black;
+    text-shadow: 7px 7px rgba(255,255,255,0.7);
+  }
+  & .hero-heading{
+    margin-top:-50px;
+    @include media-query($from: tablet) {
+    width:50%
+    }
+  }
+  // &::after{
+  //   border-style: solid;
+  //   border-width: 0 0 153px 1460px;
+  //   border-color: transparent transparent #fff;
+  // }
+}
+
+// .hero-banner.hero-banner__map::after{
+//   content: '';
+//   border-style: solid;
+//   border-width: 122px 0 0px 1441px;
+//   border-color: transparent #ffffff transparent;
+//   position: relative;
+//   top: 342px;
+//   left: -80px;
+//   }

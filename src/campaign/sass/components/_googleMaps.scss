@@ -1,9 +1,13 @@
 .infobox {
   background:#fff;
   height: auto;
-  width: 300px; 
-  font-size:17px;
+  width: 350px;
+  font-size:15px;
   padding:12px;
+
+  @include media-query($from: tablet) {
+    width: 500px; 
+    }
 }
 
 .infobox > a {
@@ -12,4 +16,8 @@
 
 [data-google-map-infobox-template] {
   display: none;
+}
+
+.infobox-content{
+  color: $grey-8;
 }

@@ -1,0 +1,38 @@
+<div class="hero-banner hero-banner--header-slant hero-banner__map">
+
+    <div class="hero-heading">
+        <div class="grid-row">
+            <div class="grid-column-one-half">
+                <h1 class="heading-xl hero-heading__heading">Find an apprenticeship</h1>
+            </div>
+
+
+        </div>
+    </div>
+    <span class="hero-banner__background">
+        <div data-module="googleMaps" style="height:100%; width:100%" data-markerdataurl="/campaign/json/searchResults"
+            data-lat="52.3996" data-lon="-0.536041" data-distance="10">
+
+            <div data-google-map-infobox-template="">
+                <div class="infobox_container">
+                    <div class="arrow-up"></div>
+                    <div class="infobox">
+                        <h1 class="heading-small">((Title))</h1>
+                        <div class="infobox-content">
+                            <p>((ShortDescription))</p>
+                            <img height="14px" src="https://www.findapprenticeship.service.gov.uk/Content/_assets/img/gov.uk_logotype_crown_invert_trans.png">
+                            <a href="((Url))" target="_blank">View more details on gov.uk site</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+    </span>
+</div>
+
+<script defer src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
+
+<script defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDvjlbjx6_-sz4utE2SVVNwc63PlUM_MLE&callback=DASFrontend.initMaps"
+    type="text/javascript"></script>
+<script defer src="/dist/campaign/js/infobox.js"></script>
