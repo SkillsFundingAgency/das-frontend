@@ -26,6 +26,7 @@
     width: 100%;
     @include mq($from:tablet){
     width: 61%;
+    float: left;
     }
   }
 }
