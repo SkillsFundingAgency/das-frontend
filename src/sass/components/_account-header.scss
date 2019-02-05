@@ -1,0 +1,29 @@
+.das-account-header {
+  @include govuk-font($size: 19);
+  color: #fff;
+  padding: 5px 0;
+  @include govuk-media-query($from: tablet) {
+    padding: 0;
+  }
+  & > .govuk-width-container {
+    @include govuk-clearfix;
+  }
+}
+
+.das-account-header--provider {
+  background: $provider;
+}
+
+.das-account-header--employer {
+  background: $employer;
+}
+
+.das-account-header__title {
+  margin: 0 $govuk-gutter-half * -1;
+  padding: 10px $govuk-gutter-half;
+  font-weight: $govuk-font-weight-bold;
+  @include govuk-media-query($from: tablet) {
+    float: left;
+    padding: 8px $govuk-gutter-half;
+  }
+}

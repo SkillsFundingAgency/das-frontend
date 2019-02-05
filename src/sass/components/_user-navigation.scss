@@ -1,0 +1,31 @@
+.das-user-navigation {
+  margin: 0 $govuk-gutter-half * -1;
+  @include govuk-media-query($from: tablet) {
+    float: right;
+  }
+}
+
+.das-user-navigation__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.das-user-navigation__list-item {
+  @include govuk-media-query($from: tablet) {
+    float: left;
+  }
+}
+
+.das-user-navigation__link {
+  color: #fff;
+  text-decoration: none;
+  display: block;
+  padding: 10px 15px;
+  font-size: 16px;
+  @include govuk-focusable;
+  &:hover {
+    text-decoration: underline;
+  }
+
+}

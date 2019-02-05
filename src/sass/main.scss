@@ -6,4 +6,13 @@ $govuk-fonts-path: "../assets/fonts/";
 @import "all";
 
 // DAS Components
+@import "settings/all";
 @import "components/all";
+
+.das-header--no-border {
+  border: none;
+  & > .govuk-header__container {
+    border: none;
+    margin-bottom: 0;
+  }
+}
