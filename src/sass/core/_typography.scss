@@ -1,0 +1,11 @@
+
+
+// Paragraphs in MAIN body of pages
+
+p {
+  @include govuk-font($size: 19);
+}
+
+.govuk-main-wrapper  p {
+  @include govuk-text-colour;
+}

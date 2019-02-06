@@ -3,6 +3,10 @@ module.exports = {
     app.get('/', function (req, res) {
       res.render('index')
     })
+    app.get('/example/:compName', function (req, res) {
+      var compName = req.params.compName;
+      res.render('example/' + compName, {action: req.query.action, type: req.query.type})
+    })
     app.get('/components/:compName', function (req, res) {
       var compName = req.params.compName;
       res.render('components/' + compName, {action: req.query.action, type: req.query.type})
