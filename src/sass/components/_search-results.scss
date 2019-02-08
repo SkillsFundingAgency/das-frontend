@@ -1,3 +1,36 @@
 .das-search-results {
-  
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  border-top: 1px solid $govuk-border-colour;
+  & p {
+    margin-bottom: 5px;
+  }
+}
+
+.das-search-results__list-item {
+  border-bottom: 1px solid $govuk-border-colour;
+  padding: $govuk-gutter-half 0;
+}
+
+.das-search-results__list-item--with-checkbox {
+  position: relative;
+  padding: 0 0 $govuk-gutter-half 55px;
+}
+
+.das-search-results .govuk-checkboxes {
+  margin-top: $govuk-gutter-half;
+}
+
+.das-search-results .govuk-checkboxes__label {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding-left: 55px;
+}
+
+.das-search-results .govuk-checkboxes__item {
+  position: static;
 }
