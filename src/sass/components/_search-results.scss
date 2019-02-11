@@ -1,7 +1,7 @@
 .das-search-results {
   list-style: none;
   padding: 0;
-  margin: 0;
+  margin: 0 0 $govuk-gutter;
   border-top: 1px solid $govuk-border-colour;
   & p {
     margin-bottom: 5px;
@@ -15,22 +15,38 @@
 
 .das-search-results__list-item--with-checkbox {
   position: relative;
-  padding: 0 0 $govuk-gutter-half 55px;
+  padding: $govuk-gutter-half 0 $govuk-gutter-half 55px;
+
+  .govuk-checkboxes__input {
+    top: $govuk-gutter-half;
+
+    & + .govuk-checkboxes__label:before {
+      top: $govuk-gutter-half;
+    }
+
+    & + .govuk-checkboxes__label:after {
+      top: 11px + $govuk-gutter-half;
+    }
+  }
+
+  .govuk-checkboxes__item {
+    position: static;
+  }
+
+  .govuk-checkboxes {
+    margin-left: -55px;
+  }
+
+  .govuk-list--bullet {
+    margin-bottom: 0;
+  }
 }
 
-.das-search-results .govuk-checkboxes {
-  margin-top: $govuk-gutter-half;
-}
-
-.das-search-results .govuk-checkboxes__label {
+.das-search-results__click-area {
   position: absolute;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  padding-left: 55px;
-}
-
-.das-search-results .govuk-checkboxes__item {
-  position: static;
+  display: block;
 }
