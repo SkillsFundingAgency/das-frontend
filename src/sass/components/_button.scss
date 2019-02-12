@@ -1,0 +1,11 @@
+.das-button {
+
+}
+
+.das-button--blue {
+  background: govuk-colour("blue");
+  &:hover,
+  &:focus {
+    background: darken(govuk-colour("blue"), 10%);
+  }
+}

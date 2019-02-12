@@ -5,9 +5,10 @@ $govuk-fonts-path: "../assets/fonts/";
 // GDS Design System
 @import "all";
 
-// DAS Components
+// DAS
 @import "settings/all";
 @import "components/all";
+@import "core/all";
 
 .das-header--no-border {
   border: none;

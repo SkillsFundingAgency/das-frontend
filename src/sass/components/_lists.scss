@@ -1,0 +1,35 @@
+
+.das-inline-list {
+  @include govuk-font($size: 19);
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  & > li {
+    display: inline-block;
+  }
+}
+
+.das-inline-list--bar {
+  & > li {
+    &:after {
+      padding-left: $govuk-gutter-half;
+      padding-right: $govuk-gutter-half - 5;
+      content: "|";
+    }
+    &:last-child:after {
+      content: "";
+    }
+  }
+}
+
+.das-inline-list--comma {
+  & > li {
+    &:after {
+      content: ",";
+    }
+    &:last-child:after {
+      content: "";
+    }
+  }
+}

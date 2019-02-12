@@ -1,0 +1,13 @@
+.das-pane {
+  padding: $govuk-gutter-half;
+  background: govuk-colour("grey-3")
+}
+
+.das-pane__inline-form {
+  .govuk-form-group {
+    margin-bottom: $govuk-gutter-half;
+  }
+  .govuk-button {
+    margin-bottom: 3px;
+  }
+}
