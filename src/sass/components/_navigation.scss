@@ -1,7 +1,7 @@
 .das-navigation {
-  border-bottom: 1px solid govuk-colour(grey-1);
   @include govuk-text-colour;
   @include govuk-font($size: 19);
+  border-bottom: 1px solid govuk-colour(grey-1);
 }
 
 .das-navigation__list {
@@ -14,6 +14,9 @@
 .das-navigation__list-item {
   @include govuk-media-query($from: tablet) {
     float: left;
+  }
+  &:last-child > a {
+    border-bottom: none;
   }
 }
 
@@ -29,9 +32,27 @@
 }
 
 .das-navigation__link--current {
-
-}
-
-.das-navigation__link--last {
-  border-bottom: none;
+  position: relative;
+  text-decoration: none;
+  font-weight: $govuk-font-weight-bold;
+  color: govuk-colour("black");
+  &:after {
+    background: govuk-colour("blue");
+    bottom: -1px;
+    content: "";
+    display: block;
+    left: 0;
+    top: 0;
+    width: 5px;
+    position: absolute;
+    z-index: 0;
+    @include govuk-media-query($from: tablet) {
+      top: auto;
+      bottom: 0;
+      left: $govuk-gutter-half;
+      right: $govuk-gutter-half;;
+      width: auto;
+      height: 5px;
+    }
+  }
 }
