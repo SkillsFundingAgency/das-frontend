@@ -24,7 +24,9 @@ var appInit = function () {
   for (var li of topLevelLis) {
     var menu = li.querySelector('.navigation__sub-menu');
     if (menu !== null) {
-      li.addEventListener('mouseover', showMenu(li.querySelector('.navigation__sub-menu')));
+      li.addEventListener('mouseover', function() {
+        showMenu(this.querySelector('.navigation__sub-menu'))
+      });
       li.addEventListener('mouseout', hideAllMenus);
     }
   }
