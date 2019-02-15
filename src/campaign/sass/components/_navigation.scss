@@ -445,3 +445,9 @@
     background: $employer;
   }
 }
+
+@include media-query($from: $nav-breakpoint) {
+  .navigation__sub-menu.js-show-menu {
+    display: flex;
+  }
+}
