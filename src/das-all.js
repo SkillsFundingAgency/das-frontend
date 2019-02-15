@@ -44,22 +44,29 @@ function initAll() {
     new VideoPlayer($videoPlayer, $gtmDataLayer).init();
   });
 
-
-
-
-  window.onload = function () {
+  addLoadEvent(function () {
     nodeListForEach($videoPlayer, function ($videoPlayer) {
       $videoPlayer.classList.add('js-video-player__ready');
     });
+  });
 
-    
-    // var $searchResults = document.querySelectorAll('[data-module="searchResults"]')
+}
 
-    // nodeListForEach($searchResults, function ($searchResult) {
-    //   new SearchResults($searchResult, $apiKey).init();
-    // });
+function addLoadEvent(func)
+{
+  var currentOnLoad = window.onload;
+  if (typeof window.onload != 'function')
+  {
+    window.onload = func;
   }
-
+  else
+  {
+    window.onload = function()
+    {
+      currentOnLoad();
+      func();
+    }
+  }
 }
 
 function initMaps(){
