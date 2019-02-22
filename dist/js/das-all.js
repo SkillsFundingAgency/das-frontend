@@ -894,34 +894,36 @@ function nodeListForEach$2(nodes, callback) {
 
 function initAll() {
 
-  var $accordions = document.querySelectorAll('[data-module="accordion"]');
-  nodeListForEach$2($accordions, function ($accordion) {
-    new Accordion($accordion).init();
-  });
-
-  var $navs = document.querySelectorAll('[data-module="navigation"]');
-  nodeListForEach$2($navs, function ($navs) {
-    new Navigation($navs).init();
-  });
-
-  var $cookieBanner = document.querySelector('[data-module="cookieBanner"]');
-  if ($cookieBanner != null) {
-    new CookieBanner($cookieBanner).init();
-  }
-
-  var $smoothScroll = document.querySelectorAll('[data-module="smoothScroll"]');
-  nodeListForEach$2($smoothScroll, function ($smoothScroll) {
-    new SmoothScroll($smoothScroll).init();
-  });
 
   var $gtmDataLayer = window.dataLayer;
 
-  var $videoPlayer = document.querySelectorAll('[data-module="videoPlayer"]');
-  nodeListForEach$2($videoPlayer, function ($videoPlayer) {
-    new VideoPlayer($videoPlayer, $gtmDataLayer).init();
-  });
 
   addLoadEvent(function () {
+
+    var $navs = document.querySelectorAll('[data-module="navigation"]');
+    nodeListForEach$2($navs, function ($navs) {
+      new Navigation($navs).init();
+    });
+
+    var $cookieBanner = document.querySelector('[data-module="cookieBanner"]');
+    if ($cookieBanner != null) {
+      new CookieBanner($cookieBanner).init();
+    }
+
+    var $accordions = document.querySelectorAll('[data-module="accordion"]');
+    nodeListForEach$2($accordions, function ($accordion) {
+      new Accordion($accordion).init();
+    });
+
+    var $smoothScroll = document.querySelectorAll('[data-module="smoothScroll"]');
+    nodeListForEach$2($smoothScroll, function ($smoothScroll) {
+      new SmoothScroll($smoothScroll).init();
+    });
+
+    var $videoPlayer = document.querySelectorAll('[data-module="videoPlayer"]');
+    nodeListForEach$2($videoPlayer, function ($videoPlayer) {
+      new VideoPlayer($videoPlayer, $gtmDataLayer).init();
+    });
     nodeListForEach$2($videoPlayer, function ($videoPlayer) {
       $videoPlayer.classList.add('js-video-player__ready');
     });
@@ -929,24 +931,20 @@ function initAll() {
 
 }
 
-function addLoadEvent(func)
-{
+function addLoadEvent(func) {
   var currentOnLoad = window.onload;
-  if (typeof window.onload != 'function')
-  {
+  if (typeof window.onload != 'function') {
     window.onload = func;
   }
-  else
-  {
-    window.onload = function()
-    {
+  else {
+    window.onload = function () {
       currentOnLoad();
       func();
     };
   }
 }
 
-function initMaps(){
+function initMaps() {
   if (window.google != null && window.google.maps != null) {
     var $googleMaps = document.querySelectorAll('[data-module="googleMaps"]');
     nodeListForEach$2($googleMaps, function ($map) {
