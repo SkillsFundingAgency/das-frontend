@@ -486,7 +486,7 @@ VideoPlayer.prototype.init = function () {
     this.$closeButton = document.getElementById('close-' + this.$videoPlayerId);
     this.$closeButton.addEventListener('click', this.close.bind(this));
 
-    this.$module.classList.remove('visually-hidden');
+    this.$module.classList.add('js-video-player__ready');
 
     if (this.$trackingEnabled) {
         this.$gtm = new GoogleTagManager(this.$gtmDataLayer);
@@ -924,9 +924,9 @@ function initAll() {
     nodeListForEach$2($videoPlayer, function ($videoPlayer) {
       new VideoPlayer($videoPlayer, $gtmDataLayer).init();
     });
-    nodeListForEach$2($videoPlayer, function ($videoPlayer) {
-      $videoPlayer.classList.add('js-video-player__ready');
-    });
+    // nodeListForEach($videoPlayer, function ($videoPlayer) {
+    //   $videoPlayer.classList.add('js-video-player__ready');
+    // });
   });
 
 }

@@ -50,7 +50,7 @@ VideoPlayer.prototype.init = function () {
     this.$closeButton = document.getElementById('close-' + this.$videoPlayerId);
     this.$closeButton.addEventListener('click', this.close.bind(this));
 
-    this.$module.classList.remove('visually-hidden');
+    this.$module.classList.add('js-video-player__ready');
 
     if (this.$trackingEnabled) {
         this.$gtm = new GoogleTagManager(this.$gtmDataLayer);

@@ -47,9 +47,9 @@ function initAll() {
     nodeListForEach($videoPlayer, function ($videoPlayer) {
       new VideoPlayer($videoPlayer, $gtmDataLayer).init();
     });
-    nodeListForEach($videoPlayer, function ($videoPlayer) {
-      $videoPlayer.classList.add('js-video-player__ready');
-    });
+    // nodeListForEach($videoPlayer, function ($videoPlayer) {
+    //   $videoPlayer.classList.add('js-video-player__ready');
+    // });
   });
 
 }
