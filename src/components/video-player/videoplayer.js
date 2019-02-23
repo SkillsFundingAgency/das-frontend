@@ -28,6 +28,24 @@ VideoPlayer.prototype.init = function () {
         return
     }
 
+
+
+    var event = 'click';
+    // if (this.$player.touch == true) {
+    //     event = 'touchstart';
+    // }
+
+    this.$module.addEventListener(event, this.play.bind(this));
+
+
+
+    this.$module.classList.add('js-video-player__ready');
+
+
+
+}
+
+VideoPlayer.prototype.initPlayer = function () {
     this.appendPlayer();
     this.$playerElement = document.getElementById(this.$videoPlayerId);
     this.$videoWrap = this.$playerElement.parentNode;
@@ -40,28 +58,20 @@ VideoPlayer.prototype.init = function () {
         fullscreen: { enabled: true }
     });
 
-    var event = 'click';
-    if (this.$player.touch == true) {
-        event = 'touchstart';
-    }
-
-    this.$module.addEventListener(event, this.play.bind(this));
-
     this.$closeButton = document.getElementById('close-' + this.$videoPlayerId);
     this.$closeButton.addEventListener('click', this.close.bind(this));
-
-    this.$module.classList.add('js-video-player__ready');
 
     if (this.$trackingEnabled) {
         this.$gtm = new GoogleTagManager(this.$gtmDataLayer);
         this.enableTrackingEvents();
     }
-
 }
 
 VideoPlayer.prototype.appendPlayer = function () {
     var playerHtml = this.$videoPlayerTemplate.replace(/{videoPlayerId}/g, this.$videoPlayerId).replace('{videoUrl}', this.$videoUrl);
     window.document.body.insertAdjacentHTML('beforeend', playerHtml);
+
+
 }
 
 VideoPlayer.prototype.close = function (event) {
@@ -72,13 +82,21 @@ VideoPlayer.prototype.close = function (event) {
 }
 
 VideoPlayer.prototype.play = function (event) {
+    if (this.$player == undefined) {
+        this.initPlayer();
+    }
+
     var that = this;
     this.$videoWrap.classList.add('video-player__playing');
     this.$module.classList.add('js-video-player__playing');
-    this.$player.play();
 
-    window.addEventListener('keydown', function(e){
-        if((e.key=='Escape'||e.key=='Esc')){
+    this.$player.on('ready', function(){
+        that.$player.play();
+    });
+
+
+    window.addEventListener('keydown', function (e) {
+        if ((e.key == 'Escape' || e.key == 'Esc')) {
             that.close(e);
             e.preventDefault();
             return false;
@@ -91,7 +109,7 @@ VideoPlayer.prototype.play = function (event) {
 
 VideoPlayer.prototype.enableTrackingEvents = function () {
     var that = this;
-    this.$player.on('play', function(event) {
+    this.$player.on('play', function (event) {
         if (that.$player.currentTime == 0) {
             that.sendEvent('video_started');
         }
@@ -99,15 +117,15 @@ VideoPlayer.prototype.enableTrackingEvents = function () {
             that.sendEvent('video_play');
         }
 
-        that.$playingTimer = setInterval(that.sendPlayingEvent.bind(that,that), that.$playingTimerTimespan);
+        that.$playingTimer = setInterval(that.sendPlayingEvent.bind(that, that), that.$playingTimerTimespan);
     });
 
-    this.$player.on('ended', function(event) {
+    this.$player.on('ended', function (event) {
         that.sendEvent('video_ended');
         clearInterval(that.$playingTimer);
     });
 
-    this.$player.on('pause', function(event) {
+    this.$player.on('pause', function (event) {
         that.sendEvent('video_paused');
         clearInterval(that.$playingTimer);
     });
@@ -117,8 +135,8 @@ VideoPlayer.prototype.enableTrackingEvents = function () {
 VideoPlayer.prototype.sendEvent = function (event) {
 
     var properties = {
-        'currentTimestamp': round(this.$player.currentTime,1),
-        'totalVideoPlayed': round(this.$player.currentTime/this.$player.duration,2),
+        'currentTimestamp': round(this.$player.currentTime, 1),
+        'totalVideoPlayed': round(this.$player.currentTime / this.$player.duration, 2),
         'totalVideoDuration': this.$player.duration,
         'videoId': this.$player.embed.getVideoData().video_id
     }
