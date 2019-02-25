@@ -84,17 +84,19 @@ VideoPlayer.prototype.close = function (event) {
 VideoPlayer.prototype.play = function (event) {
     if (this.$player == undefined) {
         this.initPlayer();
+
+        this.$player.on('ready', function () {
+            that.$player.play();
+        });
     }
 
     var that = this;
     this.$videoWrap.classList.add('video-player__playing');
     this.$module.classList.add('js-video-player__playing');
 
-    this.$player.on('ready', function(){
+    if (this.$player.ready) {
         that.$player.play();
-    });
-
-
+    }
     window.addEventListener('keydown', function (e) {
         if ((e.key == 'Escape' || e.key == 'Esc')) {
             that.close(e);
