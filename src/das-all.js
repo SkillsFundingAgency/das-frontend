@@ -17,52 +17,57 @@ function nodeListForEach(nodes, callback) {
 
 function initAll() {
 
-  var $accordions = document.querySelectorAll('[data-module="accordion"]');
-  nodeListForEach($accordions, function ($accordion) {
-    new Accordion($accordion).init();
-  });
-
-  var $navs = document.querySelectorAll('[data-module="navigation"]');
-  nodeListForEach($navs, function ($navs) {
-    new Navigation($navs).init();
-  });
-
-  var $cookieBanner = document.querySelector('[data-module="cookieBanner"]');
-  if ($cookieBanner != null) {
-    new CookieBanner($cookieBanner).init();
-  }
-
-  var $smoothScroll = document.querySelectorAll('[data-module="smoothScroll"]')
-  nodeListForEach($smoothScroll, function ($smoothScroll) {
-    new SmoothScroll($smoothScroll).init();
-  });
 
   var $gtmDataLayer = window.dataLayer;
 
-  var $videoPlayer = document.querySelectorAll('[data-module="videoPlayer"]')
-  nodeListForEach($videoPlayer, function ($videoPlayer) {
-    new VideoPlayer($videoPlayer, $gtmDataLayer).init();
-  });
 
+  addLoadEvent(function () {
 
-
-
-  window.onload = function () {
-    nodeListForEach($videoPlayer, function ($videoPlayer) {
-      $videoPlayer.classList.add('js-video-player__ready');
+    var $navs = document.querySelectorAll('[data-module="navigation"]');
+    nodeListForEach($navs, function ($navs) {
+      new Navigation($navs).init();
     });
 
-    
-    // var $searchResults = document.querySelectorAll('[data-module="searchResults"]')
+    var $cookieBanner = document.querySelector('[data-module="cookieBanner"]');
+    if ($cookieBanner != null) {
+      new CookieBanner($cookieBanner).init();
+    }
 
-    // nodeListForEach($searchResults, function ($searchResult) {
-    //   new SearchResults($searchResult, $apiKey).init();
+    var $accordions = document.querySelectorAll('[data-module="accordion"]');
+    nodeListForEach($accordions, function ($accordion) {
+      new Accordion($accordion).init();
+    });
+
+    var $smoothScroll = document.querySelectorAll('[data-module="smoothScroll"]')
+    nodeListForEach($smoothScroll, function ($smoothScroll) {
+      new SmoothScroll($smoothScroll).init();
+    });
+
+    var $videoPlayer = document.querySelectorAll('[data-module="videoPlayer"]')
+    nodeListForEach($videoPlayer, function ($videoPlayer) {
+      new VideoPlayer($videoPlayer, $gtmDataLayer).init();
+    });
+    // nodeListForEach($videoPlayer, function ($videoPlayer) {
+    //   $videoPlayer.classList.add('js-video-player__ready');
     // });
-  }
+  });
 
 }
 
-function initMaps(){
+function addLoadEvent(func) {
+  var currentOnLoad = window.onload;
+  if (typeof window.onload != 'function') {
+    window.onload = func;
+  }
+  else {
+    window.onload = function () {
+      currentOnLoad();
+      func();
+    }
+  }
+}
+
+function initMaps() {
   if (window.google != null && window.google.maps != null) {
     var $googleMaps = document.querySelectorAll('[data-module="googleMaps"]')
     nodeListForEach($googleMaps, function ($map) {

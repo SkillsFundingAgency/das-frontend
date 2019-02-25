@@ -11,7 +11,7 @@ const resolve = require('rollup-plugin-node-resolve')
 const commonjs = require('rollup-plugin-commonjs');
 const terser = require('gulp-terser');
 
-const isDist = false
+const isDist = true;
 
 const rollupGlobals = {
   '@angular/core': 'ng.core',
