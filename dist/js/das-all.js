@@ -432,8 +432,6 @@ properties.event = event;
 
 var propertiesJson = JSON.stringify(properties);
 this.$DataLayer.push(properties);
-  
-
 };
 
 // import Plyr from 'plyr'
@@ -903,6 +901,25 @@ GoogleMaps.prototype.LoadMarkers = function (markers) {
 
 };
 
+function NetworkInformation($gtmDataLayer) {
+    this.$connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+
+    this.$trackingEnabled = $gtmDataLayer != null;
+    this.$gtmDataLayer = $gtmDataLayer;
+    this.$gtm = null;
+}
+
+
+NetworkInformation.prototype.init = function () {
+    if (this.$connection) {
+        if (this.$trackingEnabled) {
+            this.$gtm = new GoogleTagManager(this.$gtmDataLayer);
+            this.$gtm.sendEvent("NetworkInformation",this.$connection);
+        }
+    }
+
+};
+
 function nodeListForEach$2(nodes, callback) {
   if (window.NodeList.prototype.forEach) {
     return nodes.forEach(callback)
@@ -947,6 +964,8 @@ function initAll() {
     // nodeListForEach($videoPlayer, function ($videoPlayer) {
     //   $videoPlayer.classList.add('js-video-player__ready');
     // });
+
+    new NetworkInformation($gtmDataLayer).init();
   });
 
 }
@@ -980,5 +999,6 @@ exports.Navigation = Navigation;
 exports.CookieBanner = CookieBanner;
 exports.VideoPlayer = VideoPlayer;
 exports.GoogleMaps = GoogleMaps;
+exports.NetworkInformation = NetworkInformation;
 
 })));
