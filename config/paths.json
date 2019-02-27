@@ -2,6 +2,7 @@
   "src": {
     "default": "./src/sass/**/*.scss",
     "defaultJs": "./src/js/*.js",
+    "componentJs": "./src/compnents/**/*.js",
     "legacy": "./src/legacy/sass/**/*.scss",
     "legacyJs": "./src/legacy/javascript/*.js",
     "campaign": "./src/campaign/sass/**/*.scss",
