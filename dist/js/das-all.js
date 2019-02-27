@@ -432,6 +432,8 @@ properties.event = event;
 
 var propertiesJson = JSON.stringify(properties);
 this.$DataLayer.push(properties);
+  
+
 };
 
 // import Plyr from 'plyr'
@@ -914,7 +916,35 @@ NetworkInformation.prototype.init = function () {
     if (this.$connection) {
         if (this.$trackingEnabled) {
             this.$gtm = new GoogleTagManager(this.$gtmDataLayer);
-            this.$gtm.sendEvent("NetworkInformation",this.$connection);
+
+            var networkInformation = {};
+
+            if (this.$connection.downlink != null) {
+                networkInformation.downlink = this.$connection.downlink;
+            }
+
+            if (this.$connection.effectiveType != null) {
+                networkInformation.effectiveType = this.$connection.effectiveType;
+            }
+
+            if (this.$connection.rtt != null) {
+                networkInformation.rtt = this.$connection.rtt;
+            }
+
+            if (this.$connection.saveData != null) {
+                networkInformation.saveData = this.$connection.saveData;
+            }
+
+            if (this.$connection.type != null) {
+                networkInformation.type = this.$connection.type;
+            }
+
+            if (this.$connection.downlinkMax != null) {
+                networkInformation.downlinkMax = this.$connection.downlinkMax;
+            }
+
+            this.$gtm.sendEvent("NetworkInformation.onLoad", networkInformation);
+
         }
     }
 
@@ -961,9 +991,6 @@ function initAll() {
     nodeListForEach$2($videoPlayer, function ($videoPlayer) {
       new VideoPlayer($videoPlayer, $gtmDataLayer).init();
     });
-    // nodeListForEach($videoPlayer, function ($videoPlayer) {
-    //   $videoPlayer.classList.add('js-video-player__ready');
-    // });
 
     new NetworkInformation($gtmDataLayer).init();
   });
@@ -999,6 +1026,5 @@ exports.Navigation = Navigation;
 exports.CookieBanner = CookieBanner;
 exports.VideoPlayer = VideoPlayer;
 exports.GoogleMaps = GoogleMaps;
-exports.NetworkInformation = NetworkInformation;
 
 })));
