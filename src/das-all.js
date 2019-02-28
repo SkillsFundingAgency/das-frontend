@@ -46,7 +46,7 @@ function initAll() {
 
     var $videoPlayer = document.querySelectorAll('[data-module="videoPlayer"]')
     nodeListForEach($videoPlayer, function ($videoPlayer) {
-      new VideoPlayer($videoPlayer, $gtmDataLayer).init();
+     new VideoPlayer($videoPlayer, $gtmDataLayer).init();
     });
 
     new NetworkInformation($gtmDataLayer).init();

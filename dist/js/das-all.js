@@ -460,24 +460,17 @@ VideoPlayer.prototype.init = function () {
 
     // Check module exists
     var $module = this.$module;
+    
     if (!$module) {
         return
     }
 
-
+    this.initPlayer();
 
     var event = 'click';
-    // if (this.$player.touch == true) {
-    //     event = 'touchstart';
-    // }
 
     this.$module.addEventListener(event, this.play.bind(this));
-
-
-
     this.$module.classList.add('js-video-player__ready');
-
-
 
 };
 
@@ -518,15 +511,20 @@ VideoPlayer.prototype.close = function (event) {
 };
 
 VideoPlayer.prototype.play = function (event) {
+
+    var that = this;
+
     if (this.$player == undefined) {
         this.initPlayer();
 
         this.$player.on('ready', function () {
-            that.$player.play();
+
+             that.$player.play();
+
+
         });
     }
 
-    var that = this;
     this.$videoWrap.classList.add('video-player__playing');
     this.$module.classList.add('js-video-player__playing');
 
@@ -989,7 +987,7 @@ function initAll() {
 
     var $videoPlayer = document.querySelectorAll('[data-module="videoPlayer"]');
     nodeListForEach$2($videoPlayer, function ($videoPlayer) {
-      new VideoPlayer($videoPlayer, $gtmDataLayer).init();
+     new VideoPlayer($videoPlayer, $gtmDataLayer).init();
     });
 
     new NetworkInformation($gtmDataLayer).init();
