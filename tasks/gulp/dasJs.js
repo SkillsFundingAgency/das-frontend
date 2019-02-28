@@ -13,7 +13,7 @@ const terser = require('gulp-terser');
 
 
 gulp.task('watch-js-das-all', () => {
-  gulp.watch(configPaths.src.componentJs, ['js-components'])
+  gulp.watch(configPaths.src.componentJs, ['js:compile'])
     .on('change', (event) => {
       console.log(`File ${event.path} was ${event.type}, running tasks...`);
     });
