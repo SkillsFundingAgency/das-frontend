@@ -20,6 +20,7 @@
   display: block;
   padding: 10px $govuk-gutter-half 8px;
   color: $govuk-link-colour;
+  display: block;
   @include govuk-focusable;
 }
 
@@ -52,14 +53,12 @@
 .das-navigation__priority-list {
   background: #ccc;
   list-style: none;
-  overflow: hidden;
   padding-left: 0;
-}
-
-.das-navigation__priority-list-item {
-  float: left;
-  clear: left;
-  width: 100%;
+  clear: both;
+  & > .das-navigation__list-item {
+    width: 100%;
+    border-top: 1px solid #ccc;
+  }
 }
 
 .das-navigation__priority-button {
