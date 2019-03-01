@@ -460,24 +460,17 @@ VideoPlayer.prototype.init = function () {
 
     // Check module exists
     var $module = this.$module;
+    
     if (!$module) {
         return
     }
 
-
+    this.initPlayer();
 
     var event = 'click';
-    // if (this.$player.touch == true) {
-    //     event = 'touchstart';
-    // }
 
     this.$module.addEventListener(event, this.play.bind(this));
-
-
-
     this.$module.classList.add('js-video-player__ready');
-
-
 
 };
 
@@ -518,19 +511,26 @@ VideoPlayer.prototype.close = function (event) {
 };
 
 VideoPlayer.prototype.play = function (event) {
-    if (this.$player == undefined) {
-        this.initPlayer();
-    }
 
     var that = this;
+
+    if (this.$player == undefined) {
+        this.initPlayer();
+
+        this.$player.on('ready', function () {
+
+             that.$player.play();
+
+
+        });
+    }
+
     this.$videoWrap.classList.add('video-player__playing');
     this.$module.classList.add('js-video-player__playing');
 
-    this.$player.on('ready', function(){
+    if (this.$player.ready) {
         that.$player.play();
-    });
-
-
+    }
     window.addEventListener('keydown', function (e) {
         if ((e.key == 'Escape' || e.key == 'Esc')) {
             that.close(e);
@@ -901,6 +901,53 @@ GoogleMaps.prototype.LoadMarkers = function (markers) {
 
 };
 
+function NetworkInformation($gtmDataLayer) {
+    this.$connection = navigator.connection || navigator.mozConnection || navigator.webkitConnection;
+
+    this.$trackingEnabled = $gtmDataLayer != null;
+    this.$gtmDataLayer = $gtmDataLayer;
+    this.$gtm = null;
+}
+
+
+NetworkInformation.prototype.init = function () {
+    if (this.$connection) {
+        if (this.$trackingEnabled) {
+            this.$gtm = new GoogleTagManager(this.$gtmDataLayer);
+
+            var networkInformation = {};
+
+            if (this.$connection.downlink != null) {
+                networkInformation.downlink = this.$connection.downlink;
+            }
+
+            if (this.$connection.effectiveType != null) {
+                networkInformation.effectiveType = this.$connection.effectiveType;
+            }
+
+            if (this.$connection.rtt != null) {
+                networkInformation.rtt = this.$connection.rtt;
+            }
+
+            if (this.$connection.saveData != null) {
+                networkInformation.saveData = this.$connection.saveData;
+            }
+
+            if (this.$connection.type != null) {
+                networkInformation.type = this.$connection.type;
+            }
+
+            if (this.$connection.downlinkMax != null) {
+                networkInformation.downlinkMax = this.$connection.downlinkMax;
+            }
+
+            this.$gtm.sendEvent("NetworkInformation.onLoad", networkInformation);
+
+        }
+    }
+
+};
+
 function nodeListForEach$2(nodes, callback) {
   if (window.NodeList.prototype.forEach) {
     return nodes.forEach(callback)
@@ -940,11 +987,10 @@ function initAll() {
 
     var $videoPlayer = document.querySelectorAll('[data-module="videoPlayer"]');
     nodeListForEach$2($videoPlayer, function ($videoPlayer) {
-      new VideoPlayer($videoPlayer, $gtmDataLayer).init();
+     new VideoPlayer($videoPlayer, $gtmDataLayer).init();
     });
-    // nodeListForEach($videoPlayer, function ($videoPlayer) {
-    //   $videoPlayer.classList.add('js-video-player__ready');
-    // });
+
+    new NetworkInformation($gtmDataLayer).init();
   });
 
 }

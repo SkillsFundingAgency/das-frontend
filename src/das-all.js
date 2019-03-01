@@ -5,6 +5,7 @@ import VideoPlayer from './components/video-player/videoplayer'
 import SmoothScroll from './components/smoothScroll/_smoothScroll'
 import GoogleMaps from './components/googleMaps/_googleMaps'
 import SearchResults from './components/SearchResults/_searchResults'
+import NetworkInformation from './components/networkInformation/_networkInformation'
 
 function nodeListForEach(nodes, callback) {
   if (window.NodeList.prototype.forEach) {
@@ -45,11 +46,10 @@ function initAll() {
 
     var $videoPlayer = document.querySelectorAll('[data-module="videoPlayer"]')
     nodeListForEach($videoPlayer, function ($videoPlayer) {
-      new VideoPlayer($videoPlayer, $gtmDataLayer).init();
+     new VideoPlayer($videoPlayer, $gtmDataLayer).init();
     });
-    // nodeListForEach($videoPlayer, function ($videoPlayer) {
-    //   $videoPlayer.classList.add('js-video-player__ready');
-    // });
+
+    new NetworkInformation($gtmDataLayer).init();
   });
 
 }

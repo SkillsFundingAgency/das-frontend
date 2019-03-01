@@ -11,6 +11,16 @@
   }
 }
 
+.contact-phone-number__number {
+  @include font($size: 48, $weight: bold);
+  color:#fff;
+  margin: 0;
+  a {
+    color: #fff;
+    text-decoration: none;
+  }
+}
+
 .contact-phone-number__heading{
   color: $grey-4;
   margin: 0 0 5px;
