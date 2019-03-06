@@ -17,7 +17,7 @@ gulp.task('copy-assets', () => {
 });
 
 gulp.task('copy-js', () => {
-  gulp.src(['./node_modules/govuk-frontend/*.js','./node_modules/govuk-frontend/vendor/**.js','./node_modules/govuk-frontend/components/**/*.js']).pipe(gulp.dest('./dist/js/'));
+  gulp.src(['./node_modules/govuk-frontend/all.js']).pipe(gulp.dest('./dist/libs/govuk-frontend'));
 });
 
 gulp.task('sass', () => gulp
@@ -25,3 +25,6 @@ gulp.task('sass', () => gulp
   .pipe(sass(sassOptions))
   .pipe(gulp.dest(paths.dist.default)));
 
+gulp.task('copy-libs', () => {
+  gulp.src(['./node_modules/accessible-autocomplete/dist/accessible-autocomplete.min.js']).pipe(gulp.dest('./dist/libs/accessible-autocomplete'));
+});
