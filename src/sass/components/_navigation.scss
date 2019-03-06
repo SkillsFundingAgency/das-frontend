@@ -69,6 +69,12 @@
   position: absolute;
   top: 0;
   right: 0;
+  &:before {
+    content: "";
+    position: absolute;
+    background: $govuk-link-colour;
+    border: 10px solid red;
+  }
 }
 
 .das-navigation__priority-list.visually-hidden {
