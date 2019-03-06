@@ -5,6 +5,9 @@ $govuk-fonts-path: "../assets/fonts/";
 // GDS Design System
 @import "all";
 
+// Autocomplete
+@import "autocomplete";
+
 // DAS
 @import "settings/all";
 @import "components/all";
