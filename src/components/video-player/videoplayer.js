@@ -10,7 +10,7 @@ function VideoPlayer($module, $gtmDataLayer) {
     this.$playerElement = null;
     this.$videoWrap = null;
     this.$playerClass = this.$module.dataset.playerclass;
-    this.$videoPlayerTemplate = '<div class="video-player__wrap"><a href="#" class="video-player__close" id="unmute-{videoPlayerId}" tabindex="0">unmute</a><a href="#" class="video-player__close" id="close-{videoPlayerId}" tabindex="0">Close</a><div class="video-player plyr__video-embed js-player visually-hidden" id="{videoPlayerId}"><div class="video-player--inner-wrap"><iframe src="{videoUrl}" allowfullscreen allowtransparency allow="autoplay"></iframe></div></div></div>';
+    this.$videoPlayerTemplate = '<div class="video-player__wrap"><a href="#" class="video-player__close" id="close-{videoPlayerId}" tabindex="0">Close</a><div class="video-player plyr__video-embed js-player visually-hidden" id="{videoPlayerId}"><div class="video-player--inner-wrap"><iframe src="{videoUrl}" allowfullscreen allowtransparency allow="autoplay"></iframe></div></div></div>';
 
     this.$trackingEnabled = $gtmDataLayer != null;
     this.$gtmDataLayer = $gtmDataLayer;
