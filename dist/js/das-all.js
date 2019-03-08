@@ -465,12 +465,11 @@ VideoPlayer.prototype.init = function () {
         return
     }
 
-    this.initPlayer();
-
     var event = 'click';
 
     this.$module.addEventListener(event, this.play.bind(this));
     this.$module.classList.add('js-video-player__ready');
+    this.$module.setAttribute('href','');
 
 };
 
@@ -489,6 +488,8 @@ VideoPlayer.prototype.initPlayer = function () {
 
     this.$closeButton = document.getElementById('close-' + this.$videoPlayerId);
     this.$closeButton.addEventListener('click', this.close.bind(this));
+
+    this.$player;
 
     if (this.$trackingEnabled) {
         this.$gtm = new GoogleTagManager(this.$gtmDataLayer);
@@ -518,8 +519,8 @@ VideoPlayer.prototype.play = function (event) {
         this.initPlayer();
 
         this.$player.on('ready', function () {
-
-             that.$player.play();
+            that.$player.muted = true;
+            that.$player.play();
 
 
         });
@@ -529,6 +530,7 @@ VideoPlayer.prototype.play = function (event) {
     this.$module.classList.add('js-video-player__playing');
 
     if (this.$player.ready) {
+        that.$player.muted = true;
         that.$player.play();
     }
     window.addEventListener('keydown', function (e) {
