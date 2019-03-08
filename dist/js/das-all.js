@@ -523,6 +523,11 @@ VideoPlayer.prototype.play = function (event) {
             that.$player.play();
 
 
+
+            setTimeout(function() {
+                that.$player.muted = false;
+            }, 3000);
+
         });
     }
 
