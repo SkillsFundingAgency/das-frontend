@@ -489,6 +489,9 @@ VideoPlayer.prototype.initPlayer = function () {
     this.$closeButton = document.getElementById('close-' + this.$videoPlayerId);
     this.$closeButton.addEventListener('click', this.close.bind(this));
 
+    this.$unmuteButton = document.getElementById('unmute-' + this.$videoPlayerId);
+    this.$unmuteButton.addEventListener('click', this.unmute.bind(this));
+
     this.$player;
 
     if (this.$trackingEnabled) {
@@ -511,22 +514,21 @@ VideoPlayer.prototype.close = function (event) {
     event.preventDefault();
 };
 
+VideoPlayer.prototype.unmute = function (event) {
+    this.$player.muted = false;
+};
 VideoPlayer.prototype.play = function (event) {
 
     var that = this;
-
+var clickEvent = event;
     if (this.$player == undefined) {
         this.initPlayer();
 
         this.$player.on('ready', function () {
             that.$player.muted = true;
             that.$player.play();
-
-
-
-            setTimeout(function() {
-                that.$player.muted = false;
-            }, 3000);
+            
+            that.unmute(clickEvent);
 
         });
     }
