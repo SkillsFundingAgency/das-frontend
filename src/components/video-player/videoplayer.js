@@ -35,9 +35,7 @@ VideoPlayer.prototype.init = function () {
     var event = 'click';
 
     this.$module.addEventListener(event, this.play.bind(this));
-    //  this.$module.classList.add('js-video-player__ready');
     this.$href = this.$module.getAttribute('href');
-    // this.$module.setAttribute('href', '');
 
 }
 
@@ -57,9 +55,6 @@ VideoPlayer.prototype.initPlayer = function () {
     this.$closeButton = document.getElementById('close-' + this.$videoPlayerId);
     this.$closeButton.addEventListener('click', this.close.bind(this));
 
-
-    this.$player
-
     if (this.$trackingEnabled) {
         this.$gtm = new GoogleTagManager(this.$gtmDataLayer);
         this.enableTrackingEvents();
@@ -69,8 +64,6 @@ VideoPlayer.prototype.initPlayer = function () {
 VideoPlayer.prototype.appendPlayer = function () {
     var playerHtml = this.$videoPlayerTemplate.replace(/{videoPlayerId}/g, this.$videoPlayerId).replace('{videoUrl}', this.$videoUrl);
     window.document.body.insertAdjacentHTML('beforeend', playerHtml);
-
-
 }
 
 VideoPlayer.prototype.close = function (event) {
@@ -94,7 +87,6 @@ VideoPlayer.prototype.redirectToHref = function () {
 VideoPlayer.prototype.play = function (event) {
 
     var that = this;
-    var clickEvent = event;
     if (this.$player == undefined) {
         this.initPlayer();
 
@@ -148,7 +140,6 @@ VideoPlayer.prototype.enableTrackingEvents = function () {
         clearInterval(that.$playingTimer);
     });
 
-
 }
 VideoPlayer.prototype.sendEvent = function (event) {
 
@@ -169,7 +160,6 @@ function round(value, precision) {
     var multiplier = Math.pow(10, precision || 0);
     return Math.round(value * multiplier) / multiplier;
 }
-
 
 VideoPlayer.prototype.iOSSetup = function(){
     if (this.$iOS == true) {
