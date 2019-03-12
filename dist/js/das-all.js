@@ -505,13 +505,16 @@ VideoPlayer.prototype.appendPlayer = function () {
 VideoPlayer.prototype.close = function (event) {
     this.$videoWrap.classList.remove('video-player__playing');
     this.$module.classList.remove('js-video-player__playing');
+
+    this.iOSSetup();
+
     this.$player.stop();
     event.preventDefault();
 };
 
 VideoPlayer.prototype.unmute = function (event) {
     this.$player.muted = false;
-    this.$unmuteButton.remove();
+    this.$unmuteButton.classList.remove('video-player--ready');
     event.preventDefault();
 };
 
