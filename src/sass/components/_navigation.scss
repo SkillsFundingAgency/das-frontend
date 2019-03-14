@@ -64,19 +64,31 @@
 .das-navigation__priority-button {
   display: block;
   padding: 10px $govuk-gutter-half 8px;
+  padding-left: 35px;
   color: $govuk-link-colour;
   @include govuk-focusable;
   position: absolute;
   top: 0;
   right: 0;
+  background: #eeeeee;
   &:before {
-    content: "";
     position: absolute;
-    background: $govuk-link-colour;
-    border: 10px solid red;
+    left: 15px;
+    top: 15px;
+    @include triangle-equilateral(down, 10px, $govuk-link-colour)
+  }
+  &.open:before {
+    @include triangle-equilateral(up, 10px, $govuk-link-colour)
   }
 }
 
 .das-navigation__priority-list.visually-hidden {
   display: none;
 }
+
+
+
+
+
+
+
