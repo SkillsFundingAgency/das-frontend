@@ -9,18 +9,3 @@ p {
 .govuk-main-wrapper  p {
   @include govuk-text-colour;
 }
-
-.das-definition-list {
-  @include govuk-font($size: 19);
-  @include govuk-text-colour;
-  margin-top: 0;
-  @include govuk-responsive-margin(4, "bottom");
-}
-
-.das-definition-list__title {
-  font-weight: $govuk-font-weight-bold;
-}
-
-.das-definition-list__definition {
-  margin: 0;
-}

@@ -1,0 +1,36 @@
+
+.das-definition-list {
+  @include govuk-font($size: 19);
+  @include govuk-text-colour;
+  margin-top: 0;
+  @include govuk-responsive-margin(4, "bottom");
+}
+
+.das-definition-list__title {
+  font-weight: $govuk-font-weight-bold;
+}
+
+.das-definition-list__definition {
+  margin: 0;
+}
+
+
+.das-definition-list--inline {
+  overflow: hidden;
+  & > .das-definition-list__title {
+    clear: both;
+    float: left;
+    font-weight: normal;
+    margin-right: 10px;
+    &:after {
+      content: ':';
+    }
+  }
+  & > .das-definition-list__definition {
+    float: left;
+  }
+}
+
+.das-definition-list--muted {
+  color: $govuk-secondary-text-colour;
+}
