@@ -19,6 +19,35 @@
           <li>Aenean massa cum sociis natoque penatibus.</li>
         </ul>
 
+        <h2 class="govuk-heading-m">Definition lists (.das-definition-list)</h2>
+        <dl class="das-definition-list">
+            <dt class="das-definition-list__title">Account name</dt>
+            <dd class="das-definition-list__definition">Skills funding agency </dd>
+            <dt class="das-definition-list__title">Agreement ID</dt>
+            <dd class="das-definition-list__definition">12345678</dd>
+        </dl>
+
+        <h2 class="govuk-heading-m">Definition lists (.das-definition-list .das-definition-list--inline)</h2>
+        <dl class="das-definition-list das-definition-list--inline das-definition-list--muted govuk-!-font-size-24">
+            <dt class="das-definition-list__title">Account name</dt>
+            <dd class="das-definition-list__definition">Skills funding agency </dd>
+            <dt class="das-definition-list__title">Agreement ID</dt>
+            <dd class="das-definition-list__definition">12345678</dd>
+        </dl>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="sort">
+            Sort by
+          </label>
+          <select class="govuk-select" id="course-search" name="sort">
+            <option value="">Please select</option>
+            <option value="published">Recently published</option>
+            <option value="updated" selected>Recently updated</option>
+            <option value="views">Most views</option>
+            <option value="comments">Most comments</option>
+          </select>
+        </div>
+
     </div>
 </div>
 
