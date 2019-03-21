@@ -520,7 +520,9 @@ VideoPlayer.prototype.unmute = function (event) {
 
 VideoPlayer.prototype.redirectToHref = function () {
     if (this.$player.ready == false) {
-        window.location.href = this.$href;
+        this.sendEvent('video_redirection', function () {
+            window.location.href = this.$href;
+        });
     }
 };
 VideoPlayer.prototype.play = function (event) {
@@ -580,15 +582,20 @@ VideoPlayer.prototype.enableTrackingEvents = function () {
     });
 
 };
-VideoPlayer.prototype.sendEvent = function (event) {
-
-    var properties = {
-        'currentTimestamp': round(this.$player.currentTime, 1),
-        'totalVideoPlayed': round(this.$player.currentTime / this.$player.duration, 2),
-        'totalVideoDuration': this.$player.duration,
-        'videoId': this.$player.embed.getVideoData().video_id
-    };
-    this.$gtm.sendEvent(event, properties);
+VideoPlayer.prototype.sendEvent = function (event, callback) {
+    //only send the event if there is a GTM instance to send it to.
+    if (this.$gtm != null) {
+        var properties = {
+            'currentTimestamp': round(this.$player.currentTime, 1),
+            'totalVideoPlayed': round(this.$player.currentTime / this.$player.duration, 2),
+            'totalVideoDuration': this.$player.duration,
+            'videoId': this.$player.embed.getVideoData().video_id
+        };
+        if (callback != null) {
+            properties.eventCallback = callback;
+        }
+        this.$gtm.sendEvent(event, properties);
+    }
 };
 
 VideoPlayer.prototype.sendPlayingEvent = function (vp) {
@@ -600,7 +607,7 @@ function round(value, precision) {
     return Math.round(value * multiplier) / multiplier;
 }
 
-VideoPlayer.prototype.iOSSetup = function(){
+VideoPlayer.prototype.iOSSetup = function () {
     if (this.$iOS == true) {
         this.$unmuteButton = document.getElementById('unmute-' + this.$videoPlayerId);
         this.$unmuteButton.addEventListener('click', this.unmute.bind(this));
