@@ -65,3 +65,16 @@
     right: -80px;
   }
 }
+
+.hero-heading__hm-government-link {
+  display: inline-block;
+  margin-top: 20px;
+  margin-bottom: -10px;
+  @include media-query($from: tablet) {
+    margin-bottom: -20px;
+  }
+}
+
+.hero-heading__hm-government-logo {
+  display: block;
+}
