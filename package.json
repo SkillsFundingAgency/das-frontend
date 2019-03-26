@@ -22,7 +22,7 @@
     "plyr": "^3.5.2"
   },
   "devDependencies": {
-    "govuk-frontend": "^2.8.0",
+    "govuk-frontend": "^2.9.0",
     "gulp": "^3.9.1",
     "gulp-better-rollup": "3.1.0",
     "gulp-changed": "^3.2.0",
@@ -43,7 +43,7 @@
     "gulp-to-markdown": "^1.0.0",
     "gulp-uglify": "^3.0.2",
     "gulp-uglify-es": "^1.0.4",
-    "rollup-plugin-commonjs": "^9.2.1",
+    "rollup-plugin-commonjs": "^9.2.2",
     "rollup-plugin-node-resolve": "^3.4.0"
   },
   "bugs": {
