@@ -3,6 +3,9 @@
 }
 
 .search-results-list {
+  @include mq ($until: tablet) {
+    margin-right: spacing(4);
+  }
   list-style: none;
   color: $black;
   > li {
