@@ -1,0 +1,12 @@
+.error-message {
+  @include typography-common;
+  clear: both;
+  color: $error-colour;
+  display: block;
+  font-weight: $font-weight-light;
+
+  &--light{
+    color: $error-colour-light;
+  }
+
+}
