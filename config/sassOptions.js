@@ -5,8 +5,8 @@ sassOptions = {
   outputStyle: 'compressed',
   includePaths: [
     'node_modules/govuk-frontend',
-    'node_modules/accessible-autocomplete/src',
-    'src/sass'
+    'src/sass',
+    'src/sass/libs'
   ],
 };
 
