@@ -4,8 +4,10 @@ const gulp = require('gulp')
 const sass = require('gulp-sass');
 const paths = require('../../config/paths.json')
 const sassOptions = require('../../config/sassOptions.js')
+const rename = require('gulp-rename');
 
-gulp.task('watch', () => {
+
+ gulp.task('watch', () => {
   gulp.watch(paths.src.default, ['sass'])
     .on('change', (event) => {
       console.log(`File ${event.path} was ${event.type}, running tasks...`);
@@ -14,6 +16,12 @@ gulp.task('watch', () => {
 
 gulp.task('copy-assets', () => {
   gulp.src(['./node_modules/govuk-frontend/assets/**/*','./src/assets/**/*']).pipe(gulp.dest('./dist/assets/'));
+});
+
+gulp.task('copy-rename-autocomplete-css', function () {
+  gulp.src(['./node_modules/accessible-autocomplete/src/autocomplete.css'])
+    .pipe(rename('_autocomplete.scss'))
+    .pipe(gulp.dest('./src/sass/libs/'));
 });
 
 gulp.task('copy-js', () => {

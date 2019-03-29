@@ -20,7 +20,7 @@ gulp.task('js-campaign', function() {
 });
 
 gulp.task('copy-plyr-js', () => {
-  gulp.src('./node_modules/plyr/dist/plyr.min.js').pipe(gulp.dest('./dist/campaign/js/'));
+  gulp.src('./node_modules/plyr/dist/plyr.min.js').pipe(gulp.dest(paths.dist.campaignJs));
 });
 
 gulp.task('sass-campaign', () => gulp
