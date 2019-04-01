@@ -12,7 +12,6 @@ gulp.task('watch-campaign', () => {
     });
 });
 
-
 gulp.task('js-campaign', function() {
   return gulp.src(paths.src.campaignJs)
     .pipe(concat('app.min.js'))
@@ -21,6 +20,10 @@ gulp.task('js-campaign', function() {
 
 gulp.task('copy-plyr-js', () => {
   gulp.src('./node_modules/plyr/dist/plyr.min.js').pipe(gulp.dest(paths.dist.campaignJs));
+});
+
+gulp.task('copy-campaign-libs', () => {
+  gulp.src('./src/campaign/javascript/libs/*.js').pipe(gulp.dest(paths.dist.campaignJs + '/libs'));
 });
 
 gulp.task('sass-campaign', () => gulp

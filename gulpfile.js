@@ -8,7 +8,7 @@ require('./tasks/gulp/dasJs')
 const defaultBuildTasks = ['copy-assets', 'copy-js', 'sass', 'js:compile', 'copy-libs', 'copy-rename-autocomplete-css'];
 const defaultWatchTasks = ['watch', 'watch-js-das-all'];
 
-const campaignBuildTasks = ['sass-campaign', 'js-campaign','image-campaign', 'copy-plyr-js'];
+const campaignBuildTasks = ['sass-campaign', 'js-campaign','image-campaign', 'copy-plyr-js', 'copy-campaign-libs'];
 const campaignWatchTasks = ['watch-campaign'];
 
 gulp.task('default',  defaultBuildTasks.concat(defaultWatchTasks));
