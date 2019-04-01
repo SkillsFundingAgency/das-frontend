@@ -40,3 +40,16 @@
   border-bottom-color: $error-colour !important;
   margin-bottom: 10px;
 }
+
+.das-form-group-inline{
+
+  box-sizing: border-box;
+
+  & .input {
+    flex: 1;
+    float: left;
+    width: 75%;
+    height:51px;
+    border: none;
+  }
+}

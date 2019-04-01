@@ -1,0 +1,10 @@
+.das-form-group-inline{
+
+  box-sizing: border-box;
+
+  & .govuk-input {
+    flex: 1;
+    float: left;
+    width: 87%;
+  }
+}

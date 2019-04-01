@@ -1303,14 +1303,13 @@ if (detect) return
  */
 
 var KEY_SPACE = 32;
-var DEBOUNCE_TIMEOUT_IN_SECONDS = 1;
-var debounceFormSubmitTimer = null;
 
 function Button ($module) {
   this.$module = $module;
 }
 
 /**
+* Add event handler for KeyDown
 * if the event target element has a role='button' and the event is key space pressed
 * then it prevents the default event and triggers a click event
 * @param {object} event event
@@ -1327,35 +1326,11 @@ Button.prototype.handleKeyDown = function (event) {
 };
 
 /**
-* If the click quickly succeeds a previous click then nothing will happen.
-* This stops people accidentally causing multiple form submissions by
-* double clicking buttons.
-*/
-Button.prototype.debounce = function (event) {
-  var target = event.target;
-  // Check the button that is clicked on has the preventDoubleClick feature enabled
-  if (target.getAttribute('data-prevent-double-click') !== 'true') {
-    return
-  }
-
-  // If the timer is still running then we want to prevent the click from submitting the form
-  if (debounceFormSubmitTimer) {
-    event.preventDefault();
-    return false
-  }
-
-  debounceFormSubmitTimer = setTimeout(function () {
-    debounceFormSubmitTimer = null;
-  }, DEBOUNCE_TIMEOUT_IN_SECONDS * 1000);
-};
-
-/**
 * Initialise an event listener for keydown at document level
 * this will help listening for later inserted elements with a role="button"
 */
 Button.prototype.init = function () {
   this.$module.addEventListener('keydown', this.handleKeyDown);
-  this.$module.addEventListener('click', this.debounce);
 };
 
 /**
@@ -1728,10 +1703,8 @@ Checkboxes.prototype.setAttributes = function ($input) {
   var inputIsChecked = $input.checked;
   $input.setAttribute('aria-expanded', inputIsChecked);
 
-  var $content = this.$module.querySelector('#' + $input.getAttribute('aria-controls'));
-  if ($content) {
-    $content.classList.toggle('govuk-checkboxes__conditional--hidden', !inputIsChecked);
-  }
+  var $content = document.querySelector('#' + $input.getAttribute('aria-controls'));
+  $content.classList.toggle('govuk-checkboxes__conditional--hidden', !inputIsChecked);
 };
 
 Checkboxes.prototype.handleClick = function (event) {
@@ -1801,7 +1774,9 @@ ErrorSummary.prototype.init = function () {
   if (!$module) {
     return
   }
-  $module.focus();
+  window.addEventListener('load', function () {
+    $module.focus();
+  });
 
   $module.addEventListener('click', this.handleClick.bind(this));
 };
@@ -2007,10 +1982,8 @@ Radios.prototype.setAttributes = function ($input) {
   var inputIsChecked = $input.checked;
   $input.setAttribute('aria-expanded', inputIsChecked);
 
-  var $content = this.$module.querySelector('#' + $input.getAttribute('aria-controls'));
-  if ($content) {
-    $content.classList.toggle('govuk-radios__conditional--hidden', !inputIsChecked);
-  }
+  var $content = document.querySelector('#' + $input.getAttribute('aria-controls'));
+  $content.classList.toggle('govuk-radios__conditional--hidden', !inputIsChecked);
 };
 
 Radios.prototype.handleClick = function (event) {
@@ -2292,60 +2265,52 @@ Tabs.prototype.getHref = function ($tab) {
   return hash
 };
 
-function initAll (options) {
-  // Set the options to an empty object by default if no options are passed.
-  options = typeof options !== 'undefined' ? options : {};
-
-  // Allow the user to initialise GOV.UK Frontend in only certain sections of the page
-  // Defaults to the entire document if nothing is set.
-  var scope = typeof options.scope !== 'undefined' ? options.scope : document;
-
-  // Find all buttons with [role=button] on the scope to enhance.
-  new Button(scope).init();
+function initAll () {
+  // Find all buttons with [role=button] on the document to enhance.
+  new Button(document).init();
 
   // Find all global accordion components to enhance.
-  var $accordions = scope.querySelectorAll('[data-module="accordion"]');
+  var $accordions = document.querySelectorAll('[data-module="accordion"]');
   nodeListForEach($accordions, function ($accordion) {
     new Accordion($accordion).init();
   });
 
   // Find all global details elements to enhance.
-  var $details = scope.querySelectorAll('details');
+  var $details = document.querySelectorAll('details');
   nodeListForEach($details, function ($detail) {
     new Details($detail).init();
   });
 
-  var $characterCount = scope.querySelectorAll('[data-module="character-count"]');
+  var $characterCount = document.querySelectorAll('[data-module="character-count"]');
   nodeListForEach($characterCount, function ($characterCount) {
     new CharacterCount($characterCount).init();
   });
 
-  var $checkboxes = scope.querySelectorAll('[data-module="checkboxes"]');
+  var $checkboxes = document.querySelectorAll('[data-module="checkboxes"]');
   nodeListForEach($checkboxes, function ($checkbox) {
     new Checkboxes($checkbox).init();
   });
 
   // Find first error summary module to enhance.
-  var $errorSummary = scope.querySelector('[data-module="error-summary"]');
+  var $errorSummary = document.querySelector('[data-module="error-summary"]');
   new ErrorSummary($errorSummary).init();
 
   // Find first header module to enhance.
-  var $toggleButton = scope.querySelector('[data-module="header"]');
+  var $toggleButton = document.querySelector('[data-module="header"]');
   new Header($toggleButton).init();
 
-  var $radios = scope.querySelectorAll('[data-module="radios"]');
+  var $radios = document.querySelectorAll('[data-module="radios"]');
   nodeListForEach($radios, function ($radio) {
     new Radios($radio).init();
   });
 
-  var $tabs = scope.querySelectorAll('[data-module="tabs"]');
+  var $tabs = document.querySelectorAll('[data-module="tabs"]');
   nodeListForEach($tabs, function ($tabs) {
     new Tabs($tabs).init();
   });
 }
 
 exports.initAll = initAll;
-exports.Accordion = Accordion;
 exports.Button = Button;
 exports.Details = Details;
 exports.CharacterCount = CharacterCount;
