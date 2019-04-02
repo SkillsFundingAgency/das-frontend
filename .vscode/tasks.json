@@ -16,6 +16,20 @@
             "problemMatcher": [
                 "$gulp-tsc"
             ]
+        },
+        {
+            "type": "gulp",
+            "task": "watch-campaign",
+            "problemMatcher": [
+                "$gulp-tsc"
+            ]
+        },
+        {
+            "type": "gulp",
+            "task": "default",
+            "problemMatcher": [
+                "$gulp-tsc"
+            ]
         }
     ]
 }
