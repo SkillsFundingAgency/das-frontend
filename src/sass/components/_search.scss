@@ -1,10 +1,18 @@
-.das-form-group-inline{
 
-  box-sizing: border-box;
+.das-form-group-inline {
+  display: table;
+  width: 100%;
+  & > .govuk-input {
+    display: table-cell;
+    width: 100%;
+  }
+}
 
-  & .govuk-input {
-    flex: 1;
-    float: left;
-    width: 87%;
+.das-form-group-inline__button-wrap {
+  display: table-cell;
+  vertical-align: top;
+  width: 1%;
+  & > .govuk-button {
+    margin: 0;
   }
 }

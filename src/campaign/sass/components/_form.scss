@@ -41,15 +41,25 @@
   margin-bottom: 10px;
 }
 
-.das-form-group-inline{
-
-  box-sizing: border-box;
-
-  & .input {
-    flex: 1;
-    float: left;
-    width: 75%;
-    height:51px;
+.das-form-group-inline {
+  display: table;
+  width: 100%;
+  background: #fff;
+  & > .input {
+    display: table-cell;
+    padding: spacing(3);
+    width: 100%;
+    background: transparent;
     border: none;
+  }
+}
+
+.das-form-group-inline__button-wrap {
+  display: table-cell;
+  vertical-align: top;
+  background: $employer;
+  width: 1%;
+  & > .button {
+    margin: 0;
   }
 }
