@@ -36,7 +36,7 @@
     "gulp-to-markdown": "^1.0.0",
     "html5shiv": "^3.7.3",
     "jquery": "^3.3.1",
-    "jquery-ui": "^1.12.1",
+    "jquery-ui-dist": "^1.12.1",
     "jquery-validation": "^1.19.0",
     "jquery-validation-unobtrusive": "^3.2.11",
     "jquery.are-you-sure": "^1.9.0",
