@@ -35,4 +35,14 @@ gulp.task('sass', () => gulp
 
 gulp.task('copy-libs', () => {
   gulp.src(['./node_modules/accessible-autocomplete/dist/accessible-autocomplete.min.js']).pipe(gulp.dest('./dist/libs/accessible-autocomplete'));
+  gulp.src(['./src/libs/das-postcode/lookupService.js']).pipe(gulp.dest('./dist/das-postcode/lookupService.js'));
+  gulp.src(['./node_modules/html5shiv/dist/html5shiv.min.js']).pipe(gulp.dest('./dist/libs/html5shivhtml5shiv.min.js'));
+  gulp.src(['./node_modules/jquery/dist/jquery.min.js']).pipe(gulp.dest('./dist/libs/jquery'));
+  gulp.src(['./node_modules/jquery-ui-dist/jquery-ui.min.js']).pipe(gulp.dest('./dist/libs/jquery-ui/jquery-ui.min.js'));
+  gulp.src(['./node_modules/jquery-validation/dist/jquery.validate.min.js']).pipe(gulp.dest('./dist/libs/jquery-validation/jquery.validate.min.js'));
+  gulp.src(['./node_modules/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.min.js']).pipe(gulp.dest('./dist/libs/jquery-validation-unobtrusive/jquery.validate.unobtrusive..min.js'));
+  gulp.src(['./node_modules/jquery.are-you-sure/jquery.are-you-sure.js']).pipe(gulp.dest('./dist/libs/jquery.are-you-sure/jquery.are-you-sure.js'));
+  gulp.src(['./node_modules/select2/dist/js/select2.min.js']).pipe(gulp.dest('./dist/libs/select2/select2.min.js'));
+  gulp.src(['./src/libs/select2/style.css']).pipe(gulp.dest('./dist/libs/select2/style.css'));
+  gulp.src(['./src/libs/tinymce-4.9.2']).pipe(gulp.dest('./dist/libs/tinymce-4.9.2'));
 });
