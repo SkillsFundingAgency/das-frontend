@@ -39,7 +39,6 @@
     "jquery-ui-dist": "^1.12.1",
     "jquery-validation": "^1.19.0",
     "jquery-validation-unobtrusive": "^3.2.11",
-    "jquery.are-you-sure": "^1.9.0",
     "nunjucks": "^3.2.0",
     "plyr": "^3.5.2",
     "rollup-plugin-commonjs": "^9.2.2",
