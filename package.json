@@ -14,9 +14,6 @@
     "accessible-autocomplete": "^1.6.2",
     "aspnet-validation": "0.0.11",
     "express": "^4.16.4",
-    "gulp-sass": "^3.1.0",
-    "nunjucks": "^3.2.0",
-    "plyr": "^3.5.2",
     "govuk-frontend": "^2.9.0",
     "gulp": "^3.9.1",
     "gulp-better-rollup": "3.1.0",
@@ -32,12 +29,22 @@
     "gulp-plumber": "^1.2.1",
     "gulp-postcss": "^7.0.1",
     "gulp-rename": "^1.4.0",
+    "gulp-sass": "^3.1.0",
     "gulp-sass-lint": "^1.4.0",
     "gulp-task-listing": "^1.1.0",
     "gulp-terser": "^1.1.7",
     "gulp-to-markdown": "^1.0.0",
+    "html5shiv": "^3.7.3",
+    "jquery": "^3.3.1",
+    "jquery-ui-dist": "^1.12.1",
+    "jquery-validation": "^1.19.0",
+    "jquery-validation-unobtrusive": "^3.2.11",
+    "jquery.are-you-sure": "^1.9.0",
+    "nunjucks": "^3.2.0",
+    "plyr": "^3.5.2",
     "rollup-plugin-commonjs": "^9.2.2",
-    "rollup-plugin-node-resolve": "^3.4.0"
+    "rollup-plugin-node-resolve": "^3.4.0",
+    "select2": "^4.0.6-rc.1"
   },
   "bugs": {
     "url": "https://github.com/SkillsFundingAgency/das-frontend/issues"
