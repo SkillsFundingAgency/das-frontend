@@ -82,6 +82,10 @@
   list-style-type: decimal;
 }
 
+.list--padding-left-none > li {
+  padding-left: spacing(0);
+}
+
 .list--arrows {
   padding-left: spacing(4);
 }

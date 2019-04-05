@@ -6,7 +6,7 @@ $govuk-fonts-path: "../assets/fonts/";
 @import "all";
 
 // Autocomplete
-@import "autocomplete";
+@import "_autocomplete.scss";
 
 // DAS
 @import "settings/all";

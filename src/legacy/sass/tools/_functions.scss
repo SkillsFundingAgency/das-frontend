@@ -1,4 +1,0 @@
-
-@function das-image-url($filename) {
-  @return url($das-images-path + $filename);
-}
