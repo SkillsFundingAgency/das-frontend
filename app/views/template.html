@@ -75,9 +75,12 @@
 
 <nav class="das-navigation">
     <div class="govuk-width-container">
-        <ul class="das-navigation__list ">
+        <ul class="das-navigation__list" id="navigation">
             <li class="das-navigation__list-item">
                 <a class="das-navigation__link das-navigation__link--current" href="/link">Home</a>
+            </li>
+            <li class="das-navigation__list-item">
+                <a class="das-navigation__link" href="/link">Recruitment</a>
             </li>
             <li class="das-navigation__list-item">
                 <a class="das-navigation__link" href="/link">Finance</a>
@@ -93,6 +96,10 @@
             </li>
             <li class="das-navigation__list-item">
                 <a class="das-navigation__link das-navigation__link--last" href="/link">PAYE schemes</a>
+            </li>
+            <li class="das-navigation__priority-list-item">
+                <a href="" class="das-navigation__priority-button">Menu</a>
+                <ul class="das-navigation__priority-list visually-hidden"></ul>
             </li>
         </ul>
     </div>
@@ -167,6 +174,7 @@
 
 <script src="/js/das-all.js"></script>
 <script src="/libs/accessible-autocomplete/accessible-autocomplete.min.js"></script>
+
 <script>
 
     window.DASFrontend.initAll();

@@ -1,37 +1,94 @@
 .das-navigation {
-  border-bottom: 1px solid govuk-colour(grey-1);
   @include govuk-text-colour;
   @include govuk-font($size: 19);
+  border-bottom: 1px solid govuk-colour(grey-1);
 }
 
 .das-navigation__list {
   list-style: none;
   padding: 0;
   margin: 0 $govuk-gutter-half * -1;
+  position: relative;
   @include govuk-clearfix;
 }
 
 .das-navigation__list-item {
-  @include govuk-media-query($from: tablet) {
-    float: left;
-  }
+  float: left;
 }
 
 .das-navigation__link {
   display: block;
-  padding: 10px $govuk-gutter-half;
-  border-bottom: 1px solid govuk-colour(grey-3);
+  padding: 10px $govuk-gutter-half 8px;
   color: $govuk-link-colour;
+  display: block;
   @include govuk-focusable;
-  @include govuk-media-query($from: tablet) {
-    border: none;
-  }
 }
 
 .das-navigation__link--current {
-
+  position: relative;
+  text-decoration: none;
+  font-weight: $govuk-font-weight-bold;
+  color: govuk-colour("black");
+  &:after {
+    background: govuk-colour("blue");
+    bottom: -1px;
+    content: "";
+    display: block;
+    left: 0;
+    top: 0;
+    width: 5px;
+    position: absolute;
+    z-index: 0;
+    @include govuk-media-query($from: tablet) {
+      top: auto;
+      bottom: 0;
+      left: $govuk-gutter-half;
+      right: $govuk-gutter-half;;
+      width: auto;
+      height: 5px;
+    }
+  }
 }
 
-.das-navigation__link--last {
-  border-bottom: none;
+.das-navigation__priority-list {
+  background: #ccc;
+  list-style: none;
+  padding-left: 0;
+  clear: both;
+  & > .das-navigation__list-item {
+    width: 100%;
+    border-top: 1px solid #ccc;
+  }
 }
+
+.das-navigation__priority-button {
+  display: block;
+  padding: 10px $govuk-gutter-half 8px;
+  padding-left: 35px;
+  color: $govuk-link-colour;
+  @include govuk-focusable;
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #eeeeee;
+  &:before {
+    position: absolute;
+    left: 15px;
+    top: 15px;
+    @include triangle-equilateral(down, 10px, $govuk-link-colour)
+  }
+  &.open:before {
+    @include triangle-equilateral(up, 10px, $govuk-link-colour)
+  }
+}
+
+.das-navigation__priority-list.visually-hidden {
+  display: none;
+}
+
+
+
+
+
+
+
