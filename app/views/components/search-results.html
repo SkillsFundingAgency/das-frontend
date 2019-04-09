@@ -1,0 +1,54 @@
+{% extends "template.html" %}
+{% set backLink = "index" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+            <ol id="apprenticeship-search-results"
+            class="das-search-results__list govuk-list govuk-list--number">
+
+            <li id="standard-x">
+                <article class="das-search-result">
+                    <h2 class="govuk-heading-m govuk-!-margin-bottom-0">
+                        <a class="govuk-link" href="">Test</a>
+                    </h2>
+                    <dl class="govuk-list govuk-!-margin-top-0 govuk-!-margin-bottom-0">
+                        <dt class="govuk-!-font-weight-bold">Level:</dt>
+                        <dd>4 (equivalent to certificate of higher education)</dd>
+                        <dt class="govuk-!-font-weight-bold">Typical length:</dt>
+                        <dd>24 months</dd>
+                        <dt class="govuk-!-font-weight-bold">Apprenticeship Type:</dt>
+                        <dd>Standard</dd>
+                    </dl>
+                </article>
+            </li>
+
+            <li id="standard-x">
+                <article class="das-search-result">
+                    <h2 class="govuk-heading-m govuk-!-margin-bottom-0">
+                        <a class="govuk-link" href="">Test</a>
+                    </h2>
+                    <div class="govuk-warning-text">
+                        <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+                        <strong class="govuk-warning-text__text">
+                            <span class="govuk-warning-text__assistive">Warning</span>
+                            This apprenticeship is closed to new starters from 1 August 2020
+                        </strong>
+                    </div>
+                    <dl class="govuk-list govuk-!-margin-top-0 govuk-!-margin-bottom-0">
+                        <dt class="govuk-!-font-weight-bold">Level:</dt>
+                        <dd>4 (equivalent to certificate of higher education)</dd>
+                        <dt class="govuk-!-font-weight-bold">Typical length:</dt>
+                        <dd>24 months</dd>
+                        <dt class="govuk-!-font-weight-bold">Apprenticeship type:</dt>
+                        <dd>Framework</dd>
+                    </dl>
+                </article>
+            </li>
+
+    </div>
+</div>
+
+{% endblock %}

@@ -1,4 +1,4 @@
-.pagination {
+.pagination, .das-pagination {
   margin: 30px 0;
   border-top: 1px solid #ddd;
   padding: 30px 0 0 0;
@@ -9,7 +9,7 @@
   }
 }
 
-.pagination__list-item {
+.pagination__list-item, .das-pagination__list-item {
   margin: 10px 0;
   @include media-query($from: tablet) {
     width: 50%;
@@ -17,7 +17,7 @@
   }
 }
 
-.page .pagination__link {
+.page .pagination__link, .page .das-pagination__link {
   text-transform: uppercase;
   font-family: $font-family;
   font-weight: bold;
@@ -29,19 +29,21 @@
   }
 }
 
-.page .pagination--employer .pagination__link {
+.page .pagination--employer .pagination__link, .page .das-pagination--employer .das-pagination__link {
   color: $black;
   &:visited {
     color: $black;
   }
 }
 
-.pagination__list-item--next {
+.pagination__list-item--next, .das-pagination__list-item--next {
     float: right;
 }
 
 .pagination__link--previous,
-.pagination__link--next {
+.pagination__link--next,
+.das-pagination__link--previous,
+.das-pagination__link--next{
   background-repeat: no-repeat;
   padding-top: 10px;
   padding-bottom: 10px;
@@ -49,22 +51,29 @@
   box-sizing: border-box;
 }
 
-.pagination__link--previous {
+.pagination__link--previous, .das-pagination__link--previous {
   padding-left: 35px;
   background-image: url("../images/arrow-left.svg");
   background-position: left center;
-  .pagination--employer & {
+  .pagination--employer &, .das-pagination--employer & {
     background-image: url("../images/arrow-left-employer.svg");
   }
 }
 
-.pagination__link--next {
+.pagination__link--next,
+.das-pagination__link--next {
   padding-right: 35px;
   background-image: url("../images/arrow-right.svg");
   background-position: right center;
   text-align: right;
   float: right;
-  .pagination--employer & {
+  .pagination--employer &, .das-pagination--employer & {
     background-image: url("../images/arrow-right-employer.svg");
   }
+}
+
+.das-pagination__caption {
+  display: block;
+  @include font(16);
+
 }

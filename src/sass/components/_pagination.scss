@@ -20,7 +20,7 @@
 
 .govuk-page .das-pagination__link {
   text-transform: uppercase;
-  
+
   font-weight: bold;
   color: $govuk-link-colour;
   text-decoration: none;
@@ -36,8 +36,8 @@
 
 .das-pagination__link--previous,
 .das-pagination__link--next {
+  height: 48px;
   background-repeat: no-repeat;
-  padding-top: 10px;
   padding-bottom: 10px;
   display: inline-block;
   box-sizing: border-box;
@@ -55,4 +55,10 @@
   background-position: right center;
   text-align: right;
   float: right;
+}
+
+.das-pagination__caption{
+  display: block;
+  
+  @include govuk-font(16);
 }
