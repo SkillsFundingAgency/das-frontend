@@ -28,6 +28,10 @@ gulp.task('copy-js', () => {
   gulp.src(['./node_modules/govuk-frontend/all.js']).pipe(gulp.dest('./dist/libs/govuk-frontend'));
 });
 
+gulp.task('copy-img', () => {
+  gulp.src(['./src/images/**/*']).pipe(gulp.dest('./dist/images'));
+});
+
 gulp.task('sass', () => gulp
   .src(paths.src.default)
   .pipe(sass(sassOptions))

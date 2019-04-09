@@ -12,8 +12,8 @@
     counter-increment: results-counter;
     margin-left: 15px;
 
-    border-bottom: 1px solid #bfc1c3;
-    padding-bottom: 30px;
+    border-bottom: 1px solid $grey-4;
+    padding-bottom: 15px;
     margin-bottom: 35px;
     
     &:before{
@@ -73,7 +73,7 @@
    padding-top:45px;
   }
   &--apprentice{
-    background-color: #ddd;
+    background-color: $grey-4;
   }
   &--employer{
     color: $black;
@@ -88,8 +88,6 @@
   }
 }
 
-/* move utility classes */
-
 .das-search-result dt {
   float: left;
   clear: both;
@@ -97,7 +95,7 @@
 }
 
 .das-tag--new {
-  background-color: #808080;
+  background-color: $grey-8;
   color: white;
   padding: 0 0.4em;
   font-weight: bold;
