@@ -2,7 +2,7 @@
   margin-top:70px;
 }
 
-.search-results-list {
+.search-results-list, .das-search-results__list {
   @include mq ($until: tablet) {
     margin-right: spacing(4);
   }
@@ -11,20 +11,42 @@
   > li {
     counter-increment: results-counter;
     margin-left: 15px;
+
+    border-bottom: 1px solid #bfc1c3;
+    padding-bottom: 30px;
+    margin-bottom: 35px;
     
     &:before{
-      background-image: url("data:image/svg+xml,%3Csvg width='51' height='61' viewBox='0 0 51 61' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0H51L31 42H0V0Z' fill='%230478FF'/%3E%3Cpath d='M20 42V60.5L0 42H20Z' fill='%230B51A4'/%3E%3C/svg%3E%0A");
       position: absolute;
       height: 61px;
       width: 35px;
-      margin: -6px 0px 0px -50px;
+      margin: -10px 0px 0px -50px;
       content: counter(results-counter);
-      color: #fff;
       font-size: 2.3em;
       padding: 0px 15px 0px 0px;
       font-family: nobel,sans-serif;
       -webkit-font-smoothing: antialiased;
       text-align: center;
+      background-image: url("data:image/svg+xml,%3Csvg width='51' height='61' viewBox='0 0 51 61' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0H51L31 42H0V0Z' fill='%23DDDDDD'/%3E%3Cpath d='M20 42V60.5L0 42H20Z' fill='%236F777B'/%3E%3C/svg%3E%0A");
+      color: $black;
+    }
+  }
+}
+
+.das-search-results__list--apprentice {
+  > li {
+    &:before{
+      background-image: url("data:image/svg+xml,%3Csvg width='51' height='61' viewBox='0 0 51 61' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0H51L31 42H0V0Z' fill='%230478FF'/%3E%3Cpath d='M20 42V60.5L0 42H20Z' fill='%230B51A4'/%3E%3C/svg%3E%0A");
+      color: #fff;
+    }
+  }
+}
+
+.das-search-results__list--employer {
+  > li {
+    &:before{
+      background-image: url("data:image/svg+xml,%3Csvg width='51' height='61' viewBox='0 0 51 61' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0H51L31 42H0V0Z' fill='%23ffb007'/%3E%3Cpath d='M20 42V60.5L0 42H20Z' fill='%23C38C00'/%3E%3C/svg%3E%0A");
+      color: $black;
     }
   }
 }
@@ -74,12 +96,6 @@
   padding-right:10px;
 }
 
-.das-search-result {
-  border-bottom: 1px solid #bfc1c3;
-  padding-bottom: 20px;
-  margin-bottom: 20px
-}
-
 .das-tag--new {
   background-color: #808080;
   color: white;
@@ -88,16 +104,4 @@
   font-size: 16px;
   border-radius: 4px;
   text-transform: capitalize
-}
-
-.u-\!-margin-top-0 {
-  margin-top:0;
-}
-
-.u-\!-margin-bottom-0 {
-  margin-bottom:0;
-}
-
-.u-\!-font-weight-bold {
-  font-weight:bold;
 }
