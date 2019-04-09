@@ -5,36 +5,29 @@ const concat = require('gulp-concat');
 const paths = require('../../config/paths.json')
 const sassOptionsCampaign = require('../../config/sassOptionsCampaign.js')
 
-gulp.task('watch-campaign', () => {
-  gulp.watch(paths.src.campaign, ['sass-campaign'])
+gulp.task('campaign-watch-sass', () => {
+  gulp.watch(paths.src.campaign, ['campaign-compile-sass'])
     .on('change', (event) => {
       console.log(`File ${event.path} was ${event.type}, running tasks...`);
     });
 });
 
-gulp.task('js-campaign', function() {
+gulp.task('campaign-compile-js', function() {
   return gulp.src(paths.src.campaignJs)
     .pipe(concat('app.min.js'))
     .pipe(gulp.dest(paths.dist.campaignJs));
 });
 
-gulp.task('copy-plyr-js', () => {
-  gulp.src('./node_modules/plyr/dist/plyr.min.js').pipe(gulp.dest(paths.dist.campaignJs));
-});
-
-gulp.task('copy-campaign-libs', () => {
-  gulp.src('./src/campaign/javascript/libs/*.js').pipe(gulp.dest(paths.dist.campaignJs + '/libs'));
-});
-
-gulp.task('sass-campaign', () => gulp
+gulp.task('campaign-compile-sass', () => gulp
   .src(paths.src.campaign)
   .pipe(sass(sassOptionsCampaign))
   .pipe(gulp.dest(paths.dist.campaign)));
 
-gulp.task('image-campaign', () => {
+gulp.task('campaign-copy-images', () => {
   gulp.src(paths.src.campaignImages).pipe(gulp.dest(paths.dist.campaignImages));
 });
-  
 
-gulp.task('components-campaign',() => gulp
-.src(['./src/components/**/*.js','./src/components/**/*.njk']).pipe(gulp.dest('./dist/campaign/components/')));
+gulp.task('campaign-copy-libs', () => {
+  gulp.src('./node_modules/plyr/dist/plyr.min.js').pipe(gulp.dest(paths.dist.campaignJs));
+  gulp.src('./src/campaign/javascript/libs/*.js').pipe(gulp.dest(paths.dist.campaignJs + '/libs'));
+});
