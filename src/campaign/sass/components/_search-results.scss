@@ -44,7 +44,6 @@
   border-bottom: 1px solid;
 }
 
-
 .search-results-filter {
   background-color: $grey-4;
   padding: 20px;
@@ -65,4 +64,40 @@
       -webkit-clip-path: polygon(0 100%, 100% 89.4%, 100% 0, 0 8.6%);
     }
   }
+}
+
+/* move utility classes */
+
+.das-search-result dt {
+  float: left;
+  clear: both;
+  padding-right:10px;
+}
+
+.das-search-result {
+  border-bottom: 1px solid #bfc1c3;
+  padding-bottom: 20px;
+  margin-bottom: 20px
+}
+
+.das-tag--new {
+  background-color: #808080;
+  color: white;
+  padding: 0 0.4em;
+  font-weight: bold;
+  font-size: 16px;
+  border-radius: 4px;
+  text-transform: capitalize
+}
+
+.u-\!-margin-top-0 {
+  margin-top:0;
+}
+
+.u-\!-margin-bottom-0 {
+  margin-bottom:0;
+}
+
+.u-\!-font-weight-bold {
+  font-weight:bold;
 }
