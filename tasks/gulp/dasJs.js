@@ -1,7 +1,6 @@
 'use strict'
 
 const gulp = require('gulp')
-const configPaths = require('../../config/paths.json')
 const rollup = require('gulp-better-rollup')
 const gulpif = require('gulp-if')
 const eol = require('gulp-eol')
@@ -9,31 +8,43 @@ const rename = require('gulp-rename')
 const resolve = require('rollup-plugin-node-resolve')
 const commonjs = require('rollup-plugin-commonjs');
 const terser = require('gulp-terser');
+const concat = require('gulp-concat');
 
+const configPaths = require('../../config/paths.json')
 
-gulp.task('watch-js-das-all', () => {
-  gulp.watch(configPaths.src.componentJs, ['js:compile'])
+gulp.task('das-compile-js', function() {
+  return gulp.src([
+      '!' + configPaths.src.dasJs,
+      configPaths.src.defaultJs
+  ]).pipe(concat('app.min.js'))
+    .pipe(terser({ module: true }))
+    .pipe(gulp.dest(configPaths.dist.defaultJs));
+});
+
+gulp.task('das-watch-js', () => {
+
+  gulp.watch([
+      '!' + configPaths.src.dasJs,
+      configPaths.src.defaultJs
+    ], ['das-compile-js'])
     .on('change', (event) => {
-      console.log(`File ${event.path} was ${event.type}, running tasks...`);
-    });
-  gulp.watch(configPaths.src.dasJs, ['js-components'])
+    console.log(`File ${event.path} was ${event.type}, running tasks...`);
+  });
+
+  gulp.watch([configPaths.src.componentJs, configPaths.src.dasJs], ['das-compile-js-components'])
     .on('change', (event) => {
       console.log(`File ${event.path} was ${event.type}, running tasks...`);
     });
 });
 
 var minifyJs = function (isDist) {
-  // for dist/ folder we only want das 'all.js' file
   let srcFile = configPaths.src.dasJs
   let jsDest = configPaths.dist.defaultJs
   return gulp.src(srcFile)
     .pipe(rollup({
-      // Used to set the `window` global and UMD/AMD export name.
       name: 'DASFrontend',
       plugins: [resolve(), commonjs()],
-      // Legacy mode is required for IE8 support
       legacy: true,
-      // UMD allows the published bundle to work in CommonJS and in the browser.
       format: 'umd',
     })).on('error', function (e) { console.log(e) })
     .pipe(gulpif(isDist, terser({ module: true })))
@@ -45,20 +56,13 @@ var minifyJs = function (isDist) {
     ))
     .pipe(eol())
     .pipe(gulp.dest(jsDest));
-}
+};
 
-
-// Compile js task for preview ----------
-// --------------------------------------
-gulp.task('js:compile', ['js:compile-dev'], () => {
-
-
+gulp.task('das-compile-js-components', ['das-compile-js-components-dev'], () => {
   return minifyJs(true);
-})
+});
 
-gulp.task('js:compile-dev', () => {
-
-
+gulp.task('das-compile-js-components-dev', () => {
   return minifyJs(false);
-})
+});
 

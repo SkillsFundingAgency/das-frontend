@@ -1,11 +1,11 @@
-import Accordion from './components/accordion/accordion'
-import Navigation from './components/navigation/_navigation'
-import CookieBanner from './components/cookieBanner/_cookieBanner'
-import VideoPlayer from './components/video-player/videoplayer'
-import SmoothScroll from './components/smoothScroll/_smoothScroll'
-import GoogleMaps from './components/googleMaps/_googleMaps'
-import SearchResults from './components/SearchResults/_searchResults'
-import NetworkInformation from './components/networkInformation/_networkInformation'
+import Accordion from '../components/accordion/accordion'
+import Navigation from '../components/navigation/_navigation'
+import CookieBanner from '../components/cookieBanner/_cookieBanner'
+import VideoPlayer from '../components/video-player/videoplayer'
+import SmoothScroll from '../components/smoothScroll/_smoothScroll'
+import GoogleMaps from '../components/googleMaps/_googleMaps'
+import SearchResults from '../components/SearchResults/_searchResults'
+import NetworkInformation from '../components/networkInformation/_networkInformation'
 
 function nodeListForEach(nodes, callback) {
   if (window.NodeList.prototype.forEach) {
@@ -18,9 +18,7 @@ function nodeListForEach(nodes, callback) {
 
 function initAll() {
 
-
   var $gtmDataLayer = window.dataLayer;
-
 
   addLoadEvent(function () {
 
