@@ -35,23 +35,55 @@
     <div class="wrap">
 
         {% include './components/header/_header.html'%}
-        {% include './components/hero-heading/_hero-heading-fat.html'%}
+        {% include './components/hero-heading/_hero-heading-fat-results.html'%}
 
         <main id="main-content" class="main-content">
 
-            <div class="grid-row search-results">
+            <div class="grid-row">
                 <div class="grid-column-two-thirds">
 
                     <div class="page">
-                        <h1 class="heading-l">Your top 10 results...</h1>
-                        <p>We’ve found <span class="bold">61</span> apprenticeships in your selected area, below are
-                            the top 10.</p>
+                        <ol id="apprenticeship-search-results"
+                            class="das-search-results__list das-search-results__list--employer">
 
+                            <li id="standard-x">
+                                <article class="das-search-result">
+                                    <h2 class="heading-m u-!-margin-bottom-0">
+                                        <a class="link" href="">Test</a>
+                                    </h2>
+                                    <dl class="list u-!-margin-top-0 u-!-margin-bottom-0">
+                                        <dt class="u-!-font-weight-bold">Level:</dt>
+                                        <dd>4 (equivalent to certificate of higher education)</dd>
+                                        <dt class="u-!-font-weight-bold">Typical length:</dt>
+                                        <dd>24 months</dd>
+                                        <dt class="u-!-font-weight-bold">Apprenticeship Type:</dt>
+                                        <dd>Standard</dd>
+                                    </dl>
+                                </article>
+                            </li>
 
-
-                        <ol id="vacancy-search-results" class="search-results-list" data-form-id="search-results-filter"
-                            data-map-id="mapDev">
-
+                            <li id="standard-x">
+                                <article class="das-search-result">
+                                    <h2 class="heading-m u-!-margin-bottom-0">
+                                        <a class="link" href="">Test</a>
+                                    </h2>
+                                    <div class="warning-text">
+                                        <span class="warning-text__icon" aria-hidden="true"></span>
+                                        <strong class="warning-text__text">
+                                            <span class="warning-text__assistive">Warning</span>
+                                            This apprenticeship is closed to new starters from 1 August 2020
+                                        </strong>
+                                    </div>
+                                    <dl class="list u-!-margin-top-0 u-!-margin-bottom-0">
+                                        <dt class="u-!-font-weight-bold">Level:</dt>
+                                        <dd>4 (equivalent to certificate of higher education)</dd>
+                                        <dt class="u-!-font-weight-bold">Typical length:</dt>
+                                        <dd>24 months</dd>
+                                        <dt class="u-!-font-weight-bold">Apprenticeship type:</dt>
+                                        <dd>Frameworkx  </dd>
+                                    </dl>
+                                </article>
+                            </li>
                             <li id="standard-x">
                                 <article class="das-search-result">
                                     <h2 class="heading-m u-!-margin-bottom-0">
@@ -65,7 +97,300 @@
                                     </dl>
                                 </article>
                             </li>
-                            
+
+                            <li id="standard-x">
+                                <article class="das-search-result">
+                                    <h2 class="heading-m u-!-margin-bottom-0">
+                                        <a class="link" href="">Test</a>
+                                    </h2>
+                                    <div class="warning-text">
+                                        <span class="warning-text__icon" aria-hidden="true"></span>
+                                        <strong class="warning-text__text">
+                                            <span class="warning-text__assistive">Warning</span>
+                                            This apprenticeship is closed to new starters from 1 August 2020
+                                        </strong>
+                                    </div>
+                                    <dl class="list u-!-margin-top-0 u-!-margin-bottom-0">
+                                        <dt class="u-!-font-weight-bold">Level:</dt>
+                                        <dd>4 (equivalent to certificate of higher education)</dd>
+                                        <dt class="u-!-font-weight-bold">Typical length:</dt>
+                                        <dd>24 months</dd>
+                                    </dl>
+                                </article>
+                            </li>
+                            <li id="standard-x">
+                                <article class="das-search-result">
+                                    <h2 class="heading-m u-!-margin-bottom-0">
+                                        <a class="link" href="">Test</a>
+                                    </h2>
+                                    <dl class="list u-!-margin-top-0 u-!-margin-bottom-0">
+                                        <dt class="u-!-font-weight-bold">Level:</dt>
+                                        <dd>4 (equivalent to certificate of higher education)</dd>
+                                        <dt class="u-!-font-weight-bold">Typical length:</dt>
+                                        <dd>24 months</dd>
+                                    </dl>
+                                </article>
+                            </li>
+
+                            <li id="standard-x">
+                                <article class="das-search-result">
+                                    <h2 class="heading-m u-!-margin-bottom-0">
+                                        <a class="link" href="">Test</a>
+                                    </h2>
+                                    <div class="warning-text">
+                                        <span class="warning-text__icon" aria-hidden="true"></span>
+                                        <strong class="warning-text__text">
+                                            <span class="warning-text__assistive">Warning</span>
+                                            This apprenticeship is closed to new starters from 1 August 2020
+                                        </strong>
+                                    </div>
+                                    <dl class="list u-!-margin-top-0 u-!-margin-bottom-0">
+                                        <dt class="u-!-font-weight-bold">Level:</dt>
+                                        <dd>4 (equivalent to certificate of higher education)</dd>
+                                        <dt class="u-!-font-weight-bold">Typical length:</dt>
+                                        <dd>24 months</dd>
+                                    </dl>
+                                </article>
+                            </li>
+                            <li id="standard-x">
+                                <article class="das-search-result">
+                                    <h2 class="heading-m u-!-margin-bottom-0">
+                                        <a class="link" href="">Test</a>
+                                    </h2>
+                                    <dl class="list u-!-margin-top-0 u-!-margin-bottom-0">
+                                        <dt class="u-!-font-weight-bold">Level:</dt>
+                                        <dd>4 (equivalent to certificate of higher education)</dd>
+                                        <dt class="u-!-font-weight-bold">Typical length:</dt>
+                                        <dd>24 months</dd>
+                                    </dl>
+                                </article>
+                            </li>
+
+                            <li id="standard-x">
+                                <article class="das-search-result">
+                                    <h2 class="heading-m u-!-margin-bottom-0">
+                                        <a class="link" href="">Test</a>
+                                    </h2>
+                                    <div class="warning-text">
+                                        <span class="warning-text__icon" aria-hidden="true"></span>
+                                        <strong class="warning-text__text">
+                                            <span class="warning-text__assistive">Warning</span>
+                                            This apprenticeship is closed to new starters from 1 August 2020
+                                        </strong>
+                                    </div>
+                                    <dl class="list u-!-margin-top-0 u-!-margin-bottom-0">
+                                        <dt class="u-!-font-weight-bold">Level:</dt>
+                                        <dd>4 (equivalent to certificate of higher education)</dd>
+                                        <dt class="u-!-font-weight-bold">Typical length:</dt>
+                                        <dd>24 months</dd>
+                                    </dl>
+                                </article>
+                            </li>
+                            <li id="standard-x">
+                                <article class="das-search-result">
+                                    <h2 class="heading-m u-!-margin-bottom-0">
+                                        <a class="link" href="">Test</a>
+                                    </h2>
+                                    <dl class="list u-!-margin-top-0 u-!-margin-bottom-0">
+                                        <dt class="u-!-font-weight-bold">Level:</dt>
+                                        <dd>4 (equivalent to certificate of higher education)</dd>
+                                        <dt class="u-!-font-weight-bold">Typical length:</dt>
+                                        <dd>24 months</dd>
+                                    </dl>
+                                </article>
+                            </li>
+
+                            <li id="standard-x">
+                                <article class="das-search-result">
+                                    <h2 class="heading-m u-!-margin-bottom-0">
+                                        <a class="link" href="">Test</a>
+                                    </h2>
+                                    <div class="warning-text">
+                                        <span class="warning-text__icon" aria-hidden="true"></span>
+                                        <strong class="warning-text__text">
+                                            <span class="warning-text__assistive">Warning</span>
+                                            This apprenticeship is closed to new starters from 1 August 2020
+                                        </strong>
+                                    </div>
+                                    <dl class="list u-!-margin-top-0 u-!-margin-bottom-0">
+                                        <dt class="u-!-font-weight-bold">Level:</dt>
+                                        <dd>4 (equivalent to certificate of higher education)</dd>
+                                        <dt class="u-!-font-weight-bold">Typical length:</dt>
+                                        <dd>24 months</dd>
+                                    </dl>
+                                </article>
+                            </li>
+                            <li id="standard-x">
+                                <article class="das-search-result">
+                                    <h2 class="heading-m u-!-margin-bottom-0">
+                                        <a class="link" href="">Test</a>
+                                    </h2>
+                                    <dl class="list u-!-margin-top-0 u-!-margin-bottom-0">
+                                        <dt class="u-!-font-weight-bold">Level:</dt>
+                                        <dd>4 (equivalent to certificate of higher education)</dd>
+                                        <dt class="u-!-font-weight-bold">Typical length:</dt>
+                                        <dd>24 months</dd>
+                                    </dl>
+                                </article>
+                            </li>
+
+                            <li id="standard-x">
+                                <article class="das-search-result">
+                                    <h2 class="heading-m u-!-margin-bottom-0">
+                                        <a class="link" href="">Test</a>
+                                    </h2>
+                                    <div class="warning-text">
+                                        <span class="warning-text__icon" aria-hidden="true"></span>
+                                        <strong class="warning-text__text">
+                                            <span class="warning-text__assistive">Warning</span>
+                                            This apprenticeship is closed to new starters from 1 August 2020
+                                        </strong>
+                                    </div>
+                                    <dl class="list u-!-margin-top-0 u-!-margin-bottom-0">
+                                        <dt class="u-!-font-weight-bold">Level:</dt>
+                                        <dd>4 (equivalent to certificate of higher education)</dd>
+                                        <dt class="u-!-font-weight-bold">Typical length:</dt>
+                                        <dd>24 months</dd>
+                                    </dl>
+                                </article>
+                            </li>
+                            <li id="standard-x">
+                                <article class="das-search-result">
+                                    <h2 class="heading-m u-!-margin-bottom-0">
+                                        <a class="link" href="">Test</a>
+                                    </h2>
+                                    <dl class="list u-!-margin-top-0 u-!-margin-bottom-0">
+                                        <dt class="u-!-font-weight-bold">Level:</dt>
+                                        <dd>4 (equivalent to certificate of higher education)</dd>
+                                        <dt class="u-!-font-weight-bold">Typical length:</dt>
+                                        <dd>24 months</dd>
+                                    </dl>
+                                </article>
+                            </li>
+
+                            <li id="standard-x">
+                                <article class="das-search-result">
+                                    <h2 class="heading-m u-!-margin-bottom-0">
+                                        <a class="link" href="">Test</a>
+                                    </h2>
+                                    <div class="warning-text">
+                                        <span class="warning-text__icon" aria-hidden="true"></span>
+                                        <strong class="warning-text__text">
+                                            <span class="warning-text__assistive">Warning</span>
+                                            This apprenticeship is closed to new starters from 1 August 2020
+                                        </strong>
+                                    </div>
+                                    <dl class="list u-!-margin-top-0 u-!-margin-bottom-0">
+                                        <dt class="u-!-font-weight-bold">Level:</dt>
+                                        <dd>4 (equivalent to certificate of higher education)</dd>
+                                        <dt class="u-!-font-weight-bold">Typical length:</dt>
+                                        <dd>24 months</dd>
+                                    </dl>
+                                </article>
+                            </li>
+                            <li id="standard-x">
+                                <article class="das-search-result">
+                                    <h2 class="heading-m u-!-margin-bottom-0">
+                                        <a class="link" href="">Test</a>
+                                    </h2>
+                                    <dl class="list u-!-margin-top-0 u-!-margin-bottom-0">
+                                        <dt class="u-!-font-weight-bold">Level:</dt>
+                                        <dd>4 (equivalent to certificate of higher education)</dd>
+                                        <dt class="u-!-font-weight-bold">Typical length:</dt>
+                                        <dd>24 months</dd>
+                                    </dl>
+                                </article>
+                            </li>
+
+                            <li id="standard-x">
+                                <article class="das-search-result">
+                                    <h2 class="heading-m u-!-margin-bottom-0">
+                                        <a class="link" href="">Test</a>
+                                    </h2>
+                                    <div class="warning-text">
+                                        <span class="warning-text__icon" aria-hidden="true"></span>
+                                        <strong class="warning-text__text">
+                                            <span class="warning-text__assistive">Warning</span>
+                                            This apprenticeship is closed to new starters from 1 August 2020
+                                        </strong>
+                                    </div>
+                                    <dl class="list u-!-margin-top-0 u-!-margin-bottom-0">
+                                        <dt class="u-!-font-weight-bold">Level:</dt>
+                                        <dd>4 (equivalent to certificate of higher education)</dd>
+                                        <dt class="u-!-font-weight-bold">Typical length:</dt>
+                                        <dd>24 months</dd>
+                                    </dl>
+                                </article>
+                            </li>
+                            <li id="standard-x">
+                                    <article class="das-search-result">
+                                        <h2 class="heading-m u-!-margin-bottom-0">
+                                            <a class="link" href="">Test</a>
+                                        </h2>
+                                        <dl class="list u-!-margin-top-0 u-!-margin-bottom-0">
+                                            <dt class="u-!-font-weight-bold">Level:</dt>
+                                            <dd>4 (equivalent to certificate of higher education)</dd>
+                                            <dt class="u-!-font-weight-bold">Typical length:</dt>
+                                            <dd>24 months</dd>
+                                        </dl>
+                                    </article>
+                                </li>
+    
+                                <li id="standard-x">
+                                        <article class="das-search-result">
+                                            <h2 class="heading-m u-!-margin-bottom-0">
+                                                <a class="link" href="">Test</a>
+                                            </h2>
+                                            <div class="warning-text">
+                                                    <span class="warning-text__icon" aria-hidden="true"></span>
+                                                    <strong class="warning-text__text">
+                                                      <span class="warning-text__assistive">Warning</span>
+                                                      This apprenticeship is closed to new starters from 1 August 2020
+                                                    </strong>
+                                                  </div>
+                                            <dl class="list u-!-margin-top-0 u-!-margin-bottom-0">
+                                                <dt class="u-!-font-weight-bold">Level:</dt>
+                                                <dd>4 (equivalent to certificate of higher education)</dd>
+                                                <dt class="u-!-font-weight-bold">Typical length:</dt>
+                                                <dd>24 months</dd>
+                                            </dl>
+                                        </article>
+                                    </li>
+                                    <li id="standard-x">
+                                            <article class="das-search-result">
+                                                <h2 class="heading-m u-!-margin-bottom-0">
+                                                    <a class="link" href="">Test</a>
+                                                </h2>
+                                                <dl class="list u-!-margin-top-0 u-!-margin-bottom-0">
+                                                    <dt class="u-!-font-weight-bold">Level:</dt>
+                                                    <dd>4 (equivalent to certificate of higher education)</dd>
+                                                    <dt class="u-!-font-weight-bold">Typical length:</dt>
+                                                    <dd>24 months</dd>
+                                                </dl>
+                                            </article>
+                                        </li>
+            
+                                        <li id="standard-x">
+                                                <article class="das-search-result">
+                                                    <h2 class="heading-m u-!-margin-bottom-0">
+                                                        <a class="link" href="">Test</a>
+                                                    </h2>
+                                                    <div class="warning-text">
+                                                            <span class="warning-text__icon" aria-hidden="true"></span>
+                                                            <strong class="warning-text__text">
+                                                              <span class="warning-text__assistive">Warning</span>
+                                                              This apprenticeship is closed to new starters from 1 August 2020
+                                                            </strong>
+                                                          </div>
+                                                    <dl class="list u-!-margin-top-0 u-!-margin-bottom-0">
+                                                        <dt class="u-!-font-weight-bold">Level:</dt>
+                                                        <dd>4 (equivalent to certificate of higher education)</dd>
+                                                        <dt class="u-!-font-weight-bold">Typical length:</dt>
+                                                        <dd>24 months</dd>
+                                                    </dl>
+                                                </article>
+                                            </li>
+                                            
                         </ol>
                     </div>
                 </div>
@@ -79,20 +404,22 @@
                                         <span class="open"></span>
 
 
-                                        <form class="search-results-filter__form" action="/FindApprenticeship" method="post">
+                                        <form class="search-results-filter__form" action="/FindApprenticeship"
+                                            method="post">
 
 
                                             <div class="form-group">
                                                 <label class="label" for="Postcode">Postcode</label>
                                                 <input class="input" type="text" id="Postcode" name="Postcode">
-                                                <span class="text-danger field-validation-valid" data-valmsg-for="Postcode"
-                                                    data-valmsg-replace="true"></span>
+                                                <span class="text-danger field-validation-valid"
+                                                    data-valmsg-for="Postcode" data-valmsg-replace="true"></span>
                                             </div>
 
                                             <div class="form-group">
                                                 <label class="label" for="Distance">Distance</label>
-                                                <select class="input" data-val="true" data-val-required="The Distance field is required."
-                                                    id="Distance" name="Distance">
+                                                <select class="input" data-val="true"
+                                                    data-val-required="The Distance field is required." id="Distance"
+                                                    name="Distance">
                                                     <option value="2">2 miles</option>
                                                     <option selected="selected" value="5">5 miles</option>
                                                     <option value="10">10 miles</option>
@@ -102,8 +429,8 @@
                                                     <option value="40">40 miles</option>
                                                 </select>
 
-                                                <span class="text-danger field-validation-valid" data-valmsg-for="Distance"
-                                                    data-valmsg-replace="true"></span>
+                                                <span class="text-danger field-validation-valid"
+                                                    data-valmsg-for="Distance" data-valmsg-replace="true"></span>
                                             </div>
                                             <div class="form-group">
                                                 <input type="submit" value="Update results" class="button">
@@ -146,15 +473,18 @@
         <section class="section section--slant section--apprentice ">
             <div class="grid-row">
                 <div class="grid-column-one-half">
-                    <h3 class="heading-l">view all my results on <img class="section__faa-logo-header-inline" src="/legacy/images/gov.uk_logotype_crown_white.svg"> gov.uk</h3>
-                    <p>We have provided you with the top 10 search results in your area, to see all your results you need to visit the Find an Apprenticeship website</p>
-                        <div class="section__faa-actions">
+                    <h3 class="heading-l">view all my results on <img class="section__faa-logo-header-inline"
+                            src="/legacy/images/gov.uk_logotype_crown_white.svg"> gov.uk</h3>
+                    <p>We have provided you with the top 10 search results in your area, to see all your results you
+                        need to visit the Find an Apprenticeship website</p>
+                    <div class="section__faa-actions">
 
-                                <a  class="button button--shadow button--sparks" rel="external">visit gov.uk to see my results</a>
-                        </div>
+                        <a class="button button--shadow button--sparks" rel="external">visit gov.uk to see my
+                            results</a>
                     </div>
+                </div>
                 <div class="grid-column-one-half">
-                    <img class="section__faa_img"src="/campaign/images/FAA-Screenshot.JPG" />
+                    <img class="section__faa_img" src="/campaign/images/FAA-Screenshot.JPG" />
                 </div>
             </div>
         </section>
