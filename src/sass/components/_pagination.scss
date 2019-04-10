@@ -1,0 +1,64 @@
+.das-pagination {
+  margin: 30px 0;
+  border-top: 1px solid #ddd;
+  padding: 30px 0 0 0;
+  list-style: none;
+  @include govuk-font(19);
+  @include das-clearfix();
+  @include govuk-media-query($from: tablet) {
+    margin-top: 80px;
+  }
+}
+
+.das-pagination__list-item {
+  margin: 10px 0;
+  @include govuk-media-query($from: tablet) {
+    width: 50%;
+    float: left;
+  }
+}
+
+.govuk-page .das-pagination__link {
+  text-transform: uppercase;
+
+  font-weight: bold;
+  color: $govuk-link-colour;
+  text-decoration: none;
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+  }
+}
+
+.das-pagination__list-item--next {
+    float: right;
+}
+
+.das-pagination__link--previous,
+.das-pagination__link--next {
+  height: 48px;
+  background-repeat: no-repeat;
+  padding-bottom: 10px;
+  display: inline-block;
+  box-sizing: border-box;
+}
+
+.das-pagination__link--previous {
+  padding-left: 35px;
+  background-image: url('data:image/svg+xml;utf8,<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="display: block; transform: scale(-1,1)"  x="0px" y="0px" viewBox="0 0 25 40" xml:space="preserve"><path class="das-pagination__arrow" d="M0,4.3L16.2,20L0,35.8L4.4,40L25,20L4.5,0L0,4.3z"/></svg>');
+  background-position: left center;
+}
+
+.das-pagination__link--next {
+  padding-right: 35px;
+  background-image: url('data:image/svg+xml;utf8,<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 25 40" xml:space="preserve"><path class="das-pagination__arrow" d="M0,4.3L16.2,20L0,35.8L4.4,40L25,20L4.5,0L0,4.3z"/></svg>');
+  background-position: right center;
+  text-align: right;
+  float: right;
+}
+
+.das-pagination__caption{
+  display: block;
+  
+  @include govuk-font(16);
+}

@@ -9,3 +9,13 @@
 .das-float-right {
     float: right;
 }
+
+// Clearfix
+
+@mixin das-clearfix {
+    &:after {
+      content: "";
+      display: block;
+      clear: both;
+    }
+  }

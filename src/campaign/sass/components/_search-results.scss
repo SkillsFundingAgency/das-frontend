@@ -2,7 +2,7 @@
   margin-top:70px;
 }
 
-.search-results-list {
+.search-results-list, .das-search-results__list {
   @include mq ($until: tablet) {
     margin-right: spacing(4);
   }
@@ -11,20 +11,42 @@
   > li {
     counter-increment: results-counter;
     margin-left: 15px;
+
+    border-bottom: 1px solid $grey-4;
+    padding-bottom: 15px;
+    margin-bottom: 35px;
     
     &:before{
-      background-image: url("data:image/svg+xml,%3Csvg width='51' height='61' viewBox='0 0 51 61' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0H51L31 42H0V0Z' fill='%230478FF'/%3E%3Cpath d='M20 42V60.5L0 42H20Z' fill='%230B51A4'/%3E%3C/svg%3E%0A");
       position: absolute;
       height: 61px;
       width: 35px;
-      margin: -6px 0px 0px -50px;
+      margin: -10px 0px 0px -50px;
       content: counter(results-counter);
-      color: #fff;
-      font-size: 2.3em;
+      font-size: 1.5em;
       padding: 0px 15px 0px 0px;
       font-family: nobel,sans-serif;
       -webkit-font-smoothing: antialiased;
       text-align: center;
+      background-image: url("data:image/svg+xml,%3Csvg width='51' height='61' viewBox='0 0 51 61' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0H51L31 42H0V0Z' fill='%23DDDDDD'/%3E%3Cpath d='M20 42V60.5L0 42H20Z' fill='%236F777B'/%3E%3C/svg%3E%0A");
+      color: $black;
+    }
+  }
+}
+
+.das-search-results__list--apprentice {
+  > li {
+    &:before{
+      background-image: url("data:image/svg+xml,%3Csvg width='51' height='61' viewBox='0 0 51 61' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0H51L31 42H0V0Z' fill='%230478FF'/%3E%3Cpath d='M20 42V60.5L0 42H20Z' fill='%230B51A4'/%3E%3C/svg%3E%0A");
+      color: #fff;
+    }
+  }
+}
+
+.das-search-results__list--employer {
+  > li {
+    &:before{
+      background-image: url("data:image/svg+xml,%3Csvg width='51' height='61' viewBox='0 0 51 61' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0H51L31 42H0V0Z' fill='%23ffb007'/%3E%3Cpath d='M20 42V60.5L0 42H20Z' fill='%23C38C00'/%3E%3C/svg%3E%0A");
+      color: $black;
     }
   }
 }
@@ -44,7 +66,6 @@
   border-bottom: 1px solid;
 }
 
-
 .search-results-filter {
   background-color: $grey-4;
   padding: 20px;
@@ -52,7 +73,7 @@
    padding-top:45px;
   }
   &--apprentice{
-    background-color: #ddd;
+    background-color: $grey-4;
   }
   &--employer{
     color: $black;
@@ -65,4 +86,20 @@
       -webkit-clip-path: polygon(0 100%, 100% 89.4%, 100% 0, 0 8.6%);
     }
   }
+}
+
+.das-search-result dt {
+  float: left;
+  clear: both;
+  padding-right:10px;
+}
+
+.das-tag--new {
+  background-color: $grey-8;
+  color: white;
+  padding: 0 0.4em;
+  font-weight: bold;
+  font-size: 16px;
+  border-radius: 4px;
+  text-transform: capitalize
 }
