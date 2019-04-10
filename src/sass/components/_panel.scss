@@ -1,0 +1,38 @@
+
+.das-panel {
+  background: #fff;
+  padding: 20px;
+  margin-bottom: 15px;
+  @include govuk-media-query($from: tablet) {
+    padding: 30px;
+    margin: 0;
+  }
+}
+
+.das-panel--featured {
+  background: govuk-colour("blue");
+  color: #fff;
+  & > p {
+    color: #fff;
+  }
+  @include govuk-media-query($from: tablet) {
+    width: 60%;
+  }
+  .das-panel__link {
+    color: #fff;
+    font-weight: $govuk-font-weight-bold;
+  }
+}
+
+.das-panel__heading {
+  @include govuk-font($size: 24, $weight: bold);
+  margin-top: 0;
+  margin-bottom: 0;
+  .das-panel--featured & {
+    font-size: 36px;
+  }
+  & + .govuk-list {
+    margin-top: 20px;
+  }
+}
+

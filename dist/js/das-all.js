@@ -988,9 +988,7 @@ function nodeListForEach$2(nodes, callback) {
 
 function initAll() {
 
-
   var $gtmDataLayer = window.dataLayer;
-
 
   addLoadEvent(function () {
 
