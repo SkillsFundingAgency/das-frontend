@@ -1,14 +1,10 @@
+
+// Description: Styles the headings above the panels on the account homepage
+
 .das-dashboard-header {
   background: #fff;
   padding-bottom: 20px;
   @include govuk-font(19);
-}
-
-.das-dashboard-header__border {
-  border-top: 10px solid govuk-colour("blue");
-  .das-dashboard-header--employer & {
-    border-color: $employer;
-  }
 }
 
 .das-dashboard-header__title {

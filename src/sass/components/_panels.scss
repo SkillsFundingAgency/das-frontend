@@ -1,9 +1,12 @@
+
+// Description: Collection of panels
+
 .dashboard {
   background: #e9eaec;
 }
 
-
 .das-panels {
+  margin-top: -5px;
   @include govuk-media-query($from: tablet) {
     display: table;
     border-spacing: 20px;
@@ -14,7 +17,6 @@
 .das-panels__row {
   @include govuk-media-query($from: tablet) {
     display: table-row;
-
     & > .das-panel {
       display: table-cell;
     }

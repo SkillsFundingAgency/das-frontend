@@ -1,4 +1,6 @@
 
+// Description: Account homepage panel
+
 .das-panel {
   background: #fff;
   padding: 20px;
@@ -25,11 +27,20 @@
 }
 
 .das-panel__heading {
-  @include govuk-font($size: 24, $weight: bold);
+  @include govuk-font($size: 19, $weight: bold);
   margin-top: 0;
   margin-bottom: 0;
+
+  @include govuk-media-query($from: tablet) {
+    font-size: 24px;
+  }
+
   .das-panel--featured & {
-    font-size: 36px;
+    font-size: 24px;
+    @include govuk-media-query($from: tablet) {
+      font-size: 36px;
+      line-height: 1.2;
+    }
   }
   & + .govuk-list {
     margin-top: 20px;
