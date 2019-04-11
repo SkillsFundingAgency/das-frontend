@@ -13,4 +13,13 @@
   & > .govuk-header__container {
     border-color: $employer;
   }
+
+}
+
+.das-header--has-user-nav {
+  .govuk-header__content {
+    @include govuk-media-query($from: desktop) {
+      width: 33.33%;
+    }
+  }
 }

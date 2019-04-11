@@ -13,9 +13,15 @@
 // Clearfix
 
 @mixin das-clearfix {
-    &:after {
-      content: "";
-      display: block;
-      clear: both;
-    }
+  &:after {
+    content: "";
+    display: block;
+    clear: both;
   }
+}
+
+.js-enabled {
+  .js-hidden {
+    display: none;
+  }
+}
