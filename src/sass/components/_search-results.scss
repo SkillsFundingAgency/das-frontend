@@ -8,6 +8,12 @@
   }
 }
 
+.das-search-result dt {
+  float: left;
+  clear: both;
+  padding-right:10px;
+}
+
 .das-search-results__list-item {
   border-bottom: 1px solid $govuk-border-colour;
   padding: $govuk-gutter-half 0;
