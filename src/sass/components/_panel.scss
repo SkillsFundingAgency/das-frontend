@@ -1,0 +1,49 @@
+
+// Description: Account homepage panel
+
+.das-panel {
+  background: #fff;
+  padding: 20px;
+  margin-bottom: 15px;
+  @include govuk-media-query($from: tablet) {
+    padding: 30px;
+    margin: 0;
+  }
+}
+
+.das-panel--featured {
+  background: govuk-colour("blue");
+  color: #fff;
+  & > p {
+    color: #fff;
+  }
+  @include govuk-media-query($from: tablet) {
+    width: 60%;
+  }
+  .das-panel__link {
+    color: #fff;
+    font-weight: $govuk-font-weight-bold;
+  }
+}
+
+.das-panel__heading {
+  @include govuk-font($size: 19, $weight: bold);
+  margin-top: 0;
+  margin-bottom: 0;
+
+  @include govuk-media-query($from: tablet) {
+    font-size: 24px;
+  }
+
+  .das-panel--featured & {
+    font-size: 24px;
+    @include govuk-media-query($from: tablet) {
+      font-size: 36px;
+      line-height: 1.2;
+    }
+  }
+  & + .govuk-list {
+    margin-top: 20px;
+  }
+}
+

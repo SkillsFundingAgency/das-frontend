@@ -1,0 +1,25 @@
+
+// Description: Classes to add to .govuk-header to either hide the bottom border or change the colour
+
+.das-header--no-border {
+  border: none;
+  & > .govuk-header__container {
+    border: none;
+    margin-bottom: 0;
+  }
+}
+
+.das-header--employer {
+  & > .govuk-header__container {
+    border-color: $employer;
+  }
+
+}
+
+.das-header--has-user-nav {
+  .govuk-header__content {
+    @include govuk-media-query($from: desktop) {
+      width: 33.33%;
+    }
+  }
+}

@@ -1,6 +1,8 @@
+// Description: User specific links in the header. 'Help', 'Settings' etc
+
 .das-user-navigation {
   margin: 0 $govuk-gutter-half * -1;
-  @include govuk-media-query($from: tablet) {
+  @include govuk-media-query($from: desktop) {
     float: right;
   }
 }
@@ -14,6 +16,7 @@
 .das-user-navigation__list-item {
   @include govuk-media-query($from: tablet) {
     float: left;
+    position: relative;
   }
 }
 
@@ -23,9 +26,64 @@
   display: block;
   padding: 10px 15px;
   font-size: 16px;
+  border: 1px solid transparent;
   @include govuk-focusable;
   &:hover {
     text-decoration: underline;
   }
+}
 
+.das-user-navigation__sub-menu {
+  background: govuk-colour("grey-1");
+  list-style: none;
+  padding: 10px;
+  margin: 0;
+  z-index: 1;
+  @include govuk-media-query($from: desktop) {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    padding: 10px 20px;
+    background: #fff;
+    margin-top: -1px;
+    border: 1px solid $govuk-border-colour;
+  }
+}
+
+.das-user-navigation__sub-menu-list-item {
+  @include govuk-media-query($from: desktop) {
+    border-bottom: 1px solid $govuk-border-colour;
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+}
+
+.das-user-navigation__sub-menu-link {
+  color: #fff;
+  text-decoration: none;
+  display: block;
+  padding: 8px 15px;
+  font-size: 15px;
+  @include govuk-focusable;
+  &:hover {
+    text-decoration: underline;
+  }
+  @include govuk-media-query($from: desktop) {
+    color: $govuk-link-colour;
+    text-decoration: underline;
+    white-space: nowrap;
+    font-size: inherit;
+    margin: 0 -15px;
+    padding: 10px 15px;
+  }
+}
+
+.das-user-navigation__sub-menu--open > a {
+  background: #fff;
+  color: $govuk-link-colour;
+  position: relative;
+  z-index: 2;
+  border: 1px solid $govuk-border-colour;
+  border-bottom: 1px solid #fff;
 }

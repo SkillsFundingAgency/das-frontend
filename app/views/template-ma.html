@@ -29,7 +29,7 @@
 
 <a href="#main-content" class="govuk-skip-link">Skip to main content</a>
 
-<header class="govuk-header das-header--no-border" role="banner" data-module="header">
+<header class="govuk-header das-header--employer das-header--has-user-nav" role="banner" data-module="header">
     <div class="govuk-header__container govuk-width-container">
         <div class="govuk-header__logo">
             <a href="/" class="govuk-header__link govuk-header__link--homepage">
@@ -46,17 +46,9 @@
         </div>
         <div class="govuk-header__content">
             <a href="#" class="govuk-header__link govuk-header__link--service-name">
-                {{ serviceTitle if serviceTitle else "DAS frontend" }}
+                Manage apprenticeships
             </a>
         </div>
-    </div>
-</header>
-
-{% if loggedIn %}
-
-<div class="das-account-header das-account-header--employer">
-    <div class="govuk-width-container">
-        <p class="das-account-header__title">Your employer account</p>
         <nav class="das-user-navigation" id="das-user-navigation">
             <ul class="das-user-navigation__list" role="menu">
                 <li role="menuitem" class="das-user-navigation__list-item">
@@ -88,73 +80,15 @@
             </ul>
         </nav>
     </div>
-</div>
+</header>
 
-<nav class="das-navigation">
-    <div class="govuk-width-container">
-        <ul class="das-navigation__list" id="navigation">
-            <li class="das-navigation__list-item">
-                <a class="das-navigation__link das-navigation__link--current" href="/link">Home</a>
-            </li>
-            <li class="das-navigation__list-item">
-                <a class="das-navigation__link" href="/link">Recruitment</a>
-            </li>
-            <li class="das-navigation__list-item">
-                <a class="das-navigation__link" href="/link">Finance</a>
-            </li>
-            <li class="das-navigation__list-item">
-                <a class="das-navigation__link" href="/link">Apprentices</a>
-            </li>
-            <li class="das-navigation__list-item">
-                <a class="das-navigation__link" href="/link">Your team</a>
-            </li>
-            <li class="das-navigation__list-item">
-                <a class="das-navigation__link" href="/link">Your organisations and agreements</a>
-            </li>
-            <li class="das-navigation__list-item">
-                <a class="das-navigation__link das-navigation__link--last" href="/link">PAYE schemes</a>
-            </li>
-            <li class="das-navigation__priority-list-item">
-                <a href="" class="das-navigation__priority-button">Menu</a>
-                <ul class="das-navigation__priority-list visually-hidden"></ul>
-            </li>
-        </ul>
-    </div>
-</nav>
 
-{% endif %}
-
-<div class="govuk-width-container">
-
-    {% if not hideStatusBanner %}
-    <div class="govuk-phase-banner">
-      <p class="govuk-phase-banner__content">
-        <strong class="govuk-tag govuk-phase-banner__content__tag ">
-          beta
-        </strong>
-        <span class="govuk-phase-banner__text">
-          This is a new service
-        </span>
-      </p>
-    </div>
-    {% endif %}
-
-    {% if backLink %}
-    <a href="{{ backLink }}" class="govuk-back-link">Back</a>
-    {% endif %}
+{% block content %}
 
 
 
-    <main class="govuk-main-wrapper " id="main-content" role="main">
+{% endblock %}
 
-        {% block preContent %} {% endblock %}
-
-        {% block content %}
-            <h1 class="govuk-heading-xl">Default page template</h1>
-        {% endblock %}
-
-    </main>
-</div>
 
 <footer class="govuk-footer " role="contentinfo">
     <div class="govuk-width-container ">
@@ -193,43 +127,8 @@
 <script src="/js/das-all.js"></script>
 <script src="/libs/accessible-autocomplete/accessible-autocomplete.min.js"></script>
 <script src="/js/app.min.js"></script>
-
 <script>
-
     window.DASFrontend.initAll();
-</script>
-
-
-<script>
-    var idSelectField = 'course-search';
-    var selectEl = document.querySelector('#' + idSelectField);
-    if (selectEl) {
-        accessibleAutocomplete.enhanceSelectElement({
-            selectElement: selectEl,
-            minLength: 3,
-            autoselect: true,
-            defaultValue: '',
-            displayMenu: 'overlay',
-            placeholder: 'Start typing to search apprenticeships',
-            onConfirm: function (opt) {
-
-              var requestedOption = [].filter.call(this.selectElement.options,
-                function(option) {
-                    return (option.textContent || option.innerText) === opt
-                }
-              )[0];
-              var txtInput = document.querySelector('#' + idSelectField);
-
-              if (requestedOption) {
-                requestedOption.selected = true
-              }
-
-              if (txtInput.value.toString().length === 0) {
-                 this.selectElement.selectedIndex = 0
-              }
-            }
-        });
-    }
 </script>
 
 {% block js %}
