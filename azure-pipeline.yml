@@ -1,0 +1,41 @@
+trigger:
+  batch: true
+  branches:
+    include:
+      - "*"
+
+pr: none
+
+workspace:
+    clean: all
+
+variables:
+  buildConfiguration: 'release'
+  buildPlatform: 'anycpu'
+
+pool:
+  name: 'DAS - Continuous Integration'
+  demands: 
+  - gulp
+
+steps:
+- task: gittools.gitversion.gitversion-task.GitVersion@3
+  displayName: GitVersion
+
+- task: gulp@1
+  inputs:
+    gulpfile: 'gulpfile.js'
+    targets: build
+
+- task: CopyFiles@2
+  displayName: 'Copy Files to: $(build.artifactstagingdirectory)'
+  inputs:
+    Contents: |
+     "*"
+    TargetFolder: '$(build.artifactstagingdirectory)/publish'
+    OverWrite: true
+
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish Artifact'
+  inputs:
+    PathtoPublish: '$(build.artifactstagingdirectory)/publish'
