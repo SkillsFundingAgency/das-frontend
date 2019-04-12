@@ -1,0 +1,22 @@
+.das-apprenticeship-details {
+    padding-bottom: 20px;
+    margin-bottom: 20px
+}
+
+.das-apprenticeship-details dt {
+    float: left;
+    font-size:21px;
+    clear: both;
+    display:block;
+    width:25%;
+}
+
+.das-apprenticeship-details dd {
+    color: #6F777B;
+    display:block;
+    float: left;
+    margin-inline-start:0px;
+    margin-bottom: 1em;
+    width:75%;
+    
+}
