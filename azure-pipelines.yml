@@ -33,12 +33,13 @@ steps:
 - task: CopyFiles@2
   displayName: 'Copy Files to: $(Build.ArtifactStagingDirectory)'
   inputs:
-    sourceFolder: '$(Agent.BuildDirectory)'
-    Contents: |
+    sourceFolder: '$(Build.SourcesDirectory)'
+    contents: |
      "*"
-    TargetFolder: '$(Build.ArtifactStagingDirectory)'
+    targetFolder: '$(Build.ArtifactStagingDirectory)/Publish'
 
 - task: PublishBuildArtifacts@1
   displayName: 'Publish Artifact: Publish'
   inputs:
-    ArtifactName: Publish
+    pathtoPublish: '$(Build.ArtifactStagingDirectory)/Publish'
+    artifactName: Publish
