@@ -22,6 +22,9 @@ steps:
 - task: gittools.gitversion.gitversion-task.GitVersion@4
   displayName: GitVersion
 
+- task: Npm@1
+  displayName: 'npm install'
+
 - task: gulp@1
   inputs:
     gulpfile: 'gulpfile.js'
