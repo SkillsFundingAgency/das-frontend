@@ -31,14 +31,13 @@ steps:
     targets: build
 
 - task: CopyFiles@2
-  displayName: 'Copy Files to: $(build.artifactstagingdirectory)'
+  displayName: 'Copy Files to: $(Build.ArtifactStagingDirectory)'
   inputs:
     Contents: |
      "*"
-    TargetFolder: '$(build.artifactstagingdirectory)/publish'
-    OverWrite: true
+    TargetFolder: '$(Build.ArtifactStagingDirectory)'
 
 - task: PublishBuildArtifacts@1
-  displayName: 'Publish Artifact'
+  displayName: 'Publish Artifact: Publish'
   inputs:
-    PathtoPublish: '$(build.artifactstagingdirectory)/publish'
+    ArtifactName: Publish
