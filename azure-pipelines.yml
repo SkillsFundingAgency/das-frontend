@@ -34,12 +34,10 @@ steps:
   displayName: 'Copy Files to: $(Build.ArtifactStagingDirectory)'
   inputs:
     sourceFolder: '$(System.DefaultWorkingDirectory)'
-    contents: |
-     "*"
-    targetFolder: '$(Build.ArtifactStagingDirectory)/Publish'
+    contents: "*"
+    targetFolder: '$(Build.ArtifactStagingDirectory)'
 
 - task: PublishBuildArtifacts@1
-  displayName: 'Publish Artifact: Publish'
+  displayName: 'Publish Artifact'
   inputs:
-    pathtoPublish: '$(Build.ArtifactStagingDirectory)/Publish'
-    artifactName: Publish
+    pathtoPublish: '$(Build.ArtifactStagingDirectory)'
