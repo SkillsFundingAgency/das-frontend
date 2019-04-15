@@ -33,6 +33,7 @@ steps:
 - task: CopyFiles@2
   displayName: 'Copy Files to: $(Build.ArtifactStagingDirectory)'
   inputs:
+    sourceFolder: '$(Agent.BuildDirectory)'
     Contents: |
      "*"
     TargetFolder: '$(Build.ArtifactStagingDirectory)'
