@@ -70,18 +70,19 @@
   position: absolute;
   top: 0;
   right: 0;
-  background: #eeeeee;
   &:before {
     position: absolute;
     left: 15px;
-    top: 15px;
+    top: 17px;
     @include triangle-equilateral(down, 10px, $govuk-link-colour)
   }
   &.open:before {
+    top: 15px;
     @include triangle-equilateral(up, 10px, $govuk-link-colour)
   }
 }
 
+.das-navigation__priority-list-item.visually-hidden,
 .das-navigation__priority-list.visually-hidden {
   display: none;
 }
