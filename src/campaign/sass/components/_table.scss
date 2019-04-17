@@ -7,9 +7,10 @@
   border-top: 1px solid $border-colour;
 }
 
-.table__cell {
+.table__cell, .table__header {
   padding: 20px;
 }
+
 .table__row{
   border-bottom: 1px solid $border-colour;
 }
