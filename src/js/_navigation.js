@@ -5,14 +5,14 @@ var totalSpace = 0;
 var breakWidths = [];
 
 var addMenuButton = function () {
-  var priorityLi = $('<li />').addClass('das-navigation__priority-list-item visually-hidden').attr('id', 'priority-list-menu');
-  var priorityUl = $('<ul />').addClass('das-navigation__priority-list visually-hidden');
+  var priorityLi = $('<li />').addClass('das-navigation__priority-list-item govuk-visually-hidden').attr('id', 'priority-list-menu');
+  var priorityUl = $('<ul />').addClass('das-navigation__priority-list govuk-visually-hidden');
   var priorityBut = $('<a />')
     .addClass('das-navigation__priority-button')
     .attr('href', '#')
     .text('More')
     .on('click', function(e) {
-      $(menuLinksContainer).toggleClass('visually-hidden');
+      $(menuLinksContainer).toggleClass('govuk-visually-hidden');
       $(this).toggleClass('open');
       e.preventDefault();
     });
@@ -31,7 +31,7 @@ var checkSpaceForPriorityLinks = function () {
     numOfVisibleItems -= 1;
     var lastVisibleLink = currentVisibleLinks[numOfVisibleItems];
     menuLinksContainer[0].insertBefore(lastVisibleLink, menuLinksContainer[0].childNodes[0]);
-    $('#priority-list-menu').removeClass('visually-hidden');
+    $('#priority-list-menu').removeClass('govuk-visually-hidden');
     checkSpaceForPriorityLinks();
   } else if (availableSpace > breakWidths[numOfVisibleItems]) {
     if (currentHiddenLinks.length > 0) {
@@ -39,7 +39,7 @@ var checkSpaceForPriorityLinks = function () {
       var priorityListItem = document.getElementsByClassName('das-navigation__priority-list-item');
       navLinksContainer[0].insertBefore(firstLink, priorityListItem[0])
       if (currentHiddenLinks.length === 1) {
-        $('#priority-list-menu').addClass('visually-hidden');
+        $('#priority-list-menu').addClass('govuk-visually-hidden');
       }
     }
     numOfVisibleItems += 1;
