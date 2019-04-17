@@ -15,7 +15,8 @@ const configPaths = require('../../config/paths.json')
 gulp.task('das-compile-js', function() {
   return gulp.src([
       '!' + configPaths.src.dasJs,
-      configPaths.src.defaultJs
+      configPaths.src.defaultJs,
+      configPaths.src.defaultJsMain
   ]).pipe(concat('app.min.js'))
     .pipe(terser({ module: true }))
     .pipe(gulp.dest(configPaths.dist.defaultJs));
