@@ -1,5 +1,3 @@
-
-
 var navLinksContainer = document.getElementsByClassName('das-navigation__list');
 var navLinksListItems = document.getElementsByClassName('das-navigation__list-item');
 var availableSpace, currentVisibleLinks, numOfVisibleItems, requiredSpace, currentHiddenLinks;
@@ -18,9 +16,8 @@ var addMenuButton = function () {
       $(this).toggleClass('open');
       e.preventDefault();
     });
-
-  var priorityControl = priorityLi.append(priorityBut, priorityUl);
-  priorityControl.appendTo($(navLinksContainer).eq(0));
+  priorityLi.append(priorityBut, priorityUl).appendTo($(navLinksContainer).eq(0));
+  return priorityUl;
 };
 
 var checkSpaceForPriorityLinks = function () {
@@ -50,17 +47,12 @@ var checkSpaceForPriorityLinks = function () {
 };
 
 if (navLinksContainer.length > 0) {
-
-  addMenuButton();
-
-  var menuLinksContainer  = document.getElementsByClassName('das-navigation__priority-list');
-
+  var menuLinksContainer  = addMenuButton();
   for (var i = 0; i < navLinksListItems.length; i++) {
     var width = navLinksListItems[i].offsetWidth;
     totalSpace += width;
     breakWidths.push(totalSpace);
   }
-
   checkSpaceForPriorityLinks();
 }
 
@@ -68,4 +60,3 @@ $(window).resize(function() {
   if (navLinksContainer.length > 0)
     checkSpaceForPriorityLinks();
 });
-

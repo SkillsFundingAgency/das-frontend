@@ -33,8 +33,6 @@ dasJs.userNavigation = {
     }
   },
   closeAllOpenMenus: function () {
-    //console.log(this.elems.settingsMenu.find('li.das-user-navigation__list-item--has-sub-menu.open'))
-
     $('li.das-user-navigation__list-item--has-sub-menu').each(function () {
       var listItem = $(this);
       var subMenu = $(this).children('ul');
@@ -44,7 +42,6 @@ dasJs.userNavigation = {
         subMenu.addClass("js-hidden").attr("aria-expanded", "false");
       }
     });
-
   }
 }
 
