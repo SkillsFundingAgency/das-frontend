@@ -6,7 +6,7 @@
     "campaign": "./src/campaign/sass/**/*.scss",
     "campaignJs": "./src/campaign/javascript/*.js",
     "campaignImages": "./src/campaign/images/**/*",
-    "dasJs": "./src/js/das-all.js"
+    "dasJs": "./src/das-all.js"
   },
   "dist": {
     "default": "./dist/css/",

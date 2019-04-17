@@ -20,13 +20,6 @@ dasJs.userNavigation = {
       e.stopPropagation();
       e.preventDefault();
     });
-    subMenuLi.find('ul > li > a').on('focusout', function () {
-      // If its the last link in the drop down menu, then close
-      var $that = $(this);
-      if ($(this).parent().is(':last-child')) {
-        that.toggleMenu($that, $that.next('ul'));
-      }
-    });
   },
   toggleMenu: function (link, subMenu) {
     var $li = link.parent();
@@ -40,6 +33,18 @@ dasJs.userNavigation = {
     }
   },
   closeAllOpenMenus: function () {
-    this.elems.settingsMenu.find('li.das-user-navigation__list-item--has-sub-menu.open').removeClass('open').find('ul').attr("aria-expanded", "false");
+    $('li.das-user-navigation__list-item--has-sub-menu').each(function () {
+      var listItem = $(this);
+      var subMenu = $(this).children('ul');
+      var openClass = 'das-user-navigation__sub-menu--open';
+      if (listItem.hasClass(openClass)) {
+        listItem.removeClass(openClass);
+        subMenu.addClass("js-hidden").attr("aria-expanded", "false");
+      }
+    });
   }
 }
+
+$(document).click(function() {
+  dasJs.userNavigation.closeAllOpenMenus();
+});
