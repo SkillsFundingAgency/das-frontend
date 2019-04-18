@@ -1,0 +1,28 @@
+.das-definition-list__results dt {
+    float: left;
+    font-size:21px;
+    font-weight:600;
+    clear: both;
+    display:block;
+    width:25%;
+    @include mq ($until: tablet) {
+        width:100%;
+    }
+}
+
+.das-definition-list__results dd {
+    color: #6F777B;
+    display:block;
+    font-size:21px;
+    float: left;
+    margin-inline-start:0px;
+    margin-bottom: 1em;
+    width:75%;
+    @include mq ($until: tablet) {
+        width:100%;
+    }
+}
+
+.das-definition-list__results dd .details__summary-text.link{
+    color: $link-colour;
+}

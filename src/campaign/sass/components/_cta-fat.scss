@@ -1,0 +1,43 @@
+.cta-fat{
+  background-color: $employer;
+  color: #000;
+  align-items: center;
+  padding: 30px;
+  margin-top: 20px;
+
+  @include mq($from:tablet){
+    display: flex;
+    margin-top: 0;
+  }
+
+  & .button{
+    display: inline-block;
+    background-color: #000;
+    color: #FFF;
+    height: 51px;
+    @include mq ($until: tablet) {
+      height:inherit;
+      padding:5px;
+    } 
+  }
+
+  & .input__postcode
+  {
+    display: inline-block;
+    border: none;
+    height: 51px;
+    width: 100%;
+    @include mq($from:tablet){
+    width: 61%;
+    float: left;
+    }
+  }
+}
+
+.cta-fat__heading{
+  color: #000;
+}
+
+.cta-fat__content{
+  text-align: center;
+}
