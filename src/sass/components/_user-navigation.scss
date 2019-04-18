@@ -2,7 +2,7 @@
 
 .das-user-navigation {
   margin: 0 $govuk-gutter-half * -1;
-  @include govuk-media-query($from: desktop) {
+  @include govuk-media-query($from: tablet) {
     float: right;
   }
 }
@@ -30,6 +30,22 @@
   @include govuk-focusable;
   &:hover {
     text-decoration: underline;
+  }
+  .das-user-navigation__list-item--has-sub-menu & {
+    padding-left: 32px;
+    position: relative;
+    &:before {
+      position: absolute;
+      left: 15px;
+      top: 17px;
+      @include triangle-equilateral(down, 8px, #fff)
+    }
+  }
+  .das-user-navigation__sub-menu--open & {
+    &:before {
+      top: 15px;
+      @include triangle-equilateral(up, 8px, $govuk-link-colour)
+    }
   }
 }
 
