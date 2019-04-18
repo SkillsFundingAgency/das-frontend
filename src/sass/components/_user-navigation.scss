@@ -32,19 +32,37 @@
     text-decoration: underline;
   }
   .das-user-navigation__list-item--has-sub-menu & {
-    padding-left: 32px;
+    padding-right: 32px;
     position: relative;
-    &:before {
+    &:after {
       position: absolute;
-      left: 15px;
+      right: 15px;
       top: 17px;
       @include triangle-equilateral(down, 8px, #fff)
+      .govuk-header & {
+        @include govuk-media-query($from: tablet) {
+          top: 20px;
+        }
+      }
     }
   }
   .das-user-navigation__sub-menu--open & {
-    &:before {
+    &:after {
       top: 15px;
-      @include triangle-equilateral(up, 8px, $govuk-link-colour)
+      @include triangle-equilateral(up, 8px, $govuk-link-colour);
+      .govuk-header & {
+        @include govuk-media-query($from: tablet) {
+          top: 18px;
+        }
+      }
+    }
+  }
+  .govuk-header & {
+    @include govuk-media-query($from: tablet) {
+      position: relative;
+      margin-top: -10px;
+      padding-top: 15px;
+      padding-bottom: 15px;
     }
   }
 }
