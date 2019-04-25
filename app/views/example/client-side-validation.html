@@ -1,0 +1,265 @@
+{% extends "template.html" %}
+{% set pageTitle = "Digital Apprenticeship Service" %}
+{% set hideStatusBanner = true %}
+{% set loggedIn = true %}
+
+{% block content %}
+
+
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+        <h1 class="govuk-heading-xl">Page heading</h1>
+
+        <form method="post" class="validate-auto-complete">
+
+            <div class="govuk-form-group">
+                <label class="govuk-label" for="course-search">
+                    Search for a course
+                </label>
+                <span id="choose-apprenticeship-hint" class="govuk-hint">
+                    This information can be changed later. If you want to find the correct training,
+                    you can check <a class="govuk-link" target="_blank" href="https://findapprenticeshiptraining.apprenticeships.education.gov.uk/">Find apprenticeship training</a> or ask your training provider.
+                </span>
+                <select id="course-search" name="SelectedCourseId" class="govuk-select" aria-describedby="choose-apprenticeship-hint" data-validation-message="Select a course from the list or leave the field empty">
+                    <option value="">Search for an apprenticeship </option>
+                    <option value="volvo">Volvo</option>
+                      <option value="saab">Saab</option>
+                      <option value="mercedes">Mercedes</option>
+                      <option value="audi">Audi</option>
+                </select>
+            </div>
+
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+                  <h1 class="govuk-fieldset__heading">
+                    Client-side validation
+                  </h1>
+                </legend>
+                <div class="govuk-radios" data-validation-message="You must select a start date">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="where-do-you-live-1" name="where-do-you-live" type="radio" value="england" required>
+                    <label class="govuk-label govuk-radios__label" for="where-do-you-live-1">
+                      England
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="where-do-you-live-2" name="where-do-you-live" type="radio" value="scotland" >
+                    <label class="govuk-label govuk-radios__label" for="where-do-you-live-2">
+                      Scotland
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="where-do-you-live-3" name="where-do-you-live" type="radio" value="wales" >
+                    <label class="govuk-label govuk-radios__label" for="where-do-you-live-3">
+                      Wales
+                    </label>
+                  </div>
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="where-do-you-live-4" name="where-do-you-live" type="radio" value="northern-ireland" >
+                    <label class="govuk-label govuk-radios__label" for="where-do-you-live-4">
+                      Northern Ireland
+                    </label>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+
+            <button type="submit" class="govuk-button">Submit</button>
+
+        </form>
+
+
+    </div>
+</div>
+
+{% endblock  %}
+
+{% block js %}
+
+    <script>
+
+
+    var forms = $('.validate-auto-complete');
+    var radioInputs = forms.find('.govuk-radios__input');
+    var idSelectField = 'course-search';
+
+    var selectEl = document.querySelector('#' + idSelectField);
+    if (selectEl) {
+        accessibleAutocomplete.enhanceSelectElement({
+            selectElement: selectEl,
+            minLength: 3,
+            autoselect: true,
+            defaultValue: '',
+            displayMenu: 'overlay',
+            placeholder: 'Start typing to search apprenticeships',
+            onConfirm: function (opt) {
+                var txtInput = document.querySelector('#' + idSelectField);
+                var searchString = opt || txtInput.value;
+                var requestedOption = [].filter.call(this.selectElement.options,
+                    function (option) {
+                        return (option.textContent || option.innerText) === searchString
+                    }
+                )[0];
+                if (requestedOption) {
+                    requestedOption.selected = true;
+                } else {
+                    this.selectElement.selectedIndex = 0;
+                }
+            }
+        });
+    }
+
+    forms.attr('novalidate', 'novalidate');
+
+    forms.on('submit', function (e) {
+
+        var canSubmit = this.checkValidity(),
+            form = this,
+            validationMessages = [];
+
+        $('.autocomplete__input').each(function () {
+            var that = $(this);
+            setTimeout(function () {
+                if (!checkField(that)) {
+                    var fieldId = that.attr('id'),
+                        errorMessage = $('#' + fieldId + '-select').data('validation-message');
+                    validationMessages.unshift({ id: fieldId, message: errorMessage });
+                    canSubmit = false
+                }
+            }, 100);
+        });
+
+        radioInputs.each(function () {
+            hideValidationMessage($(this));
+        });
+
+        radioInputs.each(function () {
+            var result = this.checkValidity();
+            if (!result) {
+              var errorMessage = showRadioValidationMessage($(this));
+              if (errorMessage !== undefined)
+                validationMessages.unshift(errorMessage);
+            } else {
+              hideValidationMessage($(this));
+            }
+        });
+
+        setTimeout(function () {
+            if (canSubmit) {
+                hideErrorSummary();
+                form.submit();
+            } else {
+                hideErrorSummary();
+                showErrorSummary(validationMessages);
+            }
+        }, 300);
+
+        e.preventDefault();
+
+    }).keydown(function (e) {
+        if (e.which == 13) {
+            e.preventDefault();
+            return false;
+        }
+    });
+
+    var checkField = function ($field) {
+        var textInput = $field,
+            selectField = $('#' + textInput.attr('id') + '-select'),
+            valueLength = $field.val().length;
+
+        if (valueLength > 0 && selectField[0].selectedIndex === 0) {
+            showSelectValidationMessage(selectField);
+            return false;
+
+        } else {
+            hideValidationMessage(selectField);
+        }
+        return true;
+    };
+
+    var showSelectValidationMessage = function ($field) {
+        var fieldGroup = $field.parent(),
+            fieldLabel = fieldGroup.find('label'),
+            validationMessageText = $field.data('validation-message'),
+            validationMessage = $('<span>').addClass('govuk-error-message').text(validationMessageText),
+            alreadyShowingError = fieldGroup.hasClass('govuk-form-group--error');
+
+        if (!alreadyShowingError) {
+            fieldGroup.addClass('govuk-form-group--error');
+            fieldLabel.after(validationMessage);
+        }
+    };
+
+    var showRadioValidationMessage = function ($field) {
+      var $parent = $field.closest('.govuk-form-group'),
+        $radioGroup = $field.closest('.govuk-radios'),
+        validationMessageText = $radioGroup.data('validation-message');
+
+      if (!$parent.hasClass('govuk-form-group--error')) {
+        var validationMessage = $('<span>')
+            .text(validationMessageText)
+            .prop('class', 'govuk-error-message')
+            .prop('id', 'validation-' + slugify(validationMessageText));
+        $radioGroup.before(validationMessage);
+        $parent.addClass('govuk-form-group--error');
+        $field.attr({
+          'aria-describedby' : 'validation-' + slugify(validationMessage),
+          'aria-invalid': 'true'
+        });
+        return { id: $field.attr('id'), message: validationMessageText }
+      }
+    };
+
+    var hideValidationMessage = function ($field) {
+      var $parent = $field.closest('.govuk-form-group');
+
+      $parent.removeClass('govuk-form-group--error');
+      $parent.find('.govuk-error-message').remove();
+      $field.removeAttr('aria-describedby');
+      $field.removeAttr('aria-invalid');
+    };
+
+    var showErrorSummary = function (validationMessages) {
+        var errorSummary = $('.govuk-error-summary'),
+            errorList = $('.govuk-list.govuk-error-summary__list');
+        if (errorSummary.length === 0) {
+            errorSummary = $('<div>').addClass('govuk-error-summary').attr('tabindex', -1).data('module', 'error-summary');
+            var errorTitle = $('<h2>').addClass('govuk-error-summary__title').text('There is a problem');
+            var errorBody = $('<div>').addClass('govuk-error-summary__body');
+            errorList = $('<ul>').addClass('govuk-list govuk-error-summary__list');
+
+            errorBody.html(errorList);
+            errorSummary.append(errorTitle, errorBody);
+
+            var pageHeading = $('h1.govuk-heading-xl');
+            pageHeading.before(errorSummary);
+        }
+
+        $.each(validationMessages, function (index, value) {
+            var errorLink = $('<a>').html(value.message).attr('href', '#' + value.id);
+            var errorListItem = $('<li>').append(errorLink);
+            errorList.append(errorListItem);
+        });
+    };
+
+    var hideErrorSummary = function () {
+        $('.govuk-error-summary').remove();
+    };
+
+    var slugify = function (text) {
+      return text.toString().toLowerCase()
+        .replace(/\s+/g, '-')
+        .replace(/[^\w\-]+/g, '')
+        .replace(/\-\-+/g, '-')
+        .replace(/^-+/, '')
+        .replace(/-+$/, '');
+    };
+
+</script>
+
+{% endblock %}
