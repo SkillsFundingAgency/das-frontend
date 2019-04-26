@@ -1,16 +1,16 @@
 
 // Description: Collection of panels
 
-.dashboard {
-  background: #e9eaec;
-}
-
 .das-panels {
   margin-top: -5px;
+  margin-bottom: -20px;
   @include govuk-media-query($from: tablet) {
     display: table;
     border-spacing: 20px;
-    margin: -10px -20px;
+    margin: -30px -20px;
+  }
+  @include govuk-media-query($from: desktop) {
+    margin: -20px;
   }
 }
 

@@ -1,0 +1,12 @@
+.das-section {
+
+}
+
+.das-section--dashboard {
+  background: #e9eaec;
+}
+
+.das-section--main {
+  // Uses same padding as <main>
+  @extend .govuk-main-wrapper
+}

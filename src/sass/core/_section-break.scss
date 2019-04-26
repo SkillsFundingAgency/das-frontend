@@ -1,0 +1,25 @@
+.das-section-break {
+  margin: 0;
+  border: 0;
+}
+
+.das-section-break--s {
+  margin-bottom: 10px;
+}
+
+.das-section-break--m {
+  margin-bottom: 20px;
+}
+
+.das-section-break--l {
+  margin-bottom: 30px;
+}
+
+.das-section-break--heavy {
+  border-top: 5px solid #000;
+}
+
+.das-section-break--gutters {
+  margin-left: $govuk-gutter-half;
+  margin-right: $govuk-gutter-half;
+}
