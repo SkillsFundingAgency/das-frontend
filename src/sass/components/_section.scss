@@ -6,6 +6,13 @@
   background: #e9eaec;
 }
 
+.das-section--search {
+  background: #d1d5d6;
+  padding: $govuk-gutter 0;
+  @include govuk-responsive-padding(6, "top");
+  @include govuk-responsive-padding(6, "bottom");
+}
+
 .das-section--main {
   // Uses same padding as <main>
   @extend .govuk-main-wrapper

@@ -12,8 +12,16 @@
         </div>
     </section>
 
-    <section class="das-section">
-        
+    <section class="das-section das-section--search">
+        <div class="govuk-width-container">
+            <div class="govuk-form-group das-form-group-inline das-dashboard-search">
+                <label for="search" class="govuk-visually-hidden">Search</label>
+                <input class="govuk-input das-dashboard-search__input" id="search" type="search" placeholder="Search">
+                <div class="das-form-group-inline__button-wrap">
+                    <button class="govuk-button das-dashboard-search__button" type="submit">Search</button>
+                </div>
+            </div>
+        </div>
     </section>
 
     <main class="govuk-main-wrapper das-section--dashboard" id="main-content" role="main">
@@ -60,7 +68,7 @@
                 </div>
                 <div class="govuk-grid-column-one-third">
                     <h3 class="govuk-heading-m">Most active</h3>
-                    <ul class="govuk-list">
+                    <ul class="govuk-list das-list--">
                         <li><a href="#" class="govuk-link">Add an apprentice</a></li>
                         <li><a href="#" class="govuk-link">Manage your apprentices</a></li>
                         <li><a href="#" class="govuk-link">Add a new training provider</a></li>
@@ -69,7 +77,12 @@
                     </ul>
                 </div>
                 <div class="govuk-grid-column-one-third">
-                    <a class="das-promo"></a>
+                    <a class="das-promo" href="#">
+                        What you need to know about apprenticeships
+                    </a>
+                    <p>
+                        Find out more about <a href="#" class="govuk-link"> what the Apprenticeship Service can do for your organisation</a>.
+                    </p>
                 </div>
             </div>
         </div>
