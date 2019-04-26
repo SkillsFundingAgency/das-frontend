@@ -7,6 +7,7 @@
   }
 }
 
+
 .das-user-navigation__list {
   list-style: none;
   padding: 0;
@@ -38,7 +39,7 @@
       position: absolute;
       right: 15px;
       top: 17px;
-      @include triangle-equilateral(down, 8px, #fff)
+      @include triangle-equilateral(down, 8px, #fff);
       .govuk-header & {
         @include govuk-media-query($from: tablet) {
           top: 20px;
