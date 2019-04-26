@@ -2,7 +2,7 @@
   background: govuk-colour(blue);
   display: block;
   text-align: center;
-  padding: $govuk-gutter;
+  padding: $govuk-gutter * 1.5 $govuk-gutter;
   color: #fff;
   text-decoration: none;
   @include govuk-font($size: 24, $weight: bold);

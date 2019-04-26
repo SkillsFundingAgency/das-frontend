@@ -1,0 +1,33 @@
+
+// Description: Styles the section below the panels on the account homepage
+
+.das-dashboard-footer {
+
+}
+
+.das-dashboard-footer__title {
+  line-height: 1.3em;
+}
+
+.das-dashboard-footer__column {
+  box-sizing: border-box;
+  padding: 0 $govuk-gutter / 2;
+  @include govuk-media-query($from: 400px) {
+    float: left;
+    width: 50%;
+  }
+  @include govuk-media-query($from: desktop) {
+    width: 33.33%;
+  }
+}
+
+.das-dashboard-footer__column--title {
+  width: 100%;
+  @include govuk-media-query($from: desktop) {
+    width: 33.33%;
+  }
+}
+
+.das-dashboard-footer__sub-title {
+  margin-bottom: 10px;
+}

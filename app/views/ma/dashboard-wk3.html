@@ -59,16 +59,16 @@
         </div>
     </main>
 
-    <section class="das-section das-section--main" aria-labelledby="more-title">
+    <section class="das-section das-section--main das-dashboard-footer" aria-labelledby="more-title">
         <div class="govuk-width-container">
             <div class="govuk-grid-row">
                 <hr class="das-section-break das-section-break--l das-section-break--heavy das-section-break--gutters">
-                <div class="govuk-grid-column-one-third">
-                    <h2 id="more-title" class="govuk-heading-l">More on the Apprenticeships Service</h2>
+                <div class="das-dashboard-footer__column das-dashboard-footer__column--title">
+                    <h2 id="more-title" class="govuk-heading-l das-dashboard-footer__title">More on the Apprenticeships Service</h2>
                 </div>
-                <div class="govuk-grid-column-one-third">
-                    <h3 class="govuk-heading-m">Most active</h3>
-                    <ul class="govuk-list das-list--">
+                <div class="das-dashboard-footer__column">
+                    <h3 class="govuk-heading-m das-dashboard-footer__sub-title">Most active</h3>
+                    <ul class="govuk-list das-list--featured">
                         <li><a href="#" class="govuk-link">Add an apprentice</a></li>
                         <li><a href="#" class="govuk-link">Manage your apprentices</a></li>
                         <li><a href="#" class="govuk-link">Add a new training provider</a></li>
@@ -76,7 +76,7 @@
                         <li><a href="#" class="govuk-link">Rename your account</a></li>
                     </ul>
                 </div>
-                <div class="govuk-grid-column-one-third">
+                <div class="das-dashboard-footer__column">
                     <a class="das-promo" href="#">
                         What you need to know about apprenticeships
                     </a>
@@ -86,7 +86,6 @@
                 </div>
             </div>
         </div>
-
     </section>
 
 {% endblock  %}
