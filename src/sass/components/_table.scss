@@ -1,14 +1,17 @@
 
 .das-table--responsive {
+
   .govuk-table__head {
     display: none;
     @include govuk-media-query($from: tablet) {
       display: table-header-group;
     }
   }
+
   .govuk-table__caption {
     margin-bottom: 10px;
   }
+
   .govuk-table__body {
     tr {
       margin-bottom: 10px;
@@ -62,5 +65,11 @@
         }
       }
     }
+  }
+}
+
+@for $i from 1 through 14 {
+  .das-table-cell-width-#{$i * 5} {
+    width: $i * 5%;
   }
 }
