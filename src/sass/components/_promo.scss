@@ -1,0 +1,13 @@
+.das-promo {
+  background: govuk-colour(blue);
+  display: block;
+  text-align: center;
+  padding: $govuk-gutter;
+  color: #fff;
+  text-decoration: none;
+  @include govuk-font($size: 24, $weight: bold);
+  @include govuk-focusable;
+  &:hover {
+    text-decoration: underline;
+  }
+}
