@@ -23,6 +23,10 @@
   .das-panel__link {
     color: #fff;
     font-weight: $govuk-font-weight-bold;
+    @include govuk-link-common;
+    &:focus {
+      color: #000;
+    }
   }
 }
 

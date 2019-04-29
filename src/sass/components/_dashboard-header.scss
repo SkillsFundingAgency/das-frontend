@@ -11,6 +11,7 @@
   margin: 20px 0 0;
   font-size: 19px;
   font-weight: $govuk-font-weight-regular;
+  color: $govuk-secondary-text-colour;
   @include govuk-media-query($from: tablet) {
     font-size: 24px;
     margin-top: 25px;
