@@ -1,24 +1,34 @@
 
-// Description: Collection of panels
+// Description: Collection of panels. Used on the Employer dashboard
 
 .das-panels {
-  margin-top: -5px;
-  margin-bottom: -20px;
+  margin-bottom: 50px;
   @include govuk-media-query($from: tablet) {
-    display: table;
-    border-spacing: 20px;
-    margin: -30px -20px;
-  }
-  @include govuk-media-query($from: desktop) {
-    margin: -20px;
+    display: flex;
+    background: $das-dashboard-bg;
+    margin: 0 -$das-dashboard-gutter / 2;
+    padding-bottom: $das-dashboard-gutter;
   }
 }
 
-.das-panels__row {
+.das-panels__col {
   @include govuk-media-query($from: tablet) {
-    display: table-row;
-    & > .das-panel {
-      display: table-cell;
-    }
+    width: 50%;
+    margin: 0 $das-dashboard-gutter / 2;
+    background: #fff;
+
   }
 }
+
+.das-panels__col--primary {
+  @include govuk-media-query($from: tablet) {
+    width: $das-primary-col-size;
+  }
+}
+
+.das-panels__col--secondary {
+  @include govuk-media-query($from: tablet) {
+    width: $das-secondary-col-size;
+  }
+}
+

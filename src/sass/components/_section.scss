@@ -1,9 +1,8 @@
-.das-section {
 
-}
+// Description: Used to group related content
 
 .das-section--dashboard {
-  background: #e9eaec;
+  background: $das-dashboard-bg;
 }
 
 .das-section--search {
@@ -14,6 +13,6 @@
 }
 
 .das-section--main {
-  // Uses same padding as <main>
+  // Wanted to copy <main> styles without using the <main> tag
   @extend .govuk-main-wrapper
 }

@@ -1,12 +1,14 @@
 
 // Description: Styles the section below the panels on the account homepage
 
-.das-dashboard-footer {
-
-}
-
 .das-dashboard-footer__title {
+  @include govuk-font(19, $weight: bold);
   line-height: 1.3em;
+  margin-top: 0;
+  font-size: 24px;
+  @include govuk-media-query($from: tablet) {
+    font-size: 30px;
+  }
 }
 
 .das-dashboard-footer__column {
