@@ -30,3 +30,19 @@
   }
 }
 
+.das-account__title {
+  font-weight: $govuk-font-weight-regular;
+  color: $govuk-secondary-text-colour;
+  margin: 0;
+  @include govuk-media-query($from: tablet) {
+    margin-bottom: -7px;
+  }
+}
+
+.das-account__account-name {
+  margin: 0;
+  @include govuk-media-query($from: desktop) {
+    font-size: 48px;
+  }
+}
+

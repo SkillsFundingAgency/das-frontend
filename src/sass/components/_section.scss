@@ -1,6 +1,11 @@
 
 // Description: Used to group related content
 
+.das-section--header {
+  background: #fff;
+  padding: $govuk-gutter 0;
+}
+
 .das-section--dashboard {
   background: $das-dashboard-bg;
 }
