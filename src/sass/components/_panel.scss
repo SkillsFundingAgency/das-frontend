@@ -2,12 +2,13 @@
 // Description: Account homepage panel
 
 .das-panel {
+  padding: $das-dashboard-gutter;
   background: #fff;
-  padding: 20px;
-  margin-bottom: 15px;
+  margin-bottom: $govuk-gutter / 2;
   @include govuk-media-query($from: tablet) {
+    border-top: $das-dashboard-gutter solid $das-dashboard-bg;
+    margin-bottom: 0;
     padding: 30px;
-    margin: 0;
   }
 }
 
@@ -18,11 +19,15 @@
     color: #fff;
   }
   @include govuk-media-query($from: tablet) {
-    width: 60%;
+  //  width: 60%;
   }
   .das-panel__link {
     color: #fff;
     font-weight: $govuk-font-weight-bold;
+    @include govuk-link-common;
+    &:focus {
+      color: #000;
+    }
   }
 }
 

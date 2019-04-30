@@ -33,3 +33,10 @@
     }
   }
 }
+
+.das-list--featured {
+  font-weight: $govuk-font-weight-bold;
+  & > li {
+    margin-bottom: 7px;
+  }
+}

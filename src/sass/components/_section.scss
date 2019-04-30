@@ -1,0 +1,23 @@
+
+// Description: Used to group related content
+
+.das-section--header {
+  background: #fff;
+  padding: $govuk-gutter 0;
+}
+
+.das-section--dashboard {
+  background: $das-dashboard-bg;
+}
+
+.das-section--search {
+  background: #d1d5d6;
+  padding: $govuk-gutter 0;
+  @include govuk-responsive-padding(6, "top");
+  @include govuk-responsive-padding(6, "bottom");
+}
+
+.das-section--main {
+  // Wanted to copy <main> styles without using the <main> tag
+  @extend .govuk-main-wrapper
+}
