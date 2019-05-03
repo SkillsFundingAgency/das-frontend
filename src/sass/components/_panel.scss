@@ -18,8 +18,12 @@
   & > p {
     color: #fff;
   }
-  @include govuk-media-query($from: tablet) {
-  //  width: 60%;
+  & > dl {
+    color: #fff;
+    font-size: 1em;
+    & > dd.das-definition-list__definition {
+      border-color: rgba(255, 255, 255, .5);
+    }
   }
   .das-panel__link {
     color: #fff;
