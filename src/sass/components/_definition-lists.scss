@@ -14,10 +14,9 @@
   margin: 0;
 }
 
-
 .das-definition-list--inline {
   overflow: hidden;
-  & > .das-definition-list__title {
+  .das-definition-list__title {
     clear: both;
     float: left;
     font-weight: normal;
@@ -26,13 +25,52 @@
       content: ':';
     }
   }
-  & > .das-definition-list__definition {
+  .das-definition-list__definition {
     float: left;
+  }
+}
+
+.das-definition-list--table {
+  @include govuk-media-query($from: tablet) {
+    display: flex;
+    flex-flow: row wrap;
+  }
+  .das-definition-list__title {
+    font-weight: $govuk-font-weight-bold;
+    flex-basis: 35%;
+    padding-right: 5%;
+    @include govuk-media-query($from: tablet) {
+      margin-bottom: 5px;
+      &.das-definition-list__title--spacer {
+        margin-bottom: 10px;
+      }
+    }
+    &:after {
+      content: ':';
+    }
+  }
+  .das-definition-list__definition {
+    flex-basis: 60%;
+    flex-grow: 1;
+    margin-bottom: 5px;
+    &.das-definition-list__definition--spacer {
+      margin-bottom: 10px;
+    }
   }
 }
 
 .das-definition-list--muted {
   color: $govuk-secondary-text-colour;
+}
+
+.das-definition-list--with-separator {
+  .das-definition-list__title {
+    padding-top: 10px;
+  }
+  .das-definition-list__definition {
+    border-bottom: 1px solid $govuk-border-colour;
+    padding-bottom: 10px;
+  }
 }
 
 .das-definition-list__results {
@@ -44,7 +82,7 @@
   font-weight:600;
   clear: both;
   display:block;
-  width:25%;
+  width: 25%;
 }
 
 .das-definition-list__results dd {
@@ -53,4 +91,18 @@
   margin-inline-start:0px;
   margin-bottom: 1em;
   width:75%;   
+}
+
+.das-definition-list__title--spacer {
+  @include govuk-media-query($from: tablet) {
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid $govuk-border-colour;
+  }
+}
+
+.das-definition-list__definition--spacer {
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid $govuk-border-colour;
 }
