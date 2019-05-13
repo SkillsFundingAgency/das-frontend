@@ -31,49 +31,48 @@
   // Show the body of expanded sections
   .govuk-accordion.with-js .govuk-accordion__section--expanded .govuk-accordion__section-panel {
     display: block;
+    background: #000;
+    padding: 1px 0;
+    @include mq ($from: tablet) {
+      background: none;
+    }
   }
-
-  // Border at the bottom of the whole accordtion
-  // .govuk-accordion.with-js {
-  //   border-bottom-width: 1px;
-  //   border-bottom-style: solid;
-  //   border-bottom-color: $border-colour;
-  // }
-
-  // Borders between accordion sections
-  // .govuk-accordion.with-js .govuk-accordion__section {
-  //   border-top-width: 1px;
-  //   border-top-style: solid;
-  //   border-top-color: $border-colour;
-  // }
 
   // Section headers have a pointer cursor as an additional affordance
   .govuk-accordion.with-js .govuk-accordion__section-header {
     position: relative;
-    margin-top: 0;
-    margin-bottom: 0;
+    margin-top: 3px;
+    margin-bottom: 3px;
     padding-top: 14px;
     padding-bottom: 12px;
-    @include mq ($until: tablet) {
-    cursor: pointer;
+    @include mq ($from: tablet) {
+      margin-top: 0;
+      margin-bottom: 0;
     }
   }
 
   // Buttons within the headers don’t need default styling
   .govuk-accordion.with-js .govuk-accordion__section-header button {
-    // @include govuk-link-common;
+
     margin-top: 0;
     margin-bottom: 0;
     border-width: 0;
     background-color: transparent;
     text-align: inherit;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
 
     &:focus {
       background-color: transparent;
+      outline: 3px solid $focus-colour;
     }
     @include mq ($from: tablet) {
       display: none;
-      }
+    }
   }
 
   // Headings in section headers have link colours as an additional affodance
