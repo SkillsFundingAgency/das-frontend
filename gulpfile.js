@@ -5,7 +5,7 @@ require('./tasks/gulp/das')
 require('./tasks/gulp/campaign')
 require('./tasks/gulp/dasJs')
 
-const defaultBuildTasks = ['das-copy-libs', 'das-compile-sass', 'das-compile-js', 'das-compile-js-components'];
+const defaultBuildTasks = ['das-copy-libs', 'das-compile-sass', 'das-compile-js', 'das-compile-js-components', 'das-copy-images'];
 const defaultWatchTasks = ['das-watch-sass', 'das-watch-js'];
 
 const campaignBuildTasks = ['campaign-copy-libs', 'campaign-compile-sass', 'campaign-compile-js', 'campaign-copy-images'];

@@ -3,7 +3,11 @@
 
 .das-section--header {
   background: #fff;
-  padding: $govuk-gutter 0;
+  padding: 20px 0;
+
+  @include govuk-media-query($from: tablet) {
+    padding: $govuk-gutter 0;
+  }
 }
 
 .das-section--dashboard {

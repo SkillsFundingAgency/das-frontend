@@ -18,6 +18,10 @@ gulp.task('das-compile-sass', () => gulp
   .pipe(sass(sassOptions))
   .pipe(gulp.dest(paths.dist.default)));
 
+gulp.task('das-copy-images', () => {
+  gulp.src(paths.src.defaultImages).pipe(gulp.dest(paths.dist.defaultImages));
+});
+
 gulp.task('das-copy-libs', () => {
   gulp.src(['./node_modules/govuk-frontend/assets/**/*','./src/assets/**/*']).pipe(gulp.dest('./dist/assets/'));
   gulp.src(['./node_modules/govuk-frontend/all.js']).pipe(gulp.dest('./dist/libs/govuk-frontend'));
