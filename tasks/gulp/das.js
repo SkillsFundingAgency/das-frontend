@@ -1,10 +1,10 @@
-'use strict'
+'use strict';
 
-const gulp = require('gulp')
+const gulp = require('gulp');
 const sass = require('gulp-sass');
 const rename = require('gulp-rename');
-const paths = require('../../config/paths.json')
-const sassOptions = require('../../config/sassOptions.js')
+const paths = require('../../config/paths.json');
+const sassOptions = require('../../config/sassOptions.js');
 
 gulp.task('das-watch-sass', () => {
   gulp.watch(paths.src.default, ['das-compile-sass'])
