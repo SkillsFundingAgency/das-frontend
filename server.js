@@ -96,14 +96,9 @@ const httpsOptions = {
   rejectUnauthorized: false,
 }
 
-//if (process.env.settings === 'dev') {
+
   const server = https.createServer(httpsOptions, app).listen(port, () => {
     console.log('Website running at https://localhost:' + port);
    })
-// } else {
-//   app.listen(port);
-//   console.log('');
-//   console.log(`Listening on port ${port}`);
-//   console.log('');
-// }
+
 

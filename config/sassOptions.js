@@ -1,3 +1,5 @@
+"use strict";
+
 let sassOptions;
 
 sassOptions = {
@@ -7,7 +9,7 @@ sassOptions = {
     'node_modules/govuk-frontend',
     'src/sass',
     'src/sass/libs'
-  ],
+  ]
 };
 
 module.exports = sassOptions;

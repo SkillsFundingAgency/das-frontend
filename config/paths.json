@@ -3,6 +3,7 @@
     "default": "./src/sass/**/*.scss",
     "defaultJs": "./src/js/_*.js",
     "defaultJsMain": "./src/js/app.js",
+    "defaultImages": "./src/images/**/*",
     "componentJs": "./src/components/**/*.js",
     "campaign": "./src/campaign/sass/**/*.scss",
     "campaignJs": "./src/campaign/javascript/*.js",
@@ -12,6 +13,7 @@
   "dist": {
     "default": "./dist/css/",
     "defaultJs": "./dist/js/",
+    "defaultImages": "./dist/images/",
     "campaign": "./dist/campaign/css/",
     "campaignJs": "./dist/campaign/js",
     "campaignImages": "./dist/campaign/images/"

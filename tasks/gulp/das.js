@@ -1,10 +1,10 @@
-'use strict'
+'use strict';
 
-const gulp = require('gulp')
+const gulp = require('gulp');
 const sass = require('gulp-sass');
 const rename = require('gulp-rename');
-const paths = require('../../config/paths.json')
-const sassOptions = require('../../config/sassOptions.js')
+const paths = require('../../config/paths.json');
+const sassOptions = require('../../config/sassOptions.js');
 
 gulp.task('das-watch-sass', () => {
   gulp.watch(paths.src.default, ['das-compile-sass'])
@@ -17,6 +17,10 @@ gulp.task('das-compile-sass', () => gulp
   .src(paths.src.default)
   .pipe(sass(sassOptions))
   .pipe(gulp.dest(paths.dist.default)));
+
+gulp.task('das-copy-images', () => {
+  gulp.src(paths.src.defaultImages).pipe(gulp.dest(paths.dist.defaultImages));
+});
 
 gulp.task('das-copy-libs', () => {
   gulp.src(['./node_modules/govuk-frontend/assets/**/*','./src/assets/**/*']).pipe(gulp.dest('./dist/assets/'));

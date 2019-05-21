@@ -33,9 +33,9 @@
 .das-account__title {
   font-weight: $govuk-font-weight-regular;
   color: $govuk-secondary-text-colour;
-  margin: 0;
+  margin-bottom: 5px;
   @include govuk-media-query($from: tablet) {
-    margin-bottom: -7px;
+    margin-bottom: 0;
   }
 }
 
@@ -47,3 +47,35 @@
   }
 }
 
+.das-favourites-link {
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  align-items: center;
+  color: $govuk-link-colour;
+  text-decoration: underline;
+  line-height: 1;
+  margin-top: 5px;
+  margin-bottom: 0;
+  @include govuk-focusable;
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
+}
+
+.das-favourites-link__icon {
+  width: 1.6em;
+  margin-right: 8px;
+  & > img {
+    max-width: 100%;
+    display: block;
+  }
+}
+
+.das-favourites-link__text {
+  margin-top: 5px;
+}
+
+.das-favourites-link__count {
+  font-weight: $govuk-font-weight-bold;
+}
