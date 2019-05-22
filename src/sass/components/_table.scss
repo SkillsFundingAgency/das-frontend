@@ -1,6 +1,5 @@
 
 .das-table--responsive {
-
   .govuk-table__head {
     display: none;
     @include govuk-media-query($from: tablet) {
@@ -43,6 +42,9 @@
           padding: 10px 20px 10px 0;
           border-bottom-style: solid;
           width: auto;
+          &.govuk-table__cell--numeric {
+            text-align: right;
+          }
         }
         &:before {
           content: attr(data-label);
