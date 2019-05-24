@@ -35,15 +35,16 @@
       position: absolute;
       top: 0;
       left: 0;
-      height: 61px;
-      width: 35px;
+      height: 57px;
+      width: 44px;
       content: counter(results-counter);
-      font-size: 1.5em;
-      padding: 0px 15px 0px 0px;
+      font-size: 1.2em;
+      font-weight: bold;
+      padding: 4px 0 0 7px;
       font-family: nobel,sans-serif;
       -webkit-font-smoothing: antialiased;
-      text-align: center;
       background-image: url("data:image/svg+xml,%3Csvg width='51' height='61' viewBox='0 0 51 61' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 0H51L31 42H0V0Z' fill='%23DDDDDD'/%3E%3Cpath d='M20 42V60.5L0 42H20Z' fill='%236F777B'/%3E%3C/svg%3E%0A");
+      background-repeat: no-repeat;
       color: $black;
     }
   }
