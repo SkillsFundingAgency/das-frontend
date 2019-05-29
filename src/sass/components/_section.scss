@@ -28,13 +28,25 @@
 }
 
 .das-section--overlay {
-  position: absolute;
-  background: red;
-  top: 0;
-  left: 0;
-  right: 0;
+  .js-enabled & {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    margin-top: -30px;
+    display: none;
+    @include govuk-media-query($from: tablet) {
+      margin-top: -21px;
+    }
+  }
 }
 
 .das-section__inner-wrap {
   padding: 20px;
+  background: #fff;
+  max-width: 920px;
+  margin-top: 10px;
+  .js-enabled & {
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, .2);
+  }
 }
