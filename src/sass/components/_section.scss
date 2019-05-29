@@ -12,6 +12,7 @@
 
 .das-section--dashboard {
   background: $das-dashboard-bg;
+  position: relative;
 }
 
 .das-section--search {
@@ -24,4 +25,16 @@
 .das-section--main {
   // Wanted to copy <main> styles without using the <main> tag
   @extend .govuk-main-wrapper
+}
+
+.das-section--overlay {
+  position: absolute;
+  background: red;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.das-section__inner-wrap {
+  padding: 20px;
 }

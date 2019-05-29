@@ -1,0 +1,209 @@
+{% extends "template-ma.html" %}
+{% set pageTitle = "Digital Apprenticeship Service" %}
+{% set hideStatusBanner = true %}
+{% set loggedIn = true %}
+
+{% block content %}
+
+    <section class="das-section das-section--header">
+        <div class="govuk-width-container">
+            <h1 class="govuk-heading-m das-account__title">Your employer account</h1>
+            <h2 class="govuk-heading-l das-account__account-name">Assurance Aerospace Ltd</h2>
+            <a href="" class="das-favourites-link govuk-body">
+                <span class="das-favourites-link__icon"><img src="/images/favourite-unchecked-black.svg" alt=""></span>
+                <span class="das-favourites-link__text">View saved favourites</span>
+            </a>
+        </div>
+    </section>
+
+    <section class="das-section das-section--search">
+        <div class="govuk-width-container">
+            <div class="das-dashboard-header__row">
+                <div class="das-dashboard-header__col das-dashboard-header__col--primary">
+                    <form>
+                        <div class="govuk-form-group das-form-group-inline das-dashboard-search">
+                            <label for="search" class="govuk-visually-hidden">Search</label>
+                            <input class="govuk-input das-dashboard-search__input" id="search" type="search" placeholder="Search">
+                            <div class="das-form-group-inline__button-wrap">
+                                <button class="govuk-button das-dashboard-search__button" type="submit">Search</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                <div class="das-dashboard-header__col das-dashboard-header__col--secondary">
+                    <a class="das-dashboard-header__" href="#das-dashbaord-other-tasks" id="other-tasks-heading">
+                        Other tasks you can do
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <main class="govuk-main-wrapper das-section--dashboard" id="main-content" role="main">
+        <div class="govuk-width-container">
+            <div class="das-panels">
+                <div class="das-panels__col das-panels__col--primary">
+                    <div class="das-panel das-panel--featured">
+
+                        <h3 class="das-panel__heading">Apprenticeship funding secured</h3>
+                        <dl class="das-definition-list das-definition-list--with-separator">
+                            <dt class="das-definition-list__title">Legal entity:</dt>
+                            <dd class="das-definition-list__definition">Assurance Aerospace Engineer</dd>
+                            <dt class="das-definition-list__title">Training course:</dt>
+                            <dd class="das-definition-list__definition">Bespoke Saddler, Level: 3 (Standard)</dd>
+                            <dt class="das-definition-list__title">Start and end date: </dt>
+                            <dd class="das-definition-list__definition">February 2019 to March 2020</dd>
+                        </dl>
+                        <p><a href="#" class="das-panel__link">Link if needed?</a> </p>
+
+                    </div>
+                    <div class="das-panel">
+                        <h3 class="das-panel__heading">Your saved apprenticeships and training providers</h3>
+                        <p>You do not have any apprenticeships or training providers saved.</p>
+                    </div>
+                </div>
+                <div class="das-panels__col das-panels__col--secondary">
+                    <div class="das-panel">
+                        <h3 class="das-panel__heading">Training provider permissions</h3>
+                        <p>Control what tasks you would like your training provider to do on your behalf.</p>
+                        <p><a href="#" class="govuk-link govuk-link--no-visited-state">Set permissions</a> </p>
+                    </div>
+                    <div class="das-panel">
+                        <h3 class="das-panel__heading">Your account settings</h3>
+                        <ul class="govuk-list">
+                           <li><a href="#" class="govuk-link govuk-link--no-visited-state">Your accounts</a> </li>
+                           <li><a href="#" class="govuk-link govuk-link--no-visited-state">Rename account </a> </li>
+                           <li><a href="#" class="govuk-link govuk-link--no-visited-state">Change your password </a> </li>
+                           <li><a href="#" class="govuk-link govuk-link--no-visited-state">Change your email address </a> </li>
+                           <li><a href="#" class="govuk-link govuk-link--no-visited-state">Notification settings </a> </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+
+        </div>
+
+                 <section class="das-section das-section--overlay" aria-labelledby="other-tasks-heading" id="das-dashbaord-other-tasks">
+                            <div class="govuk-width-container das-section__inner-wrap">
+                                <!-- Other -->
+
+                                                <section class="dashboard-section">
+                                                    <div class="grid-row">
+                                                        <div class="column-two-thirds">
+                                                            <h2 class="section-heading heading-large">Apprenticeships</h2>
+                                                            <p class="section-description">Manage your apprentices, recruit apprentice and set training provider permissions.</p>
+                                                        </div>
+                                                    </div>
+                                                     <div class="cards">
+                                                        <div class="card">
+                                                            <h3 class="heading-medium"><a href="#">Apprentices</a></h3>
+                                                            <p>Add apprentices, update details of existing apprentices and authorise payments to training providers.</p>
+                                                        </div>
+                                                        <div class="card">
+                                                            <h3 class="heading-medium"><a href="#">Recruitment</a></h3>
+                                                            <p>Recruit an apprentice by creating a vacancy. This vacancy will be advertised on Find an apprenticeship.</p>
+                                                        </div>
+                                                        <div class="card">
+                                                            <h3 class="heading-medium"><a href="#">Training provider permissions</a></h3>
+                                                            <p>Set training provider permissions and control what tasks they can do on your behalf.</p>
+                                                        </div>
+                                                    </div>
+                                                </section>
+
+                                                <section class="dashboard-section">
+                                                    <div class="grid-row">
+                                                        <div class="column-two-thirds">
+                                                            <h2 class="section-heading heading-large">Finances</h2>
+                                                            <p class="section-description">Manage your apprenticeship funds.</p>
+                                                        </div>
+                                                    </div>
+                                                     <div class="cards">
+                                                        <div class="card">
+                                                            <h3 class="heading-medium"><a href="#">Manage your funds</a></h3>
+                                                            <p>Reserve and manage funding.</p>
+                                                        </div>
+                                                        <div class="card">
+                                                            <h3 class="heading-medium"><a href="#">Manage your levy</a></h3>
+                                                            <p>View your financial transactions, connect with other employers and send or receive transfer funds.</p>
+                                                        </div>
+                                                    </div>
+                                                </section>
+
+                                                <section class="dashboard-section">
+                                                    <div class="grid-row">
+                                                        <div class="column-two-thirds">
+                                                            <h2 class="section-heading heading-large">Account</h2>
+                                                            <p class="section-description">Manage your account details and team.</p>
+                                                        </div>
+                                                    </div>
+                                                     <div class="cards">
+                                                        <div class="card">
+                                                            <h3 class="heading-medium"><a href="#">Your organisations and agreements</a></h3>
+                                                            <p>Add your organisations that will make contracts with training providers.</p>
+                                                        </div>
+                                                        <div class="card">
+                                                            <h3 class="heading-medium"><a href="#">Your team</a></h3>
+                                                            <p>Control what your team can do and invite new team members.</p>
+                                                        </div>
+                                                        <div class="card">
+                                                            <h3 class="heading-medium"><a href="#">PAYE schemes</a></h3>
+                                                            <p>Add or remove PAYE schemes.</p>
+                                                        </div>
+                                                    </div>
+                                                </section>
+
+                                                <section class="dashboard-section-last">
+                                                    <div class="cards">
+                                                        <div class="card">
+                                                            <h3 class="heading-medium"><a href="#" rel="external">Find apprenticeship training</a></h3>
+                                                            <p>Search for apprenticeships and see details of approved providers who can deliver the training.</p>
+                                                        </div>
+                                                    </div>
+                                                </section>
+
+                                                <div class="panel panel-filled">
+                                                    <h3 class="heading-medium">Help us improve this service</h3>
+                                                    <p><a href="https://www.smartsurvey.co.uk/s/apprenticeshipservicefeedback/" target="_blank">Take our 3 minute survey</a> so that we can improve this service.</p>
+                                                    <p><a href="https://www.smartsurvey.co.uk/s/apprenticeshipservicefeedback/" target="_blank" class="button">Take the survey <span class="vh">so that we can improve the service</span></a></p>
+                                                </div>
+
+                                <!-- End other -->
+                            </div>
+                        </section>
+
+
+    </main>
+
+
+    <section class="das-section das-section--main das-dashboard-footer" aria-labelledby="more-title">
+        <div class="govuk-width-container">
+            <div class="govuk-grid-row">
+                <hr class="das-section-break das-section-break--l das-section-break--heavy das-section-break--gutters">
+                <div class="das-dashboard-footer__column das-dashboard-footer__column--title">
+                    <h2 id="more-title" class="das-dashboard-footer__title">More on the Apprenticeships Service</h2>
+                </div>
+                <div class="das-dashboard-footer__column">
+                    <h3 class="govuk-heading-m das-dashboard-footer__sub-title">Most active</h3>
+                    <ul class="govuk-list das-list--featured">
+                        <li><a href="#" class="govuk-link govuk-link--no-visited-state">Add an apprentice</a></li>
+                        <li><a href="#" class="govuk-link govuk-link--no-visited-state">Manage your apprentices</a></li>
+                        <li><a href="#" class="govuk-link govuk-link--no-visited-state">Add a new training provider</a></li>
+                        <li><a href="#" class="govuk-link govuk-link--no-visited-state">Add a new organisation</a></li>
+                        <li><a href="#" class="govuk-link govuk-link--no-visited-state">Rename your account</a></li>
+                    </ul>
+                </div>
+                <div class="das-dashboard-footer__column">
+                    <a class="das-promo" href="#">
+                        What you need to know about apprenticeships
+                    </a>
+                    <p>
+                        Find out more about <a href="#" class="govuk-link govuk-link--no-visited-state"> what the Apprenticeship Service can do for your organisation</a>.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+{% endblock  %}
