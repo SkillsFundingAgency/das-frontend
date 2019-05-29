@@ -7,6 +7,10 @@ module.exports = {
       var compName = req.params.compName;
       res.render('ma/' + compName, {action: req.query.action, type: req.query.type})
     })
+    app.get('/fat/:compName', function (req, res) {
+      var compName = req.params.compName;
+      res.render('fat/' + compName, {action: req.query.action, type: req.query.type})
+    })
     app.get('/example/:compName', function (req, res) {
       var compName = req.params.compName;
       res.render('example/' + compName, {action: req.query.action, type: req.query.type})
