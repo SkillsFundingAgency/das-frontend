@@ -1,11 +1,11 @@
-$button-colour: #FFFFFF;
-$button-text-colour: #000000;
+$button-colour: #fff;
+$button-text-colour: #000;
 
 $button-apprentice-colour: $apprentice;
 $button-apprentice-text-colour: #fff;
 
 $button-employer-colour: $employer;
-$button-employer-text-colour: #fff;
+$button-employer-text-colour: #000;
 
 
 $button-hover-colour: darken($button-colour, 5%);
@@ -150,7 +150,8 @@ $offset: 2;
   }
 }
 
-.button-apprentice
+.button-apprentice,
+.button--apprentice
 {
   color: $button-apprentice-text-colour;
   background-color: $button-apprentice-colour;
@@ -170,7 +171,8 @@ $offset: 2;
 
 }
 
-.button-employer
+.button-employer,
+.button--employer
 {
   color: $button-employer-text-colour;
   background-color: $button-employer-colour;
