@@ -1,0 +1,172 @@
+// Temporarily added legacy styles to style HTML that can't be changed in time
+
+@mixin dot() {
+  position: absolute;
+  top: 5px;
+  left: -4px;
+  background: $govuk-border-colour;
+  width:9px;
+  height:9px;
+  content: "";
+  display: block;
+  border-radius: 50%;
+}
+
+.timeline {
+  position: relative;
+  &:before {
+    content: "";
+    background: $govuk-border-colour;
+    width: 1px;
+    position: absolute;
+    top: 40px;
+    bottom: 0;
+    display: block;
+  }
+  li {
+    position: relative;
+  }
+  h4 {
+    padding-left: 15px;
+    color: govuk-colour('grey-1');
+    position: absolute;
+    display: none;
+    top: 3px;
+  }
+  li.first {
+    padding-top: 30px;
+    h4 {
+      display: block;
+    }
+  }
+  p {
+    margin: 0;
+    padding-left: 15px;
+  }
+  p.activity {
+    position: relative;
+    &:before {
+      @include dot;
+    }
+  }
+  .meta {
+    color: govuk-colour('grey-1');
+    padding-bottom: 15px;
+    a {
+      display: block;
+    }
+  }
+}
+
+.timeline--complete {
+  @include govuk-media-query($from: tablet) {
+    margin-left: 200px;
+    h4 {
+      width: 180px;
+      margin-left: -200px;
+      top: auto;
+      text-align: right;
+      padding-left: 0;
+      padding-right: 20px;
+    }
+    .meta {
+      a {
+        display: inline-block;
+        padding-left: 10px;
+        position: relative;
+        &:before {
+          content: "-";
+          position: absolute;
+          left: 0;
+        }
+      }
+    }
+  }
+}
+
+.task-list {
+  li {
+    border-bottom: 1px solid $govuk-border-colour;
+    padding: 10px 0;
+    &:first-child {
+      padding-top: 0;
+    }
+    &:last-child {
+      border: none;
+      padding-bottom: 0;
+    }
+    p {
+      margin: 0;
+    }
+    a {
+      display: block;
+    }
+  }
+}
+
+// ACTIVITY LOG: Vertical line with bulleted list
+#item-list {
+  position: relative;
+  padding-left: 1px;
+  line-height: 18px;
+  border-left: 1px solid $govuk-border-colour;
+  margin-left: 10px;
+  margin-top: 10px;
+  .item {
+    position: relative;
+    text-align: left;
+    display: block;
+    padding: 0 18px;
+    margin-bottom: 40px;
+    .item-label {
+      position: relative;
+      color: govuk-colour('grey-1');
+    }
+    .item-description {
+      .grey-text {
+        color: govuk-colour('grey-1');
+      }
+      p {
+        margin-bottom: 5px;
+      }
+    }
+    .item-label:before {
+      content: '';
+      position: absolute;
+      top: 0px;
+      left: -28px;
+      width: 17px;
+      height: 17px;
+      border-radius: 100%;
+      background: $govuk-border-colour;
+    }
+  }
+  .all-activity {
+    margin-bottom: 10px;
+    .item-label {
+      a {
+        padding-top: 16px;
+        display: block;
+        color: $govuk-link-colour;
+      }
+    }
+    .item-label:before {
+      top: 15px;
+      width: 22px;
+      height: 22px;
+      left: -30px;
+    }
+  }
+}
+
+.button-link {
+  @include govuk-font(19);
+  @include govuk-focusable();
+  background: none;
+  padding: 0;
+  margin: 0;
+  border: none;
+  color: $govuk-link-colour;
+  text-decoration: underline;
+  cursor: pointer;
+}

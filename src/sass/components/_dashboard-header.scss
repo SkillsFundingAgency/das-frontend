@@ -57,6 +57,7 @@
   @include govuk-responsive-padding(4);
   @include govuk-media-query($from: tablet) {
     margin: 0;
+    background-position: 94% 25px;
   }
 }
 

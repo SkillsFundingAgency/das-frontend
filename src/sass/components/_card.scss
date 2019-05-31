@@ -1,0 +1,25 @@
+
+.das-cards {
+  margin: 0 -15px;
+  flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  @include govuk-media-query($from: tablet) {
+    display: flex;
+    display: -ms-flex;
+  }
+}
+
+
+.das-card {
+  padding: 0 15px;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+  @include govuk-media-query($from: tablet) {
+    width: 50%;
+  }
+}
+
+.das-card__heading {
+  margin-top: 0;
+  margin-bottom: .5em;
+}

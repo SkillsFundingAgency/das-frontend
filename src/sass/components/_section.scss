@@ -41,12 +41,31 @@
   }
 }
 
+.das-section__heading {
+  margin-top: 30px;
+  margin-bottom: 10px;
+}
+
+.das-section__description {
+  color: govuk-colour('grey-1');
+  margin-top: 0;
+}
+
 .das-section__inner-wrap {
-  padding: 20px;
+  padding: 10px 30px;
   background: #fff;
-  max-width: 920px;
+  max-width: 900px;
   margin-top: 10px;
   .js-enabled & {
     box-shadow: 0px 5px 5px rgba(0, 0, 0, .2);
   }
+}
+
+.das-section-dashboard {
+  border-bottom: 2px solid #bfc1c3;
+  padding-bottom: 15px;
+}
+
+.das-section-dashboard--last {
+
 }
