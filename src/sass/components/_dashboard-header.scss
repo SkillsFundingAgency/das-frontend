@@ -33,7 +33,7 @@
   @include govuk-font($size: 19, $weight: bold, $line-height: 1);
   color: #fff;
   background-color: govuk-colour('blue');
-  background-image: url('data:image/svg+xml;utf8,#{$icon-arrow-down}');
+  background-image: url('data:image/svg+xml;utf8,#{$icon-arrow-down--white}');
   background-position: 94% center;
   background-repeat: no-repeat;
   margin: 10px 0 0;
@@ -42,3 +42,33 @@
     margin: 0;
   }
 }
+
+.das-dashboard-header__tasks-link {
+  @include govuk-font($size: 19, $weight: bold, $line-height: 1);
+  color: #fff;
+  background-color: govuk-colour('blue');
+  background-image: url('data:image/svg+xml;utf8,#{$icon-arrow-down--white}');
+  background-position: 94% center;
+  background-repeat: no-repeat;
+  margin: 10px 0 0;
+  display: block;
+  text-decoration: none;
+  @include govuk-focusable();
+  @include govuk-responsive-padding(4);
+  @include govuk-media-query($from: tablet) {
+    margin: 0;
+    background-position: 94% 25px;
+  }
+}
+
+.das-dashboard-header__tasks-link--active {
+  background-color: #fff;
+  background-image: url('data:image/svg+xml;utf8,#{$icon-arrow-up--black}');
+  color: govuk-colour('black');
+  @include govuk-media-query($from: tablet) {
+    padding-bottom: 30px;
+    margin-bottom: -10px;
+  }
+}
+
+

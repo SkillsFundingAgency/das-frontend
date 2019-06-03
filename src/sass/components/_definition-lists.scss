@@ -19,7 +19,6 @@
   .das-definition-list__title {
     clear: both;
     float: left;
-    font-weight: normal;
     margin-right: 10px;
     &:after {
       content: ':';
@@ -61,6 +60,9 @@
 
 .das-definition-list--muted {
   color: $govuk-secondary-text-colour;
+  .das-definition-list__title {
+    font-weight: normal;
+  }
 }
 
 .das-definition-list--with-separator {
