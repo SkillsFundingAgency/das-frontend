@@ -5,7 +5,7 @@
 <head><link rel="preconnect" href="" />
     <link rel="preconnect" href="https://use.typekit.net">
     <link rel="preconnect" href="https://www.googletagmanager.com">
-
+    
     <!-- Google Tag Manager -->
     <script>
         (function (w, d, s, l, i) {
@@ -53,12 +53,22 @@
 
     <link rel="preconnect" href="//youtube.com">
 
+    <script type="text/javascript">
+	
+    var appInsights=window.appInsights||function(a){
+        function b(a){c[a]=function(){var b=arguments;c.queue.push(function(){c[a].apply(c,b)})}}var c={config:a},d=document,e=window;setTimeout(function(){var b=d.createElement("script");b.src=a.url||"https://az416426.vo.msecnd.net/scripts/a/ai.0.js",d.getElementsByTagName("script")[0].parentNode.appendChild(b)});try{c.cookie=d.cookie}catch(a){}c.queue=[];for(var f=["Event","Exception","Metric","PageView","Trace","Dependency"];f.length;)b("track"+f.pop());if(b("setAuthenticatedUserContext"),b("clearAuthenticatedUserContext"),b("startTrackEvent"),b("stopTrackEvent"),b("startTrackPage"),b("stopTrackPage"),b("flush"),!a.disableExceptionTracking){f="onerror",b("_"+f);var g=e[f];e[f]=function(a,b,d,e,h){var i=g&&g(a,b,d,e,h);return!0!==i&&c["_"+f](a,b,d,e,h),i}}return c
+    }({
+        instrumentationKey: 'e1daaf95-bfd2-4d0b-af65-ba23cc39bc54'
+    });
 
+    window.appInsights=appInsights,appInsights.queue&&0===appInsights.queue.length&&appInsights.trackPageView();
+	
+    </script>
 </head>
 
 
 
-<body class="page-template" id="employer-find-an-apprenticeship">
+<body class="page-template" id="employer-find-an-apprenticeship-searchResults">
 
     <!-- Google Tag Manager (noscript) -->
     <noscript>
@@ -79,7 +89,7 @@
     <div class="header__logo">
         <a href="/"><img src="/campaign/images/apprenticeships-logo.png" alt="Apprenticeships Logo" class="header__logo-image" /></a>
     </div>
-
+    
 
 <a href="#navigation" class="navigation__toggle">
     <span class="navigation__toggle-label" id="nav-label">Menu</span>
@@ -139,8 +149,8 @@
                                 Application
                             </a>
                         </li>
-
-
+                        
+                         
                     </ol>
                     <ol class="navigation__ordered-list navigation__ordered-list--reset-3" start="3">
                         <li>
@@ -155,8 +165,8 @@
                         </li>
                         <li>
                             <a class="navigation__link" id="link-nav-app-step-6" href="/apprentice/assessment-and-certification">Assessment and certification</a>
-
-
+                               
+        
                         </li>
                     </ol>
                 </div>
@@ -187,7 +197,7 @@
                         </li>
                         <li>
                             <a class="navigation__link" id="link-nav-emp-find-apprenticeship-training" href="/employer/find-apprenticeship-training">
-                                Find the right apprenticeship
+                                Find the right apprenticeship for your business
                             </a>
                         </li>
                     </ul>
@@ -235,7 +245,7 @@
             </div>
 
         </li>
-
+        
         <li class="navigation__list-item">
         <a class="navigation__link--top-level navigation__link--top-level--apprentice" id="link-nav-interests" href="/industries">
             Interests
@@ -247,164 +257,149 @@
     </ul>
 </nav>
 </header>
+
+        
 <main id="main-content">
 
 
-        <div class="hero" data-module="smoothScroll">
+    <div class="hero" data-module="smoothScroll">
     <div class="grid-row">
         <div class="grid-column-one-half">
             <div class="hero-heading">
-                <span class="caption-m hero-heading__caption hero-heading__caption--employer">Search apprenticeships  &gt;  Construction Steel Fixer</span>
-                <h1 class="heading-xl hero-heading__heading">Construction Steel Fixer</h1>
+                <span class="caption-m hero-heading__caption hero-heading__caption--employer">Employer</span>
+                <h1 class="heading-xl hero-heading__heading">Search results</h1>
             </div>
 
-            <p>Assembling and installing steelworks required to strengthen reinforced concrete structures.</p>
 
-            <a href="https://www.gov.uk/" id="header-link-govuk" target="_blank" class="hero-heading__hm-government-link">
-                <img alt="HM Government" class="hero-heading__hm-government-logo" src="https://das-test2-frnt-end.azureedge.net/campaign/images/hm-government-logo.png" srcset="https://das-test2-frnt-end.azureedge.net/campaign/images/hm-government-logo.png 1x, https://das-test2-frnt-end.azureedge.net/campaign/images/hm-government-logo@2x.png 2x">
-            </a>
-
+            
+<form action="/employer/find-apprenticeships" method="post">
+    <div class="form-group das-form-group-inline">
+        <input class="input" type="search" placeholder="Apprenticeship keyword..." id="Keywords" name="Keywords" value="steel">
+        <div class="das-form-group-inline__button-wrap">
+            <button class="button button--sparks button-employer" type="submit">Search</button>
+        </div>
+    </div>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8JgAHtm-5slIrxUSNSY8aYAtvpaFyt_7lN6Us52j8xub-Fb3OTK75R5x8J2lvjfq2hzPl-7p0rQFQuHjqcgtwiR-xG6DS_aB6AUJqlTL0EjRcpr5rnroTqUESzPgPaJpWKQxEyEUKqpzGUT6D3Dusbc" /></form>
         </div>
     </div>
 </div>
 
     <div class="main-content">
         <div class="grid-row">
-            <div class="grid-column-full">
+            <div class="grid-column-two-thirds">
                 <div class="page page--full-width">
+                    
+
+    <p class="das-search-results__summary">There are <span class="das-search-results__summary-count" id="fat-search-result-count">10</span> apprenticeships matching your search for <span class="das-search-results__summary-keyword" id="fat-search-result-keyword">steel </span>.</p>
+
+<ol class="list list--employer list--number das-search-results__list das-search-results__list--employer">
 
 
 
-
-
-<h2 class="heading-l u!-margin-top-0">Summary of this apprenticeship</h2>
-
-<dl class="list list--employer  das-definition-list__results">
-    <dt>Title</dt>
-    <dd>Construction Steel Fixer</dd>
-
-    <dt>Type</dt>
-    <dd>Standard</dd>
-    <dt>Level</dt>
-    <dd>2 (Equivalent to GCSEs at grades A* to C)</dd>
-
-    <dt>Typical length</dt>
-    <dd>18 months</dd>
-
-    <dt>Current funding band</dt>
-    <dd>
-        Up to £12,000 per apprentice.<br>
-        <a href="https://www.gov.uk/guidance/employing-an-apprentice-technical-guide-for-employers#funding-for-your-apprenticeship" target="_blank" rel="external" class="external">More information about funding</a>
-    </dd>
-
-    <dt>Entry requirements</dt>
-    <dd><div class="markdown"><p>Set by employer.</p>
-</div></dd>
-
-    <dt>What apprentices will learn</dt>
-    <dd><div class="markdown"><ul>
-<li>
-<p>assembling, positioning and fixing steel components</p>
-</li>
-<li>
-<p>interpreting drawings and specifications</p>
-</li>
-<li>
-<p>working at heights</p>
-</li>
-<li>
-<p>cutting, bending and connecting reinforcing steel</p>
-</li>
-<li>
-<p>safe techniques for moving, lifting and handling steel components</p>
-</li>
-</ul>
-</div></dd>
-
-    <dt>Qualifications</dt>
-    <dd><div class="markdown"><ul>
-<li>
-<p>before taking their end-point assessment apprentices must have achieved level 1 English and maths (equivalent to GCSE grades 3 to 1 or D to G). They must also have taken level 2 English and maths (equivalent to GCSE grades 9 to 4 or A* to C)</p>
-</li>
-<li>
-<p>apprentices completing this apprenticeship will achieve a level 2 RQF diploma and level 2 NVQ in steel fixing occupations (construction)</p>
-</li>
-</ul>
-</div></dd>
-
-    <dt>Professional registration</dt>
-    <dd><div class="markdown"><p>None specified.</p>
-</div></dd>
-
-        <dt>End Point Assessment</dt>
-        <dd>
-            <details class="details">
-                <summary class="details__summary">
-                    <span class="details__summary-text">View a list of end point assessment organisations for this standard</span>
-                </summary>
-                <div class="details__text">
-                    <table class="table responsive">
-                        <thead class="table__head">
-                            <tr class="table__row">
-                                <th class="table__header" scope="col">Organisation</th>
-                                <th class="table__header" scope="col">Phone Number</th>
-                                <th class="table__header" scope="col">Email</th>
-                            </tr>
-                        </thead>
-                        <tbody class="table__body">
-                                <tr class="table__row">
-                                    <td class="table__cell" data-label="organisation">
-                                            <a href="http://www.proqualab.com/end-point-assessment/ " target="_blank" class="link">ProQual AB</a>
-
-                                    </td>
-                                    <td class="table__cell" data-label="phone-number">01430 423822</td>
-                                    <td class="table__cell" data-label="email"><a href="mailto:garybartle@proqualab.com" target="_blank" class="link">garybartle@proqualab.com</a></td>
-                                </tr>
-                                <tr class="table__row">
-                                    <td class="table__cell" data-label="organisation">
-                                            <a href="http://www.nocn.org.uk/" target="_blank" class="link">NOCN</a>
-
-                                    </td>
-                                    <td class="table__cell" data-label="phone-number">0300 999 1177</td>
-                                    <td class="table__cell" data-label="email"><a href="mailto:managing.director@nocn.org.uk" target="_blank" class="link">managing.director@nocn.org.uk</a></td>
-                                </tr>
-                                <tr class="table__row">
-                                    <td class="table__cell" data-label="organisation">
-                                            <a href="http://qfi.org.uk/" target="_blank" class="link">QFI</a>
-
-                                    </td>
-                                    <td class="table__cell" data-label="phone-number">07710 427643</td>
-                                    <td class="table__cell" data-label="email"><a href="mailto:richard.mcclelland@qfi.org.uk" target="_blank" class="link">richard.mcclelland@qfi.org.uk</a></td>
-                                </tr>
-                        </tbody>
-                    </table>
+<li id="171" class="das-search-results__list-item">
+    <article class="das-search-result">
+        <h2 class="heading-m das-search-result__heading">
+            <a class="link das-search-result__heading-link" href="">INTERSERVE LEARNING & EMPLOYMENT</a>
+            <span class="das-tag--national">National</span>
+        </h2>
+        
+        <dl class="list  das-search-result__details">
+            <dt class="das-search-result__details-title">Distance:</dt>
+            <dd class="das-search-result__details-definition">9 miles away <span class="das-search-results__distance--locations">3</span> locations</dd>
+            <dt class="das-search-result__details-title">Training options:</dt>
+            <dd class="das-search-result__details-definition">
+                <div class="das-search-results__training-options">
+                    <span class="das-search-results__training-options--cross">day release</span>
+                    <span class="das-search-results__training-options--cross">block release</span>
+                    <span class="das-search-results__training-options--tick">at your location</span>
                 </div>
-            </details>
-        </dd>
-    <dt>More Information</dt>
-    <dd>The Institute for Apprenticeships has more <a href="">detailed information</a> about this apprenticeship.</dd>
-</dl>
+            </dd>
+            <dt class="das-search-result__details-title">Employer satisfaction:</dt>
+            <dd class="das-search-result__details-definition">87%</dd>
+            <dt class="das-search-result__details-title">Learner satisfaction:</dt>
+            <dd class="das-search-result__details-definition">85%</dd>
+            <dt class="das-search-result__details-title">Acheivement rate:</dt>
+            <dd class="das-search-result__details-definition">68%</dd>
+        </dl>
+    </article>
+</li>
 
-    <div class="grid-row">
-        <div class="grid-column-full">
-            <section class="cta-fat">
-                <div class="cta-fat__content">
-                    <h2 class="heading-l cta-fat__heading">SAVE THIS APPRENTICESHIP AND CREATE YOUR GOV.UK ACCOUNT TO START HIRING THE FUTURE...</h2>
-
-<a href="https://test2-employerfavourites.apprenticeships.education.gov.uk/save-apprenticeship-favourites?apprenticeshipId=171" class="button button--sparks button-employer" target="_blank" rel="external">SAVE THIS APPRENTICESHIP</a>
-
+<li id="171" class="das-search-results__list-item">
+    <article class="das-search-result">
+        <h2 class="heading-m das-search-result__heading">
+            <a class="link das-search-result__heading-link" href="">INTERSERVE LEARNING & EMPLOYMENT</a>
+            <span class="das-tag--national">National</span>
+        </h2>
+        
+        <dl class="list  das-search-result__details">
+            <dt class="das-search-result__details-title">Distance:</dt>
+            <dd class="das-search-result__details-definition">9 miles away <span class="das-search-results__distance--locations">3</span> locations</dd>
+            <dt class="das-search-result__details-title">Training options:</dt>
+            <dd class="das-search-result__details-definition">
+                <div class="das-search-results__training-options">
+                    <span class="das-search-results__training-options--cross">day release</span>
+                    <span class="das-search-results__training-options--cross">block release</span>
+                    <span class="das-search-results__training-options--tick">at your location</span>
                 </div>
-            </section>
-        </div>
-    </div>
+            </dd>
+            <dt class="das-search-result__details-title">Employer satisfaction:</dt>
+            <dd class="das-search-result__details-definition">87%</dd>
+            <dt class="das-search-result__details-title">Learner satisfaction:</dt>
+            <dd class="das-search-result__details-definition">85%</dd>
+            <dt class="das-search-result__details-title">Acheivement rate:</dt>
+            <dd class="das-search-result__details-definition">68%</dd>
+        </dl>
+    </article>
+</li>
+
+<li id="171" class="das-search-results__list-item">
+    <article class="das-search-result">
+        <h2 class="heading-m das-search-result__heading">
+            <a class="link das-search-result__heading-link" href="">INTERSERVE LEARNING & EMPLOYMENT</a>
+            <span class="das-tag--national">National</span>
+        </h2>
+        
+        <dl class="list  das-search-result__details">
+            <dt class="das-search-result__details-title">Distance:</dt>
+            <dd class="das-search-result__details-definition">9 miles away <span class="das-search-results__distance--locations">3</span> locations</dd>
+            <dt class="das-search-result__details-title">Training options:</dt>
+            <dd class="das-search-result__details-definition">
+                <div class="das-search-results__training-options">
+                    <span class="das-search-results__training-options--cross">day release</span>
+                    <span class="das-search-results__training-options--cross">block release</span>
+                    <span class="das-search-results__training-options--tick">at your location</span>
+                </div>
+            </dd>
+            <dt class="das-search-result__details-title">Employer satisfaction:</dt>
+            <dd class="das-search-result__details-definition">87%</dd>
+            <dt class="das-search-result__details-title">Learner satisfaction:</dt>
+            <dd class="das-search-result__details-definition">85%</dd>
+            <dt class="das-search-result__details-title">Acheivement rate:</dt>
+            <dd class="das-search-result__details-definition">68%</dd>
+        </dl>
+    </article>
+</li>
+
+
+
+
+
+
+
+
+
+    </ol>
+
+
+
+
+
+
                 </div>
             </div>
         </div>
     </div>
 </main>
-
-
-
 
 
 
@@ -492,7 +487,7 @@
                                 </li>
                                 <li class="footer__list-item">
                                     <a class="footer__link" id="link-footer-emp-real-stories" href="/real-stories/employer">
-                                        Real stories
+                                        Real stories 
                                     </a>
                                 </li>
                             </ul>
@@ -596,9 +591,9 @@
 
     </div>
 
-    <script async="async" id="mini-profiler" src="/profiler/includes.min.js?v=4.0.165+g04f8ac4653" data-version="4.0.165+g04f8ac4653" data-path="/profiler/" data-current-id="05f6921e-1ab9-473f-8aa8-537f8b96877c" data-ids="05f6921e-1ab9-473f-8aa8-537f8b96877c" data-position="Left" data-authorized="true" data-max-traces="15" data-toggle-shortcut="Alt+P" data-trivial-milliseconds="2.0" data-ignored-duplicate-execute-types="Open,OpenAsync,Close,CloseAsync"></script>
+    
 
-
+    
 <div class="modal" id="modal-RegisterInterest" aria-hidden="true">
 
     <div class="modal-dialog">
@@ -618,7 +613,7 @@
     <h2 class="heading-m">Keep me up to date with the latest information</h2>
     <div class="form-validation-summary" style="display: none">
         <h3 class="heading-s">Sorry but there seems to be a problem with your registration</h3>
-
+        
     </div>
     <div class="form-group">
         <label class="label visually-hidden" for="FirstName">
@@ -662,14 +657,14 @@
         </div>
     </div>
 
-    <input type="hidden" value="/employer/find-apprenticeships/Apprenticeship" id="ReturnUrl" name="ReturnUrl" />
+    <input type="hidden" value="/employer/find-apprenticeships" id="ReturnUrl" name="ReturnUrl" />
     <button class="button button-inverted " name="registerInterestSubmit" type="submit" id="btn-register-interest-complete">Register Interest </button>
-<input name="__RequestVerificationToken" type="hidden" value="CfDJ8GbsiHDXinRFqGXJG9exFVoze6whqlOswZH74fOxywxiMLomqWQst8G_HztRZ5NTOi0NE-jjgOWGThM0pGQoYOx_S2lqBUGjeU1NnvIC2dfzLzxn0PtMGMqb_nyJj65skj1tu0sNjqaQA0qpbq3ENfo" /><input name="AcceptTandCs" type="hidden" value="false"></form>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8JgAHtm-5slIrxUSNSY8aYAtvpaFyt_7lN6Us52j8xub-Fb3OTK75R5x8J2lvjfq2hzPl-7p0rQFQuHjqcgtwiR-xG6DS_aB6AUJqlTL0EjRcpr5rnroTqUESzPgPaJpWKQxEyEUKqpzGUT6D3Dusbc" /><input name="AcceptTandCs" type="hidden" value="false"></form>
 
     </div>
 </div>
 
-
+    
 <div class="modal" id="modal-register-thanks" aria-hidden="true">
 
     <div class="modal-dialog">
@@ -683,7 +678,7 @@
             </a>
         </div>
 
-
+                
 <span class="caption-s">Register interest</span>
 <h2 class="heading-l heading--success"><span class="heading__icon heading__icon--tick"></span> Success</h2>
 <p>Keep an eye on your inbox for all details of future updates to the site.</p>
@@ -776,12 +771,12 @@
         </div>
     </div>
 </div>
-
+       
     </div>
 </div>
 
 
-
+   
 
 <script defer src="https://cdn.polyfill.io/v2/polyfill.min.js?features=es6,Array.prototype.includes,CustomEvent,Object.entries,Object.values,URL" crossorigin="anonymous"></script>
 
@@ -793,10 +788,10 @@
     dasJs.onload = function() {
         window.DASFrontend.initAll();
     }
-
+    
 </script>
 
-
+    
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
