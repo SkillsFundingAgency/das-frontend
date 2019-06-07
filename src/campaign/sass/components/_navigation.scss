@@ -265,7 +265,7 @@
 
 .navigation__sub-menu {
   background: #efefef;
-  background: $employer-pale;
+  background: $apprentice-pale;
   margin: 0;
   padding: 10px 0 10px;
   list-style: none;
@@ -283,7 +283,7 @@
 .navigation__sub-menu--employer
 {
   color: $employer;
-  background: $apprentice-pale;
+  background: $employer-pale;
   @include media-query($from: $nav-breakpoint) {
     border-top: 10px solid $employer;
   }

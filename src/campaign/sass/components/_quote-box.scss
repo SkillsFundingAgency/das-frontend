@@ -1,18 +1,49 @@
 .quote-box {
-  padding: 30px;
-  margin: 30px 0;
-  background: $apprentice-light;
+  @include typography-common();
+  padding: 100px 20px 80px;
+  margin: 20px 0;
+  background: #000;
+  color: #fff;
+  text-transform: uppercase;
   position: relative;
-  overflow: hidden;
+  &:before {
+    content: '';
+    position: absolute;
+    border-style: solid;
+    top: 0;
+    left: 0;
+    border-width: 70px 700px 0 0;
+    border-color: transparent;
+    border-top-color: $apprentice-pale;
+  }
   &:after {
     content: '';
     position: absolute;
-    left: 0;
-    right: 0;
-    bottom: 0;
     border-style: solid;
-    border-width: 0 0 40px 1374px;
-    border-color: transparent transparent #fff
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    border-width: 0 0 70px 700px;
+    border-color: transparent;
+    border-bottom-color: $apprentice-pale;
+  }
+}
+
+.quote-box__quote {
+  font-weight: bold;
+  font-size: 20px;
+  line-height: 1.3em;
+  padding: 0;
+  margin: 0 0 30px;
+  &:before {
+    width: 80px;
+    height: 80px;
+    content: '';
+    display: block;
+    margin: 10px 0;
+    background-image: url(../images/icon-quote-white.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
   }
 }
 
@@ -22,11 +53,30 @@
 }
 
 .quote-box__cite {
-  @include font($size: 14, $weight: bold);
-  text-transform: uppercase;
-  font-style: normal;
+  position: relative;
+  font-weight: bold;
+}
+
+.quote-box__cite-person {
   color: $apprentice;
-  margin-left: 10px;
+  display: block;
+}
+
+.quote-box__cite-role {
+  display: block;
+}
+
+.quote-box__cite-source {
+  background: $apprentice;
+  display: inline-block;
+  padding: 20px;
+  float: left;
+  clip-path: polygon(0 0, 100% 10%, 100% 90%, 0 100%);
+  max-width: 140px;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+  bottom: -20px;
 }
 
 .quote-box__footer {
