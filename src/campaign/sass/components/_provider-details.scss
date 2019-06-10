@@ -147,3 +147,109 @@ $progress-colour-very-poor: #df3034;
     float: left;
   }
 }
+
+@media (min-width: 46.25em) {
+  .sidebar__provider-details-header {
+      position:absolute;
+      top: 170px;
+      z-index: 10;
+      margin-right: 80px
+  }
+}
+
+.sidebar__provider-details-header:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -50px;
+  border-style: solid;
+  border-width: 0 0 50px 561px;
+  border-color: transparent transparent #ffb007;
+  border-bottom-color: #ffb007;
+  margin: 0 -81px 0 -80px;
+}
+
+.sidebar__provider-details-header:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-style: solid;
+  border-width: 0 0 50px 561px;
+  border-color: transparent transparent white;
+  margin: 0 -81px 0 -80px;
+}
+
+.sidebar__provider-details-header-definition-list dt {
+  font-size: 21px;
+  font-weight: 600;
+  margin-bottom: .25em;
+}
+
+.sidebar__provider-details-header-definition-list dd {
+  font-size: 21px;
+  margin: 0 0 1em;
+  p {
+      margin-top: 0;
+      margin-bottom: .5em;
+  }
+}
+
+.sidebar__provider-details-header-definition-list a{
+  font-size: 21px;
+  color: $link-colour;
+}
+
+.sidebar__provider-details-header-definition-list--black dt{
+  color: $black;
+}
+
+.training-information__provider-details-definition-list__results dt {
+  color: $black;
+  font-size: 21px;
+  font-weight: 600;
+  margin-bottom: .25em;
+  @include mq ($from: tablet) {
+    float: left;
+    font-size: 21px;
+    clear: both;
+    width: 40%;
+    padding-right: 15px;
+    margin-bottom: 1em;
+    box-sizing: border-box;
+  }
+  @include mq ($from: desktop) {
+      float: left;
+      font-size: 21px;
+      clear: both;
+      width: 25%;
+      padding-right: 15px;
+      margin-bottom: 1em;
+      box-sizing: border-box;
+  }
+}
+
+.training-information__provider-details-definition-list__results dd {
+  font-size: 21px;
+  margin: 0 0 1em;
+  @include mq ($from: tablet) {
+      float: left;
+      margin-inline-start: 0px;
+      width: 45%;
+  }
+  @include mq ($from: desktop) {
+    float: left;
+    margin-inline-start: 0px;
+    width: 75%;
+  }
+  p {
+      margin-top: 0;
+      margin-bottom: .5em;
+  }
+}
+
+.training-information__provider-details-definition-list__results dd .details__summary-text.link{
+  color: $link-colour;
+}
