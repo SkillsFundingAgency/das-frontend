@@ -3,7 +3,7 @@
   color: #000;
   align-items: center;
   padding: 30px;
-  margin-top: 20px;
+  margin-top: 20px auto 0 auto;
 
   @include mq($from:tablet){
     display: flex;
@@ -39,5 +39,6 @@
 }
 
 .cta-fat__content{
+  margin: 0 auto 0 auto;
   text-align: center;
 }

@@ -87,16 +87,20 @@
 }
 
 .das-search-results__training-options--cross{
-  @include mq ($until: tablet) {
-    display:block;
-    width:100%;
+  display:block;
+  width:100%;
+  @include mq ($from: tablet) {
+    display:inline;
+    width:auto;
   }
 }
 
 .das-search-results__training-options--tick{
-  @include mq ($until: tablet) {
-    display:block;
-    width:100%;
+  display:block;
+  width:100%;
+  @include mq ($from: tablet) {
+    display:inline;
+    width:auto;
   }
 }
 

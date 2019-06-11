@@ -1,0 +1,255 @@
+$progress-background: #dee0e2;
+$progress-colour: #ffb007;
+$progress-colour-excellent: #006435;
+$progress-colour-good: #85994b;
+$progress-colour-poor: #f47738;
+$progress-colour-very-poor: #df3034;
+
+.das-provider-rating-reviews__definition-list--title {
+  font-size: 21px;
+  font-weight: 400;
+  margin-bottom: .25em;
+  @include mq ($from: tablet) {
+      float: left;
+      font-size: 21px;
+      clear: both;
+      width: 25%;
+      padding-right: 15px;
+      margin-bottom: 1em;
+      box-sizing: border-box;
+  }
+}
+
+.das-provider-rating-reviews__definition-list--details {
+  font-size: 21px;
+  margin: 0 0 1em;
+  @include mq ($from: tablet) {
+      float: left;
+      margin-inline-start: 0px;
+      width: 75%;
+  }
+  p {
+      margin-top: 0;
+      margin-bottom: .5em;
+  }
+}
+
+.das-provider__progress-bar {
+  /* Reset the default appearance */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+
+  /* Get rid of default border in Firefox. */
+  border: none;
+  width: 100%;
+  height: 1.1em;
+
+  /* For IE10 */
+  color: $progress-colour;
+
+  &--excellent {
+    height:1.2em;
+    width:75%;
+    color:$progress-colour-excellent;
+  }
+
+  &--good {
+    height:1.1em;
+    width:75%;
+    color:$progress-colour-good;
+  }
+
+  &--poor {
+    height:1.1em;
+    width:75%;
+    color:$progress-colour-poor;
+  }
+
+  &--very-poor {
+    height:1.1em;
+    width:75%;
+    color:$progress-colour-very-poor;
+  }
+
+}
+
+.das-provider__progress-bar::-webkit-progress-bar {
+  background-color: $progress-background;
+}
+
+.das-provider__progress-bar::-moz-progress-value {
+  background-color: $progress-background;
+}
+
+.das-provider__progress-bar::-webkit-progress-value {
+  background-color:$progress-colour;
+}
+
+.das-provider__progress-bar--excellent::-webkit-progress-value {
+  background-color:$progress-colour-excellent;
+}
+
+.das-provider__progress-bar--good::-webkit-progress-value {
+  background-color:$progress-colour-good;
+}
+
+.das-provider__progress-bar--poor::-webkit-progress-value {
+  background-color:$progress-colour-poor;
+}
+
+.das-provider__progress-bar--very-poor::-webkit-progress-value {
+  background-color:$progress-colour-very-poor;
+}
+
+.das-provider__progress-bar::-moz-progress-bar  {
+  background-color:$progress-colour;
+}
+
+.das-provider__progress-bar--excellent::-moz-progress-bar::-webkit-progress-value {
+  background-color:$progress-colour-excellent;
+}
+
+.das-provider__progress-bar--good::-moz-progress-bar::-webkit-progress-value {
+  background-color:$progress-colour-good;
+}
+
+.das-provider__progress-bar--poor::-moz-progress-bar::-webkit-progress-value {
+  background-color:$progress-colour-poor;
+}
+
+.das-provider__progress-bar--very-poor::-moz-progress-bar::-webkit-progress-value {
+  background-color:$progress-colour-very-poor;
+}
+
+.das-provider__copy--black{
+  color:$black;
+  font-weight:400;
+}
+
+.das-provider-rating-reviews__reviews-no {
+  display:inline-block;
+  margin-left:20px;
+  font-weight:400;
+}
+
+.das-provider-tag--national {
+  display: inline-block;
+  color: white;
+  background: #808080;
+  margin-right: 6px; 
+  padding: 0.5em 0.5em;
+  border-radius: 5px;
+  font-size: 0.75rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  @include mq ($from: tablet) {
+    float: left;
+  }
+}
+
+@media (min-width: 46.25em) {
+  .sidebar__provider-details-header {
+      position:absolute;
+      top: 170px;
+      z-index: 10;
+      margin-right: 80px
+  }
+}
+
+.sidebar__provider-details-header:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -50px;
+  border-style: solid;
+  border-width: 0 0 50px 561px;
+  border-color: transparent transparent #ffb007;
+  border-bottom-color: #ffb007;
+  margin: 0 -81px 0 -80px;
+}
+
+.sidebar__provider-details-header:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-style: solid;
+  border-width: 0 0 50px 561px;
+  border-color: transparent transparent white;
+  margin: 0 -81px 0 -80px;
+}
+
+.sidebar__provider-details-header-definition-list dt {
+  font-size: 21px;
+  font-weight: 600;
+  margin-bottom: .25em;
+}
+
+.sidebar__provider-details-header-definition-list dd {
+  font-size: 21px;
+  margin: 0 0 1em;
+  p {
+      margin-top: 0;
+      margin-bottom: .5em;
+  }
+}
+
+.sidebar__provider-details-header-definition-list a{
+  font-size: 21px;
+  color: $link-colour;
+}
+
+.sidebar__provider-details-header-definition-list--black dt{
+  color: $black;
+}
+
+.training-information__provider-details-definition-list__results dt {
+  color: $black;
+  font-size: 21px;
+  font-weight: 600;
+  margin-bottom: .25em;
+  @include mq ($from: tablet) {
+    float: left;
+    font-size: 21px;
+    clear: both;
+    width: 40%;
+    padding-right: 15px;
+    margin-bottom: 1em;
+    box-sizing: border-box;
+  }
+  @include mq ($from: desktop) {
+      float: left;
+      font-size: 21px;
+      clear: both;
+      width: 25%;
+      padding-right: 15px;
+      margin-bottom: 1em;
+      box-sizing: border-box;
+  }
+}
+
+.training-information__provider-details-definition-list__results dd {
+  font-size: 21px;
+  margin: 0 0 1em;
+  @include mq ($from: tablet) {
+      float: left;
+      margin-inline-start: 0px;
+      width: 45%;
+  }
+  @include mq ($from: desktop) {
+    float: left;
+    margin-inline-start: 0px;
+    width: 75%;
+  }
+  p {
+      margin-top: 0;
+      margin-bottom: .5em;
+  }
+}
+
+.training-information__provider-details-definition-list__results dd .details__summary-text.link{
+  color: $link-colour;
+}
