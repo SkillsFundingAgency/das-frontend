@@ -41,7 +41,10 @@
 
 .das-account__account-name {
   margin: 0;
+  word-wrap: break-word;
+  word-break: break-all;
   word-break: break-word;
+  max-width: 100%;
   @include govuk-media-query($from: desktop) {
     font-size: 48px;
   }
