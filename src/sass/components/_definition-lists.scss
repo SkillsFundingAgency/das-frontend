@@ -58,6 +58,19 @@
   }
 }
 
+.das-definition-list--table-narrow {
+  @extend .das-definition-list--table;
+  @include govuk-media-query($from: tablet) {
+    .das-definition-list__title {
+      flex-basis: 20%;
+    }
+    .das-definition-list__definition {
+      flex-basis: 75%;
+    }
+  }
+}
+
+
 .das-definition-list--muted {
   color: $govuk-secondary-text-colour;
   .das-definition-list__title {
