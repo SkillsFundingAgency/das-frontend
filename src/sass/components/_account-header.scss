@@ -41,7 +41,7 @@
 
 .das-account__account-name {
   margin: 0;
-  word-break: break-word;
+  @extend .das-breakable;
   @include govuk-media-query($from: desktop) {
     font-size: 48px;
   }
