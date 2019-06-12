@@ -5,6 +5,61 @@ $progress-colour-good: #85994b;
 $progress-colour-poor: #f47738;
 $progress-colour-very-poor: #df3034;
 
+.das-provider__contact-details {
+  background-color: $employer;
+  color: $black;
+  padding: 30px;
+}
+
+.das-provider__contact-details:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -50px;
+  border-style: solid;
+  border-width: 0 0 50px 614px;
+  border-color: transparent transparent #ffb007;
+  border-bottom-color: #ffb007;
+  margin: 0 -81px 0 -80px;
+}
+
+.das-provider__contact-details:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-style: solid;
+  border-width: 0 0 50px 614px;
+  border-color: transparent transparent white;
+  margin: 0 -81px 0 -80px;
+}
+
+.das-provider__scontact-details-definition-list dt {
+  font-size: 21px;
+  font-weight: 600;
+  margin-bottom: .25em;
+}
+
+.das-provider__contact-details-definition-list dd {
+  font-size: 21px;
+  margin: 0 0 1em;
+  p {
+      margin-top: 0;
+      margin-bottom: .5em;
+  }
+}
+
+.das-provider__contact-details-definition-list a{
+  font-size: 21px;
+  color: $link-colour;
+}
+
+.das-provider__contact-details-definition-list--black dt{
+  color: $black;
+}
+
 .das-provider-rating-reviews__definition-list--title {
   font-size: 21px;
   font-weight: 400;
@@ -148,65 +203,7 @@ $progress-colour-very-poor: #df3034;
   }
 }
 
-@media (min-width: 46.25em) {
-  .sidebar__provider-details-header {
-      position:absolute;
-      top: 170px;
-      z-index: 10;
-      margin-right: 80px
-  }
-}
-
-.sidebar__provider-details-header:before {
-  content: '';
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: -50px;
-  border-style: solid;
-  border-width: 0 0 50px 561px;
-  border-color: transparent transparent #ffb007;
-  border-bottom-color: #ffb007;
-  margin: 0 -81px 0 -80px;
-}
-
-.sidebar__provider-details-header:after {
-  content: '';
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  border-style: solid;
-  border-width: 0 0 50px 561px;
-  border-color: transparent transparent white;
-  margin: 0 -81px 0 -80px;
-}
-
-.sidebar__provider-details-header-definition-list dt {
-  font-size: 21px;
-  font-weight: 600;
-  margin-bottom: .25em;
-}
-
-.sidebar__provider-details-header-definition-list dd {
-  font-size: 21px;
-  margin: 0 0 1em;
-  p {
-      margin-top: 0;
-      margin-bottom: .5em;
-  }
-}
-
-.sidebar__provider-details-header-definition-list a{
-  font-size: 21px;
-  color: $link-colour;
-}
-
-.sidebar__provider-details-header-definition-list--black dt{
-  color: $black;
-}
-
-.training-information__provider-details-definition-list__results dt {
+.das-provider__training-information-definition-list__results dt {
   color: $black;
   font-size: 21px;
   font-weight: 600;
@@ -231,7 +228,7 @@ $progress-colour-very-poor: #df3034;
   }
 }
 
-.training-information__provider-details-definition-list__results dd {
+.das-provider__training-information-definition-list__results dd {
   font-size: 21px;
   margin: 0 0 1em;
   @include mq ($from: tablet) {
@@ -250,6 +247,6 @@ $progress-colour-very-poor: #df3034;
   }
 }
 
-.training-information__provider-details-definition-list__results dd .details__summary-text.link{
+.das-provider__training-information-definition-list_results dd .details__summary-text.link{
   color: $link-colour;
 }

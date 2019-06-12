@@ -11,6 +11,10 @@
   top: 500px;
 }
 
+.sidebar_provider_details{
+  top:170px;
+}
+
 .sidebar__hero {
   margin: 0 0 20px 0;
   @include media-query($from: tablet) {
