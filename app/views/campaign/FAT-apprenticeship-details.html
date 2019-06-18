@@ -42,7 +42,7 @@
             <div class="grid-row">
                 <div class="grid-column-full">
                     <div class="page page--full-width">
-                        <h2 class="heading-l u-!-margin-top-0">Summary of this apprenticeship standard</h2>
+                        <h2 class="heading-l u-!-margin-top-0">Summary of this apprenticeship</h2>
 
                         <dl class="list das-definition-list__results">
                             <dt>Level</dt>
@@ -233,10 +233,38 @@
                 <div class="grid-column-full">
                     <section class="cta-fat">
                         <div class="cta-fat__content">
-                            <h2 class="heading-l cta-fat__heading">SAVE THIS APPRENTICESHIP AND CREATE YOUR GOV.UK ACCOUNT TO START HIRING THE FUTURE...</h2>
-                            <a id="link-fat-cta" href="#" class="button button--shadow button--sparks" target="_blank" rel="external"> SAVE THIS APPRENTICESHIP</a>     
-                        </div>
+                            <h2 class="heading-l cta-fat__heading">FIND A TRAINING PROVIDER</h2>
+                                <form action="/TrainingProvider/Search">
+            
+                                    <div class="form-group">
+                                        <label class="cta-fat__content-label">Use the postcode for where the apprentice will work.</label>
+                                        <input class="input" type="search" placeholder="Enter Postcode..." data-val="true" data-val-regex="You must enter a valid postcode" data-val-regex-pattern="\b((?:(?:girGIR)|(?:[a-pr-uwyzA-PR-UWYZ])(?:(?:[0-9](?:[a-hjkpstuwA-HJKPSTUW]|[0-9])?)|(?:[a-hk-yA-HK-Y][0-9](?:[0-9]|[abehmnprv-yABEHMNPRV-Y])?)))) ?([0-9][abd-hjlnp-uw-zABD-HJLNP-UW-Z]{2})\b" data-val-required="The Postcode field is required." id="Postcode" name="Postcode" value="">
+                                        <span class="error-message field-validation-valid" data-valmsg-for="Postcode" data-valmsg-replace="true"></span>
+                                    </div>
+
+                                    <div class="form-group" >
+                                        <label class="cta-fat__content-label">Is your organisation a levy-payer?</label>
+                                        <div class="radios" style="width:100px; margin:0 auto;"> 
+                                            <div class="radios__item">
+                                                <input class="input radios__input" type="radio" value="true" id="LevyPayerYes" data-val="true" data-val-required="The IsLevyPayer field is required." name="IsLevyPayer">
+                                                <label class="label radios__label" for="LevyPayerYes">Yes </label>
+                                            </div>
+                                            <div class="radios__item">
+                                                <input class="input radios__input" type="radio" value="false" id="LevyPayerNo" checked="checked" name="IsLevyPayer">
+                                                <label class="label radios__label" for="LevyPayerNo">No</label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="das-form-group-inline__button-wrap">
+                                        <input type="hidden" data-val="true" data-val-required="The ApprenticeshipId field is required." id="ApprenticeshipId" name="ApprenticeshipId" value="157" />
+                                        <input type="hidden" id="Keywords" name="Keywords" value="" />
+                                        <button class="button button--sparks button-employer" type="submit">Search</button>
+                                    </div>
+                
+                                </form>
+                            </div>
                     </section>
+                    
                 </div>
             </div>
 
