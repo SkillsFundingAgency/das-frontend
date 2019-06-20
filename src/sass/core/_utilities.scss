@@ -10,6 +10,7 @@
     float: right;
 }
 
+
 // Clearfix
 
 @mixin das-clearfix {
@@ -20,8 +21,30 @@
   }
 }
 
+// Javascript hidden class
+
 .js-enabled {
   .js-hidden {
     display: none;
   }
+}
+
+
+// Breakable class, forces words to wrap.
+// Useful for email addresses and other user-generated content
+
+.das-breakable {
+  word-wrap: break-word;
+  word-break: break-all;
+  word-break: break-word;
+  display: inline-block;
+  max-width: 100%;
+}
+
+.das-breakable--inline {
+  display: inline;
+}
+
+.das-breakable--block {
+  display: block;
 }

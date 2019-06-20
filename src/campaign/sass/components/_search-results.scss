@@ -116,21 +116,18 @@
 }
 
 .das-tag--national {
-  @include mq ($until: tablet) {
-    clear:both;
-    float: none;
-  }
   display: inline-block;
   color: white;
   background: #808080;
   margin: 0.5em 0 0.5em 0; 
   padding: 0.5em 0.5em;
   border-radius: 5px;
-  float: right;
-  clear: both;
   font-size: 0.75rem;
   font-weight: bold;
   text-transform: uppercase;
+  @include mq ($from: tablet) {
+    float: right;
+  }
 }
 
 .das-search-result__details {
@@ -160,16 +157,20 @@
 }
 
 .das-search-results__training-options--cross{
-  @include mq ($until: tablet) {
-    display:block;
-    width:100%;
+  display:block;
+  width:100%;
+  @include mq ($from: tablet) {
+    display:inline;
+    width:auto;
   }
 }
 
 .das-search-results__training-options--tick{
-  @include mq ($until: tablet) {
-    display:block;
-    width:100%;
+  display:block;
+  width:100%;
+  @include mq ($from: tablet) {
+    display:inline;
+    width:auto;
   }
 }
 

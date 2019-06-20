@@ -3,10 +3,11 @@
   color: #000;
   align-items: center;
   padding: 30px;
-  margin-top: 20px;
+  margin-top: 20px auto 0 auto;
 
   @include mq($from:tablet){
     display: flex;
+    flex-wrap:wrap;
     margin-top: 0;
   }
 
@@ -39,5 +40,29 @@
 }
 
 .cta-fat__content{
+  margin: 0 auto 0 auto;
   text-align: center;
+  width:100%;
+}
+
+
+.cta-fat__action {
+  @include mq($from:tablet){
+    display:flex;
+    justify-content:center;
+    width:100%;
+  }
+}
+
+.cta-fat .form-group {
+  @include mq($from:tablet){
+    margin: 0 1em 0 1em;
+  }
+}
+
+.cta-fat .input__postcode--auto-width
+{
+  @include mq($from:tablet){
+    width: auto;
+  }  
 }
