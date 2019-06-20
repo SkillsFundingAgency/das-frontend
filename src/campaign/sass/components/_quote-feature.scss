@@ -1,0 +1,32 @@
+.quote-feature {
+  @include media-query($from: desktop) {
+    padding-right: 25%;
+  }
+}
+
+.quote-feature__caption-icon {
+  width: 26px;
+  height: 26px;
+  display: inline-block;
+  background: url("../images/icon-quote-circle-black.svg") no-repeat 0 0;
+  margin: 0 0 0 5px;
+  position: relative;
+  top: 12px;
+}
+
+.quote-feature__caption-text {
+  font-weight: $font-weight-bold;
+  font-size: 14px;
+  border-bottom: $apprentice 2px solid;
+  padding-bottom: 5px;
+  text-transform: uppercase;
+}
+
+.quote-feature__link {
+  color: $link-colour;
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
+}
+

@@ -80,23 +80,6 @@ $offset: 2;
 
     background: transparent;
   }
-
-  &[rel~="external"] {
-    padding-left:50px;
-    &::before {
-
-      content: '';
-      display: table-column;
-      height: 23px;
-      width: 26px;
-      background-image: url(../images/icon-link-external-black.svg);
-      background-size: contain;
-      background-repeat: no-repeat;
-      vertical-align: bottom;
-      margin: 13px 29px;
-    }
-  }
-
 }
 
 .button--with-icon {
