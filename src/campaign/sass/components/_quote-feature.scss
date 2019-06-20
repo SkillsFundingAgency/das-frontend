@@ -1,11 +1,7 @@
 .quote-feature {
   @include media-query($from: desktop) {
-    padding-right: 200px;
+    padding-right: 25%;
   }
-}
-
-.quote-feature__caption {
-
 }
 
 .quote-feature__caption-icon {
