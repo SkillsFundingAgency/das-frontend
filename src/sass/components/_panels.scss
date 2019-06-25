@@ -2,7 +2,6 @@
 // Description: Collection of panels. Used on the Employer dashboard
 
 .das-panels {
-  margin-bottom: 50px;
   @include govuk-media-query($from: tablet) {
     display: flex;
     background: $das-dashboard-bg;
@@ -29,6 +28,9 @@
 .das-panels__col--secondary {
   @include govuk-media-query($from: tablet) {
     width: $das-secondary-col-size;
+  }
+  .das-panel:last-child {
+    margin-bottom: 0;
   }
 }
 
