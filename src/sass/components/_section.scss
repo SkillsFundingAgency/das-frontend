@@ -29,14 +29,14 @@
 
 .das-section--overlay {
   .js-enabled & {
-    position: absolute;
+    position: relative;
     top: 0;
     left: 0;
     right: 0;
-    margin-top: -30px;
+    margin-top: -50px;
     display: none;
     @include govuk-media-query($from: tablet) {
-      margin-top: -21px;
+      margin-top: -61px;
     }
   }
 }

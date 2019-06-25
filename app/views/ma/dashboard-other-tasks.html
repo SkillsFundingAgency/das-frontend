@@ -244,40 +244,29 @@
 {% block js  %}
 
 <script>
-$(function() {
-
-  var $link = $('#other-tasks-link');
-  var $target = $('#das-dashbaord-other-tasks');
-  var activeClass = 'das-dashboard-header__tasks-link--active';
-
-  $link.on('click', function(e) {
-    if ( $link.hasClass(activeClass) ) {
-        $link.removeClass(activeClass);
-        $target.hide()
-    } else {
-        $link.addClass(activeClass);
-        $target.show();
-    }
-    e.preventDefault();
-  });
-
-  $link.on('keydown', function(e) {
-    if (e.which === 9 && $link.hasClass(activeClass)) {
-      $('.das-section__inner-wrap').focus();
-    }
-  });
-
-  $(document).click(function() {
-    if ( $link.hasClass(activeClass) ) {
-
-      console.log(123)
-        //$link.removeClass(activeClass);
-       // $target.hide()
-    }
-  });
-
-});
-
+    $(function () {
+        var $link = $('#other-tasks-link'),
+            $pageContent = $('.das-panels'),
+            $target = $('#das-dashbaord-other-tasks'),
+            activeClass = 'das-dashboard-header__tasks-link--active';
+        $link.on('click', function (e) {
+            if ($link.hasClass(activeClass)) {
+                $link.removeClass(activeClass);
+                $target.hide();
+                $pageContent.show();
+            } else {
+                $link.addClass(activeClass);
+                $target.show();
+                $pageContent.hide();
+            }
+            e.preventDefault();
+        });
+        $link.on('keydown', function (e) {
+            if (e.which === 9 && $link.hasClass(activeClass)) {
+                $('.das-section__inner-wrap').focus();
+            }
+        });
+    });
 </script>
 
 {% endblock  %}
