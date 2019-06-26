@@ -25,6 +25,22 @@
   }
 }
 
+.hero--no-clip {
+  background-color: #0b0c0c;
+  background-image: url("../images/bokeh-tint-bg.jpg");
+  background-size: cover;
+  padding: 140px 20px 50px;
+  color: #fff;
+  position: relative;
+  z-index: 10;
+  @include media-query($from: tablet) {
+    padding: 140px 40px 80px;
+  }
+  @include media-query($from: desktop) {
+    padding: 140px 80px 80px;
+  }
+}
+
 .hero__link {
   color: #fff;
   text-decoration: none;

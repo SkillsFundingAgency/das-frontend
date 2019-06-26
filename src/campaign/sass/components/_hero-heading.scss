@@ -75,6 +75,18 @@
   }
 }
 
+.hero-heading__cancel-link {
+  display: inline-block;
+  color: #fff;
+  font-family: $font-family;
+  font-size: 1.4rem;
+  font-weight: $font-weight-bold;
+  margin: 1em 0 0 0;
+  @include media-query($from: tablet) {
+    margin: 0.5em 0 0 1.5em;
+  }
+}
+
 .hero-heading__hm-government-logo {
   display: block;
 }
