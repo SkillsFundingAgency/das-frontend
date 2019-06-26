@@ -85,7 +85,7 @@
 
         </div>
 
-                 <section class="das-section das-section--overlay" aria-labelledby="other-tasks-link" id="das-dashbaord-other-tasks">
+                 <section class="das-section das-section--overlay" aria-labelledby="other-tasks-link" id="das-dashboard-other-tasks">
                             <div class="govuk-width-container das-section__inner-wrap"  tabindex="-1">
                                 <!-- Other -->
 
@@ -244,40 +244,29 @@
 {% block js  %}
 
 <script>
-$(function() {
-
-  var $link = $('#other-tasks-link');
-  var $target = $('#das-dashbaord-other-tasks');
-  var activeClass = 'das-dashboard-header__tasks-link--active';
-
-  $link.on('click', function(e) {
-    if ( $link.hasClass(activeClass) ) {
-        $link.removeClass(activeClass);
-        $target.hide()
-    } else {
-        $link.addClass(activeClass);
-        $target.show();
-    }
-    e.preventDefault();
-  });
-
-  $link.on('keydown', function(e) {
-    if (e.which === 9 && $link.hasClass(activeClass)) {
-      $('.das-section__inner-wrap').focus();
-    }
-  });
-
-  $(document).click(function() {
-    if ( $link.hasClass(activeClass) ) {
-
-      console.log(123)
-        //$link.removeClass(activeClass);
-       // $target.hide()
-    }
-  });
-
-});
-
+    $(function () {
+        var $link = $('#other-tasks-link'),
+            $pageContent = $('.das-panels'),
+            $target = $('#das-dashboard-other-tasks'),
+            activeClass = 'das-dashboard-header__tasks-link--active';
+        $link.on('click', function (e) {
+            if ($link.hasClass(activeClass)) {
+                $link.removeClass(activeClass);
+                $target.hide();
+                $pageContent.show();
+            } else {
+                $link.addClass(activeClass);
+                $target.show();
+                $pageContent.hide();
+            }
+            e.preventDefault();
+        });
+        $link.on('keydown', function (e) {
+            if (e.which === 9 && $link.hasClass(activeClass)) {
+                $('.das-section__inner-wrap').focus();
+            }
+        });
+    });
 </script>
 
 {% endblock  %}
