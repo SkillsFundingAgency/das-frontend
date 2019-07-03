@@ -6,23 +6,24 @@ const rename = require('gulp-rename');
 const paths = require('../../config/paths.json');
 const sassOptions = require('../../config/sassOptions.js');
 
-gulp.task('das-watch-sass', () => {
-  gulp.watch(paths.src.default, ['das-compile-sass'])
-    .on('change', (event) => {
-      console.log(`File ${event.path} was ${event.type}, running tasks...`);
+gulp.task('das-watch-sass', gulp.series(function() {
+  gulp.watch(paths.src.default, gulp.series('das-compile-sass'))
+    .on('change', function (path) {
+      console.log(`File ${path} was changed, running tasks...`);
     });
-});
+}));
 
 gulp.task('das-compile-sass', () => gulp
   .src(paths.src.default)
   .pipe(sass(sassOptions))
   .pipe(gulp.dest(paths.dist.default)));
 
-gulp.task('das-copy-images', () => {
+gulp.task('das-copy-images', (done) => {
   gulp.src(paths.src.defaultImages).pipe(gulp.dest(paths.dist.defaultImages));
+  done();
 });
 
-gulp.task('das-copy-libs', () => {
+gulp.task('das-copy-libs', (done) => {
   gulp.src(['./node_modules/govuk-frontend/assets/**/*','./src/assets/**/*']).pipe(gulp.dest('./dist/assets/'));
   gulp.src(['./node_modules/govuk-frontend/all.js']).pipe(gulp.dest('./dist/libs/govuk-frontend'));
   gulp.src(['./node_modules/accessible-autocomplete/dist/accessible-autocomplete.min.js']).pipe(gulp.dest('./dist/libs/accessible-autocomplete'));
@@ -40,4 +41,5 @@ gulp.task('das-copy-libs', () => {
   gulp.src(['./node_modules/accessible-autocomplete/src/autocomplete.css'])
     .pipe(rename('_autocomplete.scss'))
     .pipe(gulp.dest('./src/sass/libs/')); // Rename CSS file to SCSS so can be imported into application SCSS
+  done();
 });

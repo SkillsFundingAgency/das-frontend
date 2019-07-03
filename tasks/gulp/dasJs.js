@@ -22,21 +22,27 @@ gulp.task('das-compile-js', function() {
     .pipe(gulp.dest(configPaths.dist.defaultJs));
 });
 
-gulp.task('das-watch-js', () => {
+gulp.task('das-watch-js', gulp.series(function() {
 
-  gulp.watch([
-      '!' + configPaths.src.dasJs,
-      configPaths.src.defaultJs
-    ], ['das-compile-js'])
-    .on('change', (event) => {
-    console.log(`File ${event.path} was ${event.type}, running tasks...`);
-  });
-
-  gulp.watch([configPaths.src.componentJs, configPaths.src.dasJs], ['das-compile-js-components'])
-    .on('change', (event) => {
-      console.log(`File ${event.path} was ${event.type}, running tasks...`);
+  gulp.watch(['!' + configPaths.src.dasJs, configPaths.src.defaultJs], gulp.series('das-compile-js'))
+    .on('change', function (path) {
+      console.log(`File ${path} was changed, running tasks...`);
     });
-});
+
+  gulp.watch([configPaths.src.componentJs, configPaths.src.dasJs], gulp.series('das-compile-js-components'))
+    .on('change', function (path) {
+      console.log(`File ${path} was changed, running tasks...`);
+    });
+
+}));
+
+gulp.task('das-compile-js-components-dev', gulp.series(function () {
+  return minifyJs(false);
+}));
+
+gulp.task('das-compile-js-components', gulp.series('das-compile-js-components-dev', function () {
+  return minifyJs(true);
+}));
 
 var minifyJs = function (isDist) {
   let srcFile = configPaths.src.dasJs
@@ -59,11 +65,6 @@ var minifyJs = function (isDist) {
     .pipe(gulp.dest(jsDest));
 };
 
-gulp.task('das-compile-js-components', ['das-compile-js-components-dev'], () => {
-  return minifyJs(true);
-});
 
-gulp.task('das-compile-js-components-dev', () => {
-  return minifyJs(false);
-});
+
 
