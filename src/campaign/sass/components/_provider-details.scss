@@ -5,37 +5,6 @@ $progress-colour-good: #85994b;
 $progress-colour-poor: #f47738;
 $progress-colour-very-poor: #df3034;
 
-.das-provider__contact-details {
-  background-color: $employer;
-  color: $black;
-  padding: 30px;
-}
-
-.das-provider__contact-details:before {
-  content: '';
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: -50px;
-  border-style: solid;
-  border-width: 0 0 50px 614px;
-  border-color: transparent transparent #ffb007;
-  border-bottom-color: #ffb007;
-  margin: 0 -81px 0 -80px;
-}
-
-.das-provider__contact-details:after {
-  content: '';
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  border-style: solid;
-  border-width: 0 0 50px 614px;
-  border-color: transparent transparent white;
-  margin: 0 -81px 0 -80px;
-}
-
 .das-provider__contact-details-definition-list dt {
   font-size: 21px;
   font-weight: 600;

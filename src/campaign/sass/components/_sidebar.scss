@@ -32,6 +32,37 @@
   -webkit-clip-path: polygon(0 100%, 100% 91.4%, 100% 0, 0 8.6%);
 }
 
+.sidebar__hero--employer {
+  background-color: $employer;
+  color: $black;
+  padding: 30px;
+}
+
+.sidebar__hero--employer:before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: -50px;
+  border-style: solid;
+  border-width: 0 0 50px 614px;
+  border-color: transparent transparent #ffb007;
+  border-bottom-color: #ffb007;
+  margin: 0 -81px 0 -80px;
+}
+
+.sidebar__hero--employer:after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-style: solid;
+  border-width: 0 0 50px 614px;
+  border-color: transparent transparent white;
+  margin: 0 -81px 0 -80px;
+}
+
 .sidebar__header {
   background: $apprentice;
   padding: 20px 30px 20px 30px;
