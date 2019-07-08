@@ -22,6 +22,9 @@
   color: $govuk-link-colour;
   display: block;
   @include govuk-focusable;
+  @include govuk-media-query($from: tablet) {
+    display: inline-block;
+  }
 }
 
 .das-navigation__link--current {
