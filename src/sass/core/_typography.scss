@@ -5,3 +5,11 @@
 p {
   @include govuk-font($size: 19);
 }
+
+.das-text--block {
+  display: block;
+}
+
+.das-text--muted {
+  color: govuk-colour('grey-1');
+}
