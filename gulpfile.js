@@ -6,12 +6,12 @@ require('./tasks/gulp/das');
 require('./tasks/gulp/campaign');
 require('./tasks/gulp/dasJs');
 
-const defaultBuildTasks = ['das-copy-libs', 'das-copy-images', 'das-compile-sass', 'das-compile-js', 'das-compile-js-components'];
-const defaultWatchTasks = ['das-watch-sass', 'das-watch-js'];
+const defaultBuildTasks = gulp.series('das-copy-libs', 'das-copy-images', 'das-compile-sass', 'das-compile-js', 'das-compile-js-components', 'das-compile-js-components-dev');
+const defaultWatchTasks = gulp.parallel('das-watch-sass', 'das-watch-js');
 
-const campaignBuildTasks = ['campaign-copy-libs', 'campaign-compile-sass', 'campaign-compile-js', 'campaign-copy-images'];
-const campaignWatchTasks = ['campaign-watch-sass'];
+const campaignBuildTasks = gulp.series('campaign-copy-libs', 'campaign-compile-sass', 'campaign-compile-js', 'campaign-copy-images');
+const campaignWatchTasks = gulp.parallel('campaign-watch-sass');
 
-gulp.task('das',  defaultBuildTasks.concat(defaultWatchTasks));
-gulp.task('campaign', campaignBuildTasks.concat(campaignWatchTasks));
-gulp.task('build', defaultBuildTasks.concat(campaignBuildTasks));
+gulp.task('das',  gulp.series(defaultBuildTasks, defaultWatchTasks));
+gulp.task('campaign', gulp.series(campaignBuildTasks, campaignWatchTasks));
+gulp.task('build', gulp.series(defaultBuildTasks, campaignBuildTasks));
