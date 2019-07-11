@@ -5,3 +5,7 @@
 p {
   @include govuk-font($size: 19);
 }
+
+.das-text--muted {
+  color: govuk-colour('grey-1');
+}

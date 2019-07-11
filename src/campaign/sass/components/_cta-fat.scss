@@ -47,6 +47,10 @@
 
 
 .cta-fat__action {
+    width:100%;
+}
+
+.cta-fat__action form {
   @include mq($from:tablet){
     display:flex;
     justify-content:center;

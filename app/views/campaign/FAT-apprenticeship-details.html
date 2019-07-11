@@ -236,9 +236,9 @@
                             <h2 class="heading-l u-!-margin-top-0 u-!-margin-bottom-0">FIND A TRAINING PROVIDER</h2>
                             <p class="u-!-margin-top-0">Use the postcode for where the apprentice will work, are you a levy paying employer or a non-levy employer?</p>
                         </div>
-                        <form action="/TrainingProvider/Search"></form>
-                            <div class="cta-fat__action">
-                            
+                        
+                        <div class="cta-fat__action">
+                            <form action="/TrainingProvider/Search">
                                 <div class="form-group">
                                     <input class="input input__postcode input__postcode--auto-width" type="search" placeholder="Enter Postcode..." data-val="true" data-val-regex="You must enter a valid postcode" data-val-regex-pattern="\b((?:(?:girGIR)|(?:[a-pr-uwyzA-PR-UWYZ])(?:(?:[0-9](?:[a-hjkpstuwA-HJKPSTUW]|[0-9])?)|(?:[a-hk-yA-HK-Y][0-9](?:[0-9]|[abehmnprv-yABEHMNPRV-Y])?)))) ?([0-9][abd-hjlnp-uw-zABD-HJLNP-UW-Z]{2})\b" data-val-required="The Postcode field is required." id="Postcode" name="Postcode" value="">
                                     <span class="error-message field-validation-valid" data-valmsg-for="Postcode" data-valmsg-replace="true"></span>
@@ -261,11 +261,12 @@
                                     <input type="hidden" id="Keywords" name="Keywords" value="" />
                                     <button class="button button--sparks button-employer" type="submit">Search</button>
                                 </div>
-                            
-                            </div>
-                        </form>
+                            </form>
+                        </div>
+                        
 
                     </section>
+                </form>
                     
                 </div>
             </div>
