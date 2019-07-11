@@ -2,7 +2,6 @@
 
 const gulp = require('gulp')
 const rollup = require('gulp-better-rollup')
-const gulpif = require('gulp-if')
 const eol = require('gulp-eol')
 const rename = require('gulp-rename')
 const resolve = require('rollup-plugin-node-resolve')
@@ -22,7 +21,7 @@ gulp.task('das-compile-js', function() {
     .pipe(gulp.dest(configPaths.dist.defaultJs));
 });
 
-gulp.task('das-watch-js', gulp.series(function() {
+gulp.task('das-watch-js', function() {
 
   gulp.watch(['!' + configPaths.src.dasJs, configPaths.src.defaultJs], gulp.series('das-compile-js'))
     .on('change', function (path) {
@@ -34,17 +33,9 @@ gulp.task('das-watch-js', gulp.series(function() {
       console.log(`File ${path} was changed, running tasks...`);
     });
 
-}));
+});
 
-gulp.task('das-compile-js-components-dev', gulp.series(function () {
-  return minifyJs(false);
-}));
-
-gulp.task('das-compile-js-components', gulp.series('das-compile-js-components-dev', function () {
-  return minifyJs(true);
-}));
-
-var minifyJs = function (isDist) {
+gulp.task('das-compile-js-components', function() {
   let srcFile = configPaths.src.dasJs
   let jsDest = configPaths.dist.defaultJs
   return gulp.src(srcFile)
@@ -54,17 +45,13 @@ var minifyJs = function (isDist) {
       legacy: true,
       format: 'umd',
     })).on('error', function (e) { console.log(e) })
-    .pipe(gulpif(isDist, terser({ module: true })))
-    .pipe(gulpif(isDist,
+    .pipe(terser({ module: true }))
+    .pipe(
       rename({
         basename: 'das-all',
         extname: '.min.js'
       })
-    ))
+    )
     .pipe(eol())
     .pipe(gulp.dest(jsDest));
-};
-
-
-
-
+});

@@ -6,21 +6,20 @@ const rename = require('gulp-rename');
 const paths = require('../../config/paths.json');
 const sassOptions = require('../../config/sassOptions.js');
 
-gulp.task('das-watch-sass', gulp.series(function() {
-  gulp.watch(paths.src.default, gulp.series('das-compile-sass'))
-    .on('change', function (path) {
-      console.log(`File ${path} was changed, running tasks...`);
-    });
-}));
+gulp.task('das-watch-sass', function() {
+  return gulp.watch(paths.src.default, gulp.series('das-compile-sass')).on('change', function (file) {
+    console.log(`File ${file} was changed, running tasks...`);
+  });
+});
 
-gulp.task('das-compile-sass', () => gulp
-  .src(paths.src.default)
-  .pipe(sass(sassOptions))
-  .pipe(gulp.dest(paths.dist.default)));
+gulp.task('das-compile-sass', function() {
+  return gulp.src(paths.src.default)
+    .pipe(sass(sassOptions))
+    .pipe(gulp.dest(paths.dist.default));
+});
 
-gulp.task('das-copy-images', (done) => {
-  gulp.src(paths.src.defaultImages).pipe(gulp.dest(paths.dist.defaultImages));
-  done();
+gulp.task('das-copy-images', function() {
+  return gulp.src(paths.src.defaultImages).pipe(gulp.dest(paths.dist.defaultImages));
 });
 
 gulp.task('das-copy-libs', (done) => {
@@ -35,11 +34,7 @@ gulp.task('das-copy-libs', (done) => {
   gulp.src(['./node_modules/jquery-validation-unobtrusive/dist/jquery.validate.unobtrusive.min.js']).pipe(gulp.dest('./dist/libs/jquery-validation-unobtrusive'));
   gulp.src(['./node_modules/select2/dist/js/select2.min.js']).pipe(gulp.dest('./dist/libs/select2'));
   gulp.src(['./src/libs/select2/style.css']).pipe(gulp.dest('./dist/libs/select2'));
-  gulp.src(['./node_modules/jquery.are-you-sure/jquery.are-you-sure.js'])
-    .pipe(rename('jquery-are-you-sure.js'))
-    .pipe(gulp.dest('./dist/libs/jquery-are-you-sure')); // Rename to remove dots from filename, avoid confusion with the CDN script
-  gulp.src(['./node_modules/accessible-autocomplete/src/autocomplete.css'])
-    .pipe(rename('_autocomplete.scss'))
-    .pipe(gulp.dest('./src/sass/libs/')); // Rename CSS file to SCSS so can be imported into application SCSS
+  gulp.src(['./node_modules/jquery.are-you-sure/jquery.are-you-sure.js']).pipe(rename('jquery-are-you-sure.js')).pipe(gulp.dest('./dist/libs/jquery-are-you-sure')); // Rename to remove dots from filename, avoid confusion with the CDN script
+  gulp.src(['./node_modules/accessible-autocomplete/src/autocomplete.css']).pipe(rename('_autocomplete.scss')).pipe(gulp.dest('./src/sass/libs/')); // Rename CSS file to SCSS so can be imported into application SCSS
   done();
 });
