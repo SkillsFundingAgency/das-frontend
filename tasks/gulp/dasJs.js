@@ -2,6 +2,7 @@
 
 const gulp = require('gulp')
 const rollup = require('gulp-better-rollup')
+const gulpif = require('gulp-if')
 const eol = require('gulp-eol')
 const rename = require('gulp-rename')
 const resolve = require('rollup-plugin-node-resolve')
@@ -35,7 +36,15 @@ gulp.task('das-watch-js', function() {
 
 });
 
-gulp.task('das-compile-js-components', function() {
+gulp.task('das-compile-js-components-dev', function () {
+  return minifyJs(false);
+});
+
+gulp.task('das-compile-js-components', function () {
+  return minifyJs(true);
+});
+
+var minifyJs = function (isDist) {
   let srcFile = configPaths.src.dasJs
   let jsDest = configPaths.dist.defaultJs
   return gulp.src(srcFile)
@@ -45,13 +54,13 @@ gulp.task('das-compile-js-components', function() {
       legacy: true,
       format: 'umd',
     })).on('error', function (e) { console.log(e) })
-    .pipe(terser({ module: true }))
-    .pipe(
+    .pipe(gulpif(isDist, terser({ module: true })))
+    .pipe(gulpif(isDist,
       rename({
         basename: 'das-all',
         extname: '.min.js'
       })
-    )
+    ))
     .pipe(eol())
     .pipe(gulp.dest(jsDest));
-});
+};
