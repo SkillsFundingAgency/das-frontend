@@ -14,12 +14,12 @@ variables:
   buildPlatform: 'anycpu'
 
 pool:
-  name: 'Continuous Integration 02 - SSD - 160ACU'
+  name: 'DAS - Continuous Integration'
   demands: 
   - gulp
 
 steps:
-- task: gittools.gitversion.gitversion-task.GitVersion@4
+- task: gittools.gitversion-preview.gitversion-task.GitVersion@5
   displayName: GitVersion
 
 - task: Npm@1
