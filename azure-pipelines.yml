@@ -34,8 +34,8 @@ steps:
   displayName: 'Copy Files to: $(Build.ArtifactStagingDirectory)'
   inputs:
     contents: |
-     dist\**
-     azure\**
+     dist/**
+     azure/**
     targetFolder: '$(Build.ArtifactStagingDirectory)'
 
 - task: PublishBuildArtifacts@1
