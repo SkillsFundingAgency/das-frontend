@@ -1,3 +1,5 @@
+$employer-colour: $employer;
+
 .das-search-results__summary {
   margin: 10px 0 30px;
   @include media-query($from: tablet) {
@@ -15,6 +17,39 @@
 
 .search-results {
   margin-top:70px;
+}
+
+.das-search-results__header {
+  display:block;
+  clear:both;
+  border-bottom:5px solid $grey-4;
+  margin: 0.5em 0 1em 0;
+}
+
+.das-search-results__header--employer {
+  border-bottom:5px solid $employer-colour;
+}
+
+.das-search-results__header-results-header-text{
+  display:inline-block;
+}
+
+.das-search-results__header-results-total {
+  font-weight:700;
+}
+
+.das-search-results__header-results-total--employer{
+  color:$employer-colour;
+}
+
+.das-search-results__header-sort-by {
+  float:right;
+}
+
+.das-search-results__header-sort-by:after {
+  content:" ";
+  display:block;
+  clear:both;
 }
 
 .search-results-list,
