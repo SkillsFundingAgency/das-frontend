@@ -186,6 +186,33 @@ $employer-colour: $employer;
   }
 }
 
+.das-search-result__favourite-button {
+  background:url('/images/favourite-unchecked-employer.svg');
+  background-repeat: no-repeat;
+  color: #6F777B;
+  height:50px;
+  padding-left:60px;
+  border:0;
+}
+
+.das-search-result__favourite-button--unchecked {
+  background:url('/images/favourite-unchecked-employer.svg');
+  background-repeat: no-repeat;
+  color: #6F777B;
+  height:50px;
+  padding-left:60px;
+  border:0;
+}
+
+.das-search-result__favourite-button--checked {
+  background:url('/images/favourite-checked-employer.svg');
+  background-repeat: no-repeat;
+  color: #6F777B;
+  height:50px;
+  padding-left:60px;
+  border:0;
+}
+
 .das-search-result__heading {
   margin: 0 0 15px;
   line-height: 1.3;
