@@ -43,13 +43,24 @@ $employer-colour: $employer;
 }
 
 .das-search-results__header-sort-by {
-  float:right;
+  margin-top:1rem;
+  @include media-query($from: tablet) {
+    float:right;
+    margin-top:0;
+  }
 }
 
 .das-search-results__header-sort-by:after {
   content:" ";
   display:block;
   clear:both;
+}
+
+.das-search-result .heading-s,
+.das-search-result .heading-m,
+.das-search-result .heading-l,
+.das-search-result .heading-xl {
+  text-transform:none;
 }
 
 .search-results-list,
