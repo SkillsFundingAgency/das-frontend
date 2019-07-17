@@ -219,6 +219,11 @@ $employer-colour: $employer;
   border:0;
 }
 
+.hero .das-search-result__favourite-button--unchecked,
+.hero .das-search-result__favourite-button--checked {
+  color: white;
+}
+
 .das-search-result__heading {
   margin: 0 0 15px;
   line-height: 1.3;
