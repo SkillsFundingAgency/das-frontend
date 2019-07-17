@@ -171,6 +171,7 @@ $employer-colour: $employer;
 }
 
 .das-search-result__details-title {
+  color: $black;
   font-weight: 400;
   @include media-query($from: tablet) {
     float: left;
@@ -179,6 +180,7 @@ $employer-colour: $employer;
 }
 
 .das-search-result__details-definition {
+  color: $black;
   padding: 0;
   margin: 0 0 7px;
   @include media-query($from: tablet) {
@@ -189,7 +191,7 @@ $employer-colour: $employer;
 .das-search-result__favourite-button--unchecked {
   background:url('/images/favourite-unchecked-employer.svg');
   background-repeat: no-repeat;
-  color: #6F777B;
+  color:$black;
   height:2rem;
   margin-bottom:30px;
   padding-left:3rem;
@@ -199,7 +201,7 @@ $employer-colour: $employer;
 .das-search-result__favourite-button--checked {
   background:url('/images/favourite-checked-employer.svg');
   background-repeat: no-repeat;
-  color: #6F777B;
+  color: black;
   height:2rem;
   margin-bottom:30px;
   padding-left:3rem;
