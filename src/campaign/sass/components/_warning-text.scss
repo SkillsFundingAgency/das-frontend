@@ -1,11 +1,14 @@
 .warning-text {
 	@include font($size: 19);
-color: $grey-3;	
+	color: $black;
 	position: relative;
-	@include responsive-margin(2, "bottom");
-	@include responsive-margin(2, "top");
-	padding: spacing(2) 0;
-	border-left: 10px solid $grey-4;
+	border-left: 5px solid $grey-4;
+	margin: 10px 0;
+	@include media-query($from: tablet) {
+		border-left: 10px solid $grey-4;
+		padding: 10px 0;
+		margin: 15px 0;
+	}
 }
 
 .warning-text__assistive {
@@ -13,34 +16,16 @@ color: $grey-3;
 }
 
 .warning-text__icon {
-	@include font($size: false, $weight: bold);
-
 	display: inline-block;
-
 	position: absolute;
 	top: 50%;
 	left: 0;
-
 	min-width: 32px;
 	min-height: 29px;
-	margin-top: -15px; // Half the height of the circle (adjusted for NTA)
+	margin-top: -15px;
 	margin-left: 15px;
 	padding-top: 3px;
-
-
-	// When a user customises their colours the background colour will often be removed.
-	// Adding a border to the component keeps it's shape as a circle.
-background-image: url('../images/warning-black.svg');
-
-	font-size: 1.6em;
-	line-height: 29px;
-
-	text-align: center;
-
-	// Prevent the exclamation mark from being included when the warning text
-	// is copied, for example.
-	user-select: none;
-	
+	background-image: url('../images/warning-black.svg');
 }
 
 .warning-text__text {
