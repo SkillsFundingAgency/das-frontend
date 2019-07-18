@@ -209,6 +209,7 @@ $employer-colour: $employer;
   background:url('/images/favourite-unchecked-employer.svg');
   background-repeat: no-repeat;
   color:$black;
+  cursor: pointer;
   height:2rem;
   margin-bottom:30px;
   padding-left:3rem;
@@ -219,10 +220,16 @@ $employer-colour: $employer;
   background:url('/images/favourite-checked-employer.svg');
   background-repeat: no-repeat;
   color: black;
+  cursor:pointer;
   height:2rem;
   margin-bottom:30px;
   padding-left:3rem;
   border:0;
+}
+
+.hero .das-search-result__favourite-button--unchecked,
+.hero .das-search-result__favourite-button--checked {
+  color: white;
 }
 
 .das-search-result__heading {
