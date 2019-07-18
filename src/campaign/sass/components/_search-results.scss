@@ -293,11 +293,8 @@ $employer-colour: $employer;
   padding: 0.75em 0.5em;
   @include media-query($from: tablet) {
     font-size:24px;
-    width: 60%;
   }
 }
-
-
 
 .das-search-results__filter-checkboxes:after {
   content:" ";
