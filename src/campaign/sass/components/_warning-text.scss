@@ -23,12 +23,21 @@
 	min-width: 32px;
 	min-height: 29px;
 	margin-top: -15px;
-	margin-left: 15px;
+	margin-left: 10px;
 	padding-top: 3px;
 	background-image: url('../images/warning-black.svg');
+	background-size: contain;
+	overflow: hidden;
+	text-indent: -999px;
+	@include media-query($from: tablet) {
+		margin-left: 15px;
+	}
 }
 
 .warning-text__text {
 	display: block;
-	padding-left: 60px;
+	padding-left: 53px;
+	@include media-query($from: tablet) {
+		padding-left: 60px;
+	}
 }
