@@ -311,7 +311,8 @@ $employer-colour: $employer;
 .das-search-results__filter-checkbox {
   @include media-query($from: desktop) {
     clear:none;
-    width:40%;
+    width:50%;
     float:left;
+    box-sizing: border-box;
   }
 }
