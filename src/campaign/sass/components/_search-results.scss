@@ -309,10 +309,16 @@ $employer-colour: $employer;
 }
 
 .das-search-results__filter-checkbox {
-  @include media-query($from: desktop) {
+  @include media-query($from: mobile) {
     clear:none;
     width:50%;
     float:left;
     box-sizing: border-box;
+  }
+  @include media-query($from: tablet) {
+    width: 100%;
+  }
+  @include media-query($from: desktop) {
+    width: 50%;
   }
 }
