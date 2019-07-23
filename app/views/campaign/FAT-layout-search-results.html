@@ -1,0 +1,96 @@
+{% extends "campaign/template.html" %}
+
+
+{% block hero %}
+
+<div class="hero">
+    <div class="grid-row">
+        <div class="grid-column-one-half">
+            <div class="hero-heading">
+                <span class="caption-m hero-heading__caption hero-heading__caption--employer">Employer  >  Search apprenticeships</span>
+                <h1 class="heading-xl hero-heading__heading">Business Administrator</h1>
+            </div>
+            <p class="lead-paragraph">
+                        There are <strong class="fat-value">23</strong> apprenticeships<span class="sector-info"></span>
+                   </p>
+             <form>
+                <div class="form-group das-form-group-inline">
+
+                    <input class="input" type="search" placeholder="Apprenticeship keyword...">
+                    <div class="das-form-group-inline__button-wrap">
+                        <button class="button button-employer" type="submit">Search</button>
+                    </div>
+                </div>
+             </form>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="main-content">
+    <div class="grid-row">
+        <div class="grid-column-two-thirds">
+            <div class="page">
+                Page
+            </div>
+        </div>
+        <div class="grid-column-one-third">
+            <div class="sidebar-panel sidebar-panel--employer">
+                <div class="sidebar-panel__content">
+
+                    <section>
+                        <form asp-controller="Fat" asp-action="Filter" method="get">
+                            <h3 class="heading-m">Filter results</h3>
+                            <div class="form-group">
+                                <p class="u-!-font-weight-bold">Showing search results for:</p>
+                                <label class="visually-hidden">Apprenticeship keyword</label>
+                                <input class="input das-search-results__filter-search-keyword" asp-for="Keywords" type="search" placeholder="Apprenticeship keyword...">
+                            </div>
+
+                            <div class="form-group">
+                                <p class="u-!-font-weight-bold">Apprenticeship level:</p>
+                                <div class="checkboxes das-search-results__filter-checkboxes">
+                                    <div class="checkboxes__item das-search-results__filter-checkbox">
+                                        <input class="checkboxes__input" value="@item.Value" id="1" name="SelectedLevels" type="checkbox">
+                                        <label asp-for="SelectedLevels" class="label checkboxes__label">Level 2 (1)</label>
+                                    </div>
+                                    <div class="checkboxes__item das-search-results__filter-checkbox">
+                                        <input class="checkboxes__input" value="@item.Value" id="1" name="SelectedLevels" type="checkbox">
+                                        <label asp-for="SelectedLevels" class="label checkboxes__label">Level 3 (1)</label>
+                                    </div>
+                                    <div class="checkboxes__item das-search-results__filter-checkbox">
+                                        <input class="checkboxes__input" value="@item.Value" id="1" name="SelectedLevels" type="checkbox">
+                                        <label asp-for="SelectedLevels" class="label checkboxes__label">Level 4 (1)</label>
+                                    </div>
+                                    <div class="checkboxes__item das-search-results__filter-checkbox">
+                                        <input class="checkboxes__input" value="@item.Value" id="1" name="SelectedLevels" type="checkbox">
+                                        <label asp-for="SelectedLevels" class="label checkboxes__label">Level 5 (0)</label>
+                                    </div>
+                                    <div class="checkboxes__item das-search-results__filter-checkbox">
+                                        <input class="checkboxes__input" value="@item.Value" id="1" name="SelectedLevels" type="checkbox">
+                                        <label asp-for="SelectedLevels" class="label checkboxes__label">Level 6 (1)</label>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div class="form-group">
+                                <button type="submit" class="button">
+                                    Update
+                                </button>
+                            </div>
+
+                        </form>
+                    </section>
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock %}
