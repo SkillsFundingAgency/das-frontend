@@ -10,9 +10,6 @@
                 <span class="caption-m hero-heading__caption hero-heading__caption--employer">Employer  >  Search apprenticeships</span>
                 <h1 class="heading-xl hero-heading__heading">Business Administrator</h1>
             </div>
-            <p class="lead-paragraph">
-                        There are <strong class="fat-value">23</strong> apprenticeships<span class="sector-info"></span>
-                   </p>
              <form>
                 <div class="form-group das-form-group-inline">
 
@@ -22,6 +19,9 @@
                     </div>
                 </div>
              </form>
+             <a href="https://www.gov.uk/" id="header-link-govuk" target="_blank" class="hero-heading__hm-government-link">
+                 <img alt="HM Government" class="hero-heading__hm-government-logo" src="https://das-prd-frnt-end.azureedge.net/campaign/images/hm-government-logo.png" srcset="https://das-prd-frnt-end.azureedge.net/campaign/images/hm-government-logo.png 1x, https://das-prd-frnt-end.azureedge.net/campaign/images/hm-government-logo@2x.png 2x">
+             </a>
         </div>
     </div>
 </div>
@@ -33,8 +33,24 @@
 <div class="main-content">
     <div class="grid-row">
         <div class="grid-column-two-thirds">
+
             <div class="page">
-                Page
+
+                    <div class="das-search-results__header das-search-results__header--employer">
+                        <p class="body das-search-results__header-results-header-text">There are <strong class="bold das-search-results__header-results-total--employer">36</strong> apprenticeships.</p>
+                        <form>
+
+                            <label class="label visually-hidden" for="sort">
+                                    Sort the search results by
+                            </label>
+                            <select id="sort" class="select das-search-results__header-sort-by" data-val="true">
+                                    <option value="">-- Sort by --</option>
+                                    <option value="Best match">Best match</option>
+                                    <option value="Level (high to low)">Level (high to low)</option>
+                                    <option value="Level (low to high)">Level (low to high)</option>
+                            </select>
+                        </form>
+                    </div>
             </div>
         </div>
         <div class="grid-column-one-third">
