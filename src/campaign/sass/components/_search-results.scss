@@ -20,18 +20,24 @@ $employer-colour: $employer;
 }
 
 .das-search-results__header {
-  display:block;
-  clear:both;
   border-bottom:5px solid $grey-4;
-  margin: 0.5em 0 1em 0;
+  margin: 0 0 1em 0;
+  padding-bottom: 1em;
+  @include clearfix;
 }
 
 .das-search-results__header--employer {
-  border-bottom:5px solid $employer-colour;
+  border-bottom: 5px solid $employer-colour;
 }
 
-.das-search-results__header-results-header-text{
-  display:inline-block;
+.das-search-results__header-results-header-text {
+  padding: 0;
+  margin: 0;
+  @include media-query($from: tablet) {
+    float:left;
+    padding-top: .5em;
+    width: 50%;
+  }
 }
 
 .das-search-results__header-results-total {
@@ -39,14 +45,14 @@ $employer-colour: $employer;
 }
 
 .das-search-results__header-results-total--employer{
-  color:$employer-colour;
+  
 }
 
 .das-search-results__header-sort-by {
-  margin-top:1rem;
+  margin-top: 10px;
   @include media-query($from: tablet) {
     float:right;
-    margin-top:0;
+    margin: 0;
   }
 }
 
@@ -67,6 +73,7 @@ $employer-colour: $employer;
 .das-search-results__list {
   padding-left: 0;
   list-style: none;
+  margin-bottom: 30px;
 
   > li {
     counter-increment: results-counter;
@@ -75,6 +82,11 @@ $employer-colour: $employer;
     padding-bottom: 15px;
     margin-bottom: 35px;
     position: relative;
+    &:last-child {
+      border: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
     
     &:before{
       position: absolute;
@@ -288,17 +300,13 @@ $employer-colour: $employer;
 }
 
 .das-search-results__filter-search-keyword {
-  border:none;
-  
-  font-weight:400;
-  padding: 0.75em 0.5em;
-  @include media-query($from: tablet) {
+  border: none;
+  font-weight: 400;
+  padding: .6em .7em;
+  @include media-query($from: desktop) {
     font-size:24px;
-    width: 60%;
   }
 }
-
-
 
 .das-search-results__filter-checkboxes:after {
   content:" ";
@@ -307,9 +315,16 @@ $employer-colour: $employer;
 }
 
 .das-search-results__filter-checkbox {
-  @include media-query($from: tablet) {
+  @include media-query($from: mobile) {
     clear:none;
-    width:40%;
+    width:50%;
     float:left;
+    box-sizing: border-box;
+  }
+  @include media-query($from: tablet) {
+    width: 100%;
+  }
+  @include media-query($from: desktop) {
+    width: 50%;
   }
 }

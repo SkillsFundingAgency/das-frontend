@@ -5,16 +5,14 @@
   list-style: none;
   @include clearfix();
   @include media-query($from: tablet) {
-    margin-top: 80px;
+    margin-top: 40px;
   }
 }
 
 .pagination__list-item, .das-pagination__list-item {
   margin: 10px 0;
-  @include media-query($from: tablet) {
     width: 50%;
     float: left;
-  }
 }
 
 .page .pagination__link, .page .das-pagination__link {

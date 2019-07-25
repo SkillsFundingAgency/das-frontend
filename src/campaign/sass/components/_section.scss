@@ -69,9 +69,12 @@
 }
 
 .section__faa-actions{
-  margin-top:50px;
+  margin: 40px 0 30px;
+  @include media-query($from: tablet) {
+    margin-bottom: 0;
+  }
   display: flex;
-   & a{
+   & a {
      margin: 0 auto;
    }
 }
