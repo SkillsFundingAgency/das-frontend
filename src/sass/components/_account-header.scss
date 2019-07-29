@@ -59,7 +59,7 @@
   line-height: 1;
   margin-top: 5px;
   margin-bottom: 0;
-  @include govuk-focusable;
+  @include das-focusable;
   &:hover,
   &:focus {
     text-decoration: none;

@@ -1,7 +1,7 @@
 .das-navigation {
   @include govuk-text-colour;
   @include govuk-font($size: 19);
-  border-bottom: 1px solid govuk-colour(grey-1);
+  border-bottom: 1px solid govuk-colour(dark-grey);
 }
 
 .das-navigation__list {
@@ -21,7 +21,7 @@
   padding: 10px $govuk-gutter-half 8px;
   color: $govuk-link-colour;
   display: block;
-  @include govuk-focusable;
+  @include das-focusable;
   @include govuk-media-query($from: tablet) {
     display: inline-block;
   }
@@ -69,7 +69,7 @@
   padding: 10px $govuk-gutter-half 8px;
   padding-right: 35px;
   color: $govuk-link-colour;
-  @include govuk-focusable;
+  @include das-focusable;
   position: absolute;
   top: 0;
   right: 0;

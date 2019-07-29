@@ -28,7 +28,7 @@
   padding: 10px 15px;
   font-size: 16px;
   border: 1px solid transparent;
-  @include govuk-focusable;
+  @include das-focusable;
   &:hover {
     text-decoration: underline;
   }
@@ -69,7 +69,7 @@
 }
 
 .das-user-navigation__sub-menu {
-  background: govuk-colour("grey-1");
+  background: govuk-colour('dark-grey');
   list-style: none;
   padding: 10px;
   margin: 0;
@@ -100,7 +100,7 @@
   display: block;
   padding: 8px 15px;
   font-size: 15px;
-  @include govuk-focusable;
+  @include das-focusable;
   &:hover {
     text-decoration: underline;
   }

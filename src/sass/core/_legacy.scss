@@ -28,7 +28,7 @@
   }
   h4 {
     padding-left: 15px;
-    color: govuk-colour('grey-1');
+    color: govuk-colour('dark-grey');
     position: absolute;
     display: none;
     top: 3px;
@@ -50,7 +50,7 @@
     }
   }
   .meta {
-    color: govuk-colour('grey-1');
+    color: govuk-colour('dark-grey');
     padding-bottom: 15px;
     a {
       display: block;
@@ -120,11 +120,11 @@
     margin-bottom: 40px;
     .item-label {
       position: relative;
-      color: govuk-colour('grey-1');
+      color: govuk-colour('dark-grey');
     }
     .item-description {
       .grey-text {
-        color: govuk-colour('grey-1');
+        color: govuk-colour('dark-grey');
       }
       p {
         margin-bottom: 5px;
@@ -161,7 +161,7 @@
 
 .button-link {
   @include govuk-font(19);
-  @include govuk-focusable();
+  @include das-focusable();
   background: none;
   padding: 0;
   margin: 0;
