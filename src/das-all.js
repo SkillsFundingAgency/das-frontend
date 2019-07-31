@@ -1,6 +1,6 @@
 import Accordion from './components/accordion/accordion'
 import Navigation from './components/navigation/_navigation'
-import CookieBanner from './components/cookieBanner/_cookieBanner'
+import CookieBanner from './components/cookieBannerGOVUK/_cookieBannerGOVUK'
 import VideoPlayer from './components/video-player/videoplayer'
 import SmoothScroll from './components/smoothScroll/_smoothScroll'
 import GoogleMaps from './components/googleMaps/_googleMaps'
@@ -29,9 +29,16 @@ function initAll() {
       new Navigation($navs).init();
     });
 
+    /*
     var $cookieBanner = document.querySelector('[data-module="cookieBanner"]');
     if ($cookieBanner != null) {
       new CookieBanner($cookieBanner).init();
+    }
+     */
+
+    var $cookieBannerGovUK = document.querySelector('[data-module="cookie-banner"]');
+    if ($cookieBannerGovUK != null) {
+      new CookieBanner($cookieBannerGovUK);
     }
 
     var $accordions = document.querySelectorAll('[data-module="accordion"]');
