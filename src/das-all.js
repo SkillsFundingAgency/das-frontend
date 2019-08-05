@@ -1,6 +1,7 @@
 import Accordion from './components/accordion/accordion'
 import Navigation from './components/navigation/_navigation'
-import CookieBanner from './components/cookieBannerGOVUK/_cookieBannerGOVUK'
+import CookieBanner from './components/cookieBanner/_cookieBanner'
+import CookieBannerCampaign from './components/cookieBannerCampaign/_cookieBannerCampaign'
 import VideoPlayer from './components/video-player/videoplayer'
 import SmoothScroll from './components/smoothScroll/_smoothScroll'
 import GoogleMaps from './components/googleMaps/_googleMaps'
@@ -18,9 +19,7 @@ function nodeListForEach(nodes, callback) {
 
 function initAll() {
 
-
   var $gtmDataLayer = window.dataLayer;
-
 
   addLoadEvent(function () {
 
@@ -29,16 +28,16 @@ function initAll() {
       new Navigation($navs).init();
     });
 
-    /*
-    var $cookieBanner = document.querySelector('[data-module="cookieBanner"]');
-    if ($cookieBanner != null) {
-      new CookieBanner($cookieBanner).init();
+    // Cookie Banner on Campaign
+    var $cookieBannerCampaign = document.querySelector('[data-module="cookieBanner"]');
+    if ($cookieBannerCampaign != null) {
+      new CookieBannerCampaign($cookieBannerCampaign).init();
     }
-     */
 
-    var $cookieBannerGovUK = document.querySelector('[data-module="cookie-banner"]');
-    if ($cookieBannerGovUK != null) {
-      new CookieBanner($cookieBannerGovUK);
+    // Cookie Banner GDS style
+    var $cookieBanner = document.querySelector('[data-module="cookie-banner"]');
+    if ($cookieBanner != null) {
+      new CookieBanner($cookieBanner);
     }
 
     var $accordions = document.querySelectorAll('[data-module="accordion"]');

@@ -27,3 +27,26 @@
     background-color: #e6eff6;
   }
 }
+
+
+
+.das-button--outline {
+  border-color: govuk-colour('green');
+  color: govuk-colour('green');
+  background-color: #fff;
+  box-shadow: none;
+
+  &,
+  &:link,
+  &:visited,
+  &:active,
+  &:hover {
+    color: govuk-colour("green");
+  }
+
+  &:hover,
+  &:focus {
+    background: govuk-colour('grey-4');
+    color: govuk-colour('green');
+  }
+}
