@@ -7,89 +7,98 @@
         <span class="caption-m hero-heading__caption hero-heading__caption--employer">Employer</span>
         <h1 class="heading-xl hero-heading__heading hero-heading__heading-m">Your favourite apprenticeships and training providers</h1>
      </div>
+     <ul class="list-numbers">
+         <li><span class="list-numbers__number">2</span> apprenticeships</li>
+         <li><span class="list-numbers__number">1</span> training providers</li>
+     </ul>
   </div>
+  <div class="grid-column-one-half">
+      <div class="sidebar-panel sidebar-panel--employer">
+      <div class="sidebar-panel__content">
+            Create an account
+            </div>
+        </div>
+    </div>
 </div>
+
 {% endblock %}
 
 
 {% block content %}
 <div class="page page--full-width">
 
-    <ol class="list list--employer list--number das-search-results__list das-search-results__list--employer das-search-results">
-       <li id="196" class="das-search-results__list-item">
-          <article class="das-search-result">
-             <h2 class="heading-m das-search-result__heading">
-                <a class="link das-search-result__heading-link" href="/employer/find-apprenticeships/Apprenticeship?id=196">Business Administrator</a>
-             </h2>
+    <ol class="list das-search-results__list das-search-results__list--employer basket">
+       <li class="das-search-results__list-item">
+
+             <div class="basket__item-header">
+                 <h2 class="basket__item-heading">
+                    <a href="/employer/find-apprenticeships/Apprenticeship?id=196">Business Administrator</a>
+                 </h2>
+                 <a href="delete" class="basket__item-delete">Delete Business Administrator from your basket</a>
+             </div>
+
+
              <div class="grid-row">
-                <div class="grid-column-two-thirds">
-                 <dl class="list list--employer  das-search-result__details">
-                    <dt class="das-search-result__details-title">Level:</dt>
-                    <dd class="das-search-result__details-definition">3 (Equivalent to A levels at grades A to E)</dd>
-                    <dt class="das-search-result__details-title">Typical length:</dt>
-                    <dd class="das-search-result__details-definition">18 months</dd>
-                    <dt class="das-search-result__details-title">Apprenticeship Type:</dt>
-                    <dd class="das-search-result__details-definition">Standard</dd>
-                 </dl>
+                <div class="grid-column-one-half">
+                     <dl class="list list--employer  das-search-result__details">
+                        <dt class="das-search-result__details-title">Level:</dt>
+                        <dd class="das-search-result__details-definition">3 (Equivalent to A levels at grades A to E)</dd>
+                        <dt class="das-search-result__details-title">Typical length:</dt>
+                        <dd class="das-search-result__details-definition">18 months</dd>
+                        <dt class="das-search-result__details-title">Apprenticeship Type:</dt>
+                        <dd class="das-search-result__details-definition">Standard</dd>
+                     </dl>
                  </div>
-                 <div class="grid-column-one-third">
-                     <form method="post">
-                        <label for="search-field">Search for a training provider for this apprenticeship</label>
+                 <div class="grid-column-one-half">
+                     <form method="post" class="basket__form">
+                        <label for="search-field" class="basket__form-label">Search for a training provider for this apprenticeship</label>
                         <div class="form-group das-form-group-inline">
-                            <input type="text" class="input" placeholder="Search by postcode" id="search-field">
+                            <input type="text" class="input basket__form-input" placeholder="Search by postcode" id="search-field" autocomplete="postal-code">
                             <div class="das-form-group-inline__button-wrap">
-                                <button class="button" type="submit">Search</button>
+                                <button class="button basket__form-button" type="submit">Search</button>
                             </div>
                         </div>
                     </form>
                 </div>
              </div>
-          </article>
+
        </li>
-       <li id="490-3-1" class="das-search-results__list-item">
-          <article class="das-search-result">
-             <h2 class="heading-m das-search-result__heading">
-                <a class="link das-search-result__heading-link" href="/employer/find-apprenticeships/Apprenticeship?id=490-3-1">Business and Administration</a>
-             </h2>
-             <div class="warning-text">
-                <span class="warning-text__icon" aria-hidden="true"></span>
-                <strong class="warning-text__text">
-                <span class="warning-text__assistive">Warning</span>
-                This apprenticeship is closed to new starters from Friday, July 31, 2020
-                </strong>
+       <li class="das-search-results__list-item">
+
+             <div class="basket__item-header">
+                  <h2 class="basket__item-heading">
+                     <a href="/employer/find-apprenticeships/Apprenticeship?id=196">Business and Administration: Business and Administration</a>
+                  </h2>
+                  <a href="delete" class="basket__item-delete">Delete Business Administrator from your basket</a>
+              </div>
+             <div class="grid-row">
+                 <div class="grid-column-one-half">
+                     <div class="warning-text">
+                        <span class="warning-text__icon" aria-hidden="true"></span>
+                        <strong class="warning-text__text">
+                        <span class="warning-text__assistive">Warning</span>
+                        This apprenticeship is closed to new starters from Friday, July 31, 2020
+                        </strong>
+                     </div>
+                     <dl class="list list--employer  das-search-result__details">
+                        <dt class="das-search-result__details-title">Level:</dt>
+                        <dd class="das-search-result__details-definition">2 (Equivalent to GCSEs at grades A* to C)</dd>
+                        <dt class="das-search-result__details-title">Typical length:</dt>
+                        <dd class="das-search-result__details-definition">12 months</dd>
+                        <dt class="das-search-result__details-title">Apprenticeship Type:</dt>
+                        <dd class="das-search-result__details-definition">Framework</dd>
+                     </dl>
+                 </div>
+                 <div class="grid-column-one-half">
+                    <h3>2 training providers</h3>
+                    <ul>
+                        <li><a href="link">Provider name</a> </li>
+                    </ul>
+                 </div>
              </div>
-             <dl class="list list--employer  das-search-result__details">
-                <dt class="das-search-result__details-title">Level:</dt>
-                <dd class="das-search-result__details-definition">2 (Equivalent to GCSEs at grades A* to C)</dd>
-                <dt class="das-search-result__details-title">Typical length:</dt>
-                <dd class="das-search-result__details-definition">12 months</dd>
-                <dt class="das-search-result__details-title">Apprenticeship Type:</dt>
-                <dd class="das-search-result__details-definition">Framework</dd>
-             </dl>
-          </article>
+
        </li>
-       <li id="620-20-1" class="das-search-results__list-item">
-          <article class="das-search-result">
-             <h2 class="heading-m das-search-result__heading">
-                <a class="link das-search-result__heading-link" href="/employer/find-apprenticeships/Apprenticeship?id=620-20-1">Business and Professional Administration</a>
-             </h2>
-             <div class="warning-text">
-                <span class="warning-text__icon" aria-hidden="true"></span>
-                <strong class="warning-text__text">
-                <span class="warning-text__assistive">Warning</span>
-                This apprenticeship is closed to new starters from Friday, July 31, 2020
-                </strong>
-             </div>
-             <dl class="list list--employer  das-search-result__details">
-                <dt class="das-search-result__details-title">Level:</dt>
-                <dd class="das-search-result__details-definition">4 (Equivalent to certificate of higher education)</dd>
-                <dt class="das-search-result__details-title">Typical length:</dt>
-                <dd class="das-search-result__details-definition">24 months</dd>
-                <dt class="das-search-result__details-title">Apprenticeship Type:</dt>
-                <dd class="das-search-result__details-definition">Framework</dd>
-             </dl>
-          </article>
-       </li>
+
     </ol>
 
 </div>

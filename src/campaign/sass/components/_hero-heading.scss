@@ -46,12 +46,12 @@
 }
 
 .hero-heading__heading-m {
-  font-size: 24px;
+  font-size: 30px;
   @include media-query($from: tablet) {
-    font-size: 36px;
+    font-size: 40px;
   }
   @include media-query($from: desktop) {
-    font-size: 48px;
+    font-size: 50px;
   }
 }
 
