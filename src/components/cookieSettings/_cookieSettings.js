@@ -1,11 +1,10 @@
-window.GOVUK = window.GOVUK || {}
-window.GOVUK.Modules = window.GOVUK.Modules || {};
 
-(function (Modules) {
-  function CookieSettings () { }
+  function CookieSettings ($module) {
+    this.$module = $module;
+    this.start()
+  }
 
-  CookieSettings.prototype.start = function ($module) {
-    this.$module = $module[0]
+  CookieSettings.prototype.start = function () {
 
     this.$module.submitSettingsForm = this.submitSettingsForm.bind(this)
 
@@ -101,5 +100,4 @@ window.GOVUK.Modules = window.GOVUK.Modules || {};
     return document.referrer ? new URL(document.referrer).pathname : false
   }
 
-  Modules.CookieSettings = CookieSettings
-})(window.GOVUK.Modules)
+  export default CookieSettings

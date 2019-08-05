@@ -2,6 +2,7 @@ import Accordion from './components/accordion/accordion'
 import Navigation from './components/navigation/_navigation'
 import CookieBanner from './components/cookieBanner/_cookieBanner'
 import CookieBannerCampaign from './components/cookieBannerCampaign/_cookieBannerCampaign'
+import CookieSettings from './components/cookieSettings/_cookieSettings'
 import VideoPlayer from './components/video-player/videoplayer'
 import SmoothScroll from './components/smoothScroll/_smoothScroll'
 import GoogleMaps from './components/googleMaps/_googleMaps'
@@ -38,6 +39,12 @@ function initAll() {
     var $cookieBanner = document.querySelector('[data-module="cookie-banner"]');
     if ($cookieBanner != null) {
       new CookieBanner($cookieBanner);
+    }
+
+    // Cookie Settings Page
+    var $cookieSettings = document.querySelector('[data-module="cookie-settings"]');
+    if ($cookieSettings != null) {
+      new CookieSettings($cookieSettings);
     }
 
     var $accordions = document.querySelectorAll('[data-module="accordion"]');
