@@ -12,22 +12,7 @@
   }
 
   var COOKIE_CATEGORIES = {
-    'TLSversion': 'usage',
-    'cookie_policy': 'essential',
-    'govuk_not_first_visit': 'essential',
-    'govuk_browser_upgrade_dismisssed': 'essential',
-    'seen_cookie_message': 'essential',
-    'govuk_surveySeenUserSatisfactionSurvey': 'essential',
-    'govuk_takenUserSatisfactionSurvey': 'essential',
-    '_email-alert-frontend_session': 'essential',
-    'global_bar_seen': 'essential',
-    'licensing_session': 'essential',
-    'govuk_contact_referrer': 'essential',
-    'JS-Detection': 'usage',
-    '_ga': 'usage',
-    '_gid': 'usage',
-    '_gat': 'usage',
-    'analytics_next_page_call': 'usage'
+    'SeenCookieMessage' : true
   }
 
   /*
@@ -149,14 +134,10 @@
       return true
     }
 
-    // Survey cookies are dynamically generated, so we need to check for these separately
-    if (cookieName.match('^govuk_surveySeen') || cookieName.match('^govuk_taken')) {
-      return window.GOVUK.checkConsentCookieCategory(cookieName, 'essential')
-    }
-
     if (COOKIE_CATEGORIES[cookieName]) {
-      var cookieCategory = COOKIE_CATEGORIES[cookieName]
 
+      var cookieCategory = COOKIE_CATEGORIES[cookieName]
+      console.log(window.GOVUK.checkConsentCookieCategory(cookieName, cookieCategory))
       return window.GOVUK.checkConsentCookieCategory(cookieName, cookieCategory)
     } else {
       // Deny the cookie if it is not known to us
@@ -165,7 +146,9 @@
   }
 
   window.GOVUK.setCookie = function (name, value, options) {
+
     if (window.GOVUK.checkConsentCookie(name, value)) {
+      console.log(name)
       if (typeof options === 'undefined') {
         options = {}
       }

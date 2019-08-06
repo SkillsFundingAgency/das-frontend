@@ -30,8 +30,8 @@
     // Force the new cookie banner to show if we don't think the user has seen it before
     // This involves resetting the seen_cookie_message cookie, which may be set to true if they've seen the old cookie banner
     if (!window.GOVUK.cookie('cookie_policy')) {
-      if (window.GOVUK.cookie('seen_cookie_message') === 'true') {
-        window.GOVUK.cookie('seen_cookie_message', false, { days: 365 })
+      if (window.GOVUK.cookie('SeenCookieMessage') === true) {
+        window.GOVUK.cookie('SeenCookieMessage', false, { days: 365 })
       }
     }
 
@@ -41,7 +41,7 @@
   CookieBanner.prototype.showCookieMessage = function () {
     // Show the cookie banner if not in the cookie settings page or in an iframe
     if (!this.isInCookiesPage() && !this.isInIframe()) {
-      var shouldHaveCookieMessage = (this.$module && window.GOVUK.cookie('seen_cookie_message') !== 'true')
+      var shouldHaveCookieMessage = (this.$module && window.GOVUK.cookie('SeenCookieMessage') !== true)
 
       if (shouldHaveCookieMessage) {
         this.$module.style.display = 'block'
@@ -57,7 +57,7 @@
   CookieBanner.prototype.hideCookieMessage = function (event) {
     if (this.$module) {
       this.$module.style.display = 'none'
-      window.GOVUK.cookie('seen_cookie_message', 'true', { days: 365 })
+      window.GOVUK.cookie('SeenCookieMessage', true, { days: 365 })
     }
 
     if (event.target) {
@@ -66,20 +66,18 @@
   }
 
   CookieBanner.prototype.setCookieConsent = function () {
+    window.GOVUK.cookie('SeenCookieMessage', true, { days: 365 })
     window.GOVUK.approveAllCookieTypes()
     this.$module.showConfirmationMessage()
     this.$module.cookieBannerConfirmationMessage.focus()
-    window.GOVUK.cookie('seen_cookie_message', 'true', { days: 365 })
+
+    console.log('321')
   }
 
   CookieBanner.prototype.showConfirmationMessage = function () {
     this.$cookieBannerMainContent = document.querySelector('.das-cookie-banner__wrapper')
     this.$cookieBannerMainContent.style.display = 'none'
     this.$module.cookieBannerConfirmationMessage.style.display = 'block'
-  }
-
-  CookieBanner.prototype.listenForCrossOriginMessages = function () {
-    window.addEventListener('message', this.receiveMessage.bind(this), false)
   }
 
   CookieBanner.prototype.isInCookiesPage = function () {

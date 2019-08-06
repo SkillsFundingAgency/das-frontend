@@ -14,6 +14,8 @@
   }
 
   CookieSettings.prototype.setInitialFormValues = function () {
+
+  /*
     if (!window.GOVUK.cookie('cookie_policy')) {
       window.GOVUK.setDefaultConsentCookie()
     }
@@ -35,30 +37,41 @@
 
       radioButton.checked = true
     }
+
+   */
+
+    var formInputs = document.getElementsByTagName("input")
+    for ( var i = 0; i < formInputs.length; i++ ) {
+      var input = formInputs[i]
+      if (input.checked) {
+        var name = input.name.replace('cookies-', '')
+        var value = input.value === "on" ? true : false
+        console.log(name + '  -  ' + value)
+      }
+    }
+
+
   }
 
   CookieSettings.prototype.submitSettingsForm = function (event) {
+
     event.preventDefault()
 
     var formInputs = event.target.getElementsByTagName("input")
-    var options = {}
 
     for ( var i = 0; i < formInputs.length; i++ ) {
       var input = formInputs[i]
       if (input.checked) {
         var name = input.name.replace('cookies-', '')
         var value = input.value === "on" ? true : false
-
-        options[name] = value
+        window.GOVUK.setCookie(name, value)
       }
     }
 
-    window.GOVUK.setConsentCookie(options)
+  //  window.GOVUK.setConsentCookie(options)
 
-    this.fireAnalyticsEvent(options)
-
-    if (!window.GOVUK.cookie("seen_cookie_message")) {
-      window.GOVUK.setCookie("seen_cookie_message", true, { days: 365 })
+    if (!window.GOVUK.cookie("SeenCookieMessage")) {
+      window.GOVUK.setCookie("SeenCookieMessage", true, { days: 365 })
     }
 
     this.showConfirmationMessage()
@@ -66,18 +79,6 @@
     return false
   }
 
-  CookieSettings.prototype.fireAnalyticsEvent = function (consent) {
-    var eventLabel = ""
-
-    for (var option in consent) {
-      var optionValue = consent[option] ? "yes" : "no"
-      eventLabel += option + '-' + optionValue + " "
-    }
-
-    if (GOVUK.analytics && GOVUK.analytics.trackEvent) {
-      GOVUK.analytics.trackEvent("cookieSettings", "Save changes", {label: eventLabel})
-    }
-  }
 
   CookieSettings.prototype.showConfirmationMessage = function () {
     var confirmationMessage = document.querySelector('div[data-cookie-confirmation]')
