@@ -1,6 +1,10 @@
 
   function CookieSettings ($module) {
     this.$module = $module;
+    this.DEFAULT_COOKIE_CONSENT = [
+      'AnalyticsConsent',
+      'MarketingConsent'
+    ]
     this.start()
   }
 
@@ -15,41 +19,24 @@
 
   CookieSettings.prototype.setInitialFormValues = function () {
 
-  /*
-    if (!window.GOVUK.cookie('cookie_policy')) {
-      window.GOVUK.setDefaultConsentCookie()
-    }
+    var cookieNames = this.DEFAULT_COOKIE_CONSENT
 
-    var currentConsentCookie = window.GOVUK.cookie('cookie_policy')
-    var currentConsentCookieJSON = JSON.parse(currentConsentCookie)
+    cookieNames.forEach(function(cookieName) {
 
-    // We don't need the essential value as this cannot be changed by the user
-    delete currentConsentCookieJSON["essential"]
-
-    for (var cookieType in currentConsentCookieJSON) {
+      var currentConsentCookie = window.GOVUK.cookie(cookieName)
       var radioButton
 
-      if (currentConsentCookieJSON[cookieType]) {
-        radioButton = document.querySelector('input[name=cookies-' + cookieType + '][value=on]')
+      console.log(currentConsentCookie)
+
+      if (currentConsentCookie === 'true' || currentConsentCookie === null) {
+        radioButton = document.querySelector('input[name=cookies-' + cookieName + '][value=on]')
       } else {
-        radioButton = document.querySelector('input[name=cookies-' + cookieType + '][value=off]')
+        radioButton = document.querySelector('input[name=cookies-' + cookieName + '][value=off]')
       }
 
       radioButton.checked = true
-    }
 
-   */
-
-    var formInputs = document.getElementsByTagName("input")
-    for ( var i = 0; i < formInputs.length; i++ ) {
-      var input = formInputs[i]
-      if (input.checked) {
-        var name = input.name.replace('cookies-', '')
-        var value = input.value === "on" ? true : false
-        console.log(name + '  -  ' + value)
-      }
-    }
-
+    });
 
   }
 
@@ -64,7 +51,7 @@
       if (input.checked) {
         var name = input.name.replace('cookies-', '')
         var value = input.value === "on" ? true : false
-        window.GOVUK.setCookie(name, value)
+        window.GOVUK.setCookie(name, value, { days: 365 })
       }
     }
 

@@ -27,29 +27,19 @@
       this.$acceptCookiesLink.addEventListener('click', this.$module.setCookieConsent)
     }
 
-    // Force the new cookie banner to show if we don't think the user has seen it before
-    // This involves resetting the seen_cookie_message cookie, which may be set to true if they've seen the old cookie banner
-    if (!window.GOVUK.cookie('cookie_policy')) {
+    if (!window.GOVUK.cookie('SeenCookieMessage')) {
       if (window.GOVUK.cookie('SeenCookieMessage') === true) {
         window.GOVUK.cookie('SeenCookieMessage', false, { days: 365 })
       }
     }
-
     this.showCookieMessage()
   }
 
   CookieBanner.prototype.showCookieMessage = function () {
-    // Show the cookie banner if not in the cookie settings page or in an iframe
     if (!this.isInCookiesPage() && !this.isInIframe()) {
-      var shouldHaveCookieMessage = (this.$module && window.GOVUK.cookie('SeenCookieMessage') !== true)
-
-      if (shouldHaveCookieMessage) {
+      var showCookieBanner = (this.$module && window.GOVUK.cookie('SeenCookieMessage') !== 'true')
+      if (showCookieBanner) {
         this.$module.style.display = 'block'
-
-        // Set the default consent cookie if it isn't already present
-        if (!window.GOVUK.cookie('cookie_policy')) {
-          window.GOVUK.setDefaultConsentCookie()
-        }
       }
     }
   }
@@ -59,19 +49,16 @@
       this.$module.style.display = 'none'
       window.GOVUK.cookie('SeenCookieMessage', true, { days: 365 })
     }
-
     if (event.target) {
       event.preventDefault()
     }
   }
 
   CookieBanner.prototype.setCookieConsent = function () {
-    window.GOVUK.cookie('SeenCookieMessage', true, { days: 365 })
     window.GOVUK.approveAllCookieTypes()
     this.$module.showConfirmationMessage()
     this.$module.cookieBannerConfirmationMessage.focus()
-
-    console.log('321')
+    window.GOVUK.cookie('SeenCookieMessage', true, { days: 365 })
   }
 
   CookieBanner.prototype.showConfirmationMessage = function () {
