@@ -29,24 +29,27 @@
 
 <a href="#main-content" class="govuk-skip-link">Skip to main content</a>
 
-<div id="global-cookie-message" class="das-cookie-banner" data-module="cookie-banner" role="region" aria-label="cookie banner">
-   <div class="das-cookie-banner__wrapper govuk-width-container">
-      <p class="das-cookie-banner__message">The ESFA uses cookies to make the site simpler.</p>
-      <div class="das-cookie-banner__buttons">
-         <div class="das-cookie-banner__button-wrap das-cookie-banner__button-accept">
-            <button class="govuk-button das-button--outline das-cookie-banner__button" type="submit" data-accept-cookies="true">Accept cookies</button>
-         </div>
-         <div class="das-cookie-banner__button-wrap das-cookie-banner__button-settings">
-            <a class="govuk-button das-button--outline das-cookie-banner__button" role="button" href="/help/cookies">Cookie settings</a>
-         </div>
-      </div>
-   </div>
-   <div class="das-cookie-banner__confirmation govuk-width-container" tabindex="-1">
-      <p class="das-cookie-banner__confirmation-message">
-         You've accepted all cookies. You can <a class="govuk-link" href="/help/cookies">change your cookie settings</a> at any time.
-      </p>
-      <button class="das-cookie-banner__hide-button" data-hide-cookie-banner="true">Hide</button>
-   </div>
+<div id="global-cookie-message" class="global-cookie-message--modal" data-module="cookie-banner" role="region" aria-label="cookie banner">
+    <div class="das-cookie-banner">
+       <div class="das-cookie-banner__wrapper govuk-width-container">
+          <h2 class="govuk-heading-l das-cookie-banner__header">Cookies</h2>
+          <p class="das-cookie-banner__message">The ESFA uses cookies to make the site simpler.</p>
+          <div class="das-cookie-banner__buttons">
+             <div class="das-cookie-banner__button-wrap das-cookie-banner__button-accept">
+                <button class="govuk-button das-button--outline das-cookie-banner__button" type="submit" data-accept-cookies="true">Accept cookies</button>
+             </div>
+             <div class="das-cookie-banner__button-wrap das-cookie-banner__button-settings">
+                <a class="govuk-button das-button--outline das-cookie-banner__button" role="button" href="/help/cookies">Cookie settings</a>
+             </div>
+          </div>
+       </div>
+       <div class="das-cookie-banner__confirmation govuk-width-container" tabindex="-1">
+          <p class="das-cookie-banner__confirmation-message">
+             You've accepted all cookies. You can <a class="govuk-link" href="/help/cookies">change your cookie settings</a> at any time.
+          </p>
+          <button class="das-cookie-banner__hide-button" data-hide-cookie-banner="true">Hide</button>
+       </div>
+    </div>
 </div>
 
 <header class="govuk-header das-header--no-border {{ 'das-header--provider-legacy' if showLegacyHeader }}" role="banner" data-module="header">

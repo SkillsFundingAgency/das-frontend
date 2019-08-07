@@ -28,25 +28,23 @@
   }
 }
 
-
-
 .das-button--outline {
-  border-color: govuk-colour('green');
-  color: govuk-colour('green');
+  border-color: $cookie;
+  color: $cookie;
   background-color: #fff;
-  box-shadow: none;
+  box-shadow: 0 2px 0 $cookie;
 
   &,
   &:link,
   &:visited,
   &:active,
   &:hover {
-    color: govuk-colour("green");
+    color: $cookie;
   }
 
   &:hover,
   &:focus {
     background: govuk-colour('grey-4');
-    color: govuk-colour('green');
+    color: $cookie;
   }
 }
