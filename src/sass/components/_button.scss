@@ -27,3 +27,24 @@
     background-color: #e6eff6;
   }
 }
+
+.das-button--outline {
+  border-color: $cookie;
+  color: $cookie;
+  background-color: #fff;
+  box-shadow: 0 2px 0 $cookie;
+
+  &,
+  &:link,
+  &:visited,
+  &:active,
+  &:hover {
+    color: $cookie;
+  }
+
+  &:hover,
+  &:focus {
+    background: govuk-colour('grey-4');
+    color: $cookie;
+  }
+}
