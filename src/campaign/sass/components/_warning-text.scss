@@ -41,3 +41,18 @@
 		padding-left: 60px;
 	}
 }
+
+
+
+.warning-text {
+	background: #f5f5f5;
+	border-left-width: 6px;
+	padding: 15px;
+}
+.warning-text__icon {
+	display: none;
+}
+.warning-text__text {
+	padding-left: 0;
+	font-weight: normal;
+}
