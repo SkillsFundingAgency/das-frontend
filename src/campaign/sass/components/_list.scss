@@ -140,7 +140,12 @@
   padding: 0;
   & > li {
     margin: 10px 0;
-    @include media-query($from: tablet) {
+    display: inline-block;
+    &:first-child {
+      margin-right: 10px;
+    }
+
+    @include media-query($from: 1100px) {
       display: inline-block;
       &:first-child {
         border-right: 1px solid rgba(255, 255, 255, .3);
