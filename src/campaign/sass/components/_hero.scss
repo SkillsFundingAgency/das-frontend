@@ -76,6 +76,8 @@
   @include media-query($from: desktop) {
     position: relative;
     bottom: -100px;
+    max-width: 400px;
+    float: right;
   }
 }
 
