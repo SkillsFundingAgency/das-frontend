@@ -1,122 +1,78 @@
-function CookieBanner($module) {
 
-    this.$dropCookie = true;                      // false disables the Cookie, allowing you to style the banner
-    this.$cookieDuration = 365;                    // Number of days before the cookie expires, and the banner reappears
-    this.$cookieName = 'CookieConsent';        // Name of our cookie
-    this.$cookieValue = 'true';                     // Value of cookie
+  function CookieBanner ($module) {
+    this.$module = $module;
+    this.start()
+  }
 
-    this.$cookieBanner = $module;
-    this.$cookieBannerParent = this.$cookieBanner.parentNode;
-    this.$cookieBannerContinue = document.querySelector(".cookiebanner__button--continue");
-    this.$cookieBannerClose = document.querySelector(".cookiebanner--close");
+  CookieBanner.prototype.start = function () {
 
-    this.$cookieModal = document.getElementById("modal-cookiesettings");
+    this.$module.hideCookieMessage = this.hideCookieMessage.bind(this)
+    this.$module.showConfirmationMessage = this.showConfirmationMessage.bind(this)
+    this.$module.setCookieConsent = this.setCookieConsent.bind(this)
 
-    this.$MarketingcookieName = 'MarketingConsent';        // Name of our cookie
-    this.$MarketingcookieValue = 'false';
-    this.$Marketingcheckbox = document.getElementById('cbxMarketingConsent');
+    this.$module.cookieBanner = document.querySelector('.das-cookie-banner')
+    this.$module.cookieBannerConfirmationMessage = this.$module.querySelector('.das-cookie-banner__confirmation')
 
-    this.$AnalyticscookieName = 'AnalyticsConsent';        // Name of our cookie
-    this.$AnalyticscookieValue = 'true';
-    this.$AnalyticsCheckbox = document.getElementById('cbxAnalyticsConsent');
-}
+    this.setupCookieMessage()
+  }
 
-CookieBanner.prototype.init = function () {
-
-    //if cookies dont exist, create them.
-    if (this.checkCookie(this.$MarketingcookieName) == null) {
-        this.createCookie(this.$MarketingcookieName, this.$MarketingcookieValue, this.$cookieDuration); // Create the cookie
-    }
-    if (this.checkCookie(this.$AnalyticscookieName) == null) {
-        this.createCookie(this.$AnalyticscookieName, this.$AnalyticscookieValue, this.$cookieDuration); // Create the cookie
+  CookieBanner.prototype.setupCookieMessage = function () {
+    this.$hideLink = this.$module.querySelector('button[data-hide-cookie-banner]')
+    if (this.$hideLink) {
+      this.$hideLink.addEventListener('click', this.$module.hideCookieMessage)
     }
 
-    //hide cookie notice if already been displayed
-    if (this.checkCookie(this.$cookieName) == this.$cookieValue) {
-        this.removeBanner();
-        this.removeModal();
-    } else {
-        this.showBanner();
-
-        this.$cookieBannerContinue.addEventListener('click', this.removeBannerEvent.bind(this, true));
-        this.$cookieBannerClose.addEventListener('click', this.removeBannerEvent.bind(this, false));
+    this.$acceptCookiesLink = this.$module.querySelector('button[data-accept-cookies]')
+    if (this.$acceptCookiesLink) {
+      this.$acceptCookiesLink.addEventListener('click', this.$module.setCookieConsent)
     }
 
-    //if cookie setting check boxes are present, make sure they have correct value
-    if (this.$Marketingcheckbox != null && this.$AnalyticsCheckbox != null) {
-        this.$Marketingcheckbox.checked = (this.checkCookie(this.$MarketingcookieName) === "true");
-        this.$AnalyticsCheckbox.checked = (this.checkCookie(this.$AnalyticscookieName) === "true");
+    if (!window.GOVUK.cookie('SeenCookieMessage')) {
+      if (window.GOVUK.cookie('SeenCookieMessage') === true) {
+        window.GOVUK.cookie('SeenCookieMessage', false, { days: 365 })
+      }
     }
-}
+    this.showCookieMessage()
+  }
 
-CookieBanner.prototype.removeBannerEvent = function (enableAll, event) {
-
-    this.createCookie(this.$cookieName, this.$cookieValue, this.$cookieDuration); // Create the cookie
-
-    //if clicked continue, make sure all cookies are enabled
-    if (enableAll) {
-        this.createCookie(this.$MarketingcookieName, 'true', this.$cookieDuration);
-        this.createCookie(this.$AnalyticscookieName, 'true', this.$cookieDuration);
-        this.removeModal();
+  CookieBanner.prototype.showCookieMessage = function () {
+    if (!this.isInCookiesPage() && !this.isInIframe()) {
+      var showCookieBanner = (this.$module && window.GOVUK.cookie('SeenCookieMessage') !== 'true')
+      if (showCookieBanner) {
+        this.$module.style.display = 'block'
+      }
     }
+  }
 
-    this.removeBanner();
-}
-
-CookieBanner.prototype.showBanner = function () {
-    if (this.$cookieBanner !== null) {
-        var bannerClass = this.$cookieBanner.getAttribute('class').replace(' visually-hidden', '');
-        this.$cookieBanner.setAttribute('class', bannerClass);
+  CookieBanner.prototype.hideCookieMessage = function (event) {
+    if (this.$module) {
+      this.$module.style.display = 'none'
+      window.GOVUK.cookie('SeenCookieMessage', true, { days: 365 })
     }
-}
-CookieBanner.prototype.setChecked = function (elem, cookie) {
-    var value = elem.checked ? "true" : "false";
-    this.createCookie(cookie, value, this.$cookieDuration);
-}
-
-CookieBanner.prototype.createCookie = function (name, value, days) {
-    if (days) {
-        var date = new Date();
-        date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-        var expires = "; expires=" + date.toGMTString();
+    if (event.target) {
+      event.preventDefault()
     }
-    else var expires = "";
-    if (this.$dropCookie) {
-        document.cookie = name + "=" + value + expires + "; path=/";
-    }
-}
+  }
 
-CookieBanner.prototype.checkCookie = function (name) {
-    var nameEQ = name + "=";
-    var ca = document.cookie.split(';');
-    for (var i = 0; i < ca.length; i++) {
-        var c = ca[i];
-        while (c.charAt(0) == ' ') c = c.substring(1, c.length);
-        if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
-    }
-    return null;
-}
+  CookieBanner.prototype.setCookieConsent = function () {
+    window.GOVUK.approveAllCookieTypes()
+    this.$module.showConfirmationMessage()
+    this.$module.cookieBannerConfirmationMessage.focus()
+    window.GOVUK.cookie('SeenCookieMessage', true, { days: 365 })
+  }
 
-CookieBanner.prototype.eraseCookie = function (name) {
-    this.createCookie(name, "", -1);
-}
+  CookieBanner.prototype.showConfirmationMessage = function () {
+    this.$cookieBannerMainContent = document.querySelector('.das-cookie-banner__wrapper')
+    this.$cookieBannerMainContent.style.display = 'none'
+    this.$module.cookieBannerConfirmationMessage.style.display = 'block'
+  }
 
-CookieBanner.prototype.removeBanner = function () {
-    if (this.$cookieBanner !== null)
-        this.$cookieBannerParent.removeChild(this.$cookieBanner);
+  CookieBanner.prototype.isInCookiesPage = function () {
+    return window.location.pathname === '/help/cookies'
+  }
 
+  CookieBanner.prototype.isInIframe = function () {
+    return window.parent && window.location !== window.parent.location
+  }
 
-    if (this.$Marketingcheckbox != null) {
-        this.$Marketingcheckbox.addEventListener('click', this.setChecked.bind(this, this.$Marketingcheckbox, this.$MarketingcookieName));
-    }
-    if (this.$AnalyticsCheckbox) {
-        this.$AnalyticsCheckbox.addEventListener('click', this.setChecked.bind(this, this.$AnalyticsCheckbox, this.$AnalyticscookieName));
-    }
-}
-
-CookieBanner.prototype.removeModal = function () {
-    if (this.$cookieModal !== null)
-        this.$cookieBannerParent.removeChild(this.$cookieModal);
-}
-
-export default CookieBanner
+  export default CookieBanner
