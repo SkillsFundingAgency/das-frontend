@@ -45,6 +45,16 @@
   }
 }
 
+.hero-heading__heading-m {
+  font-size: 30px;
+  @include media-query($from: tablet) {
+    font-size: 40px;
+  }
+  @include media-query($from: desktop) {
+    font-size: 50px;
+  }
+}
+
 .hero-heading__content {
   color: #fff;
   padding-top: 1px;

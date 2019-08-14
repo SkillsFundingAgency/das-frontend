@@ -133,3 +133,39 @@
   margin-bottom: 10px;
 }
 
+.list-numbers {
+  @include font($size: 24, $weight: light);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  & > li {
+    margin: 10px 0;
+    display: inline-block;
+    &:first-child {
+      margin-right: 10px;
+    }
+
+    @include media-query($from: 1100px) {
+      display: inline-block;
+      &:first-child {
+        border-right: 1px solid rgba(255, 255, 255, .3);
+        margin-right: 20px;
+        padding-right: 25px;
+      }
+    }
+  }
+}
+
+.list-numbers__number {
+  display: inline-block;
+  background: $employer;
+  color: $black;
+  border-radius: 50%;
+  text-align: center;
+  width: 2em;
+  height: 2em;
+  font-weight: bold;
+  line-height: 2em;
+  font-size: 18px;
+  margin-right: 5px;
+}
