@@ -1,13 +1,13 @@
-
-.basket__item-header {
+.das-basket__item-header {
   position: relative;
   padding-bottom: 15px;
   @include media-query($from: tablet) {
-    padding-bottom: 20px;
+    padding-bottom: 30px;
   }
 }
 
-.basket__item-heading {
+.das-basket__item-heading {
+  @include font($size: 19, $weight: bold);
   margin: 0 60px 0 0;
   font-size: 20px;
   @include media-query($from: tablet) {
@@ -21,8 +21,8 @@
   }
 }
 
-.basket__item-delete {
-  background: url(../images/icon-delete-outlined.svg);
+.das-basket__item-delete {
+  background-image: url(../images/icon-delete-outlined.svg);
   background-size: 50%;
   background-position: center;
   background-repeat: no-repeat;
@@ -37,7 +37,7 @@
   border-radius: 50%;
 }
 
-.basket__form {
+.das-basket__form {
   background: #eee;
   padding: 15px;
   margin: 20px 0 0;
@@ -57,52 +57,50 @@
   }
 }
 
-.basket__form-label {
+.das-basket__form-label {
+  @include font($size: 16, $weight: bold);
   text-transform: uppercase;
   color: $black;
   font-weight: bold;
   margin-bottom: 10px;
-  font-size: 14px;
   display: block;
-  @include media-query($from: tablet) {
-    font-size: 16px;
-  }
 }
 
-.basket__form-input,
-.das-form-group-inline>.input.basket__form-input {
+.das-basket__form-input,
+.das-form-group-inline > .input.basket__form-input {
   border: 1px solid rgba(0, 0, 0, .25);
 }
 
-.button.basket__form-button {
+.button.das-basket__form-button {
   background: $black;
   color: #fff;
   padding-left: 20px;
   padding-right: 20px;
-
   &:hover {
-    background: $black;
+    background: #000;
     color: #fff;
   }
-
   &:focus {
-    background: $black;
+    background: #000;
     color: #fff;
   }
 }
 
-.basket .warning-text {
+.das-basket .warning-text {
   margin-top: 0;
 }
 
-.basket__provider-heading {
+.das-basket__provider-heading {
   margin-top: 15px;
   margin-bottom: 5px;
   line-height: 1;
-  vertical-align: baseline;
+  vertical-align: middle;
+  @include media-query($from: tablet) {
+    margin-top: 0;
+  }
 }
 
-.basket__provider-list {
+.das-basket__provider-list {
   list-style: none;
   padding: 0;
   margin: 0;
@@ -111,17 +109,16 @@
     border-bottom: 1px solid rgba(0, 0, 0, .1);
     position: relative;
     font-size: 19px;
+    margin: 0;
     &:last-child {
       border-bottom: none;
     }
   }
 }
 
-.basket__provider-delete {
+.das-basket__provider-delete {
   display: block;
-  background: url("../images/icon-delete.svg");
-  background-size: cover;
-  background: url("../images/icon-delete-outlined.svg");
+  background-image: url("../images/icon-delete-outlined.svg");
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;

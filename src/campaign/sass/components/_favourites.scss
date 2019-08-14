@@ -2,5 +2,7 @@
   display: inline-block;
   width: 1em;
   height: 1em;
-  background: url('../images/icon-star-filled-yellow.svg');
+  background-image: url('../images/icon-star-filled-yellow.svg');
+  background-repeat: no-repeat;
+  background-position: center center;
 }
