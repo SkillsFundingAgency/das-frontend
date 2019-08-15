@@ -48,6 +48,15 @@ var appInit = function () {
       }
     });
   }
+
+  var selectChangeForm = document.querySelectorAll('.js-select-change-submit');
+  for (var selectForm of selectChangeForm) {
+    var select = selectForm.querySelector('select');
+    select.addEventListener('change', function () {
+      selectForm.submit();
+    })
+  }
+
 }
 
 window.addEventListener('keydown', function(e){
