@@ -172,7 +172,10 @@ $offset: 2;
   &:focus {
     background-color: darken($button-employer-colour, 5%);
   }
-
+  .sidebar-panel--employer & {
+    color: #fff;
+    background: #000;
+  }
 }
 
 .button-inverted
