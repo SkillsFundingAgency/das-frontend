@@ -57,6 +57,14 @@
   clear: both;
 }
 
+.das-search-results__header-sort-by .button {
+  background: #000;
+  color: #fff;
+  .js-enabled & {
+    display: none;
+  }
+}
+
 .das-search-result .heading-s,
 .das-search-result .heading-m,
 .das-search-result .heading-l,
