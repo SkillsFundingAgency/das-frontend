@@ -188,9 +188,6 @@ $hero-text-colour: #fff;
   
   .hero-banner--employer & {
     background: $employer;
-    &:focus {
-      outline: #c00;
-    }
   }
   .hero-banner--right-aligned & {
     float: right;
