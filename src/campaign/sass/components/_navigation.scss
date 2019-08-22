@@ -16,6 +16,9 @@
   color: #fff;
   display: block;
   text-decoration: none;
+  &:focus {
+    @include focus-outline
+  }
   .navigation__toggle-icon {
     @extend %nav-icon-lines;
     top: 23px;
@@ -89,6 +92,7 @@
   letter-spacing: 0.03rem;
   right: -100%;
   transition: all 0.2s ease;
+  display: none;
   @include media-query($from: $nav-breakpoint) {
     right: 0;
     position: static;
@@ -99,9 +103,11 @@
     border: none;
     overflow: visible;
     transition: none;
+    display: block;
   }
   .js-menu-open & {
     right: 0;
+    display: block;
   }
 }
 
