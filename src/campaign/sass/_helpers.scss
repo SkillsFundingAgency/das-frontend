@@ -147,6 +147,10 @@
   }
 }
 
+@mixin focus-outline { outline: 3px solid $focus-colour; outline-offset: 0; }
+@mixin focus-background { outline: 3px solid $focus-colour; outline-offset: 0; background-color: $focus-colour; color: #000; }
+@mixin focus-border { border: 3px solid $focus-colour }
+
 @function spacing($spacing-point) {
 
   $actual-input-type: type-of($spacing-point);
