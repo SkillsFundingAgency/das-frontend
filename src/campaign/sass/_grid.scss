@@ -3,6 +3,7 @@ $grid-widths: (
     one-quarter: 25%,
     one-third: 33.3333%,
     one-half: 50%,
+    two-fifths: 40%,
     two-thirds: 66.6666%,
     three-quarters: 75%,
     four-fifths: 80%,
@@ -57,6 +58,7 @@ $grid-widths: (
 @include grid-column(one-quarter);
 @include grid-column(one-third);
 @include grid-column(one-half);
+@include grid-column(two-fifths);
 @include grid-column(two-thirds);
 @include grid-column(three-quarters);
 @include grid-column(four-fifths);
@@ -75,6 +77,13 @@ $grid-widths: (
   @include clearfix;
   @include media-query($from: tablet) {
     display: flex;
+  }
+}
+
+.grid-row--align-bottom {
+  @include media-query($from: tablet) {
+    display: flex;
+    align-items: flex-end;
   }
 }
 
