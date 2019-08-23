@@ -48,12 +48,18 @@
   @include media-query($from: wide) {
     display: inline-block;
   }
+  &:focus {
+    @include focus-outline
+  }
 }
 
 .cookiebanner__text p {
   font-size: 18px;
   & > a {
     color: $apprentice;
+    &:focus {
+      @include focus-outline
+    }
   }
 }
 
@@ -61,6 +67,9 @@
   @include media-query($from: tablet) {
     display: flex;
     align-items: center;
+  }
+  &:focus {
+    @include focus-outline
   }
 }
 

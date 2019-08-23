@@ -20,6 +20,9 @@
 		margin-left: 0;
 		margin-top: 60px;
 	}
+	&:focus {
+		@include focus-outline
+	}
 }
 
 .toggleContainer label:after{
