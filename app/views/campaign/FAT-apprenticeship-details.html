@@ -233,40 +233,49 @@
                 <div class="grid-column-full">
                     <section class="cta-fat">
                         <div class="cta-fat__content">
-                            <h2 class="heading-l u-!-margin-top-0 u-!-margin-bottom-0">FIND A TRAINING PROVIDER</h2>
-                            <p class="u-!-margin-top-0">Use the postcode for where the apprentice will work, are you a levy paying employer or a non-levy employer?</p>
+                            <h2 class="heading-l u-!-margin-top-0">FIND A TRAINING PROVIDER</h2>
+                            
                         </div>
-                        
+            
                         <div class="cta-fat__action">
                             <form action="/TrainingProvider/Search">
-                                <div class="form-group">
-                                    <input class="input input__postcode input__postcode--auto-width" type="search" placeholder="Enter Postcode..." data-val="true" data-val-regex="You must enter a valid postcode" data-val-regex-pattern="\b((?:(?:girGIR)|(?:[a-pr-uwyzA-PR-UWYZ])(?:(?:[0-9](?:[a-hjkpstuwA-HJKPSTUW]|[0-9])?)|(?:[a-hk-yA-HK-Y][0-9](?:[0-9]|[abehmnprv-yABEHMNPRV-Y])?)))) ?([0-9][abd-hjlnp-uw-zABD-HJLNP-UW-Z]{2})\b" data-val-required="The Postcode field is required." id="Postcode" name="Postcode" value="">
-                                    <span class="error-message field-validation-valid" data-valmsg-for="Postcode" data-valmsg-replace="true"></span>
-                                </div>
-                        
-                                <div class="form-group">
-                                    <div class="radios radios--inline"> 
-                                        <div class="radios__item">
-                                            <input class="input radios__input" type="radio" value="true" id="LevyPayerYes" data-val="true" data-val-required="The IsLevyPayer field is required." name="IsLevyPayer">
-                                            <label class="label radios__label" for="LevyPayerYes">Yes, I pay the levy</label>
-                                        </div>
-                                        <div class="radios__item">
-                                            <input class="input radios__input" type="radio" value="false" id="LevyPayerNo" checked="checked" name="IsLevyPayer">
-                                            <label class="label radios__label" for="LevyPayerNo">No, I don't pay the levy</label>
+                                <div class="grid-row grid-row--align-bottom">
+                                    <div class="grid-column-two-fifths">
+                                        <div class="form-group">
+                                                <p class="u-!-margin-top-0">Please enter the postcode for where the apprentice will work</p>
+                                            <input class="input input__postcode" type="search" placeholder="Enter Postcode..." data-val="true" data-val-regex="You must enter a valid postcode" data-val-regex-pattern="\b((?:(?:girGIR)|(?:[a-pr-uwyzA-PR-UWYZ])(?:(?:[0-9](?:[a-hjkpstuwA-HJKPSTUW]|[0-9])?)|(?:[a-hk-yA-HK-Y][0-9](?:[0-9]|[abehmnprv-yABEHMNPRV-Y])?)))) ?([0-9][abd-hjlnp-uw-zABD-HJLNP-UW-Z]{2})\b" data-val-required="The Postcode field is required." id="Postcode" name="Postcode" value="">
+                                            <span class="error-message field-validation-valid" data-valmsg-for="Postcode" data-valmsg-replace="true"></span>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="form-group">
-                                    <input type="hidden" data-val="true" data-val-required="The ApprenticeshipId field is required." id="ApprenticeshipId" name="ApprenticeshipId" value="157" />
-                                    <input type="hidden" id="Keywords" name="Keywords" value="" />
-                                    <button class="button button--sparks button-employer" type="submit">Search</button>
+                                    <div class="grid-column-two-fifths">
+                                        <div class="form-group">
+                                                <p class="u-!-margin-top-0">As an employer, is your pay bill more than £3 million per year? </p>
+                                            <div class="radios radios--inline"> 
+                                                <div class="radios__item">
+                                                    <input class="input radios__input" type="radio" value="true" id="LevyPayerYes" data-val="true" data-val-required="The IsLevyPayer field is required." name="IsLevyPayer">
+                                                    <label class="label radios__label" for="LevyPayerYes">Yes</label>
+                                                </div>
+                                                <div class="radios__item">
+                                                    <input class="input radios__input" type="radio" value="false" id="LevyPayerNo" checked="checked" name="IsLevyPayer">
+                                                    <label class="label radios__label" for="LevyPayerNo">No</label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="grid-column-one-fifth">
+                                        <div class="form-group">
+                                            <input type="hidden" data-val="true" data-val-required="The ApprenticeshipId field is required." id="ApprenticeshipId" name="ApprenticeshipId" value="157" />
+                                            <input type="hidden" id="Keywords" name="Keywords" value="" />
+                                            <button class="button button--sparks button-employer" type="submit">Search</button>
+                                        </div>
+                                 
+                                    </div>
                                 </div>
                             </form>
                         </div>
                         
 
                     </section>
-                </form>
                     
                 </div>
             </div>
