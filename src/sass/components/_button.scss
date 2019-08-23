@@ -48,3 +48,13 @@
     color: $cookie;
   }
 }
+
+.das-link--button-aligned {
+  display:inline-block;
+  padding:10px 15px 5px 10px;
+  font-size: 1.1875rem;
+  font-weight: 400;
+  line-height: 1.25;
+  margin-top: 0;
+  margin-bottom: 15px
+}
