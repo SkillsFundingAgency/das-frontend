@@ -6,8 +6,8 @@ import CookieSettings from './components/cookieSettings/_cookieSettings'
 import VideoPlayer from './components/video-player/videoplayer'
 import SmoothScroll from './components/smoothScroll/_smoothScroll'
 import GoogleMaps from './components/googleMaps/_googleMaps'
-import SearchResults from './components/SearchResults/_searchResults'
 import NetworkInformation from './components/networkInformation/_networkInformation'
+import AlertBanner from './components/AlertBanner/_alertBanner'
 
 function nodeListForEach(nodes, callback) {
   if (window.NodeList.prototype.forEach) {
@@ -28,6 +28,12 @@ function initAll() {
     nodeListForEach($navs, function ($navs) {
       new Navigation($navs).init();
     });
+
+    // Devolved alert Banner on Campaign
+    var $alertBanner = document.querySelector('[data-module="alertBanner"]');
+    if ($alertBanner != null) {
+      new AlertBanner($alertBanner).init();
+    }
 
     // Cookie Banner on Campaign
     var $cookieBannerCampaign = document.querySelector('[data-module="cookieBanner"]');
@@ -59,7 +65,7 @@ function initAll() {
 
     var $videoPlayer = document.querySelectorAll('[data-module="videoPlayer"]')
     nodeListForEach($videoPlayer, function ($videoPlayer) {
-     new VideoPlayer($videoPlayer, $gtmDataLayer).init();
+      new VideoPlayer($videoPlayer, $gtmDataLayer).init();
     });
 
     new NetworkInformation($gtmDataLayer).init();
@@ -92,6 +98,7 @@ function initMaps() {
 export {
   initAll,
   initMaps,
+  AlertBanner,
   Accordion,
   Navigation,
   CookieBanner,
