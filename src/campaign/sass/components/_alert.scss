@@ -5,6 +5,8 @@
 
 .alert__inner-wrap {
   padding: 15px $gutter-half;
+  max-width: $page-width - $gutter-double - $gutter-double;
+  margin: 0 auto;
   @include media-query($from: tablet) {
     padding: 15px $gutter;
   }
@@ -20,10 +22,6 @@
     font-size: 19px;
     padding-top: 5px;
   }
-}
-
-.alert__actions {
-
 }
 
 .alert__button,
@@ -56,6 +54,7 @@
   @include media-query($from: tablet) {
     float: right;
     text-align: right;
+    clear: both;
   }
 }
 
