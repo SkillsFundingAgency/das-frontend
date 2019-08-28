@@ -1,0 +1,95 @@
+{% extends "campaign/template.html" %}s
+
+{% block hero %}
+
+                        <div class="grid-row">
+                             <div class="grid-column-two-thirds">
+                                  <div class="hero-heading no-bottom-margin">
+                                       <h1 class="heading-xl hero-heading__heading">WHERE ARE YOU BASED?</h1>
+                                  </div>
+                                  <div class="text-wrapper">
+                                       <p class="lead-paragraph">
+                                            Whether you’re based in <strong>Scotland</strong>, <strong>Northern Ireland</strong> or <strong>Wales</strong>, there’s plenty of information for you to delve into.
+                                       </p>
+                                       <p>
+                                            If you’re a budding apprentice, you’ll discover a range of local apprenticeships to help you build the experience
+                                            and skills employers are looking for - no matter what stage you’re at.
+                                       </p>
+                                       <p>
+                                            For employers, there’s plenty of information about the benefits of hiring an apprentice and how you can get involved.
+                                            Choose from the options below to get started.
+                                       </p>
+                                  </div>
+                             </div>
+                        </div>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="grid-row card__collection card__collection--countries">
+
+    <div class="grid-column-one-third">
+        <a class="card" href="https://www.apprenticeships.scot" target="_blank" rel="external">
+            <div class="card__image">
+                <span class="card__img card__img--scotland"></span>
+            </div>
+            <div class="card__content">
+                <h2 class="card__headline card__headline--ribbon">Scotland</h2>
+                 <p class="card__summary">
+                      No matter what stage you're at, Scottish Apprenticeships help you get set for a bright future. And now,
+                      there are more ways than ever to get involved:
+                 </p>
+                 <ul class="card__summary list list--bullet">
+                      <li><strong>Foundation Apprenticeships</strong> to kick start your career while you’re still at school</li>
+                      <li><strong>Modern Apprenticeships</strong> to work, learn and earn while you get the skills you need</li>
+                      <li><strong>Graduate apprenticeships</strong> to get a job, get paid and get a degree at the same time</li>
+                 </ul>
+
+                <p class="card__link">Explore apprenticeships in Scotland</p>
+            </div>
+        </a>
+    </div>
+    <div class="grid-column-one-third">
+        <a class="card" href="https://www.nidirect.gov.uk/apprenticeships" target="_blank" rel="external">
+            <div class="card__image">
+                <span class="card__img card__img--ni"></span>
+            </div>
+            <div class="card__content">
+                <h2 class="card__headline card__headline--ribbon">Northern Ireland</h2>
+                 <p class="card__summary">
+                      In Northern Ireland, apprenticeships are looked after by the <strong>Department for the Economy</strong>.
+                      They provide apprentices with the training and qualifications they need to get ahead in their chosen career.
+                      There's a great range available:
+                 </p>
+                 <ul class="card__summary list list--bullet">
+                      <li><strong>Level 2 and Level 3 Apprenticeships</strong> to work towards an industry-approved
+                           apprenticeship framework, while in paid employment.</li>
+                      <li><strong>Higher Level Apprenticeships</strong> to gain a qualification from Level 4 to Level 7, while working with an employer to gain on-the-job experience.</li>
+                 </ul>
+                <p class="card__link">Explore apprenticeships in Northern Ireland</p>
+            </div>
+        </a>
+    </div>
+    <div class="grid-column-one-third">
+        <a class="card" href="https://gov.wales/apprenticeships-skills-and-training" target="_blank" rel="external">
+            <div class="card__image">
+                <span class="card__img card__img--wales"></span>
+            </div>
+            <div class="card__content">
+                <h2 class="card__headline card__headline--ribbon">Wales</h2>
+                 <p class="card__summary">
+                      If you are over 16, living in Wales and not in full-time education you can apply for an apprenticeship. These include:
+                 </p>
+                  <ul class="card__summary list list--bullet">
+                      <li><strong>Foundation Apprenticeship</strong></li>
+                      <li><strong>Apprenticeship</strong></li>
+                      <li><strong>Higher Apprenticeship</strong></li>
+                 </ul>
+                <p class="card__link">Explore apprenticeships in Wales</p>
+            </div>
+        </a>
+    </div>
+</div>
+
+{% endblock %}
