@@ -15,10 +15,12 @@ function CookieBannerCampaign($module) {
     this.$MarketingcookieName = 'MarketingConsent';        // Name of our cookie
     this.$MarketingcookieValue = 'false';
     this.$Marketingcheckbox = document.getElementById('cbxMarketingConsent');
+    this.$MarketingcheckboxLabel = document.getElementById('lblMarketingConsent');
 
     this.$AnalyticscookieName = 'AnalyticsConsent';        // Name of our cookie
     this.$AnalyticscookieValue = 'true';
     this.$AnalyticsCheckbox = document.getElementById('cbxAnalyticsConsent');
+    this.$AnalyticsCheckboxLabel = document.getElementById('lblAnalyticsConsent');
 }
 
 CookieBannerCampaign.prototype.init = function () {
@@ -37,7 +39,6 @@ CookieBannerCampaign.prototype.init = function () {
         this.removeModal();
     } else {
         this.showBanner();
-
         this.$cookieBannerContinue.addEventListener('click', this.removeBannerEvent.bind(this, true));
         this.$cookieBannerClose.addEventListener('click', this.removeBannerEvent.bind(this, false));
     }
@@ -67,6 +68,8 @@ CookieBannerCampaign.prototype.showBanner = function () {
     if (this.$cookieBanner !== null) {
         var bannerClass = this.$cookieBanner.getAttribute('class').replace(' visually-hidden', '');
         this.$cookieBanner.setAttribute('class', bannerClass);
+        this.$cookieBanner.firstElementChild.setAttribute('tabindex', 0);
+        this.$cookieBanner.firstElementChild.focus()
     }
 }
 
@@ -106,12 +109,23 @@ CookieBannerCampaign.prototype.removeBanner = function () {
     if (this.$cookieBanner !== null)
         this.$cookieBannerParent.removeChild(this.$cookieBanner);
 
+    var that = this;
 
     if (this.$Marketingcheckbox != null) {
         this.$Marketingcheckbox.addEventListener('click', this.setChecked.bind(this, this.$Marketingcheckbox, this.$MarketingcookieName));
+        this.$MarketingcheckboxLabel.addEventListener('keypress', function (event) {
+            if (event.which === 13) {
+                that.$Marketingcheckbox.click()
+            }
+        });
     }
     if (this.$AnalyticsCheckbox) {
         this.$AnalyticsCheckbox.addEventListener('click', this.setChecked.bind(this, this.$AnalyticsCheckbox, this.$AnalyticscookieName));
+        this.$AnalyticsCheckboxLabel.addEventListener('keypress', function (event) {
+            if (event.which === 13) {
+                that.$AnalyticsCheckbox.click()
+            }
+        });
     }
 }
 

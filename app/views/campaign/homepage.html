@@ -89,6 +89,33 @@
 
     <div class="wrap">
 
+    <div class="modal" id="modal-register-thanks" aria-hidden="true" tabindex="0">
+
+        <div class="modal-dialog">
+
+
+
+    <span class="caption-s">Register interest</span>
+    <h2 class="heading-l heading--success"><span class="heading__icon heading__icon--tick"></span> Success</h2>
+    <p>Keep an eye on your inbox for all details of future updates to the site.</p>
+    <a role="button" class="button button--with-icon button--success" href="#" id="btn-register-interest-success">
+        <img src="/campaign/images/icon-cross-white.svg" class="button__icon button__icon--close" alt="" />
+        <span class="button__text">Close</span>
+    </a>
+
+            <div class="modal-header">
+                <a href="#" class="close" tabindex="0">
+                    <svg width="32" height="32" viewBox="0 0 32 32" class="">
+                        <rect class="modal--icon-close" x="1.58691" y="0.0893555" width="16.0371" height="2.16583" transform="rotate(45 1.58691 0.0893555)"></rect>
+                        <rect class="modal--icon-close" x="0.0966797" y="11.34" width="16.0371" height="2.16583" transform="rotate(-45 0.0966797 11.34)"></rect>
+                    </svg>
+                    <span class="vh">Close</span>
+                </a>
+            </div>
+
+        </div>
+    </div>
+
         <header class="header" data-module="navigation">
     <div class="header__logo">
         <a href="/"><img src="/campaign/images/apprenticeships-logo.png" alt="Apprenticeships Logo" class="header__logo-image" /></a>
@@ -254,6 +281,9 @@
 </header>
 
         <main id="main-content">
+
+
+
     <h1 class="homepage-title">Fire <span>it up</span></h1>
     <section class="launcher__wrap">
         <div class="grid-row-full-width">
@@ -268,7 +298,7 @@
                                 Find out what you need to do to become an apprentice, what
                                 careers are available and which employers are offering them.
                             </p>
-                            <p class="launcher__link">Become an apprentice</p>
+                            <p class="launcher__link"><span>Become an apprentice</span></p>
 
                         </div>
                         <span class="launcher__bg"></span>
@@ -286,7 +316,7 @@
                                 Employing an apprentice is easier than you think and
                                 there's financial help and support available from the government.
                             </p>
-                            <p class="launcher__link">Hire an apprentice</p>
+                            <p class="launcher__link"><span>Hire an apprentice</span></p>
 
                         </div>
                         <span class="launcher__bg"></span>
@@ -296,59 +326,83 @@
         </div>
     </section>
     <div class="grid-row hero-banner hero-banner--apprentice hero-banner--right-aligned">
-        <div class="grid-column-full">
-            <h2 class="hero-banner__caption">
-                <span class="hero-banner__caption-icon"></span>
-                <span class="hero-banner__caption-text">Real apprentice stories</span>
-            </h2>
-            <div class="grid-row hero-banner__content">
-                <div class="grid-column-one-half  hero-banner__icon-play-container">
+            <div class="grid-column-full">
+                <h2 class="hero-banner__caption">
+                    <span class="hero-banner__caption-icon"></span>
+                    <span class="hero-banner__caption-text">Real apprentice stories</span>
+                </h2>
+                <div class="grid-row hero-banner__content">
+                    <script type="application/ld+json">
+                        {
+                        "@context": "http://schema.org",
+                        "@type": "VideoObject",
+                        "name": "Hosanna - Royal Opera House Apprentice",
+                        "description": "Hosanna tells her apprenticeship story as part of the new Fire It Up apprenticeship campaign.",
+                        "thumbnailUrl": "https://i.ytimg.com/vi/frWp3wP4IDo/hqdefault.jpg",
+                        "uploadDate": "2019-01-17T09:17:39.000Z",
+                        "duration": "PT58S",
+                        "contentUrl": "https://www.youtube.com/embed/frWp3wP4IDo"
+                        }
+                    </script>
+                    <div class="grid-column-one-half  hero-banner__icon-play-container">
+                        <a class="hero-banner__icon-play" href="https://youtu.be/frWp3wP4IDo" id="play-1"  data-module="videoPlayer" data-playerclass="video-player--apprentice" data-videoplayerid="plyr-1" data-videourl="https://www.youtube.com/embed/frWp3wP4IDo?origin=https://www.apprenticeships.gov.uk&amp;iv_load_policy=3&amp;modestbranding=1&amp;playsinline=1&amp;showinfo=0&amp;rel=0&amp;enablejsapi=1"></a>
+                    </div>
+                    <div class="grid-column-one-half hero-banner__content-main">
+                        <p class="hero-banner__header">Get the confidence, grab the career.</p>
+                        <p class="hero-banner__copy">
+                            "I found the confidence I needed to take the apprenticeship,
+                            because I knew theatre is what I loved and where I wanted to be."
+                        </p>
+                        <div class="hero-banner__cite">Hosanna <span class="hero-banner__cite-detail">18, Royal Opera House Apprentice, London</span></div>
+                        <a class="hero-banner__link" href="/real-stories/apprentice">View more apprentice stories</a>
+                    </div>
+                </div>
+                <span class="hero-banner__background hero-banner__background--apprentice-hosanna"></span>
+            </div>
+        </div>
+        <div class="grid-row hero-banner hero-banner--employer cssmask-remove">
+            <div class="grid-column-full">
+                <h2 class="hero-banner__caption">
+                    <span class="hero-banner__caption-icon"></span>
+                    <span class="hero-banner__caption-text">Real employer stories</span>
+                </h2>
+                <div class="grid-row hero-banner__content">
+                    <script type="application/ld+json">
+                        {
+                        "@context": "http://schema.org",
+                        "@type": "VideoObject",
+                        "name": "NHS Cromer Hospital Norfolk - Apprentice Employer",
+                        "description": "Annie from the NHS explains how apprentices have been a success for Cromer Hospital as part of the new FireItUp apprenticeships campaign.",
+                        "thumbnailUrl": "https://i.ytimg.com/vi/jAoi3oE8klw/hqdefault.jpg",
+                        "uploadDate": "2019-01-17T09:17:46.000Z",
+                        "duration": "PT1M3S",
+                        "contentUrl": "https://www.youtube.com/embed/jAoi3oE8klw"
+                        }
+                    </script>
+                    <div class="grid-column-one-half  hero-banner__icon-play-container">
+                        <a class="hero-banner__icon-play" href="http://youtu.be/jAoi3oE8klw" id="play-2" data-module="videoPlayer" aria-label="Play the ‘Get the Confidence, Grab the Career’ video" data-playerclass="video-player--employer" data-videoplayerid="plyr-2" data-videourl="https://www.youtube.com/embed/jAoi3oE8klw?origin=https://www.apprenticeships.gov.uk&amp;iv_load_policy=3&amp;modestbranding=1&amp;playsinline=1&amp;showinfo=0&amp;rel=0&amp;enablejsapi=1">
 
-                    <a class="hero-banner__icon-play" href="http://youtu.be/frWp3wP4IDo" id="play-1" data-module="videoPlayer" data-playerclass="video-player--apprentice" data-videoplayerid="plyr-1" data-videourl="https://www.youtube.com/embed/frWp3wP4IDo?origin=https://www.apprenticeships.gov.uk&amp;iv_load_policy=3&amp;modestbranding=1&amp;playsinline=1&amp;showinfo=0&amp;rel=0&amp;enablejsapi=1"></a>
-                   
+</a>
+                    </div>
+                    <div class="grid-column-one-half hero-banner__content-main">
+                        <p class="hero-banner__header">A real win-win for businesses, large and small.</p>
+                        <p class="hero-banner__copy">
+                            "The business, the organisation, and our managers here know the value that someone
+                            who has gone through an apprenticeship brings."
+                        </p>
+                        <p class="hero-banner__cite">
+                            Annie Cook
+                            <span class="hero-banner__cite-detail">
+                                NHS Career Development Coordinator, Norfolk
+                            </span>
+                        </p>
+                        <a class="hero-banner__link" href="/real-stories/employer">View more employer stories</a>
+                    </div>
                 </div>
-                <div class="grid-column-one-half hero-banner__content-main">
-                    <p class="hero-banner__header">Get the confidence, grab the career.</p>
-                    <p class="hero-banner__copy">
-                        "I found the confidence I needed to take the apprenticeship,
-                        because I knew theatre is what I loved and where I wanted to be."
-                    </p>
-                    <div class="hero-banner__cite">Hosanna <span class="hero-banner__cite-detail">18, Royal Opera House Apprentice, London</span></div>
-                    <a class="hero-banner__link" href="/real-stories/apprentice">View more apprentice stories</a>
-                </div>
+                <span class="hero-banner__background hero-banner__background--employer-annie"></span>
             </div>
-            <span class="hero-banner__background hero-banner__background--apprentice-hosanna"></span>
         </div>
-    </div>
-    <div class="grid-row hero-banner hero-banner--employer cssmask-remove">
-        <div class="grid-column-full">
-            <h2 class="hero-banner__caption">
-                <span class="hero-banner__caption-icon"></span>
-                <span class="hero-banner__caption-text">Real employer stories</span>
-            </h2>
-            <div class="grid-row hero-banner__content">
-                <div class="grid-column-one-half  hero-banner__icon-play-container">
-                    <a class="hero-banner__icon-play" href="#player-2" id="play-2" data-module="videoPlayer" data-playerclass="video-player--employer" data-videoplayerid="plyr-2" data-videourl="https://www.youtube.com/embed/jAoi3oE8klw?origin=https://www.apprenticeships.gov.uk&amp;iv_load_policy=3&amp;modestbranding=1&amp;playsinline=1&amp;showinfo=0&amp;rel=0&amp;enablejsapi=1"></a>
-                </div>
-                <div class="grid-column-one-half hero-banner__content-main">
-                    <p class="hero-banner__header">A real win-win for businesses, large and small.</p>
-                    <p class="hero-banner__copy">
-                        "The business, the organisation, and our managers here know the value that someone
-                        who has gone through an apprenticeship brings."
-                    </p>
-                    <p class="hero-banner__cite">
-                        Annie Cook
-                        <span class="hero-banner__cite-detail">
-                            NHS Career Development Coordinator, Norfolk
-                        </span>
-                    </p>
-                    <a class="hero-banner__link" href="/real-stories/employer">View more employer stories</a>
-                </div>
-            </div>
-            <span class="hero-banner__background hero-banner__background--employer-annie"></span>
-        </div>
-    </div>
-</main>
+    </main>
 
 
         <footer class="footer">
@@ -612,39 +666,16 @@
 </div>
 
 
-<div class="modal" id="modal-register-thanks" aria-hidden="true">
-
-    <div class="modal-dialog">
-        <div class="modal-header">
-            <a href="#" class="close">
-                <svg width="32" height="32" viewBox="0 0 32 32" class="">
-                    <rect class="modal--icon-close" x="1.58691" y="0.0893555" width="16.0371" height="2.16583" transform="rotate(45 1.58691 0.0893555)"></rect>
-                    <rect class="modal--icon-close" x="0.0966797" y="11.34" width="16.0371" height="2.16583" transform="rotate(-45 0.0966797 11.34)"></rect>
-                </svg>
-                <span class="vh">Close</span>
-            </a>
-        </div>
 
 
-<span class="caption-s">Register interest</span>
-<h2 class="heading-l heading--success"><span class="heading__icon heading__icon--tick"></span> Success</h2>
-<p>Keep an eye on your inbox for all details of future updates to the site.</p>
-<a role="button" class="button button--with-icon button--success" href="#" id="btn-register-interest-success">
-    <img src="/campaign/images/icon-cross-white.svg" class="button__icon button__icon--close" alt="" />
-    <span class="button__text">Close</span>
-</a>
-
-    </div>
-</div>
-
-    <div class="cookiebanner visually-hidden"  data-module="cookieBanner">
+    <div class="cookiebanner cookiebanner--variant-1 visually-hidden"  data-module="cookieBanner">
     <div class="grid-row cookiebanner__content">
         <div class="grid-column-two-thirds cookiebanner__text">
             <h4 class="cookiebanner__heading">Cookies on this site</h4>
             <p>Please read : Our website is set to allow cookies. We use cookies to improve your website experience, the products and services we offer and to make sure our digital marketing is personalised to you. See the cookies we use on our website by visiting our <a href="/cookies">cookie policy</a>. </p>
         </div>
         <div class="grid-column-one-third cookiebanner_actions">
-            <a role="button" class="button button--with-icon button-apprentice cookiebanner__button cookiebanner__button--continue" id="link-cookie-accept">
+            <a role="button" class="button button--with-icon button-apprentice cookiebanner__button cookiebanner__button--continue" id="link-cookie-accept" tabindex="0" href="#">
                 <img src="/campaign/images/icon-circle-tick.svg" class="button__icon" alt="" />
                 <span class="button__text">Continue</span>
                 <span class="vh"> and accept the cookie settings</span>
@@ -658,15 +689,7 @@
 <div class="modal" id="modal-cookiesettings" aria-hidden="true">
 
     <div class="modal-dialog">
-        <div class="modal-header">
-            <a href="#" class="close">
-                <svg width="32" height="32" viewBox="0 0 32 32" class="">
-                    <rect class="modal--icon-close" x="1.58691" y="0.0893555" width="16.0371" height="2.16583" transform="rotate(45 1.58691 0.0893555)"></rect>
-                    <rect class="modal--icon-close" x="0.0966797" y="11.34" width="16.0371" height="2.16583" transform="rotate(-45 0.0966797 11.34)"></rect>
-                </svg>
-                <span class="vh">Close</span>
-            </a>
-        </div>
+
 
 
 <span class="caption-s">Cookie settings</span>
@@ -701,7 +724,7 @@
         </div>
         <div class="grid-column-one-quarter">
             <input type="checkbox" name="cbxMarketingConsent" id="cbxMarketingConsent" checked>
-            <label for="cbxMarketingConsent" data-on="ON" data-off="OFF"><span class="vh">Marketing cookies</span></label>
+            <label for="cbxMarketingConsent" data-on="ON" data-off="OFF" tabindex="0" id="lblMarketingConsent"><span class="vh">Marketing cookies</span></label>
         </div>
     </div>
 </div>
@@ -714,11 +737,19 @@
         </div>
         <div class="grid-column-one-quarter">
             <input type="checkbox" name="cbxAnalyticsConsent" id="cbxAnalyticsConsent" checked>
-            <label for="cbxAnalyticsConsent" data-on="ON" data-off="OFF"><span class="vh">Analytics cookies</span></label>
+            <label for="cbxAnalyticsConsent" data-on="ON" data-off="OFF" tabindex="0" id="lblAnalyticsConsent"><span class="vh">Analytics cookies</span></label>
         </div>
     </div>
 </div>
-
+<div class="modal-header">
+            <a href="#" class="close" tabindex="0">
+                <svg width="32" height="32" viewBox="0 0 32 32" class="">
+                    <rect class="modal--icon-close" x="1.58691" y="0.0893555" width="16.0371" height="2.16583" transform="rotate(45 1.58691 0.0893555)"></rect>
+                    <rect class="modal--icon-close" x="0.0966797" y="11.34" width="16.0371" height="2.16583" transform="rotate(-45 0.0966797 11.34)"></rect>
+                </svg>
+                <span class="vh">Close</span>
+            </a>
+        </div>
     </div>
 </div>
 

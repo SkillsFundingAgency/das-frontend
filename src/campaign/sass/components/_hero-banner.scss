@@ -137,6 +137,9 @@ $hero-text-colour: #fff;
   &:hover{
     color: darken($color: $hero-text-colour, $amount: 15%);
   }
+  &:focus {
+    @include focus-outline
+  }
 }
 
 .hero-banner__icon-play-container {
@@ -211,6 +214,15 @@ $hero-text-colour: #fff;
     -webkit-box-shadow: 0px 0px 31px 9px rgba(255,255,255,.3);
     -moz-box-shadow: 0px 0px 31px 9px rgba(255,255,255,.3);
     box-shadow: 0px 0px 31px 9px rgba(255,255,255,.3);
+  }
+  &:focus {
+    @include focus-border;
+    outline: none;
+  }
+  .hero-banner--employer & {
+    &:focus {
+      border-color: #fff;
+    }
   }
 }
 
