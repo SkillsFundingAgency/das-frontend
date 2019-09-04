@@ -129,6 +129,9 @@ $hero-text-colour: #fff;
   .hero-banner--employer & {
     color: $employer;
   }
+  .hero-banner--parent & {
+    color: $parent;
+  }
 }
 
 .hero-banner__link {
@@ -186,6 +189,11 @@ $hero-text-colour: #fff;
   .hero-banner--employer & {
     background: $employer;
   }
+
+  .hero-banner--parent & {
+    background: $parent;
+  }
+
   .hero-banner--right-aligned & {
     float: right;
     @include mq ($from: tablet) {

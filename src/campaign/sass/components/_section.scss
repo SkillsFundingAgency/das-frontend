@@ -1,9 +1,8 @@
-
 .section--slant {
   position: relative;
   margin-top: 50px;
   &:before {
-    content: '';
+    content: "";
     position: absolute;
     left: 0;
     right: 0;
@@ -35,14 +34,38 @@
   }
 }
 
+.section--slant-after:after {
+  content: "";
+  position: relative;
+  left: -20px;
+  right: 0;
+  bottom: -22px;
+  border-style: solid;
+  border-width: 0px 0px 32px 740px;
+  border-color: $parent transparent transparent;
+  z-index: 10;
+
+  @include media-query($from: tablet) {
+    left: -60px;
+    border-width: 50px 0px 0px 1440px;
+    bottom: -109px;
+  }
+}
+
+.section--slant.section--parent {
+  &:before {
+    border-color: #fff #fff $parent;
+  }
+}
+
 .section--grey {
-   background: $grey-6;
+  background: $grey-6;
 }
 
 .section--apprentice {
   background: $apprentice;
   color: #fff;
-  & .heading-l{
+  & .heading-l {
     color: #fff;
   }
 }
@@ -60,21 +83,29 @@
   background: $employer;
 }
 
-.section__faa-logo-header-inline{
+.section--parent {
+  background: $parent;
+  // color: #fff;
+  // & .heading-l{
+  //   color: #fff;
+  // }
+}
+
+.section__faa-logo-header-inline {
   height: 35px;
 }
 
-.section__faa_img{
+.section__faa_img {
   width: 100%;
 }
 
-.section__faa-actions{
+.section__faa-actions {
   margin: 40px 0 30px;
   @include media-query($from: tablet) {
     margin-bottom: 0;
   }
   display: flex;
-   & a {
-     margin: 0 auto;
-   }
+  & a {
+    margin: 0 auto;
+  }
 }
