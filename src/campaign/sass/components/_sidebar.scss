@@ -95,6 +95,15 @@
       border-bottom-color: $employer-mid;
     }
   }
+  .sidebar--parent & {
+    background: $parent;
+    &:before {
+      border-bottom-color: $parent;
+    }
+    &:after {
+      border-bottom-color: $parent-mid;
+    }
+  }
 }
 
 .sidebar__sub-content {
@@ -120,7 +129,7 @@
   }
 }
 
-.sidebar--employer .sidebar__sub-content:after {
+.sidebar--employer .sidebar__sub-content:after, .sidebar--parent .sidebar__sub-content:after {
   border-bottom-color: #fff;
 }
 
