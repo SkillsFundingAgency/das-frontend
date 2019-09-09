@@ -114,6 +114,9 @@
     margin-top: 120px;
     padding-bottom: 60px;
   }
+  .sidebar--parent & {
+    margin-top: 45px;
+  }
   &:after {
       border-color: transparent transparent #fff;
   }

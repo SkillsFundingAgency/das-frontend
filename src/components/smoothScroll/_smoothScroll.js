@@ -34,7 +34,7 @@ SmoothScroll.prototype.smoothScroll = function(destination, duration, easing, ca
       const timeFunction = easings[easing](time);
       window.scroll(0, Math.ceil((timeFunction * (destinationOffsetToScroll - start)) + start));
   
-      if (window.pageYOffset === destinationOffsetToScroll) {
+      if (Math.round(window.pageYOffset) === destinationOffsetToScroll) {
         if (callback) {
           callback();
         }
