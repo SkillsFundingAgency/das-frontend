@@ -80,6 +80,12 @@ $offset: 2;
 
     background: transparent;
   }
+
+  .sidebar--employer &,
+  .sidebar-panel--employer &,
+  .cta-panel--employer & {
+    outline-color: $black;
+  }
 }
 
 .button--with-icon {
@@ -175,6 +181,7 @@ $offset: 2;
   .sidebar-panel--employer & {
     color: #fff;
     background: #000;
+    outline-color: #fff;
   }
 }
 
@@ -194,6 +201,12 @@ $offset: 2;
   &:hover,
   &:focus {
     background-color: lighten($button-text-colour, 10%);
+  }
+
+  .sidebar--employer &,
+  .sidebar-panel--employer &,
+  .cta-panel--employer & {
+    outline-color: #fff;
   }
 
 }
