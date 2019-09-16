@@ -91,7 +91,6 @@
   overflow: auto;
   letter-spacing: 0.03rem;
   right: -100%;
-  transition: all 0.2s ease;
   display: none;
   @include media-query($from: $nav-breakpoint) {
     right: 0;
@@ -102,7 +101,6 @@
     background: none;
     border: none;
     overflow: visible;
-    transition: none;
     display: block;
   }
   .js-menu-open & {
