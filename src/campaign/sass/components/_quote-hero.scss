@@ -42,4 +42,7 @@
 .quote-hero__cite-source {
   display: block;
   color: $black;
+  .quote-hero--parent & {
+    color: $parent-light;
+  }
 }
