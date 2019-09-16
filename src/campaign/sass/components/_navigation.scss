@@ -242,15 +242,6 @@
   }
 }
 
-.navigation__list-item:first-child .navigation__link--top-level {
-  @include media-query($from: $nav-breakpoint) {
-    padding-left: 80px;
-  }
-  @include media-query($from: $nav-breakpoint-desktop) {
-    padding-left: 120px;
-  }
-}
-
 .navigation__list-item:hover .navigation__link--top-level {
   @include media-query($from: $nav-breakpoint) {
     color: $black;
