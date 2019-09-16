@@ -1,6 +1,9 @@
 .alert {
   background:  $teal;
   color: #fff;
+  .js-menu-open & {
+    display: none;
+  }
 }
 
 .alert__inner-wrap {
