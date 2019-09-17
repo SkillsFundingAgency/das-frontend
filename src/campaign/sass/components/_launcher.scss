@@ -34,6 +34,12 @@
 
 .launcher__link-wrap {
   text-decoration: none;
+  display: block;
+  &:focus {
+    .launcher__link span {
+      @include focus-outline
+    }
+  }
 }
 
 .launcher__content > a {

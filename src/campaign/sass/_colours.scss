@@ -9,6 +9,9 @@ $apprentice-mid:    #d1e6fb;
 $apprentice-light:  #d7e9fc;
 $apprentice-pale:   #f5faff;
 
+$parent:            #4C2C92;
+$parent-mid:        #4C2C92;
+
 $grey-1:        #212121;
 $grey-2:        #212121;
 $grey-3:        #646c6f;
@@ -18,10 +21,13 @@ $grey-6:        #E2E2E2;
 $grey-7:        #F8F8F8;
 $grey-8:        #999;
 
+$teal:          #218379;
+$teal-dark:     #175a53;
 $black:         #0B0C0C;
-$green:         #28A197;
+$green:         $teal;
 
-$text-colour:     #6F777B;
+
+$text-colour:     $grey-5;
 $heading-colour:  $black;
 $border-colour:   #dee0e2;
 

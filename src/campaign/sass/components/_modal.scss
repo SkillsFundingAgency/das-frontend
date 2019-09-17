@@ -19,7 +19,8 @@ $blue-dark: darken($blue, 5%);
           transition: transform $transition;
 }
 
-.modal{
+.modal {
+  display: none;
   &:before{
     content: ""; 
     display: none;
@@ -33,6 +34,7 @@ $blue-dark: darken($blue, 5%);
   }
   
   &:target {
+    display: block;
     &:before {
       display: block;
     }  
@@ -91,8 +93,11 @@ $blue-dark: darken($blue, 5%);
   right: 20px;
   a.close {
     display: block;
-    height: 30px;
-    width: 30px;
+    height: 32px;
+    width: 32px;
+    &:focus {
+      @include focus-outline
+    }
   }
 }
 

@@ -22,6 +22,10 @@
   color: $employer;
 }
 
+.hero-heading__caption--parent {
+  color: $parent;
+}
+
 .hero-heading__heading {
   color: #fff;
   margin: 0;
@@ -42,6 +46,16 @@
   }
   .hero-banner & {
     margin-top: 100px;
+  }
+}
+
+.hero-heading__heading-m {
+  font-size: 30px;
+  @include media-query($from: tablet) {
+    font-size: 40px;
+  }
+  @include media-query($from: desktop) {
+    font-size: 50px;
   }
 }
 

@@ -95,6 +95,15 @@
       border-bottom-color: $employer-mid;
     }
   }
+  .sidebar--parent & {
+    background: $parent;
+    &:before {
+      border-bottom-color: $parent;
+    }
+    &:after {
+      border-bottom-color: $parent-mid;
+    }
+  }
 }
 
 .sidebar__sub-content {
@@ -104,6 +113,9 @@
   @include media-query($from: tablet) {
     margin-top: 120px;
     padding-bottom: 60px;
+  }
+  .sidebar--parent & {
+    margin-top: 45px;
   }
   &:after {
       border-color: transparent transparent #fff;
@@ -120,7 +132,7 @@
   }
 }
 
-.sidebar--employer .sidebar__sub-content:after {
+.sidebar--employer .sidebar__sub-content:after, .sidebar--parent .sidebar__sub-content:after {
   border-bottom-color: #fff;
 }
 

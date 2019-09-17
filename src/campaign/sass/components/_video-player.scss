@@ -110,6 +110,13 @@
       outline: 3px solid #fff;
     }
   }
+  .video-player--employer & {
+    background-color: $parent;
+    &:active,
+    &:focus {
+      outline: 3px solid #fff;
+    }
+  }
 }
 
 .video-player__close {
@@ -140,6 +147,9 @@
   .video-player--employer & {
     color: $employer;
   }
+  .video-player--parent & {
+    color: $parent;
+  }
 }
 
 .plyr--video .plyr__control.plyr__tab-focus,
@@ -148,5 +158,8 @@
   background: $apprentice;
   .video-player--employer & {
     background: $employer;
+  }
+  .video-player--parent & {
+    color: $parent;
   }
 }

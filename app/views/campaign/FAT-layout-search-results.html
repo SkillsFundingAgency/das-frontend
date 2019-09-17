@@ -3,7 +3,7 @@
 
 {% block hero %}
 
-<div class="hero">
+
     <div class="grid-row">
         <div class="grid-column-one-half">
             <div class="hero-heading">
@@ -24,13 +24,13 @@
              </a>
         </div>
     </div>
-</div>
+
 
 {% endblock %}
 
 {% block content %}
 
-<div class="main-content">
+
     <div class="grid-row">
         <div class="grid-column-two-thirds">
 
@@ -38,18 +38,22 @@
 
                     <div class="das-search-results__header das-search-results__header--employer">
                         <p class="body das-search-results__header-results-header-text">There are <strong class="bold das-search-results__header-results-total--employer">36</strong> apprenticeships.</p>
-                        <form>
 
-                            <label class="label visually-hidden" for="sort">
-                                    Sort the search results by
-                            </label>
-                            <select id="sort" class="select das-search-results__header-sort-by" data-val="true">
-                                    <option value="">-- Sort by --</option>
-                                    <option value="Best match">Best match</option>
-                                    <option value="Level (high to low)">Level (high to low)</option>
-                                    <option value="Level (low to high)">Level (low to high)</option>
-                            </select>
-                        </form>
+
+                        <form asp-controller="Fat" asp-action="Search" id="fat-search-result-sort" class="js-select-change-submit das-search-results__header-sort-by">
+                                <input type="hidden" name="Keywords" asp-for="Keywords" />
+                                <input type="hidden" name="page" asp-for="Page" />
+
+
+                                <label asp-for="SortOrder" class="visually-hidden">Sort by</label>
+                                <select name="SortOrder" asp-for="SortOrder" class="select ">
+                                    <option  value="1">Best match</option>
+                                    <option selected="" value="2">Level (high to low)</option>
+                                    <option value="3">Level (low to high)</option>
+                                </select>
+                                <button type="submit" value="Sort" class="button">Sort</button>
+                            </form>
+
                     </div>
             </div>
         </div>
@@ -107,6 +111,6 @@
             </div>
         </div>
     </div>
-</div>
+
 
 {% endblock %}

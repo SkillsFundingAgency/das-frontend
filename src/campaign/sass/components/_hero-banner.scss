@@ -129,6 +129,9 @@ $hero-text-colour: #fff;
   .hero-banner--employer & {
     color: $employer;
   }
+  .hero-banner--parent & {
+    color: $parent;
+  }
 }
 
 .hero-banner__link {
@@ -136,6 +139,9 @@ $hero-text-colour: #fff;
   font-size: 18px;
   &:hover{
     color: darken($color: $hero-text-colour, $amount: 15%);
+  }
+  &:focus {
+    @include focus-outline
   }
 }
 
@@ -186,6 +192,11 @@ $hero-text-colour: #fff;
   .hero-banner--employer & {
     background: $employer;
   }
+
+  .hero-banner--parent & {
+    background: $parent;
+  }
+
   .hero-banner--right-aligned & {
     float: right;
     @include mq ($from: tablet) {
@@ -211,6 +222,15 @@ $hero-text-colour: #fff;
     -webkit-box-shadow: 0px 0px 31px 9px rgba(255,255,255,.3);
     -moz-box-shadow: 0px 0px 31px 9px rgba(255,255,255,.3);
     box-shadow: 0px 0px 31px 9px rgba(255,255,255,.3);
+  }
+  &:focus {
+    @include focus-border;
+    outline: none;
+  }
+  .hero-banner--employer & {
+    &:focus {
+      border-color: #fff;
+    }
   }
 }
 
@@ -312,7 +332,34 @@ background-image: linear-gradient(255deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%),
     -ms-filter: "FlipH";
   }
 }
-
+.hero-banner__background--apprentice-ekansh{
+  background-image: linear-gradient(255deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%), url("../images/apprentice/ekansh-hero-1.jpg");
+  @include mq($until: desktop) {
+    background-position: 35% 0%;
+  }
+  .hero-banner--right-aligned & {
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    filter: FlipH;
+    -ms-filter: "FlipH";
+  }
+}
+.hero-banner__background--apprentice-ekansh{
+  background-image: linear-gradient(255deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%), url("../images/employer/omar-hero-1.jpg");
+  @include mq($until: desktop) {
+    background-position: 35% 0%;
+  }
+  .hero-banner--right-aligned & {
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    filter: FlipH;
+    -ms-filter: "FlipH";
+  }
+}
 .hero-banner__background--employer-gail{
   background-image: linear-gradient(225deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%), url("../images/employer/gail-hero-1.jpg");
   .hero-banner--right-aligned & {

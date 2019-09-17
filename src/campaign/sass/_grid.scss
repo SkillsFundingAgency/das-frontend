@@ -3,6 +3,7 @@ $grid-widths: (
     one-quarter: 25%,
     one-third: 33.3333%,
     one-half: 50%,
+    two-fifths: 40%,
     two-thirds: 66.6666%,
     three-quarters: 75%,
     four-fifths: 80%,
@@ -38,43 +39,28 @@ $grid-widths: (
   }
 }
 
-@mixin grid-column-from-desktop($width: full, $float: left, $at: desktop, $class: "grid-column") {
-  .#{$class}-#{$width}-from-desktop {
-    box-sizing: border-box;
-    @if $at != desktop {
-      width: 100%;
-    }
-    padding: 0 $gutter-half;
-    @include media-query($from: $at) {
-      width: grid-width($width);
-      float: $float;
-    }
-  }
-}
-
 @include grid-row;
 @include grid-column(one-fifth);
 @include grid-column(one-quarter);
 @include grid-column(one-third);
 @include grid-column(one-half);
+@include grid-column(two-fifths);
 @include grid-column(two-thirds);
 @include grid-column(three-quarters);
 @include grid-column(four-fifths);
 @include grid-column();
 
-@include grid-column-from-desktop(one-fifth);
-@include grid-column-from-desktop(one-quarter);
-@include grid-column-from-desktop(one-third);
-@include grid-column-from-desktop(one-half);
-@include grid-column-from-desktop(two-thirds);
-@include grid-column-from-desktop(three-quarters);
-@include grid-column-from-desktop(four-fifths);
-@include grid-column-from-desktop();
-
 .grid-row-full-width {
   @include clearfix;
   @include media-query($from: tablet) {
     display: flex;
+  }
+}
+
+.grid-row--align-bottom {
+  @include media-query($from: tablet) {
+    display: flex;
+    align-items: flex-end;
   }
 }
 

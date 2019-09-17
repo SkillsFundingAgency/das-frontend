@@ -11,6 +11,9 @@
   position: relative;
   display: block;
   height: 100%;
+  &:focus {
+    @include focusable
+  }
 }
 
 .card__image {
@@ -61,6 +64,11 @@
 .card__img--sales-marketing-procurement { background-image: url("../images/industries/industry-card-sales-marketing-procurement.jpg") }
 .card__img--transport-logistics { background-image: url("../images/industries/industry-card-transport-logistics.jpg") }
 
+.card__img--scotland { background-image: url("../images/screenshot-scot.jpg") }
+.card__img--wales { background-image: url("../images/screenshot-wales.jpg") }
+.card__img--ni { background-image: url("../images/screenshot-ni.jpg") }
+
+
 .card__content {
   padding: 20px 20px 70px;
   @include media-query($from: tablet) {
@@ -95,5 +103,83 @@
     .card--employer & {
       background: $employer;
     }
+  }
+}
+
+
+.card__collection--countries {
+  .card {
+    box-shadow: 0px 0px 5px 0px rgba(0,0,0,0.2);
+    transition: all .2s ease;
+    margin-bottom: 40px;
+    &:hover {
+      transform: scale(1.05);
+      .card__img {
+        -webkit-transform: none;
+        -moz-transform: none;
+        -ms-transform: none;
+        -o-transform: none;
+        transform: none;
+      }
+    }
+  }
+  .card__img {
+    background-position: top left;
+  }
+  .card__image {
+    border-bottom: 1px solid #ddd;
+  }
+  .card__headline {
+    position: absolute;
+    top: 1.5em;
+    left: -1em;
+  }
+  .card__summary {
+    font-size: 19px;
+    &.list > li {
+      font-size: 19px;
+    }
+  }
+  .card__link {
+    left: 40px;
+    right: 40px;
+    &:before {
+      background: $teal;
+    }
+  }
+}
+
+.card__headline--ribbon {
+  @include typography-common;
+  background: $teal;
+  color: #fff;
+  text-transform: uppercase;
+  margin: 0;
+  font-size: 19px;
+  line-height: 1;
+  padding: .5em 1em .5em .5em;
+  &:before {
+    content: "";
+    left: 0;
+    bottom: -1em;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 1em 1em 0;
+    border-color: transparent $teal-dark transparent transparent;
+    display: block;
+    position: absolute;
+  }
+  &:after {
+    content: "";
+    right: -1.5em;
+    top: 0;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 2em 1.5em 0 0;
+    border-color: $teal transparent transparent transparent;
+    display: block;
+    position: absolute;
   }
 }
