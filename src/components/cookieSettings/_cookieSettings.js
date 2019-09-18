@@ -26,8 +26,6 @@
       var currentConsentCookie = window.GOVUK.cookie(cookieName)
       var radioButton
 
-      console.log(currentConsentCookie)
-
       if (currentConsentCookie === 'true' || currentConsentCookie === null) {
         radioButton = document.querySelector('input[name=cookies-' + cookieName + '][value=on]')
       } else {

@@ -5,7 +5,7 @@
 <head><link rel="preconnect" href="" />
     <link rel="preconnect" href="https://use.typekit.net">
     <link rel="preconnect" href="https://www.googletagmanager.com">
-    
+
     <!-- Google Tag Manager -->
     <script>
         (function (w, d, s, l, i) {
@@ -23,7 +23,8 @@
                 'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
             f.parentNode.insertBefore(j, f);
         })(window, document, 'script', 'dataLayer', 'GTM-M4VJPRW');
-    </script>
+
+/**/</script>
     <!-- End Google Tag Manager -->
 
     <meta charset="utf-8" />
@@ -58,7 +59,7 @@
     var appInsights=window.appInsights||function(a){
         function b(a){c[a]=function(){var b=arguments;c.queue.push(function(){c[a].apply(c,b)})}}var c={config:a},d=document,e=window;setTimeout(function(){var b=d.createElement("script");b.src=a.url||"https://az416426.vo.msecnd.net/scripts/a/ai.0.js",d.getElementsByTagName("script")[0].parentNode.appendChild(b)});try{c.cookie=d.cookie}catch(a){}c.queue=[];for(var f=["Event","Exception","Metric","PageView","Trace","Dependency"];f.length;)b("track"+f.pop());if(b("setAuthenticatedUserContext"),b("clearAuthenticatedUserContext"),b("startTrackEvent"),b("stopTrackEvent"),b("startTrackPage"),b("stopTrackPage"),b("flush"),!a.disableExceptionTracking){f="onerror",b("_"+f);var g=e[f];e[f]=function(a,b,d,e,h){var i=g&&g(a,b,d,e,h);return!0!==i&&c["_"+f](a,b,d,e,h),i}}return c
     }({
-        instrumentationKey: 'e1daaf95-bfd2-4d0b-af65-ba23cc39bc54'
+        instrumentationKey: '9b18d9d0-0548-4842-83e0-86454414a8a5'
     });
 
     window.appInsights=appInsights,appInsights.queue&&0===appInsights.queue.length&&appInsights.trackPageView();
@@ -68,7 +69,7 @@
 
 
 
-<body class="page-template" id="employer-find-an-apprenticeship-searchResults">
+<body class="page-template" id="employer-find-an-apprenticeship-search-results">
 
     <!-- Google Tag Manager (noscript) -->
     <noscript>
@@ -82,6 +83,30 @@
     </script>
 
     <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Alert -->
+<section class="alert visually-hidden" data-module="alertBanner" >
+
+    <div class="alert__inner-wrap">
+        <div class="grid-row">
+            <div class="grid-column-two-thirds">
+                <p class="alert__content">
+                    If you're interested in apprenticeships in
+                    <a href="https://www.apprenticeships.scot/" rel="external" target="_blank" class="alert__link--external">Scotland</a>,
+                    <a href="https://www.nidirect.gov.uk/apprenticeships" rel="external" target="_blank" class="alert__link--external">Northern Ireland</a> or
+                    <a href="https://gov.wales/apprenticeships-skills-and-training" rel="external" target="_blank" class="alert__link--external">Wales</a>,
+                    there's plenty of information that's tailored to you.
+                </p>
+            </div>
+            <div class="grid-column-one-third alert__actions">
+                <a class="button alert__button" id="alert-countries-options" aria-label="View details of other apprenticeship websites in the UK" href="/countries">View options</a>
+                <a class="alert__link" href="#" id="alert-countries-stay">No, I'm happy to stay on this website</a>
+            </div>
+        </div>
+    </div>
+
+</section>
+<!-- End Alert -->
 
     <div class="wrap">
 
@@ -197,7 +222,7 @@
                         </li>
                         <li>
                             <a class="navigation__link" id="link-nav-emp-find-apprenticeship-training" href="/employer/find-apprenticeship-training">
-                                Find the right apprenticeship for your business
+                                Find the right apprenticeship
                             </a>
                         </li>
                     </ul>
@@ -243,7 +268,11 @@
                     </ol>
                 </div>
             </div>
-
+        </li>
+        <li class="navigation__list-item">
+            <a class="navigation__link--top-level navigation__link--top-level--parent" id="link-nav-parents" href="/parents/their-career">
+                Parents
+            </a>
         </li>
         
         <li class="navigation__list-item">
@@ -251,6 +280,7 @@
             Interests
         </a>
         </li>
+
         <li class="navigation__list-item navigation__list-item--with-button">
             <a class="button button--sparks button--shadow " id="btn-register-interest-header" href="/register-interest">Register Interest</a>
         </li>
@@ -262,7 +292,8 @@
 <main id="main-content">
 
 
-    <div class="hero" data-module="smoothScroll">
+    
+<div class="hero" data-module="smoothScroll">
     <div class="grid-row">
         <div class="grid-column-one-half">
             <div class="hero-heading">
@@ -270,268 +301,608 @@
                 <h1 class="heading-xl hero-heading__heading">Search results</h1>
             </div>
 
-
             
-<form action="/employer/find-apprenticeships" method="post">
-    <div class="form-group das-form-group-inline">
-        <input class="input" type="search" placeholder="Apprenticeship keyword..." id="Keywords" name="Keywords" value="steel">
-        <div class="das-form-group-inline__button-wrap">
-            <button class="button button--sparks button-employer" type="submit">Search</button>
-        </div>
-    </div>
-<input name="__RequestVerificationToken" type="hidden" value="CfDJ8JgAHtm-5slIrxUSNSY8aYAtvpaFyt_7lN6Us52j8xub-Fb3OTK75R5x8J2lvjfq2hzPl-7p0rQFQuHjqcgtwiR-xG6DS_aB6AUJqlTL0EjRcpr5rnroTqUESzPgPaJpWKQxEyEUKqpzGUT6D3Dusbc" /></form>
+
+            <a href="https://www.gov.uk/" id="header-link-govuk" target="_blank" class="hero-heading__hm-government-link">
+                <img alt="HM Government" class="hero-heading__hm-government-logo" src="/campaign/images/hm-government-logo.png" srcset="/campaign/images/hm-government-logo.png 1x, /campaign/images/hm-government-logo@2x.png 2x" />
+            </a>
+
         </div>
     </div>
 </div>
 
     <div class="main-content">
         <div class="grid-row">
-            <div class="grid-column-full">
-                <div class="page page--full-width">
+            <div class="grid-column-two-thirds">
+                <div class="page">
                     
 
-    <p class="das-search-results__summary">There are <span class="das-search-results__summary-count" id="fat-search-result-count">10</span> apprenticeships matching your search for <span class="das-search-results__summary-keyword" id="fat-search-result-keyword">steel </span>.</p>
+    <div class="das-search-results__header">
+        <p class="das-search-results__header-results-header-text">All apprenticeships</p>
+        
 
-<ol class="list list--employer list--number das-search-results__list das-search-results__list--employer">
+    <form id="fat-search-result-sort" method="get" class="js-select-change-submit das-search-results__header-sort-by" action="/employer/find-apprenticeships">
+        <input type="hidden" name="Keywords" id="SearchQuery_Keywords" value="" />
+            <input type="hidden" name="SelectedLevels" value="2" />
+            <input type="hidden" name="SelectedLevels" value="3" />
+            <input type="hidden" name="SelectedLevels" value="4" />
+            <input type="hidden" name="SelectedLevels" value="5" />
+            <input type="hidden" name="SelectedLevels" value="6" />
+            <input type="hidden" name="SelectedLevels" value="7" />
+            <input type="hidden" name="SelectedLevels" value="8" />
 
+        <label class="visually-hidden" for="SearchQuery_SortOrder">Sort by</label>
+        <select name="SortOrder" class="select" data-val="true" data-val-required="The SortOrder field is required." id="SearchQuery_SortOrder">
+            <option value="1">Best match</option>
+            <option value="2">Level (high to low)</option>
+            <option value="3">Level (low to high)</option>
+        </select>
+        <button type="submit" value="Sort" class="button button--sparks button-employer">Sort</button>
+    </form>
 
-<li id="171" class="das-search-results__list-item">
+    </div>
+            <input type="hidden" data-val="true" data-val-required="The Int32 field is required." id="SearchQuery_SelectedLevels_0_" name="SearchQuery.SelectedLevels[0]" value="2" />
+            <input type="hidden" data-val="true" data-val-required="The Int32 field is required." id="SearchQuery_SelectedLevels_1_" name="SearchQuery.SelectedLevels[1]" value="3" />
+            <input type="hidden" data-val="true" data-val-required="The Int32 field is required." id="SearchQuery_SelectedLevels_2_" name="SearchQuery.SelectedLevels[2]" value="4" />
+            <input type="hidden" data-val="true" data-val-required="The Int32 field is required." id="SearchQuery_SelectedLevels_3_" name="SearchQuery.SelectedLevels[3]" value="5" />
+            <input type="hidden" data-val="true" data-val-required="The Int32 field is required." id="SearchQuery_SelectedLevels_4_" name="SearchQuery.SelectedLevels[4]" value="6" />
+            <input type="hidden" data-val="true" data-val-required="The Int32 field is required." id="SearchQuery_SelectedLevels_5_" name="SearchQuery.SelectedLevels[5]" value="7" />
+            <input type="hidden" data-val="true" data-val-required="The Int32 field is required." id="SearchQuery_SelectedLevels_6_" name="SearchQuery.SelectedLevels[6]" value="8" />
+        <ol class="list list--employer list--number das-search-results__list das-search-results__list--employer das-search-results">
+
+                
+
+<li id="447-2-1" class="das-search-results__list-item">
     <article class="das-search-result">
         <h2 class="heading-m das-search-result__heading">
-            <a class="link das-search-result__heading-link" href="apprenticeship-details?id=171">Construction Steel Fixer</a>
+            <a class="link das-search-result__heading-link" href="/employer/find-apprenticeships/Apprenticeship?id=447-2-1">Youth Work</a>
         </h2>
 
-        <dl class="list  das-search-result__details">
-            <dt class="das-search-result__details-title">Level:</dt>
-            <dd class="das-search-result__details-definition">2 (Equivalent to GCSEs at grades A* to C)</dd>
-            <dt class="das-search-result__details-title">Typical length:</dt>
-            <dd class="das-search-result__details-definition">18 months</dd>
-            <dt class="das-search-result__details-title">Apprenticeship Type:</dt>
-            <dd class="das-search-result__details-definition">Standard</dd>
-        </dl>
-    </article>
-</li>
-
-
-
-
-
-<li id="273" class="das-search-results__list-item">
-    <article class="das-search-result">
-        <h2 class="heading-m das-search-result__heading">
-            <a class="link das-search-result__heading-link" href="apprenticeship-details?id=273">Scaffolder</a>
-        </h2>
-
-        <dl class="list  das-search-result__details">
-            <dt class="das-search-result__details-title">Level:</dt>
-            <dd class="das-search-result__details-definition">2 (Equivalent to GCSEs at grades A* to C)</dd>
-            <dt class="das-search-result__details-title">Typical length:</dt>
-            <dd class="das-search-result__details-definition">18 months</dd>
-            <dt class="das-search-result__details-title">Apprenticeship Type:</dt>
-            <dd class="das-search-result__details-definition">Standard</dd>
-        </dl>
-    </article>
-</li>
-
-
-
-
-
-<li id="357" class="das-search-results__list-item">
-    <article class="das-search-result">
-        <h2 class="heading-m das-search-result__heading">
-            <a class="link das-search-result__heading-link" href="apprenticeship-details?id=357">Structural Steelwork Fabricator</a>
-        </h2>
-
-        <dl class="list  das-search-result__details">
-            <dt class="das-search-result__details-title">Level:</dt>
-            <dd class="das-search-result__details-definition">2 (Equivalent to GCSEs at grades A* to C)</dd>
-            <dt class="das-search-result__details-title">Typical length:</dt>
-            <dd class="das-search-result__details-definition">24 months</dd>
-            <dt class="das-search-result__details-title">Apprenticeship Type:</dt>
-            <dd class="das-search-result__details-definition">Standard</dd>
-        </dl>
-    </article>
-</li>
-
-
-
-
-
-<li id="378" class="das-search-results__list-item">
-    <article class="das-search-result">
-        <h2 class="heading-m das-search-result__heading">
-            <a class="link das-search-result__heading-link" href="apprenticeship-details?id=378">Structural Steelwork Erector</a>
-        </h2>
-
-        <dl class="list  das-search-result__details">
-            <dt class="das-search-result__details-title">Level:</dt>
-            <dd class="das-search-result__details-definition">2 (Equivalent to GCSEs at grades A* to C)</dd>
-            <dt class="das-search-result__details-title">Typical length:</dt>
-            <dd class="das-search-result__details-definition">24 months</dd>
-            <dt class="das-search-result__details-title">Apprenticeship Type:</dt>
-            <dd class="das-search-result__details-definition">Standard</dd>
-        </dl>
-    </article>
-</li>
-
-
-
-
-
-<li id="520-3-9" class="das-search-results__list-item">
-    <article class="das-search-result">
-        <h2 class="heading-m das-search-result__heading">
-            <a class="link das-search-result__heading-link" href="apprenticeship-details?id=520-3-9">Construction Civil Engineering: Steelfixing</a>
-        </h2>
             <div class="warning-text">
-                <span class="warning-text__icon" aria-hidden="true">!</span>
+                <span class="warning-text__icon" aria-hidden="true"></span>
                 <strong class="warning-text__text">
                     <span class="warning-text__assistive">Warning</span>
-                    This apprenticeship is closed to new starters from 31 July 2020
+                    This apprenticeship is closed to new starters from Friday, July 31, 2020
                 </strong>
             </div>
 
-        <dl class="list  das-search-result__details">
+        <dl class="list list--employer  das-search-result__details">
+            <dt class="das-search-result__details-title">Level:</dt>
+            <dd class="das-search-result__details-definition">3 (Equivalent to A levels at grades A to E)</dd>
+            <dt class="das-search-result__details-title">Typical length:</dt>
+            <dd class="das-search-result__details-definition">12 months</dd>
+            <dt class="das-search-result__details-title">Apprenticeship Type:</dt>
+            <dd class="das-search-result__details-definition">Framework</dd>
+        </dl>
+
+    </article>
+</li>
+
+
+
+                
+
+<li id="447-3-1" class="das-search-results__list-item">
+    <article class="das-search-result">
+        <h2 class="heading-m das-search-result__heading">
+            <a class="link das-search-result__heading-link" href="/employer/find-apprenticeships/Apprenticeship?id=447-3-1">Youth Work</a>
+        </h2>
+
+            <div class="warning-text">
+                <span class="warning-text__icon" aria-hidden="true"></span>
+                <strong class="warning-text__text">
+                    <span class="warning-text__assistive">Warning</span>
+                    This apprenticeship is closed to new starters from Friday, July 31, 2020
+                </strong>
+            </div>
+
+        <dl class="list list--employer  das-search-result__details">
+            <dt class="das-search-result__details-title">Level:</dt>
+            <dd class="das-search-result__details-definition">2 (Equivalent to GCSEs at grades A* to C)</dd>
+            <dt class="das-search-result__details-title">Typical length:</dt>
+            <dd class="das-search-result__details-definition">12 months</dd>
+            <dt class="das-search-result__details-title">Apprenticeship Type:</dt>
+            <dd class="das-search-result__details-definition">Framework</dd>
+        </dl>
+
+    </article>
+</li>
+
+
+
+                
+
+<li id="32" class="das-search-results__list-item">
+    <article class="das-search-result">
+        <h2 class="heading-m das-search-result__heading">
+            <a class="link das-search-result__heading-link" href="/employer/find-apprenticeships/Apprenticeship?id=32">Workplace pensions (administrator or consultant)</a>
+        </h2>
+
+
+        <dl class="list list--employer  das-search-result__details">
+            <dt class="das-search-result__details-title">Level:</dt>
+            <dd class="das-search-result__details-definition">3 (Equivalent to A levels at grades A to E)</dd>
+            <dt class="das-search-result__details-title">Typical length:</dt>
+            <dd class="das-search-result__details-definition">18 months</dd>
+            <dt class="das-search-result__details-title">Apprenticeship Type:</dt>
+            <dd class="das-search-result__details-definition">Standard</dd>
+        </dl>
+
+    </article>
+</li>
+
+
+
+                
+
+<li id="322" class="das-search-results__list-item">
+    <article class="das-search-result">
+        <h2 class="heading-m das-search-result__heading">
+            <a class="link das-search-result__heading-link" href="/employer/find-apprenticeships/Apprenticeship?id=322">Workboat Crewmember</a>
+        </h2>
+
+
+        <dl class="list list--employer  das-search-result__details">
+            <dt class="das-search-result__details-title">Level:</dt>
+            <dd class="das-search-result__details-definition">3 (Equivalent to A levels at grades A to E)</dd>
+            <dt class="das-search-result__details-title">Typical length:</dt>
+            <dd class="das-search-result__details-definition">24 months</dd>
+            <dt class="das-search-result__details-title">Apprenticeship Type:</dt>
+            <dd class="das-search-result__details-definition">Standard</dd>
+        </dl>
+
+    </article>
+</li>
+
+
+
+                
+
+<li id="423" class="das-search-results__list-item">
+    <article class="das-search-result">
+        <h2 class="heading-m das-search-result__heading">
+            <a class="link das-search-result__heading-link" href="/employer/find-apprenticeships/Apprenticeship?id=423">Wireless Communications Rigger</a>
+        </h2>
+
+
+        <dl class="list list--employer  das-search-result__details">
             <dt class="das-search-result__details-title">Level:</dt>
             <dd class="das-search-result__details-definition">2 (Equivalent to GCSEs at grades A* to C)</dd>
             <dt class="das-search-result__details-title">Typical length:</dt>
             <dd class="das-search-result__details-definition">18 months</dd>
             <dt class="das-search-result__details-title">Apprenticeship Type:</dt>
-            <dd class="das-search-result__details-definition">Framework</dd>
+            <dd class="das-search-result__details-definition">Standard</dd>
         </dl>
+
     </article>
 </li>
 
 
 
+                
 
-
-<li id="399" class="das-search-results__list-item">
+<li id="27" class="das-search-results__list-item">
     <article class="das-search-result">
         <h2 class="heading-m das-search-result__heading">
-            <a class="link das-search-result__heading-link" href="apprenticeship-details?id=399">Metal Fabricator</a>
+            <a class="link das-search-result__heading-link" href="/employer/find-apprenticeships/Apprenticeship?id=27">Water process technician</a>
         </h2>
 
-        <dl class="list  das-search-result__details">
+
+        <dl class="list list--employer  das-search-result__details">
             <dt class="das-search-result__details-title">Level:</dt>
             <dd class="das-search-result__details-definition">3 (Equivalent to A levels at grades A to E)</dd>
             <dt class="das-search-result__details-title">Typical length:</dt>
-            <dd class="das-search-result__details-definition">42 months</dd>
+            <dd class="das-search-result__details-definition">48 months</dd>
             <dt class="das-search-result__details-title">Apprenticeship Type:</dt>
             <dd class="das-search-result__details-definition">Standard</dd>
         </dl>
+
     </article>
 </li>
 
 
 
+                
 
-
-<li id="376" class="das-search-results__list-item">
+<li id="416" class="das-search-results__list-item">
     <article class="das-search-result">
         <h2 class="heading-m das-search-result__heading">
-            <a class="link das-search-result__heading-link" href="apprenticeship-details?id=376">Engineering Construction Erector / Rigger</a>
+            <a class="link das-search-result__heading-link" href="/employer/find-apprenticeships/Apprenticeship?id=416">Water Treatment Technician</a>
         </h2>
 
-        <dl class="list  das-search-result__details">
+
+        <dl class="list list--employer  das-search-result__details">
+            <dt class="das-search-result__details-title">Level:</dt>
+            <dd class="das-search-result__details-definition">3 (Equivalent to A levels at grades A to E)</dd>
+            <dt class="das-search-result__details-title">Typical length:</dt>
+            <dd class="das-search-result__details-definition">24 months</dd>
+            <dt class="das-search-result__details-title">Apprenticeship Type:</dt>
+            <dd class="das-search-result__details-definition">Standard</dd>
+        </dl>
+
+    </article>
+</li>
+
+
+
+                
+
+<li id="235" class="das-search-results__list-item">
+    <article class="das-search-result">
+        <h2 class="heading-m das-search-result__heading">
+            <a class="link das-search-result__heading-link" href="/employer/find-apprenticeships/Apprenticeship?id=235">Watchmaker</a>
+        </h2>
+
+
+        <dl class="list list--employer  das-search-result__details">
+            <dt class="das-search-result__details-title">Level:</dt>
+            <dd class="das-search-result__details-definition">3 (Equivalent to A levels at grades A to E)</dd>
+            <dt class="das-search-result__details-title">Typical length:</dt>
+            <dd class="das-search-result__details-definition">24 months</dd>
+            <dt class="das-search-result__details-title">Apprenticeship Type:</dt>
+            <dd class="das-search-result__details-definition">Standard</dd>
+        </dl>
+
+    </article>
+</li>
+
+
+
+                
+
+<li id="374" class="das-search-results__list-item">
+    <article class="das-search-result">
+        <h2 class="heading-m das-search-result__heading">
+            <a class="link das-search-result__heading-link" href="/employer/find-apprenticeships/Apprenticeship?id=374">Waste Resource Operative</a>
+        </h2>
+
+
+        <dl class="list list--employer  das-search-result__details">
+            <dt class="das-search-result__details-title">Level:</dt>
+            <dd class="das-search-result__details-definition">2 (Equivalent to GCSEs at grades A* to C)</dd>
+            <dt class="das-search-result__details-title">Typical length:</dt>
+            <dd class="das-search-result__details-definition">12 months</dd>
+            <dt class="das-search-result__details-title">Apprenticeship Type:</dt>
+            <dd class="das-search-result__details-definition">Standard</dd>
+        </dl>
+
+    </article>
+</li>
+
+
+
+                
+
+<li id="414-3-1" class="das-search-results__list-item">
+    <article class="das-search-result">
+        <h2 class="heading-m das-search-result__heading">
+            <a class="link das-search-result__heading-link" href="/employer/find-apprenticeships/Apprenticeship?id=414-3-1">Warehousing and Storage: Warehouse Operative</a>
+        </h2>
+
+            <div class="warning-text">
+                <span class="warning-text__icon" aria-hidden="true"></span>
+                <strong class="warning-text__text">
+                    <span class="warning-text__assistive">Warning</span>
+                    This apprenticeship is closed to new starters from Friday, July 31, 2020
+                </strong>
+            </div>
+
+        <dl class="list list--employer  das-search-result__details">
+            <dt class="das-search-result__details-title">Level:</dt>
+            <dd class="das-search-result__details-definition">2 (Equivalent to GCSEs at grades A* to C)</dd>
+            <dt class="das-search-result__details-title">Typical length:</dt>
+            <dd class="das-search-result__details-definition">12 months</dd>
+            <dt class="das-search-result__details-title">Apprenticeship Type:</dt>
+            <dd class="das-search-result__details-definition">Framework</dd>
+        </dl>
+
+    </article>
+</li>
+
+
+
+                
+
+<li id="414-2-1" class="das-search-results__list-item">
+    <article class="das-search-result">
+        <h2 class="heading-m das-search-result__heading">
+            <a class="link das-search-result__heading-link" href="/employer/find-apprenticeships/Apprenticeship?id=414-2-1">Warehousing and Storage: Senior Warehouse Person/Team Leader</a>
+        </h2>
+
+            <div class="warning-text">
+                <span class="warning-text__icon" aria-hidden="true"></span>
+                <strong class="warning-text__text">
+                    <span class="warning-text__assistive">Warning</span>
+                    This apprenticeship is closed to new starters from Friday, July 31, 2020
+                </strong>
+            </div>
+
+        <dl class="list list--employer  das-search-result__details">
+            <dt class="das-search-result__details-title">Level:</dt>
+            <dd class="das-search-result__details-definition">3 (Equivalent to A levels at grades A to E)</dd>
+            <dt class="das-search-result__details-title">Typical length:</dt>
+            <dd class="das-search-result__details-definition">12 months</dd>
+            <dt class="das-search-result__details-title">Apprenticeship Type:</dt>
+            <dd class="das-search-result__details-definition">Framework</dd>
+        </dl>
+
+    </article>
+</li>
+
+
+
+                
+
+<li id="380" class="das-search-results__list-item">
+    <article class="das-search-result">
+        <h2 class="heading-m das-search-result__heading">
+            <a class="link das-search-result__heading-link" href="/employer/find-apprenticeships/Apprenticeship?id=380">Wall and Floor Tiler</a>
+        </h2>
+
+
+        <dl class="list list--employer  das-search-result__details">
+            <dt class="das-search-result__details-title">Level:</dt>
+            <dd class="das-search-result__details-definition">2 (Equivalent to GCSEs at grades A* to C)</dd>
+            <dt class="das-search-result__details-title">Typical length:</dt>
+            <dd class="das-search-result__details-definition">30 months</dd>
+            <dt class="das-search-result__details-title">Apprenticeship Type:</dt>
+            <dd class="das-search-result__details-definition">Standard</dd>
+        </dl>
+
+    </article>
+</li>
+
+
+
+                
+
+<li id="529-2-1" class="das-search-results__list-item">
+    <article class="das-search-result">
+        <h2 class="heading-m das-search-result__heading">
+            <a class="link das-search-result__heading-link" href="/employer/find-apprenticeships/Apprenticeship?id=529-2-1">Veterinary Nursing: Small Animal</a>
+        </h2>
+
+            <div class="warning-text">
+                <span class="warning-text__icon" aria-hidden="true"></span>
+                <strong class="warning-text__text">
+                    <span class="warning-text__assistive">Warning</span>
+                    This apprenticeship is closed to new starters from Friday, July 31, 2020
+                </strong>
+            </div>
+
+        <dl class="list list--employer  das-search-result__details">
             <dt class="das-search-result__details-title">Level:</dt>
             <dd class="das-search-result__details-definition">3 (Equivalent to A levels at grades A to E)</dd>
             <dt class="das-search-result__details-title">Typical length:</dt>
             <dd class="das-search-result__details-definition">36 months</dd>
             <dt class="das-search-result__details-title">Apprenticeship Type:</dt>
-            <dd class="das-search-result__details-definition">Standard</dd>
+            <dd class="das-search-result__details-definition">Framework</dd>
         </dl>
+
     </article>
 </li>
 
 
 
+                
 
-
-<li id="530-3-1" class="das-search-results__list-item">
+<li id="529-2-2" class="das-search-results__list-item">
     <article class="das-search-result">
         <h2 class="heading-m das-search-result__heading">
-            <a class="link das-search-result__heading-link" href="apprenticeship-details?id=530-3-1">Fencing: Fencing</a>
+            <a class="link das-search-result__heading-link" href="/employer/find-apprenticeships/Apprenticeship?id=529-2-2">Veterinary Nursing: Equine</a>
         </h2>
+
             <div class="warning-text">
-                <span class="warning-text__icon" aria-hidden="true">!</span>
+                <span class="warning-text__icon" aria-hidden="true"></span>
                 <strong class="warning-text__text">
                     <span class="warning-text__assistive">Warning</span>
-                    This apprenticeship is closed to new starters from 31 July 2020
+                    This apprenticeship is closed to new starters from Friday, July 31, 2020
                 </strong>
             </div>
 
-        <dl class="list  das-search-result__details">
+        <dl class="list list--employer  das-search-result__details">
             <dt class="das-search-result__details-title">Level:</dt>
-            <dd class="das-search-result__details-definition">2 (Equivalent to GCSEs at grades A* to C)</dd>
+            <dd class="das-search-result__details-definition">3 (Equivalent to A levels at grades A to E)</dd>
             <dt class="das-search-result__details-title">Typical length:</dt>
-            <dd class="das-search-result__details-definition">15 months</dd>
+            <dd class="das-search-result__details-definition">36 months</dd>
             <dt class="das-search-result__details-title">Apprenticeship Type:</dt>
             <dd class="das-search-result__details-definition">Framework</dd>
         </dl>
+
     </article>
 </li>
 
 
 
+                
 
-
-<li id="519-3-1" class="das-search-results__list-item">
+<li id="333" class="das-search-results__list-item">
     <article class="das-search-result">
         <h2 class="heading-m das-search-result__heading">
-            <a class="link das-search-result__heading-link" href="apprenticeship-details?id=519-3-1">Construction Specialist: Accessing and Rigging</a>
+            <a class="link das-search-result__heading-link" href="/employer/find-apprenticeships/Apprenticeship?id=333">Veterinary Nurse</a>
         </h2>
+
+
+        <dl class="list list--employer  das-search-result__details">
+            <dt class="das-search-result__details-title">Level:</dt>
+            <dd class="das-search-result__details-definition">3 (Equivalent to A levels at grades A to E)</dd>
+            <dt class="das-search-result__details-title">Typical length:</dt>
+            <dd class="das-search-result__details-definition">30 months</dd>
+            <dt class="das-search-result__details-title">Apprenticeship Type:</dt>
+            <dd class="das-search-result__details-definition">Standard</dd>
+        </dl>
+
+    </article>
+</li>
+
+
+
+                
+
+<li id="435-2-1" class="das-search-results__list-item">
+    <article class="das-search-result">
+        <h2 class="heading-m das-search-result__heading">
+            <a class="link das-search-result__heading-link" href="/employer/find-apprenticeships/Apprenticeship?id=435-2-1">Vehicle Sales</a>
+        </h2>
+
             <div class="warning-text">
-                <span class="warning-text__icon" aria-hidden="true">!</span>
+                <span class="warning-text__icon" aria-hidden="true"></span>
                 <strong class="warning-text__text">
                     <span class="warning-text__assistive">Warning</span>
-                    This apprenticeship is closed to new starters from 31 July 2020
+                    This apprenticeship is closed to new starters from Friday, July 31, 2020
                 </strong>
             </div>
 
-        <dl class="list  das-search-result__details">
+        <dl class="list list--employer  das-search-result__details">
             <dt class="das-search-result__details-title">Level:</dt>
-            <dd class="das-search-result__details-definition">2 (Equivalent to GCSEs at grades A* to C)</dd>
+            <dd class="das-search-result__details-definition">3 (Equivalent to A levels at grades A to E)</dd>
             <dt class="das-search-result__details-title">Typical length:</dt>
             <dd class="das-search-result__details-definition">18 months</dd>
             <dt class="das-search-result__details-title">Apprenticeship Type:</dt>
             <dd class="das-search-result__details-definition">Framework</dd>
         </dl>
+
     </article>
 </li>
 
 
 
+                
 
-
-<li id="539-2-3" class="das-search-results__list-item">
+<li id="435-3-1" class="das-search-results__list-item">
     <article class="das-search-result">
         <h2 class="heading-m das-search-result__heading">
-            <a class="link das-search-result__heading-link" href="apprenticeship-details?id=539-2-3">Engineering Manufacture: Mechanical Manufacturing Engineering</a>
+            <a class="link das-search-result__heading-link" href="/employer/find-apprenticeships/Apprenticeship?id=435-3-1">Vehicle Sales</a>
         </h2>
+
             <div class="warning-text">
-                <span class="warning-text__icon" aria-hidden="true">!</span>
+                <span class="warning-text__icon" aria-hidden="true"></span>
                 <strong class="warning-text__text">
                     <span class="warning-text__assistive">Warning</span>
-                    This apprenticeship is closed to new starters from 31 July 2020
+                    This apprenticeship is closed to new starters from Friday, July 31, 2020
                 </strong>
             </div>
 
-        <dl class="list  das-search-result__details">
+        <dl class="list list--employer  das-search-result__details">
             <dt class="das-search-result__details-title">Level:</dt>
-            <dd class="das-search-result__details-definition">3 (Equivalent to A levels at grades A to E)</dd>
+            <dd class="das-search-result__details-definition">2 (Equivalent to GCSEs at grades A* to C)</dd>
             <dt class="das-search-result__details-title">Typical length:</dt>
-            <dd class="das-search-result__details-definition">42 months</dd>
+            <dd class="das-search-result__details-definition">24 months</dd>
             <dt class="das-search-result__details-title">Apprenticeship Type:</dt>
             <dd class="das-search-result__details-definition">Framework</dd>
         </dl>
+
     </article>
 </li>
 
 
 
-    </ol>
+                
+
+<li id="634-2-1" class="das-search-results__list-item">
+    <article class="das-search-result">
+        <h2 class="heading-m das-search-result__heading">
+            <a class="link das-search-result__heading-link" href="/employer/find-apprenticeships/Apprenticeship?id=634-2-1">Vehicle Restoration</a>
+        </h2>
+
+            <div class="warning-text">
+                <span class="warning-text__icon" aria-hidden="true"></span>
+                <strong class="warning-text__text">
+                    <span class="warning-text__assistive">Warning</span>
+                    This apprenticeship is closed to new starters from Friday, July 31, 2020
+                </strong>
+            </div>
+
+        <dl class="list list--employer  das-search-result__details">
+            <dt class="das-search-result__details-title">Level:</dt>
+            <dd class="das-search-result__details-definition">3 (Equivalent to A levels at grades A to E)</dd>
+            <dt class="das-search-result__details-title">Typical length:</dt>
+            <dd class="das-search-result__details-definition">18 months</dd>
+            <dt class="das-search-result__details-title">Apprenticeship Type:</dt>
+            <dd class="das-search-result__details-definition">Framework</dd>
+        </dl>
+
+    </article>
+</li>
+
+
+
+                
+
+<li id="634-3-1" class="das-search-results__list-item">
+    <article class="das-search-result">
+        <h2 class="heading-m das-search-result__heading">
+            <a class="link das-search-result__heading-link" href="/employer/find-apprenticeships/Apprenticeship?id=634-3-1">Vehicle Restoration</a>
+        </h2>
+
+            <div class="warning-text">
+                <span class="warning-text__icon" aria-hidden="true"></span>
+                <strong class="warning-text__text">
+                    <span class="warning-text__assistive">Warning</span>
+                    This apprenticeship is closed to new starters from Friday, July 31, 2020
+                </strong>
+            </div>
+
+        <dl class="list list--employer  das-search-result__details">
+            <dt class="das-search-result__details-title">Level:</dt>
+            <dd class="das-search-result__details-definition">2 (Equivalent to GCSEs at grades A* to C)</dd>
+            <dt class="das-search-result__details-title">Typical length:</dt>
+            <dd class="das-search-result__details-definition">24 months</dd>
+            <dt class="das-search-result__details-title">Apprenticeship Type:</dt>
+            <dd class="das-search-result__details-definition">Framework</dd>
+        </dl>
+
+    </article>
+</li>
+
+
+
+                
+
+<li id="433-2-1" class="das-search-results__list-item">
+    <article class="das-search-result">
+        <h2 class="heading-m das-search-result__heading">
+            <a class="link das-search-result__heading-link" href="/employer/find-apprenticeships/Apprenticeship?id=433-2-1">Vehicle Parts</a>
+        </h2>
+
+            <div class="warning-text">
+                <span class="warning-text__icon" aria-hidden="true"></span>
+                <strong class="warning-text__text">
+                    <span class="warning-text__assistive">Warning</span>
+                    This apprenticeship is closed to new starters from Friday, July 31, 2020
+                </strong>
+            </div>
+
+        <dl class="list list--employer  das-search-result__details">
+            <dt class="das-search-result__details-title">Level:</dt>
+            <dd class="das-search-result__details-definition">3 (Equivalent to A levels at grades A to E)</dd>
+            <dt class="das-search-result__details-title">Typical length:</dt>
+            <dd class="das-search-result__details-definition">18 months</dd>
+            <dt class="das-search-result__details-title">Apprenticeship Type:</dt>
+            <dd class="das-search-result__details-definition">Framework</dd>
+        </dl>
+
+    </article>
+</li>
+
+
+
+        </ol>
+
+    <ul class="das-pagination das-pagination--employer">
+
+        <li class="das-pagination__list-item">
+        </li>
+
+
+            <li class="das-pagination__list-item">
+                <a class="das-pagination__link das-pagination__link--next" id="link-pagination-apprentice-next" href="/employer/find-apprenticeships?keywords=&amp;page=2">Next page <span class="das-pagination__caption">2 of 45</span></a>
+            </li>
+
+    </ul>
+
+
+
 
 
 
@@ -540,9 +911,78 @@
 
                 </div>
             </div>
+            <div class="grid-column-one-third">
+
+    <div class="sidebar-panel sidebar-panel--employer">
+        <div class="sidebar-panel__content">
+            
+
+
+<h3 class="heading-m">Search</h3> 
+
+<form method="get" action="/employer/find-apprenticeships">
+    <div class="form-group das-form-group-inline">
+        <label class="visually-hidden" for="Keywords">Apprenticeship name or job role</label>
+        <input class="input" type="search" placeholder="Apprenticeship keyword..." id="Keywords" name="Keywords" value="">
+        <div class="das-form-group-inline__button-wrap">
+            <button class="button button--sparks button-employer" type="submit" id="employer-apprenticeship-search">Search</button>
+        </div>
+    </div>
+</form>
+
+<form method="get" action="/employer/find-apprenticeships">
+    <h3 class="heading-m">Filter results</h3>
+    <div class="form-group">
+        <p class="u!-font-weight-bold">Apprenticeship level:</p>
+        <div class="checkbox das-search-results__filter-checkboxes">
+                <div class="checkboxes__item das-search-results__filter-checkbox">
+                    <input class="checkboxes__input" value="2" id="SelectedLevels_2" name="SelectedLevels" type="checkbox" checked  />
+                    <label for="SelectedLevels_2" class=" label checkboxes__label">Level 2 (307)</label>
+                </div>
+                <div class="checkboxes__item das-search-results__filter-checkbox">
+                    <input class="checkboxes__input" value="3" id="SelectedLevels_3" name="SelectedLevels" type="checkbox" checked  />
+                    <label for="SelectedLevels_3" class=" label checkboxes__label">Level 3 (366)</label>
+                </div>
+                <div class="checkboxes__item das-search-results__filter-checkbox">
+                    <input class="checkboxes__input" value="4" id="SelectedLevels_4" name="SelectedLevels" type="checkbox" checked  />
+                    <label for="SelectedLevels_4" class=" label checkboxes__label">Level 4 (98)</label>
+                </div>
+                <div class="checkboxes__item das-search-results__filter-checkbox">
+                    <input class="checkboxes__input" value="5" id="SelectedLevels_5" name="SelectedLevels" type="checkbox" checked  />
+                    <label for="SelectedLevels_5" class=" label checkboxes__label">Level 5 (33)</label>
+                </div>
+                <div class="checkboxes__item das-search-results__filter-checkbox">
+                    <input class="checkboxes__input" value="6" id="SelectedLevels_6" name="SelectedLevels" type="checkbox" checked  />
+                    <label for="SelectedLevels_6" class=" label checkboxes__label">Level 6 (66)</label>
+                </div>
+                <div class="checkboxes__item das-search-results__filter-checkbox">
+                    <input class="checkboxes__input" value="7" id="SelectedLevels_7" name="SelectedLevels" type="checkbox" checked  />
+                    <label for="SelectedLevels_7" class=" label checkboxes__label">Level 7 (24)</label>
+                </div>
+        </div>
+    </div>
+    <div class="form-group">
+        <input type="hidden" id="Keywords" name="Keywords" value="" />
+        <input type="hidden" data-val="true" data-val-required="The SortOrder field is required." id="SortOrder" name="SortOrder" value="0" />
+        <input type="hidden" data-val="true" data-val-required="The ResultsToTake field is required." id="ResultsToTake" name="ResultsToTake" value="20" />
+        <button type="submit" class="button button-inverted">
+            Update
+        </button>
+    </div>
+
+</form>
+
+        </div>
+    </div>
+
+            </div>
+        </div>
+        <div class="grid-row">
+            
         </div>
     </div>
 </main>
+
 
 
 
@@ -710,10 +1150,10 @@
                             <a class="footer__link" href="https://www.smartsurvey.co.uk/s/S2NQQ" id="link-footer-feedback" target="_blank" rel="external">Feedback</a>
                         </li>
                         <li class="footer__inline-list-item">
-                            <a class="footer__link" href="/cookies" id="link-footer-cookie-policy">Cookies policy</a>
+                            <a class="footer__link" id="link-footer-cookie-policy" href="/cookies">Cookies</a>
                         </li>
                         <li class="footer__inline-list-item">
-                            <a class="footer__link" href="/privacy" id="link-footer-privacy-notice">Privacy notice</a>
+                            <a class="footer__link" id="link-footer-privacy-notice" href="/privacy">Privacy notice</a>
                         </li>
                         <li class="footer__inline-list-item">
                             Built by the <a class="footer__link" href="https://www.gov.uk/esfa" rel="external" target="_blank" id="link-footer-esfa">Education and Skills Funding Agency</a>
@@ -795,14 +1235,15 @@
         <div class="checkboxes__item">
             <input class="checkboxes__input" type="checkbox" value="true" data-val="true" data-val-range="You need to accept terms and conditions" data-val-range-max="True" data-val-range-min="True" data-val-required="The AcceptTandCs field is required." id="AcceptTandCs" name="AcceptTandCs">
             <label class="label checkboxes__label" for="AcceptTandCs">
-                I would like to receive information via emails from the Education and Skills Funding Agency in relation to apprenticeships. I can confirm that I am over the age of 13
+                I'd like to receive more information about apprenticeships from the Education and Skills Funding Agency via email, and i'm over the age of 13.
             </label>
         </div>
+        <p>To find out how we handle your personal data, please visit our <a href="/privacy">privacy notice</a>.</p>
     </div>
 
     <input type="hidden" value="/employer/find-apprenticeships" id="ReturnUrl" name="ReturnUrl" />
-    <button class="button button-inverted " name="registerInterestSubmit" type="submit" id="btn-register-interest-complete">Register Interest </button>
-<input name="__RequestVerificationToken" type="hidden" value="CfDJ8JgAHtm-5slIrxUSNSY8aYAtvpaFyt_7lN6Us52j8xub-Fb3OTK75R5x8J2lvjfq2hzPl-7p0rQFQuHjqcgtwiR-xG6DS_aB6AUJqlTL0EjRcpr5rnroTqUESzPgPaJpWKQxEyEUKqpzGUT6D3Dusbc" /><input name="AcceptTandCs" type="hidden" value="false"></form>
+    <button formnovalidate="true" class="button button-inverted " name="registerInterestSubmit" type="submit" id="btn-register-interest-complete">Register Interest </button>
+<input name="__RequestVerificationToken" type="hidden" value="CfDJ8HByHAKGyLVAtuLEB2MoWET_sqnTE5PkMDIcMHpZMSAoysgfRiUcIMyyP86GSucb_YAz3fb6O58mQOLq4y7K-_epeO9WSQZl50VAUvIVrD3AUifUzKH856VmA3lie0JkQ5C5IUjwPvCbya7jevjjrSA" /><input name="AcceptTandCs" type="hidden" value="false"></form>
 
     </div>
 </div>
@@ -833,7 +1274,8 @@
     </div>
 </div>
 
-    <div class="cookiebanner cookiebanner--variant-1 visually-hidden"  data-module="cookieBanner">
+
+            <div class="cookiebanner cookiebanner--variant-1 visually-hidden"  data-module="cookieBanner">
     <div class="grid-row cookiebanner__content">
         <div class="grid-column-two-thirds cookiebanner__text">
             <h4 class="cookiebanner__heading">Cookies on this site</h4>
@@ -865,80 +1307,102 @@
         </div>
 
 
-<span class="caption-s">Cookie settings</span>
-<h2 class="heading-l">Manage cookies on this website</h2>
+
+
+<h2 class="heading-m">Cookie settings</h2>
+
 <p>
-    Cookies are small text files that can be used by websites to make a user's experience more efficient.
+    We use 3 types of cookie. You can choose which cookies you're happy for us to use.
 </p>
-<p>
-    The law states that we can store cookies on your device if they are strictly necessary for the operation of
-    this site. For all other types of cookies we need your permission.
-</p>
-<p>
-    You can at any time change or withdraw your consent below.
-</p>
-<hr />
-<div class="form-group">
-    <div class="grid-row toggleContainer">
-        <div class="grid-column-one-quarter">
-        </div>
-        <div class="grid-column-three-quarters grid-column--pull-right">
-            <h3 class="heading-xs">Necessary cookies</h3>
-            <p> Ensure the basic performance and user friendliness of the website. The website cannot function properly without these cookies, which can only be disabled by changing your browser preferences. </p>
-        </div>
-    </div>
-</div>
-<hr />
+
 <div class="form-group">
     <div class="grid-row toggleContainer">
         <div class="grid-column-three-quarters grid-column--pull-right">
-            <h3 class="heading-xs">Marketing cookies</h3>
-            <p>We use these to inform the relevancy of advertising campaigns you receive and to tailor certain content on our website.</p>
-        </div>
-        <div class="grid-column-one-quarter">
-            <input type="checkbox" name="cbxMarketingConsent" id="cbxMarketingConsent" checked>
-            <label for="cbxMarketingConsent" data-on="ON" data-off="OFF"><span class="vh">Marketing cookies</span></label>
-        </div>
-    </div>
-</div>
-<hr />
-<div class="form-group">
-    <div class="grid-row toggleContainer">
-        <div class="grid-column-three-quarters grid-column--pull-right">
-            <h3 class="heading-xs">Analytics cookies</h3>
-            <p>Help us to improve our website by collecting and reporting information on how it is being used.</p>
+            <h3 class="heading-xs">Cookies that measure website use</h3>
+            <p>
+                We use Google Analytics to measure how you use the website so we can improve it based on user needs. Google Analytics sets cookies that store anonymised information about:
+            </p>
+            <ul class="list list--bullet">
+                <li>
+                    how you got to the site
+                </li>
+                <li>the pages you visit on the service and how long you spend on each page</li>
+                <li>
+                    what you click on while you're visiting the site
+                </li>
+            </ul>
+            <p>
+                We do not allow Google to use or share the data about how you use this site.
+            </p>
+            <p>
+                Cookies may be set by other third-party websites to do things like measure how you view YouTube videos that are on the service.
+            </p>
+            <p>If you register an account with the Find an apprenticeship service or the Manage apprenticeships service, both provided by the Education and Skills Funding Agency, the information collected using analytics cookies will be linked to your account to help us make the service work better for you.</p>
+
         </div>
         <div class="grid-column-one-quarter">
             <input type="checkbox" name="cbxAnalyticsConsent" id="cbxAnalyticsConsent" checked>
-            <label for="cbxAnalyticsConsent" data-on="ON" data-off="OFF"><span class="vh">Analytics cookies</span></label>
+            <label for="cbxAnalyticsConsent" id="lblAnalyticsConsent" data-on="ON" data-off="OFF"><span class="vh">Analytics cookies</span></label>
         </div>
     </div>
 </div>
-       
+<hr />
+<div class="form-group">
+    <div class="grid-row toggleContainer">
+        <div class="grid-column-three-quarters grid-column--pull-right">
+            <h3 class="heading-xs">Cookies that help with our communications and marketing</h3>
+            <p>These cookies help us improve the relevancy of advertising campaigns you receive from us. </p>
+            <p>We also share information about your use of our site with our social media, advertising and analytics partners, who may combine it with other information that they’ve collected from your use of their services.</p>
+
+        </div>
+        <div class="grid-column-one-quarter">
+            <input type="checkbox" name="cbxMarketingConsent" id="cbxMarketingConsent" checked>
+            <label for="cbxMarketingConsent" id="lblMarketingConsent" data-on="ON" data-off="OFF"><span class="vh">Marketing cookies</span></label>
+        </div>
+    </div>
+</div>
+<hr />
+<div class="form-group">
+    <div class="grid-row toggleContainer">
+        <div class="grid-column-one-quarter">
+        </div>
+        <div class="grid-column-three-quarters grid-column--pull-right">
+            <h3 class="heading-xs">Strictly necessary cookies</h3>
+            <p>These essential cookies do things like:</p>
+            <ul class="list list--bullet">
+                <li>remember the notifications you've seen so we do not show them to you again</li>
+                <li>remember your progress through a form</li>
+            </ul>
+            <p>They always need to be on.</p>
+            <p><a href="/cookie-details">Find out more about cookies on this service</a></p>
+        </div>
     </div>
 </div>
 
 
-   
+    </div>
+</div>
 
-<script defer src="https://cdn.polyfill.io/v2/polyfill.min.js?features=es6,Array.prototype.includes,CustomEvent,Object.entries,Object.values,URL" crossorigin="anonymous"></script>
 
-<script defer src="/campaign/js/plyr.min.js" crossorigin="anonymous"></script>
+
+    <script defer src="https://cdn.polyfill.io/v2/polyfill.min.js?features=es6,Array.prototype.includes,CustomEvent,Object.entries,Object.values,URL" crossorigin="anonymous"></script>
+
+    <script defer src="/campaign/js/plyr.min.js" crossorigin="anonymous"></script>
     <script defer src="/campaign/js/app.min.js" crossorigin="anonymous"></script>
     <script defer src="/js/das-all.min.js" crossorigin="anonymous" id="dasJs"></script>
-<script>
-    var dasJs = document.getElementById('dasJs');
-    dasJs.onload = function() {
-        window.DASFrontend.initAll();
-    }
-    
-</script>
+    <script>
+        var dasJs = document.getElementById('dasJs');
+        dasJs.onload = function () {
+            window.DASFrontend.initAll();
+        }
 
+    </script>
+    
     
 
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.11/jquery.validate.unobtrusive.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.17.0/jquery.validate.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validation-unobtrusive/3.2.11/jquery.validate.unobtrusive.min.js"></script>
 
 </body>
 
