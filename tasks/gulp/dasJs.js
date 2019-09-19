@@ -50,7 +50,6 @@ var minifyJs = function (isDist) {
   return gulp.src(srcFile)
     .pipe(rollup({
       name: 'DASFrontend',
-      plugins: [resolve(), commonjs()],
       legacy: true,
       format: 'umd',
     })).on('error', function (e) { console.log(e) })

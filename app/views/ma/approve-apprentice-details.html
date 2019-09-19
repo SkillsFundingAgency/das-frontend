@@ -45,9 +45,9 @@
                       <td class="govuk-table__cell">Oct 2019 to Nov 2020</td>
                       <td class="govuk-table__cell govuk-table__cell--numeric">&pound;10,000</td>
                       <td class="govuk-table__cell govuk-table__cell--numeric">
-                        <a href="">Edit <span class="govuk-visually-hidden">Barry Block's details</span></a>
-                        <a href="">Delete <span class="govuk-visually-hidden">Barry Block's details</span></a>
-                    </td>
+                          <a href="" class="govuk-link">Edit <span class="govuk-visually-hidden">Barry Block's details</span></a>
+                          <a href="" class="govuk-link">Delete <span class="govuk-visually-hidden">Barry Block's details</span></a>
+                      </td>
                 </tr>
               </tbody>
             </table>
@@ -71,8 +71,8 @@
                       <td class="govuk-table__cell">Oct 2019 to Nov 2020</td>
                       <td class="govuk-table__cell govuk-table__cell--numeric">&pound;10,000</td>
                       <td class="govuk-table__cell govuk-table__cell--numeric">
-                        <a href="">Edit <span class="govuk-visually-hidden">Barry Block's details</span></a>
-                        <a href="">Delete <span class="govuk-visually-hidden">Barry Block's details</span></a>
+                        <a href="" class="govuk-link">Edit <span class="govuk-visually-hidden">Barry Block's details</span></a>
+                        <a href="" class="govuk-link">Delete <span class="govuk-visually-hidden">Barry Block's details</span></a>
                     </td>
                 </tr>
               </tbody>
@@ -132,6 +132,68 @@
                </fieldset>
             </div>
 
+
+
+
+<div class="govuk-form-group">
+  <fieldset class="govuk-fieldset" aria-describedby="how-contacted-conditional-hint">
+    <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+      <h1 class="govuk-fieldset__heading">
+        How would you prefer to be contacted?
+      </h1>
+    </legend>
+    <span id="how-contacted-conditional-hint" class="govuk-hint">
+      Select one option.
+    </span>
+    <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="how-contacted-conditional" name="how-contacted" type="radio" value="email" data-aria-controls="conditional-how-contacted-conditional">
+        <label class="govuk-label govuk-radios__label" for="how-contacted-conditional">
+          Email
+        </label>
+      </div>
+      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional">
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="contact-by-email">
+            Email address
+          </label>
+          <input class="govuk-input govuk-!-width-one-third" id="contact-by-email" name="contact-by-email" type="email" spellcheck="false">
+        </div>
+
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="how-contacted-conditional-2" name="how-contacted" type="radio" value="phone" data-aria-controls="conditional-how-contacted-conditional-2">
+        <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-2">
+          Phone
+        </label>
+      </div>
+      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-2">
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="contact-by-phone">
+            Phone number
+          </label>
+          <input class="govuk-input govuk-!-width-one-third" id="contact-by-phone" name="contact-by-phone" type="tel">
+        </div>
+
+      </div>
+      <div class="govuk-radios__item">
+        <input class="govuk-radios__input" id="how-contacted-conditional-3" name="how-contacted" type="radio" value="text" data-aria-controls="conditional-how-contacted-conditional-3">
+        <label class="govuk-label govuk-radios__label" for="how-contacted-conditional-3">
+          Text message
+        </label>
+      </div>
+      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-how-contacted-conditional-3">
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="contact-by-text">
+            Mobile phone number
+          </label>
+          <input class="govuk-input govuk-!-width-one-third" id="contact-by-text" name="contact-by-text" type="tel">
+        </div>
+
+      </div>
+    </div>
+  </fieldset>
+</div>
 
 
 

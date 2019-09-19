@@ -5,3 +5,4 @@ if ($('#das-user-navigation')) {
 }
 
 dasJs.forms.init();
+
