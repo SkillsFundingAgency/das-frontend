@@ -6,7 +6,7 @@
 
   var DEFAULT_COOKIE_CONSENT = {
     'AnalyticsConsent': true,
-    'MarketingConsent': true
+    'MarketingConsent': false
   }
 
   window.GOVUK.cookie = function (name, value, options) {
