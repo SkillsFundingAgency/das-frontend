@@ -75,3 +75,10 @@
     width: $i * 5%;
   }
 }
+
+
+.das-table-cell--highlight {
+  border-bottom: 5px solid govuk-colour('blue');
+  padding-bottom: 5px;
+  margin-bottom: -5px;
+}
