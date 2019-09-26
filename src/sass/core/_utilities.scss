@@ -29,6 +29,10 @@
   }
 }
 
+// Utility hidden class, for server side code
+.das-hidden {
+  display: none;
+}
 
 // Breakable class, forces words to wrap.
 // Useful for email addresses and other user-generated content
