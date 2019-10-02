@@ -92,6 +92,8 @@
 
             <hr class="govuk-section-break govuk-section-break--l">
 
+
+
             <div class="govuk-form-group">
                <fieldset class="govuk-fieldset">
                   <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
@@ -108,10 +110,7 @@
                      </div>
                      <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-approve">
                         <div class="govuk-form-group">
-                           <label class="govuk-label" for="approve-details">
-                           Let {{TRAINING_PROVIDER}} know what you'd like them to do next (optional)
-                           </label>
-                           <textarea class="govuk-textarea" id="approve-details" name="approve-details" rows="5"></textarea>
+
                         </div>
                      </div>
                      <div class="govuk-radios__item">
@@ -132,6 +131,40 @@
                </fieldset>
             </div>
 
+
+            <div class="govuk-form-group">
+               <fieldset class="govuk-fieldset">
+                  <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl govuk-!-margin-bottom-5">
+                     <h1 class="govuk-fieldset__heading">
+                        Do you know which apprenticeship training your apprentice will take?
+                     </h1>
+                  </legend>
+                  <div class="govuk-radios govuk-radios--conditional" data-module="radios">
+                     <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="radio-yes" name="course-options" type="radio" value="" data-aria-controls="course-search-radio">
+                        <label class="govuk-label govuk-radios__label" for="radio-yes">
+                        Yes
+                        </label>
+                     </div>
+                     <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="course-search-radio">
+                        <div class="govuk-form-group">
+                              <select id="course-search" name="SelectedCourseId" class="govuk-select" aria-describedby="choose-apprenticeship-hint" data-validation-message="Select a course from the list" data-validation-summary-message="Select a course">
+                                                                      <option value="">Search for an apprenticeship </option>
+                                                                      <option value="1" >Description</option>
+                                                                      <option value="2" >Course</option>
+                                                                  </select>
+                        </div>
+                     </div>
+                     <div class="govuk-radios__item">
+                        <input class="govuk-radios__input" id="radio-no" name="course-options" type="radio" value="">
+                        <label class="govuk-label govuk-radios__label" for="radio-no">
+                        No
+                        </label>
+                     </div>
+​
+                  </div>
+               </fieldset>
+            </div>
 
 
 

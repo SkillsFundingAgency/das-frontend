@@ -1,0 +1,78 @@
+{% extends "template.html" %}
+{% set pageTitle = "Digital Apprenticeship Service" %}
+{% set hideStatusBanner = true %}
+{% set loggedIn = false %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+
+    <div class="govuk-grid-column-one-third">
+        <h2 class="govuk-heading-m">Contents</h2>
+        <h3 class="govuk-heading-s"><a href="#components" class="govuk-link">Components </a></h3>
+
+        <ul class="govuk-list govuk-list--bullet">
+            <li><a href="#notifications" class="govuk-link">Notifications</a> </li>
+            <li><a href="#promo" class="govuk-link">Promo box</a> </li>
+        </ul>
+
+    </div>
+
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">DAS frontend examples</h1>
+
+        <h2 class="govuk-heading-l" id="components">Components</h2>
+
+        <h3 class="govuk-heading-m" id="notifications">Notifications</h3>
+
+        <div class="das-notification">
+            <h1 class="das-notification__heading">Hello</h1>
+            <p class="das-notification__body">
+                This is some information
+            </p>
+        </div>
+
+        <div class="das-notification das-notification--success">
+            <h1 class="das-notification__heading">Hello</h1>
+            <p class="das-notification__body">
+                This is some information
+            </p>
+        </div>
+
+        <div class="das-notification das-notification--warning">
+            <h1 class="das-notification__heading">Hello</h1>
+            <p class="das-notification__body">
+                This is some information
+            </p>
+        </div>
+
+        <hr class="govuk-section-break--l govuk-section-break--visible">
+
+        <h3 class="govuk-heading-m" id="promo">Promo box</h3>
+
+        <a class="das-promo" href="#">
+            A simple box with center aligned text, which is supposed to be used as a link
+        </a>
+
+        <hr class="govuk-section-break--l govuk-section-break--visible">
+
+        <h3 class="govuk-heading-m" id="search">Search field</h3>
+
+        <form>
+                                <div class="govuk-form-group das-form-group-inline das-dashboard-search">
+                                    <label for="search" class="govuk-visually-hidden">Search</label>
+                                    <input class="govuk-input das-dashboard-search__input" id="search" type="search" placeholder="Search">
+                                    <div class="das-form-group-inline__button-wrap">
+                                        <button class="govuk-button das-dashboard-search__button" type="submit">Search</button>
+                                    </div>
+                                </div>
+                            </form>
+
+    </div>
+</div>
+
+{% endblock  %}
+
+{% block js %}
+
+{% endblock %}
