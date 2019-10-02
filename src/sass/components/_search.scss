@@ -22,12 +22,14 @@
 }
 
 .das-dashboard-search__input {
-  border: none;
+  border: 1px solid govuk-colour('grey-2');
+  border-right: none;
   height: 40px;
-  @include govuk-responsive-padding(6, "top");
-  @include govuk-responsive-padding(6, "bottom");
-  @include govuk-responsive-padding(4, "left");
-  @include govuk-responsive-padding(4, "right");
+  box-sizing: border-box;
+  padding: 15px;
+  @include govuk-media-query($from: tablet) {
+    padding: 29px 20px 29px;
+  }
 }
 
 .das-dashboard-search__button {
