@@ -9,6 +9,9 @@ import GoogleMaps from './components/googleMaps/_googleMaps'
 import NetworkInformation from './components/networkInformation/_networkInformation'
 import AlertBanner from './components/AlertBanner/_alertBanner'
 
+import Radios from './components/gds-v2/radios/radios'
+import Tabs from './components/gds-v2/tabs/tabs'
+
 function nodeListForEach(nodes, callback) {
   if (window.NodeList.prototype.forEach) {
     return nodes.forEach(callback)
@@ -68,6 +71,20 @@ function initAll() {
       new VideoPlayer($videoPlayer, $gtmDataLayer).init();
     });
 
+    // GDS v2 Radios
+
+    var $radios = document.querySelectorAll('[data-module="radios"]')
+    nodeListForEach($radios, function ($radio) {
+      new Radios($radio).init()
+    })
+
+    // GDS v2 Tabs
+
+    var $tabs = document.querySelectorAll('[data-module="tabs"]')
+    nodeListForEach($tabs, function ($tabs) {
+      new Tabs($tabs).init()
+    })
+
     new NetworkInformation($gtmDataLayer).init();
   });
 
@@ -103,5 +120,7 @@ export {
   Navigation,
   CookieBanner,
   VideoPlayer,
-  GoogleMaps
+  GoogleMaps,
+  Radios,
+  Tabs
 }
