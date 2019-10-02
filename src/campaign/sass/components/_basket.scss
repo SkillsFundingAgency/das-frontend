@@ -35,6 +35,15 @@
   right: -10px;
   top: 0;
   border-radius: 50%;
+
+  box-sizing: border-box;
+  border: none;
+  font-size: 1.6em;
+
+  &:focus {
+    @include focus-outline
+  }
+
 }
 
 .das-basket__form {
