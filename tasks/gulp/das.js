@@ -23,8 +23,8 @@ gulp.task('das-copy-images', function() {
 });
 
 gulp.task('das-copy-libs', (done) => {
-  gulp.src(['./node_modules/govuk-frontend/assets/**/*','./src/assets/**/*']).pipe(gulp.dest('./dist/assets/'));
-  gulp.src(['./node_modules/govuk-frontend/all.js']).pipe(gulp.dest('./dist/libs/govuk-frontend'));
+  gulp.src(['./node_modules/govuk-frontend/govuk/assets/**/*','./src/assets/**/*']).pipe(gulp.dest('./dist/assets/'));
+  gulp.src(['./node_modules/govuk-frontend/govuk/all.js']).pipe(gulp.dest('./dist/libs/govuk-frontend'));
   gulp.src(['./node_modules/accessible-autocomplete/dist/accessible-autocomplete.min.js']).pipe(gulp.dest('./dist/libs/accessible-autocomplete'));
   gulp.src(['./src/libs/das-postcode/lookupService.js']).pipe(gulp.dest('./dist/libs/das-postcode'));
   gulp.src(['./node_modules/html5shiv/dist/html5shiv.min.js']).pipe(gulp.dest('./dist/libs/html5shiv'));
