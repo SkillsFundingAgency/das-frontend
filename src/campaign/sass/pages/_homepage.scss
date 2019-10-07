@@ -51,6 +51,21 @@
   }
 }
 
+.homepage-title--relative {
+  position: relative;
+  left: -5px;
+  top: -85px;
+  margin-bottom: -50px;
+  @include media-query($from: tablet) {
+    top: -90px;
+    margin-bottom: -65px;
+  }
+  @include media-query($from: desktop) {
+    top: -150px;
+    margin-bottom: -155px;
+  }
+}
+
 .cssmask {
   .launcher--apprentice {
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 94%);
