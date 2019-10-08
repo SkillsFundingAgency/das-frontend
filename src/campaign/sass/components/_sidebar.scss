@@ -378,3 +378,14 @@ $timeline-width: 2px;
   border-color: transparent transparent white;
   margin: 0;
 }
+
+.sidebar-panel--provider-search {
+  .grid-column-one-fifth,
+  .grid-column-two-fifths {
+    float: none;
+    width: auto;
+  }
+  .grid-row--align-bottom {
+    display: block;
+  }
+}

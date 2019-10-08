@@ -114,3 +114,10 @@
   @include responsive-margin(6, "top");
   @include responsive-margin(6, "bottom");
 }
+
+.section-break--dashed {
+  margin: 0;
+  border: none;
+  height: 0;
+  border-bottom: 1px dashed $border-colour;
+}
