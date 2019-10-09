@@ -3,15 +3,14 @@
   @include responsive-margin(6, "bottom", $adjustment: $button-shadow-size); // s2
 }
 
-.form-list-item{
+.form-list-item {
   @include responsive-padding(4, "left"); // s2
   @include responsive-padding(4, "bottom"); // s2
   color: $grey-5;
 }
 
-.form-section{
-  background: inherit !important; 
-
+.form-section {
+  background: inherit !important;
 }
 
 .form-validation-summary{
@@ -27,18 +26,34 @@
   }
 }
 
-.form-group-validation-error{
+.form-validation-summary__heading {
+  margin-top: 0;
+}
 
+.form-validation-summary__list {
+  margin: 0;
+  list-style: none;
+  padding-left: 0;
+  & > li {
+    margin-bottom: 5px;
+  }
+}
+
+.form-validation-summary__link,
+.page .form-validation-summary__link {
+  color: $error-colour;
+}
+
+.form-group-validation-error{
   border-left: 8px solid $error-colour;
   padding-left: 15px;
 }
 
 .validation-summary-valid {
-  display:none;
+  display: none;
 }
 .input-validation-error{
   border-bottom-color: $error-colour !important;
-  margin-bottom: 10px;
 }
 
 .das-form-group-inline {

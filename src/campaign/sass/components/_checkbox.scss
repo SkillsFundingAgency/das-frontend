@@ -65,8 +65,9 @@ $cbk-primary-colour: #000000;
     height: $checkboxes-size;
     border: $border-width-form-element solid currentColor;
     background: transparent;
-
-    // padding-bottom: 1px;
+    .form-group-validation-error & {
+      border-color: $error-colour;
+    }
   }
 
   .checkboxes__input + .checkboxes__label::after {
