@@ -2,69 +2,59 @@
     @include typography-common();
     @include focusable;
     font-size: 19px;
-  font-weight: $font-weight-light;
+    font-weight: $font-weight-light;
     box-sizing: border-box;
     width: 100%;
     margin-top: 0;
-
     padding: 8px;
-    // setting any background-color makes text invisible when changing colours to dark backgrounds in Firefox (https://bugzilla.mozilla.org/show_bug.cgi?id=1335476)
-    // as background-color and color need to always be set together, color should not be set either
-    border: 0;
+    border: 1px solid $input-border-colour;
     color: $black;
     border-bottom: $border-width-form-element solid $input-border-colour;
     border-radius: 0;
+}
 
-    // Disable inner shadow and remove rounded corners
-    appearance: none;
-  }
-  .input::placeholder {
-    color: $grey-3;
+.input::placeholder {
+  color: $grey-3;
+}
 
-  }
+.input::-webkit-outer-spin-button,
+.input::-webkit-inner-spin-button {
+  margin: 0;
+  -webkit-appearance: none;
+}
 
-  .input::-webkit-outer-spin-button,
-  .input::-webkit-inner-spin-button {
-    margin: 0;
-    -webkit-appearance: none;
-  }
+.input[type="number"] {
+  -moz-appearance: textfield;
+}
 
-  .input[type="number"] {
-    -moz-appearance: textfield;
-  }
+.input--error {
+  border: $border-width-form-element-error solid $error-colour;
+}
 
-  .input--error {
-    border: $border-width-form-element-error solid $error-colour;
-  }
+.input--width-30 {
+  max-width: 56ex + 3ex;
+}
 
-  // The ex measurements are based on the number of W's that can fit inside the input
-  // Extra space is left on the right hand side to allow for the Safari prefill icon
-  // Linear regression estimation based on visual tests: y = 1.76 + 1.81x
+.input--width-20 {
+  max-width: 38ex + 3ex;
+}
 
-  .input--width-30 {
-    max-width: 56ex + 3ex;
-  }
+.input--width-10 {
+  max-width: 20ex + 3ex;
+}
 
-  .input--width-20 {
-    max-width: 38ex + 3ex;
-  }
+.input--width-5 {
+  max-width: 10.8ex;
+}
 
-  .input--width-10 {
-    max-width: 20ex + 3ex;
-  }
+.input--width-4 {
+  max-width: 9ex;
+}
 
-  .input--width-5 {
-    max-width: 10.8ex;
-  }
+.input--width-3 {
+  max-width: 7.2ex;
+}
 
-  .input--width-4 {
-    max-width: 9ex;
-  }
-
-  .input--width-3 {
-    max-width: 7.2ex;
-  }
-
-  .input--width-2 {
-    max-width: 5.4ex;
-  }
+.input--width-2 {
+  max-width: 5.4ex;
+}
