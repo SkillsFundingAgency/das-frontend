@@ -60,3 +60,18 @@
 .das-\!-display--block {
   display: block;
 }
+
+.das-show {
+  display: block;
+}
+
+.das-hide {
+  display: none;
+}
+
+.das-sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  top: -1px;
+  background-color:#fff;
+}
