@@ -1,0 +1,95 @@
+{% extends "template.html" %}
+{% set pageTitle = "Digital Apprenticeship Service" %}
+{% set hideStatusBanner = true %}
+{% set loggedIn = true %}
+{% set backLink = 'a' %}
+
+{% block content %}
+
+    <div class="govuk-width-container">
+        <main class="govuk-main-wrapper">
+
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-two-thirds">
+                    <h1 class="govuk-heading-xl">Select your organisation</h1>
+
+                    <form action="/search" method="get" role="search" aria-label="On this page">
+                        <div class="govuk-form-group">
+                            <label class="govuk-label govuk-label--s" for="search-list">Search results</label>
+
+                            <div class=" das-form-group-inline das-form-group-inline--sm">
+                                <input id="search-list" name="search-list" title="Search" class="govuk-input" type="text" value="" aria-describedby="inline-search-hint">
+
+                                <span id="inline-search-hint" class="govuk-hint">50 results found</span>
+
+                                <div class="das-form-group-inline__button-wrap">
+                                    <button class="govuk-button das-dashboard-search__button" type="submit">Search</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+
+                </div>
+            </div>
+
+            <div class="govuk-grid-row">
+               <section class="govuk-grid-column-one-third">
+                    <h2 class="govuk-heading-m">Filter results</h2>
+                    <form method="POST">
+
+                        <div class="govuk-form-group das-form-group--panel">
+                            <fieldset class="govuk-fieldset">
+                                <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                                    <h3 class="govuk-fieldset__heading">
+                                        Organisation type
+                                    </h3>
+                                </legend>
+                                <div class="govuk-radios govuk-radios--small">
+                                    <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input" id="company" name="organisationType" type="radio" value="CompaniesHouse">
+                                        <label class="govuk-label govuk-radios__label" for="company">
+                                            Company
+                                        </label>
+                                    </div>
+                                    <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input" id="charity" name="organisationType" type="radio" value="Charities">
+                                        <label class="govuk-label govuk-radios__label" for="charity">
+                                            Charity
+                                        </label>
+                                    </div>
+                                    <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input" id="publicSector" name="organisationType" type="radio" value="PublicBodies">
+                                        <label class="govuk-label govuk-radios__label" for="publicSector">
+                                            Public sector
+                                        </label>
+                                    </div>
+                                    <div class="govuk-radios__item">
+                                        <input class="govuk-radios__input" id="all" name="organisationType" type="radio" value="">
+                                        <label class="govuk-label govuk-radios__label" for="all">
+                                            Show all
+                                        </label>
+                                    </div>
+                                </div>
+                            </fieldset>
+
+                            <div class="form-group" id="apply-filter">
+                                <button type="submit" class="govuk-button govuk-button--secondary das-visually-hidden">Apply filter</button>
+                            </div>
+
+                        </div>
+
+                    </form>
+                </section>
+                <section class="govuk-grid-column-two-thirds">
+                    results list
+                </section>
+            </div>
+
+
+
+
+
+        </main>
+    </div>
+
+{% endblock %}
