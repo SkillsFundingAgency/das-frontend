@@ -59,6 +59,64 @@
 
 .das-pagination__caption{
   display: block;
-  
+
   @include govuk-font(16);
 }
+
+@mixin arrow-right($color) {
+  background-image:  url('data:image/svg+xml;utf8,<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" fill="' + $color + '" viewBox="0 0 25 40" xml:space="preserve"><path class="das-pagination__arrow" d="M0,4.3L16.2,20L0,35.8L4.4,40L25,20L4.5,0L0,4.3z"/></svg>');
+}
+@mixin arrow-left($color) {
+  background-image: url('data:image/svg+xml;utf8,<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="display: block; transform: scale(-1,1)"  x="0px" y="0px" fill="' + $color + '" viewBox="0 0 25 40" xml:space="preserve"><path class="das-pagination__arrow" d="M0,4.3L16.2,20L0,35.8L4.4,40L25,20L4.5,0L0,4.3z"/></svg>');
+}
+
+.das-pagination-link {//Description: single link pagination with arrow
+  width: 100%;
+  display: block;
+  text-align: right;
+  margin: govuk-spacing(3) 0 0 0;
+
+    .das-pagination-link__wrap {
+      font-size: inherit;
+      display: inline-block;
+
+      .govuk-link {
+        text-decoration: none;
+        display: inline-block;
+
+        &:hover {
+          text-decoration: underline;
+        }
+        &:focus {/* outline only as its a btn */
+          outline: $govuk-focus-width solid $govuk-focus-colour;
+          outline-offset: 0;
+        }
+
+        span {
+          display: block;
+          @include govuk-font($size: 16);//1rem
+        }
+        span:first-child {
+          @include govuk-font($size: 19);//1rem
+        }
+      }
+
+
+
+      &.das-pagination-link--next {
+        padding-right: 40px;
+        @include arrow-right(str-replace('' + $govuk-link-colour, '#', '%23'));
+        background-position: right center;
+        background-repeat: no-repeat;
+
+      }
+      &.das-pagination-link--prev {
+        padding-left: 40px;
+        @include arrow-left(str-replace('' + $govuk-link-colour, '#', '%23'));
+        background-position: left center;
+        background-repeat: no-repeat;
+      }
+    }
+
+}
+
