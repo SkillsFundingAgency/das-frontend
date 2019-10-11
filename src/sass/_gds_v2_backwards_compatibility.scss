@@ -47,3 +47,7 @@ $_govuk-colour-palette-modern: (
 );
 
 $govuk-colours: $_govuk-colour-palette-modern;
+
+.govuk-panel--confirmation {
+  background: $turquoise !important;
+}
