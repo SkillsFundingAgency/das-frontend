@@ -96,6 +96,16 @@ dl.das-inline-def-list {//Description: definition lists - brings the DT and DD i
           }
       }
     }
+    .govuk-heading-s,
+    & > span strong {
+      margin-bottom: govuk-spacing(2);
+    }
+    & > span {
+      display: inline-block;
+    }
+    dl + span {
+      margin-top: govuk-spacing(2);
+    }
   }
 }
 

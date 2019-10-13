@@ -109,31 +109,27 @@
                             </dl>
                         </li>
                         <li>
-                            <form>
-                                <input type="hidden" name="DateOfInception" value="@organisation.DateOfInception" />
+                            <!-- ******************NEW HTML TO CREATE/TEST *****************-->
+                            this is my text
+                                    <span class="govuk-heading-s">THIS IS THE NAME OF THE ORGANISATION</span>
+                                    <dl class="das-inline-def-list">
+                                        <dt>Address</dt>
+                                        <dd>No address supplied</dd>
+                                        <dt>Type</dt>
+                                        <dd>GetDescription()</dd>
+                                    </dl>
+                                    <span>
+                                        Already added - <a href="#" class="govuk-link">view my organisations</a>
+                                    </span>
+                            </li>
+                            <li>
+                        <span class="govuk-heading-s">Can't find your organisation?</span>   <br>Check the spelling and <a href="#searchTerm" class="govuk-link">search again</a>. <br>You can also <a href="#" class="govuk-link">enter your details manually.</a>
+                            </li>
 
-                                <input type="hidden" name="ReferenceNumber" value="@organisation.ReferenceNumber" />
-
-                                <input type="hidden" name="Sector" value="@organisation.Sector" />
-
-                                <input type="hidden" name="Type" value="@organisation.Type" />
-
-                                <input type="hidden" name="Name" value="@organisation.Name" />
-
-                                <input type="hidden" name="Address" value="@organisation.Address" />
-
-                                <button type="submit">
-                                    HENN LTD
-                                </button>
-                            </form>
-                            <dl>
-                                <dt>Address</dt>
-                                <dd>129  Caterham Drive, Coulsdon, CR5 1JQ</dd>
-                                <dt>Type</dt>
-                                <dd>Listed on Companies House</dd>
-                            </dl>
-                        </li>
-
+                    <li>
+                        <span class="govuk-heading-s">No results found. </span><br>
+                        <span class="xgovuk-heading-s">Can't find your organisation?</span>          <br>Check the spelling and <a href="#searchTerm" class="govuk-link">search again</a>. <br>You can also <a href="#" class="govuk-link">enter your details manually.</a>
+                    </li>
                     </ul>
 
                     <nav class="das-pagination-link">
