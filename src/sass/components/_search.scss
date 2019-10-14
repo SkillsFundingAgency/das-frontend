@@ -6,6 +6,22 @@
     display: table-cell;
     width: 100%;
   }
+
+  &.das-form-group-inline--sm {
+    .govuk-input {
+      padding: 0 govuk-spacing(1) 0 govuk-spacing(2);
+      border: 1px solid $grey-2;
+      @include govuk-font($size: 16);//1rem
+    }
+    .govuk-button {
+      width: 40px;
+      height: 40px;
+    }
+    .govuk-hint {
+      @include govuk-text-colour;
+      margin: govuk-spacing(2) 0;
+    }
+  }
 }
 
 .das-form-group-inline__button-wrap {
