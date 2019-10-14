@@ -1,3 +1,11 @@
+@mixin arrow-right($color) {
+  background-image: url('data:image/svg+xml;utf8,<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" fill="' + $color + '" viewBox="0 0 25 40" xml:space="preserve"><path class="das-pagination__arrow" d="M0,4.3L16.2,20L0,35.8L4.4,40L25,20L4.5,0L0,4.3z"/></svg>');
+}
+@mixin arrow-left($color) {
+  background-image: url('data:image/svg+xml;utf8,<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="display: block; transform: scale(-1,1)"  x="0px" y="0px" fill="' + $color + '" viewBox="0 0 25 40" xml:space="preserve"><path class="das-pagination__arrow" d="M0,4.3L16.2,20L0,35.8L4.4,40L25,20L4.5,0L0,4.3z"/></svg>');
+}
+
+/* Not in use ...
 .das-pagination {
   margin: 30px 0;
   border-top: 1px solid #ddd;
@@ -45,13 +53,13 @@
 
 .das-pagination__link--previous {
   padding-left: 35px;
-  background-image: url('data:image/svg+xml;utf8,<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="display: block; transform: scale(-1,1)"  x="0px" y="0px" viewBox="0 0 25 40" xml:space="preserve"><path class="das-pagination__arrow" d="M0,4.3L16.2,20L0,35.8L4.4,40L25,20L4.5,0L0,4.3z"/></svg>');
+  @include arrow-left(str-replace('' + $govuk-text-colour, '#', '%23'));
   background-position: left center;
 }
 
 .das-pagination__link--next {
   padding-right: 35px;
-  background-image: url('data:image/svg+xml;utf8,<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 25 40" xml:space="preserve"><path class="das-pagination__arrow" d="M0,4.3L16.2,20L0,35.8L4.4,40L25,20L4.5,0L0,4.3z"/></svg>');
+  @include arrow-right(str-replace('' + $govuk-text-colour, '#', '%23'));
   background-position: right center;
   text-align: right;
   float: right;
@@ -62,13 +70,7 @@
 
   @include govuk-font(16);
 }
-
-@mixin arrow-right($color) {
-  background-image:  url('data:image/svg+xml;utf8,<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" fill="' + $color + '" viewBox="0 0 25 40" xml:space="preserve"><path class="das-pagination__arrow" d="M0,4.3L16.2,20L0,35.8L4.4,40L25,20L4.5,0L0,4.3z"/></svg>');
-}
-@mixin arrow-left($color) {
-  background-image: url('data:image/svg+xml;utf8,<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="display: block; transform: scale(-1,1)"  x="0px" y="0px" fill="' + $color + '" viewBox="0 0 25 40" xml:space="preserve"><path class="das-pagination__arrow" d="M0,4.3L16.2,20L0,35.8L4.4,40L25,20L4.5,0L0,4.3z"/></svg>');
-}
+*/
 
 .das-pagination-link {//Description: single link pagination with arrow
   width: 100%;
@@ -101,8 +103,6 @@
         }
       }
 
-
-
       &.das-pagination-link--next {
         padding-right: 40px;
         @include arrow-right(str-replace('' + $govuk-link-colour, '#', '%23'));
@@ -119,4 +119,3 @@
     }
 
 }
-
