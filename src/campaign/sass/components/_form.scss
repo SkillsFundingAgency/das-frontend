@@ -42,9 +42,12 @@
 .form-validation-summary__link,
 .page .form-validation-summary__link {
   color: $error-colour;
+  &:visited {
+    color: $error-colour;
+  }
 }
 
-.form-group-validation-error{
+.form-group-validation-error {
   border-left: 8px solid $error-colour;
   padding-left: 15px;
 }
@@ -52,7 +55,8 @@
 .validation-summary-valid {
   display: none;
 }
-.input-validation-error{
+
+.input-validation-error {
   border-bottom-color: $error-colour !important;
 }
 
