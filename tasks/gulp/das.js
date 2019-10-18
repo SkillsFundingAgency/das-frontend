@@ -23,6 +23,7 @@ gulp.task('das-copy-images', function() {
 });
 
 gulp.task('das-copy-libs', (done) => {
+  gulp.src(['./src/libs/*.js']).pipe(gulp.dest('./dist/libs/'));
   gulp.src(['./node_modules/govuk-frontend/govuk/assets/**/*','./src/assets/**/*']).pipe(gulp.dest('./dist/assets/'));
   gulp.src(['./node_modules/govuk-frontend/govuk/all.js']).pipe(gulp.dest('./dist/libs/govuk-frontend'));
   gulp.src(['./node_modules/accessible-autocomplete/dist/accessible-autocomplete.min.js']).pipe(gulp.dest('./dist/libs/accessible-autocomplete'));
