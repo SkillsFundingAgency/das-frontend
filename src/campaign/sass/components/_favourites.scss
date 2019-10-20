@@ -12,7 +12,7 @@
 }
 
 .favourites-link__text {
-  @include media-query($from: desktop) {
+  @include media-query($from: $nav-breakpoint) {
     width: 2.4em;
     height: 2.4em;
     overflow: hidden;
@@ -27,12 +27,12 @@
     .header:hover & {
       background-image: url('../images/icon-star-outlined.svg');
     }
-  }
-  .favourites-link--filled & {
-    background-image: url('../images/icon-star-filled-yellow.svg');
-    .header--active & ,
-    .header:hover & {
+    .favourites-link--filled & {
       background-image: url('../images/icon-star-filled-yellow.svg');
+      .header--active & ,
+      .header:hover & {
+        background-image: url('../images/icon-star-filled-yellow.svg');
+      }
     }
   }
 }
@@ -48,7 +48,7 @@
   height: 1em;
   width: 1em;
   text-align: center;
-  @include media-query($from: desktop) {
+  @include media-query($from: $nav-breakpoint) {
     position: absolute;
     top: 10px;
     right: 10px;
