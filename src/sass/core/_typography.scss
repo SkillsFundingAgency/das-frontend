@@ -9,3 +9,18 @@ p {
 .das-text--muted {
   color: govuk-colour('dark-grey');
 }
+
+abbr {
+    font-variant: none;
+
+    &[title] {
+      text-decoration: none;
+      border-bottom: 1px dotted $grey-2;
+
+      .govuk-heading-xl &,
+      .govuk-heading-l & {
+          border-bottom: 1px dashed $grey-2;
+      }
+    }
+}
+
