@@ -197,6 +197,9 @@ $offset: 2;
   &:hover {
     color: $button-colour;
     text-decoration: none;
+    .page & {
+      color: $button-colour;
+    }
   }
 
   &:hover,
