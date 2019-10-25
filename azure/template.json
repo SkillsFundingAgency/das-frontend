@@ -62,7 +62,7 @@
         "containerName": {
             "type": "string"
         },
-        "ContainerPermission": {
+        "containerPermission": {
             "type": "string"
         }
     },
