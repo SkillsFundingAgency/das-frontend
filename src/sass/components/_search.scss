@@ -10,7 +10,7 @@
   &.das-form-group-inline--sm {
     .govuk-input {
       padding: 0 govuk-spacing(1) 0 govuk-spacing(2);
-      border: 1px solid $grey-2;
+      border: 1px solid govuk-colour('mid-grey');
       @include govuk-font($size: 16);//1rem
     }
     .govuk-button {
@@ -38,7 +38,7 @@
 }
 
 .das-dashboard-search__input {
-  border: 1px solid govuk-colour('grey-2');
+  border: 1px solid govuk-colour('mid-grey');
   border-right: none;
   height: 40px;
   box-sizing: border-box;
