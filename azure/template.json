@@ -60,7 +60,7 @@
             "defaultValue": "False"
         },
         "containerName": {
-            "type": "securestring"
+            "type": "string"
         },
         "ContainerPermission": {
             "type": "string"
