@@ -629,41 +629,44 @@
     <div class="sidebar-panel sidebar-panel--employer sidebar-panel--provider-search">
         <div class="sidebar-panel__content">
             <h2 class="heading-m u-!-margin-top-0">Find a training provider for this apprenticeship</h2>
+
             
-<form action="/TrainingProvider/Search">
-    <div class="grid-row grid-row--align-bottom">
-        <div class="grid-column-two-fifths">
-            <div class="form-group">
-                <p class="u-!-margin-top-0">Please enter the postcode for where the apprentice will work</p>
-                <label class="visually-hidden" for="Postcode">Use the postcode for where the apprentice will work.</label>
-                <input class="input" type="search" placeholder="Enter postcode" maxlength="8" autocomplete="postal-code" data-val="true" data-val-regex="You must enter a valid postcode" data-val-regex-pattern="\b((?:(?:girGIR)|(?:[a-pr-uwyzA-PR-UWYZ])(?:(?:[0-9](?:[a-hjkpstuwA-HJKPSTUW]|[0-9])?)|(?:[a-hk-yA-HK-Y][0-9](?:[0-9]|[abehmnprv-yABEHMNPRV-Y])?)))) ?([0-9][abd-hjlnp-uw-zABD-HJLNP-UW-Z]{2})\b" data-val-required="The Postcode field is required." id="Postcode" name="Postcode" value="">
-                <span class="error-message field-validation-valid" data-valmsg-for="Postcode" data-valmsg-replace="true"></span>
-            </div>
-        </div>
-        <div class="grid-column-two-fifths">
-            <div class="form-group">
-                <p class="u-!-margin-top-0">As an employer, is your pay bill more than &pound;3 million per year? </p>
-                <div class="radios radios--inline">
-                    <div class="radios__item">
-                        <input class="input radios__input" type="radio" value="true" id="LevyPayerYes" data-val="true" data-val-required="The IsLevyPayer field is required." name="IsLevyPayer">
-                        <label class="label radios__label" for="LevyPayerYes">Yes</label>
-                    </div>
-                    <div class="radios__item">
-                        <input class="input radios__input" type="radio" value="false" id="LevyPayerNo" checked="checked" name="IsLevyPayer">
-                        <label class="label radios__label" for="LevyPayerNo">No</label>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="grid-column-one-fifth">
-            <div class="form-group">
-                <input type="hidden" data-val="true" data-val-required="The ApprenticeshipId field is required." id="ApprenticeshipId" name="ApprenticeshipId" value="171" />
-                <input type="hidden" id="Keywords" name="Keywords" value="" />
-                <button class="button button--sparks button-employer" type="submit" id="employer-provider-search">Search</button>
-            </div>
-        </div>
-    </div>
-</form>
+                    <form action="/TrainingProvider/Search">
+                        <div class="grid-row grid-row--align-bottom">
+                            <div class="grid-column-two-fifths">
+                                <div class="form-group">
+                                    <label for="Postcode" class="label label--l">Please enter the postcode for where the apprentice will work</label>
+                                    <input class="input input--width-10" type="search" placeholder="Enter postcode" maxlength="8" autocomplete="postal-code" id="Postcode" name="Postcode" value="" data-val="true" data-val-regex="You must enter a valid postcode"
+                                           data-val-regex-pattern="\b((?:(?:girGIR)|(?:[a-pr-uwyzA-PR-UWYZ])(?:(?:[0-9](?:[a-hjkpstuwA-HJKPSTUW]|[0-9])?)|(?:[a-hk-yA-HK-Y][0-9](?:[0-9]|[abehmnprv-yABEHMNPRV-Y])?)))) ?([0-9][abd-hjlnp-uw-zABD-HJLNP-UW-Z]{2})\b"
+                                           data-val-required="The Postcode field is required.">
+                                    <span class="error-message field-validation-valid" data-valmsg-for="Postcode" data-valmsg-replace="true"></span>
+                                </div>
+                            </div>
+                            <div class="grid-column-two-fifths">
+                                <fieldset class="fieldset form-group">
+                                    <legend class="fieldset__legend fieldset__legend--l">As an employer, is your pay bill more than &pound;3 million per year? </legend>
+                                    <p class="u-!-margin-top-0">If you’re receiving a transfer of apprenticeship funds from another employer, please choose ‘Yes’</p>
+                                    <div class="radios radios--inline">
+                                        <div class="radios__item">
+                                            <input class="input radios__input" type="radio" value="true" id="LevyPayerYes" data-val="true" data-val-required="The IsLevyPayer field is required." name="IsLevyPayer">
+                                            <label class="label radios__label" for="LevyPayerYes">Yes</label>
+                                        </div>
+                                        <div class="radios__item">
+                                            <input class="input radios__input" type="radio" value="false" id="LevyPayerNo" checked="checked" name="IsLevyPayer">
+                                            <label class="label radios__label" for="LevyPayerNo">No</label>
+                                        </div>
+                                    </div>
+                                </fieldset>
+                            </div>
+                            <div class="grid-column-one-fifth">
+                                <div class="form-group">
+                                    <input type="hidden" data-val="true" data-val-required="The ApprenticeshipId field is required." id="ApprenticeshipId" name="ApprenticeshipId" value="171" />
+                                    <input type="hidden" id="Keywords" name="Keywords" value="" />
+                                    <button class="button button--sparks button-employer" type="submit" id="employer-provider-search">Search</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
 
         </div>
     </div>
@@ -677,56 +680,6 @@
 </main>
 
 
-    <div class="grid-row">
-        <div class="grid-column-full">
-            <section class="cta-fat">
-                <div class="cta-fat__content">
-                    <h2 class="heading-l u-!-margin-top-0">Find a training provider</h2>
-
-
-
-                    
-<form action="/TrainingProvider/Search">
-    <div class="grid-row grid-row--align-bottom">
-        <div class="grid-column-two-fifths">
-            <div class="form-group">
-                <p class="u-!-margin-top-0">Please enter the postcode for where the apprentice will work</p>
-                <label class="visually-hidden" for="Postcode">Use the postcode for where the apprentice will work.</label>
-                <input class="input" type="search" placeholder="Enter Postcode..." data-val="true" data-val-regex="You must enter a valid postcode" data-val-regex-pattern="\b((?:(?:girGIR)|(?:[a-pr-uwyzA-PR-UWYZ])(?:(?:[0-9](?:[a-hjkpstuwA-HJKPSTUW]|[0-9])?)|(?:[a-hk-yA-HK-Y][0-9](?:[0-9]|[abehmnprv-yABEHMNPRV-Y])?)))) ?([0-9][abd-hjlnp-uw-zABD-HJLNP-UW-Z]{2})\b" data-val-required="The Postcode field is required." id="Postcode" name="Postcode" value="">
-                <span class="error-message field-validation-valid" data-valmsg-for="Postcode" data-valmsg-replace="true"></span>
-            </div>
-        </div>
-        <div class="grid-column-two-fifths">
-            <div class="form-group">
-                <p class="u-!-margin-top-0">As an employer, is your pay bill more than &pound;3 million per year? </p>
-                <div class="radios radios--inline">
-                    <div class="radios__item">
-                        <input class="input radios__input" type="radio" value="true" id="LevyPayerYes" data-val="true" data-val-required="The IsLevyPayer field is required." name="IsLevyPayer">
-                        <label class="label radios__label" for="LevyPayerYes">Yes</label>
-                    </div>
-                    <div class="radios__item">
-                        <input class="input radios__input" type="radio" value="false" id="LevyPayerNo" checked="checked" name="IsLevyPayer">
-                        <label class="label radios__label" for="LevyPayerNo">No</label>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="grid-column-one-fifth">
-            <div class="form-group">
-                <input type="hidden" data-val="true" data-val-required="The ApprenticeshipId field is required." id="ApprenticeshipId" name="ApprenticeshipId" value="171" />
-                <input type="hidden" id="Keywords" name="Keywords" value="" />
-                <button class="button button--sparks button-employer" type="submit" id="employer-provider-search">Search</button>
-            </div>
-        </div>
-    </div>
-</form>
-
-                </div>
-
-            </section>
-
-        </div>
-    </div>
 
 
 
