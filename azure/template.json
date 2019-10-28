@@ -54,6 +54,13 @@
         },
         "originPath": {
             "type": "string"
+        },
+        "enableCors": {
+            "type": "string",
+            "defaultValue": "False"
+        },
+        "containerArray": {
+            "type": "array"
         }
     },
     "variables": {},
@@ -77,10 +84,45 @@
                     },
                     "storageKind": {
                         "value": "[parameters('storageKind')]"
+                    },
+                    "enableCors": {
+                        "value": "[parameters('enableCors')]"
                     }
                 }
             },
-            "dependsOn": []
+            "dependsOn": [
+            ]
+        },
+        {
+            "apiVersion": "2017-05-10",
+            "name": "[concat('storage-container', parameters('containerArray')[copyIndex()].name)]",
+            "type": "Microsoft.Resources/deployments",
+            "condition": "[greater(length(parameters('containerArray')), 0)]",
+            "properties": {
+                "mode": "Incremental",
+                "templateLink": {
+                    "uri": "https://raw.githubusercontent.com/SkillsFundingAgency/das-platform-building-blocks/master/templates/storage-container.json",
+                    "contentVersion": "1.0.0.0"
+                },
+                "parameters": {
+                    "storageAccountName": {
+                        "value": "[parameters('storageAccountName')]"
+                    },
+                    "containerName": {
+                        "value": "[parameters('containerArray')[copyIndex()].name]"
+                    },
+                    "publicAccess": {
+                        "value": "[parameters('containerArray')[copyIndex()].publicAccess]"
+                    }
+                }
+            },
+            "copy": {
+                "name": "containercopy",
+                "count": "[length(parameters('containerArray'))]"
+            },
+            "dependsOn": [
+                "storage-account-arm"
+            ]
         },
         {
             "apiVersion": "2017-05-10",
