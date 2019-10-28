@@ -59,19 +59,12 @@
             "type": "string",
             "defaultValue": "False"
         },
-<<<<<<< HEAD
         "containerArray": {
             "type": "array"
-=======
-        "containerName": {
-            "type": "string"
-        },
-        "containerPermission": {
-            "type": "string"
->>>>>>> 99a876cfee5cbec4581cf2a92490c9feaf4c18e0
         }
     },
-    "variables": {},
+    "variables": {
+    },
     "resources": [
         {
             "apiVersion": "2017-05-10",
@@ -93,40 +86,15 @@
                     "storageKind": {
                         "value": "[parameters('storageKind')]"
                     },
-                    "enableCors":{ 
-                        "value": "[parameters('enableCors')]" 
-                    }
-                }
-            },
-            "dependsOn": []
-        },
-        {
-            "apiVersion": "2017-05-10",
-            "name": "[concat('storage-container', parameters('containerName'))]",
-            "type": "Microsoft.Resources/deployments",
-            "properties": {
-                "mode": "Incremental",
-                "templateLink": {
-                    "uri": "https://raw.githubusercontent.com/SkillsFundingAgency/das-platform-building-blocks/master/templates/storage-container.json",
-                    "contentVersion": "1.0.0.0"
-                },
-                "parameters": {
-                    "storageAccountName": {
-                        "value":  "[parameters('storageAccountName')]"
-                    },
-                    "containerName": {
-                        "value": "[parameters('containerName')]"
-                    },
-                    "publicAccess": {
-                        "value": "[parameters('containerPermission')]"
+                    "enableCors": {
+                        "value": "[parameters('enableCors')]"
                     }
                 }
             },
             "dependsOn": [
-                "storage-account-arm"
             ]
         },
-                {
+        {
             "apiVersion": "2017-05-10",
             "name": "[concat('storage-container', parameters('containerArray')[copyIndex()].name)]",
             "type": "Microsoft.Resources/deployments",
@@ -134,7 +102,7 @@
             "properties": {
                 "mode": "Incremental",
                 "templateLink": {
-                    "uri": "[concat(variables('deploymentUrlBase'), 'storage-container.json')]",
+                    "uri": "https://raw.githubusercontent.com/SkillsFundingAgency/das-platform-building-blocks/master/templates/storage-container.json",
                     "contentVersion": "1.0.0.0"
                 },
                 "parameters": {
