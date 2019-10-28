@@ -58,3 +58,22 @@
 .input--width-2 {
   max-width: 5.4ex;
 }
+
+.label {
+  font-size: 18px;
+  font-weight: bolder;
+  display: block;
+  margin-bottom: .5em;
+  color: $black;
+  @include media-query($from: tablet) {
+    font-size: 21px;
+  }
+}
+
+.label--l {
+  @include font($size: 24, $weight: bolder);
+}
+
+.label--xl {
+  font-size: 32px;
+}

@@ -1,6 +1,6 @@
 
 .das-definition-list__results dt {
-    font-size: 21px;
+    font-size: 18px;
     font-weight: 600;
     margin-bottom: .25em;
     @include mq ($from: tablet) {
@@ -15,9 +15,10 @@
 }
 
 .das-definition-list__results dd {
-    font-size: 21px;
+    font-size: 18px;
     margin: 0 0 1em;
     @include mq ($from: tablet) {
+        font-size: 21px;
         float: left;
         margin-inline-start: 0px;
         width: 75%;

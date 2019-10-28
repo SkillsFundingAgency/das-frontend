@@ -93,8 +93,10 @@ html {
 p {
   @include typography-common;
   font-weight: $font-weight-light;
-  font-size: 21px;
-  //color: $text-colour;
+  font-size: 18px;
+  @include media-query($from: tablet) {
+    font-size: 21px;
+  }
 }
 
 .lead-paragraph {
@@ -125,13 +127,16 @@ p {
 .text--apprentice{
   color:$apprentice;
 }
+
 .text--employer{
   color: $employer;
 }
-.text-danger{
+
+.text-danger,
+.text--danger{
   color:$error-colour;
 }
 
 .bold{
-font-weight: 700;
+  font-weight: 700;
 }
