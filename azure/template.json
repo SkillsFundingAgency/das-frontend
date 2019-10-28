@@ -59,8 +59,16 @@
             "type": "string",
             "defaultValue": "False"
         },
+<<<<<<< HEAD
         "containerArray": {
             "type": "array"
+=======
+        "containerName": {
+            "type": "string"
+        },
+        "containerPermission": {
+            "type": "string"
+>>>>>>> 99a876cfee5cbec4581cf2a92490c9feaf4c18e0
         }
     },
     "variables": {},
@@ -110,7 +118,7 @@
                         "value": "[parameters('containerName')]"
                     },
                     "publicAccess": {
-                        "value": "[parameters('ContainerPermission')]"
+                        "value": "[parameters('containerPermission')]"
                     }
                 }
             },
