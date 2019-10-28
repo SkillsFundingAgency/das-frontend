@@ -88,7 +88,9 @@
                     "storageKind": {
                         "value": "[parameters('storageKind')]"
                     },
-                    "enableCors": "[parameters('enableCors')]"
+                    "enableCors":{ 
+                        "value": "[parameters('enableCors')]" 
+                    }
                 }
             },
             "dependsOn": []
