@@ -63,8 +63,7 @@
             "type": "array"
         }
     },
-    "variables": {
-    },
+    "variables": {},
     "resources": [
         {
             "apiVersion": "2017-05-10",
