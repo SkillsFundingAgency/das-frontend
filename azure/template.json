@@ -111,7 +111,7 @@
                         "value": "[parameters('containerName')]"
                     },
                     "publicAccess": {
-                        "value": "[parameters('ContainerPermission')]"
+                        "value": "[parameters('containerPermission')]"
                     }
                 }
             },
