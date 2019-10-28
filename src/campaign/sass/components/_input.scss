@@ -75,5 +75,5 @@
 }
 
 .label--xl {
-  font-size: 32px;
+  @include font($size: 36, $weight: bolder);
 }
