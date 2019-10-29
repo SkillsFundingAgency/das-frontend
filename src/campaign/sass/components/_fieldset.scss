@@ -1,0 +1,31 @@
+.fieldset {
+  min-width: 0;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  &:after {
+    content: "";
+    display: block;
+    clear: both;
+  }
+}
+
+.fieldset__legend {
+  font-size: 21px;
+  font-weight: bolder;
+  color: $black;
+  box-sizing: border-box;
+  display: table;
+  max-width: 100%;
+  margin-bottom: 10px;
+  padding: 0;
+  white-space: normal;
+}
+
+.fieldset__legend--l {
+  @include font($size: 24, $weight: bolder);
+}
+
+.fieldset__legend--xl {
+  @include font($size: 36, $weight: bolder);
+}

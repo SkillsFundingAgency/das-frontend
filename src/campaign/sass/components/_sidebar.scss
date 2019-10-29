@@ -368,15 +368,17 @@ $timeline-width: 2px;
 }
 
 .sidebar-panel__content:after {
-  content: '';
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  border-style: solid;
-  border-width: 0 0 50px 614px;
-  border-color: transparent transparent white;
-  margin: 0;
+  @include media-query($from: tablet) {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    border-style: solid;
+    border-width: 0 0 50px 614px;
+    border-color: transparent transparent white;
+    margin: 0;
+  }
 }
 
 .sidebar-panel--provider-search {
