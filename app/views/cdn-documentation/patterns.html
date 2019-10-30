@@ -1,0 +1,82 @@
+{% extends "template-cdn-documentation.html" %}
+{% set pageTitle = "CDN documentation" %}
+{% set backLink = 'index.html' %}
+{% set parentNavOnClass = 'patterns' %}
+{% set bodyClass = 'hr' %}
+
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl govuk-!-margin-top-6 govuk-!-margin-bottom-3">Patterns</h1>
+    </div>
+</div>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <h2 class="govuk-heading-m govuk-!-margin-top-6 govuk-!-margin-bottom-3">Search Results list</h2>
+        <span class="govuk-caption-m">with forms in each list item</span>
+        <p class="govuk-body govuk-!-padding-bottom-9">Description: search results list featuring forms (button as link) in each list item</p>
+
+
+        <ul class="govuk-list das-govuk-list-forms">
+            <li>
+                <form action="#" method="post">
+                    <input type="hidden" name="value0101" value="value0101" />
+                    <input type="hidden" name="value0102" value="value0102" />
+                    <button type="submit">Example text 1</button>
+                </form>
+                <dl class="das-inline-def-list">
+                    <dt>Address</dt>
+                    <dd>Example address</dd>
+                    <dt>Type</dt>
+                    <dd>Type example</dd>
+                </dl>
+            </li>
+            <li>
+                <form action="#" method="post">
+                    <input type="hidden" name="value0201" value="value0201" />
+                    <input type="hidden" name="value0202" value="value0202" />
+                    <button type="submit">Example text 2</button>
+                </form>
+                <dl class="das-inline-def-list">
+                    <dt>Address</dt>
+                    <dd>Example address</dd>
+                    <dt>Type</dt>
+                    <dd>Type example</dd>
+                </dl>
+            </li>
+            <li>
+                <form action="#" method="post">
+                    <input type="hidden" name="value0301" value="value0301" />
+                    <input type="hidden" name="value0302" value="value0302" />
+                    <button type="submit">Example text 3</button>
+                </form>
+                <dl class="das-inline-def-list">
+                    <dt>Address</dt>
+                    <dd>Example address</dd>
+                    <dt>Type</dt>
+                    <dd>Type example</dd>
+                </dl>
+            </li>
+        </ul>
+
+
+    </div>
+</div>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <h2 class="govuk-heading-m govuk-!-margin-top-6 govuk-!-margin-bottom-3">Lorem ipsum</h2>
+        <p class="govuk-body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus nostrum minima laudantium aliquid magni porro laborum quibusdam a nisi illo? Omnis at unde ipsum accusamus amet debitis, minima qui quis.</p>
+
+
+
+    </div>
+</div>
+
+
+
+{% endblock %}

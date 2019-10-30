@@ -65,5 +65,10 @@ module.exports = {
       var fileId = req.params.fileId;
       res.render('campaign/json/' + fileId + '.json')
     })
+
+    app.get('/cdn-documentation/:compName', function (req, res) {
+      var compName = req.params.compName;
+      res.render('cdn-documentation/' + compName, {action: req.query.action, type: req.query.type})
+    })
   }
 }

@@ -1,0 +1,48 @@
+{% extends "template-cdn-documentation.html" %}
+{% set pageTitle = "CDN documentation" %}
+
+{% set backLink = 'index.html' %}
+{% set parentNavOnClass = 'components' %}
+{% set bodyClass = 'hr' %}
+
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl govuk-!-margin-top-6 govuk-!-margin-bottom-3">Components</h1>
+    </div>
+</div>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <h2 class="govuk-heading-m govuk-!-margin-top-6 govuk-!-margin-bottom-3">Definition list:</h2>
+
+        <p class="govuk-body">Description: definition list - brings the <code>DT</code> and <code>DD</code> inline.</p>
+
+        <dl class="das-inline-def-list">
+            <dt>First Name</dt>
+            <dd>John</dd>
+            <dt>Surname</dt>
+            <dd>Smith</dd>
+            <dt>Nationality</dt>
+            <dd>British</dd>
+        </dl>
+
+    </div>
+</div>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <h2 class="govuk-heading-m govuk-!-margin-top-6 govuk-!-margin-bottom-3">Lorem ipsum</h2>
+        <p class="govuk-body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus nostrum minima laudantium aliquid magni porro laborum quibusdam a nisi illo? Omnis at unde ipsum accusamus amet debitis, minima qui quis.</p>
+
+
+
+    </div>
+</div>
+
+
+
+{% endblock %}
