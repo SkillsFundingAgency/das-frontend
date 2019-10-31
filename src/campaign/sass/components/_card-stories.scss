@@ -58,7 +58,7 @@
 
 .card-stories__cite {
   text-transform: uppercase;
-  @include font($size: 12, $weight: bold);
+  @include font($size: 14, $weight: bold);
   color: $grey-3;
   line-height: 20px;
   margin-bottom: 20px;
@@ -66,12 +66,7 @@
 
 .card-stories__cite-detail {
   display: block;
-  .card-stories--apprentice & {
-    color: $apprentice;
-  }
-  .card-stories--employer & {
-    color: $employer;
-  }
+  color: #000;
 }
 
 .card-stories__icon-play {
