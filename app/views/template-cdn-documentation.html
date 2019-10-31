@@ -31,11 +31,12 @@
         .app-navigation__link:after {content: ''; position: absolute; top: 0; right: 0; bottom: 0; left: 0; }
         .no-backlink #main-content {margin-top: 50px; }
 
-        body.hr main .govuk-grid-row {border-bottom: 1px solid #ccc; padding-bottom: 40px; }
+        body.hr main .govuk-grid-row {border-bottom: 1px dashed #ccc; padding-bottom: 40px; }
         body.hr main .govuk-grid-row:first-child {border-bottom: none; }
 
 
         .govuk-heading-m + .govuk-caption-m {margin-top: -20px; margin-bottom: 20px; }
+        .govuk-grid-column-full > p.govuk-body:before {content: '\2022'; font-size: 2rem; position: relative; top: 0.3rem; margin-right: 6px; }
 
         html, body {width: 100%; height: 100%; }
         #parentWrapper {min-height: 100%; display: flex; flex-direction: column; align-items: stretch; background-color: #fff; }

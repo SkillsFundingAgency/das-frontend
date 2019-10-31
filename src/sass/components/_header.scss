@@ -16,6 +16,13 @@
 
 }
 
+.das-header--provider {
+  & > .govuk-header__container {
+    border-color: $provider;
+  }
+
+}
+
 .das-header--has-user-nav {
   .govuk-header__content {
     @include govuk-media-query($from: desktop) {

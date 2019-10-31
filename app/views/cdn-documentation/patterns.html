@@ -16,52 +16,31 @@
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
-        <h2 class="govuk-heading-m govuk-!-margin-top-6 govuk-!-margin-bottom-3">Search Results list</h2>
-        <span class="govuk-caption-m">with forms in each list item</span>
-        <p class="govuk-body govuk-!-padding-bottom-9">Description: search results list featuring forms (button as link) in each list item</p>
+        <h2 class="govuk-heading-m govuk-!-margin-top-6 govuk-!-margin-bottom-3">Cards (example)</h2>
 
 
-        <ul class="govuk-list das-govuk-list-forms">
-            <li>
-                <form action="#" method="post">
-                    <input type="hidden" name="value0101" value="value0101" />
-                    <input type="hidden" name="value0102" value="value0102" />
-                    <button type="submit">Example text 1</button>
-                </form>
-                <dl class="das-inline-def-list">
-                    <dt>Address</dt>
-                    <dd>Example address</dd>
-                    <dt>Type</dt>
-                    <dd>Type example</dd>
-                </dl>
-            </li>
-            <li>
-                <form action="#" method="post">
-                    <input type="hidden" name="value0201" value="value0201" />
-                    <input type="hidden" name="value0202" value="value0202" />
-                    <button type="submit">Example text 2</button>
-                </form>
-                <dl class="das-inline-def-list">
-                    <dt>Address</dt>
-                    <dd>Example address</dd>
-                    <dt>Type</dt>
-                    <dd>Type example</dd>
-                </dl>
-            </li>
-            <li>
-                <form action="#" method="post">
-                    <input type="hidden" name="value0301" value="value0301" />
-                    <input type="hidden" name="value0302" value="value0302" />
-                    <button type="submit">Example text 3</button>
-                </form>
-                <dl class="das-inline-def-list">
-                    <dt>Address</dt>
-                    <dd>Example address</dd>
-                    <dt>Type</dt>
-                    <dd>Type example</dd>
-                </dl>
-            </li>
-        </ul>
+            <section class="das-section-dashboard">
+                <h2 class="das-section__heading govuk-heading-l">Lorem ipsum dolor sit</h2>
+                <p class="das-section__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent quis leo ut felis scelerisque sollicitudin fringilla a urna. </p>
+                <div class="das-cards">
+                    <div class="das-card">
+                        <h3 class="govuk-heading-m das-card__heading"><a href="#" class="govuk-link">Vestibulum</a></h3>
+                        <p>Maecenas dapibus metus neque, ut varius erat accumsan nec. Mauris sollicitudin molestie augue in consectetur. </p>
+                    </div>
+                    <div class="das-card">
+                        <h3 class="govuk-heading-m das-card__heading"><a href="#" class="govuk-link">Praesent eget velit</a></h3>
+                        <p>Aliquam in consequat risus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. </p>
+                    </div>
+                    <div class="das-card">
+                        <h3 class="govuk-heading-m das-card__heading"><a href="#" class="govuk-link">Proin mattis condimentum</a></h3>
+                        <p>Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. </p>
+                    </div>
+                    <div class="das-card">
+                        <h3 class="govuk-heading-m"><a href="#"# class="govuk-link">Nunc felis enim</a></h3>
+                        <p>Suspendisse ac eleifend sapien, at mollis dolor. Nunc felis enim, pretium sed tortor in, pellentesque cursus risus. </p>
+                    </div>
+                </div>
+            </section>
 
 
     </div>
@@ -69,13 +48,113 @@
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
-        <h2 class="govuk-heading-m govuk-!-margin-top-6 govuk-!-margin-bottom-3">Lorem ipsum</h2>
-        <p class="govuk-body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus nostrum minima laudantium aliquid magni porro laborum quibusdam a nisi illo? Omnis at unde ipsum accusamus amet debitis, minima qui quis.</p>
+        <h2 class="govuk-heading-m govuk-!-margin-top-6 govuk-!-margin-bottom-3">Dashboard header (example)</h2>
+
+        <section class="das-section das-section--search">
+            <div class="govuk-width-container">
+                <div class="das-dashboard-header__row">
+                    <div class="das-dashboard-header__col das-dashboard-header__col--primary">
+                        <form>
+                            <div class="govuk-form-group das-form-group-inline das-dashboard-search">
+                                <label for="search" class="govuk-visually-hidden">Search</label>
+                                <input class="govuk-input das-dashboard-search__input" id="search" type="search" placeholder="Search" disabled="disabled">
+                                <div class="das-form-group-inline__button-wrap">
+                                    <button class="govuk-button das-dashboard-search__button" type="submit">Search</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="das-dashboard-header__col das-dashboard-header__col--secondary">
+                        <a class="das-dashboard-header__tasks-link" href="#das-dashbaord-other-tasks" id="other-tasks-link">
+                            Other tasks you can do
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+    </div>
+</div>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <h2 class="govuk-heading-m govuk-!-margin-top-6 govuk-!-margin-bottom-3">Panels (example)</h2>
+
+        <p class="govuk-body">Filled colour panels:</p><!-- requires javascript for equal height panels? -->
+
+            <div class="das-panels">
+                <div class="das-panels__row">
+                    <div class="das-panel das-panel--featured">
+                        <h3 class="das-panel__heading">Lorem ipsum dolor consectetur adipiscing elit</h3>
+                        <p>Vivamus volutpat hendrerit quam, sit amet pharetra ante porta fermentum ante in.</p>
+                        <p><a href="#" class="das-panel__link">Maecenas interdum a tellus ut bibendum</a> </p>
+                    </div>
+                    <div class="das-panel">
+                        <h3 class="das-panel__heading">Quisque hendrerit egestas tellus</h3>
+                        <p>Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+                        <p><a href="#" class="govuk-link">Mauris sollicitudin</a> </p>
+                    </div>
+                </div>
+                <div class="das-panels__row das-panels__row--secondary">
+                    <div class="das-panel">
+                        <h3 class="das-panel__heading">Maecenas interdum a tellus ut bibendum</h3>
+                        <p>Donec hendrerit fermentum lectus, a eleifend est lobortis nec. Class aptent taciti sociosqu ad litora.</p>
+                    </div>
+                    <div class="das-panel">
+                        <h3 class="das-panel__heading">Maecenas dapibus metus</h3>
+                        <ul class="govuk-list">
+                           <li><a href="#" class="govuk-link">Sed vel tempus est</a> </li>
+                           <li><a href="#" class="govuk-link">Nunc ultrices bibendum</a> </li>
+                           <li><a href="#" class="govuk-link">Donec in fermentum ante</a> </li>
+                           <li><a href="#" class="govuk-link">Donec hendrerit fermentum</a> </li>
+                           <li><a href="#" class="govuk-link">Interdum et malesuada</a> </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+
+    </div>
+</div>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <h2 class="govuk-heading-m govuk-!-margin-top-6 govuk-!-margin-bottom-3">Dashboard footer (example)</h2>
+
+        <section class="das-section das-section--main das-dashboard-footer" aria-labelledby="more-title">
+            <div class="govuk-width-container">
+                <div class="govuk-grid-row">
+                    <hr class="das-section-break das-section-break--l das-section-break--heavy das-section-break--gutters">
+                    <div class="das-dashboard-footer__column das-dashboard-footer__column--title">
+                        <h2 id="more-title" class="das-dashboard-footer__title">More on Lorem ipsum dolor sit</h2>
+                    </div>
+                    <div class="das-dashboard-footer__column">
+                        <h3 class="govuk-heading-m das-dashboard-footer__sub-title">Aliquam in consequat</h3>
+                        <ul class="govuk-list das-list--featured">
+                            <li><a href="#" class="govuk-link govuk-link--no-visited-state">Orci varius natoque penatibus</a></li>
+                            <li><a href="#" class="govuk-link govuk-link--no-visited-state">Curabitur finibus lacus</a></li>
+                            <li><a href="#" class="govuk-link govuk-link--no-visited-state">Donec libero lorem</a></li>
+                            <li><a href="#" class="govuk-link govuk-link--no-visited-state">Praesent in sem non</a></li>
+                            <li><a href="#" class="govuk-link govuk-link--no-visited-state">Vestibulum mollis magna</a></li>
+                        </ul>
+                    </div>
+                    <div class="das-dashboard-footer__column">
+                        <a class="das-promo" href="#">
+                            Praesent eu porttitor neque lorem commodo pulvinar
+                        </a>
+                        <p>
+                            <a href="#" class="govuk-link govuk-link--no-visited-state">Aliquam sit amet</a> malesuada dolor, eget efficitur orci.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
 
 
     </div>
 </div>
+
 
 
 

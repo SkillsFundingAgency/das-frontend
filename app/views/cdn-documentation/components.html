@@ -17,31 +17,351 @@
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
-        <h2 class="govuk-heading-m govuk-!-margin-top-6 govuk-!-margin-bottom-3">Definition list:</h2>
+        <h2 class="govuk-heading-m govuk-!-margin-top-6 govuk-!-margin-bottom-3">Search Results list</h2>
+        <span class="govuk-caption-m">with forms in each list item</span>
+        <p class="govuk-body govuk-!-padding-bottom-9">Search results list featuring forms (button as link) in each list item</p>
 
-        <p class="govuk-body">Description: definition list - brings the <code>DT</code> and <code>DD</code> inline.</p>
 
-        <dl class="das-inline-def-list">
-            <dt>First Name</dt>
-            <dd>John</dd>
-            <dt>Surname</dt>
-            <dd>Smith</dd>
-            <dt>Nationality</dt>
-            <dd>British</dd>
-        </dl>
+        <ul class="govuk-list das-govuk-list-forms">
+            <li>
+                <form action="#" method="post">
+                    <input type="hidden" name="value0101" value="value0101" />
+                    <input type="hidden" name="value0102" value="value0102" />
+                    <button type="submit">Example text 1</button>
+                </form>
+                <dl class="das-inline-def-list">
+                    <dt>Address</dt>
+                    <dd>Example address</dd>
+                    <dt>Type</dt>
+                    <dd>Type example</dd>
+                </dl>
+            </li>
+            <li>
+                <form action="#" method="post">
+                    <input type="hidden" name="value0201" value="value0201" />
+                    <input type="hidden" name="value0202" value="value0202" />
+                    <button type="submit">Example text 2</button>
+                </form>
+                <dl class="das-inline-def-list">
+                    <dt>Address</dt>
+                    <dd>Example address</dd>
+                    <dt>Type</dt>
+                    <dd>Type example</dd>
+                </dl>
+            </li>
+            <li>
+                <form action="#" method="post">
+                    <input type="hidden" name="value0301" value="value0301" />
+                    <input type="hidden" name="value0302" value="value0302" />
+                    <button type="submit">Example text 3</button>
+                </form>
+                <dl class="das-inline-def-list">
+                    <dt>Address</dt>
+                    <dd>Example address</dd>
+                    <dt>Type</dt>
+                    <dd>Type example</dd>
+                </dl>
+            </li>
+        </ul>
+
 
     </div>
 </div>
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
-        <h2 class="govuk-heading-m govuk-!-margin-top-6 govuk-!-margin-bottom-3">Lorem ipsum</h2>
-        <p class="govuk-body">Lorem ipsum dolor sit amet consectetur adipisicing elit. Necessitatibus nostrum minima laudantium aliquid magni porro laborum quibusdam a nisi illo? Omnis at unde ipsum accusamus amet debitis, minima qui quis.</p>
+        <h2 class="govuk-heading-m govuk-!-margin-top-6 govuk-!-margin-bottom-3">Buttons</h2>
+        <!-- why .das-button in sass? -->
 
+        <button class="govuk-button das-button--blue">Blue button</button> <br>
+
+        <button class="govuk-button das-button--inverted">Inverted button</button> <br>
+
+        <button class="govuk-button das-button--outline">Outline button</button> <br>
+
+        <button class="govuk-button">Standard button</button> <a href="#" class="govuk-link das-link--button-aligned">Aligned to button das style</a>
 
 
     </div>
 </div>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <h2 class="govuk-heading-m govuk-!-margin-top-6 govuk-!-margin-bottom-3">Radios/Checkboxes</h2>
+
+        <p class="govuk-body">Class gives a .govuk-form-group element (of a vertical radios/checkboxes) a border, and a legend bg colour: <br>
+        <i>(Note: issue with legend border)</i></p>
+        <p class="govuk-body-s">This example is using small radios (.govuk-radios--small).</p>
+
+
+            <form id="example" method="POST">
+
+                <div class="govuk-form-group das-form-group--panel">
+                    <fieldset class="govuk-fieldset">
+                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
+                            <h3 class="govuk-fieldset__heading">
+                                Example of .das-form-group--panel
+                            </h3>
+                        </legend>
+                        <div class="govuk-radios govuk-radios--small">
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="option01" name="organisationType" type="radio" value="option01">
+                                <label class="govuk-label govuk-radios__label" for="option01">
+                                    Option one
+                                </label>
+                            </div>
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="option02" name="organisationType" type="radio" value="option02">
+                                <label class="govuk-label govuk-radios__label" for="option02">
+                                    Option two
+                                </label>
+                            </div>
+                            <div class="govuk-radios__item">
+                                <input class="govuk-radios__input" id="option03" name="organisationType" type="radio" value="option03">
+                                <label class="govuk-label govuk-radios__label" for="option03">
+                                    Option three
+                                </label>
+                            </div>
+                         </div>
+                    </fieldset>
+
+                    <div class="form-group">
+                        <button type="submit" class="govuk-button govuk-button--secondary das-visually-hidden">Submit</button>
+                    </div>
+
+                </div>
+
+            </form>
+
+
+    </div>
+</div>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <h2 class="govuk-heading-m govuk-!-margin-top-6 govuk-!-margin-bottom-3">Inputs</h2>
+
+        <p class="govuk-body">Auto complete (<b>proto-type</b>):</p>
+
+        <div class="autocomplete__parent_wrapper">
+            <div class="autocomplete__wrapper">
+                <div aria-atomic="true" aria-live="polite" role="status" style="border: 0px; clip: rect(0px 0px 0px 0px); height: 1px; margin-bottom: -1px; margin-right: -1px; overflow: hidden; padding: 0px; position: absolute; white-space: nowrap; width: 1px;"></div>
+                <!--span id="search-hint" class="autocomplete__hint">Hint lorem ipsum</span-->
+                <input aria-owns="searchClients__listbox" autocomplete="off" class="autocomplete__input" id="search" name="search" placeholder="" role="combobox" type="text" value="" aria-describedby="search-hint">
+
+
+            </div>
+        </div>
+
+
+    </div>
+</div>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <h2 class="govuk-heading-m govuk-!-margin-top-6 govuk-!-margin-bottom-3">Notifications</h2>
+
+        <div class="das-notification" tabindex="-1">
+            <h3 class="das-notification__heading">Optional heading</h3>
+            <p class="das-notification__body">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent quis leo ut felis scelerisque sollicitudin fringilla a urna.</p>
+            <p class="das-notification__body">Curabitur finibus lacus sed ante fringilla sodales.</p>
+        </div>
+
+        <div class="das-notification das-notification--success" tabindex="-1">
+            <h3 class="das-notification__heading">Success summary</h3>
+            <p class="das-notification__body">Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+        </div>
+
+        <div class="das-notification das-notification--warning" tabindex="-1">
+            <h3 class="das-notification__heading">Warning summary</h3>
+            <p class="das-notification__body">Sed non lorem egestas, porttitor libero nec, pellentesque erat. Donec libero lorem, dictum id cursus nec, tincidunt nec eros. Mauris vel lectus at mi placerat vehicula.</p>
+        </div>
+
+    </div>
+</div>
+
+
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <h2 class="govuk-heading-m govuk-!-margin-top-6 govuk-!-margin-bottom-3">Header(s)</h2>
+
+        <p class="govuk-body-s">Interchange .das-account-header--provider &amp; das-account-header--employer (for bg colours).</p>
+        <!-- added .das-header--provider bg colour (orange) to _header.scss -->
+
+        <p class="govuk-body">Header (example): </p>
+        <p class="govuk-body-s"><i>(Classes available in _header.scss to style as the legacy provider header)</i>.</p>
+
+        <header class="govuk-header das-header--provider das-header--has-user-nav" role="banner" data-module="header">
+            <div class="govuk-header__container govuk-width-container">
+                <div class="govuk-header__logo">
+                    <a href="/" class="govuk-header__link govuk-header__link--homepage">
+                    <span class="govuk-header__logotype">
+                        <svg role="presentation" focusable="false" class="govuk-header__logotype-crown" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 132 97" height="32" width="36">
+                        <path fill="currentColor" fill-rule="evenodd" d="M25 30.2c3.5 1.5 7.7-.2 9.1-3.7 1.5-3.6-.2-7.8-3.9-9.2-3.6-1.4-7.6.3-9.1 3.9-1.4 3.5.3 7.5 3.9 9zM9 39.5c3.6 1.5 7.8-.2 9.2-3.7 1.5-3.6-.2-7.8-3.9-9.1-3.6-1.5-7.6.2-9.1 3.8-1.4 3.5.3 7.5 3.8 9zM4.4 57.2c3.5 1.5 7.7-.2 9.1-3.8 1.5-3.6-.2-7.7-3.9-9.1-3.5-1.5-7.6.3-9.1 3.8-1.4 3.5.3 7.6 3.9 9.1zm38.3-21.4c3.5 1.5 7.7-.2 9.1-3.8 1.5-3.6-.2-7.7-3.9-9.1-3.6-1.5-7.6.3-9.1 3.8-1.3 3.6.4 7.7 3.9 9.1zm64.4-5.6c-3.6 1.5-7.8-.2-9.1-3.7-1.5-3.6.2-7.8 3.8-9.2 3.6-1.4 7.7.3 9.2 3.9 1.3 3.5-.4 7.5-3.9 9zm15.9 9.3c-3.6 1.5-7.7-.2-9.1-3.7-1.5-3.6.2-7.8 3.7-9.1 3.6-1.5 7.7.2 9.2 3.8 1.5 3.5-.3 7.5-3.8 9zm4.7 17.7c-3.6 1.5-7.8-.2-9.2-3.8-1.5-3.6.2-7.7 3.9-9.1 3.6-1.5 7.7.3 9.2 3.8 1.3 3.5-.4 7.6-3.9 9.1zM89.3 35.8c-3.6 1.5-7.8-.2-9.2-3.8-1.4-3.6.2-7.7 3.9-9.1 3.6-1.5 7.7.3 9.2 3.8 1.4 3.6-.3 7.7-3.9 9.1zM69.7 17.7l8.9 4.7V9.3l-8.9 2.8c-.2-.3-.5-.6-.9-.9L72.4 0H59.6l3.5 11.2c-.3.3-.6.5-.9.9l-8.8-2.8v13.1l8.8-4.7c.3.3.6.7.9.9l-5 15.4v.1c-.2.8-.4 1.6-.4 2.4 0 4.1 3.1 7.5 7 8.1h.2c.3 0 .7.1 1 .1.4 0 .7 0 1-.1h.2c4-.6 7.1-4.1 7.1-8.1 0-.8-.1-1.7-.4-2.4V34l-5.1-15.4c.4-.2.7-.6 1-.9zM66 92.8c16.9 0 32.8 1.1 47.1 3.2 4-16.9 8.9-26.7 14-33.5l-9.6-3.4c1 4.9 1.1 7.2 0 10.2-1.5-1.4-3-4.3-4.2-8.7L108.6 76c2.8-2 5-3.2 7.5-3.3-4.4 9.4-10 11.9-13.6 11.2-4.3-.8-6.3-4.6-5.6-7.9 1-4.7 5.7-5.9 8-.5 4.3-8.7-3-11.4-7.6-8.8 7.1-7.2 7.9-13.5 2.1-21.1-8 6.1-8.1 12.3-4.5 20.8-4.7-5.4-12.1-2.5-9.5 6.2 3.4-5.2 7.9-2 7.2 3.1-.6 4.3-6.4 7.8-13.5 7.2-10.3-.9-10.9-8-11.2-13.8 2.5-.5 7.1 1.8 11 7.3L80.2 60c-4.1 4.4-8 5.3-12.3 5.4 1.4-4.4 8-11.6 8-11.6H55.5s6.4 7.2 7.9 11.6c-4.2-.1-8-1-12.3-5.4l1.4 16.4c3.9-5.5 8.5-7.7 10.9-7.3-.3 5.8-.9 12.8-11.1 13.8-7.2.6-12.9-2.9-13.5-7.2-.7-5 3.8-8.3 7.1-3.1 2.7-8.7-4.6-11.6-9.4-6.2 3.7-8.5 3.6-14.7-4.6-20.8-5.8 7.6-5 13.9 2.2 21.1-4.7-2.6-11.9.1-7.7 8.8 2.3-5.5 7.1-4.2 8.1.5.7 3.3-1.3 7.1-5.7 7.9-3.5.7-9-1.8-13.5-11.2 2.5.1 4.7 1.3 7.5 3.3l-4.7-15.4c-1.2 4.4-2.7 7.2-4.3 8.7-1.1-3-.9-5.3 0-10.2l-9.5 3.4c5 6.9 9.9 16.7 14 33.5 14.8-2.1 30.8-3.2 47.7-3.2z"></path>
+                        <image src="/assets/images/govuk-logotype-crown.png" class="govuk-header__logotype-crown-fallback-image"></image>
+                        </svg>
+                        <span class="govuk-header__logotype-text">
+                        GOV.UK
+                        </span>
+                    </span>
+                    </a>
+                </div>
+                <div class="govuk-header__content">
+                    <a href="#" class="govuk-header__link govuk-header__link--service-name">
+                        Title text here
+                    </a>
+                </div>
+                <nav class="das-user-navigation" id="das-user-navigation">
+                    <ul class="das-user-navigation__list" role="menu">
+                        <li role="menuitem" class="das-user-navigation__list-item">
+                            <a href="#" class="das-user-navigation__link">Help</a>
+                        </li>
+                        <li role="menuitem" class="das-user-navigation__list-item das-user-navigation__list-item--has-sub-menu">
+                            <a href="#" class="das-user-navigation__link">Settings</a>
+                            <ul role="menu" class="das-user-navigation__sub-menu js-hidden">
+                                <li class="das-user-navigation__sub-menu-list-item" role="menuitem">
+                                    <a href="#" class="das-user-navigation__sub-menu-link">Example link 1</a>
+                                </li>
+                                <li class="das-user-navigation__sub-menu-list-item" role="menuitem">
+                                    <a href="#" class="das-user-navigation__sub-menu-link">Example link 2</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li role="menuitem" class="das-user-navigation__list-item">
+                            <a href="#" class="das-user-navigation__link">Sign out</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </header>
+        <!-- ****************** .govuk-header .das-header--employer ends ************************* -->
+
+        <p class="govuk-body govuk-!-margin-top-6">Account header (example): </p>
+        <p class="govuk-body-s">Classes .das-favourites-link, .das-favourites-link__icon, .das-favourites-link__text, .das-favourites-link__count can be used to add favourites link in header. <i>(See pg source code)</i>.</p>
+        <!-- .das-account__title and .das-account__account-name unused? (No parent .das-account) -->
+
+        <!-- Can be added after title?:
+        <a href="#" class="das-favourites-link govuk-body">
+            <span class="das-favourites-link__icon"><img src="" alt=""></span>
+            <span class="das-favourites-link__text">View saved favourites</span>
+        </a>
+        -->
+
+
+        <div class="das-account-header das-account-header--employer">
+            <div class="govuk-width-container">
+                <p class="das-account-header__title">Your provider account</p>
+
+                <nav class="das-user-navigation" id="user-nav">
+                    <ul class="das-user-navigation__list" role="menu">
+                        <li role="menuitem" class="das-user-navigation__list-item">
+                            <a href="#" class="das-user-navigation__link">Provider account</a>
+                        </li>
+                        <li role="menuitem" class="das-user-navigation__list-item">
+                            <a href="#" class="das-user-navigation__link">Notification settings</a>
+                        </li>
+                        <li role="menuitem" class="das-user-navigation__list-item">
+                            <a href="#" class="das-user-navigation__link">Sign out</a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+
+        <!-- ******************* das-account-header ends *********************** -->
+
+        <p class="govuk-body-s  govuk-!-margin-top-6  govuk-!-margin-bottom-1"><i>Note: .das-masthead (_mast-head.scss) = prototype work/styles.</i></p>
+
+    </div>
+</div>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <h2 class="govuk-heading-m govuk-!-margin-top-6 govuk-!-margin-bottom-3">Navigation (example)</h2>
+
+        <p class="govuk-body">das-navigation style:</p><!-- _navigation.scss -->
+
+        <nav class="das-navigation">
+            <div class="govuk-width-container">
+                <ul class="das-navigation__list">
+                    <li class="das-navigation__list-item">
+                        <a asp-external-controller="Account" class="das-navigation__link">Home</a>
+                    </li>
+                    <li class="das-navigation__list-item">
+                        <a asp-external-action="" asp-external-controller="" asp-external-id="id01" class="das-navigation__link">Maecenas</a>
+                    </li>
+                    <li class="das-navigation__list-item">
+                        <a asp-route="" asp-external-id="id02" class="das-navigation__link das-navigation__link--current">Praesent</a>
+                    </li>
+                    <li class="das-navigation__list-item">
+                        <a asp-external-action="" asp-external-controller="" asp-external-id="id03" class="das-navigation__link">Vestibulum</a>
+                    </li>
+                    <li class="das-navigation__list-item">
+                        <a class="das-navigation__link" asp-external-controller="" asp-external-subdomain=" " asp-external-id="id04">Suspendisse</a>
+                    </li>
+                    <li class="das-navigation__list-item">
+                        <a asp-external-controller="" asp-external-id="id05" class="das-navigation__link">Aliquam and Malesuada</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <p class="govuk-body-s  govuk-!-margin-top-6  govuk-!-margin-bottom-1">Classes .das-navigation__priority-list and .das-navigation__priority-button also available.</p>
+
+    </div>
+</div>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <h2 class="govuk-heading-m govuk-!-margin-top-6 govuk-!-margin-bottom-3">Pagination</h2>
+
+        <p class="govuk-body govuk-!-margin-top-6">Single button pagination links: </p>
+
+        <nav class="das-pagination-link">
+            <ul class="das-pagination-link__wrap">
+                <li class="das-pagination-link__wrap das-pagination-link--prev">
+                    <a href="" class="govuk-link govuk-link--no-visited-state">
+                        <span>Previous page</span> <span>Page 1 of 3</span>
+                    </a>
+                </li>
+                <li class="das-pagination-link__wrap das-pagination-link--next">
+                    <a href="" class="govuk-link govuk-link--no-visited-state">
+                        <span>Next page</span> <span>Page 3 of 3</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+
+    </div>
+</div>
+
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <h2 class="govuk-heading-m govuk-!-margin-top-6 govuk-!-margin-bottom-3">Not shown</h2>
+
+        <p class="govuk-body">Components not shown here (but the <abbr>DAS</abbr> components/styles exist):</p>
+
+        <ul class="govuk-list govuk-list--bullet govuk-!-margin-left-5">
+            <li>Cookie banner</li>
+            <li>Cookie settings styles</li>
+            <li>_pane.scss (.das-pane) = prototype</li>
+        </ul>
+
+
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
 
 
 
