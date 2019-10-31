@@ -218,7 +218,7 @@ $offset: 2;
 .button--success
 {
   color: #fff;
-  background-color: $green;
+  background-color: $black;
 
   &:link,
   &:visited,
@@ -230,7 +230,7 @@ $offset: 2;
 
   &:hover,
   &:focus {
-    background-color: darken($green, 5%);
+    background-color: lighten($black, 5%);
   }
   .page & {
     color: #fff;
