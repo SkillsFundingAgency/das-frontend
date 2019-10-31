@@ -1,0 +1,21 @@
+.badge {
+  color: #fff;
+  background-color: $black;
+  display: inline-block;
+  padding: .1em .3em .3em;
+  line-height: 1;
+  text-align: center;
+  white-space: nowrap;
+  vertical-align: baseline;
+  box-sizing: border-box;
+}
+
+.badge--apprentice {
+  background: $apprentice;
+  color: #fff;
+}
+
+.badge--employer {
+  background: $employer;
+  color: $black;
+}
