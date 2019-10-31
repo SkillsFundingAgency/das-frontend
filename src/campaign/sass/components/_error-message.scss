@@ -5,7 +5,13 @@
   display: block;
   font-weight: $font-weight-light;
   &--light{
-    color: $error-colour-light;
+    color: #fff;
+    font-weight: bolder;
+    & > span {
+      display: inline-block;
+      background: $error-colour;
+      padding: 5px 10px;
+    }
   }
 
 }
