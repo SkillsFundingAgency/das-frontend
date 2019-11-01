@@ -4,7 +4,6 @@ $cbk-primary-colour: #000000;
   $checkboxes-label-padding-left-right: spacing(3);
 
   .checkboxes__item {
-    @include font($size: 19, $weight: light);
 
     display: block;
     position: relative;
@@ -43,10 +42,10 @@ $cbk-primary-colour: #000000;
     margin-bottom: 0;
     padding: 8px $checkboxes-label-padding-left-right spacing(1);
     cursor: pointer;
-    // remove 300ms pause on mobile
     -ms-touch-action: manipulation;
     touch-action: manipulation;
     color: $black;
+    font-weight: 500;
   }
 
   .checkboxes__hint {

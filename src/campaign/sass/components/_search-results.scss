@@ -83,6 +83,7 @@
     border-bottom: 1px solid $grey-4;
     margin-bottom: 35px;
     position: relative;
+    color: $black;
     &:last-child {
       border: none;
       margin-bottom: 0;
@@ -129,7 +130,7 @@
 }
 
 .search-results__list-secondary {
-  color: $grey-8;
+  color: #757575;
 }
 
 .search-results__inline-icon {
