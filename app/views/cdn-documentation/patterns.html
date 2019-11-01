@@ -50,6 +50,8 @@
     <div class="govuk-grid-column-full">
         <h2 class="govuk-heading-m govuk-!-margin-top-6 govuk-!-margin-bottom-3">Dashboard header (example)</h2>
 
+        <p class="govuk-body">This dashboard header example includes a search form component and 'other tasks' link:</p>
+
         <section class="das-section das-section--search">
             <div class="govuk-width-container">
                 <div class="das-dashboard-header__row">
@@ -73,46 +75,81 @@
             </div>
         </section>
 
+
     </div>
 </div>
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
-        <h2 class="govuk-heading-m govuk-!-margin-top-6 govuk-!-margin-bottom-3">Panels (example)</h2>
+        <h2 class="govuk-heading-m govuk-!-margin-top-6 govuk-!-margin-bottom-3">Panel(s) (examples)</h2>
 
-        <p class="govuk-body">Filled colour panels:</p><!-- requires javascript for equal height panels? -->
+        <p class="govuk-body">Filled colour panels: Currently only used on the <abbr>MA</abbr> dashboard page.</p><!-- requires javascript for equal height panels? -->
+        <p class="govuk-body-s"><abbr>CDN</abbr> uses <b>_panel.scss</b> and <b>_panels.scss</b> (both included in _all.scss). <br>panels.scss intended as a grid structure to display multiple panel.scss. <br>Work planned to refactor this scss. <br>Variant .das-panel--with-tabs exists in _panel.scss.</p>
 
-            <div class="das-panels">
-                <div class="das-panels__row">
-                    <div class="das-panel das-panel--featured">
-                        <h3 class="das-panel__heading">Lorem ipsum dolor consectetur adipiscing elit</h3>
-                        <p>Vivamus volutpat hendrerit quam, sit amet pharetra ante porta fermentum ante in.</p>
-                        <p><a href="#" class="das-panel__link">Maecenas interdum a tellus ut bibendum</a> </p>
-                    </div>
-                    <div class="das-panel">
-                        <h3 class="das-panel__heading">Quisque hendrerit egestas tellus</h3>
-                        <p>Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
-                        <p><a href="#" class="govuk-link">Mauris sollicitudin</a> </p>
-                    </div>
+
+        <div class="das-panels">
+            <div class="das-panels__row">
+                <div class="das-panel das-panel--featured">
+                    <h3 class="das-panel__heading">Lorem ipsum dolor consectetur adipiscing elit</h3>
+                    <p>Vivamus volutpat hendrerit quam, sit amet pharetra ante porta fermentum ante in.</p>
+                    <p><a href="#" class="das-panel__link">Maecenas interdum a tellus ut bibendum</a> </p>
                 </div>
-                <div class="das-panels__row das-panels__row--secondary">
-                    <div class="das-panel">
-                        <h3 class="das-panel__heading">Maecenas interdum a tellus ut bibendum</h3>
-                        <p>Donec hendrerit fermentum lectus, a eleifend est lobortis nec. Class aptent taciti sociosqu ad litora.</p>
-                    </div>
-                    <div class="das-panel">
-                        <h3 class="das-panel__heading">Maecenas dapibus metus</h3>
-                        <ul class="govuk-list">
-                           <li><a href="#" class="govuk-link">Sed vel tempus est</a> </li>
-                           <li><a href="#" class="govuk-link">Nunc ultrices bibendum</a> </li>
-                           <li><a href="#" class="govuk-link">Donec in fermentum ante</a> </li>
-                           <li><a href="#" class="govuk-link">Donec hendrerit fermentum</a> </li>
-                           <li><a href="#" class="govuk-link">Interdum et malesuada</a> </li>
-                        </ul>
-                    </div>
+                <div class="das-panel">
+                    <h3 class="das-panel__heading">Quisque hendrerit egestas tellus</h3>
+                    <p>Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+                    <p><a href="#" class="govuk-link">Mauris sollicitudin</a> </p>
                 </div>
             </div>
+            <div class="das-panels__row das-panels__row--secondary">
+                <div class="das-panel">
+                    <h3 class="das-panel__heading">Maecenas interdum a tellus ut bibendum</h3>
+                    <p>Donec hendrerit fermentum lectus, a eleifend est lobortis nec. Class aptent taciti sociosqu ad litora.</p>
+                </div>
+                <div class="das-panel">
+                    <h3 class="das-panel__heading">Maecenas dapibus metus</h3>
+                    <ul class="govuk-list">
+                        <li><a href="#" class="govuk-link">Sed vel tempus est</a> </li>
+                        <li><a href="#" class="govuk-link">Nunc ultrices bibendum</a> </li>
+                        <li><a href="#" class="govuk-link">Donec in fermentum ante</a> </li>
+                        <li><a href="#" class="govuk-link">Donec hendrerit fermentum</a> </li>
+                        <li><a href="#" class="govuk-link">Interdum et malesuada</a> </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
 
+        <!-- hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+        <div class="das-panels">
+            <div class="das-panels__row">
+                <div class="das-panel das-panel--featured">
+                    <h3 class="das-panel__heading">Check if government funding is available for apprenticeship training </h3>
+                    <p>Use government funding to pay for part of all of the cost of apprenticeship training.</p>
+                    <p><a href="#" class="das-panel__link">Check and secure funding now</a> </p>
+                </div>
+                <div class="das-panel">
+                    <h3 class="das-panel__heading">Training provider permissions</h3>
+                    <p>Control what tasks you would like your training provider to do on your behalf.</p>
+                    <p><a href="#" class="govuk-link">Set permissions</a> </p>
+                </div>
+            </div>
+            <div class="das-panels__row das-panels__row--secondary">
+                <div class="das-panel">
+                    <h3 class="das-panel__heading">Your saved apprenticeships and training providers</h3>
+                    <p>You do not have any apprenticeships or training providers saved.</p>
+                </div>
+                <div class="das-panel">
+                    <h3 class="das-panel__heading">Your account settings</h3>
+                    <ul class="govuk-list">
+                        <li><a href="#" class="govuk-link">Your accounts</a> </li>
+                        <li><a href="#" class="govuk-link">Rename account </a> </li>
+                        <li><a href="#" class="govuk-link">Change your password </a> </li>
+                        <li><a href="#" class="govuk-link">Change your email address </a> </li>
+                        <li><a href="#" class="govuk-link">Notification settings </a> </li>
+                    </ul>
+                </div>
+            </div>
+        </div-->
 
     </div>
 </div>
@@ -154,8 +191,6 @@
 
     </div>
 </div>
-
-
 
 
 {% endblock %}

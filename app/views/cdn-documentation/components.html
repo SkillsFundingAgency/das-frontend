@@ -17,10 +17,75 @@
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
-        <h2 class="govuk-heading-m govuk-!-margin-top-6 govuk-!-margin-bottom-3">Search Results list</h2>
-        <span class="govuk-caption-m">with forms in each list item</span>
-        <p class="govuk-body govuk-!-padding-bottom-9">Search results list featuring forms (button as link) in each list item</p>
+        <h2 class="govuk-heading-m govuk-!-margin-top-6 govuk-!-margin-bottom-3">Search results list(s)</h2>
 
+
+
+        <p class="govuk-body">Search results list</p>
+
+        <p class="govuk-body-s govuk-!-padding-bottom-6">This example - here - has been updated to <abbr>GDS</abbr> v3 from the <abbr>HTML</abbr> shown in GIT. (Nov 2019). Classes <code>.list</code>, <code>.heading-m</code> and <code>.link</code> upgraded to <code>.govuk-list</code>, <code>.govuk-heading-m</code>, <code>.govuk-link--no-visited-state</code>; as well as the 'warning text' classes:</p>
+
+        <div class="das-search-results__header">
+            <p class="das-search-results__header-results-header-text">Results header text</p>
+
+            <ol class="govuk-list list--employer list--number das-search-results__list das-search-results__list--employer das-search-results">
+                <li id="447-3-1" class="das-search-results__list-item">
+                    <div class="das-search-result">
+                        <h2 class="govuk-heading-m das-search-result__heading">
+                            <a class="govuk-link--no-visited-state das-search-result__heading-link" href="/employer/find-apprenticeships/Apprenticeship?id=447-3-1">Youth Work</a>
+                        </h2>
+                        <div class="govuk-warning-text">
+                            <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+                            <strong class="govuk-warning-text__text">
+                                <span class="govuk-warning-text__assistive">Warning</span>
+                                This apprenticeship is closed to new starters from Friday, July 31, 2020
+                            </strong>
+                        </div>
+                        <dl class="govuk-list list--employer  das-search-result__details">
+                            <dt class="das-search-result__details-title">Level:</dt>
+                            <dd class="das-search-result__details-definition">2 (Equivalent to GCSEs at grades A* to C)</dd>
+                            <dt class="das-search-result__details-title">Typical length:</dt>
+                            <dd class="das-search-result__details-definition">12 months</dd>
+                            <dt class="das-search-result__details-title">Apprenticeship Type:</dt>
+                            <dd class="das-search-result__details-definition">Framework</dd>
+                        </dl>
+                    </div>
+                </li>
+                <li id="416" class="das-search-results__list-item">
+                    <div class="das-search-result">
+                        <h2 class="govuk-heading-m das-search-result__heading">
+                            <a class="govuk-link--no-visited-state das-search-result__heading-link" href="/employer/find-apprenticeships/Apprenticeship?id=416">Water Treatment Technician</a>
+                        </h2>
+
+                        <dl class="govuk-list list--employer  das-search-result__details">
+                            <dt class="das-search-result__details-title">Level:</dt>
+                            <dd class="das-search-result__details-definition">3 (Equivalent to A levels at grades A to E)</dd>
+                            <dt class="das-search-result__details-title">Typical length:</dt>
+                            <dd class="das-search-result__details-definition">24 months</dd>
+                            <dt class="das-search-result__details-title">Apprenticeship Type:</dt>
+                            <dd class="das-search-result__details-definition">Standard</dd>
+                        </dl>
+                    </div>
+                </li>
+                <li id="374" class="das-search-results__list-item">
+                    <div class="das-search-result">
+                        <h2 class="govuk-heading-m das-search-result__heading">
+                            <a class="govuk-link--no-visited-state das-search-result__heading-link" href="/employer/find-apprenticeships/Apprenticeship?id=374">Waste Resource Operative</a>
+                        </h2>
+                        <dl class="govuk-list list--employer  das-search-result__details">
+                            <dt class="das-search-result__details-title">Level:</dt>
+                            <dd class="das-search-result__details-definition">2 (Equivalent to GCSEs at grades A* to C)</dd>
+                            <dt class="das-search-result__details-title">Typical length:</dt>
+                            <dd class="das-search-result__details-definition">12 months</dd>
+                            <dt class="das-search-result__details-title">Apprenticeship Type:</dt>
+                            <dd class="das-search-result__details-definition">Standard</dd>
+                        </dl>
+                    </div>
+                </li>
+            </ol>
+        </div>
+
+        <p class="govuk-body govuk-!-padding-top-9">Search results list - featuring forms (buttons as link) in each list item:</p>
 
         <ul class="govuk-list das-govuk-list-forms">
             <li>
@@ -81,7 +146,6 @@
 
         <button class="govuk-button">Standard button</button> <a href="#" class="govuk-link das-link--button-aligned">Aligned to button das style</a>
 
-
     </div>
 </div>
 
@@ -89,8 +153,7 @@
     <div class="govuk-grid-column-full">
         <h2 class="govuk-heading-m govuk-!-margin-top-6 govuk-!-margin-bottom-3">Radios/Checkboxes</h2>
 
-        <p class="govuk-body">Class gives a .govuk-form-group element (of a vertical radios/checkboxes) a border, and a legend bg colour: <br>
-        <i>(Note: issue with legend border)</i></p>
+        <p class="govuk-body">Class gives a .govuk-form-group element (of a vertical radios/checkboxes) a border, and a legend bg colour: </p>
         <p class="govuk-body-s">This example is using small radios (.govuk-radios--small).</p>
 
 
@@ -148,9 +211,88 @@
                 <div aria-atomic="true" aria-live="polite" role="status" style="border: 0px; clip: rect(0px 0px 0px 0px); height: 1px; margin-bottom: -1px; margin-right: -1px; overflow: hidden; padding: 0px; position: absolute; white-space: nowrap; width: 1px;"></div>
                 <!--span id="search-hint" class="autocomplete__hint">Hint lorem ipsum</span-->
                 <input aria-owns="searchClients__listbox" autocomplete="off" class="autocomplete__input" id="search" name="search" placeholder="" role="combobox" type="text" value="" aria-describedby="search-hint">
-
-
             </div>
+        </div>
+
+        <p class="govuk-body govuk-!-margin-top-6">Search form examples: (<b>Not working correctly?</b>)</p>
+
+        <form method="post" class="das-search-form">
+            <div class="govuk-form-group">
+                <label for="searchTerm4" class="govuk-label govuk-visually-hidden">
+                    Search
+                </label>
+                <div class="das-search-form__group">
+                    <input id="searchTerm4" name="searchTerm" title="Search" class="govuk-input das-search-form__input" type="text" />
+                    <div class="das-search-form__button-wrap">
+                        <button class="govuk-button das-search-form__button" type="submit">Search</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+        <hr class="govuk-section-break--l govuk-section-break--visible">
+
+        <form method="post" class="das-search-form">
+            <div class="govuk-form-group">
+                <label for="searchTerm" class="govuk-label">
+                    Search
+                </label>
+                <div class="das-search-form__group">
+                    <input id="searchTerm" name="searchTerm" title="Search" class="govuk-input das-search-form__input" type="text" />
+                    <div class="das-search-form__button-wrap">
+                        <button class="govuk-button das-search-form__button" type="submit">Search</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+        <hr class="govuk-section-break--l govuk-section-break--visible">
+
+        <form method="post" class="das-search-form das-search-form--l">
+            <div class="govuk-form-group">
+                <label for="searchTerm3" class="govuk-label">
+                    Search
+                </label>
+                <span class="govuk-hint">Enter your search term</span>
+                <div class="das-search-form__group">
+                    <input id="searchTerm3" name="searchTerm" title="Search" class="govuk-input das-search-form__input" type="text" />
+                    <div class="das-search-form__button-wrap">
+                        <button class="govuk-button das-search-form__button" type="submit">Search</button>
+                    </div>
+                </div>
+            </div>
+        </form>
+
+        <hr class="govuk-section-break--l govuk-section-break--visible">
+
+        <div class="das-panel das-section-dashboard das-section--dashboard"><!-- .das-section-dashboard lives in _section.scss adding the bottom border ? -->
+            <form method="post" class="das-search-form das-search-form--no-border">
+                <div class="govuk-form-group">
+                    <label for="searchTerm4" class="govuk-label govuk-visually-hidden">
+                        Search
+                    </label>
+                    <div class="das-search-form__group">
+                        <input id="searchTerm4" name="searchTerm" title="Search" class="govuk-input das-search-form__input" type="text" placeholder="Enter your search term" />
+                        <div class="das-search-form__button-wrap">
+                            <button class="govuk-button das-search-form__button" type="submit">Search</button>
+                        </div>
+                    </div>
+                </div>
+            </form>
+        </div>
+
+        <p class="govuk-body govuk-!-margin-top-9">Search: </p>
+
+        <div class="das-dashboard-header__col das-dashboard-header__col--primary">
+            <form>
+                <div class="govuk-form-group das-form-group-inline das-dashboard-search">
+                    <label for="search" class="govuk-visually-hidden">Search</label>
+                    <input class="govuk-input das-dashboard-search__input" id="search" type="search" placeholder="Search" disabled="disabled">
+                    <div class="das-form-group-inline__button-wrap">
+                        <button class="govuk-button das-dashboard-search__button" type="submit">Search</button>
+                    </div>
+                </div>
+            </form>
         </div>
 
 
@@ -237,6 +379,8 @@
         </header>
         <!-- ****************** .govuk-header .das-header--employer ends ************************* -->
 
+        <hr class="govuk-section-break--l govuk-section-break--visible">
+
         <p class="govuk-body govuk-!-margin-top-6">Account header (example): </p>
         <p class="govuk-body-s">Classes .das-favourites-link, .das-favourites-link__icon, .das-favourites-link__text, .das-favourites-link__count can be used to add favourites link in header. <i>(See pg source code)</i>.</p>
         <!-- .das-account__title and .das-account__account-name unused? (No parent .das-account) -->
@@ -271,7 +415,26 @@
 
         <!-- ******************* das-account-header ends *********************** -->
 
-        <p class="govuk-body-s  govuk-!-margin-top-6  govuk-!-margin-bottom-1"><i>Note: .das-masthead (_mast-head.scss) = prototype work/styles.</i></p>
+        <p class="govuk-body-s govuk-!-margin-top-6  govuk-!-margin-bottom-1"><i>Note: .das-masthead (_mast-head.scss) = prototype work/styles.</i></p>
+
+
+        <hr class="govuk-section-break--l govuk-section-break--visible">
+
+
+        <p class="govuk-body govuk-!-margin-top-6">Dashboard header - example:</p>
+        <p class="govuk-body-s">Overlaps with Search. Some classes not used in _section.scss (e.g, .das-section--search).</p>
+
+        <div class="das-dashboard-header das-section--header">
+            <div class="govuk-width-container das-dashboard-header__border">
+                <h1 class="govuk-heading-m das-account__title">Lorem ipsum dolor sit amet</h1>
+                <h2 class="govuk-heading-l das-account__account-name">Vivamus nec orci metus</h2>
+                <a href="#" class="das-favourites-link govuk-body">
+                    <span class="das-favourites-link__icon"><img src="" alt=""></span>
+                    <span class="das-favourites-link__text">View saved favourites</span>
+                </a>
+            </div>
+        </div>
+
 
     </div>
 </div>
@@ -289,19 +452,19 @@
                         <a asp-external-controller="Account" class="das-navigation__link">Home</a>
                     </li>
                     <li class="das-navigation__list-item">
-                        <a asp-external-action="" asp-external-controller="" asp-external-id="id01" class="das-navigation__link">Maecenas</a>
+                        <a asp-external-action="" asp-external-controller="" asp-external-id="" class="das-navigation__link">Maecenas</a>
                     </li>
                     <li class="das-navigation__list-item">
-                        <a asp-route="" asp-external-id="id02" class="das-navigation__link das-navigation__link--current">Praesent</a>
+                        <a asp-route="" asp-external-id="" class="das-navigation__link das-navigation__link--current">Praesent</a>
                     </li>
                     <li class="das-navigation__list-item">
-                        <a asp-external-action="" asp-external-controller="" asp-external-id="id03" class="das-navigation__link">Vestibulum</a>
+                        <a asp-external-action="" asp-external-controller="" asp-external-id="" class="das-navigation__link">Vestibulum</a>
                     </li>
                     <li class="das-navigation__list-item">
-                        <a class="das-navigation__link" asp-external-controller="" asp-external-subdomain=" " asp-external-id="id04">Suspendisse</a>
+                        <a class="das-navigation__link" asp-external-controller="" asp-external-subdomain=" " asp-external-id="">Suspendisse</a>
                     </li>
                     <li class="das-navigation__list-item">
-                        <a asp-external-controller="" asp-external-id="id05" class="das-navigation__link">Aliquam and Malesuada</a>
+                        <a asp-external-controller="" asp-external-id="" class="das-navigation__link">Aliquam and Malesuada</a>
                     </li>
                 </ul>
             </div>
@@ -333,6 +496,18 @@
             </ul>
         </nav>
 
+    </div>
+</div>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <h2 class="govuk-heading-m govuk-!-margin-top-6 govuk-!-margin-bottom-3">Promo</h2>
+
+        <p class="govuk-body">.das-promo class on hyperlink (<b>proto-type</b>):</p><!-- _promo.scss included in _all.scss -->
+
+        <a class="das-promo" href="#">
+            Sample text: What you need to know about apprenticeships
+        </a>
     </div>
 </div>
 
