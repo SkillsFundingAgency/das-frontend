@@ -43,9 +43,11 @@
 
 dl.das-inline-def-list {//Description: definition lists - brings the DT and DD inline
   margin: 0;
-  font-size: inherit;
+  @include govuk-font($size: 19);
+  @include govuk-text-colour;
+
   dt {
-    @include govuk-text-colour;
+
     font-weight: bold;
     display: inline;
     padding-right: govuk-spacing(1);
@@ -59,7 +61,6 @@ dl.das-inline-def-list {//Description: definition lists - brings the DT and DD i
     }
   }
   dd {
-    @include govuk-text-colour;
     font-weight: normal;
     display: inline;
     margin: 0;

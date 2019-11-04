@@ -78,10 +78,16 @@
   text-align: right;
   margin: govuk-spacing(3) 0 0 0;
 
+    ul {
+      padding: 0;
+      width: 100%;
+    }
+
     .das-pagination-link__wrap {
       font-size: inherit;
       display: inline-block;
-      padding: 0;
+      padding: 0 govuk-spacing(4);
+      width: auto;
 
       .govuk-link {
         text-decoration: none;
@@ -119,6 +125,7 @@
         background-repeat: no-repeat;
         text-align: left;
 
+        float: left;
         margin-right: govuk-spacing(4);
       }
     }

@@ -1,0 +1,196 @@
+{% extends "template-cdn-documentation.html" %}
+{% set pageTitle = "CDN documentation" %}
+{% set backLink = 'index.html' %}
+{% set parentNavOnClass = 'patterns' %}
+{% set bodyClass = 'hr' %}
+
+
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl govuk-!-margin-top-6 govuk-!-margin-bottom-3">Patterns</h1>
+    </div>
+</div>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <h2 class="govuk-heading-m govuk-!-margin-top-6 govuk-!-margin-bottom-3">Cards (example)</h2>
+
+
+            <section class="das-section-dashboard">
+                <h2 class="das-section__heading govuk-heading-l">Lorem ipsum dolor sit</h2>
+                <p class="das-section__description">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent quis leo ut felis scelerisque sollicitudin fringilla a urna. </p>
+                <div class="das-cards">
+                    <div class="das-card">
+                        <h3 class="govuk-heading-m das-card__heading"><a href="#" class="govuk-link">Vestibulum</a></h3>
+                        <p>Maecenas dapibus metus neque, ut varius erat accumsan nec. Mauris sollicitudin molestie augue in consectetur. </p>
+                    </div>
+                    <div class="das-card">
+                        <h3 class="govuk-heading-m das-card__heading"><a href="#" class="govuk-link">Praesent eget velit</a></h3>
+                        <p>Aliquam in consequat risus. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. </p>
+                    </div>
+                    <div class="das-card">
+                        <h3 class="govuk-heading-m das-card__heading"><a href="#" class="govuk-link">Proin mattis condimentum</a></h3>
+                        <p>Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. </p>
+                    </div>
+                    <div class="das-card">
+                        <h3 class="govuk-heading-m"><a href="#"# class="govuk-link">Nunc felis enim</a></h3>
+                        <p>Suspendisse ac eleifend sapien, at mollis dolor. Nunc felis enim, pretium sed tortor in, pellentesque cursus risus. </p>
+                    </div>
+                </div>
+            </section>
+
+
+    </div>
+</div>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <h2 class="govuk-heading-m govuk-!-margin-top-6 govuk-!-margin-bottom-3">Dashboard header (example)</h2>
+
+        <p class="govuk-body">This dashboard header example includes a search form component and 'other tasks' link:</p>
+
+        <section class="das-section das-section--search">
+            <div class="govuk-width-container">
+                <div class="das-dashboard-header__row">
+                    <div class="das-dashboard-header__col das-dashboard-header__col--primary">
+                        <form>
+                            <div class="govuk-form-group das-form-group-inline das-dashboard-search">
+                                <label for="search" class="govuk-visually-hidden">Search</label>
+                                <input class="govuk-input das-dashboard-search__input" id="search" type="search" placeholder="Search" disabled="disabled">
+                                <div class="das-form-group-inline__button-wrap">
+                                    <button class="govuk-button das-dashboard-search__button" type="submit">Search</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="das-dashboard-header__col das-dashboard-header__col--secondary">
+                        <a class="das-dashboard-header__tasks-link" href="#das-dashbaord-other-tasks" id="other-tasks-link">
+                            Other tasks you can do
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+    </div>
+</div>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <h2 class="govuk-heading-m govuk-!-margin-top-6 govuk-!-margin-bottom-3">Panel(s) (examples)</h2>
+
+        <p class="govuk-body">Filled colour panels: Currently only used on the <abbr>MA</abbr> dashboard page.</p><!-- requires javascript for equal height panels? -->
+        <p class="govuk-body-s"><abbr>CDN</abbr> uses <b>_panel.scss</b> and <b>_panels.scss</b> (both included in _all.scss). <br>panels.scss intended as a grid structure to display multiple panel.scss. <br>Work planned to refactor this scss. <br>Variant .das-panel--with-tabs exists in _panel.scss.</p>
+
+
+        <div class="das-panels">
+            <div class="das-panels__row">
+                <div class="das-panel das-panel--featured">
+                    <h3 class="das-panel__heading">Lorem ipsum dolor consectetur adipiscing elit</h3>
+                    <p>Vivamus volutpat hendrerit quam, sit amet pharetra ante porta fermentum ante in.</p>
+                    <p><a href="#" class="das-panel__link">Maecenas interdum a tellus ut bibendum</a> </p>
+                </div>
+                <div class="das-panel">
+                    <h3 class="das-panel__heading">Quisque hendrerit egestas tellus</h3>
+                    <p>Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus.</p>
+                    <p><a href="#" class="govuk-link">Mauris sollicitudin</a> </p>
+                </div>
+            </div>
+            <div class="das-panels__row das-panels__row--secondary">
+                <div class="das-panel">
+                    <h3 class="das-panel__heading">Maecenas interdum a tellus ut bibendum</h3>
+                    <p>Donec hendrerit fermentum lectus, a eleifend est lobortis nec. Class aptent taciti sociosqu ad litora.</p>
+                </div>
+                <div class="das-panel">
+                    <h3 class="das-panel__heading">Maecenas dapibus metus</h3>
+                    <ul class="govuk-list">
+                        <li><a href="#" class="govuk-link">Sed vel tempus est</a> </li>
+                        <li><a href="#" class="govuk-link">Nunc ultrices bibendum</a> </li>
+                        <li><a href="#" class="govuk-link">Donec in fermentum ante</a> </li>
+                        <li><a href="#" class="govuk-link">Donec hendrerit fermentum</a> </li>
+                        <li><a href="#" class="govuk-link">Interdum et malesuada</a> </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- hr class="govuk-section-break govuk-section-break--xl govuk-section-break--visible">
+
+        <div class="das-panels">
+            <div class="das-panels__row">
+                <div class="das-panel das-panel--featured">
+                    <h3 class="das-panel__heading">Check if government funding is available for apprenticeship training </h3>
+                    <p>Use government funding to pay for part of all of the cost of apprenticeship training.</p>
+                    <p><a href="#" class="das-panel__link">Check and secure funding now</a> </p>
+                </div>
+                <div class="das-panel">
+                    <h3 class="das-panel__heading">Training provider permissions</h3>
+                    <p>Control what tasks you would like your training provider to do on your behalf.</p>
+                    <p><a href="#" class="govuk-link">Set permissions</a> </p>
+                </div>
+            </div>
+            <div class="das-panels__row das-panels__row--secondary">
+                <div class="das-panel">
+                    <h3 class="das-panel__heading">Your saved apprenticeships and training providers</h3>
+                    <p>You do not have any apprenticeships or training providers saved.</p>
+                </div>
+                <div class="das-panel">
+                    <h3 class="das-panel__heading">Your account settings</h3>
+                    <ul class="govuk-list">
+                        <li><a href="#" class="govuk-link">Your accounts</a> </li>
+                        <li><a href="#" class="govuk-link">Rename account </a> </li>
+                        <li><a href="#" class="govuk-link">Change your password </a> </li>
+                        <li><a href="#" class="govuk-link">Change your email address </a> </li>
+                        <li><a href="#" class="govuk-link">Notification settings </a> </li>
+                    </ul>
+                </div>
+            </div>
+        </div-->
+
+    </div>
+</div>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <h2 class="govuk-heading-m govuk-!-margin-top-6 govuk-!-margin-bottom-3">Dashboard footer (example)</h2>
+
+        <section class="das-section das-section--main das-dashboard-footer" aria-labelledby="more-title">
+            <div class="govuk-width-container">
+                <div class="govuk-grid-row">
+                    <hr class="das-section-break das-section-break--l das-section-break--heavy das-section-break--gutters">
+                    <div class="das-dashboard-footer__column das-dashboard-footer__column--title">
+                        <h2 id="more-title" class="das-dashboard-footer__title">More on Lorem ipsum dolor sit</h2>
+                    </div>
+                    <div class="das-dashboard-footer__column">
+                        <h3 class="govuk-heading-m das-dashboard-footer__sub-title">Aliquam in consequat</h3>
+                        <ul class="govuk-list das-list--featured">
+                            <li><a href="#" class="govuk-link govuk-link--no-visited-state">Orci varius natoque penatibus</a></li>
+                            <li><a href="#" class="govuk-link govuk-link--no-visited-state">Curabitur finibus lacus</a></li>
+                            <li><a href="#" class="govuk-link govuk-link--no-visited-state">Donec libero lorem</a></li>
+                            <li><a href="#" class="govuk-link govuk-link--no-visited-state">Praesent in sem non</a></li>
+                            <li><a href="#" class="govuk-link govuk-link--no-visited-state">Vestibulum mollis magna</a></li>
+                        </ul>
+                    </div>
+                    <div class="das-dashboard-footer__column">
+                        <a class="das-promo" href="#">
+                            Praesent eu porttitor neque lorem commodo pulvinar
+                        </a>
+                        <p>
+                            <a href="#" class="govuk-link govuk-link--no-visited-state">Aliquam sit amet</a> malesuada dolor, eget efficitur orci.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+
+    </div>
+</div>
+
+
+{% endblock %}
