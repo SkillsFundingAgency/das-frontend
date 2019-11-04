@@ -30,6 +30,7 @@
         .app-navigation__link:not(:focus):visited {color: #1d70b8; }
         .app-navigation__link:after {content: ''; position: absolute; top: 0; right: 0; bottom: 0; left: 0; }
         .no-backlink #main-content {margin-top: 50px; }
+        hr.govuk-section-break--visible {border-bottom-width: 2px; }
 
         body.hr main .govuk-grid-row {border-bottom: 1px dashed #ccc; padding-bottom: 40px; }
         body.hr main .govuk-grid-row:first-child {border-bottom: none; }
@@ -156,6 +157,8 @@
     </footer>
 </div>
 
+<!--script src="https://das-at-frnt-end.azureedge.net/libs/accessible-autocomplete/accessible-autocomplete.min.js"></script-->
+
 <script src="/libs/govuk-frontend/all.js"></script>
 <script src="/libs/jquery/jquery.min.js"></script>
 <script src="/js/das-all.js"></script>
@@ -164,7 +167,6 @@
     window.GOVUKFrontend.initAll();
     window.DASFrontend.initAll();
 </script>
-
 {% block js %}
 
 {% endblock %}

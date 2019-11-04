@@ -1,7 +1,7 @@
 {
   "src": {
     "default": "./src/sass/**/*.scss",
-    "defaultJs": "./src/js/*.js",
+    "defaultJs": "./src/js/_*.js",
     "defaultJsMain": "./src/js/app.js",
     "defaultImages": "./src/images/**/*",
     "componentJs": "./src/components/**/*.js",

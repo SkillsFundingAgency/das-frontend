@@ -418,20 +418,70 @@
         <p class="govuk-body-s govuk-!-margin-top-6  govuk-!-margin-bottom-1"><i>Note: .das-masthead (_mast-head.scss) = prototype work/styles.</i></p>
 
 
-        <hr class="govuk-section-break--l govuk-section-break--visible">
+<hr class="govuk-section-break--l govuk-section-break--visible">
 
+<p class="govuk-body govuk-!-margin-top-6">Account header - <abbr>HTML</abbr> with user navigation (menu): </p>
+
+<div class="das-account-header das-account-header--employer">
+        <div class="govuk-width-container">
+
+            <p class="das-account-header__title">Your employer account</p>
+            <nav class="das-user-navigation" id="das-user-navigation">
+                <ul class="das-user-navigation__list" role="menu">
+                    <li role="menuitem" class="das-user-navigation__list-item">
+                        <a asp-external-controller="Service" asp-external-action="help" class="das-user-navigation__link">Help</a>
+                    </li>
+                    <li role="menuitem" class="das-user-navigation__list-item das-user-navigation__list-item--has-sub-menu">
+                        <a href="#" class="das-user-navigation__link">Settings</a>
+
+
+                        <ul role="menu" class="das-user-navigation__sub-menu js-hidden" aria-expanded="false">
+                            <li class="das-user-navigation__sub-menu-list-item" role="menuitem">
+                                <a href="#" class="das-user-navigation__sub-menu-link">Example link 1</a>
+                            </li>
+                            <li class="das-user-navigation__sub-menu-list-item" role="menuitem">
+                                <a href="#" class="das-user-navigation__sub-menu-link">Example link 2</a>
+                            </li>
+                            <li class="das-user-navigation__sub-menu-list-item" role="menuitem">
+                                <a href="#" class="das-user-navigation__sub-menu-link">Example link 3</a>
+                            </li>
+                            <li class="das-user-navigation__sub-menu-list-item" role="menuitem">
+                                <a href="#" class="das-user-navigation__sub-menu-link">Example link 4</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li role="menuitem" class="das-user-navigation__list-item">
+                        <a class="das-user-navigation__link">Sign out</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+
+
+
+
+        <hr class="govuk-section-break--l govuk-section-break--visible">
 
         <p class="govuk-body govuk-!-margin-top-6">Dashboard header - example:</p>
         <p class="govuk-body-s">Overlaps with Search. Some classes not used in _section.scss (e.g, .das-section--search).</p>
 
         <div class="das-dashboard-header das-section--header">
             <div class="govuk-width-container das-dashboard-header__border">
+
                 <h1 class="govuk-heading-m das-account__title">Lorem ipsum dolor sit amet</h1>
                 <h2 class="govuk-heading-l das-account__account-name">Vivamus nec orci metus</h2>
-                <a href="#" class="das-favourites-link govuk-body">
-                    <span class="das-favourites-link__icon"><img src="" alt=""></span>
+
+                <a href="#" class="das-favourites-link govuk-body govuk-link--no-visited-state">
+                    <!--span class="das-favourites-link__icon"><img src="@Html.CdnLink("images", "favourite-unchecked-black.svg")" alt=""></span-->
+                    <!-- /images/favourite-unchecked-black.svg  -->
+                    <span class="das-favourites-link__icon">
+                        <img src="https://das-at-frnt-end.azureedge.net/images/favourite-unchecked-black.svg" alt="">
+                    </span>
                     <span class="das-favourites-link__text">View saved favourites</span>
                 </a>
+
             </div>
         </div>
 
@@ -449,22 +499,22 @@
             <div class="govuk-width-container">
                 <ul class="das-navigation__list">
                     <li class="das-navigation__list-item">
-                        <a asp-external-controller="Account" class="das-navigation__link">Home</a>
+                        <a href="#" asp-external-controller="Account" class="das-navigation__link">Home</a>
                     </li>
                     <li class="das-navigation__list-item">
-                        <a asp-external-action="" asp-external-controller="" asp-external-id="" class="das-navigation__link">Maecenas</a>
+                        <a href="#" asp-external-action="" asp-external-controller="" asp-external-id="" class="das-navigation__link">Maecenas</a>
                     </li>
                     <li class="das-navigation__list-item">
-                        <a asp-route="" asp-external-id="" class="das-navigation__link das-navigation__link--current">Praesent</a>
+                        <a href="#" asp-route="" asp-external-id="" class="das-navigation__link das-navigation__link--current">Praesent</a>
                     </li>
                     <li class="das-navigation__list-item">
-                        <a asp-external-action="" asp-external-controller="" asp-external-id="" class="das-navigation__link">Vestibulum</a>
+                        <a href="#" asp-external-action="" asp-external-controller="" asp-external-id="" class="das-navigation__link">Vestibulum</a>
                     </li>
                     <li class="das-navigation__list-item">
-                        <a class="das-navigation__link" asp-external-controller="" asp-external-subdomain=" " asp-external-id="">Suspendisse</a>
+                        <a href="#" class="das-navigation__link" asp-external-controller="" asp-external-subdomain=" " asp-external-id="">Suspendisse</a>
                     </li>
                     <li class="das-navigation__list-item">
-                        <a asp-external-controller="" asp-external-id="" class="das-navigation__link">Aliquam and Malesuada</a>
+                        <a href="#" asp-external-controller="" asp-external-id="" class="das-navigation__link">Aliquam and Malesuada</a>
                     </li>
                 </ul>
             </div>
@@ -482,7 +532,7 @@
         <p class="govuk-body govuk-!-margin-top-6">Single button pagination links: </p>
 
         <nav class="das-pagination-link">
-            <ul class="das-pagination-link__wrap">
+            <ul>
                 <li class="das-pagination-link__wrap das-pagination-link--prev">
                     <a href="" class="govuk-link govuk-link--no-visited-state">
                         <span>Previous page</span> <span>Page 1 of 3</span>
@@ -511,6 +561,101 @@
     </div>
 </div>
 
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+        <h2 class="govuk-heading-m govuk-!-margin-top-6 govuk-!-margin-bottom-3">Tables (examples)</h2>
+
+        <p class="govuk-body">Table - responsive:</p>
+
+        <table class="govuk-table das-table--responsive">
+            <caption class="govuk-table__caption">Dates and amounts</caption>
+            <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                    <th class="govuk-table__header" scope="col">Date</th>
+                    <th class="govuk-table__header" scope="col">Amount</th>
+                </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                    <th class="govuk-table__header" scope="row" data-label="Date">First 6 weeks</th>
+                    <td class="govuk-table__cell" data-label="Amount">&pound;109.80 per week</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <th class="govuk-table__header" scope="row" data-label="Date">Next 33 weeks</th>
+                    <td class="govuk-table__cell" data-label="Amount">&pound;109.80 per week</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <th class="govuk-table__header" scope="row" data-label="Date">Total estimated pay</th>
+                    <td class="govuk-table__cell" data-label="Amount">&pound;4,282.20</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <hr class="govuk-section-break--l govuk-section-break--visible govuk-!-margin-top-9 govuk-!-margin-bottom-9">
+
+        <table class="govuk-table das-table--responsive">
+            <caption class="govuk-table__caption">Dates and amounts</caption>
+            <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                    <th class="govuk-table__header" scope="col">Date</th>
+                    <th class="govuk-table__header" scope="col">Amount</th>
+                </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                    <th class="govuk-table__header" scope="row" data-label="Date">First 6 weeks</th>
+                    <td class="govuk-table__cell" data-label="Amount">&pound;109.80 per week</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <th class="govuk-table__header" scope="row" data-label="Date">Next 33 weeks</th>
+                    <td class="govuk-table__cell" data-label="Amount">&pound;109.80 per week</td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <th class="govuk-table__header" scope="row" data-label="Date">Total estimated pay</th>
+                    <td class="govuk-table__cell" data-label="Amount"><span class="das-table-cell--highlight">&pound;4,282.20</span></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <hr class="govuk-section-break--l govuk-section-break--visible govuk-!-margin-top-9 govuk-!-margin-bottom-9">
+
+        <table class="govuk-table">
+            <caption class="govuk-table__caption">Dates and amounts</caption>
+            <thead class="govuk-table__head">
+                <tr class="govuk-table__row">
+                    <th class="govuk-table__header" scope="col">Date</th>
+                    <th class="govuk-table__header govuk-table__header--numeric" scope="col">Amount</th>
+                    <th class="govuk-table__header" scope="col">Action</th>
+                </tr>
+            </thead>
+            <tbody class="govuk-table__body">
+                <tr class="govuk-table__row">
+                    <th class="govuk-table__header" scope="row" data-label="Date">First 6 weeks</th>
+                    <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Amount">&pound;109.80 per week</td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link">Edit</a> </td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <th class="govuk-table__header" scope="row" data-label="Date">Next 33 weeks</th>
+                    <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Amount">&pound;109.80 per week</td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link">Edit</a> </td>
+                </tr>
+                <tr class="govuk-table__row">
+                    <th class="govuk-table__header" scope="row" data-label="Date">Total estimated pay</th>
+                    <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Price">
+                    <span class="das-table-cell--highlight">&pound;4,500</span>
+                    </td>
+                    <td class="govuk-table__cell"><a href="#" class="govuk-link">Edit</a> </td>
+                </tr>
+            </tbody>
+        </table>
+
+
+    </div>
+</div>
+
+
+
+
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
@@ -527,11 +672,6 @@
 
     </div>
 </div>
-
-
-
-
-
 
 
 
