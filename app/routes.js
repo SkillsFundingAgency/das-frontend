@@ -36,14 +36,8 @@ module.exports = {
       var compName = req.params.compName;
       res.render('components/' + compFolder + '/' + compName, {action: req.query.action, type: req.query.type})
     })
-    app.get('/campaign/:pageName', function (req, res) {
-      var pageName = req.params.pageName;
-      res.render('campaign/' + pageName , {action: req.query.action, type: req.query.type})
-    })
-    app.get('/campaign/components/:compName', function (req, res) {
-      var compName = req.params.compName;
-      res.render('campaign/components/' + compName +'/' + compName , {action: req.query.action, type: req.query.type})
-    })
+
+
     app.get('/services/:journey/:stepId', function (req, res) {
       var stepId = req.params.stepId;
       var journey = req.params.journey;
@@ -61,14 +55,20 @@ module.exports = {
       res.render('legacy/' + journey + '/' + stepId, {action: req.query.action, type: req.query.type})
     })
 
-    app.get('/campaign/json/:fileId', function (req, res) {
-      var fileId = req.params.fileId;
-      res.render('campaign/json/' + fileId + '.json')
-    })
-
     app.get('/cdn-documentation/:compName', function (req, res) {
       var compName = req.params.compName;
       res.render('cdn-documentation/' + compName, {action: req.query.action, type: req.query.type})
+    })
+
+    app.get('/campaign/:pageName', function (req, res) {
+      var pageName = req.params.pageName;
+      res.render('campaign/' + pageName , {action: req.query.action, type: req.query.type})
+    })
+
+    app.get('/campaign/:journey/:stepId', function (req, res) {
+      var stepId = req.params.stepId;
+      var journey = req.params.journey;
+      res.render('campaign/' + journey + '/' + stepId, {action: req.query.action, type: req.query.type})
     })
   }
 }
