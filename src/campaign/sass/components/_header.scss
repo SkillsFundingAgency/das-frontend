@@ -1,8 +1,7 @@
 .header {
-  background: #000;
-  background: linear-gradient(0deg, rgba(0,0,0,0) 0%, rgba(0,0,0,.8) 50%, rgba(0,0,0,1) 100%);
   padding: 20px;
   position: absolute;
+  background: #fff;
   width: 100%;
   top: 0;
   z-index: 1000;
@@ -25,31 +24,11 @@
   }
 }
 
-.header.header--active {
-  background: #fff;
-  -webkit-box-shadow: 0px 3px 10px 0px rgba(0,0,0,0.2);
-  -moz-box-shadow: 0px 3px 10px 0px rgba(0,0,0,0.2);
-  box-shadow: 0px 3px 10px 0px rgba(0,0,0,0.2);
-  position: fixed;
-}
-
 .header__logo {
   height: 55px;
-  .header--active &,
-  .js-menu-open & {
-    background-image: url('../images/apprenticeships-logo-black.png');
-    background-size: contain;
-    background-repeat: no-repeat;
-  }
   @include media-query($from: $nav-breakpoint) {
     height: 70px;
     float: left;
-    .header--active &,
-    .header:hover & {
-      background-image: url('../images/apprenticeships-logo-black.png');
-      background-size: contain;
-      background-repeat: no-repeat;
-    }
   }
   & > a {
     &:focus {
@@ -60,13 +39,4 @@
 
 .header__logo-image {
   max-height: 100%;
-  .header--active &,
-  .js-menu-open & {
-    opacity: 0;
-  }
-  @include media-query($from: $nav-breakpoint) {
-    .header:hover & {
-      opacity: 0;
-    }
-  }
 }
