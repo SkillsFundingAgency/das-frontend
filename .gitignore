@@ -289,3 +289,4 @@ __pycache__/
 .DS_Store
 /dist
 /app/views/campaign/local
+/app/views/local
