@@ -18,14 +18,14 @@ var appInit = function () {
     header.className = "header header--active";
   }
 
-  var topLevelLinks = document.querySelectorAll('.nav__link--top-level'),
-      topLevelLis = document.querySelectorAll('.nav__list-item');
+  var topLevelLinks = document.querySelectorAll('.navigation__list-item > a'),
+      topLevelLis = document.querySelectorAll('.navigation__list-item');
 
   for (var li of topLevelLis) {
-    var menu = li.querySelector('.nav__ordered-list');
+    var menu = li.querySelector('.navigation__sub-menu');
     if (menu !== null) {
       li.addEventListener('mouseover', function() {
-        showMenu(this.querySelector('.nav__ordered-list'))
+        showMenu(this.querySelector('.navigation__sub-menu'))
       });
       li.addEventListener('mouseout', hideAllMenus);
     }
@@ -35,7 +35,7 @@ var appInit = function () {
     link.addEventListener('focus', hideAllMenus);
     link.addEventListener('keydown', function (e) {
       var key = e.which,
-        menu = this.parentNode.querySelector('.nav__ordered-list');
+        menu = this.parentNode.querySelector('.navigation__sub-menu');
 
       if (menu !== null) {
         if (key == 40) {
@@ -76,7 +76,7 @@ var hideMenu = function(menu) {
 }
 
 var hideAllMenus = function() {
-  var menus = document.querySelectorAll('.nav__ordered-list');
+  var menus = document.querySelectorAll('.navigation__sub-menu');
   for (var menu of menus) {
     hideMenu(menu);
   }
