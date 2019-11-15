@@ -5,74 +5,47 @@
   background-image: url('data:image/svg+xml;utf8,<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="display: block; transform: scale(-1,1)"  x="0px" y="0px" fill="' + $color + '" viewBox="0 0 25 40" xml:space="preserve"><path class="das-pagination__arrow" d="M0,4.3L16.2,20L0,35.8L4.4,40L25,20L4.5,0L0,4.3z"/></svg>');
 }
 
-/* Not in use ...
 .das-pagination {
-  margin: 30px 0;
-  border-top: 1px solid #ddd;
-  padding: 30px 0 0 0;
+  @include govuk-font($size: 19);
   list-style: none;
-  @include govuk-font(19);
-  @include das-clearfix();
+  padding: 0;
+  margin:0 0 0 -10px;
   @include govuk-media-query($from: tablet) {
-    margin-top: 80px;
+    padding: 10px 0;
   }
 }
-
-.das-pagination__list-item {
-  margin: 10px 0;
-  @include govuk-media-query($from: tablet) {
-    width: 50%;
-    float: left;
-  }
-}
-
-.govuk-page .das-pagination__link {
-  text-transform: uppercase;
-
-  font-weight: bold;
-  color: $govuk-link-colour;
-  text-decoration: none;
-  &:hover,
-  &:focus {
-    text-decoration: underline;
-  }
-}
-
-.das-pagination__list-item--next {
-    float: right;
-}
-
-.das-pagination__link--previous,
-.das-pagination__link--next {
-  height: 48px;
-  background-repeat: no-repeat;
-  padding-bottom: 10px;
+.das-pagination__item {
   display: inline-block;
-  box-sizing: border-box;
 }
-
-.das-pagination__link--previous {
-  padding-left: 35px;
-  @include arrow-left(str-replace('' + $govuk-text-colour, '#', '%23'));
-  background-position: left center;
-}
-
-.das-pagination__link--next {
-  padding-right: 35px;
-  @include arrow-right(str-replace('' + $govuk-text-colour, '#', '%23'));
-  background-position: right center;
-  text-align: right;
-  float: right;
-}
-
-.das-pagination__caption{
+.das-pagination__link {
   display: block;
-
-  @include govuk-font(16);
+  padding: 5px 10px;
+  color: $govuk-link-colour;
+  &:hover, &:focus {
+    outline: $govuk-focus-width solid $govuk-focus-colour;
+    color: $govuk-link-hover-colour;
+  }
+  &.current {
+    font-weight: 700;
+    border: none;
+    pointer-events: none;
+    cursor: default;
+    &:hover, &:focus {
+      background: none;
+    }
+  }
 }
-*/
 
-.das-pagination-link {//Description: single link pagination with arrow
+.das-pagination__summary {
+  @include govuk-font($size: 19);
+  padding: 10px 0;
+  @include govuk-media-query($from: tablet) {
+    float: right;
+    padding: 15px 0;
+  }
+}
+
+.das-pagination-link { //Description: single link pagination with arrow
   width: 100%;
   display: block;
   text-align: right;
