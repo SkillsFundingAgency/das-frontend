@@ -291,7 +291,37 @@
 .nav--apprentice .nav__ordered-list { border-color: $apprentice }
 
 
+.profile-switcher {
+  position: absolute;
+  top: 0;
+}
 
+.register-interest {
+  font-family: $font-family;
+  font-size: 16px;
+  font-weight: 700;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  text-align: center;
+  background: $black;
+  display: block;
+  color: #fff;
+  text-transform: uppercase;
+  padding: 15px;
+  text-decoration: none;
+  margin: 15px;
+  @include media-query($from: $nav-breakpoint) {
+    top: 20px;
+    right: 80px;
+    left: auto;
+    bottom: auto;
+    font-size: 14px;
+    padding: 15px 20px;
+    margin: 0;
+  }
+}
 
 
 
