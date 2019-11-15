@@ -1,5 +1,5 @@
 .header {
-  padding: 20px;
+  padding: 0 20px;
   position: fixed;
   background: #fff;
   width: 100%;
@@ -13,19 +13,19 @@
     background: #fff;
   }
   @include media-query($from: $nav-breakpoint) {
-    padding: 25px 40px;
-    height: 120px;
+    padding: 0 40px;
     &:hover {
       background: #fff;
     }
   }
   @include media-query($from: desktop) {
-    padding: 25px 80px;
+    padding: 0 80px;
   }
 }
 
 .header__logo {
   height: 55px;
+  margin: 15px 0;
   @include media-query($from: $nav-breakpoint) {
     height: 70px;
     float: left;
