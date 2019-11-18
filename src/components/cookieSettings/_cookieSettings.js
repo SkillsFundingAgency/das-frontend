@@ -4,11 +4,11 @@
     this.DEFAULT_COOKIE_CONSENT = [
       {
         name: 'AnalyticsConsent',
-        value: true
+        value: 'true'
       },
       {
         name: 'MarketingConsent',
-        value: false
+        value: 'false'
       }
     ]
     this.start()
@@ -30,13 +30,8 @@
     cookieSettings.forEach(function(cookieSetting) {
 
       var currentConsentCookie = window.GOVUK.cookie(cookieSetting.name)
-      var radioButton
-
-      if (currentConsentCookie === 'true' || cookieSetting.value === true ) {
-        radioButton = document.querySelector('input[name=cookies-' + cookieSetting.name + '][value=on]')
-      } else {
-        radioButton = document.querySelector('input[name=cookies-' + cookieSetting.name + '][value=off]')
-      }
+      var returnedCookieValue = currentConsentCookie !== null ? currentConsentCookie : cookieSetting.value
+      var radioButton = document.querySelector('input[name=cookies-' + cookieSetting.name + '][value=' + (returnedCookieValue === 'true' ? 'on' : 'off') + ']')
 
       radioButton.checked = true
 
