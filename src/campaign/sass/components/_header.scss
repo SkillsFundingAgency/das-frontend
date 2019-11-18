@@ -9,6 +9,7 @@
   margin: 0 auto;
   box-sizing: border-box;
   transition: all 0.2s ease;
+  box-shadow: 0px 10px 20px rgba(0,0,0,0.15), 0px 4px 4px rgba(0,0,0,0.25);
   .js-menu-open & {
     background: #fff;
   }

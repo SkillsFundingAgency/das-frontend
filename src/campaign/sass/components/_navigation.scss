@@ -254,18 +254,17 @@
   font-family: $font-family;
   font-size: 18px;
   font-weight: 300;
-  color: #5d6467;
-  text-decoration: none;
+  color: $black;
+  text-decoration: underline;
   display: block;
   padding: 10px 20px;
   @include media-query($from: $nav-breakpoint) {
-    text-decoration: underline;
     line-height: 1.3;
     padding: 10px 15px;
   }
   &:hover,
   &:focus {
-    color: $black;
+    background: rgba(0, 0, 0, .05);
   }
   &:focus {
     outline: 3px solid $focus-colour;
@@ -292,15 +291,25 @@
 
 
 .profile-switcher {
-  position: absolute;
-  top: 0;
+  font-family: $font-family;
+  font-size: 14px;
+  font-weight: 700;
+  padding: 15px 20px;
+  display: block;
+  text-transform: uppercase;
+  text-decoration: none;
+  position: fixed;
+  bottom: 80px;
+  color: #fff;
+  background: red;
+  width: 100%;
 }
 
 .register-interest {
   font-family: $font-family;
   font-size: 16px;
   font-weight: 700;
-  position: absolute;
+  position: fixed;
   bottom: 0;
   right: 0;
   left: 0;
@@ -311,7 +320,8 @@
   text-transform: uppercase;
   padding: 15px;
   text-decoration: none;
-  margin: 15px;
+  border: 20px solid red;
+  border-width: 15px 20px;
   @include media-query($from: $nav-breakpoint) {
     top: 20px;
     right: 80px;
