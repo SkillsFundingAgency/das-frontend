@@ -48,7 +48,8 @@
 
     event.preventDefault()
 
-    var formInputs = event.target.getElementsByTagName("input")
+    var formInputs = event.target.getElementsByTagName("input"),
+        button = event.target.getElementsByTagName("button")
 
     for ( var i = 0; i < formInputs.length; i++ ) {
       var input = formInputs[i]
@@ -64,6 +65,9 @@
     }
 
     this.showConfirmationMessage()
+
+    if (button.length > 0)
+      button[0].removeAttribute('disabled')
 
     return false
   }
