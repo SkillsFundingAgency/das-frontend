@@ -23,10 +23,9 @@
   display: block;
   padding: 5px 10px;
   color: $govuk-link-colour;
-  text-decoration: none;
   &:hover, &:focus {
     color: $govuk-link-hover-colour;
-    text-decoration: underline;
+    text-decoration: none;
   }
   &:focus {
     outline: $govuk-focus-width solid $govuk-focus-colour;
