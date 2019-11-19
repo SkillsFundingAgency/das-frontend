@@ -5,8 +5,8 @@
   window.GOVUK = window.GOVUK || {}
 
   var DEFAULT_COOKIE_CONSENT = {
-    'AnalyticsConsent': true,
-    'MarketingConsent': false
+    'AnalyticsConsent': 'true',
+    'MarketingConsent': 'false'
   }
 
   window.GOVUK.cookie = function (name, value, options) {
