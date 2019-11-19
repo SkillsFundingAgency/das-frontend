@@ -27,9 +27,9 @@
       this.$acceptCookiesLink.addEventListener('click', this.$module.setCookieConsent)
     }
 
-    if (!window.GOVUK.cookie('SeenCookieMessage')) {
-      if (window.GOVUK.cookie('SeenCookieMessage') === true) {
-        window.GOVUK.cookie('SeenCookieMessage', false, { days: 365 })
+    if (!window.GOVUK.cookie('DASSeenCookieMessage')) {
+      if (window.GOVUK.cookie('DASSeenCookieMessage') === true) {
+        window.GOVUK.cookie('DASSeenCookieMessage', false, { days: 365 })
       }
     }
     this.showCookieMessage()
@@ -37,7 +37,7 @@
 
   CookieBanner.prototype.showCookieMessage = function () {
     if (!this.isInCookiesPage() && !this.isInIframe()) {
-      var showCookieBanner = (this.$module && window.GOVUK.cookie('SeenCookieMessage') !== 'true')
+      var showCookieBanner = (this.$module && window.GOVUK.cookie('DASSeenCookieMessage') !== 'true')
       if (showCookieBanner) {
         this.$module.style.display = 'block'
       }
@@ -47,7 +47,7 @@
   CookieBanner.prototype.hideCookieMessage = function (event) {
     if (this.$module) {
       this.$module.style.display = 'none'
-      window.GOVUK.cookie('SeenCookieMessage', true, { days: 365 })
+      window.GOVUK.cookie('DASSeenCookieMessage', true, { days: 365 })
     }
     if (event.target) {
       event.preventDefault()
@@ -58,7 +58,7 @@
     window.GOVUK.approveAllCookieTypes()
     this.$module.showConfirmationMessage()
     this.$module.cookieBannerConfirmationMessage.focus()
-    window.GOVUK.cookie('SeenCookieMessage', true, { days: 365 })
+    window.GOVUK.cookie('DASSeenCookieMessage', true, { days: 365 })
   }
 
   CookieBanner.prototype.showConfirmationMessage = function () {

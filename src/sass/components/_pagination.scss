@@ -14,22 +14,30 @@
     padding: 10px 0;
   }
 }
+
 .das-pagination__item {
   display: inline-block;
 }
+
 .das-pagination__link {
   display: block;
   padding: 5px 10px;
   color: $govuk-link-colour;
+  text-decoration: none;
   &:hover, &:focus {
-    outline: $govuk-focus-width solid $govuk-focus-colour;
     color: $govuk-link-hover-colour;
+    text-decoration: underline;
+  }
+  &:focus {
+    outline: $govuk-focus-width solid $govuk-focus-colour;
   }
   &.current {
     font-weight: 700;
     border: none;
     pointer-events: none;
     cursor: default;
+    text-decoration: none;
+    color: $govuk-text-colour;
     &:hover, &:focus {
       background: none;
     }

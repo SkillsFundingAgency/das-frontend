@@ -4,11 +4,11 @@
     this.DEFAULT_COOKIE_CONSENT = [
       {
         name: 'AnalyticsConsent',
-        value: true
+        value: 'true'
       },
       {
         name: 'MarketingConsent',
-        value: false
+        value: 'false'
       }
     ]
     this.start()
@@ -30,13 +30,8 @@
     cookieSettings.forEach(function(cookieSetting) {
 
       var currentConsentCookie = window.GOVUK.cookie(cookieSetting.name)
-      var radioButton
-
-      if (currentConsentCookie === 'true' || cookieSetting.value === true ) {
-        radioButton = document.querySelector('input[name=cookies-' + cookieSetting.name + '][value=on]')
-      } else {
-        radioButton = document.querySelector('input[name=cookies-' + cookieSetting.name + '][value=off]')
-      }
+      var returnedCookieValue = currentConsentCookie !== null ? currentConsentCookie : cookieSetting.value
+      var radioButton = document.querySelector('input[name=cookies-' + cookieSetting.name + '][value=' + (returnedCookieValue === 'true' ? 'on' : 'off') + ']')
 
       radioButton.checked = true
 
@@ -48,7 +43,8 @@
 
     event.preventDefault()
 
-    var formInputs = event.target.getElementsByTagName("input")
+    var formInputs = event.target.getElementsByTagName("input"),
+        button = event.target.getElementsByTagName("button")
 
     for ( var i = 0; i < formInputs.length; i++ ) {
       var input = formInputs[i]
@@ -64,6 +60,9 @@
     }
 
     this.showConfirmationMessage()
+
+    if (button.length > 0)
+      button[0].removeAttribute('disabled')
 
     return false
   }
