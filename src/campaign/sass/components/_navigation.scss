@@ -284,13 +284,7 @@
   }
 }
 
-.nav--apprentice { background: $apprentice; color: #fff; }
-.nav--apprentice .nav__link--top-level:hover,
-.nav--apprentice .nav__list-item:hover .nav__link--top-level { background: darken($apprentice, 10%); }
-.nav--apprentice .nav__ordered-list { border-color: $apprentice }
-
-
-.profile-switcher {
+.nav-profile-switcher {
   font-family: $font-family;
   font-size: 14px;
   font-weight: 700;
@@ -303,9 +297,11 @@
   color: #fff;
   background: red;
   width: 100%;
+  z-index: 2;
+  box-shadow: 0 0 5px 0 rgba(0,0,0,0.25);
 }
 
-.register-interest {
+.nav-register-interest {
   font-family: $font-family;
   font-size: 16px;
   font-weight: 700;
@@ -322,6 +318,7 @@
   text-decoration: none;
   border: 20px solid red;
   border-width: 15px 20px;
+  z-index: 1;
   @include media-query($from: $nav-breakpoint) {
     top: 20px;
     right: 80px;
@@ -333,8 +330,12 @@
   }
 }
 
-
-
+.nav--apprentice { background: $apprentice; color: #fff; }
+.nav--apprentice .nav__link--top-level:hover,
+.nav--apprentice .nav__list-item:hover .nav__link--top-level { background: darken($apprentice, 10%); }
+.nav--apprentice .nav__ordered-list { border-color: $apprentice }
+.nav--apprentice .nav-profile-switcher { background: $apprentice }
+.nav--apprentice .nav-register-interest { border-color: $apprentice }
 
 
 .navigation {
@@ -387,7 +388,6 @@
 
 .navigation__ordered-list {
   padding: 0;
-  margin: 0 -20px 20px;
   margin: 0;
   list-style: none;
   & > li {
