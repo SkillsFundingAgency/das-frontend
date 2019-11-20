@@ -103,7 +103,7 @@
     width: auto;
     padding-left: 25px;
     padding-right: 25px;
-    box-shadow: 0px 10px 20px rgba(0,0,0,0.15), 0px 4px 4px rgba(0,0,0,0.25);
+    box-shadow: 0px 3px 7px rgba(0,0,0,0.1);
   }
   @include media-query($from: desktop) {
     margin-left: -80px;
@@ -295,10 +295,45 @@
   position: fixed;
   bottom: 80px;
   color: #fff;
-  background: red;
   width: 100%;
   z-index: 2;
   box-shadow: 0 0 5px 0 rgba(0,0,0,0.25);
+  box-sizing: border-box;
+  &:hover,
+  &:focus {
+    background: rgba(0, 0, 0, .5);
+  }
+  &:focus {
+    outline: 3px solid $focus-colour;
+  }
+  @include media-query($from: $nav-breakpoint) {
+    position: absolute;
+    background: none;
+    width: auto;
+    color: $black;
+    box-shadow: none;
+    right: 20em;
+    top: 20px;
+    bottom: auto;
+  }
+}
+
+.nav-profile-switcher__icon {
+  background-image: url("../images/icon-avatar.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  display: block;
+  position: absolute;
+  top: 10px;
+  right: 20px;
+  width: 24px;
+  height: 24px;
+  @include media-query($from: $nav-breakpoint) {
+    background-image: url("../images/icon-avatar-black.svg");
+    vertical-align: middle;
+    display: inline-block;
+    position: static;
+  }
 }
 
 .nav-register-interest {
@@ -319,14 +354,22 @@
   border: 20px solid red;
   border-width: 15px 20px;
   z-index: 1;
+  &:focus {
+    outline: 3px solid $focus-colour;
+  }
   @include media-query($from: $nav-breakpoint) {
     top: 20px;
-    right: 80px;
+    right: 40px;
     left: auto;
     bottom: auto;
     font-size: 14px;
     padding: 15px 20px;
     margin: 0;
+    border: none;
+    position: absolute;
+  }
+  @include media-query($from: tablet) {
+    right: 80px;
   }
 }
 
@@ -334,9 +377,18 @@
 .nav--apprentice .nav__link--top-level:hover,
 .nav--apprentice .nav__list-item:hover .nav__link--top-level { background: darken($apprentice, 10%); }
 .nav--apprentice .nav__ordered-list { border-color: $apprentice }
-.nav--apprentice .nav-profile-switcher { background: $apprentice }
+.nav--apprentice .nav-profile-switcher { background-color: $apprentice; @include media-query($from: $nav-breakpoint) { background: none; } }
 .nav--apprentice .nav-register-interest { border-color: $apprentice }
 
+.nav--employer { background: $employer; color: #fff; }
+.nav--employer .nav__link--top-level {color: $black}
+.nav--employer .nav__ordered-list-toggle-icon {background-color: $black; &:before { background: $black }}
+.nav--employer .nav__link--top-level:hover,
+.nav--employer .nav__list-item:hover .nav__link--top-level { background: lighten($employer, 10%); }
+.nav--employer .nav__ordered-list { border-color: $employer }
+.nav--employer .nav-profile-switcher { background-color: $employer; color: $black;  @include media-query($from: $nav-breakpoint) { background: none; } }
+.nav--employer .nav-profile-switcher__icon { background-image: url("../images/icon-avatar-black.svg") }
+.nav--employer .nav-register-interest { border-color: $employer }
 
 .navigation {
   background: #fff;
