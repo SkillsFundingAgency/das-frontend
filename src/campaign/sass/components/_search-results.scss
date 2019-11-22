@@ -332,3 +332,34 @@
     width: 50%;
   }
 }
+
+.das-search-result__address {
+  @include font($size: 19, $weight: 300);
+  color: $black;
+  position: relative;
+  border-left: 5px solid $grey-4;
+  margin: 10px 0;
+  vertical-align: middle;
+  padding: 10px 0 10px 40px;
+  @include media-query($from: tablet) {
+    border-left: 10px solid $grey-4;
+    margin: 15px 0;
+  }
+  strong {
+    font-weight: 700;
+  }
+}
+
+.das-search-result__address-icon {
+  position: absolute;
+  top: 50%;
+  left: 10px;
+  display: inline-block;
+  height: 32px;
+  width: 20px;
+  margin-top: -15px;
+  background-image: url('../images/icon-location-yellow.svg');
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
