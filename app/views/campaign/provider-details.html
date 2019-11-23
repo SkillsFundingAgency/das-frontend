@@ -355,28 +355,31 @@
                </dl>
 
                 <h2 class="heading-m"><span class="badge-round badge-round--employer">5</span> nearest locations for Boom Training Ltd:</h2>
-                <details class="more-information">
-                    <summary><span class="summary"> View locations</span></summary>
-                    <div class="panel panel-border-narrow">
-                        <table class="govuk-table">
-                            <thead class="govuk-table__head">
-                            <tr class="govuk-table__row">
-                                <th scope="col" class="govuk-table__header">Address</th>
-                                <th scope="col" class="govuk-table__header">Favourite</th>
+                <details class="details">
+                    <summary class="details__summary"><span class="details__summary-text">View locations</span></summary>
+                    <div class="details__text">
+                        <table class="table table--simple">
+
+                            <tr class="table__row">
+                                <th scope="col" class="table__cell--header">Address</th>
+                                <th scope="col" class="table__cell--header">Favourite</th>
                             </tr>
-                            </thead>
-                            <tbody class="govuk-table__body">
-                            <tr class="govuk-table__row nearest-row">
-                                <td class="govuk-table__cell">
-                                    <p><span class="closest">NEAREST</span></p>
-                                    <p>
-                                        Warwick, Warwickshire, <strong>CV32 7EE</strong><br>
-                                        <strong>Telephone:</strong> 0800 783 2545<br>
-                                        <strong>Email:</strong> <a href="mailto:enquiries@pgon.co.uk">enquiries@pgon.co.uk</a><br>
-                                        <strong>Distance:</strong> 1.1 miles
-                                    </p>
+
+                            <tr class="table__row table__row--highlight">
+                                <td class="table__cell">
+                                    <p><span class="badge badge--highlight badge--employer">Nearest</span></p>
+                                    <dl class="das-definition-list--inline">
+                                        <dt class="das-definition-list__title">Address</dt>
+                                        <dd class="das-definition-list__definition">Warwick, Warwickshire, <strong>CV32 7EE</strong></dd>
+                                        <dt class="das-definition-list__title">Telephone</dt>
+                                        <dd class="das-definition-list__definition">0800 783 2545</dd>
+                                        <dt class="das-definition-list__title">Email</dt>
+                                        <dd class="das-definition-list__definition"><a href="mailto:enquiries@pgon.co.uk">enquiries@pgon.co.uk</a></dd>
+                                        <dt class="das-definition-list__title">Distance</dt>
+                                        <dd class="das-definition-list__definition">1.1 miles</dd>
+                                    </dl>
                                 </td>
-                                <td class="govuk-table__cell">
+                                <td class="table__cell">
                                     <div class="form-group radios">
                                         <div class="checkboxes__item save-label">
                                             <input class="checkboxes__input" type="checkbox" value="true" id="save-1" name="save-1">
@@ -385,8 +388,8 @@
                                     </div>
                                 </td>
                             </tr>
-                            <tr class="govuk-table__row">
-                                <td class="govuk-table__cell">
+                            <tr class="table__row">
+                                <td class="table__cell">
                                     <p>
                                         Warwick, Warwickshire, <strong>CV33 6KL</strong><br>
                                         <strong>Telephone:</strong> 0800 783 2545<br>
@@ -395,7 +398,7 @@
                                     </p>
 
                                 </td>
-                                <td class="govuk-table__cell">
+                                <td class="table__cell">
                                     <div class="form-group radios">
                                         <div class="checkboxes__item save-label">
                                             <input class="checkboxes__input" type="checkbox" value="true" id="save-2" name="save-2">
@@ -405,7 +408,7 @@
                                 </td>
                             </tr>
 
-                            </tbody>
+
                         </table>
                     </div>
                     <p class="no-top-margin"><a href="javascript:history.back()" class="search">Search for training providers in a different location.</a></p>

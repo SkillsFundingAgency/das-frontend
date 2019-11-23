@@ -10,6 +10,13 @@
   box-sizing: border-box;
 }
 
+.badge--highlight {
+  text-transform: uppercase;
+  font-weight: bold;
+  padding: 10px;
+  font-size: 14px;
+}
+
 .badge--apprentice {
   background: $apprentice;
   color: #fff;
