@@ -47,10 +47,13 @@
 
 .das-definition-list--inline {
     overflow: hidden;
+    margin: .5em 0 0;
     .das-definition-list__title {
         clear: both;
         float: left;
         margin-right: 10px;
+        color: $black;
+        font-weight: 500;
         &:after {
             content: ':';
         }

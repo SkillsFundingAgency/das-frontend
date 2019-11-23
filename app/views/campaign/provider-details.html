@@ -362,12 +362,12 @@
 
                             <tr class="table__row">
                                 <th scope="col" class="table__cell--header">Address</th>
-                                <th scope="col" class="table__cell--header">Favourite</th>
+                                <th scope="col" class="table__cell--header-numeric">Favourite</th>
                             </tr>
 
                             <tr class="table__row table__row--highlight">
                                 <td class="table__cell">
-                                    <p><span class="badge badge--highlight badge--employer">Nearest</span></p>
+                                    <span class="badge badge--highlight badge--employer">Nearest</span>
                                     <dl class="das-definition-list--inline">
                                         <dt class="das-definition-list__title">Address</dt>
                                         <dd class="das-definition-list__definition">Warwick, Warwickshire, <strong>CV32 7EE</strong></dd>
@@ -379,32 +379,29 @@
                                         <dd class="das-definition-list__definition">1.1 miles</dd>
                                     </dl>
                                 </td>
-                                <td class="table__cell">
-                                    <div class="form-group radios">
-                                        <div class="checkboxes__item save-label">
-                                            <input class="checkboxes__input" type="checkbox" value="true" id="save-1" name="save-1">
-                                            <label class="label checkboxes__label" for="save-1"></label>
-                                        </div>
-                                    </div>
+                                <td class="table__cell table__cell--numeric">
+                                    <button class="das-search-result__favourite-button--unchecked">
+                                        <span class="vh">Add to favourite</span>
+                                    </button>
                                 </td>
                             </tr>
                             <tr class="table__row">
                                 <td class="table__cell">
-                                    <p>
-                                        Warwick, Warwickshire, <strong>CV33 6KL</strong><br>
-                                        <strong>Telephone:</strong> 0800 783 2545<br>
-                                        <strong>Email:</strong> <a href="mailto:enquiries@pgon.co.uk">enquiries@pgon.co.uk</a><br>
-                                        <strong>Distance:</strong> 3.2 miles
-                                    </p>
-
+                                    <dl class="das-definition-list--inline">
+                                        <dt class="das-definition-list__title">Address</dt>
+                                        <dd class="das-definition-list__definition">Warwick, Warwickshire, <strong>CV32 7EE</strong></dd>
+                                        <dt class="das-definition-list__title">Telephone</dt>
+                                        <dd class="das-definition-list__definition">0800 783 2545</dd>
+                                        <dt class="das-definition-list__title">Email</dt>
+                                        <dd class="das-definition-list__definition"><a href="mailto:enquiries@pgon.co.uk">enquiries@pgon.co.uk</a></dd>
+                                        <dt class="das-definition-list__title">Distance</dt>
+                                        <dd class="das-definition-list__definition">1.1 miles</dd>
+                                    </dl>
                                 </td>
-                                <td class="table__cell">
-                                    <div class="form-group radios">
-                                        <div class="checkboxes__item save-label">
-                                            <input class="checkboxes__input" type="checkbox" value="true" id="save-2" name="save-2">
-                                            <label class="label checkboxes__label" for="save-2"></label>
-                                        </div>
-                                    </div>
+                                <td class="table__cell table__cell--numeric">
+                                    <button class="das-search-result__favourite-button--checked">
+                                        <span class="vh">Add to favourite</span>
+                                    </button>
                                 </td>
                             </tr>
 
