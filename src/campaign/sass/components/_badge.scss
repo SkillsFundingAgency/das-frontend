@@ -19,3 +19,25 @@
   background: $employer;
   color: $black;
 }
+
+.badge-round {
+  background: $black;
+  display: inline-block;
+  color: #fff;
+  position: relative;
+  padding: 5px;
+  border-radius: 50%;
+  line-height: 1;
+  height: 1em;
+  width: 1em;
+  text-align: center;
+}
+
+.badge-round--apprentice {
+  background: $apprentice;
+}
+
+.badge-round--employer {
+  background: $employer;
+  color: $black;
+}
