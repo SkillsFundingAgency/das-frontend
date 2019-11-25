@@ -36,3 +36,29 @@
 .das-definition-list__results--black dt{
     color: $black;
 }
+
+.das-definition-list__title {
+    font-weight: bolder;
+}
+
+.das-definition-list__definition {
+    margin: 0;
+}
+
+.das-definition-list--inline {
+    overflow: hidden;
+    margin: .5em 0 0;
+    .das-definition-list__title {
+        clear: both;
+        float: left;
+        margin-right: 10px;
+        color: $black;
+        font-weight: 500;
+        &:after {
+            content: ':';
+        }
+    }
+    .das-definition-list__definition {
+        float: left;
+    }
+}

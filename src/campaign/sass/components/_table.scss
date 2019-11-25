@@ -11,9 +11,15 @@
   padding: 20px;
 }
 
-.table__row{
+.table__row {
   border-bottom: 1px solid $border-colour;
 }
+
+.table__row--highlight {
+  background: $grey-7;
+}
+
+
 .table__row-title {
   text-transform: uppercase;
   @include font($size: 14, $weight: bold);
@@ -43,5 +49,29 @@
   }
   .table--employer & {
     background-color: $employer-light;
+  }
+}
+
+.table__cell--header,
+.table__cell--header-numeric {
+  font-weight: bold;
+  text-align: left;
+  color: $black;
+}
+
+.table--simple {
+  border-top: none;
+  @include font($size: 19);
+  .table__cell,
+  .table__cell--header {
+    padding: 10px;
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+  .table__cell--header-numeric,
+  .table__cell--numeric {
+    text-align: right;
+    padding-right: 10px;
   }
 }
