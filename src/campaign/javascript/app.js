@@ -6,16 +6,16 @@ window.onscroll = function() { activeHeader() };
 
 function activeHeader() {
   if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-    header.className = "header header--active";
+    header.classList.add("header--active");
   } else {
-    header.className = "header";
+    header.classList.remove("header--active");
   }
 }
 
 var appInit = function () {
 
   if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-    header.className = "header header--active";
+    header.classList.add("header--active");
   }
 
   var topLevelLinks = document.querySelectorAll('.navigation__list-item > a'),

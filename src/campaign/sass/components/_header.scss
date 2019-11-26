@@ -10,6 +10,9 @@
   box-sizing: border-box;
   transition: all 0.2s ease;
   box-shadow: 0px 10px 20px rgba(0,0,0,0.15), 0px 4px 4px rgba(0,0,0,0.25);
+  &.header--generic {
+    background: none;
+  }
   .js-menu-open & {
     background: #fff;
   }
@@ -24,11 +27,31 @@
   }
 }
 
+.header.header--active {
+  background: #fff;
+  -webkit-box-shadow: 0px 3px 10px 0px rgba(0,0,0,0.2);
+  -moz-box-shadow: 0px 3px 10px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 3px 10px 0px rgba(0,0,0,0.2);
+  position: fixed;
+}
+
 .header__logo {
   height: 60px;
   margin: 15px 0;
+  .header--generic.header--active &,
+  .js-menu-open & {
+    background-image: url('../images/apprenticeships-logo-black.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
   @include media-query($from: $nav-breakpoint) {
     float: left;
+    .header--generic.header--active &,
+    .header.header--generic:hover & {
+      background-image: url('../images/apprenticeships-logo-black.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+    }
   }
   & > a {
     &:focus {
@@ -39,4 +62,13 @@
 
 .header__logo-image {
   max-height: 100%;
+  .header--generic.header--active &,
+  .js-menu-open & {
+    opacity: 0;
+  }
+  @include media-query($from: $nav-breakpoint) {
+    .header--generic:hover & {
+      opacity: 0;
+    }
+  }
 }

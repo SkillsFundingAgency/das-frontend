@@ -6,6 +6,9 @@
   border-radius: 2px;
   background: #000;
   transition: all 0.3s ease;
+  .header--generic & {
+    background: #fff;
+  }
 }
 
 .navigation__toggle {
@@ -17,7 +20,7 @@
   display: block;
   text-decoration: none;
   &:focus {
-    @include focus-outline
+    @include focus-outline;
   }
   .navigation__toggle-icon {
     @extend %nav-icon-lines;
@@ -71,10 +74,14 @@
   text-transform: uppercase;
   display: block;
   padding: 17px 50px 17px 12px;
+  .header--generic & {
+    color: #fff;
+  }
   .header--active &,
   .js-menu-open & {
     color: $black;
   }
+
 }
 
 .nav {
@@ -406,7 +413,7 @@
   text-align: left;
   color: #fff;
   position: fixed;
-  top: 95px;
+  top: 90px;
   bottom: 0;
   width: 100%;
   font-size: 1.4em;
@@ -425,6 +432,7 @@
     border: none;
     overflow: visible;
     display: block;
+    margin-top: 15px;
   }
   .js-menu-open & {
     right: 0;
@@ -433,7 +441,7 @@
 }
 
 .navigation__menu {
-  padding: 0 0 100px;
+  padding: 0;
   margin: 0;
   list-style: none;
 }
@@ -507,7 +515,7 @@
   @include media-query($from: $nav-breakpoint) {
     background: none;
     position: static;
-    padding: 15px 0 0 5px;
+    padding: 5px 0 0 5px;
     border: none;
   }
   @include media-query($from: $nav-breakpoint-desktop) {
@@ -545,7 +553,7 @@
   padding: 15px 20px;
   position: relative;
   @include media-query($from: $nav-breakpoint) {
-    padding: 25px 20px 60px;
+    padding: 20px;
     font-size: 13px;
     color: #fff;
     .header--active & ,
@@ -554,7 +562,7 @@
     }
   }
   @include media-query($from: $nav-breakpoint-desktop) {
-    padding: 25px 25px 60px;
+    padding: 20px 25px;
     font-size: 14px;
   }
   &:focus {
