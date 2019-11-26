@@ -390,6 +390,16 @@
 .nav--employer .nav-profile-switcher__icon { background-image: url("../images/icon-avatar-black.svg") }
 .nav--employer .nav-register-interest { border-color: $employer }
 
+.nav--parents { background: $parent; color: #fff; }
+.nav--parents .nav__link--top-level {color: #fff}
+.nav--parents .nav__ordered-list-toggle-icon {background-color: #fff; &:before { background: #fff }}
+.nav--parents .nav__link--top-level:hover,
+.nav--parents .nav__list-item:hover .nav__link--top-level { background: $parent-light; }
+.nav--parents .nav__ordered-list { border-color: $parent }
+.nav--parents .nav-profile-switcher { background-color: $parent; color: #fff;  @include media-query($from: $nav-breakpoint) { background: none; color: $black; } }
+.nav--parents .nav-profile-switcher__icon { background-image: url("../images/icon-avatar.svg"); @include media-query($from: $nav-breakpoint) { background-image: url("../images/icon-avatar-black.svg") } }
+.nav--parents .nav-register-interest { border-color: $parent }
+
 .navigation {
   background: #fff;
   border-top: 1px solid #ccc;
