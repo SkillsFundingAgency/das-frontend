@@ -41,10 +41,10 @@ $blue-dark: darken($blue, 5%);
     .modal-dialog{
       @include translate(0, 0); 
       top: 0;
-      bottom: 0;
+      left: 0;
+      right: 0;
       @include media-query($from: tablet) {
         top: 5%;
-        bottom: 5%;
       }
     }
   }
@@ -73,7 +73,8 @@ $blue-dark: darken($blue, 5%);
   }
   .show-modal & {
     top: 0;
-    bottom: 0;
+    left: 0;
+    right: 0;
     @include translate(0, 0);
     @include media-query($from: tablet) {
       top: 5%;

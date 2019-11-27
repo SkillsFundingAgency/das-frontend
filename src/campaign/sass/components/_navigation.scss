@@ -515,11 +515,12 @@
   @include media-query($from: $nav-breakpoint) {
     background: none;
     position: static;
-    padding: 5px 0 0 5px;
+    padding: 10px 0 0 5px;
     border: none;
   }
   @include media-query($from: $nav-breakpoint-desktop) {
     font-size: 14px;
+    padding-top: 5px;
     padding-left: 25px;
   }
 }
