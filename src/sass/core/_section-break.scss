@@ -19,6 +19,10 @@
   border-top: 5px solid #000;
 }
 
+.das-section-break--heavy-grey {
+  border-top: 5px solid govuk-colour(mid-grey);
+}
+
 .das-section-break--gutters {
   margin-left: $govuk-gutter-half;
   margin-right: $govuk-gutter-half;
