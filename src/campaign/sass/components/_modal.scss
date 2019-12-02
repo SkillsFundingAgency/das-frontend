@@ -30,7 +30,7 @@ $blue-dark: darken($blue, 5%);
     left: 0;
     right: 0;
     bottom: 0;
-    z-index: 2000;
+    z-index: 9999;
   }
   
   &:target {
@@ -47,6 +47,7 @@ $blue-dark: darken($blue, 5%);
       padding: 30px;
       @include media-query($from: tablet) {
         top: 5%;
+        bottom: 5%;
         width: 50%;
         left: 25%;
         right: 25%;
@@ -69,7 +70,7 @@ $blue-dark: darken($blue, 5%);
   background: #fefefe;
   position: fixed;
   top: -100%;  
-  z-index: 2010;
+  z-index: 10000;
   max-height: 100%;
   overflow: auto;
   padding: 20px;
