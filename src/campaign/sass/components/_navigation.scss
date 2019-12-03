@@ -137,6 +137,12 @@
   }
 }
 
+.nav__list-item--favourites {
+  @include media-query($from: $nav-breakpoint) {
+    float: right;
+  }
+}
+
 .nav__list-item--has-children {
   position: relative;
 }

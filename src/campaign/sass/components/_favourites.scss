@@ -16,17 +16,13 @@
     width: 2.4em;
     height: 2.4em;
     overflow: hidden;
-    background-image: url('../images/icon-star.svg');
+    background-image: url('../images/icon-star-outlined.svg');
     background-repeat: no-repeat;
     background-position: center center;
     background-size: contain;
     display: block;
     text-indent: -999em;
-    margin-top: -10px;
-    .header--active & ,
-    .header:hover & {
-      background-image: url('../images/icon-star-outlined.svg');
-    }
+    margin: -7px 0;
     .favourites-link--filled & {
       background-image: url('../images/icon-star-filled-yellow.svg');
       .header--active & ,
@@ -50,7 +46,7 @@
   text-align: center;
   @include media-query($from: $nav-breakpoint) {
     position: absolute;
-    top: 10px;
-    right: 10px;
+    top: 3px;
+    right: 0;
   }
 }
