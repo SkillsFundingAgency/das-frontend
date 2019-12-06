@@ -30,6 +30,13 @@
   color: $apprentice;
 }
 
+.hero-heading__caption-link {
+  color: #fff;
+  &:hover {
+    text-decoration: none;
+  }
+}
+
 .hero-heading__caption--employer {
   color: $employer;
 }
