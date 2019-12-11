@@ -88,7 +88,7 @@
   text-align: left;
   position: fixed;
   top: 90px;
-  bottom: 0;
+  bottom: 127px;
   width: 100%;
   font-size: 1.4em;
   z-index: 10;
@@ -326,14 +326,16 @@
     color: $black;
     box-shadow: none;
     right: 20em;
-    top: 20px;
+    top: 15px;
     bottom: auto;
+    text-align: right;
+    padding-right: 50px;
   }
 }
 
 .nav-profile-switcher__icon {
   background-image: url("../images/icon-avatar.svg");
-  background-size: cover;
+  background-size: contain;
   background-repeat: no-repeat;
   display: block;
   position: absolute;
@@ -343,10 +345,22 @@
   height: 24px;
   @include media-query($from: $nav-breakpoint) {
     background-image: url("../images/icon-avatar-black.svg");
-    vertical-align: middle;
-    display: inline-block;
-    position: static;
+    right: 10px;
+    top: 15px;
+    width: 30px;
+    height: 35px;
   }
+}
+
+.nav-profile-switcher__caption {
+  display: none;
+  @include media-query($from: $nav-breakpoint) {
+    display: block;
+  }
+  text-transform: none;
+  color: #4a5764;
+  font-weight: normal;
+
 }
 
 .nav-register-interest {
@@ -381,7 +395,7 @@
     border: none;
     position: absolute;
   }
-  @include media-query($from: tablet) {
+  @include media-query($from: desktop) {
     right: 80px;
   }
 }
@@ -390,7 +404,7 @@
 .nav--apprentice .nav__link--top-level:hover,
 .nav--apprentice .nav__list-item:hover .nav__link--top-level { background: darken($apprentice, 10%); }
 .nav--apprentice .nav__ordered-list { border-color: $apprentice }
-.nav--apprentice .nav-profile-switcher { background-color: $apprentice; @include media-query($from: $nav-breakpoint) { background: none; } }
+.nav--apprentice .nav-profile-switcher { background-color: $apprentice; @include media-query($from: $nav-breakpoint) { background: none; color: $apprentice; } }
 .nav--apprentice .nav-register-interest { border-color: $apprentice }
 
 .nav--employer { background: $employer; color: #fff; }
@@ -399,7 +413,7 @@
 .nav--employer .nav__link--top-level:hover,
 .nav--employer .nav__list-item:hover .nav__link--top-level { background: lighten($employer, 10%); }
 .nav--employer .nav__ordered-list { border-color: $employer }
-.nav--employer .nav-profile-switcher { background-color: $employer; color: $black;  @include media-query($from: $nav-breakpoint) { background: none; } }
+.nav--employer .nav-profile-switcher { background-color: $employer; color: $black;  @include media-query($from: $nav-breakpoint) { background: none; color: $employer; } }
 .nav--employer .nav-profile-switcher__icon { background-image: url("../images/icon-avatar-black.svg") }
 .nav--employer .nav-register-interest { border-color: $employer }
 
@@ -409,7 +423,7 @@
 .nav--parents .nav__link--top-level:hover,
 .nav--parents .nav__list-item:hover .nav__link--top-level { background: $parent-light; }
 .nav--parents .nav__ordered-list { border-color: $parent }
-.nav--parents .nav-profile-switcher { background-color: $parent; color: #fff;  @include media-query($from: $nav-breakpoint) { background: none; color: $black; } }
+.nav--parents .nav-profile-switcher { background-color: $parent; color: #fff;  @include media-query($from: $nav-breakpoint) { background: none; color: $parent; } }
 .nav--parents .nav-profile-switcher__icon { background-image: url("../images/icon-avatar.svg"); @include media-query($from: $nav-breakpoint) { background-image: url("../images/icon-avatar-black.svg") } }
 .nav--parents .nav-register-interest { border-color: $parent }
 

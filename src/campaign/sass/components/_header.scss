@@ -39,6 +39,8 @@
 .header__logo {
   height: 60px;
   margin: 15px 0;
+  position: relative;
+  display: inline-block;
   .header--generic.header--active &,
   .js-menu-open & {
     background-image: url('../images/apprenticeships-logo-black.png');
@@ -55,6 +57,7 @@
     }
   }
   & > a {
+    text-decoration: none;
     &:focus {
       outline: 3px solid $focus-colour;
     }
@@ -72,4 +75,29 @@
       opacity: 0;
     }
   }
+}
+
+.header__caption {
+  display: block;
+  font-size: 12px;
+  font-weight: bold;
+  font-family: $font-family;
+  line-height: 1.4;
+  text-transform: uppercase;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.header__caption--employer {
+  color: $employer;
+}
+
+.header__caption--apprentice {
+  color: $apprentice;
+}
+
+
+.header__caption--parent {
+  color: $parent;
 }

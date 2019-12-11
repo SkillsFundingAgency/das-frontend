@@ -60,6 +60,14 @@ $blue-dark: darken($blue, 5%);
       }
     }
   }
+  &#switch-profiles {
+    .modal-dialog {
+      bottom: 0;
+      @include media-query($from: tablet) {
+        bottom: auto;
+      }
+    }
+  }
 }
 
 .show-modal:before {

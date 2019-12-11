@@ -4,7 +4,7 @@
 
 .js-menu-open {
   overflow: hidden;
-  @include media-query($from: tablet) {
+  @include media-query($from: $nav-breakpoint) {
     overflow: auto;
   }
 }
