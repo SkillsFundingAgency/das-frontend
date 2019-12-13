@@ -163,3 +163,13 @@
     color: $parent;
   }
 }
+
+.video-player__thumbnail{
+  width: 100%;
+  position: relative;
+  border: solid #000 50px;
+  border-left: 0px;
+  border-right: 0px;
+  float: right;
+  margin-bottom: 20px;
+}
