@@ -30,7 +30,7 @@ $blue-dark: darken($blue, 5%);
     left: 0;
     right: 0;
     bottom: 0;
-    z-index: 2000;
+    z-index: 9999;
   }
   
   &:target {
@@ -39,12 +39,32 @@ $blue-dark: darken($blue, 5%);
       display: block;
     }  
     .modal-dialog{
-      @include translate(0, 0); 
+      @include translate(0, 0);
       top: 0;
-      bottom: 0;
+      left: 0;
+      right: 0;
+      box-sizing: border-box;
+      padding: 30px;
       @include media-query($from: tablet) {
         top: 5%;
         bottom: 5%;
+        width: 50%;
+        left: 25%;
+        right: 25%;
+      }
+      @include media-query($from: desktop) {
+        top: 5%;
+        width: 40%;
+        left: 30%;
+        right: 30%;
+      }
+    }
+  }
+  &#switch-profiles {
+    .modal-dialog {
+      bottom: 0;
+      @include media-query($from: tablet) {
+        bottom: auto;
       }
     }
   }
@@ -58,7 +78,7 @@ $blue-dark: darken($blue, 5%);
   background: #fefefe;
   position: fixed;
   top: -100%;  
-  z-index: 2010;
+  z-index: 10000;
   max-height: 100%;
   overflow: auto;
   padding: 20px;
@@ -66,14 +86,10 @@ $blue-dark: darken($blue, 5%);
   @include translate(0, -500%);
   @include transition-transform(#{"0.6s ease"});
 
-  @include media-query($from: tablet) {
-    width: 45%;
-    left: 20%;
-    padding: 7.5%;
-  }
   .show-modal & {
     top: 0;
-    bottom: 0;
+    left: 0;
+    right: 0;
     @include translate(0, 0);
     @include media-query($from: tablet) {
       top: 5%;
@@ -93,10 +109,17 @@ $blue-dark: darken($blue, 5%);
   right: 20px;
   a.close {
     display: block;
-    height: 32px;
-    width: 32px;
+    height: 33px;
+    width: 33px;
+    background: #000;
     &:focus {
       @include focus-outline
+    }
+    svg {
+      position: absolute;
+      top: 10px;
+      left: 10px;
+      fill: #fff;
     }
   }
 }

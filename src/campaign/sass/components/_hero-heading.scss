@@ -16,6 +16,7 @@
   line-height: 1.4;
   letter-spacing: -0.05em;
   margin-bottom: 5px;
+  color: #ccc;
   @include media-query($from: tablet) {
     font-size: 16px;
   }

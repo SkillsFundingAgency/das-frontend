@@ -1,7 +1,7 @@
 function Navigation($module) {
   this.$module = $module
   this.$navToggle = $module.querySelector('.navigation__toggle');
-  this.$navItems = $module.querySelectorAll('.navigation__list-item');
+  this.$navItems = $module.querySelectorAll('.nav__list-item');
 }
 
 function nodeListForEach(nodes, callback) {
@@ -26,7 +26,7 @@ Navigation.prototype.init = function () {
   }
 
   nodeListForEach(this.$navItems, function ($navItem, i) {
-    this.$subnavToggle = $navItem.querySelector('.navigation__sub-menu-toggle');
+    this.$subnavToggle = $navItem.querySelector('.nav__ordered-list-toggle');
     if (this.$subnavToggle != undefined) {
       this.$subnavToggle.addEventListener('click', this.onToggleSubNav.bind(this, $navItem));
     }
@@ -40,8 +40,8 @@ Navigation.prototype.onToggleNav = function () {
 
 Navigation.prototype.onToggleSubNav = function ($navItem,event) {
   event.preventDefault();
-  $navItem.querySelector('.navigation__link--top-level').classList.toggle('sub-menu-open');
-  $navItem.querySelector('.navigation__sub-menu').classList.toggle('js-show')
+  $navItem.querySelector('.nav__link--top-level').classList.toggle('sub-menu-open');
+  $navItem.querySelector('.nav__ordered-list').classList.toggle('js-show')
 }
 
 
