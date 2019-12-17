@@ -122,8 +122,20 @@
     &:last-child {
       border-bottom: none;
     }
+    &.das-basket__provider--inactive {
+      border-radius: 5px;
+      border-bottom: none;
+      background: #ddd;
+      padding: 10px;
+      margin: -1px -10px;
+      > .das-basket__provider-delete {
+        right: 10px;
+      }
+    }
   }
 }
+
+
 
 .das-basket__provider-delete {
   display: block;
@@ -156,4 +168,26 @@
   text-align: center;
   padding: 20px 20px 30px;
   color: $black;
+}
+
+
+.das-basket__item--inactive {
+  background: #ddd;
+  border-radius: 5px;
+  padding: 10px;
+  margin-right: -10px;
+  .das-basket__item-heading {
+    a {
+      color: #555;
+      text-decoration: none;
+    }
+    &:after {
+      content: ' - apprenticeship no longer available';
+      color: #666;
+    }
+  }
+  .das-basket__item-delete {
+    background-color: #ddd;
+    right: 0;
+  }
 }
