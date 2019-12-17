@@ -147,6 +147,7 @@ $hero-text-colour: #fff;
 
 .hero-banner__icon-play-container {
   @include clearfix;
+  top: -65px;
   @include mq ($from: tablet) {
     float: right;
     position: relative;
@@ -161,13 +162,13 @@ $hero-text-colour: #fff;
   height: 80px;
   width: 80px;
   display: block;
-  margin-top: 40px;
-  margin-bottom: 20px;
   background: $apprentice;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   border-radius: 50%;
   transition: box-shadow 0.2s ease;
+  margin: 0 auto;
+  top: 100px;
   @include mq ($from: tablet) {
     margin: 135px auto 120px;
     height: 110px;
@@ -197,12 +198,7 @@ $hero-text-colour: #fff;
     background: $parent;
   }
 
-  .hero-banner--right-aligned & {
-    float: right;
-    @include mq ($from: tablet) {
-      float: none;
-    }
-  }
+
   &:before {
     content: "";
     position: absolute;
