@@ -40,11 +40,11 @@
   list-style: none;
   padding-left: 0;
   & > li {
-    margin-bottom: 5px;
+    margin-bottom: 10px;
   }
 }
 
-.error-summary__list > li > a,
+.page .error-summary__list > li > a,
 .form-validation-summary__link,
 .page .form-validation-summary__link {
   color: $error-colour;
