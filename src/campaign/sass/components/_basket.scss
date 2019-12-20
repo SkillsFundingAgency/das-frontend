@@ -176,7 +176,9 @@
   border-radius: 5px;
   padding: 10px;
   margin-right: -10px;
-  .das-basket__item-heading {
+  .das-basket__item-heading, .basket__item-heading {
+    margin: 0;
+    line-height: 1.1em;
     a {
       color: #555;
       text-decoration: none;
