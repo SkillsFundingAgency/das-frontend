@@ -1,0 +1,68 @@
+$thecalling-pink:   #c635a6;
+
+.thecalling-body {
+  background: $page-bg;
+  text-align: center;
+  color: #fff;
+}
+
+.thecalling-main {
+  background: $black;
+  @include media-query($from: tablet) {
+    margin: 0 auto;
+    max-width: 900px;
+  }
+}
+
+// Buttons
+
+.thecalling-button {
+  @extend .button;
+  background: $thecalling-pink;
+  color: #fff;
+  &:visited {
+    color: #fff;
+  }
+  &:focus,
+  &:hover {
+    background: darken($thecalling-pink, 10%);
+    color: #fff;
+  }
+  &:active {
+    top: 0;
+  }
+}
+
+
+// Sections
+
+.thecalling-section--theteam {
+  background: #fff;
+  padding: 30px;
+  text-align: center;
+}
+
+
+
+// Cards
+
+.thecalling-cards {
+  @include media-query($from: tablet) {
+    display: flex;
+  }
+}
+
+.thecalling-cards__photo {
+  border-radius: 50%;
+  max-width: 200px;
+}
+
+.thecalling-cards__heading {
+  color: $heading-colour;
+  text-transform: uppercase;
+  @include font($size: 19, $weight: bold);
+}
+
+.thecalling-cards__intro {
+  color: $text-colour;
+}
