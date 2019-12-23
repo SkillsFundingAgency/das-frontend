@@ -47,13 +47,10 @@
         }
 
         var interactionEvents = function(container) {
-
           var contents = container.contents();
-
           var links = contents.find('a');
           var buttons = contents.find('button');
           var form = contents.find('form');
-
 
           links.unbind('click')
           links.on('click', function() {
@@ -84,32 +81,14 @@
           })
         }
 
-
         var gtmEventPush = function(eventObj) {
           eventObj.event = 'widget'
           window.dataLayer.push(eventObj)
           console.log(eventObj)
         }
 
-
         var whichView = function(container) {
-
-          /*
-
-            View 1: Just search form
-            View 2: Search form and zero results
-            View 3: Search form and some results
-            View 4: Article page
-            View 5: Contact page
-            View 6: Request call back page
-            View 7: Request call back confirmation
-            View 8: Live chat page
-            View 9: Leave message page
-
-           */
-
             var contents = container.contents();
-
             var searchField = contents.find('input[type="search"]');
             var firstH1 = contents.find('h1').eq(0);
             var firstH2 = contents.find('h2').eq(0);
@@ -123,13 +102,14 @@
 
               if (secondP.text() === "Try searching for something else.") {
                 // View 2: Search form and zero results
-                gtmEventPush({'action' : 'Search form submitted', 'term' : searchTerm})
+                gtmEventPush({'action' : 'Search form submitted', 'term' : searchTerm, 'noOfResults' : 0})
                 return(2);
               }
 
               if (firstH2.text() === "Top results") {
                 // View 3: Search form and some results
-                gtmEventPush({'action' : 'Search form submitted', 'term' : searchTerm})
+                var listResults = contents.find('ol').eq(0).find('li');
+                gtmEventPush({'action' : 'Search form submitted', 'term' : searchTerm, 'noOfResults' : listResults.length})
                 return(3);
               }
 
@@ -173,9 +153,14 @@
                return (9);
             }
 
+            if (firstH1.text() === 'Message sent') {
+              // View 7: Request call back confirmation
+               gtmEventPush({'action' : 'Leave message submitted'})
+               return (10);
+            }
+
             // Cannot determine the view or closed the widget
             return(0);
-
         }
 
     </script>
