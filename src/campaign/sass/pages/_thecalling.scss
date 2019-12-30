@@ -8,9 +8,15 @@ $thecalling-pink:   #c635a6;
 
 .thecalling-main {
   background: $black;
+  background: green;
   @include media-query($from: tablet) {
     margin: 0 auto;
     max-width: 900px;
+  }
+  p {
+    font-weight: 500;
+    font-size: 19px;
+    margin-bottom: 2em;
   }
 }
 
@@ -20,6 +26,7 @@ $thecalling-pink:   #c635a6;
   @extend .button;
   background: $thecalling-pink;
   color: #fff;
+  width: auto;
   &:visited {
     color: #fff;
   }
@@ -36,10 +43,68 @@ $thecalling-pink:   #c635a6;
 
 // Sections
 
+.thecalling-section {
+  position: relative;
+}
+
+.thecalling-section--transparent {
+  position: relative;
+  img {
+    max-width: 100%;
+    display: block;
+  }
+}
+
+.thecalling-section__heading {
+  text-transform: uppercase;
+  @include font($size: 48, $weight: bold);
+  font-size: 40px;
+  letter-spacing: -0.05em;
+  margin-top: 0;
+}
+
+.thecalling-section__heading--skew {
+  transform: rotate(-6deg) skewX(-6deg);
+}
+
+.thecalling-section__heading--light {
+  font-weight: 300;
+}
+
+.thecalling-section__image-wrap {
+  overflow: hidden;
+  height: 300px;
+  position: relative;
+}
+
+.thecalling-section__image {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: ;
+}
+
+.thecalling-section__panel {
+  padding: 50px 30px;
+  position: relative;
+  -webkit-transform: skewY(-6deg);
+  transform: skewY(-6deg);
+  background: $black;
+  background: red;
+  z-index: 1;
+}
+
+.thecalling-section__panel-content {
+  -webkit-transform: skewY(6deg);
+  transform: skewY(6deg);
+}
+
 .thecalling-section--theteam {
   background: #fff;
   padding: 30px;
   text-align: center;
+  color: $black;
 }
 
 
@@ -49,6 +114,17 @@ $thecalling-pink:   #c635a6;
 .thecalling-cards {
   @include media-query($from: tablet) {
     display: flex;
+    flex-wrap: wrap;
+  }
+}
+
+.thecalling-cards__card {
+  margin-bottom: 20px;
+  @include media-query($from: tablet) {
+    width: 50%;
+  }
+  @include media-query($from: desktop) {
+    width: 33%;
   }
 }
 
