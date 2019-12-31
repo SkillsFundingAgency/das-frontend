@@ -8,10 +8,9 @@ $thecalling-pink:   #c635a6;
 
 .thecalling-main {
   background: $black;
-  background: green;
   @include media-query($from: tablet) {
     margin: 0 auto;
-    max-width: 900px;
+    max-width: 1200px;
   }
   p {
     font-weight: 500;
@@ -41,17 +40,57 @@ $thecalling-pink:   #c635a6;
 }
 
 
+// Video hero
+
+.thecalling-video {
+  min-height: 230px;
+  text-align: center;
+  @include font($size: 24, $weight: bold);
+  h1 {
+    text-transform: uppercase;
+    padding: 0;
+    margin: 0;
+  }
+}
+
 // Sections
 
 .thecalling-section {
   position: relative;
+  margin-top: -40px;
+  @include media-query($from: tablet) {
+    padding: 80px 0;
+    margin: 0;
+    @include clearfix();
+    transform: skewY(-6deg);
+  }
+}
+
+.thecalling-section--jamal {
+  background: $black;
+  @include media-query($from: tablet) {
+    transform: skewY(0);
+    padding-bottom: 120px;
+    margin-bottom: -80px;
+  }
 }
 
 .thecalling-section--transparent {
-  position: relative;
+  position: absolute;
+  min-height: 50px;
+  display: block;
+  bottom: 100%;
+  left: 0;
+  right: 0;
   img {
-    max-width: 100%;
     display: block;
+    width: 160%;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    @include media-query($from: tablet) {
+      width: 100%;
+    }
   }
 }
 
@@ -73,26 +112,74 @@ $thecalling-pink:   #c635a6;
 
 .thecalling-section__image-wrap {
   overflow: hidden;
-  height: 300px;
+  height: 410px;
   position: relative;
+  @include media-query($from: tablet) {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: auto;
+  }
+}
+
+.thecalling-section__image-wrap--jamal {
+  height: 280px;
+  @include media-query($from: tablet) {
+    height: auto;
+  }
 }
 
 .thecalling-section__image {
   display: block;
   position: absolute;
-  top: 0;
+  top: -60px;
   left: 0;
-  width: ;
+  width: 160%;
+  @include media-query($from: tablet) {
+    height: auto;
+    -webkit-transform: skewY(6deg);
+    transform: skewY(6deg);
+    top: -80px;
+    width: 100%;
+    .thecalling-section--jamal & {
+      -webkit-transform: skewY(0);
+      transform: skewY(0);
+    }
+  }
+  @include media-query($from: desktop) {
+
+  }
+}
+
+.thecalling-section__image--jamal {
+  right: 0;
+  top: 0;
+  left: auto;
 }
 
 .thecalling-section__panel {
   padding: 50px 30px;
+  margin-top: -50px;
   position: relative;
   -webkit-transform: skewY(-6deg);
   transform: skewY(-6deg);
   background: $black;
-  background: red;
   z-index: 1;
+  @include media-query($from: tablet) {
+    width: 50%;
+    margin: 0;
+    box-sizing: border-box;
+    float: right;
+    -webkit-transform: skewY(0);
+    transform: skewY(0);
+    .thecalling-section--jamal & {
+      float: left;
+      -webkit-transform: skewY(-6deg);
+      transform: skewY(-6deg);
+    }
+  }
 }
 
 .thecalling-section__panel-content {
@@ -102,11 +189,18 @@ $thecalling-pink:   #c635a6;
 
 .thecalling-section--theteam {
   background: #fff;
-  padding: 30px;
+  padding: 80px 30px 30px;
   text-align: center;
   color: $black;
+
 }
 
+.thecalling-reverse-skew {
+  @include media-query($from: tablet) {
+    -webkit-transform: skewY(6deg);
+    transform: skewY(6deg);
+  }
+}
 
 
 // Cards
@@ -115,6 +209,7 @@ $thecalling-pink:   #c635a6;
   @include media-query($from: tablet) {
     display: flex;
     flex-wrap: wrap;
+    margin: 0 80px;
   }
 }
 
@@ -122,6 +217,8 @@ $thecalling-pink:   #c635a6;
   margin-bottom: 20px;
   @include media-query($from: tablet) {
     width: 50%;
+    padding: 0 30px;
+    box-sizing: border-box;
   }
   @include media-query($from: desktop) {
     width: 33%;
@@ -137,8 +234,53 @@ $thecalling-pink:   #c635a6;
   color: $heading-colour;
   text-transform: uppercase;
   @include font($size: 19, $weight: bold);
+  font-size: 24px;
+  margin-bottom: .4em;
 }
 
 .thecalling-cards__intro {
   color: $text-colour;
+  margin-top: 0;
+}
+
+
+.thecalling-footer {
+  text-align: left;
+  @include font($size: 19, $weight: light);
+  font-size: 16px;
+  color: #fff;
+  padding: 50px 30px;
+  .footer__inline-list-item {
+    margin-bottom: 10px;
+    font-size: 15px;
+    @include media-query($from: tablet) {
+      text-align: right;
+      margin-right: 5px;
+      padding-right: 7px;
+      &:last-child {
+        margin-right: 0;
+        padding-right: 0;
+      }
+    }
+  }
+  .footer__link:link,
+  .footer__link:visited {
+    color: #fff;
+  }
+  p.footer__text {
+    font-size: 16px;
+    color: #fff;
+    margin-top: 20px;
+    @include media-query($from: tablet) {
+      margin-top: 0px;
+      margin-bottom: 0;
+      font-size: 14px;
+    }
+  }
+  .footer__inline-list {
+    @include media-query($from: tablet) {
+      text-align: right;
+      margin-top: 40px;
+    }
+  }
 }
