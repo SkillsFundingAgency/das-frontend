@@ -39,6 +39,27 @@ $thecalling-pink:   #c635a6;
   }
 }
 
+.thecalling-site-heading {
+  text-transform: uppercase;
+  transform: rotate(-6deg) skewX(-6deg);
+  @include font($size: 48, $weight: bold);
+  font-size: 40px;
+  letter-spacing: -0.05em;
+  margin-top: 1.2em;
+  margin-bottom: 20px;
+  @include media-query($from: 500px) {
+    font-size: 60px;
+  }
+  @include media-query($from: tablet) {
+    font-size: 90px;
+
+  }
+  @include media-query($from: desktop) {
+    font-size: 120px;
+
+  }
+}
+
 
 // Video hero
 
@@ -63,14 +84,28 @@ $thecalling-pink:   #c635a6;
 }
 
 .thecalling-video__play {
-  width: 100px;
-  height: 100px;
+  width: 50px;
+  height: 50px;
   background-image: url("../images/thecalling/icon-play.svg");
   background-size: cover;
   background-repeat: no-repeat;
   overflow: hidden;
   text-indent: -9999px;
   display: block;
+  margin: 20px auto;
+  @include media-query($from: 500px) {
+    width: 80px;
+    height: 80px;
+  }
+  @include media-query($from: tablet) {
+    width: 80px;
+    height: 80px;
+    margin: 50px auto;
+  }
+  @include media-query($from: desktop) {
+    width: 100px;
+    height: 100px;
+  }
 }
 
   // Sections
@@ -88,6 +123,7 @@ $thecalling-pink:   #c635a6;
 
 .thecalling-section--jamal {
   background: $black;
+  margin-top: 0;
   @include media-query($from: tablet) {
     transform: skewY(0);
     padding-bottom: 120px;
@@ -120,6 +156,12 @@ $thecalling-pink:   #c635a6;
   font-size: 40px;
   letter-spacing: -0.05em;
   margin-top: 0;
+  @include media-query($from: tablet) {
+    font-size: 48px;
+  }
+  @include media-query($from: desktop) {
+    font-size: 64px;
+  }
 }
 
 .thecalling-section__heading--skew {
@@ -168,9 +210,6 @@ $thecalling-pink:   #c635a6;
       transform: skewY(0);
     }
   }
-  @include media-query($from: desktop) {
-
-  }
 }
 
 .thecalling-section__image--jamal {
@@ -205,6 +244,8 @@ $thecalling-pink:   #c635a6;
 .thecalling-section__panel-content {
   -webkit-transform: skewY(6deg);
   transform: skewY(6deg);
+  max-width: 410px;
+  margin: 0 auto;
 }
 
 .thecalling-section--theteam {
@@ -247,7 +288,7 @@ $thecalling-pink:   #c635a6;
 
 .thecalling-cards__photo {
   border-radius: 50%;
-  max-width: 200px;
+  max-width: 150px;
 }
 
 .thecalling-cards__heading {
@@ -258,9 +299,11 @@ $thecalling-pink:   #c635a6;
   margin-bottom: .4em;
 }
 
-.thecalling-cards__intro {
+.thecalling-cards__intro,
+p.thecalling-cards__intro {
   color: $text-colour;
   margin-top: 0;
+  font-weight: 300;
 }
 
 
