@@ -52,7 +52,7 @@
           var buttons = contents.find('button');
           var form = contents.find('form');
 
-          links.unbind('click')
+          links.off('click')
           links.on('click', function() {
             setTimeout(function() {
                   var page = whichView(container);
@@ -62,17 +62,17 @@
                 }, 200);
           })
 
-          buttons.unbind('click')
-                buttons.on('click', function() {
-                  setTimeout(function() {
-                        var page = whichView(container);
-                        setTimeout(function() {
-                          interactionEvents(container);
-                          }, 200);
-                      }, 200);
-                })
+          buttons.off('click')
+			buttons.on('click', function() {
+			  setTimeout(function() {
+			        var page = whichView(container);
+			        setTimeout(function() {
+			          interactionEvents(container);
+			          }, 200);
+			      }, 200);
+			})
 
-          form.unbind('submit')
+          form.off('submit')
           form.on('submit', function() {
             setTimeout(function() {
                 var page = whichView(container);
