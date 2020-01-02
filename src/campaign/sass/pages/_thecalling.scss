@@ -8,10 +8,8 @@ $thecalling-pink:   #c635a6;
 
 .thecalling-main {
   background: $black;
-  @include media-query($from: tablet) {
-    margin: 0 auto;
-    max-width: 1200px;
-  }
+  margin: 0 auto;
+  max-width: 1200px;
   p {
     font-weight: 500;
     font-size: 19px;
@@ -26,6 +24,9 @@ $thecalling-pink:   #c635a6;
   background: $thecalling-pink;
   color: #fff;
   width: auto;
+  &:link {
+    color: #fff;
+  }
   &:visited {
     color: #fff;
   }
@@ -154,13 +155,30 @@ $thecalling-pink:   #c635a6;
   text-transform: uppercase;
   @include font($size: 48, $weight: bold);
   font-size: 40px;
-  letter-spacing: -0.05em;
+  letter-spacing: -0.1em;
   margin-top: 0;
   @include media-query($from: tablet) {
     font-size: 48px;
   }
   @include media-query($from: desktop) {
     font-size: 64px;
+  }
+}
+
+.thecalling-section__heading-line-break {
+  display: block;
+  margin-left: 92px;
+  margin-bottom: -60px;
+  position: relative;
+  top: -12px;
+  @include media-query($from: tablet) {
+    margin-left: 110px;
+    margin-bottom: -80px;
+  }
+  @include media-query($from: desktop) {
+    margin-left: 147px;
+    margin-bottom: -100px;
+    top: -16px;
   }
 }
 
@@ -253,7 +271,18 @@ $thecalling-pink:   #c635a6;
   padding: 80px 30px 30px;
   text-align: center;
   color: $black;
+}
 
+.thecalling-section:last-child {
+  padding-bottom: 50px;
+  .thecalling-section__panel {
+    @include media-query($from: tablet) {
+      margin-bottom: -150px;
+    }
+  }
+  @include media-query($from: tablet) {
+    padding-bottom: 80px;
+  }
 }
 
 .thecalling-reverse-skew {
@@ -306,9 +335,14 @@ p.thecalling-cards__intro {
   font-weight: 300;
 }
 
+.thecalling-apprenticeship-logo {
+  max-width: 80%;
+}
 
 .thecalling-footer {
   text-align: left;
+  margin: 0 auto;
+  max-width: 1200px;
   @include font($size: 19, $weight: light);
   font-size: 16px;
   color: #fff;
@@ -347,3 +381,4 @@ p.thecalling-cards__intro {
     }
   }
 }
+
