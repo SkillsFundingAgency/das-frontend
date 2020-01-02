@@ -1,3 +1,5 @@
+$thecalling-pink:   #c635a6;
+
 .js-video-player__ready {
   visibility: visible;
 }
@@ -130,6 +132,9 @@
   .video-player--employer & {
     background-image: url("../images/icon-cross-black.svg");
   }
+  .video-player--thecalling & {
+    background-color: $thecalling-pink;
+  }
 }
 
 .video-player__unmute{
@@ -150,6 +155,9 @@
   .video-player--parent & {
     color: $parent;
   }
+  .video-player--thecalling & {
+    color: $thecalling-pink;
+  }
 }
 
 .plyr--video .plyr__control.plyr__tab-focus,
@@ -161,6 +169,10 @@
   }
   .video-player--parent & {
     color: $parent;
+  }
+  .video-player--thecalling & {
+    background: $thecalling-pink;
+    color: #fff;
   }
 }
 
