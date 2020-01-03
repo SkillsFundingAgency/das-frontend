@@ -283,3 +283,47 @@
   }
 }
 
+.card__collection--download {
+  .card {
+    background: #f2f2f2;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    transition: all .2s ease;
+    margin-bottom: 20px;
+    &:hover {
+      transform: scale(1.05);
+      .card__img {
+        -webkit-transform: none;
+        -moz-transform: none;
+        -ms-transform: none;
+        -o-transform: none;
+        transform: none;
+      }
+    }
+  }
+  .card__img {
+    background-position: top left;
+    border-radius: 10px 10px 0 0;
+  }
+  .card__content {
+    padding: 20px;
+  }
+  .card__summary {
+    color: $text-colour;
+    margin-bottom: 0;
+  }
+  .card__icon {
+    display: inline-block;
+    width: 30px;
+    height: 40px;
+    background-image: url("../images/icon-pdf-yellow.svg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    float: left;
+    margin-right: 10px;
+  }
+}
+
+.card__img--pdf-1 { background-image: url("../images/screenshot-pdf-1.jpg") }
+.card__img--pdf-2 { background-image: url("../images/screenshot-pdf-2.jpg") }
+.card__img--pdf-3 { background-image: url("../images/screenshot-pdf-3.jpg") }
