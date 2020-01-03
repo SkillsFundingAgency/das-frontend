@@ -36,6 +36,23 @@ html {
   @include font($size: 14, $weight: bold);
 }
 
+.heading-emphasise {
+  font-style: normal;
+  font-weight: bold;
+}
+
+.heading-emphasise--apprentice {
+  color: $apprentice;
+}
+
+.heading-emphasise--employer {
+  color: $employer;
+}
+
+.heading-emphasise--parent {
+  color: $parent;
+}
+
 .heading--success {
   color: $green;
 }
