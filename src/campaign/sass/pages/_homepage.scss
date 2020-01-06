@@ -66,6 +66,12 @@
   }
 }
 
+.jamal-banner {
+  background: deeppink;
+  padding: 100px;
+  text-align: center;
+}
+
 .cssmask {
   .launcher--apprentice {
     -webkit-clip-path: polygon(0 0, 100% 0, 100% 100%, 0 94%);
@@ -91,7 +97,7 @@
     }
   }
 
-  .launcher__wrap {
+  .launcher__wrap-TEMP {
     @include media-query($from: tablet) {
       -webkit-clip-path: polygon(0 0, 100% 0, 100% 89%, 0 100%);
       clip-path: polygon(0 0, 100% 0, 100% 89%, 0 100%);

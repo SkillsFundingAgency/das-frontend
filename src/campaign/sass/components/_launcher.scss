@@ -35,6 +35,7 @@
 .launcher__link-wrap {
   text-decoration: none;
   display: block;
+  color: #fff;
   &:focus {
     .launcher__link span {
       @include focus-outline
@@ -84,6 +85,11 @@
     background: $employer;
     color: $black;
   }
+  .thecalling-section & {
+    background: $thecalling-pink;
+    color: #fff;
+    text-transform: uppercase;
+  }
 }
 
 .launcher__heading {
@@ -118,9 +124,12 @@
     display: block;
     height: 2px;
     width: 50px;
-    background: $apprentice;
+    background: #666;
     position: absolute;
     top: 0;
+    .launcher--apprentice & {
+      background: $apprentice;
+    }
     .launcher--employer & {
       background: $employer;
     }
