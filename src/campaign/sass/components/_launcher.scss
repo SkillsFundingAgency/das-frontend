@@ -62,27 +62,12 @@
 
 .launcher--apprentice .launcher__bg {
   background-image: url("../images/homepage/home-launch-apprentice.jpg");
-  background-position: -250px -60px;
-  @include mq($from: 320px) {
-    background-position: 37%;
-  }
-  @include mq($from: tablet) {
-    background-position: 30%;
-  }
+  background-position: center;
 }
 
 .launcher--employer .launcher__bg {
   background-image: url("../images/homepage/home-launch-employer.jpg");
   background-position: center;
-  @include mq($from: tablet) {
-
-  }
-  @include mq($from: desktop) {
-
-  }
-  @include mq($from: wide) {
-
-  }
 }
 
 .launcher:hover .launcher__bg {
