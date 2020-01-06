@@ -259,10 +259,11 @@
   .thecalling-section--homepage & {
     right: -50%;
     width: 220%;
+    top: 40px;
     @include media-query($from: tablet) {
       width: 100%;
       right: 0;
-
+      top: 0;
     }
   }
 }
