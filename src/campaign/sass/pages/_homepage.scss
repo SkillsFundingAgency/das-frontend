@@ -91,7 +91,7 @@
     }
   }
 
-  .launcher__wrap {
+  .launcher__wrap-TEMP {
     @include media-query($from: tablet) {
       -webkit-clip-path: polygon(0 0, 100% 0, 100% 89%, 0 100%);
       clip-path: polygon(0 0, 100% 0, 100% 89%, 0 100%);

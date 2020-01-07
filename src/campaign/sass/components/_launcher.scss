@@ -35,6 +35,7 @@
 .launcher__link-wrap {
   text-decoration: none;
   display: block;
+  color: #fff;
   &:focus {
     .launcher__link span {
       @include focus-outline
@@ -62,27 +63,12 @@
 
 .launcher--apprentice .launcher__bg {
   background-image: url("../images/homepage/home-launch-apprentice.jpg");
-  background-position: -250px -60px;
-  @include mq($from: 320px) {
-    background-position: 37%;
-  }
-  @include mq($from: tablet) {
-    background-position: 30%;
-  }
+  background-position: center;
 }
 
 .launcher--employer .launcher__bg {
   background-image: url("../images/homepage/home-launch-employer.jpg");
   background-position: center;
-  @include mq($from: tablet) {
-
-  }
-  @include mq($from: desktop) {
-
-  }
-  @include mq($from: wide) {
-
-  }
 }
 
 .launcher:hover .launcher__bg {
@@ -98,6 +84,11 @@
   .launcher--employer & {
     background: $employer;
     color: $black;
+  }
+  .thecalling-section & {
+    background: $thecalling-pink;
+    color: #fff;
+    text-transform: uppercase;
   }
 }
 
@@ -133,9 +124,12 @@
     display: block;
     height: 2px;
     width: 50px;
-    background: $apprentice;
+    background: #666;
     position: absolute;
     top: 0;
+    .launcher--apprentice & {
+      background: $apprentice;
+    }
     .launcher--employer & {
       background: $employer;
     }
