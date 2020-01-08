@@ -82,3 +82,27 @@
   padding-bottom: 5px;
   margin-bottom: -5px;
 }
+
+.das-table__sort {
+  @extend .govuk-link;
+  @extend .govuk-link--no-visited-state
+}
+
+.das-table__sort--asc,
+.das-table__sort--desc {
+  position: relative;
+  padding-right: 15px;
+  &:after {
+    @include triangle-equilateral($size: 10px, $colour: currentColor);
+    position: absolute;
+    right: 0;
+    top: 50%;
+    margin-top: -5px;
+  }
+}
+
+.das-table__sort--asc {
+  &:after {
+    @include triangle-equilateral($direction: up, $size: 10px, $colour: currentColor);
+  }
+}
