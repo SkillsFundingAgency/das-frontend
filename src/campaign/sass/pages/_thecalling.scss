@@ -7,9 +7,9 @@
 .thecalling-main {
   background: $black;
   margin: 0 auto;
-  max-width: 1200px;
+  max-width: 1400px;
   p {
-    font-weight: 500;
+    font-weight: 300;
     font-size: 19px;
     margin-bottom: 2em;
   }
@@ -59,6 +59,13 @@
   }
 }
 
+.thecalling-video__bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+}
 
 // Video hero
 
@@ -131,12 +138,28 @@
 }
 
 .thecalling-section--homepage {
-
   padding-bottom: 0;
   margin-bottom: 0;
+  background: none;
   @include media-query($from: tablet) {
-    padding-bottom: 50px;
     z-index: 9;
+    padding-bottom: 130px;
+    margin-bottom: -100px;
+  }
+  @include media-query($from: desktop) {
+
+  }
+}
+
+.thecalling-section--homepage .thecalling-section__image-wrap--jamal {
+  @include media-query($from: tablet) {
+    background: $black;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+  }
+  @include media-query($from: desktop) {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
   }
 }
 
@@ -363,7 +386,7 @@
     box-sizing: border-box;
   }
   @include media-query($from: desktop) {
-    width: 33%;
+    width: 25%;
   }
 }
 
