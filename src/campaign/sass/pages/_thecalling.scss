@@ -7,9 +7,9 @@
 .thecalling-main {
   background: $black;
   margin: 0 auto;
-  max-width: 1200px;
+  max-width: 1400px;
   p {
-    font-weight: 500;
+    font-weight: 300;
     font-size: 19px;
     margin-bottom: 2em;
   }
@@ -363,7 +363,7 @@
     box-sizing: border-box;
   }
   @include media-query($from: desktop) {
-    width: 33%;
+    width: 25%;
   }
 }
 
