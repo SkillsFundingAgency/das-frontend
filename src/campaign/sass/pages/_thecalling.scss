@@ -138,12 +138,28 @@
 }
 
 .thecalling-section--homepage {
-
   padding-bottom: 0;
   margin-bottom: 0;
+  background: none;
   @include media-query($from: tablet) {
-    padding-bottom: 50px;
     z-index: 9;
+    padding-bottom: 130px;
+    margin-bottom: -100px;
+  }
+  @include media-query($from: desktop) {
+
+  }
+}
+
+.thecalling-section--homepage .thecalling-section__image-wrap--jamal {
+  @include media-query($from: tablet) {
+    background: $black;
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 90%, 0 100%);
+  }
+  @include media-query($from: desktop) {
+    -webkit-clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
+    clip-path: polygon(0 0, 100% 0, 100% 80%, 0 100%);
   }
 }
 
