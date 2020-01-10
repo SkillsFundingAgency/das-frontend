@@ -67,14 +67,10 @@
 }
 
 .das-form-group-inline {
-
   width: 100%;
-  background: #fff;
   & > .input {
-
     padding: spacing(3);
     width: 100%;
-    background: transparent;
     border: none;
     @include media-query($from: tablet) {
       display: table-cell;
@@ -86,19 +82,18 @@
 }
 
 .das-form-group-inline__button-wrap {
-
   vertical-align: top;
   background: $employer;
-
+  margin-top: 5px;
   & > .button {
     margin: 0;
     width: 100%;
     text-align: center;
     border-image-source: none;
   }
-  
   @include media-query($from: tablet) {
     display: table-cell;
     width: 1%;
+    margin-top: 0;
   }
 }
