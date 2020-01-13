@@ -24,16 +24,16 @@
     padding: 50px;
   }
 }
+
 .main-content-section {
-  padding: 20px;
-  background: #F8F8F8;
-  padding-top: 110px;
+  padding: 110px 20px 20px;
+  background: #f8f8f8;
 
   @include media-query($from: tablet) {
     padding:110px 50px  0px  50px;
   }
 
- &:after{
+ &:after {
   content: '';
   position: relative;
   left: -20px;

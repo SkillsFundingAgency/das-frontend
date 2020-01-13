@@ -18,10 +18,10 @@
     z-index: -1;
   }
   @include media-query($from: tablet) {
-    padding: 160px 40px 80px;
+    padding: 180px 40px 80px;
   }
   @include media-query($from: desktop) {
-    padding: 160px 80px 80px;
+    padding: 180px 80px 80px;
   }
 }
 

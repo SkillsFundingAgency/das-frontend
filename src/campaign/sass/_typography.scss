@@ -134,26 +134,35 @@ p {
   @include responsive-margin(5, "bottom");
 }
 
-.hr-apprentice{
+.hr-apprentice {
   background-color:$apprentice;
 }
-.hr-employer{
+.hr-employer {
   background-color: $employer;
 }
 
-.text--apprentice{
+.text--apprentice {
   color:$apprentice;
 }
 
-.text--employer{
+.text--employer {
   color: $employer;
 }
 
 .text-danger,
-.text--danger{
+.text--danger {
   color:$error-colour;
 }
 
-.bold{
+.bold {
   font-weight: 700;
+}
+
+// Zero top margins on 1st items in .page
+
+.page {
+  > :first-child {
+    margin-top: 0;
+    color: red;
+  }
 }
