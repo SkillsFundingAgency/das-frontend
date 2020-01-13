@@ -23,9 +23,15 @@ $progress-colour-very-poor: #df3034;
 .das-provider__contact-details-definition-list a {
   font-size: 21px;
   color: $black;
+  &:visited {
+    color: $black;
+  }
+  &[rel~="external"]:after {
+    background-image: url("../images/icon-link-external-black.svg");
+  }
 }
 
-.das-provider__contact-details-definition-list--black dt{
+.das-provider__contact-details-definition-list--black dt {
   color: $black;
 }
 
