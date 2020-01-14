@@ -85,7 +85,14 @@
 
 .das-table__sort {
   @extend .govuk-link;
-  @extend .govuk-link--no-visited-state
+  @extend .govuk-link--no-visited-state;
+  display: inline-block;
+  &:before,
+  &:after {
+    position: absolute;
+    right: 0;
+    top: 50%;
+  }
 }
 
 .das-table__sort--asc,
@@ -94,9 +101,6 @@
   padding-right: 15px;
   &:after {
     @include triangle-equilateral($size: 10px, $colour: currentColor);
-    position: absolute;
-    right: 0;
-    top: 50%;
     margin-top: -5px;
   }
 }
@@ -104,5 +108,30 @@
 .das-table__sort--asc {
   &:after {
     @include triangle-equilateral($direction: up, $size: 10px, $colour: currentColor);
+  }
+}
+
+.das-table--double-arrows {
+  .das-table__sort {
+    position: relative;
+    padding-right: 15px;
+    &:before {
+      @include triangle-equilateral($direction: up, $size: 7px, $colour: currentColor);
+      margin-top: -8px;
+    }
+    &:after {
+      @include triangle-equilateral($direction: down, $size: 7px, $colour: currentColor);
+      margin-top: 1px;
+    }
+    &.das-table__sort--asc {
+      &:after {
+        display: none;
+      }
+    }
+    &.das-table__sort--desc {
+      &:before {
+        display: none;
+      }
+    }
   }
 }
