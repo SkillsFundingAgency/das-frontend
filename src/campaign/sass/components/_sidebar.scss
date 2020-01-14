@@ -393,10 +393,9 @@ $timeline-width: 2px;
   }
 }
 
-.sidebar-panel--dark h3 {
-   color: #fff;
-}
-
+.sidebar-panel--dark h2,
+.sidebar-panel--dark h3,
+.sidebar-panel--dark .fieldset__legend, 
 .sidebar-panel--dark .label {
   color: #fff;
 }
