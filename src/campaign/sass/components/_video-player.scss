@@ -1,5 +1,3 @@
-$thecalling-pink:   #c635a6;
-
 .js-video-player__ready {
   visibility: visible;
 }
@@ -142,11 +140,14 @@ $thecalling-pink:   #c635a6;
   width: 135px;
   color: #fff;
   display: none;
+  position: absolute;
+  right: 0;
 }
 
 .video-player--ready {
   display: inline-block;
 }
+
 
 .plyr--full-ui input[type=range] {
   color: $apprentice;
