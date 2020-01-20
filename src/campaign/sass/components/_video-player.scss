@@ -140,13 +140,14 @@ $thecalling-pink:   #c635a6;
 .video-player__unmute{
   @extend %video-player__icon;
   width: 135px;
-  color:#FFF;
-  visibility: hidden;
+  color: #fff;
+  display: none;
 }
 
-.video-player--ready{
-  visibility: visible;
+.video-player--ready {
+  display: inline-block;
 }
+
 .plyr--full-ui input[type=range] {
   color: $apprentice;
   .video-player--employer & {
