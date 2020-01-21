@@ -10,20 +10,9 @@
   right: 20px;
   z-index: 1000;
   max-height: 90%;
-
   &.video-player__playing {
     display: block;
   }
-
-  .close {
-    display: inline-block;
-    background: $black;
-    color: #fff;
-    padding: 10px;
-    z-index: 1001;
-    position: relative;
-  }
-
   &:before {
     content: '';
     width: 100%;
@@ -54,11 +43,43 @@
 }
 
 .plyr {
-  display: none;
-  transition: none;
   z-index: 1001;
   @include mq ($from: tablet) {
     z-index: 1001;
+  }
+}
+
+.plyr__video-embed {
+  background: $black;
+  border: 1px solid rgba(255, 255, 255, .4);
+  position: relative;
+  &:before {
+    content: "";
+    height: 50px;
+    width: 50px;
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -25px 0 0 -25px;
+    background-image: url(../images/pre-loader-apprentice-dark.gif);
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+  .video-player--employer & {
+    &:before {
+      background-image: url(../images/pre-loader-employer-dark.gif);;
+    }
+  }
+  .video-player--parent & {
+    &:before {
+      background-image: url(../images/pre-loader-parents-dark.gif);;
+    }
+  }
+  .video-player--thecalling & {
+    &:before {
+      background-image: url(../images/pre-loader-thecalling-dark.gif);;
+    }
   }
 }
 
@@ -66,7 +87,6 @@
 .plyr--playing {
   display: block;
   clear: both;
-  border: 1px solid rgba(255, 255, 255, .4);
   @include media-query($from: 500px) {
     clear: none;
   }
@@ -126,22 +146,28 @@
   background-repeat: no-repeat;
   background-size: 40%;
   background-position: center;
- 
+  display: none;
   .video-player--employer & {
     background-image: url("../images/icon-cross-black.svg");
   }
   .video-player--thecalling & {
     background-color: $thecalling-pink;
   }
+  .video-player__playing & {
+    display: block;
+  }
 }
 
-.video-player__unmute{
+.video-player__unmute {
   @extend %video-player__icon;
   width: 135px;
   color: #fff;
   display: none;
   position: absolute;
   right: 0;
+  &:active {
+    top: auto;
+  }
 }
 
 .video-player--ready {
