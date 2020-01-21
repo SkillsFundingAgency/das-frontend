@@ -5,16 +5,18 @@ var headers = document.getElementsByClassName("header"),
 window.onscroll = function() { activeHeader() };
 
 function activeHeader() {
-  if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
-    header.classList.add("header--active");
-  } else {
-    header.classList.remove("header--active");
+  if (header !== undefined) {
+    if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+      header.classList.add("header--active");
+    } else {
+      header.classList.remove("header--active");
+    }
   }
 }
 
 var appInit = function () {
 
-  if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50) {
+  if (document.body.scrollTop > 50 || document.documentElement.scrollTop > 50 && header !== undefined) {
     header.classList.add("header--active");
   }
 
