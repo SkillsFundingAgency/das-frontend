@@ -371,19 +371,28 @@
 // Cards
 
 .thecalling-cards {
-  @include media-query($from: tablet) {
+  @include media-query($from: 500px) {
     display: flex;
     flex-wrap: wrap;
+    margin: 0;
+  }
+  @include media-query($from: tablet) {
+    margin: 0 40px;
+  }
+  @include media-query($from: desktop) {
     margin: 0 80px;
   }
 }
 
 .thecalling-cards__card {
   margin-bottom: 20px;
-  @include media-query($from: tablet) {
+  @include media-query($from: 500px) {
     width: 50%;
     padding: 0 30px;
     box-sizing: border-box;
+  }
+  @include media-query($from: tablet) {
+    width: 33%;
   }
   @include media-query($from: desktop) {
     width: 25%;
