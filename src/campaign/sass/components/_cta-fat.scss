@@ -1,72 +1,19 @@
-.cta-fat{
+.cta-fat {
+  display: none;
   background-color: $employer;
   color: #000;
   align-items: center;
   padding: 30px;
-  margin-top: 20px auto 0 auto;
-
-  @include mq($from:tablet){
-    display: flex;
-    flex-wrap:wrap;
-    margin-top: 0;
-  }
-
-  & .button{
-    display: inline-block;
+  margin-top: 20px;
+  .button {
     background-color: #000;
-    color: #FFF;
-    height: 51px;
-    @include mq ($until: tablet) {
-      height:inherit;
-      padding:5px;
-    } 
+    color: #fff;
   }
-
-  & .input__postcode
-  {
-    display: inline-block;
-    border: none;
-    height: 51px;
-    width: 100%;
-    @include mq($from:tablet){
-    width: 61%;
-    float: left;
-    }
+  @include media-query($from:tablet){
+    display: block;
   }
 }
 
-.cta-fat__heading{
-  color: #000;
-}
-
-.cta-fat__content{
-  margin: 0 auto 0 auto;
-  text-align: center;
-  width:100%;
-}
-
-
-.cta-fat__action {
-    width:100%;
-}
-
-.cta-fat__action form {
-  @include mq($from:tablet){
-    display:flex;
-    justify-content:center;
-    width:100%;
-  }
-}
-
-.cta-fat .form-group {
-  @include mq($from:tablet){
-    margin: 0 1em 0 1em;
-  }
-}
-
-.cta-fat .input__postcode--auto-width
-{
-  @include mq($from:tablet){
-    width: auto;
-  }  
+.cta-fat form .form-group:last-child {
+  margin-bottom: 0;
 }

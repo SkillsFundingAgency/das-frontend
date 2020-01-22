@@ -8,6 +8,7 @@
 
 .das-search-results__summary-count {
   font-weight: bold;
+
 }
 
 .das-search-results__summary-keyword {
@@ -35,7 +36,9 @@
   @include media-query($from: tablet) {
     float: left;
     padding-top: .5em;
-    width: 50%;
+  }
+  .bold {
+    color: $black;
   }
 }
 

@@ -18,10 +18,10 @@
     z-index: -1;
   }
   @include media-query($from: tablet) {
-    padding: 160px 40px 80px;
+    padding: 180px 40px 80px;
   }
   @include media-query($from: desktop) {
-    padding: 160px 80px 80px;
+    padding: 180px 80px 80px;
   }
 }
 
@@ -34,10 +34,10 @@
   position: relative;
   z-index: 10;
   @include media-query($from: tablet) {
-    padding: 140px 40px 80px;
+    padding: 160px 40px 80px;
   }
   @include media-query($from: desktop) {
-    padding: 140px 80px 80px;
+    padding: 160px 80px 80px;
   }
 }
 
@@ -60,8 +60,9 @@
   margin-top: 30px;
 }
 
-.hero form {
-  margin-top: 60px;
+.hero .form-group,
+.hero .form-group button {
+  margin: 0;
 }
 
 .hero__panel {
@@ -109,4 +110,9 @@
     background: #000;
     color: #fff;
   }
+}
+
+.hero--no-clip .das-form-group-inline {
+  margin: 40px 0 20px;
+  max-width: 550px;
 }

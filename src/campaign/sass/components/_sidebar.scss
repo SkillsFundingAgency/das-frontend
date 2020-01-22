@@ -325,6 +325,10 @@ $timeline-width: 2px;
   }
 }
 
+.sidebar-panel form+form {
+  border-top: 3px solid rgba(255, 255, 255, .1);
+}
+
 .sidebar-panel--apprentice > .sidebar-panel__content {
   background: $apprentice;
   color: #fff;
@@ -333,6 +337,11 @@ $timeline-width: 2px;
 .sidebar-panel--employer > .sidebar-panel__content {
   background: $employer;
   color: $black;
+}
+
+.sidebar-panel--dark > .sidebar-panel__content {
+  background: #4d4d4d;
+  color: #fff;
 }
 
 .sidebar-panel__content {
@@ -365,6 +374,9 @@ $timeline-width: 2px;
   .sidebar-panel--apprentice & {
     border-bottom-color: $apprentice;
   }
+  .sidebar-panel--dark & {
+    border-bottom-color: #4d4d4d;
+  }
 }
 
 .sidebar-panel__content:after {
@@ -381,13 +393,14 @@ $timeline-width: 2px;
   }
 }
 
-.sidebar-panel--provider-search {
-  .grid-column-one-fifth,
-  .grid-column-two-fifths {
-    float: none;
-    width: auto;
-  }
-  .grid-row--align-bottom {
-    display: block;
-  }
+.sidebar-panel--dark h2,
+.sidebar-panel--dark h3,
+.sidebar-panel--dark .fieldset__legend, 
+.sidebar-panel--dark .label {
+  color: #fff;
+}
+
+.sidebar-panel--dark .button {
+  background: #000;
+  color: #fff;
 }

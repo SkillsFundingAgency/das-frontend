@@ -62,3 +62,7 @@
         float: left;
     }
 }
+
+dl.list {
+    @include clearfix
+}
