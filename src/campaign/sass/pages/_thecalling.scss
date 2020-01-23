@@ -291,6 +291,17 @@
   }
 }
 
+.thecalling-section__image--music-video {
+  right: 0;
+  top: 0;
+  left: auto;
+  width: 180%;
+    @include media-query($from: tablet) {
+      width: 100%;
+      top: -80px;
+  }
+}
+
 .thecalling-section__panel {
   padding: 50px 30px;
   margin-top: -50px;
