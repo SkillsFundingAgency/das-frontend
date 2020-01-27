@@ -1,7 +1,7 @@
 var dasJs = dasJs || {};
 
 dasJs.backLink = function () {
-    let backLinkControl = $('<a>')
+    var backLinkControl = $('<a>')
       .attr({'href': '#', 'class': 'govuk-back-link'})
       .text('Back')
       .on('click', function (e) {
