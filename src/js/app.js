@@ -1,7 +1,6 @@
 var dasJs = dasJs || {};
 
-dasJs = {
-  backLink: function () {
+dasJs.backLink = function () {
     let backLinkControl = $('<a>')
       .attr({'href': '#', 'class': 'govuk-back-link'})
       .text('Back')
@@ -10,9 +9,7 @@ dasJs = {
         e.preventDefault();
       });
     $('.das-js-back-link').replaceWith(backLinkControl);
-  }
 }
-
 
 if ($('#das-user-navigation')) {
   dasJs.userNavigation.init();
@@ -23,4 +20,3 @@ if ($('.das-js-back-link')) {
 }
 
 dasJs.forms.init();
-
