@@ -1,15 +1,18 @@
 .promotion {
-  color: #fff;
-  padding: 40px $edgeGutter 40px;
-
+  margin-top: 20px;
   @include media-query($from: tablet) {
-    padding-left: $edgeGutterTablet;
-    padding-right: $edgeGutterTablet;
+    position: relative;
+    overflow: hidden;
   }
-
-  @include media-query($from: desktop) {
-    padding-left: $edgeGutterDesktop;
-    padding-right: $edgeGutterDesktop;
+  &:after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: -1px;
+    border-style: solid;
+    border-width: 0 0 60px 1300px;
+    border-color: transparent #fff transparent;
   }
 }
 
@@ -19,6 +22,7 @@
 
 .promotion--employer {
   background: $employer;
+  color: $black;
 }
 
 .promotion__caption {
@@ -26,7 +30,7 @@
 }
 
 .promotion__heading {
-  color: #fff;
+  margin-top: 0;
 }
 
 .promotion__sub-heading {
@@ -35,6 +39,50 @@
 }
 
 .promotion__content {
-  color: #fff;
-  margin-top: 0;
+  padding: 20px;
+  @include media-query($from: tablet) {
+    padding: 100px 40px 40px;
+    width: 50%;
+    box-sizing: border-box;
+  }
+}
+
+.promotion__hero-image-wrap {
+  @include media-query($from: tablet) {
+    margin: 0;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+}
+
+.promotion__hero-image {
+  max-width: 100%;
+  display: block;
+  @include media-query($from: tablet) {
+    height: 100%;
+    max-width: none;
+  }
+  @include media-query($from: $page-width) {
+    height: auto;
+    width: 100%;
+  }
+}
+
+.promotion__hero-images {
+  max-width: 100%;
+  display: none;
+  @include media-query($from: tablet) {
+    margin: 0;
+    position: absolute;
+    top: 0;
+    right: 0;
+    max-width: 50%;
+  }
 }

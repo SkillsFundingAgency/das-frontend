@@ -105,7 +105,7 @@
 }
 
 .page--full-width {
-  max-width:100%;
+  max-width: 100%;
   padding: 0;
   @include media-query($from: tablet) {
     min-height: auto;
