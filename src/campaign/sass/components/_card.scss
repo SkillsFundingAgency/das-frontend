@@ -284,12 +284,15 @@
 }
 
 .card__collection--download {
+  flex-wrap: wrap;
+  display: flex;
+  @include media-query($from: tablet) {
+    margin: 30px -30px;
+  }
   .card {
-    background: #f2f2f2;
-    border: 1px solid #eee;
-    border-radius: 10px;
     transition: all .2s ease;
     margin-bottom: 20px;
+    width: 100%;
     &:hover {
       transform: scale(1.05);
       .card__img {
@@ -300,17 +303,37 @@
         transform: none;
       }
     }
+    @include media-query($from: tablet) {
+      width: 50%;
+      padding: 0 30px;
+      margin-bottom: 50px;
+      box-sizing: border-box;
+    }
+    @include media-query($from: desktop) {
+      width: 33%;
+    }
+  }
+  .card__image {
+
   }
   .card__img {
     background-position: top left;
     border-radius: 10px 10px 0 0;
+
   }
   .card__content {
     padding: 20px;
+    background: #f2f2f2;
+    border: 1px solid #eee;
+    border-radius: 10px;
+    & > h2 {
+      overflow: hidden;
+    }
   }
   .card__summary {
     color: $text-colour;
     margin-bottom: 0;
+    font-size: 19px;
   }
   .card__icon {
     display: inline-block;
@@ -326,4 +349,6 @@
 
 .card__img--pdf-1 { background-image: url("../images/screenshot-pdf-1.jpg") }
 .card__img--pdf-2 { background-image: url("../images/screenshot-pdf-2.jpg") }
-.card__img--pdf-3 { background-image: url("../images/screenshot-pdf-3.jpg") }
+.card__img--pdf-4 { background-image: url("../images/screenshot-pdf-4.jpg") }
+.card__img--pdf-5 { background-image: url("../images/screenshot-pdf-5.jpg") }
+.card__img--pdf-6 { background-image: url("../images/screenshot-pdf-6.jpg") }
