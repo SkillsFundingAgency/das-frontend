@@ -69,7 +69,11 @@
             window.GOVUK.cookie(cookie, null)
 
             if (window.GOVUK.cookie(cookie)) {
-              document.cookie = cookie + '=;expires=' + new Date() + ';domain=.' + window.location.hostname + ';path=/'
+              var domain = window.location.hostname !== 'localhost' 
+                ? window.location.hostname.slice(window.location.hostname.indexOf('.') + 1)
+                : window.location.hostname;
+
+              document.cookie = cookie + '=;expires=' + new Date() + ';domain=.' + domain + ';path=/'
             }
           }
         }
