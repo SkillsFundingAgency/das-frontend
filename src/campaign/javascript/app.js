@@ -59,6 +59,14 @@ var appInit = function () {
     })
   }
 
+  var favouriteButtons = document.querySelectorAll('.das-search-result__favourite-button--unchecked, .das-search-result__favourite-button--checked');
+  for (var favButton of favouriteButtons) {
+    favButton.addEventListener('click', function () {
+      this.classList.add('favourite-button--loading');
+    });
+  }
+
+
 }
 
 window.addEventListener('keydown', function(e){
