@@ -1,22 +1,22 @@
-.js-enabled #global-cookie-message {
-  display: none;
-}
 
 .das-cookie-banner {
   @include govuk-font($size: 16, $weight: 400);
-  background-color: #fff;
-  border: 2px solid govuk-colour('black');
   padding: 15px 0;
   box-sizing: border-box;
   width: 100%;
   position: relative;
   z-index: 2;
+  background: #f3f2f1;
+  @include govuk-media-query($from: tablet) {
+    padding: 30px 0;
+  }
+  @include govuk-media-query($from: desktop) {
+    padding: 30px 0;
+  }
 }
 
 .das-cookie-banner__header {
-  color: $cookie;
-  margin-bottom: .3em;
-  display: none;
+  margin-top: 0;
 }
 
 .das-cookie-banner__message {
@@ -25,7 +25,6 @@
   margin-bottom: 5px;
   padding-right: 20px;
   padding-bottom: 10px;
-  color: $cookie;
   @include govuk-media-query($from: desktop) {
     margin: 0;
   }
@@ -34,28 +33,21 @@
 .das-cookie-banner__buttons {
   @include das-clearfix();
   @include govuk-media-query($from: 320px) {
-    margin: 0 -5px;
+    margin: 0 -10px;
   }
   @include govuk-media-query($from: desktop) {
-    display: inline-block;
-    padding-top: 5px;
+    padding-top: 10px;
   }
 }
 
 .das-cookie-banner__button-wrap {
-  margin-bottom: 5px;
+  margin-top: 10px;
   vertical-align: top;
   @include govuk-media-query($from: 320px) {
     width: 50%;
     float: left;
-    padding: 0 5px;
+    padding: 0 10px;
     box-sizing: border-box;
-  }
-  @include govuk-media-query($from: desktop) {
-    float: none;
-    width: auto;
-    display: inline-block;
-    vertical-align: baseline;
   }
 }
 
