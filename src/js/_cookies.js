@@ -80,7 +80,6 @@
   }
 
   window.GOVUK.setCookie = function (name, value, options) {
-
       if (typeof options === 'undefined') {
        options = {}
       }
