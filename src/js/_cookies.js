@@ -1,7 +1,9 @@
 // used by the cookie banner component
 
 (function (root) {
+
   'use strict'
+
   window.GOVUK = window.GOVUK || {}
 
   window.GOVUK.cookie = function (name, value, options) {
@@ -20,25 +22,19 @@
     }
   }
 
-
-
   window.GOVUK.setCookie = function (name, value, options) {
-    console.log('setCookie = ' + name + ' value = ' + value)
       if (typeof options === 'undefined') {
        options = {}
       }
       var cookieString = name + '=' + value + '; path=/'
-
       if (options.days) {
         var date = new Date()
         date.setTime(date.getTime() + (options.days * 24 * 60 * 60 * 1000))
         cookieString = cookieString + '; expires=' + date.toGMTString()
       }
-
       if (document.location.protocol === 'https:') {
         cookieString = cookieString + '; Secure'
       }
-
       document.cookie = cookieString  + ';domain=' + window.GOVUK.getDomain()
   }
 
@@ -62,4 +58,5 @@
     ? '.' + window.location.hostname.slice(window.location.hostname.indexOf('.') + 1)
     : window.location.hostname;
   }
+
 }(window))
