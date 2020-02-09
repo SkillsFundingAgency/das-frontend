@@ -64,7 +64,7 @@ CookieSettings.prototype.showConfirmationMessage = function () {
 
   if (referrer && referrer !== document.location.pathname) {
     previousPageLink.href = referrer
-    previousPageLink.style.display = "block"
+    previousPageLink.style.display = "inline-block"
   } else {
     previousPageLink.style.display = "none"
   }
