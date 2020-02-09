@@ -1,4 +1,3 @@
-
 function CookieBanner (module) {
   this.module = module;
   this.settings = {
@@ -8,11 +7,9 @@ function CookieBanner (module) {
       MarketingConsent: false
     }
   }
-
   if ( !window.GOVUK.cookie(this.settings.seenCookieName) ) {
     this.start()
   }
-
 }
 
 CookieBanner.prototype.start = function () {
@@ -33,7 +30,6 @@ CookieBanner.prototype.setupCookieMessage = function () {
   if (this.module.acceptCookiesButton) {
     this.module.acceptCookiesButton.addEventListener('click', this.acceptAllCookies.bind(this))
   }
-  console.log('setupCookieMessage')
   this.showCookieBanner()
 }
 
@@ -43,13 +39,11 @@ CookieBanner.prototype.showCookieBanner = function () {
   Object.keys(cookiePolicy).forEach(function (cookieName) {
     window.GOVUK.cookie(cookieName, cookiePolicy[cookieName].toString(), { days: 365 })
   });
-  console.log('showCookieBanner')
 }
 
 CookieBanner.prototype.hideCookieBanner = function () {
   this.module.cookieBanner.style.display = 'none';
   window.GOVUK.cookie(this.settings.seenCookieName, true, { days: 365 })
-  console.log('hideCookieBanner')
 }
 
 CookieBanner.prototype.acceptAllCookies = function () {
@@ -61,10 +55,6 @@ CookieBanner.prototype.acceptAllCookies = function () {
   Object.keys(this.settings.cookiePolicy).forEach(function (cookieName) {
     window.GOVUK.cookie(cookieName, true, { days: 365 })
   });
-
-  console.log('acceptAllCookies')
 }
 
-
-
-  export default CookieBanner
+export default CookieBanner

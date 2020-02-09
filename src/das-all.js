@@ -53,7 +53,7 @@ function initAll() {
     // Cookie Settings Page
     var $cookieSettings = document.querySelector('[data-module="cookie-settings"]');
     if ($cookieSettings != null) {
-      new CookieSettings($cookieSettings);
+      new CookieSettings($cookieSettings, $cookieBanner);
     }
 
     var $accordions = document.querySelectorAll('[data-module="accordion"]');
