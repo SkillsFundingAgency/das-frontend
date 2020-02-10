@@ -1,5 +1,5 @@
 
-function CookieSettings (module) {
+function CookieSettings (module, options) {
   this.module = module
   this.settings = {
     seenCookieName: 'DASSeenCookieMessage',
@@ -9,8 +9,10 @@ function CookieSettings (module) {
     }
   }
 
-  var cookieBanner = document.querySelector('.das-cookie-banner')
-  cookieBanner.style.display = 'none'
+  if (options !== 'modal') {
+    var cookieBanner = document.querySelector('.das-cookie-banner')
+    cookieBanner.style.display = 'none'
+  }
 
   this.start()
 }
