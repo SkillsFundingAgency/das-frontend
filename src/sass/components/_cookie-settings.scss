@@ -1,5 +1,66 @@
 .das-cookie-settings {
+  &:target {
+    display: block !important;
+    background: #fff;
+    form {
+      display: block !important;
+    }
+    .das-cookie-settings__inner-wrap {
+      background: #fff;
+      box-sizing: border-box;
+      padding: 30px;
+      padding-bottom: 0;
+      z-index: 9999;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      @include govuk-media-query($from: tablet) {
+        width: 60%;
+        left: 20%;
+        right: 20%;
+        top: 30px;
+      }
+      @include govuk-media-query($from: desktop) {
+        width: 600px;
+        left: 50%;
+        right: auto;
+        margin-left: -300px;
+      }
+    }
+    &:before {
+      content: "";
+      display: block;
+      background: rgba(0,0,0,.6);
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 9998;
+    }
+  }
+}
 
+.das-cookie-settings__close-modal {
+  background: govuk-colour(blue);
+  display: block;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+  svg {
+    fill: #fff;
+    width: 20px;
+    height: 20px;
+    margin: 10px;
+    display: block;
+    g {
+      fill: #fff;
+    }
+  }
 }
 
 .das-cookie-settings__confirmation {
