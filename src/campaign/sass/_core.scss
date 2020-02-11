@@ -127,3 +127,8 @@
   height: 0;
   border-bottom: 1px dashed $border-colour;
 }
+
+.img--responsive {
+  max-width: 100%;
+  margin: 20px 0;
+}
