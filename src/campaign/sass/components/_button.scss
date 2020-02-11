@@ -27,6 +27,11 @@ $offset: 2;
   width: 100%;
 
   color: $button-text-colour;
+
+  .page & {
+    color: $button-text-colour;
+  }
+
   background-color: $button-colour;
 
   border: $border-width-form-element solid transparent;
@@ -50,6 +55,9 @@ $offset: 2;
   &:hover {
     color: $button-text-colour;
     text-decoration: none;
+    .page & {
+      color: $button-text-colour;
+    }
   }
 
   &::-moz-focus-inner {
@@ -145,12 +153,19 @@ $offset: 2;
   color: $button-apprentice-text-colour;
   background-color: $button-apprentice-colour;
 
+  .page & {
+    color: $button-apprentice-text-colour;
+  }
+
   &:link,
   &:visited,
   &:active,
   &:hover {
     color: $button-apprentice-text-colour;
     text-decoration: none;
+    .page & {
+      color: $button-apprentice-text-colour;
+    }
   }
 
   &:hover,
@@ -172,6 +187,9 @@ $offset: 2;
   &:hover {
     color: $button-employer-text-colour;
     text-decoration: none;
+    .page & {
+      color: $button-employer-text-colour;
+    }
   }
 
   &:hover,
