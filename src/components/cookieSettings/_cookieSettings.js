@@ -75,7 +75,7 @@ CookieSettings.prototype.formSubmitted = function (event) {
 
 CookieSettings.prototype.showConfirmationMessage = function () {
   var confirmationMessage = document.querySelector('div[data-cookie-confirmation]')
-  var previousPageLink = document.querySelector('.das-cookie-settings__prev-page')
+  var previousPageLink = document.querySelector('.cookie-settings__prev-page')
   var referrer = CookieSettings.prototype.getReferrerLink()
 
   document.body.scrollTop = document.documentElement.scrollTop = 0
