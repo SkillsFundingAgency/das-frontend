@@ -180,7 +180,9 @@ $offset: 2;
 {
   color: $button-employer-text-colour;
   background-color: $button-employer-colour;
-
+.page & {
+      color: $button-employer-text-colour;
+    }
   &:link,
   &:visited,
   &:active,
@@ -208,6 +210,10 @@ $offset: 2;
 {
   color: $button-colour;
   background-color: $button-text-colour;
+  
+  .page & {
+      color: $button-colour;
+    }
 
   &:link,
   &:visited,
