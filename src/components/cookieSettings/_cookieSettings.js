@@ -104,7 +104,7 @@ CookieSettings.prototype.modalControls = function () {
   closeLink.appendChild(closeLinkText);
   closeLink.href = document.location.pathname
   closeLink.classList.add('das-cookie-settings__close-modal')
-  this.module.prepend(closeLink);
+  this.module.appendChild(closeLink);
 }
 
 export default CookieSettings
