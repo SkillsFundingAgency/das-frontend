@@ -101,7 +101,7 @@ CookieSettings.prototype.hideCookieSettings = function () {
 CookieSettings.prototype.modalControls = function () {
   var closeLink = document.createElement('a');
   var closeLinkText = document.createTextNode("Close cookie preferences");
-  closeLink.append(closeLinkText);
+  closeLink.appendChild(closeLinkText);
   closeLink.href = document.location.pathname
   closeLink.classList.add('das-cookie-settings__close-modal')
   this.module.prepend(closeLink);
