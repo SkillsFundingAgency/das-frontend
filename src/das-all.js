@@ -24,85 +24,67 @@ function nodeListForEach(nodes, callback) {
 function initAll() {
 
   var $gtmDataLayer = window.dataLayer;
-
-  addLoadEvent(function () {
-
-    var $navs = document.querySelectorAll('[data-module="navigation"]');
-    nodeListForEach($navs, function ($navs) {
-      new Navigation($navs).init();
-    });
-
-    // Devolved alert Banner on Campaign
-    var $alertBanner = document.querySelector('[data-module="alertBanner"]');
-    if ($alertBanner != null) {
-      new AlertBanner($alertBanner).init();
-    }
-
-    // Cookie Banner on Campaign
-    var $cookieBannerCampaign = document.querySelector('[data-module="cookieBanner"]');
-    if ($cookieBannerCampaign != null) {
-      new CookieBannerCampaign($cookieBannerCampaign).init();
-    }
-
-    // Cookie Banner GDS style
-    var $cookieBanner = document.querySelector('[data-module="cookie-banner"]');
-    if ($cookieBanner != null) {
-      new CookieBanner($cookieBanner);
-    }
-
-    // Cookie Settings Page
-    var $cookieSettings = document.querySelector('[data-module="cookie-settings"]');
-    if ($cookieSettings != null) {
-      var $cookieSettingsOptions = $cookieSettings.dataset.options;
-      new CookieSettings($cookieSettings, $cookieSettingsOptions);
-    }
-
-    var $accordions = document.querySelectorAll('[data-module="accordion"]');
-    nodeListForEach($accordions, function ($accordion) {
-      new Accordion($accordion).init();
-    });
-
-    var $smoothScroll = document.querySelectorAll('[data-module="smoothScroll"]')
-    nodeListForEach($smoothScroll, function ($smoothScroll) {
-      new SmoothScroll($smoothScroll).init();
-    });
-
-    var $videoPlayer = document.querySelectorAll('[data-module="videoPlayer"]')
-    nodeListForEach($videoPlayer, function ($videoPlayer) {
-      new VideoPlayer($videoPlayer, $gtmDataLayer).init();
-    });
-
-    // GDS v2 Radios
-
-    var $radios = document.querySelectorAll('[data-module="radios"]')
-    nodeListForEach($radios, function ($radio) {
-      new Radios($radio).init()
-    })
-
-    // GDS v2 Tabs
-
-    var $tabs = document.querySelectorAll('[data-module="tabs"]')
-    nodeListForEach($tabs, function ($tabs) {
-      new Tabs($tabs).init()
-    })
-
-    new NetworkInformation($gtmDataLayer).init();
+  
+  var $navs = document.querySelectorAll('[data-module="navigation"]');
+  nodeListForEach($navs, function ($navs) {
+    new Navigation($navs).init();
   });
 
+  // Devolved alert Banner on Campaign
+  var $alertBanner = document.querySelector('[data-module="alertBanner"]');
+  if ($alertBanner != null) {
+    new AlertBanner($alertBanner).init();
+  }
+
+  // Cookie Banner on Campaign
+  var $cookieBannerCampaign = document.querySelector('[data-module="cookieBanner"]');
+  if ($cookieBannerCampaign != null) {
+    new CookieBannerCampaign($cookieBannerCampaign).init();
+  }
+
+  // Cookie Banner GDS style
+  var $cookieBanner = document.querySelector('[data-module="cookie-banner"]');
+  if ($cookieBanner != null) {
+    new CookieBanner($cookieBanner);
+  }
+
+  // Cookie Settings Page
+  var $cookieSettings = document.querySelector('[data-module="cookie-settings"]');
+  if ($cookieSettings != null) {
+    new CookieSettings($cookieSettings);
+  }
+
+  var $accordions = document.querySelectorAll('[data-module="accordion"]');
+  nodeListForEach($accordions, function ($accordion) {
+    new Accordion($accordion).init();
+  });
+
+  var $smoothScroll = document.querySelectorAll('[data-module="smoothScroll"]')
+  nodeListForEach($smoothScroll, function ($smoothScroll) {
+    new SmoothScroll($smoothScroll).init();
+  });
+
+  var $videoPlayer = document.querySelectorAll('[data-module="videoPlayer"]')
+  nodeListForEach($videoPlayer, function ($videoPlayer) {
+    new VideoPlayer($videoPlayer, $gtmDataLayer).init();
+  });
+
+  // GDS v2 Radios
+  var $radios = document.querySelectorAll('[data-module="radios"]')
+  nodeListForEach($radios, function ($radio) {
+    new Radios($radio).init()
+  })
+
+  // GDS v2 Tabs
+
+  var $tabs = document.querySelectorAll('[data-module="tabs"]')
+  nodeListForEach($tabs, function ($tabs) {
+    new Tabs($tabs).init()
+  })
+
+  new NetworkInformation($gtmDataLayer).init();
 }
 
-function addLoadEvent(func) {
-  var currentOnLoad = window.onload;
-  if (typeof window.onload != 'function') {
-    window.onload = func;
-  }
-  else {
-    window.onload = function () {
-      currentOnLoad();
-      func();
-    }
-  }
-}
 
 function initMaps() {
   if (window.google != null && window.google.maps != null) {

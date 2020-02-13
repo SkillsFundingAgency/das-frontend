@@ -1,3 +1,10 @@
+.hidden--mobile {
+  display: none;
+  @include media-query($from: tablet) {
+    display: block;
+  }
+}
+
 .hidden--desktop {
   @include media-query($from: tablet) {
     display: none;
