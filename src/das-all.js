@@ -51,7 +51,8 @@ function initAll() {
   // Cookie Settings Page
   var $cookieSettings = document.querySelector('[data-module="cookie-settings"]');
   if ($cookieSettings != null) {
-    new CookieSettings($cookieSettings);
+    var $cookieSettingsOptions = $cookieSettings.dataset.options;
+    new CookieSettings($cookieSettings, $cookieSettingsOptions);
   }
 
   var $accordions = document.querySelectorAll('[data-module="accordion"]');

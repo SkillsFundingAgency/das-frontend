@@ -1,0 +1,33 @@
+{%
+    set settingsLink = '/help/cookies'
+%}
+<div data-module="cookie-banner" role="region" aria-label="cookie banner">
+   <div class="das-cookie-banner das-cookie-banner--fixed">
+       <div class="das-cookie-banner__inner-wrap">
+          <div class="das-cookie-banner__wrapper govuk-width-container">
+             <div class="govuk-grid-row">
+                <div class="govuk-grid-column-two-thirds">
+                   <h2 class="govuk-heading-m das-cookie-banner__header">Tell us whether you accept cookies</h2>
+                   <p class="das-cookie-banner__message">We use <a href="#cookie-settings" class="govuk-link govuk-link--no-visited-state">cookies to collect information</a> about how you use apprenticeships.gov.uk. We use this information to make the website work as well as possible and improve the service.</p>
+                   <div class="das-cookie-banner__buttons">
+                      <div class="das-cookie-banner__button-wrap das-cookie-banner__button-accept">
+                         <button class="govuk-button das-button--outline das-cookie-banner__button" type="submit" data-accept-cookies="true">Accept all cookies</button>
+                      </div>
+                      <div class="das-cookie-banner__button-wrap das-cookie-banner__button-settings">
+                         <a class="govuk-button das-button--outline das-cookie-banner__button" role="button" href="#cookie-settings">Set cookie preferences</a>
+                      </div>
+                   </div>
+                </div>
+             </div>
+          </div>
+          <div class="das-cookie-banner__confirmation govuk-width-container" tabindex="-1">
+             <p class="das-cookie-banner__confirmation-message">
+                You've accepted all cookies. You can <a class="govuk-link govuk-link--no-visited-state" href="#cookie-settings">change your cookie settings</a> at any time.
+             </p>
+             <button class="das-cookie-banner__hide-button" data-hide-cookie-banner="true">Hide</button>
+          </div>
+      </div>
+      <span class="das-cookie-banner__fixed-bg"></span>
+   </div>
+
+</div>
