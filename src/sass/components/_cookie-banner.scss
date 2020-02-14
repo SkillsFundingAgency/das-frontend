@@ -44,7 +44,7 @@
 
 .das-cookie-banner__buttons {
   @include das-clearfix();
-  @include govuk-media-query($from: 320px) {
+  @include govuk-media-query($from: tablet) {
     margin: 0 -10px;
   }
   @include govuk-media-query($from: desktop) {
@@ -55,7 +55,7 @@
 .das-cookie-banner__button-wrap {
   margin-top: 10px;
   vertical-align: top;
-  @include govuk-media-query($from: 320px) {
+  @include govuk-media-query($from: tablet) {
     width: 50%;
     float: left;
     padding: 0 10px;

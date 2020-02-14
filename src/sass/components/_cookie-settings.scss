@@ -1,20 +1,29 @@
 .das-cookie-settings {
   &:target {
     display: block !important;
-    background: #fff;
+    position: fixed;
+    z-index: 1111;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
     form {
       display: block !important;
     }
     .das-cookie-settings__inner-wrap {
-      background: #fff;
       box-sizing: border-box;
+      background: #fff;
       padding: 30px;
       padding-bottom: 0;
       z-index: 9999;
-      position: fixed;
+      position: absolute;
       top: 0;
       left: 0;
       right: 0;
+      overflow: auto;
       @include govuk-media-query($from: tablet) {
         width: 80%;
         left: 10%;
