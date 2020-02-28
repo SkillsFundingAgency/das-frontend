@@ -24,3 +24,13 @@ abbr {
     }
 }
 
+.das-text-capitalise {
+  display: inline-block;
+  &:first-letter {
+    text-transform: capitalize;
+  }
+}
+
+.das-text--normal {
+  font-style: normal;
+}
