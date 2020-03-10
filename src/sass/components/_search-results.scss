@@ -1,0 +1,21 @@
+.das-search-results {
+  list-style: none;
+  padding: 0;
+}
+
+.das-search-results__list-item {
+  padding: 15px 0;
+  border-bottom: 1px solid $govuk-border-colour;
+  @include govuk-media-query($from: tablet) {
+    padding: 15px 0 20px;
+  }
+}
+
+.das-search-results__heading {
+  margin: 10px 0;
+}
+
+.das-search-results__content {
+  margin: 0;
+  color: $govuk-secondary-text-colour;
+}
