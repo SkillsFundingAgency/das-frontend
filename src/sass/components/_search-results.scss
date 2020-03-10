@@ -7,7 +7,7 @@
   padding: 15px 0;
   border-bottom: 1px solid $govuk-border-colour;
   @include govuk-media-query($from: tablet) {
-    padding: 15px 0 20px;
+    padding: 20px 0;
   }
 }
 
