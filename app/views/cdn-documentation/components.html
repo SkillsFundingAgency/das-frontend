@@ -23,67 +23,24 @@
 
         <p class="govuk-body">Search results list</p>
 
-        <p class="govuk-body-s govuk-!-padding-bottom-6">This example - here - has been updated to <abbr>GDS</abbr> v3 from the <abbr>HTML</abbr> shown in GIT. (Nov 2019). Classes <code>.list</code>, <code>.heading-m</code> and <code>.link</code> upgraded to <code>.govuk-list</code>, <code>.govuk-heading-m</code>, <code>.govuk-link--no-visited-state</code>; as well as the 'warning text' classes:</p>
-
-        <div class="das-search-results__header">
-            <p class="das-search-results__header-results-header-text">Results header text</p>
-
-            <ol class="govuk-list list--employer list--number das-search-results__list das-search-results__list--employer das-search-results">
-                <li id="447-3-1" class="das-search-results__list-item">
-                    <div class="das-search-result">
-                        <h2 class="govuk-heading-m das-search-result__heading">
-                            <a class="govuk-link--no-visited-state das-search-result__heading-link" href="/employer/find-apprenticeships/Apprenticeship?id=447-3-1">Youth Work</a>
-                        </h2>
-                        <div class="govuk-warning-text">
-                            <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
-                            <strong class="govuk-warning-text__text">
-                                <span class="govuk-warning-text__assistive">Warning</span>
-                                This apprenticeship is closed to new starters from Friday, July 31, 2020
-                            </strong>
-                        </div>
-                        <dl class="govuk-list list--employer  das-search-result__details">
-                            <dt class="das-search-result__details-title">Level:</dt>
-                            <dd class="das-search-result__details-definition">2 (Equivalent to GCSEs at grades A* to C)</dd>
-                            <dt class="das-search-result__details-title">Typical length:</dt>
-                            <dd class="das-search-result__details-definition">12 months</dd>
-                            <dt class="das-search-result__details-title">Apprenticeship Type:</dt>
-                            <dd class="das-search-result__details-definition">Framework</dd>
-                        </dl>
-                    </div>
-                </li>
-                <li id="416" class="das-search-results__list-item">
-                    <div class="das-search-result">
-                        <h2 class="govuk-heading-m das-search-result__heading">
-                            <a class="govuk-link--no-visited-state das-search-result__heading-link" href="/employer/find-apprenticeships/Apprenticeship?id=416">Water Treatment Technician</a>
-                        </h2>
-
-                        <dl class="govuk-list list--employer  das-search-result__details">
-                            <dt class="das-search-result__details-title">Level:</dt>
-                            <dd class="das-search-result__details-definition">3 (Equivalent to A levels at grades A to E)</dd>
-                            <dt class="das-search-result__details-title">Typical length:</dt>
-                            <dd class="das-search-result__details-definition">24 months</dd>
-                            <dt class="das-search-result__details-title">Apprenticeship Type:</dt>
-                            <dd class="das-search-result__details-definition">Standard</dd>
-                        </dl>
-                    </div>
-                </li>
-                <li id="374" class="das-search-results__list-item">
-                    <div class="das-search-result">
-                        <h2 class="govuk-heading-m das-search-result__heading">
-                            <a class="govuk-link--no-visited-state das-search-result__heading-link" href="/employer/find-apprenticeships/Apprenticeship?id=374">Waste Resource Operative</a>
-                        </h2>
-                        <dl class="govuk-list list--employer  das-search-result__details">
-                            <dt class="das-search-result__details-title">Level:</dt>
-                            <dd class="das-search-result__details-definition">2 (Equivalent to GCSEs at grades A* to C)</dd>
-                            <dt class="das-search-result__details-title">Typical length:</dt>
-                            <dd class="das-search-result__details-definition">12 months</dd>
-                            <dt class="das-search-result__details-title">Apprenticeship Type:</dt>
-                            <dd class="das-search-result__details-definition">Standard</dd>
-                        </dl>
-                    </div>
-                </li>
-            </ol>
-        </div>
+        <ol class="das-search-results">
+	        <li class="das-search-results__list-item">
+	            <form method="post" action="radios">
+	                <h2 class="govuk-heading-m das-search-results__heading"><button type="submit" class="das-button--inline-link">Whickham School &amp; Sports College</button></h2>
+	            </form>
+	            <p class="das-search-results__content">Burnthouse Ln, Whickham, Newcastle upon Tyne, NE16 5AR</p>
+	        </li>
+	        <li class="das-search-results__list-item">
+	            <strong class="govuk-tag">
+	              Selected
+	            </strong>
+	            <h2 class="govuk-heading-m das-search-results__heading"><a href="new.html" class="govuk-link">This is a school name</a> </h2>
+	            <p class="das-search-results__content">Broadway, Whickham, Newcastle upon Tyne, NE16 5QW</p>
+	        </li>
+	        <li class="das-search-results__list-item">
+	            <h2 class="govuk-heading-m das-search-results__heading"><a href="new.html" class="govuk-link">This is a school name</a> </h2>
+	        </li>
+	    </ol>
 
         <p class="govuk-body govuk-!-padding-top-9">Search results list - featuring forms (buttons as link) in each list item:</p>
 
@@ -145,6 +102,10 @@
         <button class="govuk-button das-button--outline">Outline button</button> <br>
 
         <button class="govuk-button">Standard button</button> <a href="#" class="das-button--link">Aligned to button das style</a>
+
+        <h1 class="govuk-heading-xl"><button class="das-button--inline-link">Button style as an inline link</button></h1>
+
+        <p><button class="das-button--inline-link">Button style as an inline link</button></p>
 
     </div>
 </div>
