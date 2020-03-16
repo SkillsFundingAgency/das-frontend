@@ -13,6 +13,14 @@ variables:
   buildConfiguration: 'release'
   buildPlatform: 'anycpu'
 
+resources:
+  repositories:
+  - repository: das-platform-building-blocks
+    type: github
+    name: SkillsFundingAgency/das-platform-building-blocks
+    ref: refs/heads/master
+    endpoint: "GitHub (SFA)"
+
 pool:
   name: 'DAS - Continuous Integration'
   demands: 
@@ -37,6 +45,8 @@ steps:
      dist/**
      azure/**
     targetFolder: '$(Build.ArtifactStagingDirectory)'
+  
+- template: azure-pipelines-templates/dependency-check.yml@das-platform-building-blocks
 
 - task: PublishBuildArtifacts@1
   displayName: 'Publish Artifact'
