@@ -11,7 +11,7 @@
   },
   "author": "Education and Skill Funding Agency developers",
   "dependencies": {
-    "accessible-autocomplete": "^1.6.2",
+    "accessible-autocomplete": "^2.0.2",
     "aspnet-validation": "0.0.11",
     "express": "^4.17.1",
     "govuk-frontend": "^3.6.0",
