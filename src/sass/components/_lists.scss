@@ -71,7 +71,7 @@ dl.das-inline-def-list {//Description: definition lists - brings the DT and DD i
 
 .das-govuk-list-forms {//Description: search results list featuring forms (btn as link) in ea LI
   li {
-    border-bottom: 1px solid $grey-2;
+    border-bottom: 1px solid govuk-colour('mid-grey');
     padding: govuk-spacing(3) govuk-spacing(4) govuk-spacing(4) govuk-spacing(4);
     &:first-child{
       padding-top: govuk-spacing(0);
