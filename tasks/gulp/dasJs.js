@@ -14,22 +14,22 @@ const configPaths = require('../../config/paths.json')
 
 gulp.task('das-compile-js', function() {
   return gulp.src([
-      '!' + configPaths.src.dasJs,
-      configPaths.src.defaultJs,
-      configPaths.src.defaultJsMain
+      '!' + configPaths.src.dasJsComponent,
+      configPaths.src.dasJs,
+      configPaths.src.dasJsApp
   ]).pipe(concat('app.min.js'))
     .pipe(terser({ module: true }))
-    .pipe(gulp.dest(configPaths.dist.defaultJs));
+    .pipe(gulp.dest(configPaths.dist.dasJs));
 });
 
 gulp.task('das-watch-js', function() {
 
-  gulp.watch(['!' + configPaths.src.dasJs, configPaths.src.defaultJs], gulp.series('das-compile-js'))
+  gulp.watch(['!' + configPaths.src.dasJsComponent, configPaths.src.dasJs], gulp.series('das-compile-js'))
     .on('change', function (path) {
       console.log(`File ${path} was changed, running tasks...`);
     });
 
-  gulp.watch([configPaths.src.componentJs, configPaths.src.dasJs], gulp.series('das-compile-js-components-dev'))
+  gulp.watch([configPaths.src.dasJsComponents, configPaths.src.dasJsComponent], gulp.series('das-compile-js-components-dev'))
     .on('change', function (path) {
       console.log(`File ${path} was changed, running tasks...`);
     });
@@ -45,8 +45,8 @@ gulp.task('das-compile-js-components', function () {
 });
 
 var minifyJs = function (isDist) {
-  let srcFile = configPaths.src.dasJs
-  let jsDest = configPaths.dist.defaultJs
+  let srcFile = configPaths.src.dasJsComponent
+  let jsDest = configPaths.dist.dasJs
   return gulp.src(srcFile)
     .pipe(rollup({
       name: 'DASFrontend',

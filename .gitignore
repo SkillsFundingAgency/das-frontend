@@ -288,5 +288,7 @@ __pycache__/
 *.xsd.cs
 .DS_Store
 /dist
+/dist-old
+/src-old
 /app/views/campaign/local
 /app/views/local

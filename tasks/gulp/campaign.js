@@ -6,16 +6,16 @@ const paths = require('../../config/paths.json')
 const sassOptionsCampaign = require('../../config/sassOptionsCampaign.js')
 
 gulp.task('campaign-watch-sass', function() {
-  gulp.watch(paths.src.campaign, gulp.series('campaign-compile-sass'))
+  gulp.watch(paths.src.campaignSass, gulp.series('campaign-compile-sass'))
     .on('change', function (path) {
       console.log(`File ${path} was changed, running tasks...`);
     });
 });
 
 gulp.task('campaign-compile-sass', () => gulp
-  .src(paths.src.campaign)
+  .src(paths.src.campaignSass)
   .pipe(sass(sassOptionsCampaign))
-  .pipe(gulp.dest(paths.dist.campaign)));
+  .pipe(gulp.dest(paths.dist.campaignCss)));
 
 gulp.task('campaign-compile-js', function() {
   return gulp.src(paths.src.campaignJs)
