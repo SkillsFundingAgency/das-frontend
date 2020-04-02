@@ -5,7 +5,7 @@
 .autocomplete__hint,
 .autocomplete__input {
   -webkit-appearance: none;
-  border: 2px solid #0b0c0c;
+  border: 2px solid $black;
   border-radius: 0; /* Safari 10 on iOS adds implicit border rounding. */
   box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -51,9 +51,9 @@
 
 .autocomplete__menu {
   background-color: #fff;
-  border: 2px solid #0B0C0C;
+  border: 2px solid $black;
   border-top-width: 1px;
-  color: #0B0C0C;
+  color: $black;
   margin: 0;
   max-height: 342px;
   overflow-x: hidden;
@@ -103,7 +103,7 @@
 }
 
 .autocomplete__option--odd {
-  background-color: #FAFAFA;
+  background-color: #fafafa;
 }
 
 .autocomplete__option--focused,
@@ -114,7 +114,7 @@
 }
 
 .autocomplete__option--no-results {
-  background-color: #FAFAFA;
+  background-color: #fafafa;
   color: #646b6f;
   cursor: not-allowed;
 }
