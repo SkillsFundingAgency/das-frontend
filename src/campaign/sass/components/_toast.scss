@@ -1,0 +1,58 @@
+.toast {
+  border-radius: 5px;
+  box-shadow: 0 2px 4px 2px rgba(0,0,0,0.2);
+  box-sizing: border-box;
+  z-index: 1000;
+  position: fixed;
+  top: 100px;
+  right: -110%;
+  display: flex;
+  width: 380px;
+  animation-name: slide-in-right;
+  animation-duration: 5s;
+  animation-timing-function: ease;
+  @include media-query($from: desktop) {
+    top: 140px;
+  }
+}
+
+.toast__icon {
+  background: #c6c6c6;
+  width: 80px;
+  border-radius: 5px 0 0 5px;
+}
+
+.toast__content {
+  @include typography-common;
+  padding: 15px;
+  background: #fff;
+  border-radius: 0 5px 5px 0;
+}
+
+.toast__icon--success {
+  background-color: $green;
+  background-image: url("../images/icon-circle-tick.svg");
+  background-repeat: no-repeat;
+  background-size: 50% 50%;
+  background-position: 50% 50%;
+}
+
+.toast__icon--error {
+  background-color: $error-colour;
+  background-image: url("../images/icon-delete-outline-white.svg");
+  background-repeat: no-repeat;
+  background-size: 50% 50%;
+  background-position: 50% 50%;
+}
+
+@keyframes slide-in-right {
+  33% {
+   right: 10px;
+ }
+  66% {
+    right: 10px;
+  }
+  100% {
+    right: -110%;
+  }
+}
