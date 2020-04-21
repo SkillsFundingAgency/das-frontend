@@ -28,27 +28,6 @@
   }
 }
 
-.das-button--outline {
-  border-color: $cookie;
-  color: $cookie;
-  background-color: #fff;
-  box-shadow: 0 2px 0 $cookie;
-
-  &,
-  &:link,
-  &:visited,
-  &:active,
-  &:hover {
-    color: $cookie;
-  }
-
-  &:hover,
-  &:focus {
-    background: govuk-colour('light-grey');
-    color: $cookie;
-  }
-}
-
 .das-link--button-aligned {
   display:inline-block;
   padding: 10px 15px 5px 10px;
