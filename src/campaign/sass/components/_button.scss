@@ -239,6 +239,31 @@ $offset: 2;
 
 }
 
+.button--parents
+{
+  color: #fff;
+  background-color: $parent;
+  .page & {
+    color: #fff;
+  }
+
+  &:link,
+  &:visited,
+  &:active,
+  &:hover {
+    color: #fff;
+    text-decoration: none;
+    .page & {
+      color: #fff;
+    }
+  }
+
+  &:hover,
+  &:focus {
+    background-color: lighten($parent, 10%);
+  }
+}
+
 .button--success
 {
   color: #fff;

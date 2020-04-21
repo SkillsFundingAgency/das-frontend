@@ -11,10 +11,10 @@
   },
   "author": "Education and Skill Funding Agency developers",
   "dependencies": {
-    "accessible-autocomplete": "^1.6.2",
+    "accessible-autocomplete": "^2.0.2",
     "aspnet-validation": "0.0.11",
     "express": "^4.17.1",
-    "govuk-frontend": "^3.5.0",
+    "govuk-frontend": "^3.6.0",
     "gulp": "^4.0.2",
     "gulp-better-rollup": "^3.4.0",
     "gulp-changed": "^3.2.0",
@@ -40,11 +40,11 @@
     "jquery-validation": "^1.19.1",
     "jquery-validation-unobtrusive": "^3.2.11",
     "jquery.are-you-sure": "^1.9.0",
-    "nunjucks": "^3.2.0",
-    "plyr": "^3.5.6",
+    "nunjucks": "^3.2.1",
+    "plyr": "^3.5.10",
     "rollup-plugin-commonjs": "^9.3.4",
     "rollup-plugin-node-resolve": "^3.4.0",
-    "select2": "^4.0.12"
+    "select2": "^4.0.13"
   },
   "bugs": {
     "url": "https://github.com/SkillsFundingAgency/das-frontend/issues"

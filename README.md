@@ -1,5 +1,5 @@
 # DAS Frontend
-Contains frontend code and assets used for DAS services. Code is currently compiled locally and published onto the DAS CDN, to be consumed by the DAS services.
+Contains frontend code and assets used for The Apprentice Service and the Fire It Up campaign website.
 
 ## Requirements 
 
@@ -12,7 +12,7 @@ Contains frontend code and assets used for DAS services. Code is currently compi
 1. Clone repo
 2. `npm install`
 3. `npm run dev`
-4. Visit https://localhost:1045 to see an example view 
+4. Visit http://localhost:1045 to see an example view 
 
 ### Gulp tasks 
 
@@ -20,5 +20,6 @@ Run in the root directory
 
 |Task|Description|
 |----|-----------|
-| `gulp` | Compiles and then watches the SASS files in `/src/sass` |
-| `gulp sass` | Just compiles the SASS files in `/src/sass` |
+| `gulp das` | Compiles, then watches the SASS files in `/src/das/sass` and JS files in `/src/das/javascript` - for The Apprenticeship Service|
+| `gulp campaign` | Compiles, then watches the SASS files in `/src/campaign/sass` and JS files in `/src/campaign/javascript` - for the Fire It Up campaign website|
+| `gulp build` | Generate all frontend assets for `das` and `campaign` without watching for changes |

@@ -5,7 +5,7 @@
 .autocomplete__hint,
 .autocomplete__input {
   -webkit-appearance: none;
-  border: 2px solid;
+  border: 2px solid $black;
   border-radius: 0; /* Safari 10 on iOS adds implicit border rounding. */
   box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -15,26 +15,27 @@
 }
 
 .autocomplete__input {
-  background-color: transparent;
-  position: relative;
+  background-color: #fff;
+  padding: 13px;
+  width: 100%;
+  border: none;
+  @include media-query($from: tablet) {
+    display: table-cell;
+  }
 }
 
 .autocomplete__hint {
-  color: #BFC1C3;
+  color: #b1b4b6;
   position: absolute;
 }
 
-.autocomplete__input--default{
-  padding: 4px;
-}
-
 .autocomplete__input--focused {
+  outline: 3px solid $focus-colour;
   outline-offset: 0;
-  outline: 3px solid #ffbf47;
 }
 
 .autocomplete__input--show-all-values {
-  padding: 4px 34px 4px 4px;
+  padding: 5px 34px 5px 5px; /* Space for arrow. Other padding should match .autocomplete__input--default. */
   cursor: pointer;
 }
 
@@ -50,9 +51,9 @@
 
 .autocomplete__menu {
   background-color: #fff;
-  border: 2px solid #0B0C0C;
-  border-top: 0;
-  color: #34384B;
+  border: 2px solid $black;
+  border-top-width: 1px;
+  color: $black;
   margin: 0;
   max-height: 342px;
   overflow-x: hidden;
@@ -82,7 +83,7 @@
 }
 
 .autocomplete__option {
-  border-bottom: solid #BFC1C3;
+  border-bottom: solid #b1b4b6;
   border-width: 1px 0;
   cursor: pointer;
   display: block;
@@ -102,19 +103,18 @@
 }
 
 .autocomplete__option--odd {
-  background-color: #FAFAFA;
+  background-color: #fafafa;
 }
 
 .autocomplete__option--focused,
 .autocomplete__option:hover {
-  background-color: #005EA5;
-  border-color: #005EA5;
-  color: white;
+  background-color: #ccc;
+  color: $black;
   outline: none;
 }
 
 .autocomplete__option--no-results {
-  background-color: #FAFAFA;
+  background-color: #fafafa;
   color: #646b6f;
   cursor: not-allowed;
 }
@@ -128,7 +128,7 @@
 
 .autocomplete__hint,
 .autocomplete__option {
-  padding: 4px;
+  padding: 5px;
 }
 
 @media (min-width: 641px) {

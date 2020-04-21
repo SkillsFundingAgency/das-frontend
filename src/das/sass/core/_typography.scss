@@ -15,12 +15,22 @@ abbr {
 
     &[title] {
       text-decoration: none;
-      border-bottom: 1px dotted $grey-2;
+      border-bottom: 1px dotted govuk-colour('mid-grey');
 
       .govuk-heading-xl &,
       .govuk-heading-l & {
-          border-bottom: 1px dashed $grey-2;
+          border-bottom: 1px dashed govuk-colour('mid-grey');
       }
     }
 }
 
+.das-text-capitalise {
+  display: inline-block;
+  &:first-letter {
+    text-transform: capitalize;
+  }
+}
+
+.das-text--normal {
+  font-style: normal;
+}

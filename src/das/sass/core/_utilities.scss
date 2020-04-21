@@ -108,9 +108,14 @@
   background-color:#fff;
 }
 
-.das-text-capitalise {
-  display: inline-block;
-  &:first-letter {
-    text-transform: capitalize;
-  }
+.das-pub-cover-link {/* wrapper to img:pub-cover-html.png */
+    display: inline-block;
+    outline: 5px solid rgba(11,12,12,.1);
+    -webkit-box-shadow: 0 2px 2px rgba(11,12,12,.4);
+    -moz-box-shadow: 0 2px 2px rgba(11,12,12,.4);
+    box-shadow: 0 2px 2px rgba(11,12,12,.4);
+    & img {
+      border: 0;
+    }
 }
+
