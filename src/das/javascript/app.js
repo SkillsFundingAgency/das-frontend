@@ -20,3 +20,5 @@ if ($('.das-js-back-link')) {
 }
 
 dasJs.forms.init();
+
+window.GOVUK.cookie('Hello', true, { days: 365, domain: 'frontend.das.com'  })

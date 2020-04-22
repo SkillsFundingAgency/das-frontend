@@ -32,10 +32,18 @@
         date.setTime(date.getTime() + (options.days * 24 * 60 * 60 * 1000))
         cookieString = cookieString + '; expires=' + date.toGMTString()
       }
+      if (!options.domain) {
+        options.domain = window.GOVUK.getDomain()
+      }
+
+
+
       if (document.location.protocol === 'https:') {
         cookieString = cookieString + '; Secure'
       }
-      document.cookie = cookieString  + ';domain=' + window.GOVUK.getDomain()
+
+    console.log(cookieString  + ';domain=' + options.domain)
+      document.cookie = cookieString  + ';domain=' + options.domain
   }
 
   window.GOVUK.getCookie = function (name) {
