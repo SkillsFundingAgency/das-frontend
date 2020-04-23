@@ -21,4 +21,4 @@ if ($('.das-js-back-link')) {
 
 dasJs.forms.init();
 
-window.GOVUK.cookie('Hello', true, { days: 365, domain: 'frontend.das.com'  })
+window.GOVUK.cookie('DASSeenCookieMess', 'false',{days: 32, domain: 'frontend.das.com'})

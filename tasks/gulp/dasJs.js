@@ -24,7 +24,7 @@ gulp.task('das-compile-js', function() {
 
 gulp.task('das-watch-js', function() {
 
-  gulp.watch(['!' + configPaths.src.dasJsComponent, configPaths.src.dasJs], gulp.series('das-compile-js'))
+  gulp.watch([configPaths.src.dasJs, configPaths.src.dasJsApp], gulp.series('das-compile-js'))
     .on('change', function (path) {
       console.log(`File ${path} was changed, running tasks...`);
     });

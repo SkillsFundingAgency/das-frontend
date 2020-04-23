@@ -23,6 +23,7 @@
   }
 
   window.GOVUK.setCookie = function (name, value, options) {
+    console.log(options)
       if (typeof options === 'undefined') {
        options = {}
       }
@@ -36,13 +37,12 @@
         options.domain = window.GOVUK.getDomain()
       }
 
-
-
       if (document.location.protocol === 'https:') {
         cookieString = cookieString + '; Secure'
       }
 
-    console.log(cookieString  + ';domain=' + options.domain)
+    console.log(options.domain)
+
       document.cookie = cookieString  + ';domain=' + options.domain
   }
 
