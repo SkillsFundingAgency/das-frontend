@@ -3,7 +3,7 @@ function CookieBanner (module) {
   this.settings = {
     seenCookieName: 'DASSeenCookieMessage',
     cookiePolicy: {
-      AnalyticsConsent: true,
+      AnalyticsConsent: false,
       MarketingConsent: false
     }
   }

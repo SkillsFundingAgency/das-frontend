@@ -4,7 +4,7 @@ function CookieSettings (module, options) {
   this.settings = {
     seenCookieName: 'DASSeenCookieMessage',
     cookiePolicy: {
-      AnalyticsConsent: true,
+      AnalyticsConsent: false,
       MarketingConsent: false
     },
     isModal: options === 'modal'
