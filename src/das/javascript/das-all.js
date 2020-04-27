@@ -33,7 +33,7 @@ function initAll() {
   // Devolved alert Banner on Campaign
   var $alertBanners = document.querySelectorAll('[data-module="alertBanner"]');
   nodeListForEach($alertBanners, function ($alertBanner) {
-    var $cookieName = $alertBanner.dataset.cookiename !== undefined ? $alertBanner.dataset.cookiename : 'aaaaaaaaaa'
+    var $cookieName = $alertBanner.dataset.cookiename !== undefined ? $alertBanner.dataset.cookiename : 'DevolvedAuthorityBanner'
     new AlertBanner($alertBanner, $cookieName).init();
   });
 

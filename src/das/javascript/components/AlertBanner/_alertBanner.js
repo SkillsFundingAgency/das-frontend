@@ -2,7 +2,7 @@ function AlertBanner($module, $cookieName) {
     this.$cookieName = $cookieName !== undefined ? $cookieName : 'DevolvedAuthorityBanner';
     this.$dropCookie = true;                      // false disables the Cookie, allowing you to style the banner
     this.$alertDuration = 365;                    // Number of days before the cookie expires, and the banner reappears
-    this.$alertName = this.$cookieName;        // Name of our cookie
+    this.$alertName = this.$cookieName;            // Name of our cookie
     this.$alertValue = 'true';                     // Value of cookie
     this.$alertBanner = $module;
     this.$alertBannerParent = this.$alertBanner.parentNode;
@@ -11,7 +11,6 @@ function AlertBanner($module, $cookieName) {
 }
 
 AlertBanner.prototype.init = function () {
-
     //hide alert notice if already been displayed
     if (this.checkCookie(this.$alertName) == this.$alertValue) {
         this.removeBanner();
@@ -63,7 +62,6 @@ AlertBanner.prototype.checkCookie = function (name) {
     }
     return null;
 }
-
 
 AlertBanner.prototype.removeBanner = function () {
     if (this.$alertBanner !== null) {
