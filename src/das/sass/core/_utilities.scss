@@ -41,8 +41,25 @@
   }
 }
 
+.das-js-show {
+  display: none;
+  .js-enabled & {
+    display: block;
+  }
+}
+
+.das-js-show--inline {
+  display: none;
+  .js-enabled & {
+    display: inline;
+  }
+}
+
 // Javascript hidden class(es)
 .js-enabled {
+  .das-js-hide {
+    display: none;
+  }
   .js-hidden {
     display: none;
   }
