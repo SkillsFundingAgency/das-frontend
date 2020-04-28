@@ -1,26 +1,27 @@
-function AlertBanner($module) {
-
+function AlertBanner($module, $cookieName) {
+    this.$cookieName = $cookieName !== undefined ? $cookieName : 'DevolvedAuthorityBanner';
     this.$dropCookie = true;                      // false disables the Cookie, allowing you to style the banner
     this.$alertDuration = 365;                    // Number of days before the cookie expires, and the banner reappears
-    this.$alertName = 'DevolvedAuthorityBanner';        // Name of our cookie
+    this.$alertName = this.$cookieName;            // Name of our cookie
     this.$alertValue = 'true';                     // Value of cookie
-
     this.$alertBanner = $module;
     this.$alertBannerParent = this.$alertBanner.parentNode;
-    this.$alertBannerContinue = document.querySelector("#alert-countries-options");
-    this.$alertBannerClose = document.querySelector("#alert-countries-stay");
+    this.$alertBannerContinue = this.$alertBanner.querySelector('[data-alert-continue="true"]');
+    this.$alertBannerClose = this.$alertBanner.querySelector('[data-alert-close="true"]');
 }
 
 AlertBanner.prototype.init = function () {
-
     //hide alert notice if already been displayed
     if (this.checkCookie(this.$alertName) == this.$alertValue) {
         this.removeBanner();
     } else {
         this.showBanner();
-
-        this.$alertBannerContinue.addEventListener('click', this.removeBannerEvent.bind(this, true));
-        this.$alertBannerClose.addEventListener('click', this.removeBannerEvent.bind(this, false));
+        if (this.$alertBannerContinue) {
+            this.$alertBannerContinue.addEventListener('click', this.removeBannerEvent.bind(this, true));
+        }
+        if (this.$alertBannerClose) {
+            this.$alertBannerClose.addEventListener('click', this.removeBannerEvent.bind(this, false));
+        }
     }
 }
 
@@ -62,13 +63,10 @@ AlertBanner.prototype.checkCookie = function (name) {
     return null;
 }
 
-AlertBanner.prototype.eraseCookie = function (name) {
-    this.createCookie(name, "", -1);
-}
-
 AlertBanner.prototype.removeBanner = function () {
-    if (this.$alertBanner !== null)
+    if (this.$alertBanner !== null) {
         this.$alertBannerParent.removeChild(this.$alertBanner);
+    }
 }
 
 export default AlertBanner

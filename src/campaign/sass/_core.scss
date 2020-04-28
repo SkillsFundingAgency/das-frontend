@@ -104,6 +104,28 @@
   }
 }
 
+.link {
+  @include typography-common;
+  font-weight: inherit;
+  color: $link-colour;
+  &:hover,
+  &:focus {
+    text-decoration: none;
+  }
+  &:focus {
+    outline: 3px solid $focus-colour;
+  }
+  &:visited {
+    color: $link-visited-colour;
+  }
+}
+
+.link--no-visited-state {
+  &:visited {
+    color: $link-colour;
+  }
+}
+
 .page--full-width {
   max-width: 100%;
   padding: 0;
