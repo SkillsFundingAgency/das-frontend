@@ -355,8 +355,16 @@
   @include font($size: 36, $weight: bold);
   text-decoration: none;
   color: #fff;
+  margin: 0;
   &:focus {
     @include focus-outline;
+  }
+  a {
+    color: #fff;
+    text-decoration: none;
+    &:focus {
+      @include focus-outline;
+    }
   }
 }
 
