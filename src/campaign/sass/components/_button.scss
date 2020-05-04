@@ -290,6 +290,10 @@ $offset: 2;
   @include font($size: 24, $line-height: 21px);
   @include focusable;
   margin: spacing(2) spacing(6);
-  display: inline-block;
+  display: block;
   color: inherit;
+  text-align: center;
+  @include media-query($from: tablet) {
+    display: inline-block;
+  }
 }
