@@ -285,3 +285,11 @@ $offset: 2;
     color: #fff;
   }
 }
+
+.text-link-inline-button {
+  @include font($size: 24, $line-height: 21px);
+  @include focusable;
+  margin: spacing(2) spacing(6);
+  display: inline-block;
+  color: inherit;
+}
