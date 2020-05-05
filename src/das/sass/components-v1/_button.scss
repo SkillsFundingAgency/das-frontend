@@ -90,3 +90,42 @@
   text-align: left;
   display: inline;
 }
+
+.das-button--inverted {
+  background-color: #fff;
+  box-shadow: 0 2px 0 darken(govuk-colour("blue"), 20%);
+
+  &,
+  &:link,
+  &:visited,
+  &:active,
+  &:hover {
+    color: govuk-colour("blue");
+  }
+
+  &:hover,
+  &:focus {
+    background-color: #e6eff6;
+  }
+}
+
+.das-button--outline {
+  border-color: $cookie;
+  color: $cookie;
+  background-color: #fff;
+  box-shadow: 0 2px 0 $cookie;
+
+  &,
+  &:link,
+  &:visited,
+  &:active,
+  &:hover {
+    color: $cookie;
+  }
+
+  &:hover,
+  &:focus {
+    background: govuk-colour('light-grey');
+    color: $cookie;
+  }
+}
