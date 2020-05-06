@@ -1,6 +1,3 @@
-.js-enabled #global-cookie-message {
-  display: none;
-}
 
 .das-cookie-banner {
   @include govuk-font($size: 16, $weight: 400);
@@ -11,6 +8,7 @@
   width: 100%;
   position: relative;
   z-index: 2;
+  display: none;
 }
 
 .das-cookie-banner__header {

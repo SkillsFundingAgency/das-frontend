@@ -1,5 +1,72 @@
 .das-cookie-settings {
+  &:target {
+    display: block !important;
+    position: fixed;
+    z-index: 1111;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    width: 100%;
+    overflow: auto;
+    form {
+      display: block !important;
+    }
+    .das-cookie-settings__inner-wrap {
+      box-sizing: border-box;
+      background: #fff;
+      padding: 30px;
+      padding-bottom: 0;
+      z-index: 9999;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      overflow: auto;
+      @include govuk-media-query($from: tablet) {
+        width: 80%;
+        left: 10%;
+        right: 10%;
+        top: 30px;
+        margin-bottom: 30px;
+      }
+      @include govuk-media-query($from: desktop) {
+        width: 800px;
+        left: 50%;
+        right: auto;
+        margin-left: -400px;
+      }
+    }
+    &:before {
+      content: "";
+      display: block;
+      background: rgba(0,0,0,.6);
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 9998;
+    }
+  }
+}
 
+.das-cookie-settings__close-modal {
+  background-color: govuk-colour(blue);
+  background-image: url('data:image/svg+xml;utf8,#{$icon-cross}');
+  background-repeat: no-repeat;
+  background-size: 20px;
+  background-position: 10px 10px;
+  display: block;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  overflow: hidden;
+  text-indent: -999px;
+  @include das-focusable;
 }
 
 .das-cookie-settings__confirmation {

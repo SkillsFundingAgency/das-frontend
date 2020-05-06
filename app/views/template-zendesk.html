@@ -19,7 +19,151 @@
     <!--<![endif]-->
 
     <meta property="og:image" content="/assets/images/govuk-opengraph-image.png" />
+    <script id="ze-snippet" src="https://static.zdassets.com/ekr/snippet.js?key=1b1ce288-39ea-4d40-a5e1-3a5e08aadd89"></script>
+    <script>
 
+        window.dataLayer = window.dataLayer || [];
+        window.onload = function() {
+              setTimeout(function() {
+
+                var widgetLauncher = $('#launcher'),
+                    widgetHelpButton = widgetLauncher.contents().find('button');
+
+                if (widgetLauncher.length > 0 && widgetHelpButton.length > 0) {
+                    widgetHelpButton.on('click', function() {
+                        gtmEventPush({'action' : 'Help button clicked'});
+                        widgetOpened(widgetLauncher);
+                    })
+                }
+              }, 1500);
+        }
+
+        var widgetOpened = function() {
+            var container = $('#webWidget');
+            setTimeout(function() {
+                var page = whichView(container);
+                interactionEvents(container);
+            }, 200);
+        }
+
+        var interactionEvents = function(container) {
+          var contents = container.contents();
+          var links = contents.find('a');
+          var buttons = contents.find('button');
+          var form = contents.find('form');
+
+          links.off('click')
+          links.on('click', function() {
+            setTimeout(function() {
+                  var page = whichView(container);
+                  setTimeout(function() {
+                    interactionEvents(container);
+                    }, 200);
+                }, 200);
+          })
+
+          buttons.off('click')
+			buttons.on('click', function() {
+			  setTimeout(function() {
+			        var page = whichView(container);
+			        setTimeout(function() {
+			          interactionEvents(container);
+			          }, 200);
+			      }, 200);
+			})
+
+          form.off('submit')
+          form.on('submit', function() {
+            setTimeout(function() {
+                var page = whichView(container);
+                interactionEvents(container);
+              }, 800);
+          })
+        }
+
+        var gtmEventPush = function(eventObj) {
+          eventObj.event = 'widget'
+          window.dataLayer.push(eventObj)
+          console.log(eventObj)
+        }
+
+        var whichView = function(container) {
+            var contents = container.contents();
+            var searchField = contents.find('input[type="search"]');
+            var firstH1 = contents.find('h1').eq(0);
+            var firstH2 = contents.find('h2').eq(0);
+            var secondP = contents.find('p').eq(1);
+            var originalArticleButton = contents.find('div[class^="originalArticleButton"]');
+            var chatIcon = contents.find('.Icon--channelChoice-chat');
+
+            if (searchField.length === 1) {
+
+              var searchTerm = searchField.val();
+
+              if (secondP.text() === "Try searching for something else.") {
+                // View 2: Search form and zero results
+                gtmEventPush({'action' : 'Search form submitted', 'term' : searchTerm, 'noOfResults' : 0})
+                return(2);
+              }
+
+              if (firstH2.text() === "Top results") {
+                // View 3: Search form and some results
+                var listResults = contents.find('ol').eq(0).find('li');
+                gtmEventPush({'action' : 'Search form submitted', 'term' : searchTerm, 'noOfResults' : listResults.length})
+                return(3);
+              }
+
+              // View 1: Just search form'
+              return(1);
+            }
+
+            if (originalArticleButton.length === 1) {
+              // View 4: Article page
+              gtmEventPush({'action' : 'Article clicked', 'title' : firstH2.text()})
+              return (4);
+            }
+
+            if (chatIcon.length > 0) {
+              // View 5: Contact page
+              gtmEventPush({'action' : 'Contact button clicked'})
+              return (5);
+            }
+
+            if (firstH1.text() === 'Request a callback') {
+              // View 6: Request call back page
+              gtmEventPush({'action' : 'Request call back button clicked'})
+              return (6);
+            }
+
+            if (firstH1.text() === 'Request sent') {
+              // View 7: Request call back confirmation
+               gtmEventPush({'action' : 'Request call back button submitted'})
+               return (7);
+            }
+
+            if (firstH1.text() === 'Apprenticeship service') {
+              // View 8: Live chat page
+                gtmEventPush({'action' : 'Live chat button clicked'})
+               return (8);
+            }
+
+            if (firstH1.text() === 'Contact us') {
+              // View 9: Leave message page
+              gtmEventPush({'action' : 'Leave message button clicked'})
+               return (9);
+            }
+
+            if (firstH1.text() === 'Message sent') {
+              // View 7: Request call back confirmation
+               gtmEventPush({'action' : 'Leave message submitted'})
+               return (10);
+            }
+
+            // Cannot determine the view or closed the widget
+            return(0);
+        }
+
+    </script>
 </head>
 
 <body class="govuk-template__body {{ bodyClass }}">
@@ -48,7 +192,7 @@
             </a>
         </div>
         <div class="govuk-header__content">
-            <a href="/" class="govuk-header__link govuk-header__link--service-name">
+            <a href="#" class="govuk-header__link govuk-header__link--service-name">
                 {{ serviceTitle if serviceTitle else "DAS frontend" }}
             </a>
         </div>
@@ -156,8 +300,6 @@
 
     </main>
 </div>
-
-
 
 <footer class="govuk-footer " role="contentinfo">
     <div class="govuk-width-container ">

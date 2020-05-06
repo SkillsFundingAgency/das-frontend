@@ -1,78 +1,60 @@
-
-  function CookieBanner ($module) {
-    this.$module = $module;
+function CookieBanner (module) {
+  this.module = module;
+  this.settings = {
+    seenCookieName: 'DASSeenCookieMessage',
+    cookiePolicy: {
+      AnalyticsConsent: false,
+      MarketingConsent: false
+    }
+  }
+  if ( !window.GOVUK.cookie(this.settings.seenCookieName) ) {
     this.start()
   }
+}
 
-  CookieBanner.prototype.start = function () {
+CookieBanner.prototype.start = function () {
+  this.module.cookieBanner = this.module.querySelector('.das-cookie-banner')
+  this.module.cookieBannerInnerWrap = this.module.querySelector('.das-cookie-banner__wrapper')
+  this.module.cookieBannerConfirmationMessage = this.module.querySelector('.das-cookie-banner__confirmation')
+  this.setupCookieMessage()
+}
 
-    this.$module.hideCookieMessage = this.hideCookieMessage.bind(this)
-    this.$module.showConfirmationMessage = this.showConfirmationMessage.bind(this)
-    this.$module.setCookieConsent = this.setCookieConsent.bind(this)
+CookieBanner.prototype.setupCookieMessage = function () {
+  this.module.hideLink = this.module.querySelector('button[data-hide-cookie-banner]')
+  this.module.acceptCookiesButton = this.module.querySelector('button[data-accept-cookies]')
 
-    this.$module.cookieBanner = document.querySelector('.das-cookie-banner')
-    this.$module.cookieBannerConfirmationMessage = this.$module.querySelector('.das-cookie-banner__confirmation')
-
-    this.setupCookieMessage()
+  if (this.module.hideLink) {
+    this.module.hideLink.addEventListener('click', this.hideCookieBanner.bind(this))
   }
 
-  CookieBanner.prototype.setupCookieMessage = function () {
-    this.$hideLink = this.$module.querySelector('button[data-hide-cookie-banner]')
-    if (this.$hideLink) {
-      this.$hideLink.addEventListener('click', this.$module.hideCookieMessage)
-    }
-
-    this.$acceptCookiesLink = this.$module.querySelector('button[data-accept-cookies]')
-    if (this.$acceptCookiesLink) {
-      this.$acceptCookiesLink.addEventListener('click', this.$module.setCookieConsent)
-    }
-
-    if (!window.GOVUK.cookie('DASSeenCookieMessage')) {
-      if (window.GOVUK.cookie('DASSeenCookieMessage') === true) {
-        window.GOVUK.cookie('DASSeenCookieMessage', false, { days: 365 })
-      }
-    }
-    this.showCookieMessage()
+  if (this.module.acceptCookiesButton) {
+    this.module.acceptCookiesButton.addEventListener('click', this.acceptAllCookies.bind(this))
   }
+  this.showCookieBanner()
+}
 
-  CookieBanner.prototype.showCookieMessage = function () {
-    if (!this.isInCookiesPage() && !this.isInIframe()) {
-      var showCookieBanner = (this.$module && window.GOVUK.cookie('DASSeenCookieMessage') !== 'true')
-      if (showCookieBanner) {
-        this.$module.style.display = 'block'
-      }
-    }
-  }
+CookieBanner.prototype.showCookieBanner = function () {
+  var cookiePolicy = this.settings.cookiePolicy;
+  this.module.cookieBanner.style.display = 'block';
+  Object.keys(cookiePolicy).forEach(function (cookieName) {
+    window.GOVUK.cookie(cookieName, cookiePolicy[cookieName].toString(), { days: 365 })
+  });
+}
 
-  CookieBanner.prototype.hideCookieMessage = function (event) {
-    if (this.$module) {
-      this.$module.style.display = 'none'
-      window.GOVUK.cookie('DASSeenCookieMessage', true, { days: 365 })
-    }
-    if (event.target) {
-      event.preventDefault()
-    }
-  }
+CookieBanner.prototype.hideCookieBanner = function () {
+  this.module.cookieBanner.style.display = 'none';
+  window.GOVUK.cookie(this.settings.seenCookieName, true, { days: 365 })
+}
 
-  CookieBanner.prototype.setCookieConsent = function () {
-    window.GOVUK.approveAllCookieTypes()
-    this.$module.showConfirmationMessage()
-    this.$module.cookieBannerConfirmationMessage.focus()
-    window.GOVUK.cookie('DASSeenCookieMessage', true, { days: 365 })
-  }
+CookieBanner.prototype.acceptAllCookies = function () {
+  this.module.cookieBannerInnerWrap.style.display = 'none';
+  this.module.cookieBannerConfirmationMessage.style.display = 'block';
 
-  CookieBanner.prototype.showConfirmationMessage = function () {
-    this.$cookieBannerMainContent = document.querySelector('.das-cookie-banner__wrapper')
-    this.$cookieBannerMainContent.style.display = 'none'
-    this.$module.cookieBannerConfirmationMessage.style.display = 'block'
-  }
+  window.GOVUK.cookie(this.settings.seenCookieName, true, { days: 365 })
 
-  CookieBanner.prototype.isInCookiesPage = function () {
-    return window.location.pathname === '/help/cookies'
-  }
+  Object.keys(this.settings.cookiePolicy).forEach(function (cookieName) {
+    window.GOVUK.cookie(cookieName, true, { days: 365 })
+  });
+}
 
-  CookieBanner.prototype.isInIframe = function () {
-    return window.parent && window.location !== window.parent.location
-  }
-
-  export default CookieBanner
+export default CookieBanner
