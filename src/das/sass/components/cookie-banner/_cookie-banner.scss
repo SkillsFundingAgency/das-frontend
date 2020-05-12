@@ -51,6 +51,8 @@
   .das-cookie-banner__button-wrap {
     margin-top: 10px;
     vertical-align: top;
+    float: none;
+    width: 100%;
     @include govuk-media-query($from: tablet) {
       width: 50%;
       float: left;
