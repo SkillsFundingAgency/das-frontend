@@ -65,6 +65,10 @@ $blue-dark: darken($blue, 5%);
       bottom: 0;
       @include media-query($from: tablet) {
         bottom: auto;
+        max-width: 500px;
+        left: 50%;
+        right: auto;
+        margin-left: -250px;
       }
     }
   }
