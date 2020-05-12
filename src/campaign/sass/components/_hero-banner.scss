@@ -249,7 +249,7 @@ $hero-text-colour: #fff;
   }
 }
 
-.hero-banner__background--apprentice-alim{
+.hero-banner__background--apprentice-alim {
   background-image: linear-gradient(255deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%), url("../images/apprentice/alim-hero-1.jpg");
   .hero-banner--right-aligned & {
     -moz-transform: scaleX(-1);
@@ -261,7 +261,7 @@ $hero-text-colour: #fff;
   }
 }
 
-.hero-banner__background--apprentice-hosanna{
+.hero-banner__background--apprentice-hosanna {
   background-image: linear-gradient(255deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%), url("../images/apprentice/hozanna-hero-blur.jpg");
   .hero-banner--right-aligned & {
     -moz-transform: scaleX(-1);
@@ -273,8 +273,8 @@ $hero-text-colour: #fff;
   }
 }
 
-.hero-banner__background--apprentice-sarah{
-  background-image: linear-gradient(255deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%), url("../images/apprentice/sarah-hero-1.jpg");
+.hero-banner__background--apprentice-sarah {
+  background-image: linear-gradient(255deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%), url("../images/apprentice/sarah-hero-blur.jpg");
   .hero-banner--right-aligned & {
   -moz-transform: scaleX(-1);
   -o-transform: scaleX(-1);
@@ -285,8 +285,8 @@ $hero-text-colour: #fff;
   }
 }
 
-.hero-banner__background--apprentice-ella{
-background-image: linear-gradient(255deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%), url("../images/apprentice/ella-hero-1.jpg");
+.hero-banner__background--apprentice-ella {
+background-image: linear-gradient(255deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%), url("../images/apprentice/ella-hero-blur.jpg");
   .hero-banner--right-aligned & {
     -moz-transform: scaleX(-1);
     -o-transform: scaleX(-1);
@@ -297,7 +297,7 @@ background-image: linear-gradient(255deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%),
   }
 }
 
-.hero-banner__background--apprentice-michelle{
+.hero-banner__background--apprentice-michelle {
   background-image: linear-gradient(255deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%), url("../images/apprentice/michelle-hero-1.jpg");
   @include mq($until: desktop) {
     background-position: 35% 0%;
@@ -311,21 +311,8 @@ background-image: linear-gradient(255deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%),
     -ms-filter: "FlipH";
   }
 }
-.hero-banner__background--apprentice-ekansh{
-  background-image: linear-gradient(255deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%), url("../images/apprentice/ekansh-hero-1.jpg");
-  @include mq($until: desktop) {
-    background-position: 35% 0%;
-  }
-  .hero-banner--right-aligned & {
-    -moz-transform: scaleX(-1);
-    -o-transform: scaleX(-1);
-    -webkit-transform: scaleX(-1);
-    transform: scaleX(-1);
-    filter: FlipH;
-    -ms-filter: "FlipH";
-  }
-}
-.hero-banner__background--apprentice-ekansh{
+
+.hero-banner__background--apprentice-ekansh {
   background-image: linear-gradient(255deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%), url("../images/employer/omar-hero-1.jpg");
   @include mq($until: desktop) {
     background-position: 35% 0%;
@@ -339,8 +326,9 @@ background-image: linear-gradient(255deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%),
     -ms-filter: "FlipH";
   }
 }
-.hero-banner__background--employer-gail{
-  background-image: linear-gradient(225deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%), url("../images/employer/gail-hero-1.jpg");
+
+.hero-banner__background--employer-gail {
+  background-image: linear-gradient(225deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%), url("../images/employer/gail-hero-blur.jpg");
   .hero-banner--right-aligned & {
   -moz-transform: scaleX(-1);
   -o-transform: scaleX(-1);
@@ -351,8 +339,8 @@ background-image: linear-gradient(255deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%),
   }
 }
 
-.hero-banner__background--employer-bendy{
-  background-image: linear-gradient(225deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%), url("../images/employer/bendy-hero-1.jpg");
+.hero-banner__background--employer-bendy {
+  background-image: linear-gradient(225deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%), url("../images/employer/bendy-hero-blur.jpg");
   .hero-banner--right-aligned & {
     -moz-transform: scaleX(-1);
     -o-transform: scaleX(-1);
