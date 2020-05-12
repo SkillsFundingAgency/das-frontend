@@ -1,20 +1,22 @@
 {
   "src": {
-    "default": "./src/sass/**/*.scss",
-    "defaultJs": "./src/js/_*.js",
-    "defaultJsMain": "./src/js/app.js",
-    "defaultImages": "./src/images/**/*",
-    "componentJs": "./src/components/**/*.js",
-    "campaign": "./src/campaign/sass/**/*.scss",
+    "dasSass": "./src/das/sass/**/*.scss",
+    "dasJs": "./src/das/javascript/_*.js",
+    "dasJsApp": "./src/das/javascript/app.js",
+    "dasJsLibPath": "./src/das/javascript/libs/",
+    "dasJsComponent": "./src/das/javascript/das-all.js",
+    "dasJsComponents": "./src/das/javascript/components/**/*.js",
+    "dasImages": "./src/das/images/**/*",
+    "campaignSass": "./src/campaign/sass/**/*.scss",
     "campaignJs": "./src/campaign/javascript/*.js",
-    "campaignImages": "./src/campaign/images/**/*",
-    "dasJs": "./src/das-all.js"
+    "campaignImages": "./src/campaign/images/**/*"
   },
   "dist": {
-    "default": "./dist/css/",
-    "defaultJs": "./dist/js/",
-    "defaultImages": "./dist/images/",
-    "campaign": "./dist/campaign/css/",
+    "dasCss": "./dist/css/",
+    "dasJs": "./dist/js/",
+    "dasJsLibs": "./dist/libs/",
+    "dasImages": "./dist/images/",
+    "campaignCss": "./dist/campaign/css/",
     "campaignJs": "./dist/campaign/js",
     "campaignImages": "./dist/campaign/images/"
   }

@@ -1,8 +1,16 @@
+
 .card__collection {
   background: #fff;
   @include media-query($from: desktop) {
     display: flex;
     align-items: stretch;
+  }
+}
+
+.card__collection--real-stories {
+  background: #f8f8f8;
+  @include media-query($from: tablet) {
+    margin: 10px -20px;
   }
 }
 
@@ -172,7 +180,6 @@
     background-position: center 30%;
   }
 }
-
 
 .card__collection--countries {
   .card {

@@ -240,6 +240,14 @@
   border:0;
 }
 
+.favourite-button--loading {
+  background-image: url(../images/pre-loader-employer-light.gif);
+  background-size: contain;
+  .hero & {
+    background-image: url(../images/pre-loader-employer-dark.gif);
+  }
+}
+
 .hero .das-search-result__favourite-button--unchecked,
 .hero .das-search-result__favourite-button--checked {
   color: white;

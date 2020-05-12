@@ -27,6 +27,11 @@ $offset: 2;
   width: 100%;
 
   color: $button-text-colour;
+
+  .page & {
+    color: $button-text-colour;
+  }
+
   background-color: $button-colour;
 
   border: $border-width-form-element solid transparent;
@@ -50,6 +55,9 @@ $offset: 2;
   &:hover {
     color: $button-text-colour;
     text-decoration: none;
+    .page & {
+      color: $button-text-colour;
+    }
   }
 
   &::-moz-focus-inner {
@@ -145,12 +153,19 @@ $offset: 2;
   color: $button-apprentice-text-colour;
   background-color: $button-apprentice-colour;
 
+  .page & {
+    color: $button-apprentice-text-colour;
+  }
+
   &:link,
   &:visited,
   &:active,
   &:hover {
     color: $button-apprentice-text-colour;
     text-decoration: none;
+    .page & {
+      color: $button-apprentice-text-colour;
+    }
   }
 
   &:hover,
@@ -165,13 +180,18 @@ $offset: 2;
 {
   color: $button-employer-text-colour;
   background-color: $button-employer-colour;
-
+.page & {
+      color: $button-employer-text-colour;
+    }
   &:link,
   &:visited,
   &:active,
   &:hover {
     color: $button-employer-text-colour;
     text-decoration: none;
+    .page & {
+      color: $button-employer-text-colour;
+    }
   }
 
   &:hover,
@@ -190,6 +210,10 @@ $offset: 2;
 {
   color: $button-colour;
   background-color: $button-text-colour;
+  
+  .page & {
+      color: $button-colour;
+    }
 
   &:link,
   &:visited,
@@ -215,6 +239,31 @@ $offset: 2;
 
 }
 
+.button--parents
+{
+  color: #fff;
+  background-color: $parent;
+  .page & {
+    color: #fff;
+  }
+
+  &:link,
+  &:visited,
+  &:active,
+  &:hover {
+    color: #fff;
+    text-decoration: none;
+    .page & {
+      color: #fff;
+    }
+  }
+
+  &:hover,
+  &:focus {
+    background-color: lighten($parent, 10%);
+  }
+}
+
 .button--success
 {
   color: #fff;
@@ -234,5 +283,17 @@ $offset: 2;
   }
   .page & {
     color: #fff;
+  }
+}
+
+.text-link-inline-button {
+  @include font($size: 24, $line-height: 21px);
+  @include focusable;
+  margin: spacing(2) spacing(6);
+  display: block;
+  color: inherit;
+  text-align: center;
+  @include media-query($from: tablet) {
+    display: inline-block;
   }
 }

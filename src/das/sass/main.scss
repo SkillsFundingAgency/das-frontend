@@ -1,0 +1,19 @@
+// Override path variables
+$govuk-assets-path: "../assets/";
+$govuk-fonts-path: "../assets/fonts/";
+
+// GDS v3 Overrides
+@import "gds_v2_backwards_compatibility";
+
+// GDS Design System
+@import "all";
+
+// Autocomplete
+@import "libs/_autocomplete";
+
+// DAS
+@import "settings/all";
+@import "helpers/all";
+@import "core/all";
+@import "components-v1/all";
+@import "components/all";

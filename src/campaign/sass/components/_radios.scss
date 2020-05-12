@@ -1,5 +1,6 @@
 $radios-size: spacing(7);
-  $radios-label-padding-left-right: spacing(3);
+$radios-label-padding-left-right: spacing(3);
+
   // When the default focus width is used on a curved edge it looks visually smaller.
   // So for the circular radios we bump the default to make it look visually consistent.
   $radios-focus-width: $focus-width + 1px;
@@ -41,7 +42,7 @@ $radios-size: spacing(7);
     cursor: pointer;
     -ms-touch-action: manipulation;
     touch-action: manipulation;
-    color: $black;
+    color: inherit;
     font-weight: 500;
   }
 
