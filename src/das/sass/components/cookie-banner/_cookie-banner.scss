@@ -33,6 +33,10 @@
     }
   }
 
+  .das-cookie-banner__service-name {
+    display: inline-block;
+  }
+
   .das-cookie-banner__buttons {
     @include das-clearfix();
     display: block;
