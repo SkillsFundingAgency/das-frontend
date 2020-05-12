@@ -174,7 +174,6 @@
   display: inline-block;
 }
 
-
 .plyr--full-ui input[type=range] {
   color: $apprentice;
   .video-player--employer & {
@@ -204,17 +203,12 @@
   }
 }
 
-.video-player__thumbnail{
+.video-player__thumbnail {
   width: 100%;
   position: relative;
-  border: solid #000 50px;
-  border-left: 0px;
-  border-right: 0px;
-  float: right;
-  margin-bottom: 0px;
-  margin-top:60px;
-  #homepage & {
-    margin-bottom: 20px;
-margin-top:0px;
+  box-shadow: 0px 1px 10px 4px rgba(0, 0, 0, .2);
+  display: block;
+  &:focus {
+    @include focus-outline
   }
 }

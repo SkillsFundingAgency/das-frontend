@@ -5,7 +5,6 @@ $hero-text-colour: #fff;
   overflow: hidden;
   position: relative;
   color: $hero-text-colour;
-
   padding: 40px $edgeGutter 40px;
 
   @include media-query($from: tablet) {
@@ -26,7 +25,10 @@ $hero-text-colour: #fff;
 }
 
 .hero-banner__caption {
-  margin-bottom: 80px;
+  margin-bottom: 40px;
+  @include media-query($from: tablet) {
+    margin-bottom: 0;
+  }
 }
 
 .hero-banner__caption-text {
@@ -146,11 +148,14 @@ $hero-text-colour: #fff;
 }
 
 .hero-banner__icon-play-container {
+  position: relative;
+  margin-top: 20px;
+  margin-bottom: 20px;
   @include clearfix;
-  top: -65px;
-  @include mq ($from: tablet) {
+  @include media-query ($from: tablet) {
     float: right;
     position: relative;
+    margin-bottom: 50px;
     .hero-banner--right-aligned & {
       float: left;
     }
@@ -158,7 +163,7 @@ $hero-text-colour: #fff;
 }
 
 .hero-banner__icon-play {
-  position: relative;
+  position: absolute;
   height: 80px;
   width: 80px;
   display: block;
@@ -167,27 +172,14 @@ $hero-text-colour: #fff;
   -moz-border-radius: 50%;
   border-radius: 50%;
   transition: box-shadow 0.2s ease;
-  margin: 0 auto;
-  top: 100px;
-  @include mq ($from: tablet) {
-    margin: 135px auto 120px;
+  margin: -40px 0 0 -40px;
+  top: 50%;
+  left: 50%;
+
+  @include media-query ($from: desktop) {
+    margin: -55px 0 0 -55px;
     height: 110px;
     width: 110px;
-  }
-  @include mq ($from: desktop) {
-    margin: 120px auto 120px;
-  }
-
-  #homepage &{
-    @include mq ($from: tablet) {
-      margin: 120px auto 120px;
-      height: 110px;
-      width: 110px;
-
-    }
-    @include mq ($from: desktop) {
-      margin: 60px auto 120px;
-    }
   }
   
   .hero-banner--employer & {
@@ -197,7 +189,6 @@ $hero-text-colour: #fff;
   .hero-banner--parent & {
     background: $parent;
   }
-
 
   &:before {
     content: "";
@@ -238,32 +229,23 @@ $hero-text-colour: #fff;
   bottom: 0;
   z-index: -1;
   background-size: cover;  
-  background-position: 60% 0%;
+  background-position: 60% 0;
   background-repeat: no-repeat;
 }
 
 .hero-banner--apprentice .hero-banner__background {
-
   background-size: auto;
-  @include mq($from: desktop) {
+  @include media-query($from: desktop) {
     background-position: 0 20%;
     background-size: cover;
-  }
-  @include mq($from: wide) {
-
   }
 }
 
 .hero-banner--employer .hero-banner__background {
   background-position: 80% 0%;
-  @include mq($from: tablet) {
-  }
-  @include mq($from: desktop) {
+  @include media-query($from: desktop) {
     background-position: 0 20%;
     background-size: cover;
-  }
-  @include mq($from: wide) {
-
   }
 }
 
@@ -314,6 +296,7 @@ background-image: linear-gradient(255deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%),
     -ms-filter: "FlipH";
   }
 }
+
 .hero-banner__background--apprentice-michelle{
   background-image: linear-gradient(255deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%), url("../images/apprentice/michelle-hero-1.jpg");
   @include mq($until: desktop) {
@@ -415,34 +398,18 @@ background-image: linear-gradient(255deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%),
     -ms-filter: "FlipH";
   }
 }
-.hero-banner__map{
-  min-height:500px;
-//  clip-path: polygon(0 0%, 100% 0%, 100% 100%, 0% 93%);
- color: $black;
- z-index: 1;
-  & .hero-heading__heading{
+.hero-banner__map {
+  min-height: 500px;
+  color: $black;
+  z-index: 1;
+  & .hero-heading__heading {
     color: $black;
-    text-shadow: 7px 7px rgba(255,255,255,0.7);
+    text-shadow: 7px 7px rgba(255, 255, 255, 0.7);
   }
-  & .hero-heading{
-    margin-top:-50px;
+  & .hero-heading {
+    margin-top: -50px;
     @include media-query($from: tablet) {
-    width:50%
+      width: 50%
     }
   }
-  // &::after{
-  //   border-style: solid;
-  //   border-width: 0 0 153px 1460px;
-  //   border-color: transparent transparent #fff;
-  // }
 }
-
-// .hero-banner.hero-banner__map::after{
-//   content: '';
-//   border-style: solid;
-//   border-width: 122px 0 0px 1441px;
-//   border-color: transparent #ffffff transparent;
-//   position: relative;
-//   top: 342px;
-//   left: -80px;
-//   }
