@@ -2,16 +2,16 @@
     margin: 0 -80px;
     padding: 0 80px;
     background-color: black;
-    color: #F8F8F8
+    color: #D2D2D2;
+    display: block;
 }
 
-.feedback-banner:not([data-scroll='0']) {
-    visibility: hidden
+.feedback-banner--hidden{
+    display: none;
 }
-
 .feedback-banner__content {
     margin: 5px 0;
-    color: #F8F8F8;
+    color: #D2D2D2;
 
     font-size: 16px;
     @include media-query($from: tablet) {
@@ -21,7 +21,7 @@
 
 .feedback-banner__link {
     margin: 5px 0;
-    color: #F8F8F8;
+    color: #D2D2D2;
     text-decoration: none;
     border-bottom: 1px solid #fff;
     text-align: right;
@@ -33,4 +33,8 @@
     &:hover, &:focus {
         border-bottom-color: transparent;
     }
+}
+
+.feedback-banner__close {
+    float:right;
 }
