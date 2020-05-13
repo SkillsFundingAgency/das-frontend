@@ -1,0 +1,36 @@
+.feedback-banner {
+    margin: 0 -80px;
+    padding: 0 80px;
+    background-color: black;
+    color: #F8F8F8
+}
+
+.feedback-banner:not([data-scroll='0']) {
+    visibility: hidden
+}
+
+.feedback-banner__content {
+    margin: 5px 0;
+    color: #F8F8F8;
+
+    font-size: 16px;
+    @include media-query($from: tablet) {
+        font-size: 19px;
+    }
+}
+
+.feedback-banner__link {
+    margin: 5px 0;
+    color: #F8F8F8;
+    text-decoration: none;
+    border-bottom: 1px solid #fff;
+    text-align: right;
+
+    @include media-query($from: tablet) {
+        font-size: 19px;
+    }
+
+    &:hover, &:focus {
+        border-bottom-color: transparent;
+    }
+}
