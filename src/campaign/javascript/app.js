@@ -2,7 +2,7 @@
 var headers = document.getElementsByClassName("header"),
     header = headers[0];
 
-var feedbackBanner = document.getElementsByClassName("feedback-banner")[0],
+var feedbackBanner = document.getElementsByClassName("feedback-banner")[0]
 
 window.onscroll = function() { activeHeader() };
 
@@ -17,9 +17,9 @@ function activeHeader() {
 
     if (feedbackBanner != undefined) {
         if (document.body.scrollTop > 10 || document.documentElement.scrollTop > 10) {
-            header.classList.add("feedback-banner--hidden");
+            feedbackBanner.classList.add("feedback-banner--hidden");
         } else {
-            header.classList.remove("feedback-banner--hidden");
+            feedbackBanner.classList.remove("feedback-banner--hidden");
         }
     }
 }
