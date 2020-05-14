@@ -34,14 +34,17 @@
     }
 }
 
-.feedback-banner__content--close-button {
-    float: right;
+.feedback-banner__content--close {
+  
     width:20%;
 }
 
-.feedback-banner__content--text{
-    float:left;
-    width:80%;
+.feedback-banner__content--close-button {
+    float: right;
+}
+.feedback-banner__content--text {
+    float: left;
+    width: 80%;
 }
 .feedback-banner--inner {
     display: inline-block;
