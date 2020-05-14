@@ -10,7 +10,7 @@
     display: none;
 }
 .feedback-banner__content {
-    margin: 5px 0;
+    margin: 0px 0;
     color: #D2D2D2;
 
     font-size: 16px;
@@ -20,11 +20,10 @@
 }
 
 .feedback-banner__link {
-    margin: 5px 0;
+    margin: 0px 0;
     color: #D2D2D2;
     text-decoration: none;
     border-bottom: 1px solid #fff;
-    text-align: right;
 
     @include media-query($from: tablet) {
         font-size: 19px;
@@ -35,6 +34,17 @@
     }
 }
 
-.feedback-banner__close {
-    float:right;
+.feedback-banner__content--close-button {
+    float: right;
+    width:20%;
+}
+
+.feedback-banner__content--text{
+    float:left;
+    width:80%;
+}
+.feedback-banner--inner {
+    display: inline-block;
+    width: 100%;
+    padding: 5px 0 5px 0;
 }
