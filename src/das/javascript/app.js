@@ -21,10 +21,6 @@ if ($('.das-js-back-link')) {
 
 dasJs.forms.init();
 
-
-window.GOVUK.cookie('DASSeenCookieMessage', 'false',{days: 200, domain: 'frontend.das.com'})
-
-
 // If the current domain does not equal the domain
 // that we would like to set our cookies against,
 // then let's remove any legacy cookies that may
