@@ -10,17 +10,18 @@
     display: none;
 }
 .feedback-banner__content {
-    margin: 0px 0;
+    margin: 0;
     color: #D2D2D2;
-
     font-size: 16px;
+
     @include media-query($from: tablet) {
         font-size: 19px;
     }
 }
 
 .feedback-banner__link {
-    margin: 0px 0;
+    font-weight: $font-weight-bold; 
+    margin: 0;
     color: #D2D2D2;
     text-decoration: none;
     border-bottom: 1px solid #fff;
@@ -47,7 +48,16 @@
     width: 80%;
 }
 .feedback-banner--inner {
-    display: inline-block;
-    width: 100%;
-    padding: 5px 0 5px 0;
+    padding: 10px 0;
+    overflow: hidden;
+}
+
+.feedback-banner__badge {
+    font-weight: $font-weight-bold;
+    text-transform: uppercase;
+    letter-spacing: .05em;
+    font-size: 16px;
+    padding: .3em .4em .2em;
+    border-radius: 2px;
+    margin-right: 5px;
 }
