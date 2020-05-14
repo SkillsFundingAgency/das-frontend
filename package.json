@@ -35,7 +35,7 @@
     "gulp-terser": "^1.1.7",
     "gulp-to-markdown": "^1.0.0",
     "html5shiv": "^3.7.3",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "jquery-ui-dist": "^1.12.1",
     "jquery-validation": "^1.19.1",
     "jquery-validation-unobtrusive": "^3.2.11",
