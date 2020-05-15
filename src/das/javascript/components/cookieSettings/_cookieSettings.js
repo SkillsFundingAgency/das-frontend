@@ -6,21 +6,11 @@ function CookieSettings (module, options) {
     cookiePolicy: {
       AnalyticsConsent: false,
       MarketingConsent: false
-    },
-    isModal: options === 'modal'
+    }
   }
 
-  if (!this.settings.isModal) {
-    // Hide cookie banner on settings page
-    var cookieBanner = document.querySelector('.das-cookie-banner')
-    cookieBanner.style.display = 'none'
-  }
-
-  if (this.settings.isModal) {
-    // Hide cookie settings if modal option is set
-    this.hideCookieSettings()
-    this.modalControls()
-  }
+  var cookieBanner = document.querySelector('.das-cookie-banner')
+  cookieBanner.style.display = 'none'
 
   this.start()
 }
@@ -32,12 +22,10 @@ CookieSettings.prototype.start = function () {
 
 CookieSettings.prototype.setRadioValues = function () {
   var cookiePolicy = this.settings.cookiePolicy
-
   Object.keys(cookiePolicy).forEach(function (cookieName) {
     var existingCookie = window.GOVUK.cookie(cookieName),
         radioButtonValue = existingCookie !== null ? existingCookie : cookiePolicy[cookieName],
         radioButton = document.querySelector('input[name=cookies-' + cookieName + '][value=' + (radioButtonValue === 'true' ? 'on' : 'off') + ']')
-
     radioButton.checked = true
   });
 }
@@ -92,19 +80,6 @@ CookieSettings.prototype.showConfirmationMessage = function () {
 
 CookieSettings.prototype.getReferrerLink = function () {
   return document.referrer ? new URL(document.referrer).pathname : false
-}
-
-CookieSettings.prototype.hideCookieSettings = function () {
-  document.getElementById('cookie-settings').style.display = 'none';
-}
-
-CookieSettings.prototype.modalControls = function () {
-  var closeLink = document.createElement('a');
-  var closeLinkText = document.createTextNode("Close cookie preferences");
-  closeLink.appendChild(closeLinkText);
-  closeLink.href = document.location.pathname
-  closeLink.classList.add('das-cookie-settings__close-modal')
-  this.module.appendChild(closeLink);
 }
 
 export default CookieSettings
