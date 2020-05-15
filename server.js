@@ -9,7 +9,7 @@ const http = require('http')
 
 nunjucks.configure(
   [
-    'src/app',
+    'src/das/sass/components',
     'app/views',
     'app/views/layouts',
     'node_modules/govuk-frontend/',
