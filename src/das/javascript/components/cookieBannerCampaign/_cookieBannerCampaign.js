@@ -18,7 +18,7 @@ function CookieBannerCampaign($module) {
     this.$MarketingcheckboxLabel = document.getElementById('lblMarketingConsent');
 
     this.$AnalyticscookieName = 'AnalyticsConsent';        // Name of our cookie
-    this.$AnalyticscookieValue = 'true';
+    this.$AnalyticscookieValue = 'false';
     this.$AnalyticsCheckbox = document.getElementById('cbxAnalyticsConsent');
     this.$AnalyticsCheckboxLabel = document.getElementById('lblAnalyticsConsent');
 }
@@ -86,7 +86,7 @@ CookieBannerCampaign.prototype.createCookie = function (name, value, days) {
     }
     else var expires = "";
     if (this.$dropCookie) {
-        document.cookie = name + "=" + value + expires + "; path=/";
+        document.cookie = name + "=" + value + expires + "; path=/" + ';domain=' + this.getDomain()
     }
 }
 
@@ -99,6 +99,12 @@ CookieBannerCampaign.prototype.checkCookie = function (name) {
         if (c.indexOf(nameEQ) == 0) return c.substring(nameEQ.length, c.length);
     }
     return null;
+}
+
+CookieBannerCampaign.prototype.getDomain = function () {
+    return window.location.hostname !== 'localhost'
+      ? '.' + window.location.hostname.slice(window.location.hostname.indexOf('.') + 1)
+      : window.location.hostname;
 }
 
 CookieBannerCampaign.prototype.eraseCookie = function (name) {
