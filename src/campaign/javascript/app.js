@@ -2,6 +2,8 @@
 var headers = document.getElementsByClassName("header"),
     header = headers[0];
 
+var feedbackBanner = document.getElementsByClassName("feedback-banner")[0]
+
 window.onscroll = function() { activeHeader() };
 
 function activeHeader() {
@@ -12,6 +14,14 @@ function activeHeader() {
       header.classList.remove("header--active");
     }
   }
+
+    if (feedbackBanner != undefined) {
+        if (document.body.scrollTop > 10 || document.documentElement.scrollTop > 10) {
+            feedbackBanner.classList.add("feedback-banner--hidden");
+        } else {
+            feedbackBanner.classList.remove("feedback-banner--hidden");
+        }
+    }
 }
 
 var appInit = function () {
