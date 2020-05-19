@@ -37,7 +37,7 @@
   display: inline-block;
 
   &:hover {
-      text-decoration: none;
+    text-decoration: none;
   }
 }
 
@@ -80,15 +80,13 @@
   padding-left: .6em;
   letter-spacing: -0.08em;
   @include media-query($from: tablet) {
-      font-size: 40px;
+    font-size: 40px;
   }
-
   @include media-query($from: desktop) {
-      font-size: 68px;
+    font-size: 68px;
   }
-
   .hero-banner & {
-      margin-top: 100px;
+    margin-top: 100px;
   }
 }
 
@@ -96,11 +94,10 @@
   font-size: 28px;
 
   @include media-query($from: tablet) {
-      font-size: 40px;
+    font-size: 40px;
   }
-
   @include media-query($from: desktop) {
-      font-size: 50px;
+    font-size: 50px;
   }
 }
 
@@ -108,11 +105,11 @@
   font-size: 28px;
 
   @include media-query($from: tablet) {
-      font-size: 36px;
+    font-size: 36px;
   }
 
   @include media-query($from: desktop) {
-      font-size: 42px;
+    font-size: 42px;
   }
 }
 
@@ -126,16 +123,16 @@
   display: none;
 
   @include media-query($from: tablet) {
-      display: block;
-      position: relative;
-      right: -40px;
-      margin-bottom: -80px;
-      clip-path: polygon(0 100%, 100% 93.1%, 100% 0, 0 6.9%);
-      -webkit-clip-path: polygon(0 100%, 100% 93.1%, 100% 0, 0 6.9%);
+    display: block;
+    position: relative;
+    right: -40px;
+    margin-bottom: -80px;
+    clip-path: polygon(0 100%, 100% 93.1%, 100% 0, 0 6.9%);
+    -webkit-clip-path: polygon(0 100%, 100% 93.1%, 100% 0, 0 6.9%);
   }
 
   @include media-query($from: desktop) {
-      right: -80px;
+    right: -80px;
   }
 }
 
@@ -145,7 +142,7 @@
   margin-bottom: -10px;
 
   @include media-query($from: tablet) {
-      margin-bottom: -20px;
+    margin-bottom: -20px;
   }
 }
 
@@ -158,7 +155,7 @@
   margin: 1em 0 0 0;
 
   @include media-query($from: tablet) {
-      margin: 0.5em 0 0 1.5em;
+    margin: 0.5em 0 0 1.5em;
   }
 }
 
