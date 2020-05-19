@@ -54,6 +54,10 @@
     color: $parent-light;
 }
 
+.hero-heading__caption--current{
+    opacity : 0.7;
+}
+
 .hero-heading__subsection {
     vertical-align: bottom;
     display: inline-block;
