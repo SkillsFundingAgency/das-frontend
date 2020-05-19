@@ -1,14 +1,13 @@
 .hero-heading {
-    transform: rotate(-6deg) skewX(-6deg);
+  transform: rotate(-6deg) skewX(-6deg);
+  margin-bottom: 40px;
+
+  @include media-query($from: 630px) {
+    margin-bottom: 50px;
+  }
+  @include media-query($from: tablet) {
     margin-bottom: 40px;
-
-    @include media-query($from: 630px) {
-        margin-bottom: 50px;
-    }
-
-    @include media-query($from: tablet) {
-        margin-bottom: 40px;
-    }
+  }
 }
 
 .hero-heading__caption {
