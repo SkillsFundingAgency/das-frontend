@@ -7,6 +7,7 @@ function AlertBanner($module, $cookieName) {
     this.$alertBanner = $module;
     this.$alertBannerParent = this.$alertBanner.parentNode;
     this.$alertBannerContinue = this.$alertBanner.querySelector('[data-alert-continue="true"]');
+    this.$alertBannerOpen = this.$alertBanner.querySelector('[data-alert-open="true"]');
     this.$alertBannerClose = this.$alertBanner.querySelector('[data-alert-close="true"]');
 }
 
@@ -21,6 +22,9 @@ AlertBanner.prototype.init = function () {
         }
         if (this.$alertBannerClose) {
             this.$alertBannerClose.addEventListener('click', this.removeBannerEvent.bind(this, false));
+        }
+        if (this.$alertBannerOpen) {
+            this.$alertBannerOpen.addEventListener('click', this.removeBannerEvent.bind(this, false));
         }
     }
 }
