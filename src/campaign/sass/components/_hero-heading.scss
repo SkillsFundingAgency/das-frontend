@@ -12,158 +12,156 @@
 }
 
 .hero-heading__caption {
-    display: block;
-    font-size: 14px;
-    font-weight: bold;
-    line-height: 1.4;
-    letter-spacing: -0.05em;
-    margin-bottom: 5px;
-    color: #ccc;
+  display: block;
+  font-size: 14px;
+  font-weight: bold;
+  line-height: 1.4;
+  letter-spacing: -0.05em;
+  margin-bottom: 5px;
+  color: #ccc;
 
-    @include media-query($from: tablet) {
-        font-size: 16px;
-    }
+  @include media-query($from: tablet) {
+    font-size: 16px;
+  }
 }
 
 .hero-heading__caption-separator {
-    display: inline-block;
-    padding: 0 5px;
+  display: inline-block;
+  padding: 0 5px;
 }
-
 
 
 .hero-heading__caption-link {
-    color: #fff;
-    vertical-align: bottom;
-    display: inline-block;
+  color: #fff;
+  vertical-align: bottom;
+  display: inline-block;
 
-    &:hover {
-        text-decoration: none;
-    }
+  &:hover {
+      text-decoration: none;
+  }
 }
 
 .hero-heading__caption--apprentice {
-    color: $apprentice;
+  color: $apprentice;
 }
 
 .hero-heading__caption--employer {
-    color: $employer;
+  color: $employer;
 }
 
 .hero-heading__caption--parent {
-    color: $parent-light;
+  color: $parent-light;
 }
 
 .hero-heading__caption--current{
-    opacity : 0.7;
+  opacity : 0.7;
 }
 
 .hero-heading__subsection {
-    vertical-align: bottom;
-    display: inline-block;
-    margin: 0;
-    max-width: 5em;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+  vertical-align: bottom;
+  display: inline-block;
+  margin: 0;
+  max-width: 5em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
 
-    &:hover {
-        max-width: none;
-    }
+  &:hover {
+      max-width: none;
+  }
 }
 
 .hero-heading__heading {
-    color: #fff;
-    margin: 0;
-    line-height: 1;
-    font-size: 36px;
-    text-indent: -.6em;
-    padding-left: .6em;
-    letter-spacing: -0.08em;
+  color: #fff;
+  margin: 0;
+  line-height: 1;
+  font-size: 36px;
+  text-indent: -.6em;
+  padding-left: .6em;
+  letter-spacing: -0.08em;
+  @include media-query($from: tablet) {
+      font-size: 40px;
+  }
 
-    @include media-query($from: tablet) {
-        font-size: 40px;
-    }
+  @include media-query($from: desktop) {
+      font-size: 68px;
+  }
 
-    @include media-query($from: desktop) {
-        font-size: 68px;
-    }
-
-    .hero-banner & {
-        margin-top: 100px;
-    }
+  .hero-banner & {
+      margin-top: 100px;
+  }
 }
 
 .hero-heading__heading-l {
-    font-size: 28px;
+  font-size: 28px;
 
-    @include media-query($from: tablet) {
-        font-size: 40px;
-    }
+  @include media-query($from: tablet) {
+      font-size: 40px;
+  }
 
-    @include media-query($from: desktop) {
-        font-size: 50px;
-    }
+  @include media-query($from: desktop) {
+      font-size: 50px;
+  }
 }
 
 .hero-heading__heading-m {
-    font-size: 28px;
+  font-size: 28px;
 
-    @include media-query($from: tablet) {
-        font-size: 36px;
-    }
+  @include media-query($from: tablet) {
+      font-size: 36px;
+  }
 
-    @include media-query($from: desktop) {
-        font-size: 42px;
-    }
+  @include media-query($from: desktop) {
+      font-size: 42px;
+  }
 }
 
 .hero-heading__content {
-    color: #fff;
-    padding-top: 1px;
+  color: #fff;
+  padding-top: 1px;
 }
 
 .hero-heading__image {
-    max-width: 100%;
-    display: none;
+  max-width: 100%;
+  display: none;
 
-    @include media-query($from: tablet) {
-        display: block;
-        position: relative;
-        right: -40px;
-        margin-bottom: -80px;
-        clip-path: polygon(0 100%, 100% 93.1%, 100% 0, 0 6.9%);
-        -webkit-clip-path: polygon(0 100%, 100% 93.1%, 100% 0, 0 6.9%);
-    }
+  @include media-query($from: tablet) {
+      display: block;
+      position: relative;
+      right: -40px;
+      margin-bottom: -80px;
+      clip-path: polygon(0 100%, 100% 93.1%, 100% 0, 0 6.9%);
+      -webkit-clip-path: polygon(0 100%, 100% 93.1%, 100% 0, 0 6.9%);
+  }
 
-    @include media-query($from: desktop) {
-        right: -80px;
-    }
+  @include media-query($from: desktop) {
+      right: -80px;
+  }
 }
 
 .hero-heading__hm-government-link {
-    display: inline-block;
-    margin-top: 20px;
-    margin-bottom: -10px;
+  display: inline-block;
+  margin-top: 20px;
+  margin-bottom: -10px;
 
-    @include media-query($from: tablet) {
-        margin-bottom: -20px;
-    }
+  @include media-query($from: tablet) {
+      margin-bottom: -20px;
+  }
 }
 
 .hero-heading__cancel-link {
-    display: inline-block;
-    color: #fff;
-    font-family: $font-family;
-    font-size: 1.4rem;
-    font-weight: $font-weight-bold;
-    margin: 1em 0 0 0;
+  display: inline-block;
+  color: #fff;
+  font-family: $font-family;
+  font-size: 1.4rem;
+  font-weight: $font-weight-bold;
+  margin: 1em 0 0 0;
 
-    @include media-query($from: tablet) {
-        margin: 0.5em 0 0 1.5em;
-    }
+  @include media-query($from: tablet) {
+      margin: 0.5em 0 0 1.5em;
+  }
 }
 
 .hero-heading__hm-government-logo {
-    display: block;
+  display: block;
 }
