@@ -10,7 +10,10 @@
 
 
 .list > li {
-  font-size: 21px;
+  font-size: 18px;
+  @include media-query($from: tablet) {
+    font-size: 21px;
+  }
   padding-left: 5px;
   @include media-query($from: tablet) {
     margin-bottom: spacing(1);
@@ -38,18 +41,18 @@
 }
 
 .list--apprentice {
-  & > li > a{
+  & > li > a {
     color: $apprentice;
   }
 }
 .list--employer {
-  & > li > a{
+  & > li > a {
     color: $employer;
   }
 }
 
 .list--bullet {
-  padding-left: spacing(4);
+  padding-left: 20px;
 }
 
 .list--bullet > li {
@@ -59,11 +62,11 @@
 .list--bullet > li:before {
   content: "";
   position: absolute;
-  left: spacing(4) * -1;
-  top: 8px;
+  left: -14px;
+  top: 11px;
   background-color: $text-colour;
-  width: 10px;
-  height: 10px;
+  width: 8px;
+  height: 8px;
   -webkit-border-radius: 50%;
   -moz-border-radius: 50%;
   border-radius: 50%;
