@@ -102,7 +102,7 @@ CookieBannerCampaign.prototype.checkCookie = function (name) {
 
 CookieBannerCampaign.prototype.getDomain = function () {
     if (window.location.hostname !== 'localhost') {
-        if (window.location.hostname.indexOf('.') > 2) {
+        if (window.location.hostname.match(/\./g).length > 2) {
             return '.' + window.location.hostname.slice(window.location.hostname.indexOf('.') + 1)
         } else {
             return '.' + window.location.hostname

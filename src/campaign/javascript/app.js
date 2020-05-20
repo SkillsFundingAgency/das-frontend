@@ -23,8 +23,6 @@ var appInit = function () {
   var currentDomain = window.location.hostname,
     cookieDomain = getDomain();
 
-  console.log(cookieDomain)
-
   if (currentDomain !== cookieDomain) {
     createCookie(this.$cookieName, '',{days: -1, domain: currentDomain})
     createCookie(this.$AnalyticscookieName, '',{days: -1, domain: currentDomain})
@@ -121,7 +119,7 @@ function addLoadEvent(func)
 var getDomain = function () {
 
   if (window.location.hostname !== 'localhost') {
-    if (window.location.hostname.indexOf('.') > 2) {
+    if (window.location.hostname.match(/\./g).length > 2) {
       return '.' + window.location.hostname.slice(window.location.hostname.indexOf('.') + 1)
     } else {
       return '.' + window.location.hostname
