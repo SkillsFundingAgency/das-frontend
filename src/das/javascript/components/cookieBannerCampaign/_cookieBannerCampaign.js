@@ -25,6 +25,15 @@ function CookieBannerCampaign($module) {
 
 CookieBannerCampaign.prototype.init = function () {
 
+    var currentDomain = window.location.hostname,
+        cookieDomain = this.getDomain();
+
+    if (currentDomain !== cookieDomain) {
+        this.createCookie(this.$cookieName, '',{days: -1, domain: currentDomain})
+        this.createCookie(this.$AnalyticscookieName, '',{days: -1, domain: currentDomain})
+        this.createCookie(this.$MarketingcookieName, '',{days: -1, domain: currentDomain})
+    }
+
     //if cookies dont exist, create them.
     if (this.checkCookie(this.$MarketingcookieName) == null) {
         this.createCookie(this.$MarketingcookieName, this.$MarketingcookieValue, this.$cookieDuration); // Create the cookie
