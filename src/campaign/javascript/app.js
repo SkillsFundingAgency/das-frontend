@@ -24,9 +24,9 @@ var appInit = function () {
     cookieDomain = getDomain();
 
   if (currentDomain !== cookieDomain) {
-    this.createCookie(this.$cookieName, '',{days: -1, domain: currentDomain})
-    this.createCookie(this.$AnalyticscookieName, '',{days: -1, domain: currentDomain})
-    this.createCookie(this.$MarketingcookieName, '',{days: -1, domain: currentDomain})
+    createCookie(this.$cookieName, '',{days: -1, domain: currentDomain})
+    createCookie(this.$AnalyticscookieName, '',{days: -1, domain: currentDomain})
+    createCookie(this.$MarketingcookieName, '',{days: -1, domain: currentDomain})
   }
 
   var topLevelLinks = document.querySelectorAll('.navigation__list-item > a'),
@@ -122,6 +122,18 @@ var getDomain = function () {
   return window.location.hostname !== 'localhost'
     ? '.' + window.location.hostname.slice(window.location.hostname.indexOf('.') + 1)
     : window.location.hostname;
+}
+
+var createCookie = function (name, value, days) {
+  if (days) {
+    var date = new Date();
+    date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+    var expires = "; expires=" + date.toGMTString();
+  }
+  else var expires = "";
+  if (this.$dropCookie) {
+    document.cookie = name + "=" + value + expires + "; path=/" + ';domain=' + this.getDomain()
+  }
 }
 
 addLoadEvent(appInit);
