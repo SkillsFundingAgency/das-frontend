@@ -23,6 +23,8 @@ var appInit = function () {
   var currentDomain = window.location.hostname,
     cookieDomain = getDomain();
 
+  console.log(cookieDomain)
+
   if (currentDomain !== cookieDomain) {
     createCookie(this.$cookieName, '',{days: -1, domain: currentDomain})
     createCookie(this.$AnalyticscookieName, '',{days: -1, domain: currentDomain})
@@ -74,8 +76,6 @@ var appInit = function () {
       this.classList.add('favourite-button--loading');
     });
   }
-
-
 }
 
 window.addEventListener('keydown', function(e){
@@ -119,9 +119,17 @@ function addLoadEvent(func)
 }
 
 var getDomain = function () {
-  return window.location.hostname !== 'localhost'
-    ? '.' + window.location.hostname.slice(window.location.hostname.indexOf('.') + 1)
-    : window.location.hostname;
+
+  if (window.location.hostname !== 'localhost') {
+    if (window.location.hostname.indexOf('.') > 2) {
+      return '.' + window.location.hostname.slice(window.location.hostname.indexOf('.') + 1)
+    } else {
+      return '.' + window.location.hostname
+    }
+  } else {
+    return window.location.hostname
+  }
+
 }
 
 var createCookie = function (name, value, days) {
@@ -132,7 +140,7 @@ var createCookie = function (name, value, days) {
   }
   else var expires = "";
   if (this.$dropCookie) {
-    document.cookie = name + "=" + value + expires + "; path=/" + ';domain=' + this.getDomain()
+    document.cookie = name + "=" + value + expires + "; path=/" + ';SameSite=None;domain=' + this.getDomain()
   }
 }
 

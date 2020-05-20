@@ -101,9 +101,15 @@ CookieBannerCampaign.prototype.checkCookie = function (name) {
 }
 
 CookieBannerCampaign.prototype.getDomain = function () {
-    return window.location.hostname !== 'localhost'
-      ? '.' + window.location.hostname.slice(window.location.hostname.indexOf('.') + 1)
-      : window.location.hostname;
+    if (window.location.hostname !== 'localhost') {
+        if (window.location.hostname.indexOf('.') > 2) {
+            return '.' + window.location.hostname.slice(window.location.hostname.indexOf('.') + 1)
+        } else {
+            return '.' + window.location.hostname
+        }
+    } else {
+        return window.location.hostname
+    }
 }
 
 CookieBannerCampaign.prototype.removeBanner = function () {
