@@ -20,6 +20,15 @@ var appInit = function () {
     header.classList.add("header--active");
   }
 
+  var currentDomain = window.location.hostname,
+    cookieDomain = getDomain();
+
+  if (currentDomain !== cookieDomain) {
+    this.createCookie(this.$cookieName, '',{days: -1, domain: currentDomain})
+    this.createCookie(this.$AnalyticscookieName, '',{days: -1, domain: currentDomain})
+    this.createCookie(this.$MarketingcookieName, '',{days: -1, domain: currentDomain})
+  }
+
   var topLevelLinks = document.querySelectorAll('.navigation__list-item > a'),
       topLevelLis = document.querySelectorAll('.navigation__list-item');
 
@@ -107,6 +116,12 @@ function addLoadEvent(func)
       func();
     }
   }
+}
+
+var getDomain = function () {
+  return window.location.hostname !== 'localhost'
+    ? '.' + window.location.hostname.slice(window.location.hostname.indexOf('.') + 1)
+    : window.location.hostname;
 }
 
 addLoadEvent(appInit);

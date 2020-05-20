@@ -25,15 +25,6 @@ function CookieBannerCampaign($module) {
 
 CookieBannerCampaign.prototype.init = function () {
 
-    var currentDomain = window.location.hostname,
-        cookieDomain = this.getDomain();
-
-    if (currentDomain !== cookieDomain) {
-        this.createCookie(this.$cookieName, '',{days: -1, domain: currentDomain})
-        this.createCookie(this.$AnalyticscookieName, '',{days: -1, domain: currentDomain})
-        this.createCookie(this.$MarketingcookieName, '',{days: -1, domain: currentDomain})
-    }
-
     //if cookies dont exist, create them.
     if (this.checkCookie(this.$MarketingcookieName) == null) {
         this.createCookie(this.$MarketingcookieName, this.$MarketingcookieValue, this.$cookieDuration); // Create the cookie
@@ -63,7 +54,6 @@ CookieBannerCampaign.prototype.removeBannerEvent = function (enableAll, event) {
 
     this.createCookie(this.$cookieName, this.$cookieValue, this.$cookieDuration); // Create the cookie
 
-    //if clicked continue, make sure all cookies are enabled
     if (enableAll) {
         this.createCookie(this.$MarketingcookieName, 'true', this.$cookieDuration);
         this.createCookie(this.$AnalyticscookieName, 'true', this.$cookieDuration);
@@ -114,10 +104,6 @@ CookieBannerCampaign.prototype.getDomain = function () {
     return window.location.hostname !== 'localhost'
       ? '.' + window.location.hostname.slice(window.location.hostname.indexOf('.') + 1)
       : window.location.hostname;
-}
-
-CookieBannerCampaign.prototype.eraseCookie = function (name) {
-    this.createCookie(name, "", -1);
 }
 
 CookieBannerCampaign.prototype.removeBanner = function () {
