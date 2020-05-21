@@ -24,9 +24,9 @@ var appInit = function () {
     cookieDomain = getDomain();
 
   if (currentDomain !== cookieDomain) {
-    createCookie(this.$cookieName, '',{days: -1, domain: currentDomain})
-    createCookie(this.$AnalyticscookieName, '',{days: -1, domain: currentDomain})
-    createCookie(this.$MarketingcookieName, '',{days: -1, domain: currentDomain})
+    createCookie('CookieConsent', '',{days: -1, domain: currentDomain})
+    createCookie('AnalyticsConsent', '',{days: -1, domain: currentDomain})
+    createCookie('MarketingConsent', '',{days: -1, domain: currentDomain})
   }
 
   var topLevelLinks = document.querySelectorAll('.navigation__list-item > a'),
