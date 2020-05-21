@@ -78,15 +78,26 @@ CookieBannerCampaign.prototype.setChecked = function (elem, cookie) {
 }
 
 CookieBannerCampaign.prototype.createCookie = function (name, value, days) {
+
+    var expires = "",
+        expiresYesterday = "";
+
     if (days) {
         var date = new Date();
+        var yesterday = new Date();
+
         date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-        var expires = "; expires=" + date.toGMTString();
+        yesterday.setTime(yesterday.getTime() + (-1 * 24 * 60 * 60 * 1000));
+
+        expires = "; expires=" + date.toGMTString();
+        expiresYesterday = "; expires=" + yesterday.toGMTString();
     }
-    else var expires = "";
-    if (this.$dropCookie) {
-        document.cookie = name + "=" + value + expires + "; path=/" + ';domain=' + this.getDomain()
-    }
+
+    // Attempt to delete older cookie first
+    document.cookie = name + "=" + expiresYesterday + "; path=/" + ';domain=' + window.location.hostname
+    // Recreate new cookie
+    document.cookie = name + "=" + value + expires + "; path=/" + ';domain=' + this.getDomain()
+
 }
 
 CookieBannerCampaign.prototype.checkCookie = function (name) {
