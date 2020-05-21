@@ -20,15 +20,6 @@ var appInit = function () {
     header.classList.add("header--active");
   }
 
-  var currentDomain = window.location.hostname,
-    cookieDomain = getDomain();
-
-  if (currentDomain !== cookieDomain) {
-    createCookie('CookieConsent', '',{days: -1, domain: currentDomain})
-    createCookie('AnalyticsConsent', '',{days: -1, domain: currentDomain})
-    createCookie('MarketingConsent', '',{days: -1, domain: currentDomain})
-  }
-
   var topLevelLinks = document.querySelectorAll('.navigation__list-item > a'),
       topLevelLis = document.querySelectorAll('.navigation__list-item');
 
@@ -76,6 +67,8 @@ var appInit = function () {
   }
 }
 
+addLoadEvent(appInit);
+
 window.addEventListener('keydown', function(e){
   if((e.key=='Escape'||e.key=='Esc')){
     hideAllMenus();
@@ -115,31 +108,3 @@ function addLoadEvent(func)
     }
   }
 }
-
-var getDomain = function () {
-
-  if (window.location.hostname !== 'localhost') {
-    if (window.location.hostname.match(/\./g).length > 2) {
-      return '.' + window.location.hostname.slice(window.location.hostname.indexOf('.') + 1)
-    } else {
-      return '.' + window.location.hostname
-    }
-  } else {
-    return window.location.hostname
-  }
-
-}
-
-var createCookie = function (name, value, days) {
-  if (days) {
-    var date = new Date();
-    date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-    var expires = "; expires=" + date.toGMTString();
-  }
-  else var expires = "";
-  if (this.$dropCookie) {
-    document.cookie = name + "=" + value + expires + "; path=/" + ';SameSite=None;domain=' + this.getDomain()
-  }
-}
-
-addLoadEvent(appInit);
