@@ -1,5 +1,4 @@
 function CookieBannerCampaign($module) {
-
     this.$dropCookie = true;                      // false disables the Cookie, allowing you to style the banner
     this.$cookieDuration = 365;                    // Number of days before the cookie expires, and the banner reappears
     this.$cookieName = 'CookieConsent';        // Name of our cookie
@@ -21,6 +20,8 @@ function CookieBannerCampaign($module) {
     this.$AnalyticscookieValue = 'false';
     this.$AnalyticsCheckbox = document.getElementById('cbxAnalyticsConsent');
     this.$AnalyticsCheckboxLabel = document.getElementById('lblAnalyticsConsent');
+
+    this.$cookieSettingsPage = document.querySelector('[data-module="cookieSettingsPage"]');
 }
 
 CookieBannerCampaign.prototype.init = function () {
@@ -34,7 +35,7 @@ CookieBannerCampaign.prototype.init = function () {
     }
 
     //hide cookie notice if already been displayed
-    if (this.checkCookie(this.$cookieName) == this.$cookieValue) {
+    if (this.checkCookie(this.$cookieName) === this.$cookieValue || this.$cookieSettingsPage !== null) {
         this.removeBanner();
         this.removeModal();
     } else {
@@ -78,7 +79,6 @@ CookieBannerCampaign.prototype.setChecked = function (elem, cookie) {
 }
 
 CookieBannerCampaign.prototype.createCookie = function (name, value, days) {
-
     var expires = "",
         expiresYesterday = "";
 
@@ -129,7 +129,7 @@ CookieBannerCampaign.prototype.removeBanner = function () {
 
     var that = this;
 
-    if (this.$Marketingcheckbox != null) {
+    if (this.$Marketingcheckbox) {
         this.$Marketingcheckbox.addEventListener('click', this.setChecked.bind(this, this.$Marketingcheckbox, this.$MarketingcookieName));
         this.$MarketingcheckboxLabel.addEventListener('keypress', function (event) {
             if (event.which === 13) {
@@ -137,6 +137,7 @@ CookieBannerCampaign.prototype.removeBanner = function () {
             }
         });
     }
+
     if (this.$AnalyticsCheckbox) {
         this.$AnalyticsCheckbox.addEventListener('click', this.setChecked.bind(this, this.$AnalyticsCheckbox, this.$AnalyticscookieName));
         this.$AnalyticsCheckboxLabel.addEventListener('keypress', function (event) {
