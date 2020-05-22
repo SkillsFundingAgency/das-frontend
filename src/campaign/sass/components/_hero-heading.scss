@@ -58,7 +58,7 @@
     font-size: 40px;
   }
   @include media-query($from: desktop) {
-    font-size: 68px;
+    font-size: 48px;
   }
   .hero-banner & {
     margin-top: 100px;
