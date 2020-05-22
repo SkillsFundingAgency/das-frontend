@@ -53,7 +53,7 @@ CookieBannerCampaign.prototype.init = function () {
 
 CookieBannerCampaign.prototype.removeBannerEvent = function (enableAll, event) {
 
-    this.createCookie(this.$cookieName, this.$cookieValue, this.$cookieDuration); // Create the cookie
+    this.createCookie(this.$cookieName, this.$cookieValue, this.$cookieDuration);
 
     if (enableAll) {
         this.createCookie(this.$MarketingcookieName, 'true', this.$cookieDuration);
@@ -76,6 +76,7 @@ CookieBannerCampaign.prototype.showBanner = function () {
 CookieBannerCampaign.prototype.setChecked = function (elem, cookie) {
     var value = elem.checked ? "true" : "false";
     this.createCookie(cookie, value, this.$cookieDuration);
+    this.createCookie(this.$cookieName, this.$cookieValue, this.$cookieDuration);
 }
 
 CookieBannerCampaign.prototype.createCookie = function (name, value, days) {
