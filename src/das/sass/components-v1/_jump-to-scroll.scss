@@ -1,0 +1,16 @@
+.das-jump-to-scroll {
+    & + a.govuk-link {
+        visibility: hidden;
+    }
+}
+
+.das-jump-to-scroll.das-jump-to-scroll--show {
+    @include govuk-media-query($from: tablet) {
+        & + a.govuk-link {
+            visibility: visible;
+            position: fixed;
+            top: 26px;
+        }
+    }
+}
+

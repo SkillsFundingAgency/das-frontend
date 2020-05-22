@@ -3,6 +3,7 @@ import Navigation from './components/navigation/_navigation'
 import CookieBanner from './components/cookieBanner/_cookieBanner'
 import CookieBannerCampaign from './components/cookieBannerCampaign/_cookieBannerCampaign'
 import CookieSettings from './components/cookieSettings/_cookieSettings'
+import JumpToScroll from './components/jumpToScroll/_jumpToScroll'
 import VideoPlayer from './components/video-player/videoplayer'
 import SmoothScroll from './components/smoothScroll/_smoothScroll'
 import GoogleMaps from './components/googleMaps/_googleMaps'
@@ -24,7 +25,7 @@ function nodeListForEach(nodes, callback) {
 function initAll() {
 
   var $gtmDataLayer = window.dataLayer;
-  
+
   var $navs = document.querySelectorAll('[data-module="navigation"]');
   nodeListForEach($navs, function ($navs) {
     new Navigation($navs).init();
@@ -54,6 +55,11 @@ function initAll() {
   if ($cookieSettings != null) {
     var $cookieSettingsOptions = $cookieSettings.dataset.options;
     new CookieSettings($cookieSettings, $cookieSettingsOptions);
+  }
+
+  var $jumpToScroll = document.querySelector('[data-module="jumpToScroll"]');
+  if ($jumpToScroll != null) {
+    JumpToScroll($jumpToScroll);
   }
 
   var $accordions = document.querySelectorAll('[data-module="accordion"]');
@@ -105,6 +111,7 @@ export {
   Navigation,
   CookieBanner,
   VideoPlayer,
+  //JumpToScroll,
   GoogleMaps,
   Radios,
   Tabs
