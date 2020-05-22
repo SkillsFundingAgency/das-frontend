@@ -1,12 +1,12 @@
-[data-module='jumpToScroll'] {
-    & + .app-back-to-top__link {
+.das-jump-to-scroll {
+    & + a.govuk-link {
         visibility: hidden;
     }
 }
 
-[data-module='jumpToScroll'].das-show-jump-to-scroll {
+.das-jump-to-scroll.das-jump-to-scroll--show {
     @include govuk-media-query($from: tablet) {
-        & + .app-back-to-top__link {
+        & + a.govuk-link {
             visibility: visible;
             position: fixed;
             top: 26px;
