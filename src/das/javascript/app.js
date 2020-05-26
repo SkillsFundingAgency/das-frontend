@@ -21,18 +21,11 @@ if ($('.das-js-back-link')) {
 
 dasJs.forms.init();
 
-// If the current domain does not equal the domain
-// that we would like to set our cookies against,
-// then let's remove any legacy cookies that may
-// be hanging around
 
-var currentDomain = window.location.hostname;
-var cookieDomain = window.GOVUK.getDomain();
+// Remove any legacy cookies that may be hanging around
+// (cookies with the same name, but without the domain set)
 
-if (currentDomain !== cookieDomain) {
-  window.GOVUK.cookie('DASSeenCookieMessage', '',{days: -1, domain: currentDomain})
-  window.GOVUK.cookie('AnalyticsConsent', '',{days: -1, domain: currentDomain})
-  window.GOVUK.cookie('MarketingConsent', '',{days: -1, domain: currentDomain})
-}
-
+document.cookie = "DASSeenCookieMessage=; expires=Thu, 01 Jan 1970 00:00:01 GMT; path=/"
+document.cookie = "AnalyticsConsent=; expires=Thu, 01 Jan 1970 00:00:01 GMT; path=/"
+document.cookie = "MarketingConsent=; expires=Thu, 01 Jan 1970 00:00:01 GMT; path=/"
 
