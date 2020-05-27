@@ -101,10 +101,6 @@ CookieBannerCampaign.prototype.checkCookie = function (name) {
     return null;
 }
 
-CookieBannerCampaign.prototype.eraseCookie = function (name) {
-    this.createCookie(name, "", -1);
-}
-
 CookieBannerCampaign.prototype.removeBanner = function () {
     if (this.$cookieBanner !== null)
         this.$cookieBannerParent.removeChild(this.$cookieBanner);

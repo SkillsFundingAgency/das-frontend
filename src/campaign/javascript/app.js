@@ -120,3 +120,7 @@ function addLoadEvent(func)
 }
 
 addLoadEvent(appInit);
+
+document.cookie = "CookieConsent=; expires=Thu, 01 Jan 1970 00:00:01 GMT; path=/"
+document.cookie = "AnalyticsConsent=; expires=Thu, 01 Jan 1970 00:00:01 GMT; path=/"
+document.cookie = "MarketingConsent=; expires=Thu, 01 Jan 1970 00:00:01 GMT; path=/"
