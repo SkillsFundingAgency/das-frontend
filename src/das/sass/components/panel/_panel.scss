@@ -1,0 +1,27 @@
+// Duplicate styles for .govuk-panel
+
+.das-panel {
+  @extend .govuk-panel;
+}
+
+.das-panel__title {
+  @extend .govuk-panel__title;
+}
+
+.das-panel__body {
+  @extend .govuk-panel__body;
+}
+
+.das-panel--featured {
+  background: govuk-colour("blue");
+  color: #fff;
+}
+
+.das-panel--muted {
+  background: govuk-colour("dark-grey");
+  color: #fff;
+}
+
+.das-panel--confirmation {
+  @extend .govuk-panel--confirmation;
+}
