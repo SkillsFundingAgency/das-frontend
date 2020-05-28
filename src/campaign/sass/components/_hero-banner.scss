@@ -273,6 +273,18 @@ $hero-text-colour: #fff;
   }
 }
 
+.hero-banner__background--apprentice-hosanna-2 {
+  background-image: linear-gradient(225deg, rgba(0,0,0,0) 30%, rgba(0,0,0,.8) 80%), url("../images/apprentice/hozanna-hero-2.jpg");
+  .hero-banner--right-aligned & {
+    -moz-transform: scaleX(-1);
+    -o-transform: scaleX(-1);
+    -webkit-transform: scaleX(-1);
+    transform: scaleX(-1);
+    filter: FlipH;
+    -ms-filter: "FlipH";
+  }
+}
+
 .hero-banner__background--apprentice-sarah {
   background-image: linear-gradient(255deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%), url("../images/apprentice/sarah-hero-blur.jpg");
   .hero-banner--right-aligned & {
@@ -287,21 +299,6 @@ $hero-text-colour: #fff;
 
 .hero-banner__background--apprentice-ella {
 background-image: linear-gradient(255deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%), url("../images/apprentice/ella-hero-blur.jpg");
-  .hero-banner--right-aligned & {
-    -moz-transform: scaleX(-1);
-    -o-transform: scaleX(-1);
-    -webkit-transform: scaleX(-1);
-    transform: scaleX(-1);
-    filter: FlipH;
-    -ms-filter: "FlipH";
-  }
-}
-
-.hero-banner__background--apprentice-michelle {
-  background-image: linear-gradient(255deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%), url("../images/apprentice/michelle-hero-1.jpg");
-  @include mq($until: desktop) {
-    background-position: 35% 0%;
-  }
   .hero-banner--right-aligned & {
     -moz-transform: scaleX(-1);
     -o-transform: scaleX(-1);
@@ -363,8 +360,8 @@ background-image: linear-gradient(255deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%),
     -ms-filter: "FlipH";
   }
 }
-.hero-banner__background--employer-matt{
-  background-image: linear-gradient(225deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%), url("../images/employer/matt-hero-1.jpg");
+.hero-banner__background--employer-ekansh {
+  background-image: linear-gradient(225deg, rgba(0,0,0,0) 30%, rgba(0,0,0,.8) 80%),url("../images/employer/ekansh-hero-1.jpg");
   .hero-banner--right-aligned & {
     -moz-transform: scaleX(-1);
     -o-transform: scaleX(-1);
@@ -375,8 +372,8 @@ background-image: linear-gradient(255deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%),
   }
 }
 
-.hero-banner__background--industry{
-  background-image: linear-gradient(225deg, rgba(0,0,0,0) 0%, rgba(0,0,0,1) 100%), url("../images/hero-banner-bg.jpg");
+.hero-banner__background--industry {
+  background-image: linear-gradient(225deg, rgba(0,0,0,0) 40%, rgba(0,0,0,.8)  80%),url("../images/hero-banner-bg.jpg");
   .hero-banner--right-aligned & {
     -moz-transform: scaleX(-1);
     -o-transform: scaleX(-1);
