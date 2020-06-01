@@ -75,9 +75,9 @@ var appInit = function () {
       this.classList.add('favourite-button--loading');
     });
   }
-
-
 }
+
+addLoadEvent(appInit);
 
 window.addEventListener('keydown', function(e){
   if((e.key=='Escape'||e.key=='Esc')){
@@ -118,5 +118,3 @@ function addLoadEvent(func)
     }
   }
 }
-
-addLoadEvent(appInit);
