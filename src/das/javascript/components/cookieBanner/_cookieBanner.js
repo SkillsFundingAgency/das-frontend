@@ -3,8 +3,7 @@ function CookieBanner (module) {
   this.settings = {
     seenCookieName: 'DASSeenCookieMessage',
     cookiePolicy: {
-      AnalyticsConsent: false,
-      MarketingConsent: false
+      AnalyticsConsent: false
     }
   }
   if ( !window.GOVUK.cookie(this.settings.seenCookieName) ) {
@@ -36,9 +35,12 @@ CookieBanner.prototype.setupCookieMessage = function () {
 CookieBanner.prototype.showCookieBanner = function () {
   var cookiePolicy = this.settings.cookiePolicy;
   this.module.cookieBanner.style.display = 'block';
+
+  // Create the default cookies based on settings
   Object.keys(cookiePolicy).forEach(function (cookieName) {
     window.GOVUK.cookie(cookieName, cookiePolicy[cookieName].toString(), { days: 365 })
   });
+
 }
 
 CookieBanner.prototype.hideCookieBanner = function () {

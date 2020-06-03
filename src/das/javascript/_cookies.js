@@ -23,16 +23,19 @@
   }
 
   window.GOVUK.setCookie = function (name, value, options) {
+
       if (typeof options === 'undefined') {
        options = {}
       }
-      var cookieString = name + '=' + value + '; path=/'
+
+      var cookieString = name + '=' + value + '; path=/;SameSite=None'
 
       if (options.days) {
         var date = new Date()
         date.setTime(date.getTime() + (options.days * 24 * 60 * 60 * 1000))
         cookieString = cookieString + '; expires=' + date.toGMTString()
       }
+
       if (!options.domain) {
         options.domain = window.GOVUK.getDomain()
       }
@@ -40,6 +43,7 @@
       if (document.location.protocol === 'https:') {
         cookieString = cookieString + '; Secure'
       }
+
       document.cookie = cookieString  + ';domain=' + options.domain
   }
 
@@ -59,7 +63,7 @@
   }
 
   window.GOVUK.getDomain = function () {
-    return window.location.hostname !== 'localhost' 
+    return window.location.hostname.indexOf('.') !== -1
     ? '.' + window.location.hostname.slice(window.location.hostname.indexOf('.') + 1)
     : window.location.hostname;
   }
