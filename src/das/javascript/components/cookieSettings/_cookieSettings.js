@@ -4,8 +4,7 @@ function CookieSettings (module, options) {
   this.settings = {
     seenCookieName: 'DASSeenCookieMessage',
     cookiePolicy: {
-      AnalyticsConsent: false,
-      MarketingConsent: false
+      AnalyticsConsent: false
     }
   }
 
@@ -52,13 +51,8 @@ CookieSettings.prototype.formSubmitted = function (event) {
     button[0].removeAttribute('disabled')
   }
 
-  if (this.settings.isModal) {
-    document.location.href = document.location.pathname
-  }
+  this.showConfirmationMessage()
 
-  if (!this.settings.isModal) {
-    this.showConfirmationMessage()
-  }
 }
 
 CookieSettings.prototype.showConfirmationMessage = function () {
