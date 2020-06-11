@@ -1,28 +1,30 @@
 
 function CookieSettings (module, options) {
-  this.module = module
+  this.module = module;
   this.settings = {
     seenCookieName: 'DASSeenCookieMessage',
+    env: window.GOVUK.getEnv(),
     cookiePolicy: {
       AnalyticsConsent: false
     }
-  }
+  };
 
-  var cookieBanner = document.querySelector('.das-cookie-banner')
-  cookieBanner.style.display = 'none'
+  var cookieBanner = document.querySelector('.das-cookie-banner');
+  cookieBanner.style.display = 'none';
 
   this.start()
 }
 
 CookieSettings.prototype.start = function () {
-  this.setRadioValues()
+  this.setRadioValues();
   this.module.addEventListener('submit', this.formSubmitted.bind(this))
 }
 
 CookieSettings.prototype.setRadioValues = function () {
-  var cookiePolicy = this.settings.cookiePolicy
+  var cookiePolicy = this.settings.cookiePolicy,
+      that = this;
   Object.keys(cookiePolicy).forEach(function (cookieName) {
-    var existingCookie = window.GOVUK.cookie(cookieName),
+    var existingCookie = window.GOVUK.cookie(cookieName + that.settings.env),
         radioButtonValue = existingCookie !== null ? existingCookie : cookiePolicy[cookieName],
         radioButton = document.querySelector('input[name=cookies-' + cookieName + '][value=' + (radioButtonValue === 'true' ? 'on' : 'off') + ']')
     radioButton.checked = true
@@ -31,21 +33,22 @@ CookieSettings.prototype.setRadioValues = function () {
 
 CookieSettings.prototype.formSubmitted = function (event) {
 
-  event.preventDefault()
+  event.preventDefault();
 
   var formInputs = event.target.getElementsByTagName("input"),
-      button = event.target.getElementsByTagName("button")
+      button = event.target.getElementsByTagName("button"),
+      that = this;
 
   for ( var i = 0; i < formInputs.length; i++ ) {
     var input = formInputs[i]
     if (input.checked) {
       var name = input.name.replace('cookies-', '')
       var value = input.value === "on"
-      window.GOVUK.setCookie(name, value, { days: 365 })
+      window.GOVUK.setCookie(name + that.settings.env, value, { days: 365 })
     }
   }
 
-  window.GOVUK.setCookie(this.settings.seenCookieName, true, { days: 365 })
+  window.GOVUK.setCookie(this.settings.seenCookieName + that.settings.env, true, { days: 365 })
 
   if (button.length > 0) {
     button[0].removeAttribute('disabled')
