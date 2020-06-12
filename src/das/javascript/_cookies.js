@@ -82,7 +82,7 @@
     if (domain.indexOf("pp-") >= 0) {
       return "PP"
     }
-    return null;
+    return "";
   }
 
 }(window))
