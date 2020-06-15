@@ -160,7 +160,7 @@
   .nav__list-item--has-children & {
     padding-right: 60px;
     @include media-query($from: $nav-breakpoint) {
-      padding-right: 40px;
+      padding-right: 30px;
     }
   }
   @include media-query($from: $nav-breakpoint) {
@@ -229,7 +229,7 @@
     width: 9px;
     height: 2px;
     top: 19px;
-    right: 15px;
+    right: 12px;
     &:before {
       width: 9px;
       height: 2px;
