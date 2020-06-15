@@ -64,7 +64,7 @@
   font-weight: bolder;
   display: block;
   margin-bottom: .5em;
-  color: $black;
+  color: inherit;
   @include media-query($from: tablet) {
     font-size: 21px;
   }
