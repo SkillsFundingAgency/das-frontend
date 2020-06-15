@@ -1,12 +1,8 @@
 .hero-heading {
   transform: rotate(-6deg) skewX(-6deg);
   margin-bottom: 40px;
-
   @include media-query($from: 630px) {
     margin-bottom: 50px;
-  }
-  @include media-query($from: tablet) {
-    margin-bottom: 40px;
   }
 }
 
@@ -18,7 +14,6 @@
   letter-spacing: -0.05em;
   margin-bottom: 5px;
   color: #ccc;
-
   @include media-query($from: tablet) {
     font-size: 16px;
   }
