@@ -48,6 +48,21 @@ $cbk-primary-colour: #000000;
     font-weight: 500;
   }
 
+.checkboxes__label-title {
+  @include font($size: 24);
+  font-weight: 700;
+  display: block;
+  margin-top: -10px;
+  margin-bottom: 5px;
+}
+
+.checkboxes__label-hint {
+  color: rgba(255,255,255,0.7);
+  @include font($size: 16);
+  display: block;
+  margin-bottom: 15px;
+}
+
   .checkboxes__hint {
     display: block;
     padding-right: $checkboxes-label-padding-left-right;
