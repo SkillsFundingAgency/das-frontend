@@ -1,0 +1,108 @@
+
+.tab-nav {
+  @include typography-common;
+  font-size: 19px;
+}
+
+.tab-nav__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  @include media-query($from: desktop) {
+    display: flex;
+    align-items: flex-end;
+  }
+}
+
+.tab-nav__list-item {
+  @include media-query($from: desktop) {
+    width: 20%;
+  }
+}
+
+.tab-nav__link {
+  color: #fff;
+  display: block;
+  padding: 15px 20px;
+  text-decoration: none;
+  @include media-query($from: tablet) {
+    padding: 15px 40px;
+  }
+  @include media-query($from: desktop) {
+    display: flex;
+    align-items: flex-end;
+    height: 6em;
+    padding: 20px;
+    position: relative;
+    font-size: 22px;
+  }
+  &:before {
+    content: "";
+    background: inherit;
+    display: block;
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    right: 0;
+    height: 0;
+    z-index: 10;
+    transition: all .5s ease-in-out;
+  }
+}
+
+.tab-nav__link:hover {
+  &:before {
+    height: 50px;
+  }
+}
+
+.tab-nav__link:active {
+
+}
+
+.tab-nav__link:focus {
+  outline: 3px solid $focus-colour;
+}
+
+.tab-nav__link-number {
+  font-weight: bold;
+  margin-right: 10px;
+  @include media-query($from: desktop) {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    font-size: 32px;
+  }
+}
+
+.tab-nav__link-text {
+  .tab-nav__link:active &,
+  .tab-nav__link:hover & {
+    text-decoration: underline;
+  }
+}
+
+.tab-nav__link--one {
+  background-color: $employer;
+  color: #000;
+}
+
+.tab-nav__link--two {
+  background-color: #333;
+}
+
+.tab-nav__link--three {
+  background-color: #4d4d4d;
+}
+
+.tab-nav__link--four {
+  background-color: #666;
+}
+
+.tab-nav__link--five {
+  background-color: gray;
+}
+
+.tab-nav__link--six {
+  background-color: #999;
+}
