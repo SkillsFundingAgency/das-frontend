@@ -46,7 +46,7 @@
     right: 0;
     height: 0;
     z-index: 10;
-    transition: all .5s ease-in-out;
+    transition: all .25s ease;
   }
 }
 
@@ -54,10 +54,6 @@
   &:before {
     height: 50px;
   }
-}
-
-.tab-nav__link:active {
-
 }
 
 .tab-nav__link:focus {

@@ -1,3 +1,40 @@
+.section-advice {
+  background: #efefef;
+}
+
+.section-advice__content {
+  padding: 20px;
+  @include media-query($from: tablet) {
+    padding: 40px;
+  }
+  @include media-query($from: desktop) {
+    padding: 40px 80px;
+  }
+}
+
+.section-advice--white {
+  background: #fff;
+}
+
+.section-advice--gray {
+  background: #e2e2e2;
+}
+
+.section-advice__caption {
+  @include typography-common;
+  color: $employer;
+  font-weight: 700;
+  font-size: 19px;
+  @include media-query($from: tablet) {
+    font-size: 24px;
+  }
+}
+
+.section-advice__heading {
+  @extend .heading-l;
+  margin-top: 0;
+}
+
 .section--slant {
   position: relative;
   margin-top: 50px;
