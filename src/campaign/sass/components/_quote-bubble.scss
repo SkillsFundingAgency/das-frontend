@@ -1,0 +1,85 @@
+.quote-bubble {
+  background: $employer;
+  color: black;
+  border-radius: 50%;
+  padding: 2em;
+  display: flex;
+  float: left;
+  font-weight: bold;
+  align-items: center;
+  justify-content: center;
+  border: 10px solid white;
+  box-shadow: 0 0 10px 0 rgba(0,0,0,0.1);
+  position: relative;
+  width: 14em;
+  height: 14em;
+  margin-right: 1em;
+  margin-bottom: 1em;
+  font-size: 18px;
+  @include media-query($from: tablet) {
+    font-size: 21px;
+  }
+  & > p {
+    font-weight: bold;
+  }
+}
+
+.quote-bubble__number {
+  position: absolute;
+  width: .75em;
+  height: .75em;
+  top: .15em;
+  left: .25em;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  padding: .5em;
+  font-family: nobel,sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: bold;
+  border: 5px solid white;
+  font-size: 1.8rem;
+  background: black;
+  color: white;
+  box-shadow: 0 0 10px 0 rgba(0,0,0,0.1);
+}
+
+.quote-bubble__wrap {
+  @include clearfix;
+  text-align: center;
+}
+
+.quote-bubble--1 {
+
+}
+
+.quote-bubble--2 {
+  background: #000;
+  color: #fff;
+  margin-left: 6em;
+  margin-top: -5em;
+  width: 10em;
+  height: 10em;
+  @include media-query($from: tablet) {
+    background: red;
+    margin-left: -2em;
+    margin-top: 2em;
+  }
+}
+
+.quote-bubble--3 {
+  margin-top: -4em;
+  width: 13em;
+  height: 13em;
+}
+
+.quote-bubble--4 {
+  background: #4d4d4d;
+  color: #fff;
+  margin-left: 5em;
+  margin-top: -4em;
+  width: 13em;
+  height: 13em;
+}
