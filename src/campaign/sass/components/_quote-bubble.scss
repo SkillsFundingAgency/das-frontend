@@ -13,8 +13,6 @@
   position: relative;
   width: 14em;
   height: 14em;
-  margin-right: 1em;
-  margin-bottom: 1em;
   font-size: 18px;
   @include media-query($from: tablet) {
     font-size: 21px;
@@ -49,37 +47,65 @@
 .quote-bubble__wrap {
   @include clearfix;
   text-align: center;
+  padding: 1em 0;
 }
 
 .quote-bubble--1 {
-
+  margin-bottom: -4em;
+  @include media-query($from: 580px) {
+    margin-bottom: 0;
+    margin-right: -2em;
+  }
 }
 
 .quote-bubble--2 {
   background: #000;
   color: #fff;
-  margin-left: 6em;
-  margin-top: -5em;
+  float: right;
   width: 10em;
   height: 10em;
-  @include media-query($from: tablet) {
-    background: red;
-    margin-left: -2em;
-    margin-top: 2em;
+  @include media-query($from: 580px) {
+    margin-left: 0;
+    margin-top: 3em;
+    float: left;
+  }
+  @include media-query($from: desktop) {
+
+    margin-top: 8em;
+    margin-right: -6em;
   }
 }
 
 .quote-bubble--3 {
   margin-top: -4em;
-  width: 13em;
-  height: 13em;
+  width: 11em;
+  height: 11em;
+  clear: left;
+  @include media-query($from: 580px) {
+    margin-left: 2em;
+    margin-top: -5em;
+    margin-right: -2em;
+  }
+  @include media-query($from: desktop) {
+    clear: none;
+    margin-top: 0;
+    margin-right: -2em;
+  }
 }
 
 .quote-bubble--4 {
   background: #4d4d4d;
   color: #fff;
-  margin-left: 5em;
   margin-top: -4em;
-  width: 13em;
-  height: 13em;
+  width: 9em;
+  height: 9em;
+  float: right;
+  @include media-query($from: 580px) {
+    float: left;
+    margin-top: -3em;
+  }
+  @include media-query($from: desktop) {
+    margin-right: 0;
+    margin-top: 2em;
+  }
 }
