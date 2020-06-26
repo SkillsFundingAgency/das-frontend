@@ -78,6 +78,12 @@
   }
 }
 
+body:not(.js-enabled){
+  .das-nojs-hide {/*hide if js is NOT enabled */
+    display: none;
+  }
+}
+
 // Utility hidden class, for server side code
 .das-hidden {
   display: none;
