@@ -286,14 +286,16 @@
 }
 
 .list--standards__number {
-  height: 1em;
-  width: 1em;
+  height: 1.3em;
+  width: 1.3em;
   text-align: center;
-  line-height: 1;
+  line-height: 1.3em;
   font-weight: bold;
   padding: 5px;
   border-radius: 50%;
   background: #000;
   color: #fff;
-  margin-right: 5px;
+  margin-right: 2px;
+  display: inline-block;
+  position: relative;
 }
