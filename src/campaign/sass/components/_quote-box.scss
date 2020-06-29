@@ -1,32 +1,12 @@
 .quote-box {
   @include typography-common();
-  padding: 100px 20px 80px;
-  margin: 0 0 40px;
+  padding: 50px 20px;
+  margin: 40px 0;
   background: #000;
   color: #fff;
   text-transform: uppercase;
   position: relative;
-  &:before {
-    content: '';
-    position: absolute;
-    border-style: solid;
-    top: 0;
-    left: 0;
-    border-width: 70px 700px 0 0;
-    border-color: transparent;
-    border-top-color: $apprentice-pale;
-  }
-  &:after {
-    content: '';
-    position: absolute;
-    border-style: solid;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    border-width: 0 0 70px 700px;
-    border-color: transparent;
-    border-bottom-color: $apprentice-pale;
-  }
+  transform: rotate(-6deg) skewX(-6deg);
 }
 
 .quote-box__quote {
@@ -35,6 +15,7 @@
   line-height: 1.3em;
   padding: 0;
   margin: 0 0 30px;
+  transform: rotate(6deg) skewX(6deg);
   &:before {
     width: 80px;
     height: 80px;
@@ -55,11 +36,15 @@
 .quote-box__cite {
   position: relative;
   font-weight: bold;
+  transform: rotate(6deg) skewX(6deg);
 }
 
 .quote-box__cite-person {
   color: $apprentice;
   display: block;
+  .section--employer & {
+    color: #fff;
+  }
 }
 
 .quote-box__cite-role {
@@ -77,6 +62,10 @@
   position: relative;
   z-index: 1;
   bottom: -20px;
+  .section--employer & {
+    color: #000;
+    background: #fff;
+  }
 }
 
 .quote-box__footer {

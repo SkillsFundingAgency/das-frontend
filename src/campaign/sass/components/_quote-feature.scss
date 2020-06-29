@@ -20,6 +20,9 @@
   border-bottom: $apprentice 2px solid;
   padding-bottom: 5px;
   text-transform: uppercase;
+  .section--employer & {
+    border-bottom-color: #fff;
+  }
 }
 
 .quote-feature__link {
