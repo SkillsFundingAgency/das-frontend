@@ -41,7 +41,7 @@
   }
 }
 
-.das-js-show {
+.das-js-show {/*hides elements if js is NOT enabled */
   display: none;
   .js-enabled & {
     display: block;
@@ -75,12 +75,6 @@
       clip-path: inset(50%) !important;
       border: 0 !important;
       white-space: nowrap !important;
-  }
-}
-
-body:not(.js-enabled){
-  .das-nojs-hide {/*hide if js is NOT enabled */
-    display: none;
   }
 }
 
