@@ -1,0 +1,29 @@
+.das-filter {
+  border: 1px solid $govuk-border-colour;
+}
+
+.das-filter__header {
+  border-bottom: 1px solid $govuk-border-colour;
+  padding: 10px 20px;
+}
+
+.das-filter__heading {
+  @extend .govuk-heading-m;
+  margin: 0;
+}
+
+.das-filter__body {
+  padding: 20px;
+}
+
+.das-filter__search-label {
+  @include govuk-typography-weight-bold;
+  font-size: 18px;
+  @include govuk-media-query($from: tablet) {
+    font-size: 24px;
+  }
+}
+
+.das-filter__button {
+
+}
