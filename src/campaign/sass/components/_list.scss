@@ -286,7 +286,7 @@
   left: 50%;
   height: 1em;
   width: 1em;
-  margin-left: -.5em;
+  margin-left: calc(-.5em - 10px);
   text-align: center;
   content: counter(results-counter);
   font-size: 2em;
