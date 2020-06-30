@@ -41,7 +41,7 @@
   }
 }
 
-.das-js-show {
+.das-js-show {/*hides elements if js is NOT enabled */
   display: none;
   .js-enabled & {
     display: block;
