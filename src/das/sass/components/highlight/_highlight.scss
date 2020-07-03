@@ -1,0 +1,7 @@
+.das-highlight {
+  background: govuk-colour(light-grey);
+  @include govuk-responsive-padding(4);
+  @include govuk-responsive-padding(5, "bottom");
+  @include govuk-responsive-margin(4, "top");
+  @include govuk-responsive-margin(4, "bottom");
+}
