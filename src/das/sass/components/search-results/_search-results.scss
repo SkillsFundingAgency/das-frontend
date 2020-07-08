@@ -5,15 +5,28 @@
 .das-search-results__list {
   list-style: none;
   padding: 0;
+  margin: 0;
+}
+
+.das-search-results__list--border {
+  border-top: 1px solid $govuk-border-colour;
+  border-bottom: 1px solid $govuk-border-colour;
 }
 
 .das-search-results__list-item {
   border-bottom: 1px solid $govuk-border-colour;
   padding: 15px 0;
+  @include govuk-media-query($from: desktop) {
+    padding: 20px 0;
+  }
+}
+
+.das-search-results__list-item:last-child {
+  border-bottom: none;
 }
 
 .das-search-results__heading {
-  margin-bottom: 5px;
+  @include govuk-responsive-margin(2, "bottom")
 }
 
 .das-search-results__body {
@@ -24,4 +37,9 @@
 .das-search-results__link {
   @include govuk-link-common;
   @include govuk-link-style-no-visited-state;
+}
+
+.das-search-results__meta {
+  margin-top: 10px;
+  margin-bottom: 0;
 }
