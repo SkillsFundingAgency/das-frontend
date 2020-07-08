@@ -60,6 +60,11 @@
   }
 }
 
+.das-filter__toggle {
+  width: auto;
+  @extend .govuk-button--secondary
+}
+
 .das-filter__tag {
   @include govuk-font(16);
   background-color: govuk-colour("white");

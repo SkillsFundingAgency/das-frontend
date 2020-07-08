@@ -55,28 +55,6 @@
   }
 }
 
-// Javascript hidden class(es)
-.js-enabled {
-  .das-js-hide {
-    display: none;
-  }
-  .js-hidden {
-    display: none;
-  }
-  .das-visually-hidden {/* only if js is enabled make visually hidden */
-      position: absolute !important;
-      width: 1px !important;
-      height: 1px !important;
-      margin: 0 !important;
-      padding: 0 !important;
-      overflow: hidden !important;
-      clip: rect(0 0 0 0) !important;
-      -webkit-clip-path: inset(50%) !important;
-      clip-path: inset(50%) !important;
-      border: 0 !important;
-      white-space: nowrap !important;
-  }
-}
 
 // Utility hidden class, for server side code
 .das-hidden {
@@ -107,7 +85,7 @@
 }
 
 .das-\!-display--block {
-  display: block;
+  display: block !important;
 }
 
 .das-show {
@@ -116,6 +94,42 @@
 
 .das-hide {
   display: none;
+}
+
+
+// Javascript hidden class(es)
+.js-enabled {
+  .das-js-hide {
+    display: none;
+  }
+  .js-hidden {
+    display: none;
+  }
+  .das-visually-hidden {/* only if js is enabled make visually hidden */
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    clip: rect(0 0 0 0) !important;
+    -webkit-clip-path: inset(50%) !important;
+    clip-path: inset(50%) !important;
+    border: 0 !important;
+    white-space: nowrap !important;
+  }
+
+  .das-js-hide-mobile-only {
+    @include govuk-media-query($until: tablet) {
+      display: none;
+    }
+  }
+  .das-js-show-mobile-only {
+    display: block;
+    @include govuk-media-query($from: tablet) {
+      display: none;
+    }
+  }
 }
 
 .das-sticky {
