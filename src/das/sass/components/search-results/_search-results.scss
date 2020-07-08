@@ -1,0 +1,27 @@
+.das-search-results {
+
+}
+
+.das-search-results__list {
+  list-style: none;
+  padding: 0;
+}
+
+.das-search-results__list-item {
+  border-bottom: 1px solid $govuk-border-colour;
+  padding: 15px 0;
+}
+
+.das-search-results__heading {
+  margin-bottom: 5px;
+}
+
+.das-search-results__body {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.das-search-results__link {
+  @include govuk-link-common;
+  @include govuk-link-style-no-visited-state;
+}
