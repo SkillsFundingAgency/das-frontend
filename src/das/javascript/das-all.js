@@ -12,6 +12,7 @@ import AlertBanner from './components/AlertBanner/_alertBanner'
 
 import Radios from './components/gds-v2/radios/radios'
 import Tabs from './components/gds-v2/tabs/tabs'
+import Showhide from "./components/showHide/_showHide";
 
 function nodeListForEach(nodes, callback) {
   if (window.NodeList.prototype.forEach) {
@@ -88,6 +89,11 @@ function initAll() {
   var $tabs = document.querySelectorAll('[data-module="tabs"]')
   nodeListForEach($tabs, function ($tabs) {
     new Tabs($tabs).init()
+  })
+
+  var $showHide = document.querySelectorAll('[data-module="das-show-hide"]')
+  nodeListForEach($showHide, function ($showHide) {
+    new Showhide($showHide).init()
   })
 
   new NetworkInformation($gtmDataLayer).init();

@@ -41,47 +41,10 @@
   }
 }
 
-.das-js-show {/*hides elements if js is NOT enabled */
-  display: none;
-  .js-enabled & {
-    display: block;
-  }
-}
 
-.das-js-show--inline {
-  display: none;
-  .js-enabled & {
-    display: inline;
-  }
-}
 
-// Javascript hidden class(es)
-.js-enabled {
-  .das-js-hide {
-    display: none;
-  }
-  .js-hidden {
-    display: none;
-  }
-  .das-visually-hidden {/* only if js is enabled make visually hidden */
-      position: absolute !important;
-      width: 1px !important;
-      height: 1px !important;
-      margin: 0 !important;
-      padding: 0 !important;
-      overflow: hidden !important;
-      clip: rect(0 0 0 0) !important;
-      -webkit-clip-path: inset(50%) !important;
-      clip-path: inset(50%) !important;
-      border: 0 !important;
-      white-space: nowrap !important;
-  }
-}
 
-// Utility hidden class, for server side code
-.das-hidden {
-  display: none;
-}
+
 
 // Breakable class, forces words to wrap.
 // Useful for email addresses and other user-generated content
@@ -107,15 +70,73 @@
 }
 
 .das-\!-display--block {
-  display: block;
+  display: block !important;
 }
 
 .das-show {
   display: block;
 }
 
-.das-hide {
+.das-hide,
+.das-hidden {
   display: none;
+}
+
+.das-\!-hide--mobile {
+  @include govuk-media-query($until: tablet) {
+    display: none !important;
+  }
+}
+
+.das-\!-show--mobile {
+  display: block !important;
+  @include govuk-media-query($from: tablet) {
+    display: none !important;
+  }
+}
+
+.das-\!-show--from-tablet {
+  @include govuk-media-query($from: tablet) {
+    display: block !important;
+  }
+}
+
+// Javascript hidden class(es)
+
+.js-enabled {
+  .das-js-hide,
+  .js-hidden {
+    display: none;
+  }
+  .das-visually-hidden {/* only if js is enabled make visually hidden */
+    position: absolute !important;
+    width: 1px !important;
+    height: 1px !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    clip: rect(0 0 0 0) !important;
+    -webkit-clip-path: inset(50%) !important;
+    clip-path: inset(50%) !important;
+    border: 0 !important;
+    white-space: nowrap !important;
+  }
+}
+
+// Show an element if JS is enabled
+.das-js-show {
+  display: none;
+  .js-enabled & {
+    display: block;
+  }
+}
+
+// Show an element (inline) if JS is enabled
+.das-js-show--inline {
+  display: none;
+  .js-enabled & {
+    display: inline;
+  }
 }
 
 .das-sticky {
