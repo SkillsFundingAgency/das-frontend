@@ -38,7 +38,12 @@ Showhide.prototype.handleClick = function (event) {
     $button.setAttribute('aria-expanded', !isSectionExpanded)
     this.changeButtonText($button, !isSectionExpanded)
     if (!isSectionExpanded) {
+      var focusId = $button.getAttribute('data-focus-id')
+      var focusIdExists = $section.querySelector('#' + focusId)
       $section.classList.add(this.sectionExpandedClass)
+      if (focusIdExists) {
+        focusIdExists.focus()
+      }
     } else {
       $section.classList.remove(this.sectionExpandedClass)
     }
