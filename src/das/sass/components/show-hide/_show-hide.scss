@@ -1,0 +1,14 @@
+.das-show-hide__button {
+  display: none;
+  .js-enabled & {
+    display: block;
+  }
+}
+
+.das-show-hide__section {
+  display: none;
+}
+
+.das-show-hide__section--show {
+  display: block;
+}
