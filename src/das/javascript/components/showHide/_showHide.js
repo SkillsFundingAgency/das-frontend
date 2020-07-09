@@ -20,7 +20,7 @@ Showhide.prototype.init = function () {
 
     sectionExpanded = that.isExpanded($section)
     $section.classList.add('das-show-hide__section')
-
+    that.changeButtonText($button, sectionExpanded)
     $button.setAttribute('aria-controls', controls)
     $button.setAttribute('aria-expanded', sectionExpanded)
     $button.removeAttribute('data-aria-controls')
@@ -36,6 +36,7 @@ Showhide.prototype.handleClick = function (event) {
     var $section = this.$module.querySelector('#' + hasAriaControls)
     var isSectionExpanded = this.isExpanded($section)
     $button.setAttribute('aria-expanded', !isSectionExpanded)
+    this.changeButtonText($button, !isSectionExpanded)
     if (!isSectionExpanded) {
       $section.classList.add(this.sectionExpandedClass)
     } else {
@@ -46,6 +47,11 @@ Showhide.prototype.handleClick = function (event) {
 
 Showhide.prototype.isExpanded = function ($section) {
   return $section.classList.contains(this.sectionExpandedClass)
+}
+
+Showhide.prototype.changeButtonText = function ($button, isExpanded) {
+  var additionalButtonString = $button.getAttribute('data-button-string')
+  $button.innerHTML = (!isExpanded ? 'Show' : 'Hide') + (additionalButtonString ? ' ' + additionalButtonString : '')
 }
 
 function nodeListForEach (nodes, callback) {
