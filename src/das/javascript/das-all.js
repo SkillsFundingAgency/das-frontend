@@ -91,7 +91,7 @@ function initAll() {
     new Tabs($tabs).init()
   })
 
-  var $showHide = document.querySelectorAll('[data-module="das-showhide"]')
+  var $showHide = document.querySelectorAll('[data-module="das-show-hide"]')
   nodeListForEach($showHide, function ($showHide) {
     new Showhide($showHide).init()
   })

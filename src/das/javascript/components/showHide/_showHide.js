@@ -1,7 +1,7 @@
 function Showhide ($module) {
   this.$module = $module
-  this.$buttons = $module.querySelectorAll('.das-showhide-button')
-  this.sectionExpandedClass = 'das-!-display--block'
+  this.$buttons = $module.querySelectorAll('.das-show-hide__button')
+  this.sectionExpandedClass = 'das-show-hide__section--show'
 }
 
 Showhide.prototype.init = function () {
@@ -19,6 +19,7 @@ Showhide.prototype.init = function () {
     }
 
     sectionExpanded = that.isExpanded($section)
+    $section.classList.add('das-show-hide__section')
 
     $button.setAttribute('aria-controls', controls)
     $button.setAttribute('aria-expanded', sectionExpanded)
@@ -31,11 +32,9 @@ Showhide.prototype.init = function () {
 Showhide.prototype.handleClick = function (event) {
   var $button = event.target
   var hasAriaControls = $button.getAttribute('aria-controls')
-
   if (hasAriaControls) {
     var $section = this.$module.querySelector('#' + hasAriaControls)
     var isSectionExpanded = this.isExpanded($section)
-
     $button.setAttribute('aria-expanded', !isSectionExpanded)
     if (!isSectionExpanded) {
       $section.classList.add(this.sectionExpandedClass)
