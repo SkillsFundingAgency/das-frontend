@@ -22,7 +22,7 @@ $blue-dark: darken($blue, 5%);
 .modal {
   display: none;
   &:before{
-    content: ""; 
+    content: "";
     display: none;
     background: rgba(0,0,0,.6);
     position: fixed;
@@ -32,12 +32,12 @@ $blue-dark: darken($blue, 5%);
     bottom: 0;
     z-index: 9999;
   }
-  
+
   &:target {
     display: block;
     &:before {
       display: block;
-    }  
+    }
     .modal-dialog{
       @include translate(0, 0);
       top: 0;
@@ -81,7 +81,7 @@ $blue-dark: darken($blue, 5%);
 .modal-dialog {
   background: #fefefe;
   position: fixed;
-  top: -100%;  
+  top: -100%;
   z-index: 10000;
   max-height: 100%;
   overflow: auto;
@@ -111,11 +111,15 @@ $blue-dark: darken($blue, 5%);
   position: fixed;
   top: 20px;
   right: 20px;
+
+  button.close,
   a.close {
+    border: none;
     display: block;
     height: 33px;
     width: 33px;
     background: #000;
+    cursor: pointer;
     &:focus {
       @include focus-outline
     }
