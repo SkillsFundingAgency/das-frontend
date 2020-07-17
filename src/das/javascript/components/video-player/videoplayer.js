@@ -54,7 +54,7 @@ VideoPlayer.prototype.initPlayer = function () {
     this.$playerElement = document.getElementById(this.$videoPlayerId);
     this.$videoWrap = this.$playerElement.parentNode;
     this.$id = this.$module.getAttribute('id');
-    var $idfocus = document.getElementById(this.$id);
+    var $idFocus = document.getElementById(this.$id);
 
     if (this.$playerClass != null) {
         this.$videoWrap.classList.add(this.$playerClass);
@@ -67,7 +67,7 @@ VideoPlayer.prototype.initPlayer = function () {
     this.$closeButton = document.getElementById('close-' + this.$videoPlayerId);
     this.$closeButton.addEventListener('click', this.close.bind(this));
     this.$closeButton.addEventListener('click', function(){
-        $idfocus.focus();
+        $idFocus.focus();
     });
 
     if (this.$trackingEnabled) {
