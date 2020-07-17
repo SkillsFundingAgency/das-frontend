@@ -160,6 +160,14 @@ $hero-text-colour: #fff;
       float: left;
     }
   }
+
+  & > a {
+    display: block;
+
+    &:focus {
+      @include focus-outline
+    }
+  }
 }
 
 .hero-banner__icon-play {
@@ -181,7 +189,7 @@ $hero-text-colour: #fff;
     height: 110px;
     width: 110px;
   }
-  
+
   .hero-banner--employer & {
     background: $employer;
   }
@@ -228,7 +236,7 @@ $hero-text-colour: #fff;
   right: 0;
   bottom: 0;
   z-index: -1;
-  background-size: cover;  
+  background-size: cover;
   background-position: 60% 0;
   background-repeat: no-repeat;
 }

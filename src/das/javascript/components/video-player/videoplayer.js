@@ -7,6 +7,7 @@ function VideoPlayer($module, $gtmDataLayer) {
     this.$videoPlayerId = this.$module.dataset.videoplayerid;
     this.$videoUrl = this.$module.dataset.videourl;
     this.$href = null;
+    this.$id = null;
     this.$player = null;
     this.$playerElement = null;
     this.$videoWrap = null;
@@ -17,7 +18,7 @@ function VideoPlayer($module, $gtmDataLayer) {
             <div class="video-player plyr__video-embed js-player visually-hidden" id="{videoPlayerId}">
                 <div class="video-player--inner-wrap">
                     <iframe src="{videoUrl}" allowfullscreen allowtransparency allow="autoplay"></iframe>
-                </div>            
+                </div>
             </div>
             <a href="#" class="button button-inverted video-player__unmute" id="unmute-{videoPlayerId}" tabindex="0">Unmute</a>
         </div>
@@ -52,6 +53,8 @@ VideoPlayer.prototype.initPlayer = function () {
     this.appendPlayer();
     this.$playerElement = document.getElementById(this.$videoPlayerId);
     this.$videoWrap = this.$playerElement.parentNode;
+    this.$id = this.$module.getAttribute('id');
+    var $idfocus = document.getElementById(this.$id);
 
     if (this.$playerClass != null) {
         this.$videoWrap.classList.add(this.$playerClass);
@@ -63,6 +66,9 @@ VideoPlayer.prototype.initPlayer = function () {
 
     this.$closeButton = document.getElementById('close-' + this.$videoPlayerId);
     this.$closeButton.addEventListener('click', this.close.bind(this));
+    this.$closeButton.addEventListener('click', function(){
+        $idfocus.focus();
+    });
 
     if (this.$trackingEnabled) {
         this.$gtm = new GoogleTagManager(this.$gtmDataLayer);
