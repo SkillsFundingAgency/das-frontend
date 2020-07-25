@@ -278,7 +278,7 @@
 
 .sidebar-panel--dark h2,
 .sidebar-panel--dark h3,
-.sidebar-panel--dark .fieldset__legend, 
+.sidebar-panel--dark .fieldset__legend,
 .sidebar-panel--dark .label {
   color: #fff;
 }
@@ -348,6 +348,27 @@
   margin-top: 0;
   margin-bottom: 15px;
   color: $grey-8;
+  a {
+    color: #fff;
+    text-decoration: none;
+    &:hover {
+      border-bottom: 2px solid #fff;
+    }
+    &[rel~="external"] {
+      &:after {
+        content: '';
+        display: inline-block;
+        height: 24px;
+        width: 24px;
+        background-image: url("../images/icon-link-external-white.svg");
+        background-size: contain;
+        background-repeat: no-repeat;
+        vertical-align: text-top;
+        margin-left: 10px;
+        margin-top: 3px;
+      }
+    }
+  }
 }
 
 .sidebar__panel-hero-link {
