@@ -278,7 +278,7 @@
 
 .sidebar-panel--dark h2,
 .sidebar-panel--dark h3,
-.sidebar-panel--dark .fieldset__legend, 
+.sidebar-panel--dark .fieldset__legend,
 .sidebar-panel--dark .label {
   color: #fff;
 }
@@ -348,6 +348,41 @@
   margin-top: 0;
   margin-bottom: 15px;
   color: $grey-8;
+}
+
+.sidebar__heading-link {//raw 'a' tag which looks like a heading
+  @include font($size: 24, $weight: bold);
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  &:hover {
+    border-bottom: 2px solid #fff;
+  }
+  &[rel~="external"] {
+    &:after {
+      content: '';
+      display: inline-block;
+      background-image: url("../images/icon-link-external-white.svg");
+      background-size: contain;
+      background-repeat: no-repeat;
+      vertical-align: text-top;
+      margin-left: 3px;
+      margin-top: 0;
+      height: 20px;
+      width: 20px;
+    }
+  }
+  @include media-query($from: desktop) {
+    position: relative;
+    top: 12px;
+
+    &[rel~="external"] {
+      &:after {
+        margin-top: 1px;
+        margin-left: 5px;
+      }
+    }
+  }
 }
 
 .sidebar__panel-hero-link {
