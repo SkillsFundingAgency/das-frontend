@@ -50,6 +50,11 @@
     color: $employer;
   }
 }
+.list--default {
+  & > li > a {
+    color: $parent;
+  }
+}
 
 .list--bullet {
   padding-left: 20px;
