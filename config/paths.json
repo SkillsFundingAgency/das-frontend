@@ -10,9 +10,11 @@
     "campaignSass": "./src/campaign/sass/**/*.scss",
     "campaignJs": "./src/campaign/javascript/*.js",
     "campaignImages": "./src/campaign/images/**/*",
-    "fiuSass": "./src/fiu/components/**/*.scss",
+    "fiuSass": "./src/fiu/**/*.scss",
+    "fiuJsLibs": "./src/fiu/libs/*.js",
     "fiuJs": "./src/fiu/components/**/*.js",
-    "fiuImages": "./src/fiu/images/**/*"
+    "fiuJsInit": "./src/fiu/app.js",
+    "fiuImages": "./src/fiu/assets/images/**/*"
   },
   "dist": {
     "dasCss": "./dist/css/",
@@ -24,6 +26,6 @@
     "campaignImages": "./dist/campaign/images/",
     "fiuCss": "./dist/fiu/css/",
     "fiuJs": "./dist/fiu/js/",
-    "fiuImages": "./dist/fiu/images/"
+    "fiuImages": "./dist/fiu/assets/images/"
   }
 }

@@ -1,0 +1,1 @@
+var examp2 = 'myExample2';

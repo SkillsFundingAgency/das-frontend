@@ -18,7 +18,7 @@ gulp.task('fiu-compile-sass', () => gulp
   .pipe(gulp.dest(paths.dist.fiuCss)));
 
 gulp.task('fiu-compile-js', function() {
-  return gulp.src(paths.src.fiuJs)
+  return gulp.src([paths.src.fiuJsLibs, paths.src.fiuJs, paths.src.fiuJsInit])
     .pipe(concat('app.min.js'))
     .pipe(gulp.dest(paths.dist.fiuJs));
 });
