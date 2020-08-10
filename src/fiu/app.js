@@ -1,4 +1,15 @@
+(function(){
 
-function initAll (options) {
-  //my init code here for components and libs code above
-}
+  var $exampleComm = document.getElementById('example');
+  if ($exampleComm != null) {
+    exampleComm($exampleComm);
+  };
+
+  var $oneOfTheseThings = document.querySelectorAll('[data-module="oneOfTheseThings"]');
+  for (let i = 0; i < $oneOfTheseThings.length; i++) {
+      oneOfTheseThings($oneOfTheseThings.item(i));
+  }
+
+})();
+
+
