@@ -11,7 +11,8 @@ nunjucks.configure(
   [
     'src/das/sass/components',
     'app/views',
-    'app/views/layouts',
+    'app/views/fiu',
+    'src/fiu/components/',
     'node_modules/govuk-frontend/',
     'node_modules/govuk-frontend/components/',
     'dist/campaign/components/',
