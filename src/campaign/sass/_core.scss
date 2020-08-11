@@ -71,7 +71,7 @@
   color: $text-colour;
   @include media-query($from: tablet) {
     padding-right: 40px;
-    min-height: 1100px;
+    min-height: 500px;
   }
   @include media-query($from: desktop) {
     padding-right: 80px;
