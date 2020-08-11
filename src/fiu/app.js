@@ -1,15 +1,7 @@
-(function(){
+const test = 1
 
-  var $exampleComm = document.getElementById('example');
-  if ($exampleComm != null) {
-    exampleComm($exampleComm);
-  };
+const anything = () => {
+  console.log(123)
+}
 
-  var $oneOfTheseThings = document.querySelectorAll('[data-module="oneOfTheseThings"]');
-  for (let i = 0; i < $oneOfTheseThings.length; i++) {
-      oneOfTheseThings($oneOfTheseThings.item(i));
-  }
-
-})();
-
-
+anything()

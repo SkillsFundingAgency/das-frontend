@@ -1,5 +1,6 @@
 'use strict'
 const gulp = require('gulp')
+const babel = require('gulp-babel');
 const sass = require('gulp-sass');
 const concat = require('gulp-concat');
 const paths = require('../../config/paths.json')
@@ -19,6 +20,7 @@ gulp.task('fiu-compile-sass', () => gulp
 
 gulp.task('fiu-compile-js', function() {
   return gulp.src([paths.src.fiuJsLibs, paths.src.fiuJs, paths.src.fiuJsInit])
+    .pipe(babel())
     .pipe(concat('app.min.js'))
     .pipe(gulp.dest(paths.dist.fiuJs));
 });
