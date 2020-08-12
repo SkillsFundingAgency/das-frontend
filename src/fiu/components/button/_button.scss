@@ -1,0 +1,23 @@
+.fiu-button {
+  @extend .govuk-button;
+  border-radius: 2px;
+  box-shadow: none;
+  background: $fiu-global-brand-colour;
+  font-family: $fiu-font-family;
+  text-transform: uppercase;
+  font-weight: $fiu-font-weight-bold;
+  font-size: 14px;
+  padding: .7em 1.5em;
+}
+
+.fiu-button--citizens {
+  background: $fiu-citizens-brand-colour;
+}
+
+.fiu-button--employers {
+  background: $fiu-employers-brand-colour;
+}
+
+.fiu-button--providers {
+  background: $fiu-providers-brand-colour;
+}
