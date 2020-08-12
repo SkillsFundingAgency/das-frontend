@@ -8,16 +8,60 @@
   font-weight: $fiu-font-weight-bold;
   font-size: 14px;
   padding: .7em 1.5em;
+  &:hover {
+    background: $fiu-global-link-hover-colour;
+  }
 }
 
 .fiu-button--citizens {
   background: $fiu-citizens-brand-colour;
+  &:hover {
+    background: $fiu-citizens-link-hover-colour;
+  }
 }
 
 .fiu-button--employers {
   background: $fiu-employers-brand-colour;
+  &:hover {
+    background: $fiu-employers-link-hover-colour;
+  }
 }
 
 .fiu-button--providers {
   background: $fiu-providers-brand-colour;
+  &:hover {
+    background: $fiu-providers-link-hover-colour;
+  }
+}
+
+
+.fiu-button--outlined {
+  background: #fff;
+  color: $fiu-global-link-colour;
+  border: 2px solid currentColor;
+  &:hover {
+    background: #fff;
+    color: $fiu-global-link-hover-colour;
+  }
+  &:active {
+    color: $fiu-global-link-hover-colour;
+  }
+  &.fiu-button--citizens {
+    color: $fiu-citizens-link-colour;
+    &:hover {
+      color: $fiu-citizens-link-hover-colour;
+    }
+  }
+  &.fiu-button--employers {
+    color: $fiu-employers-link-colour;
+    &:hover {
+      color: $fiu-employers-link-hover-colour;
+    }
+  }
+  &.fiu-button--providers {
+    color: $fiu-providers-link-colour;
+    &:hover {
+      color: $fiu-providers-link-hover-colour;
+    }
+  }
 }

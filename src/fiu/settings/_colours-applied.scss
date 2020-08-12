@@ -7,3 +7,8 @@ $fiu-global-link-colour:      $blue;
 $fiu-citizens-link-colour:    $green;
 $fiu-employers-link-colour:   $purple;
 $fiu-providers-link-colour:   $orange;
+
+$fiu-global-link-hover-colour:      darken($blue, 10%);
+$fiu-citizens-link-hover-colour:    darken($green, 10%);
+$fiu-employers-link-hover-colour:   darken($purple, 10%);
+$fiu-providers-link-hover-colour:   darken($orange, 10%);
