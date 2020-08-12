@@ -1,9 +1,47 @@
+<!doctype html>
+<html lang="en" class="govuk-template">
 
+<head>
+	<meta charset="utf-8">
+	<title></title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="theme-color" content="#0b0c0c">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
 
-{% include "header/header.html" %}
+	<meta property="og:title" content="">
+	<meta property="og:type" content="">
+	<meta property="og:url" content="">
+	<meta property="og:image" content="">
 
-{% block content %}
+	<link rel="apple-touch-icon" href="TODO">
 
-{% endblock %}
+	<link rel="stylesheet" href="https://use.typekit.net/xwy5uap.css">
+	<link rel="stylesheet" href="/fiu/css/all.css">
 
-{% include "footer/footer.html" %}
+	<meta property="og:image" content="TODO">
+
+</head>
+<body class="govuk-template__body">
+	<script>
+		document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');
+	</script>
+
+	<a href="#main" class="govuk-skip-link">Skip to main content</a>
+
+	{% include "header/header.html" %}
+
+    <main class="govuk-main-wrapper " id="main" role="main">
+        <div class="govuk-width-container">
+	        {% block content %}
+
+	        {% endblock %}
+        </div>
+    </main>
+
+	{% include "footer/footer.html" %}
+
+	<script src="/fiu/js/app.min.js"></script>
+
+</body>
+</html>
