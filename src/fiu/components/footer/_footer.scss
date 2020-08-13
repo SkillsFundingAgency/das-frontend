@@ -50,6 +50,10 @@
   height: 50px;
   max-width: 100%;
   display: inline-block;
+  margin-bottom: 2em;
+  @include govuk-media-query(tablet) {
+    margin-bottom: 0;
+  }
 }
 
 .fiu-footer__link {
@@ -87,6 +91,7 @@
 
 .fiu-footer__copyright {
   line-height: 1.5em;
+  margin-bottom: 3em;
   @include govuk-media-query(tablet) {
     margin-bottom: 0;
   }
