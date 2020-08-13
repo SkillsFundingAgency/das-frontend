@@ -1,7 +1,8 @@
 .fiu-footer {
+  @include fiu-typography-common;
   background: $fiu-footer-bg-colour;
   color: $fiu-footer-text-colour;
-  font-family: $fiu-font-family;
+  font-size: 18px;
 }
 
 .fiu-footer__row {
@@ -11,6 +12,8 @@
 
 .fiu-footer__heading {
   color: #fff;
+  font-size: 19px;
+  font-weight: $fiu-font-weight-bold;
 }
 
 .fiu-footer__apprenticeship-logo-wrap {
@@ -36,4 +39,10 @@
 
 .fiu-footer__link {
   color: $fiu-footer-link-colour;
+}
+
+.fiu-footer__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }

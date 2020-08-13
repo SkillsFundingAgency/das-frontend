@@ -1,10 +1,13 @@
 $fiu-font-family:       nobel, sans-serif;
+$fiu-font-weight-book:  300;
 $fiu-font-weight-bold:  700;
+
 
 .govuk-heading-xl,
 .govuk-heading-l,
 .govuk-heading-m,
 .govuk-heading-s,
 .govuk-heading-xs {
-  font-family: $fiu-font-family;
+  @include fiu-typography-common;
+  font-weight: $fiu-font-weight-bold;
 }
