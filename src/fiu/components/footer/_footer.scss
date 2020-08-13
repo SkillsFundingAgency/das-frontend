@@ -1,6 +1,7 @@
 .fiu-footer {
   background: $fiu-footer-bg-colour;
   color: $fiu-footer-text-colour;
+  font-family: $fiu-font-family;
 }
 
 .fiu-footer__row {
@@ -30,5 +31,5 @@
 }
 
 .fiu-footer__link {
-  color: $fiu-footer-link-colour;;
+  color: $fiu-footer-link-colour;
 }
