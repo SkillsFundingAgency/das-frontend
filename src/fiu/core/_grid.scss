@@ -1,0 +1,5 @@
+.fiu-grid-column-pull-right {
+  @include govuk-media-query(tablet) {
+    float: right;
+  }
+}
