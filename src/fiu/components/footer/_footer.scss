@@ -3,25 +3,42 @@
   background: $fiu-footer-bg-colour;
   color: $fiu-footer-text-colour;
   font-size: 18px;
+  line-height: 20px;
 }
 
 .fiu-footer__row {
   padding: 20px 0;
   text-align: center;
+  @include govuk-media-query(tablet) {
+    text-align: left;
+    margin-bottom: 2em;
+    padding: 30px 0;
+  }
+}
+
+.fiu-footer__row-flex {
+  @include govuk-media-query(tablet) {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    flex-direction: row-reverse;
+  }
 }
 
 .fiu-footer__heading {
   color: #fff;
+  margin: 0 0 .7em;
   font-size: 19px;
   font-weight: $fiu-font-weight-bold;
 }
 
 .fiu-footer__apprenticeship-logo-wrap {
   text-align: center;
-  padding: 30px 0;
+  padding: 20px 0;
   border-bottom: 1px solid #fff;
   @include govuk-media-query(tablet) {
     text-align: left;
+    padding: 30px 0;
   }
 }
 
@@ -32,17 +49,69 @@
 }
 
 .fiu-footer__hm-logo {
-  width: 200px;
+  height: 50px;
   max-width: 100%;
   display: inline-block;
+  margin-bottom: 2em;
+  @include govuk-media-query(tablet) {
+    margin-bottom: .2em;
+  }
 }
 
 .fiu-footer__link {
   color: $fiu-footer-link-colour;
+  &:focus {
+    @include govuk-focused-text;
+  }
 }
 
-.fiu-footer__list {
+.fiu-footer__inline-list,
+.fiu-footer__list{
   list-style: none;
   padding: 0;
   margin: 0;
+}
+
+.fiu-footer__inline-list-item {
+  margin: 0 0 .7em;
+  display: inline-block;
+  padding: 0 .7em;
+  line-height: 1;
+  border-right: 1px solid $dark-grey;
+  &:last-child {
+    border-right: 0;
+    @include govuk-media-query(tablet) {
+      padding-right: 0;
+    }
+  }
+}
+
+.fiu-footer__inline-list-title,
+.fiu-footer__list-item {
+  margin-bottom: .7em;
+  display: block;
+  @include govuk-media-query(tablet) {
+    display: inline-block;
+    padding: 0 .7em;
+    line-height: 1;
+    border-right: 1px solid $dark-grey;
+    &:last-child {
+      padding-right: 0;
+      border-right: 0;
+    }
+  }
+}
+
+.fiu-footer__content {
+  @include govuk-media-query(tablet) {
+    text-align: right;
+  }
+}
+
+.fiu-footer__copyright {
+  line-height: 1.5em;
+  margin-bottom: 3em;
+  @include govuk-media-query(tablet) {
+    margin-bottom: 0;
+  }
 }
