@@ -1,6 +1,6 @@
 $vertical-link-heights: 60px;
 $link-widths: 74px;
-$navpad: 20px;
+$navpad: 6px;
 
 @mixin arrow($bgcolour, $leftpos) {
     content: ' ';
@@ -33,11 +33,6 @@ $navpad: 20px;
   height: 62px;
 }
 
-.fiu-header__link {
-  display: inline-block;
-  width: 100%;
-}
-
 .fiu-header__navigation-wrap {
   display: block;
   padding: 0;
@@ -64,12 +59,20 @@ $navpad: 20px;
   text-align: center;
   position: relative;
 
+    &:last-child {
+      padding-right: 0;
+    }
+
     .fiu-button {
       vertical-align: baseline;
       vertical-align: unset;
       margin-bottom: 0;
       font-size: 13px;
     }
+}
+
+.fiu-header__navigation-item--active:after {
+  @include arrow($fiu-header-sub-bg-colour,#{$link-widths / 2 + $navpad});
 }
 
 $fiu-header__link: 'a.fiu-header__link, a.fiu-header__link:active, a.fiu-header__link:hover, a.fiu-header__link:visited';
@@ -80,20 +83,16 @@ $fiu-header__link: 'a.fiu-header__link, a.fiu-header__link:active, a.fiu-header_
   color: $fiu-header-link-colour;
 }
 
-.fiu-header__fav-row {
+.fiu-header__fav-row,
+.fiu-header_fav-row-bg {
   min-height: 36px;
+  background-color: $fiu-header-sub-bg-colour;
 }
 
-@media (min-width: 40.0625em) {/*>= desktop: match gds desktop govuk-grid-columns*/
-  .fiu-header__navigation-item--active:after {
-    @include arrow($fiu-header-bg-colour,#{$link-widths / 2 + $navpad});
-  }
-}
-
-@media (max-width: 40.0625em) {/* < desktop: match gds desktop govuk-grid-columns*/
+@media (max-width: 40.0625em) {/* tablets/mobiles: match gds desktop govuk-grid-columns*/
   .fiu-header__apprenticeship-logo {
     display: block;
-    margin: 20px auto 10px auto;
+    margin: 0 auto 10px auto;
     width: 50%;
     height: auto;
   }
