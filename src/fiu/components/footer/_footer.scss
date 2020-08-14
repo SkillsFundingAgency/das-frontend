@@ -7,11 +7,12 @@
 }
 
 .fiu-footer__row {
-  padding: 30px 0;
+  padding: 20px 0;
   text-align: center;
   @include govuk-media-query(tablet) {
     text-align: left;
     margin-bottom: 2em;
+    padding: 30px 0;
   }
 }
 
@@ -33,10 +34,11 @@
 
 .fiu-footer__apprenticeship-logo-wrap {
   text-align: center;
-  padding: 30px 0;
+  padding: 20px 0;
   border-bottom: 1px solid #fff;
   @include govuk-media-query(tablet) {
     text-align: left;
+    padding: 30px 0;
   }
 }
 
@@ -63,14 +65,31 @@
   }
 }
 
-.fiu-footer__list {
+.fiu-footer__inline-list,
+.fiu-footer__list{
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
+.fiu-footer__inline-list-item {
+  margin: 0 0 .7em;
+  display: inline-block;
+  padding: 0 .7em;
+  line-height: 1;
+  border-right: 1px solid $dark-grey;
+  &:last-child {
+    border-right: 0;
+    @include govuk-media-query(tablet) {
+      padding-right: 0;
+    }
+  }
+}
+
+.fiu-footer__inline-list-title,
 .fiu-footer__list-item {
   margin-bottom: .7em;
+  display: block;
   @include govuk-media-query(tablet) {
     display: inline-block;
     padding: 0 .7em;
