@@ -1,9 +1,111 @@
+$vertical-link-heights: 60px;
+$link-widths: 74px;
+$width: 74px;
+$pad: 20px;
+
 .fiu-header {
-  background: #eee;
-  padding: 20px 0;
+  background-color: $fiu-header-bg-colour;
+  padding: 0;
+  margin: 0;
 }
 
-.fiu-header__branding {
+.fiu-header__nav-row {
+  background-color: $white;
+}
+
+/*.fiu-header__logo-wrap {
+  padding: 0;
+}*/
+
+.fiu-header__apprenticeship-logo {
+  max-width: 100%;
+  display: inline-block;
+  margin-top: 12px;
+  height: 62px;
+}
+
+.fiu-header__navigation-wrap {
+  display: block;
+  padding: 0;
+}
+
+/*.fiu-header__menu-button {
+  @include govuk-media-query(desktop) {
+    display: none;
+  }
+}*/
+
+.govuk-header__navigation--fiu {
+  font-family: $fiu-font-family;
+  font-weight: $fiu-font-weight-bold;
+
+  min-height: $vertical-link-heights;
+  list-style: none;
+  display: block;
+  width: auto;
+  padding: 0;
+  margin: 0;
+
+  float: right; /* desktop */
+}
+
+.fiu-header__navigation-item {
+  display: inline-block;
+  padding: 10px $pad;
+  line-height: $vertical-link-heights;
+  min-height: $vertical-link-heights;
+  min-width: $link-widths;
+  text-align: center;
+  position: relative;
+
+    .fiu-button {
+      vertical-align: baseline;
+      vertical-align: unset;
+      margin-bottom: 0;
+    }
+
+  /*@include govuk-media-query(tablet) {
+    width: 100%;
+  }*/
+}
+
+/*.fiu-header__navigation-item--active {
+  border: 1px solid red;
+}*/
+
+.fiu-header__fav-row {
+  min-height: 36px;
+}
+
+
+
+.fiu-header__link:link {
+  text-decoration: none;
+
+  .fiu-header__navigation-item--active & {
+    color: green;
+  }
+
 
 }
+
+.fiu-header__navigation-item--active:after {
+  content: ' ';
+  display: inline-block;
+  position: absolute;
+  left: #{$width / 2 + $pad};
+  bottom: 0;
+  line-height: 0;
+
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-bottom: 10px solid $fiu-header-bg-colour;
+}
+
+
+
+
+
 
