@@ -52,7 +52,7 @@
   display: inline-block;
   margin-bottom: 2em;
   @include govuk-media-query(tablet) {
-    margin-bottom: 0;
+    margin-bottom: .2em;
   }
 }
 
