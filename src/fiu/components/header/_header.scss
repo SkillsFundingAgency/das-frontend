@@ -1,36 +1,40 @@
-$vertical-link-heights: 60px;
+$vertical-link-heights: 75px;
 $link-widths: 74px;
 $navpad: 6px;
 
-@mixin arrow($bgcolour, $leftpos) {
-    content: ' ';
-    display: inline-block;
-    position: absolute;
-    bottom: 0;
-    line-height: 0;
-    width: 0;
-    height: 0;
-    border-left: 6px solid transparent;
-    border-right: 6px solid transparent;
-    border-bottom: 10px solid $bgcolour;
-    left: $leftpos;
+@mixin arrow($bgcolour) {
+  content: ' ';
+  display: inline-block;
+  position: absolute;
+  bottom: 0;
+  line-height: 0;
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-bottom: 10px solid $bgcolour;
+  margin-left: -5px;
+  left: 50%;
 }
 
 .fiu-header {
   background-color: $fiu-header-bg-colour;
+  border-bottom: 1px solid $black;
   padding: 0;
   margin: 0;
 }
 
-.fiu-header__nav-row {
-  background-color: $white;
+.fiu-header__apprenticeship-logo-link {
+  padding-top: 1px;
+  display: block;
+  margin: 0 auto;
 }
 
 .fiu-header__apprenticeship-logo {
   max-width: 100%;
   display: inline-block;
-  margin-top: 12px;
-  height: 62px;
+  margin: 15px 0;
+  height: 60px;
 }
 
 .fiu-header__navigation-wrap {
@@ -58,21 +62,18 @@ $navpad: 6px;
   min-width: $link-widths;
   text-align: center;
   position: relative;
-
-    &:last-child {
-      padding-right: 0;
-    }
-
-    .fiu-button {
-      vertical-align: baseline;
-      vertical-align: unset;
-      margin-bottom: 0;
-      font-size: 13px;
-    }
+  &:last-child {
+    padding-right: 0;
+  }
+  .fiu-button {
+    vertical-align: unset;
+    margin-bottom: 0;
+    font-size: 13px;
+  }
 }
 
 .fiu-header__navigation-item--active:after {
-  @include arrow($fiu-header-sub-bg-colour,#{$link-widths / 2 + $navpad});
+  @include arrow($fiu-navigation-bg-colour);
 }
 
 $fiu-header__link: 'a.fiu-header__link, a.fiu-header__link:active, a.fiu-header__link:hover, a.fiu-header__link:visited';
@@ -83,17 +84,12 @@ $fiu-header__link: 'a.fiu-header__link, a.fiu-header__link:active, a.fiu-header_
   color: $fiu-header-link-colour;
 }
 
-.fiu-header__fav-row,
-.fiu-header_fav-row-bg {
-  min-height: 36px;
-  background-color: $fiu-header-sub-bg-colour;
-}
-
 @media (max-width: 40.0625em) {/* tablets/mobiles: match gds desktop govuk-grid-columns*/
   .fiu-header__apprenticeship-logo {
     display: block;
-    margin: 0 auto 10px auto;
-    width: 50%;
+    margin: 10px auto;
+    padding-top: 1px;
+    width: 140px;
     height: auto;
   }
   .govuk-header__navigation--fiu {
@@ -110,9 +106,5 @@ $fiu-header__link: 'a.fiu-header__link, a.fiu-header__link:active, a.fiu-header_
   }
   .fiu-header__navigation-item:last-child {
     display: none;
-  }
-
-  .fiu-header__navigation-item--active:after {
-    @include arrow($mid-grey,44%);
   }
 }
