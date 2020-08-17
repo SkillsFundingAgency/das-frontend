@@ -5,6 +5,12 @@
   margin-bottom: 15px;
   height: 100%;
   position: relative;
+  display: block;
+  color: $fiu-text-colour;
+  text-decoration: none;
+  &:focus {
+    @include fiu-focused-block;
+  }
 }
 
 .fiu-card__category {
