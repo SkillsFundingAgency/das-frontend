@@ -1,4 +1,5 @@
 {% extends "_layout.html" %}
+{% from "card/macro.njk" import fiuCard %}
 {% from "panel/macro.njk" import fiuPanel %}
 
 {% block content %}
@@ -23,16 +24,26 @@
 </div>
 <div class="govuk-grid-row">
 	<div class="govuk-grid-column-one-quarter">
-		{% include "card/card.html" %}
+		{{ fiuCard({
+			category: "Getting started"
+		}) }}
 	</div>
 	<div class="govuk-grid-column-one-quarter">
-        {% include "card/card.html" %}
+        {{ fiuCard({
+            category: "Getting started"
+        }) }}
     </div>
     <div class="govuk-grid-column-one-quarter">
-        {% include "card/card.html" %}
+        {{ fiuCard({
+            type: "employers",
+            category: "Getting started"
+        }) }}
     </div>
     <div class="govuk-grid-column-one-quarter">
-        {% include "card/card.html" %}
+        {{ fiuCard({
+	        type: "employers",
+	        category: "Getting started"
+	    }) }}
     </div>
 </div>
 
