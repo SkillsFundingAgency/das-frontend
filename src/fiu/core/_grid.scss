@@ -3,3 +3,10 @@
     float: right;
   }
 }
+
+.fiu-flex-row {
+  @include govuk-media-query(tablet) {
+    display: flex;
+    margin-bottom: 30px;
+  }
+}

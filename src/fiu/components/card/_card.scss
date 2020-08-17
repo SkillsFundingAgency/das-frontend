@@ -1,8 +1,10 @@
 .fiu-card {
   @include fiu-typography-common;
   background: $light-grey;
-  padding: 20px;
+  padding: 20px 20px 40px;
   margin-bottom: 15px;
+  height: 100%;
+  position: relative;
 }
 
 .fiu-card__category {
@@ -32,6 +34,8 @@
   display: inline-block;
   font-weight: $fiu-font-weight-bold;
   color: $fiu-global-link-colour;
+  position: absolute;
+  bottom: 20px;
   &:hover {
     color: $fiu-global-link-hover-colour;
   }
@@ -45,12 +49,18 @@
   &:hover {
     color: $fiu-citizens-link-hover-colour;
   }
+  &:focus {
+    color: inherit;
+  }
 }
 
 .fiu-card__link--employers {
   color: $fiu-employers-link-colour;
   &:hover {
     color: $fiu-employers-link-hover-colour;
+  }
+  &:focus {
+    color: inherit;
   }
 }
 
