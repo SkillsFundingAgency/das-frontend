@@ -20,7 +20,3 @@ $fiu-font-weight-bold:  700;
 .fiu-article > p:not([class]) {
   @extend .govuk-body;
 }
-
-.fiu-article > a {
-  @extend .govuk-link;
-}
