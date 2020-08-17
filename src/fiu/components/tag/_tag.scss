@@ -1,0 +1,11 @@
+.fiu-tag {
+  @extend .govuk-tag;
+}
+
+.fiu-tag--citizens {
+  background: $fiu-citizens-brand-colour;
+}
+
+.fiu-tag--employers {
+  background: $fiu-employers-brand-colour;
+}

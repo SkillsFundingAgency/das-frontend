@@ -2,6 +2,7 @@
   @include fiu-typography-common;
   background: $light-grey;
   padding: 15px;
+  margin-bottom: 15px;
 }
 
 .fiu-card__category {
@@ -23,7 +24,7 @@
 }
 
 .fiu-card__content {
-
+  margin-bottom: 0;
 }
 
 .fiu-card__link {

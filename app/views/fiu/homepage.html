@@ -3,11 +3,27 @@
 {% block content %}
 
 <h1 class="govuk-heading-xl">Fire it up</h1>
-
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-one-half">
+		{% include "panel/panel.html" %}
+	</div>
+	<div class="govuk-grid-column-one-half">
+        {% include "panel/panel.html" %}
+    </div>
+</div>
 <div class="govuk-grid-row">
 	<div class="govuk-grid-column-one-quarter">
 		{% include "card/card.html" %}
 	</div>
+	<div class="govuk-grid-column-one-quarter">
+        {% include "card/card.html" %}
+    </div>
+    <div class="govuk-grid-column-one-quarter">
+        {% include "card/card.html" %}
+    </div>
+    <div class="govuk-grid-column-one-quarter">
+        {% include "card/card.html" %}
+    </div>
 </div>
 
 {% endblock %}
