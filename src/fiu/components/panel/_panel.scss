@@ -4,3 +4,20 @@
   padding: 30px;
   margin-bottom: 15px;
 }
+
+.fiu-panel__tag {
+  margin-bottom: 2em;
+}
+
+.fiu-panel__heading {
+
+}
+
+.fiu-panel__content {
+  @extend .govuk-body-l;
+  @include fiu-typography-common;
+}
+
+.fiu-panel__button {
+  margin: 0;
+}
