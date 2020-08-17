@@ -1,14 +1,24 @@
 {% extends "_layout.html" %}
+{% from "panel/macro.njk" import fiuPanel %}
 
 {% block content %}
 
-<h1 class="govuk-heading-xl">Fire it up</h1>
+<h1 class="govuk-heading-xl">Apprenticeships</h1>
+<p class="govuk-body-l">Connecting people with ambition to business with vision </p>
 <div class="govuk-grid-row">
 	<div class="govuk-grid-column-one-half">
-		{% include "panel/panel.html" %}
+		{{ fiuPanel({
+            heading: "Become an apprentice",
+            html: "Everything you need to know about becoming an appretice"
+        }) }}
 	</div>
 	<div class="govuk-grid-column-one-half">
-        {% include "panel/panel.html" %}
+        {{ fiuPanel({
+            type: "employers",
+            tag: "Employers",
+            heading: "Hire an apprentice",
+            html: "Find out how to hire an apprentice and what you need to do"
+        }) }}
     </div>
 </div>
 <div class="govuk-grid-row">
