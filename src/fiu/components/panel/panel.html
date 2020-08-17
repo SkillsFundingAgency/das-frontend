@@ -1,9 +1,8 @@
 {% set type = params.type if params.type else 'citizens' %}
-{% set tag = params.tag if params.tag else 'Apprentices' %}
 
 <div class="fiu-panel">
-	<strong class="fiu-tag fiu-tag--{{ type }} fiu-panel__tag">{{ tag }}</strong>
+	{% if params.tag %}<strong class="fiu-tag fiu-tag--{{ type }} fiu-panel__tag">{{ params.tag }}</strong>{% endif %}
 	<h2 class="govuk-heading-l fiu-panel__heading">{{ params.heading }}</h2>
 	<p class="fiu-panel__content">{{ params.html | safe if params.html else params.text }}</p>
-	<a href="#" class="fiu-button fiu-button--{{ type }} fiu-panel__button">Learn more</a>
+	<a href="hub" class="fiu-button fiu-button--{{ type }} fiu-panel__button">Learn more</a>
 </div>
