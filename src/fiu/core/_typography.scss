@@ -12,6 +12,15 @@ $fiu-font-weight-bold:  700;
 }
 
 .govuk-body-l,
-.govuk-body {
+.govuk-body,
+.govuk-list {
   @include fiu-typography-common;
+}
+
+.fiu-article > p:not([class]) {
+  @extend .govuk-body;
+}
+
+.fiu-article > a {
+  @extend .govuk-link;
 }
