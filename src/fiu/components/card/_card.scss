@@ -42,10 +42,16 @@
 
 .fiu-card__link--citizens {
   color: $fiu-citizens-link-colour;
+  &:hover {
+    color: $fiu-citizens-link-hover-colour;
+  }
 }
 
 .fiu-card__link--employers {
   color: $fiu-employers-link-colour;
+  &:hover {
+    color: $fiu-employers-link-hover-colour;
+  }
 }
 
 
