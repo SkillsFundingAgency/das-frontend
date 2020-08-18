@@ -6,3 +6,7 @@
 .fiu-template__body {
   @extend .govuk-template__body;
 }
+
+.fiu-feature-row {
+  background: $black;
+}

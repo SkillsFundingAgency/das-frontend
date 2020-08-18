@@ -1,8 +1,9 @@
 .fiu-page-header {
     @include fiu-typography-common;
-    background-color: $light-grey;
+    background-color: $black;
     padding: 1px 0 0;
-    margin: 0 0 15px 0;
+    margin: 0 0 15px;
+    color: $white;
 }
 
 .fiu-page-header__wrap {
@@ -15,13 +16,16 @@
     line-height: 14px;
     padding-top: 20px;
     margin-bottom: 30px;
-
+    color: $white;
     @include govuk-media-query(tablet) {
         padding-top: 0;
     }
-
     li:last-child {
-        color: $dark-grey;
+
+    }
+
+    .govuk-breadcrumbs__link {
+        color: inherit;
     }
 }
 
@@ -31,6 +35,7 @@
 
 .fiu-page-heading__title {
     margin-bottom: 30px;
+    color: inherit;
 }
 
 .fiu-page-header__content {
