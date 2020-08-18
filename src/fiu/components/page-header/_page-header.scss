@@ -17,7 +17,7 @@
     margin-bottom: 30px;
 
     @include govuk-media-query(tablet) {
-        padding-top: 0px;
+        padding-top: 0;
     }
 
     li:last-child(){
@@ -44,9 +44,4 @@
   max-width: 100%;
   display: inline-block;
   margin: 30px 0 0 0;
-
-  @include govuk-media-query(tablet) {
-
-
-  }
 }
