@@ -3,11 +3,6 @@
     background-color: $light-grey;
     padding: 0;
     margin: 0 0 15px 0;
-
-
-    .fiu-tag {
-        margin: 0 0 15px 0;
-    }
 }
 
 .fiu-page-header__wrap {
@@ -30,6 +25,11 @@
     }
 }
 
+.fiu-page-header__tag {
+    margin-bottom: 15px;
+    margin-bottom: 1.3em;
+}
+
 .fiu-page-heading__title {
     margin-bottom: 30px;
 }
@@ -44,7 +44,6 @@
   max-width: 100%;
   display: inline-block;
   margin: 30px 0 0 0;
-  border: 1px dashed black;
 
   @include govuk-media-query(tablet) {
 
