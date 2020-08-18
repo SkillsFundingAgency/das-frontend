@@ -1,7 +1,7 @@
 .fiu-page-header {
     @include fiu-typography-common;
     background-color: $light-grey;
-    padding: 0;
+    padding: 1px 0 0;
     margin: 0 0 15px 0;
 }
 

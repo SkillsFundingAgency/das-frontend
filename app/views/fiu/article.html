@@ -2,9 +2,12 @@
 {% from "card/macro.njk" import fiuCard %}
 {% from "panel/macro.njk" import fiuPanel %}
 
+{% block preMainContent %}
+{% include "page-header/page-header.html" %}
+{% endblock %}
+
 {% block content %}
 
-<h1 class="govuk-heading-xl">Page header</h1>
 <div class="govuk-grid-row">
 	<div class="govuk-grid-column-two-thirds">
 		<article class="fiu-article">
