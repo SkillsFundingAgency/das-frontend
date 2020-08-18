@@ -14,12 +14,20 @@
 }
 
 .fiu-card__category {
+  @include govuk-clearfix;
+}
+
+.fiu-card__category-link {
   text-transform: uppercase;
-  text-align: right;
+  float: right;
   font-size: 8px;
-  display: block;
+  display: inline-block;
   letter-spacing: 1px;
   color: $dark-grey;
+  text-decoration: none;
+  &:hover {
+    color: $black;
+  }
   &:focus {
     @include govuk-focused-text;
   }

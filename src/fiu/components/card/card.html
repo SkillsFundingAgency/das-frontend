@@ -2,7 +2,9 @@
 {% set category = params.category if params.category else 'Apprentices' %}
 
 <div class="fiu-card">
-	<span class="fiu-card__category">{{ category }}</span>
+	<span class="fiu-card__category">
+		<a class="fiu-card__category-link" href="/fiu/landing">{{ category }}</a>
+	</span>
 	<h3 class="fiu-card__heading">{{ params.heading }}</h3>
 	<p class="fiu-card__content">{{ params.html | safe if params.html else params.text }}</p>
 	<a href="/fiu/article" class="fiu-card__link fiu-card__link--{{ type }}">Learn more</a>
