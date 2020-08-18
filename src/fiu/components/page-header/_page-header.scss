@@ -1,0 +1,53 @@
+.fiu-page-header {
+    @include fiu-typography-common;
+    background-color: $light-grey;
+    padding: 0;
+    margin: 0 0 15px 0;
+
+
+    .fiu-tag {
+        margin: 0 0 15px 0;
+    }
+}
+
+.fiu-page-header__wrap {
+    padding-top: 15px;
+    padding-bottom: 30px;
+}
+
+.fiu-page-header__breadcrumbs {
+    font-size: 14px;
+    line-height: 14px;
+    padding-top: 20px;
+    margin-bottom: 30px;
+
+    @include govuk-media-query(tablet) {
+        padding-top: 0px;
+    }
+
+    li:last-child(){
+        color: $dark-grey;
+    }
+}
+
+.fiu-page-heading__title {
+    margin-bottom: 30px;
+}
+
+.fiu-page-header__content {
+    font-size: 19px;
+    line-height: 24px;
+}
+
+.fiu-page-header__hm-logo {
+  height: 30px;
+  max-width: 100%;
+  display: inline-block;
+  margin: 30px 0 0 0;
+  border: 1px dashed black;
+
+  @include govuk-media-query(tablet) {
+
+
+  }
+}

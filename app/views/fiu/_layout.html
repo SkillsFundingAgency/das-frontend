@@ -33,7 +33,10 @@
 	{% include "navigation/navigation.html" %}
 
     <main class="govuk-main-wrapper " id="main" role="main">
+		{% include "page-header/page-header.html" %}
+
         <div class="fiu-width-container">
+
 	        {% block content %}
 
 	        {% endblock %}
