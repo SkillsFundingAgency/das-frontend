@@ -1,0 +1,22 @@
+$fiu-font-family:       nobel, sans-serif;
+$fiu-font-weight-book:  300;
+$fiu-font-weight-bold:  700;
+
+.govuk-heading-xl,
+.govuk-heading-l,
+.govuk-heading-m,
+.govuk-heading-s,
+.govuk-heading-xs {
+  @include fiu-typography-common;
+  font-weight: $fiu-font-weight-bold;
+}
+
+.govuk-body-l,
+.govuk-body,
+.govuk-list {
+  @include fiu-typography-common;
+}
+
+.fiu-article > p:not([class]) {
+  @extend .govuk-body;
+}

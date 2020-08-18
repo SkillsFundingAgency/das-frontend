@@ -1,0 +1,12 @@
+.fiu-grid-column-pull-right {
+  @include govuk-media-query(tablet) {
+    float: right;
+  }
+}
+
+.fiu-flex-row {
+  @include govuk-media-query(tablet) {
+    display: flex;
+    margin-bottom: 30px;
+  }
+}

@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en" class="fiu-template">
+
+<head>
+	<meta charset="utf-8">
+	<title>Apprenticeships</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="theme-color" content="#0b0c0c">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+	<meta property="og:title" content="">
+	<meta property="og:type" content="">
+	<meta property="og:url" content="">
+	<meta property="og:image" content="">
+
+	<link rel="apple-touch-icon" href="/fiu/assets/images/apple-touch-icon.png">
+
+	<link rel="stylesheet" href="https://use.typekit.net/xwy5uap.css">
+	<link rel="stylesheet" href="/fiu/css/all.css">
+
+	<meta property="og:image" content="/fiu/assets/images/opengraph.png">
+
+</head>
+<body class="fiu-template__body">
+	<script>
+		document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');
+	</script>
+
+	<a href="#main" class="govuk-skip-link">Skip to main content</a>
+
+	{% include "header/header.html" %}
+	{% include "navigation/navigation.html" %}
+
+	{% block preMainContent %}
+	{% endblock %}
+
+    <main class="govuk-main-wrapper " id="main" role="main">
+
+        <div class="fiu-width-container">
+
+	        {% block content %}
+
+	        {% endblock %}
+        </div>
+    </main>
+
+	{% include "footer/footer.html" %}
+
+	<script src="/fiu/js/app.min.js"></script>
+
+</body>
+</html>

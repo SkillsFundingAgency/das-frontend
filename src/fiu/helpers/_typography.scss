@@ -1,0 +1,8 @@
+
+@mixin fiu-typography-common {
+  font-family: $fiu-font-family;
+  font-weight: $fiu-font-weight-book;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}

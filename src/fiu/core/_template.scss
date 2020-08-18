@@ -1,0 +1,8 @@
+.fiu-template {
+  @extend .govuk-template;
+  background: $fiu-page-bg-colour;
+}
+
+.fiu-template__body {
+  @extend .govuk-template__body;
+}
