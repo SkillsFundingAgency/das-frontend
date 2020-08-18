@@ -1,0 +1,14 @@
+.fiu-link {
+  color: $fiu-global-link-colour;
+  &:hover {
+    color: $fiu-global-link-hover-colour;
+  }
+  &:focus {
+    @include govuk-focused-text;
+  }
+}
+
+.fiu-article > p > a,
+.fiu-article > li > a {
+  @extend .fiu-link;
+}

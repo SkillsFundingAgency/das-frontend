@@ -1,6 +1,9 @@
-<div class="fiu-card">
-	<span class="fiu-card__category">Are apprenticeships right for me?</span>
-	<h3 class="fiu-card__heading">What are the benefits for me?</h3>
-	<p class="fiu-card__content">Quisque libero quam, tristique eu urna a, dictum commodo nibh. Integer vel mattis nunc, sit amet condimentum lacus. Suspendisse mauris arcu, hendrerit id iaculis sit amet, iaculis ut quam.</p>
+{% set type = params.type if params.type else 'citizens' %}
+{% set category = params.category if params.category else 'Apprentices' %}
 
+<div class="fiu-card">
+	<span class="fiu-card__category">{{ category }}</span>
+	<h3 class="fiu-card__heading">{{ params.heading }}</h3>
+	<p class="fiu-card__content">{{ params.html | safe if params.html else params.text }}</p>
+	<a href="/fiu/article" class="fiu-card__link fiu-card__link--{{ type }}">Learn more</a>
 </div>

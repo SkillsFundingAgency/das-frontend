@@ -1,5 +1,9 @@
 .fiu-tag {
   @extend .govuk-tag;
+  @include fiu-typography-common;
+  font-weight: $fiu-font-weight-bold;
+  font-size: 12px;
+  letter-spacing: 0;
 }
 
 .fiu-tag--citizens {

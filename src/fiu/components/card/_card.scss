@@ -1,26 +1,34 @@
 .fiu-card {
   @include fiu-typography-common;
   background: $light-grey;
-  padding: 15px;
+  padding: 20px 20px 50px;
   margin-bottom: 15px;
+  height: 100%;
+  position: relative;
+  display: block;
+  color: $fiu-text-colour;
+  text-decoration: none;
+  &:focus {
+    @include fiu-focused-block;
+  }
 }
 
 .fiu-card__category {
   text-transform: uppercase;
   text-align: right;
-  font-size: 10px;
+  font-size: 8px;
   display: block;
-  letter-spacing: .03em;
+  letter-spacing: 1px;
+  color: $dark-grey;
+  &:focus {
+    @include govuk-focused-text;
+  }
 }
 
 .fiu-card__heading {
-  margin: .8em 0;
+  margin: 1em 0;
   font-size: 19px;
   font-weight: $fiu-font-weight-bold;
-}
-
-.fiu-card__image {
-
 }
 
 .fiu-card__content {
@@ -28,7 +36,38 @@
 }
 
 .fiu-card__link {
+  margin-top: 1.5em;
+  display: inline-block;
+  font-weight: $fiu-font-weight-bold;
+  color: $fiu-global-link-colour;
+  position: absolute;
+  bottom: 20px;
+  &:hover {
+    color: $fiu-global-link-hover-colour;
+  }
+  &:focus {
+    @include govuk-focused-text;
+  }
+}
 
+.fiu-card__link--citizens {
+  color: $fiu-citizens-link-colour;
+  &:hover {
+    color: $fiu-citizens-link-hover-colour;
+  }
+  &:focus {
+    color: inherit;
+  }
+}
+
+.fiu-card__link--employers {
+  color: $fiu-employers-link-colour;
+  &:hover {
+    color: $fiu-employers-link-hover-colour;
+  }
+  &:focus {
+    color: inherit;
+  }
 }
 
 

@@ -1,4 +1,30 @@
 .fiu-panel {
   background: $light-grey;
   text-align: center;
+  padding: 30px;
+  margin-bottom: 15px;
+  height: 100%;
+  display: block;
+  color: $fiu-text-colour;
+  text-decoration: none;
+  &:focus {
+    @include fiu-focused-block;
+  }
+}
+
+.fiu-panel__tag {
+  margin-bottom: 2em;
+}
+
+.fiu-panel__heading {
+
+}
+
+.fiu-panel__content {
+  @extend .govuk-body-l;
+  @include fiu-typography-common;
+}
+
+.fiu-panel__button {
+  margin: 0;
 }
