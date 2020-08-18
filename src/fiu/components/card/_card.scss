@@ -1,6 +1,6 @@
 .fiu-card {
   @include fiu-typography-common;
-  background: $light-grey;
+  background: $white;
   padding: 20px 20px 50px;
   margin-bottom: 15px;
   height: 100%;
@@ -8,6 +8,8 @@
   display: block;
   color: $fiu-text-colour;
   text-decoration: none;
+  border: 1px solid $fiu-border-colour;
+  border-radius: 10px;
   &:focus {
     @include fiu-focused-block;
   }
@@ -15,12 +17,13 @@
 
 .fiu-card__category {
   @include govuk-clearfix;
+  display: block;
 }
 
 .fiu-card__category-link {
   text-transform: uppercase;
   float: right;
-  font-size: 8px;
+  font-size: 9px;
   display: inline-block;
   letter-spacing: 1px;
   color: $dark-grey;

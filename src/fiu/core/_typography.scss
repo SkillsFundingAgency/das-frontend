@@ -20,3 +20,7 @@ $fiu-font-weight-bold:  700;
 .fiu-article > p:not([class]) {
   @extend .govuk-body;
 }
+
+.fiu-feature-text {
+  transform: rotate(-6deg) skewX(-6deg);
+}
