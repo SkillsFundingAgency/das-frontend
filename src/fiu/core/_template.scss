@@ -9,4 +9,26 @@
 
 .fiu-feature-row {
   background: $black;
+  padding-bottom: 1px;
+}
+
+.fiu-grad-row {
+  position: relative;
+}
+
+.fiu-grad-row__bg {
+  height: 100px;
+  border-top: 50px solid $black;
+  background: url("../assets/images/design/step-gradient-bg-black.png") repeat-x;
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+
+.fiu-grad-row__bg--grey {
+  height: 50px;
+  border-top: none;
+  background: url("../assets/images/design/step-gradient-bg-grey.png") repeat-x;
 }
