@@ -22,5 +22,5 @@ $fiu-font-weight-bold:  700;
 }
 
 .fiu-feature-text {
-  transform: rotate(-6deg) skewX(-6deg);
+  @include fiu-rotate-skew;
 }
