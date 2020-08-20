@@ -28,6 +28,7 @@
   letter-spacing: 1px;
   color: $dark-grey;
   text-decoration: none;
+  text-align: right;
   &:hover {
     color: $black;
   }
@@ -38,7 +39,7 @@
 
 .fiu-card__heading {
   margin: 1em 0;
-  font-size: 19px;
+  font-size: 24px;
   font-weight: $fiu-font-weight-bold;
 }
 

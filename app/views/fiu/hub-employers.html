@@ -3,80 +3,116 @@
 {% from "panel/macro.njk" import fiuPanel %}
 
 {% block content %}
+<nav class="fiu-navigation fiu-navigation--employers">
+	<div class="govuk-width-container">
+
+	</div>
+</nav>
+
 <main id="main" role="main" class="fiu-main-wrapper">
-	{% include "page-header/page-header.html" %}
-	<div class="fiu-width-container">
-		<h1 class="govuk-heading-l">Apprentices, here's what you need to know</h1>
-		<div class="govuk-grid-row fiu-flex-row">
-			<div class="govuk-grid-column-one-quarter">
-				{{ fiuCard({
-					category: "Getting started",
-					heading: "Find an apprenticeship",
-					text: "Quisque libero quam, tristique eu urna a, dictum commodo nibh. Integer vel mattis nunc, sit amet condimentum lacus. "
-				}) }}
+
+	<!-- Page header -->
+    <div class="fiu-page-header">
+        <div class="fiu-width-container">
+            <div class="govuk-breadcrumbs fiu-page-header__breadcrumbs">
+                <ol class="govuk-breadcrumbs__list">
+                    <li class="govuk-breadcrumbs__list-item">
+                        <a class="govuk-breadcrumbs__link" href="/fiu">Home</a>
+                    </li>
+                    <li class="govuk-breadcrumbs__list-item">
+                        Employers
+                    </li>
+                </ol>
+            </div>
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-two-thirds fiu-page-header__wrap">
+                    <div class="fiu-feature-text">
+                        <strong class="fiu-tag fiu-tag--employers fiu-page-header__tag">Employers</strong>
+                        <h1 class="govuk-heading-xl fiu-page-heading__title-hub">Hire an apprentice</h1>
+                    </div>
+                    <p class="fiu-page-header__content">
+                        Ante stiam sed at turpis posuere dictum donec aeros integer eusem it purus interdum sollicitudin fusce auctor aliquam placerat porci
+                    </p>
+                    <img class="fiu-page-header__hm-logo" src="/fiu/assets/images/hm-government-logo.svg" alt="HM Government logo" />
+                </div>
+            </div>
+            <h2 class="govuk-heading-l fiu-page-header__sub-heading">Employers, here's what you need to know</h2>
+        </div>
+    </div>
+	<div class="fiu-grad-row">
+		<span class="fiu-grad-row__bg"></span>
+		<div class="fiu-width-container">
+			<div class="govuk-grid-row fiu-flex-row">
+				<div class="govuk-grid-column-one-quarter">
+					{{ fiuCard({
+						category: "Getting started",
+						heading: "Find an apprenticeship",
+						text: "Quisque libero quam, tristique eu urna a, dictum commodo nibh. Integer vel mattis nunc, sit amet condimentum lacus. "
+					}) }}
+				</div>
+				<div class="govuk-grid-column-one-quarter">
+			        {{ fiuCard({
+			            category: "Are apprenticeships right for me?",
+			            heading: "What are the benefits for me?",
+			            text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce lobortis hendrerit sem at porta. Vivamus eu sollicitudin eros, tincidunt viverra metus."
+			        }) }}
+			    </div>
+				<div class="govuk-grid-column-one-half">
+					{{ fiuPanel({
+			            heading: "Find an apprenticeship",
+			            html: "Search hundreds of apprenticeships across the country",
+			            buttonText: "Find an apprenticeship"
+			        }) }}
+				</div>
 			</div>
-			<div class="govuk-grid-column-one-quarter">
-		        {{ fiuCard({
-		            category: "Are apprenticeships right for me?",
-		            heading: "What are the benefits for me?",
-		            text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce lobortis hendrerit sem at porta. Vivamus eu sollicitudin eros, tincidunt viverra metus."
-		        }) }}
-		    </div>
-			<div class="govuk-grid-column-one-half">
-				{{ fiuPanel({
-		            heading: "Find an apprenticeship",
-		            html: "Search hundreds of apprenticeships across the country",
-		            buttonText: "Find an apprenticeship"
-		        }) }}
+			<div class="govuk-grid-row fiu-flex-row">
+				<div class="govuk-grid-column-one-quarter">
+					{{ fiuCard({
+						category: "Getting started",
+						heading: "Find an apprenticeship",
+						text: "Quisque libero quam, tristique eu urna a, dictum commodo nibh. Integer vel mattis nunc, sit amet condimentum lacus. "
+					}) }}
+				</div>
+				<div class="govuk-grid-column-one-quarter">
+			        {{ fiuCard({
+			            category: "Are apprenticeships right for me?",
+			            heading: "What are the benefits for me?",
+			            text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce lobortis hendrerit sem at porta. Vivamus eu sollicitudin eros, tincidunt viverra metus."
+			        }) }}
+			    </div>
+			    <div class="govuk-grid-column-one-quarter">
+			        {{ fiuCard({
+			            type: "citizens",
+			            category: "How do they work?",
+			            heading: "Funding an apprenticeship",
+			            text: "Quisque libero quam, tristique eu urna a, dictum commodo nibh. Integer vel mattis nunc, sit amet condimentum lacus. "
+			        }) }}
+			    </div>
+			    <div class="govuk-grid-column-one-quarter">
+			        {{ fiuCard({
+				        type: "citizens",
+				        category: "Setting it up",
+				        heading: "Find the right apprenticeship",
+			            text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce lobortis hendrerit sem at porta. Vivamus eu sollicitudin eros, tincidunt viverra metus."
+				    }) }}
+			    </div>
 			</div>
-		</div>
-		<div class="govuk-grid-row fiu-flex-row">
-			<div class="govuk-grid-column-one-quarter">
-				{{ fiuCard({
-					category: "Getting started",
-					heading: "Find an apprenticeship",
-					text: "Quisque libero quam, tristique eu urna a, dictum commodo nibh. Integer vel mattis nunc, sit amet condimentum lacus. "
-				}) }}
+			<div class="govuk-grid-row fiu-flex-row">
+				<div class="govuk-grid-column-one-half">
+					{{ fiuPanel({
+						type: "citizens",
+			            heading: "Register interest",
+			            html: "Everything you need to know about becoming an appretice"
+			        }) }}
+				</div>
+				<div class="govuk-grid-column-one-half">
+			        {{ fiuPanel({
+			            type: "citizens",
+			            heading: "Get free help and support",
+			            html: "Find out how to hire an apprentice and what you need to do"
+			        }) }}
+			    </div>
 			</div>
-			<div class="govuk-grid-column-one-quarter">
-		        {{ fiuCard({
-		            category: "Are apprenticeships right for me?",
-		            heading: "What are the benefits for me?",
-		            text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce lobortis hendrerit sem at porta. Vivamus eu sollicitudin eros, tincidunt viverra metus."
-		        }) }}
-		    </div>
-		    <div class="govuk-grid-column-one-quarter">
-		        {{ fiuCard({
-		            type: "citizens",
-		            category: "How do they work?",
-		            heading: "Funding an apprenticeship",
-		            text: "Quisque libero quam, tristique eu urna a, dictum commodo nibh. Integer vel mattis nunc, sit amet condimentum lacus. "
-		        }) }}
-		    </div>
-		    <div class="govuk-grid-column-one-quarter">
-		        {{ fiuCard({
-			        type: "citizens",
-			        category: "Setting it up",
-			        heading: "Find the right apprenticeship",
-		            text: "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce lobortis hendrerit sem at porta. Vivamus eu sollicitudin eros, tincidunt viverra metus."
-			    }) }}
-		    </div>
-		</div>
-		<div class="govuk-grid-row fiu-flex-row">
-			<div class="govuk-grid-column-one-half">
-				{{ fiuPanel({
-					type: "citizens",
-		            heading: "Register interest",
-		            html: "Everything you need to know about becoming an appretice"
-		        }) }}
-			</div>
-			<div class="govuk-grid-column-one-half">
-		        {{ fiuPanel({
-		            type: "citizens",
-		            heading: "Get free help and support",
-		            html: "Find out how to hire an apprentice and what you need to do"
-		        }) }}
-		    </div>
 		</div>
 	</div>
 </main>

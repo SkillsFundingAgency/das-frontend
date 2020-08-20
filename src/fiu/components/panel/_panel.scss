@@ -9,6 +9,7 @@
   text-decoration: none;
   border: 1px solid $fiu-border-colour;
   border-radius: 10px;
+  position: relative;
   &:focus {
     @include fiu-focused-block;
   }
@@ -41,6 +42,7 @@
   height: 100%;
   display: block;
   color: $white;
+  position: relative;
 }
 
 .fiu-panel-homepage__heading {

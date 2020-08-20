@@ -1,8 +1,7 @@
 .fiu-page-header {
     @include fiu-typography-common;
     background-color: $black;
-    padding: 1px 0 0;
-    margin: 0 0 15px;
+    padding: 1px 0;
     color: $white;
 }
 
@@ -21,11 +20,14 @@
     margin-bottom: 30px;
     color: $white;
     @include govuk-media-query(tablet) {
-        padding-top: 0;
+        padding-top: 10px;
     }
     .govuk-breadcrumbs__link {
         @include fiu-typography-common;
         color: inherit;
+        &:focus {
+            color: $black;
+        }
     }
 }
 
@@ -44,7 +46,7 @@
     color: inherit;
     @include govuk-media-query(tablet) {
         margin-bottom: 60px;
-        max-width: 70%;
+        max-width: 66%;
     }
 }
 

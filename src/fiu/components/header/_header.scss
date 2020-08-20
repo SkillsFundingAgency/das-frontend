@@ -1,50 +1,28 @@
-$vertical-link-heights: 75px;
-$link-widths: 74px;
-$navpad: 6px;
-
-@mixin arrow($bgcolour) {
-  content: ' ';
-  display: inline-block;
-  position: absolute;
-  bottom: 0;
-  line-height: 0;
-  width: 0;
-  height: 0;
-  border-left: 6px solid transparent;
-  border-right: 6px solid transparent;
-  border-bottom: 10px solid $bgcolour;
-  margin-left: -5px;
-  left: 50%;
-}
 
 .fiu-header {
   background-color: $fiu-header-bg-colour;
-  border-bottom: 1px solid $black;
   padding: 0;
   margin: 0;
+  text-align: center;
 }
 
 .fiu-header__apprenticeship-logo-link {
   padding-top: 1px;
-  display: block;
-  margin: 0 auto;
+  display: inline-block;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  &:focus {
+    @include fiu-focused-block
+  }
+  @include govuk-media-query(tablet) {
+    float: left;
+  }
 }
 
 .fiu-header__apprenticeship-logo {
-  display: block;
-  margin: 10px auto;
-  padding-top: 1px;
-  width: 60%;
+  display: inline-block;
+  height: 60px;
   max-width: 100%;
-  height: auto;
-
-  @include govuk-media-query(tablet) {
-    width: auto;
-    max-width: none;
-    display: inline-block;
-    margin: 15px 0;
-    height: 60px;
-  }
 }
 
 .fiu-header__navigation-wrap {
@@ -52,49 +30,42 @@ $navpad: 6px;
   padding: 0;
 }
 
-.govuk-header__navigation--fiu {
+.fiu-header__nav {
+  @include govuk-media-query(tablet) {
+    display: table;
+    float: right;
+  }
+}
+
+.fiu-header__navigation {
   font-family: $fiu-font-family;
   font-weight: $fiu-font-weight-bold;
-  width: 100%;
-  min-height: 30px;
   list-style: none;
   display: block;
   padding: 0;
   margin: 0;
-  float: right;
-
   @include govuk-media-query(tablet) {
-    width: auto;
-    min-height: $vertical-link-heights;
+    display: table-row;
   }
 }
 
 .fiu-header__navigation-item {
-  line-height: 0;
-  min-height: 24px;
-  padding: 0;
-  width: 48%;
   display: inline-block;
-  text-align: center;
   position: relative;
-
+  padding: 15px 10px;
   &:last-child {
     display: none;
   }
-
   @include govuk-media-query(tablet) {
-    padding: 10px $navpad;
-    width: auto;
-    line-height: $vertical-link-heights;
-    min-height: $vertical-link-heights;
-    min-width: $link-widths;
-
+    padding: 15px 20px;
+    display: table-cell;
     &:last-child {
       padding-right: 0;
+      padding-top: 25px;
+      padding-bottom: 25px;
       display: inline-block;
     }
   }
-
   .fiu-button {
     vertical-align: unset;
     margin-bottom: 0;
@@ -102,12 +73,18 @@ $navpad: 6px;
   }
 }
 
-$fiu-header__link: 'a.fiu-header__link, a.fiu-header__link:active, a.fiu-header__link:hover, a.fiu-header__link:visited';
-#{$fiu-header__link} {
+.fiu-header__link {
+  display: inline-block;
   font-size: 13px;
   text-transform: uppercase;
   text-decoration: none;
   color: $fiu-header-link-colour;
+  &:hover {
+    color: $fiu-header-link-hover-colour;
+  }
+  &:focus {
+    @include govuk-focused-text;
+  }
 }
 
 .fiu-header__navigation-item--active:after {

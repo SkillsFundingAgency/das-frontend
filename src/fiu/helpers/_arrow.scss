@@ -1,0 +1,14 @@
+@mixin arrow($bgcolour: $black) {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  line-height: 0;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-bottom: 10px solid $bgcolour;
+  margin-left: -5px;
+  left: 50%;
+}

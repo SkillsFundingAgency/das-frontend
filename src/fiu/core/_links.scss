@@ -29,6 +29,16 @@
   }
 }
 
+.fiu-link--employers-light {
+  color: lighten($fiu-employers-link-colour, 15%);
+  &:hover {
+    color: lighten($fiu-employers-link-colour, 30%);
+  }
+  &:focus {
+    @include govuk-focused-text;
+  }
+}
+
 .fiu-article > p > a,
 .fiu-article > li > a {
   @extend .fiu-link;
