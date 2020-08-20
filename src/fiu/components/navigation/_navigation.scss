@@ -1,6 +1,8 @@
 .fiu-navigation {
+  @include fiu-typography-common;
   background: $fiu-navigation-bg-colour;
   min-height: 30px;
+  padding: 1px 0;
 }
 
 .fiu-navigation--citizens {
@@ -9,4 +11,71 @@
 
 .fiu-navigation--employers {
   background: $fiu-employers-brand-colour;
+}
+
+.fiu-navigation__toggle {
+  color: $white;
+  display: inline-block;
+  text-decoration: none;
+  position: relative;
+  &:focus {
+    @include fiu-focused-block
+  }
+  @include govuk-media-query(tablet) {
+    //display: none;
+  }
+}
+
+.fiu-navigation__toggle-label {
+  @include govuk-visually-hidden
+}
+
+.fiu-navigation__toggle-icon {
+  @extend %fiu-nav-icon-lines;
+  top: 23px;
+  left: 10px;
+  &:after,
+  &:before {
+    @extend %fiu-nav-icon-lines;
+    content: "";
+    left: 0;
+    top: -9px;
+  }
+  &:after {
+    top: 9px;
+  }
+}
+
+%fiu-nav-icon-lines {
+  display: block;
+  height: 3px;
+  width: 30px;
+  position: absolute;
+  border-radius: 2px;
+  background: $white;
+  transition: all 0.3s ease;
+  .header--generic & {
+    background: #fff;
+  }
+}
+
+.fiu-navigation__nav {
+
+}
+
+.fiu-navigation__list {
+  margin: 20px;
+  padding: 0;
+  list-style: none;
+}
+
+.fiu-navigation__list-item {
+
+}
+
+.fiu-navigation__link {
+  color: $white;
+  &:focus {
+    @include govuk-focused-text;
+  }
 }

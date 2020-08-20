@@ -1,4 +1,4 @@
 @mixin fiu-focused-block {
   outline: $govuk-focus-width solid $govuk-focus-colour;
-  box-shadow: 0 0 0 1px $black;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, .5);
 }
