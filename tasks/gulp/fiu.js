@@ -19,6 +19,13 @@ gulp.task('fiu-compile-sass', () => gulp
   .pipe(sass(sassOptionsFiu))
   .pipe(gulp.dest(paths.dist.fiuCss)));
 
+gulp.task('fiu-watch-js', function() {
+  gulp.watch([paths.src.fiuJsLibs, paths.src.fiuJs, paths.src.fiuJsInit], gulp.series('fiu-compile-js'))
+    .on('change', function (path) {
+      console.log(`File ${path} was changed, running tasks...`);
+    });
+});
+
 gulp.task('fiu-compile-js', function() {
   return gulp.src([paths.src.fiuJsLibs, paths.src.fiuJs, paths.src.fiuJsInit])
     .pipe(babel())

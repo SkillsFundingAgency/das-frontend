@@ -14,7 +14,7 @@ const campaignBuildTasks = gulp.series('campaign-copy-libs', 'campaign-compile-s
 const campaignWatchTasks = gulp.parallel('campaign-watch-sass');
 
 const fiuBuildTasks = gulp.series('fiu-copy-libs', 'fiu-compile-sass', 'fiu-compile-js', 'fiu-copy-images');
-const fiuWatchTasks = gulp.parallel('fiu-watch-sass');
+const fiuWatchTasks = gulp.parallel('fiu-watch-sass', 'fiu-watch-js');
 
 gulp.task('das',  gulp.series(defaultBuildTasks, defaultWatchTasks));
 gulp.task('campaign', gulp.series(campaignBuildTasks, campaignWatchTasks));
