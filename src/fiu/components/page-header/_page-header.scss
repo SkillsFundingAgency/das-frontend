@@ -1,8 +1,8 @@
 .fiu-page-header {
     @include fiu-typography-common;
-    background-color: $light-grey;
-    padding: 1px 0 0;
-    margin: 0 0 15px 0;
+    background-color: $black;
+    padding: 1px 0;
+    color: $white;
 }
 
 .fiu-page-header__wrap {
@@ -11,17 +11,23 @@
 }
 
 .fiu-page-header__breadcrumbs {
-    font-size: 14px;
-    line-height: 14px;
+    @include fiu-typography-common;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: .05em;
+    line-height: 1em;
     padding-top: 20px;
     margin-bottom: 30px;
-
+    color: $white;
     @include govuk-media-query(tablet) {
-        padding-top: 0;
+        padding-top: 10px;
     }
-
-    li:last-child {
-        color: $dark-grey;
+    .govuk-breadcrumbs__link {
+        @include fiu-typography-common;
+        color: inherit;
+        &:focus {
+            color: $black;
+        }
     }
 }
 
@@ -31,6 +37,17 @@
 
 .fiu-page-heading__title {
     margin-bottom: 30px;
+    color: inherit;
+}
+
+.fiu-page-heading__title-hub {
+    @include fiu-uppercase-title;
+    margin-bottom: 40px;
+    color: inherit;
+    @include govuk-media-query(tablet) {
+        margin-bottom: 60px;
+        max-width: 66%;
+    }
 }
 
 .fiu-page-header__content {
@@ -43,4 +60,8 @@
   max-width: 100%;
   display: inline-block;
   margin: 30px 0 0 0;
+}
+
+.fiu-page-header__sub-heading {
+    color: $white;
 }

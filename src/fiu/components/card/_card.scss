@@ -1,13 +1,15 @@
 .fiu-card {
   @include fiu-typography-common;
-  background: $light-grey;
-  padding: 20px 20px 50px;
+  background: $white;
+  padding: 20px;
   margin-bottom: 15px;
   height: 100%;
-  position: relative;
   display: block;
   color: $fiu-text-colour;
   text-decoration: none;
+  border: 1px solid $fiu-border-colour;
+  border-radius: 10px;
+  position: relative;
   &:focus {
     @include fiu-focused-block;
   }
@@ -15,16 +17,18 @@
 
 .fiu-card__category {
   @include govuk-clearfix;
+  display: block;
 }
 
 .fiu-card__category-link {
   text-transform: uppercase;
   float: right;
-  font-size: 8px;
+  font-size: 9px;
   display: inline-block;
   letter-spacing: 1px;
   color: $dark-grey;
   text-decoration: none;
+  text-align: right;
   &:hover {
     color: $black;
   }
@@ -35,7 +39,7 @@
 
 .fiu-card__heading {
   margin: 1em 0;
-  font-size: 19px;
+  font-size: 24px;
   font-weight: $fiu-font-weight-bold;
 }
 
@@ -48,8 +52,6 @@
   display: inline-block;
   font-weight: $fiu-font-weight-bold;
   color: $fiu-global-link-colour;
-  position: absolute;
-  bottom: 20px;
   &:hover {
     color: $fiu-global-link-hover-colour;
   }

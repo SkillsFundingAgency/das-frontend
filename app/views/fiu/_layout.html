@@ -30,20 +30,10 @@
 	<a href="#main" class="govuk-skip-link">Skip to main content</a>
 
 	{% include "header/header.html" %}
-	{% include "navigation/navigation.html" %}
 
-	{% block preMainContent %}
-	{% endblock %}
+    {% block content %}
 
-    <main class="govuk-main-wrapper " id="main" role="main">
-
-        <div class="fiu-width-container">
-
-	        {% block content %}
-
-	        {% endblock %}
-        </div>
-    </main>
+    {% endblock %}
 
 	{% include "footer/footer.html" %}
 

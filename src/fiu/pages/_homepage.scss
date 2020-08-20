@@ -1,0 +1,41 @@
+// FIU homepage welcome banner and content
+
+.fiu-homepage-banner {
+  @include fiu-typography-common;
+  background: $black;
+  color: $white;
+  text-align: center;
+  padding: 30px 0;
+}
+
+.fiu-homepage-banner__heading {
+  @include fiu-uppercase-title;
+  font-weight: $fiu-font-weight-bold;
+  font-size: 50px;
+  @include govuk-media-query(tablet) {
+    font-size: 60px;
+  }
+  @include govuk-media-query(desktop) {
+    font-size: 70px;
+  }
+}
+
+.fiu-homepage-banner__content {
+  font-size: 24px;
+  @include govuk-media-query(tablet) {
+    font-size: 28px;
+  }
+  @include govuk-media-query(desktop) {
+    font-size: 32px;
+  }
+}
+
+.fiu-homepage-banner__content-line-break {
+  @include govuk-media-query(tablet) {
+    display: block;
+  }
+}
+
+.fiu-homepage-banner__hm-logo {
+  width: 100px;
+}

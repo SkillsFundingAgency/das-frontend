@@ -1,5 +1,5 @@
 .fiu-panel {
-  background: $light-grey;
+  background: $white;
   text-align: center;
   padding: 30px;
   margin-bottom: 15px;
@@ -7,6 +7,9 @@
   display: block;
   color: $fiu-text-colour;
   text-decoration: none;
+  border: 1px solid $fiu-border-colour;
+  border-radius: 10px;
+  position: relative;
   &:focus {
     @include fiu-focused-block;
   }
@@ -27,4 +30,29 @@
 
 .fiu-panel__button {
   margin: 0;
+}
+
+/* Homepage version of the panel */
+
+.fiu-panel-homepage {
+  background: $black;
+  text-align: center;
+  padding: 30px;
+  margin-bottom: 15px;
+  height: 100%;
+  display: block;
+  color: $white;
+  position: relative;
+}
+
+.fiu-panel-homepage__heading {
+  color: inherit;
+  text-transform: uppercase;
+  letter-spacing: -0.08em;
+}
+
+.fiu-panel-homepage__content {
+  @extend .govuk-body-l;
+  @include fiu-typography-common;
+  color: inherit;
 }

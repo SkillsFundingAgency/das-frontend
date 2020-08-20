@@ -6,3 +6,12 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+
+@mixin fiu-rotate-skew {
+  transform: rotate(-6deg) skewX(-6deg);
+}
+
+@mixin fiu-uppercase-title {
+  text-transform: uppercase;
+  letter-spacing: -0.08em;
+}
