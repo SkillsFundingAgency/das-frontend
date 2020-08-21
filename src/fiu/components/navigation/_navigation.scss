@@ -76,9 +76,6 @@ $fiu-nav-breakpoint: 900px;
   border-radius: 2px;
   background: $white;
   transition: all 0.3s ease;
-  .header--generic & {
-    background: #fff;
-  }
 }
 
 .fiu-navigation__heading {
