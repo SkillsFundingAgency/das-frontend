@@ -81,13 +81,19 @@
 
 $fiu-results-favbar__link: '.fiu-results-favbar__link, .fiu-results-favbar__link:active, .fiu-results-favbar__link:hover, .fiu-results-favbar__link:visited';
 #{$fiu-results-favbar__link} {
-  text-decoration: none;
-  color: $fiu-header-link-colour;
+    text-decoration: none;
+    color: $fiu-header-link-colour;
 }
-.fiu-results-favbar__link:hover {
-    background-image: url('/fiu/assets/images/icon-star-filled-yellow.svg');
-    text-decoration: underline;
-    cursor: pointer;
+
+.fiu-results-favbar__link {
+    &:hover {
+        background-image: url('/fiu/assets/images/icon-star-filled-yellow.svg');
+        text-decoration: underline;
+        cursor: pointer;
+    }
+    &:focus {
+        @include govuk-focused-text;
+    }
 }
 
 .fiu-results-desc {
@@ -104,8 +110,12 @@ $fiu-results-favbar__link: '.fiu-results-favbar__link, .fiu-results-favbar__link
         border: 0;
     }
 
+    &:focus {
+        @include govuk-focused-text;
+    }
+
     @include govuk-media-query(tablet) {
-        max-width: 120px;
+        width: 120px;
         img {
             width: inherit;
         }
@@ -152,11 +162,22 @@ $fiu-results-favbar__link: '.fiu-results-favbar__link, .fiu-results-favbar__link
     right: $right;
 }
 
-.fiu-pagination__link,
-.fiu-pagination__current {
+$fiu-pagination__link: '.fiu-pagination__link, .fiu-pagination__link:active, .fiu-pagination__link:hover, .fiu-pagination__link:visited, .fiu-pagination__current';
+#{$fiu-pagination__link} {
+    text-decoration: underline;
     display: block;
     padding: 5px 10px;
     color: $black;
+}
+
+.fiu-pagination__current {
+    text-decoration: none;
+}
+
+.fiu-pagination__link {
+    &:focus {
+        @include govuk-focused-text;
+    }
 
     @include govuk-media-query(tablet) {
         .fiu-pagination__item--prev & {
