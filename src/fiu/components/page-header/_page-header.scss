@@ -3,11 +3,13 @@
     background-color: $black;
     padding: 1px 0;
     color: $white;
+    position: relative;
 }
 
 .fiu-page-header__wrap {
     padding-top: 15px;
     padding-bottom: 30px;
+    position: relative;
 }
 
 .fiu-page-header__breadcrumbs {
@@ -64,4 +66,23 @@
 
 .fiu-page-header__sub-heading {
     color: $white;
+    position: relative;
+}
+
+.fiu-page-header__image-wrap {
+    position: absolute;
+    top: 0;
+    z-index: 0;
+}
+
+.fiu-page-header__image {
+    z-index: 1;
+    width: 100%;
+}
+
+.fiu-page-header__image-mask {
+    position: absolute;
+    top: 0;
+    z-index: 2;
+    width: 100%;
 }
