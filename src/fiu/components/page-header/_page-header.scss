@@ -53,8 +53,13 @@
 }
 
 .fiu-page-header__content {
-    font-size: 19px;
-    line-height: 24px;
+    @extend .govuk-body;
+    color: inherit;
+}
+
+.fiu-page-header__content-l {
+    @extend .govuk-body-l;
+    color: inherit;
 }
 
 .fiu-page-header__hm-logo {
