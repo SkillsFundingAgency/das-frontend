@@ -87,6 +87,10 @@
   }
 }
 
-.fiu-header__navigation-item--active:after {
-  @include arrow($fiu-navigation-bg-colour);
+.fiu-header__navigation-item--citizens-active:after {
+  @include arrow($fiu-citizens-brand-colour);
+}
+
+.fiu-header__navigation-item--employers-active:after {
+  @include arrow($fiu-employers-brand-colour);
 }

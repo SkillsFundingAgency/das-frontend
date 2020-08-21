@@ -18,15 +18,17 @@
   @include govuk-media-query(desktop) {
     font-size: 70px;
   }
+  @include govuk-visually-hidden;
 }
 
 .fiu-homepage-banner__content {
   font-size: 24px;
+  font-weight: $fiu-font-weight-regular;
   @include govuk-media-query(tablet) {
-    font-size: 28px;
+    font-size: 32px;
   }
   @include govuk-media-query(desktop) {
-    font-size: 32px;
+    font-size: 40px;
   }
 }
 
