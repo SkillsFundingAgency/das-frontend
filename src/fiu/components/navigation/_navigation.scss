@@ -1,8 +1,9 @@
+$fiu-nav-breakpoint: 900px;
+
 .fiu-navigation {
   @include fiu-typography-common;
   background: $fiu-navigation-bg-colour;
-  min-height: 30px;
-  padding: 1px 0;
+  padding: 5px 0;
 }
 
 .fiu-navigation--citizens {
@@ -14,15 +15,25 @@
 }
 
 .fiu-navigation__toggle {
+  display: none;
+}
+
+.js-enabled .fiu-navigation__toggle {
   color: $white;
-  display: inline-block;
+  display: block;
   text-decoration: none;
   position: relative;
+  height: 40px;
+  width: 40px;
+  margin-left: 10px;
   &:focus {
     @include fiu-focused-block
   }
   @include govuk-media-query(tablet) {
-    //display: none;
+    margin-left: -5px;
+  }
+  @include govuk-media-query($fiu-nav-breakpoint) {
+    display: none;
   }
 }
 
@@ -32,8 +43,8 @@
 
 .fiu-navigation__toggle-icon {
   @extend %fiu-nav-icon-lines;
-  top: 23px;
-  left: 10px;
+  top: 19px;
+  left: 5px;
   &:after,
   &:before {
     @extend %fiu-nav-icon-lines;
@@ -43,6 +54,18 @@
   }
   &:after {
     top: 9px;
+  }
+}
+
+.fiu-navigation-menu-open .fiu-navigation__toggle-icon {
+  background: transparent;
+  &:after {
+    top: 0;
+    transform: rotate(45deg);
+  }
+  &:before {
+    top: 0;
+    transform: rotate(-45deg);
   }
 }
 
@@ -59,8 +82,15 @@
   }
 }
 
-.fiu-navigation__nav {
+.js-enabled .fiu-navigation__nav {
+  display: none;
+  @include govuk-media-query($fiu-nav-breakpoint) {
+    display: block;
+  }
+}
 
+.fiu-navigation-menu-open .fiu-navigation__nav {
+  display: block;
 }
 
 .fiu-navigation__list {

@@ -1,11 +1,12 @@
 function Navigation(nav) {
-  this.toggleIcon = nav.getElementsByClassName('fiu-navigation__toggle')[0];
+  this.navToggle = nav.querySelector('[data-nav-toggle]')
+  this.navMenu = nav.querySelector('[data-nav-menu]')
   this.setupEvents()
 }
 
 Navigation.prototype.setupEvents = function () {
-
+  this.navToggle.addEventListener('click', () => {
+    const body = document.querySelector('body');
+    body.classList.toggle('fiu-navigation-menu-open');
+  });
 }
-
-var navs = document.getElementsByClassName('fiu-navigation');
-var fiuNavigation = new Navigation(navs[0])
