@@ -109,6 +109,13 @@ $fiu-nav-breakpoint: 900px;
   display: block;
 }
 
+.js-enabled .fiu-navigation__nav--homepage,
+.fiu-navigation__nav--homepage {
+  @include govuk-media-query($fiu-nav-breakpoint) {
+    display: none;
+  }
+}
+
 .fiu-navigation__list {
   @extend .govuk-list;
   margin: 15px 10px;
