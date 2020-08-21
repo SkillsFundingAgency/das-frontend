@@ -1,3 +1,3 @@
 // Mobile navigation
-const navs = document.getElementsByClassName('fiu-navigation');
-const nav = new Navigation(navs[0])
+const nav = document.querySelector('[data-fiu-navigation]')
+const navigation = new Navigation(nav)
