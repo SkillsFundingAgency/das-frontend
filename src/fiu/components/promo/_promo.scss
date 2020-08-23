@@ -1,0 +1,73 @@
+.fiu-promo {
+    @include fiu-typography-common;
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 50px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: $mid-grey;
+}
+
+.fiu-promo--citizens {
+    background-color: $green;
+}
+.fiu-promo--employers {
+    background-color: $purple;
+}
+
+.fiu-promo__heading {
+    color: $white;
+    margin-bottom: -10px;
+}
+
+.fiu-promo__content {
+    color: $white;
+    font-size: 20px;
+    line-height: 29px;
+    font-weight: $fiu-font-weight-book;
+
+    & + .fiu-promo__content {
+        margin-top: -20px;
+    }
+
+    @include govuk-media-query(tablet) {
+        font-size: 24px;
+    }
+}
+
+$fiu-promo__button: '.fiu-promo__button, .fiu-promo__button:active, .fiu-promo__button:hover, .fiu-promo__button:visited';
+#{$fiu-promo__button} {
+    font-size: 13px;
+    line-height: 13px;
+    font-weight: $fiu-font-weight-bold;
+    text-transform: uppercase;
+    text-decoration: none;
+    background-color: $white;
+    padding: 15px 20px;
+    display: inline-block;
+    border-radius: 3px;
+    cursor: pointer;
+
+    &:focus {
+        @include govuk-focused-text;
+    }
+
+    .fiu-promo--citizens & {
+        color: $green;
+        &:hover {
+            color: darken($green, 10%);
+            background-color: $light-grey;
+        }
+    }
+    .fiu-promo--employers & {
+        color: $purple;
+
+        &:hover {
+            color: darken($purple, 10%);
+            background-color: $light-grey;
+        }
+    }
+}
+
+
+
