@@ -26,6 +26,10 @@
 	<!-- Page header -->
 	<div class="fiu-page-header">
         <div class="fiu-width-container">
+            <div class="fiu-page-header__image-wrap">
+                <span class="fiu-page-header__image-mask"></span>
+                <img src="/fiu/assets/images/page-headers/apprentice-hozanna-sparks.jpg" alt="Apprentice" class="fiu-page-header__image" />
+            </div>
             <div class="govuk-breadcrumbs fiu-page-header__breadcrumbs">
                 <ol class="govuk-breadcrumbs__list">
                     <li class="govuk-breadcrumbs__list-item">
@@ -42,7 +46,7 @@
 	                    <strong class="fiu-tag fiu-tag--citizens fiu-page-header__tag">Apprentices</strong>
 	                    <h1 class="govuk-heading-xl fiu-page-heading__title-hub">Become an apprentice</h1>
                     </div>
-                    <p class="fiu-page-header__content">
+                    <p class="fiu-page-header__content-l">
                         Ante stiam sed at turpis posuere dictum donec aeros integer eusem it purus interdum sollicitudin fusce auctor aliquam placerat porci
                     </p>
                     <img class="fiu-page-header__hm-logo" src="/fiu/assets/images/hm-government-logo.svg" alt="HM Government logo" />
@@ -71,11 +75,11 @@
 			        }) }}
 			    </div>
 				<div class="govuk-grid-column-one-half">
-					{{ fiuPanel({
-			            heading: "Find an apprenticeship",
-			            html: "Search hundreds of apprenticeships across the country",
-			            buttonText: "Find an apprenticeship"
-			        }) }}
+					<div class="fiu-panel fiu-panel--faa">
+                    	<h2 class="govuk-heading-l fiu-panel__heading">Find an apprenticeship</h2>
+                    	<p class="fiu-panel__content">Search hundreds of apprenticeships across the country</p>
+                    	<a href="faa" class="fiu-button fiu-button--citizens fiu-button--sparks fiu-panel__button">Find an apprenticeship</a>
+                    </div>
 				</div>
 			</div>
 			<div class="govuk-grid-row fiu-flex-row">

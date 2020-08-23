@@ -20,17 +20,35 @@
 }
 
 .fiu-panel__heading {
-
+  color: inherit;
 }
 
 .fiu-panel__content {
   @extend .govuk-body-l;
   @include fiu-typography-common;
+  color: inherit;
 }
 
 .fiu-panel__button {
   margin: 0;
 }
+
+.fiu-panel--faa,
+.fiu-panel--fat {
+  background-color: $black;
+  background-image: url("../assets/images/design/warehouse-green.jpg");
+  background-size: cover;
+  background-position: center;
+  color: $white;
+  border: none;
+}
+
+.fiu-panel--fat {
+  background-image: url("../assets/images/design/warehouse-purple.jpg");
+}
+
+
+
 
 /* Homepage version of the panel */
 

@@ -65,3 +65,10 @@
     }
   }
 }
+
+.fiu-button--sparks {
+  border-image-slice: 30% 20% 40%;
+  border-image-width: 50px;
+  border-image-outset: 50px;
+  border-image-source: url('../assets/images/design/button-sparks-border.png')
+}
