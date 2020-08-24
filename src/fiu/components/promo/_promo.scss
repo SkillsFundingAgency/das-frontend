@@ -1,0 +1,59 @@
+.fiu-promo {
+    @include fiu-typography-common;
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 50px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    background-color: $mid-grey;
+}
+
+.fiu-promo--citizens {
+    background-color: $fiu-citizens-brand-colour;
+}
+.fiu-promo--employers {
+    background-color: $fiu-employers-brand-colour;
+}
+
+.fiu-promo__heading {
+    color: $white;
+    margin-bottom: -10px;
+}
+
+.fiu-promo__content {
+    color: $white;
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: $fiu-font-weight-book;
+
+    & + .fiu-promo__content {
+        margin-top: -20px;
+    }
+
+    @include govuk-media-query(tablet) {
+        font-size: 24px;
+        line-height: 29px;
+    }
+}
+
+.fiu-button--inverse {
+    background-color: $white;
+    margin-bottom: 0;
+
+    .fiu-promo--citizens & {
+        color: $fiu-citizens-brand-colour;
+        &:hover {
+            color: darken($fiu-citizens-brand-colour, 10%);
+            background-color: $light-grey;
+        }
+    }
+    .fiu-promo--employers & {
+        color: $fiu-employers-brand-colour;
+
+        &:hover {
+            color: darken($fiu-employers-brand-colour, 10%);
+            background-color: $light-grey;
+        }
+    }
+
+}

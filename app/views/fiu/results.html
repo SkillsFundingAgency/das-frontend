@@ -5,30 +5,13 @@
 {% block content %}
 
 
+{% include "promo/promo.html" %}
+
 
 
 {% include "results/results.html" %}
 
 
-
-<div class="govuk-grid-row">
-	<div class="govuk-grid-column-one-half">
-		{{ fiuPanel({
-			type: "citizens",
-            tag: "Apprentices",
-            heading: "Become an apprentice",
-            html: "Everything you need to know about becoming an appretice"
-        }) }}
-	</div>
-	<div class="govuk-grid-column-one-half">
-        {{ fiuPanel({
-            type: "employers",
-            tag: "Employers",
-            heading: "Hire an apprentice",
-            html: "Find out how to hire an apprentice and what you need to do"
-        }) }}
-    </div>
-</div>
 
 
 
