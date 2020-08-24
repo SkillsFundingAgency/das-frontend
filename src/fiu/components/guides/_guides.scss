@@ -1,0 +1,88 @@
+$iconTopPos:    20px;
+$iconLeftPos:   15px;
+$iconPDFwidth:  110px;
+$iconPDFheight: 152px;
+
+.fiu-guides-panel {
+    @include fiu-typography-common;
+    border: 1px solid $fiu-border-colour;
+    border-radius: 10px;
+    padding: $iconTopPos $iconLeftPos;
+    margin-bottom: 20px;
+    margin-left: -15px;
+    margin-right: -15px;
+
+    @include govuk-media-query(tablet) {
+        padding: ($iconTopPos + 10px) ($iconLeftPos + 5px);
+
+        .govuk-grid-column-one-half & {
+            margin-left: -15px;
+            margin-right: 0;
+        }
+
+        .govuk-grid-column-one-half + .govuk-grid-column-one-half & {
+            margin-left: 0;
+            margin-right: -15px;
+        }
+    }
+}
+
+.fiu-guides-panel--pdf {
+    background-image: url('../assets/images/pfd-doc-icon.png');
+    background-repeat: no-repeat;
+    background-color: $white;
+    background-position: $iconLeftPos $iconTopPos;
+    background-size: ($iconPDFwidth / 3) ($iconPDFheight / 3);
+    padding-left: ($iconPDFwidth / 3) + ($iconLeftPos * 2);
+
+    @include govuk-media-query(tablet) {
+        background-position: ($iconLeftPos + 5px) ($iconTopPos + 10px);
+        min-height: $iconPDFheight + ($iconTopPos * 2);
+        background-size: auto;
+        padding-left: $iconPDFwidth + ($iconLeftPos + 20px);
+    }
+}
+
+.fiu-guides-panel__heading {
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: $fiu-font-weight-bold;
+    color: $fiu-text-colour;
+    margin-top: 0;
+    word-break: break-all;
+    word-break: break-word;/* WebKit */
+
+    @include govuk-media-query(tablet) {
+        font-size: 24px;
+        line-height: 27px;
+    }
+}
+
+.fiu-guides-panel__spec {
+    font-size: 16px;
+    line-height: 21px;
+    font-weight: $fiu-font-weight-book;
+    color: $dark-grey;
+    display: block;
+    margin-bottom: 16px;
+
+    @include govuk-media-query(tablet) {
+        font-size: 18px;
+        line-height: 23px;
+    }
+}
+
+.fiu-guides-panel__link {
+    font-size: 16px;
+    line-height: 21px;
+    display: block;
+
+    &:focus {
+        @include govuk-focused-text;
+    }
+
+    @include govuk-media-query(tablet) {
+        font-size: 18px;
+        line-height: 23px;
+    }
+}
