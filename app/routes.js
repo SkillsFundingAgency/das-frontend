@@ -15,6 +15,11 @@ module.exports = {
       var compName = req.params.compName;
       res.render('local/' + compName, {action: req.query.action, type: req.query.type})
     })
+    app.get('/local/:compFolder/:compName', function (req, res) {
+      var compFolder = req.params.compFolder;
+      var compName = req.params.compName;
+      res.render('local/' + compFolder + '/' + compName, {action: req.query.action, type: req.query.type})
+    })
     app.get('/favourites/:compName', function (req, res) {
       var compName = req.params.compName;
       res.render('favourites/' + compName, {action: req.query.action, type: req.query.type})

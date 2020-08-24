@@ -44,6 +44,7 @@ app.use(function (req, res, next) {
 });
 
 app.use(express.static('dist'));
+app.use('/public', express.static('app/views/local/landing-pages/assets/'));
 
 routes.bind(app);
 
