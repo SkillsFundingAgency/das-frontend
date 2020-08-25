@@ -1,0 +1,15 @@
+.fiu-video-player {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%;
+  margin-bottom: 30px;
+  box-shadow: 0px 1px 3px 1px rgba(0,0,0,0.2);
+}
+
+.fiu-video-player__inner-wrap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
