@@ -29,7 +29,23 @@
 .banner--covid {
   border-color: $covid;
   border-width: 10px;
-  margin: 90px 0 0 0;
+  margin: 0 -20px;
+  color: #000;
+  .banner__inner-wrap {
+    padding: 20px;
+  }
+  @include media-query($from: tablet) {
+
+  }
+  @include media-query($from: desktop) {
+    margin: 0 -80px;
+  }
+  a.link {
+    color: $link-colour;
+  }
+  #homepage & {
+    margin: 90px 0 0 0;
+  }
 }
 
 .banner__close {
