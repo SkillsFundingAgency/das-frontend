@@ -23,6 +23,15 @@
   @include media-query($from: desktop) {
     padding: 180px 80px 80px;
   }
+  .showing-banner & {
+    padding-top: 310px;
+    @include media-query($from: 500px) {
+      padding-top: 260px;
+    }
+    @include media-query($from: tablet) {
+      padding-top: 270px;
+    }
+  }
 }
 
 .hero--no-clip {
