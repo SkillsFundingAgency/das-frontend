@@ -9,21 +9,9 @@ $iconPDFheight: 152px;
     border-radius: 10px;
     padding: $iconTopPos $iconLeftPos;
     margin-bottom: 20px;
-    margin-left: -15px;
-    margin-right: -15px;
 
     @include govuk-media-query(tablet) {
         padding: ($iconTopPos + 10px) ($iconLeftPos + 5px);
-
-        .govuk-grid-column-one-half & {
-            margin-left: -15px;
-            margin-right: 0;
-        }
-
-        .govuk-grid-column-one-half + .govuk-grid-column-one-half & {
-            margin-left: 0;
-            margin-right: -15px;
-        }
     }
 }
 
@@ -50,8 +38,7 @@ $iconPDFheight: 152px;
     color: $fiu-text-colour;
     margin-top: 0;
     margin-bottom: 18px;
-    word-break: break-all;
-    word-break: break-word;/* WebKit */
+    @include fiu-word-break;
 
     @include govuk-media-query(tablet) {
         font-size: 24px;
@@ -77,10 +64,6 @@ $iconPDFheight: 152px;
     font-size: 16px;
     line-height: 21px;
     display: block;
-
-    &:focus {
-        @include govuk-focused-text;
-    }
 
     @include govuk-media-query(tablet) {
         font-size: 18px;
