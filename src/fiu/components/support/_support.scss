@@ -1,0 +1,54 @@
+.fiu-support-panel {
+    @include fiu-typography-common;
+    text-align: center;
+    border: 1px solid $fiu-border-colour;
+    border-radius: 10px;
+    padding: 30px 20px 54px 20px;
+    margin-bottom: 20px;
+}
+
+.fiu-support-panel__heading {
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: $fiu-font-weight-bold;
+    color: $fiu-text-colour;
+    margin-top: 0;
+    margin-bottom: 20px;
+    @include fiu-word-break;
+
+    @include govuk-media-query(tablet) {
+        font-size: 24px;
+        line-height: 27px;
+    }
+}
+
+.fiu-support-panel__content {
+    font-size: 16px;
+    line-height: 21px;
+    margin-bottom: 0;
+
+    @include govuk-media-query(tablet) {
+        font-size: 18px;
+        line-height: 23px;
+    }
+}
+
+.fiu-support-panel__wrap {
+    display: block;
+
+    b {
+        font-weight: $fiu-font-weight-bold;
+    }
+
+    &.fiu-link {
+        margin-top: 10px;
+        @include fiu-word-break;
+    }
+}
+
+.fiu-support-panel__tel {
+    font-size: 36px;
+    line-height: 40px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+}
