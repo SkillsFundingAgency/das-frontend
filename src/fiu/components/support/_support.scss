@@ -51,4 +51,5 @@
     line-height: 40px;
     margin-top: 10px;
     margin-bottom: 30px;
+    @include fiu-word-break;
 }
