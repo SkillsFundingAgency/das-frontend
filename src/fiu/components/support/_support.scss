@@ -5,6 +5,7 @@
     border-radius: 10px;
     padding: 30px 20px 54px 20px;
     margin-bottom: 20px;
+    background: $white;
 }
 
 .fiu-support-panel__heading {
@@ -15,7 +16,6 @@
     margin-top: 0;
     margin-bottom: 20px;
     @include fiu-word-break;
-
     @include govuk-media-query(tablet) {
         font-size: 24px;
         line-height: 27px;
@@ -26,7 +26,6 @@
     font-size: 16px;
     line-height: 21px;
     margin-bottom: 0;
-
     @include govuk-media-query(tablet) {
         font-size: 18px;
         line-height: 23px;
@@ -35,11 +34,9 @@
 
 .fiu-support-panel__wrap {
     display: block;
-
     b {
         font-weight: $fiu-font-weight-bold;
     }
-
     &.fiu-link {
         margin-top: 10px;
         @include fiu-word-break;
