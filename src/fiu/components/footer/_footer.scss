@@ -35,7 +35,7 @@
 .fiu-footer__apprenticeship-logo-wrap {
   text-align: center;
   padding: 20px 0;
-  border-bottom: 1px solid #fff;
+  border-bottom: 1px solid $dark-grey;
   @include govuk-media-query(tablet) {
     text-align: left;
     padding: 30px 0;

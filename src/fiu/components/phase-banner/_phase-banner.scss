@@ -1,11 +1,10 @@
 .fiu-phase-banner {
     @include fiu-typography-common;
-    border-top: 1px solid $fiu-border-colour;
-    padding-top: 40px;
+    padding-top: 20px;
     padding-bottom: 20px;
-
+    background: $light-grey;
     @include govuk-media-query(tablet) {
-        padding-top: 80px;
+        padding-top: 30px;
         padding-bottom: 30px;
     }
 }

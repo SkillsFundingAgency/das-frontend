@@ -1,4 +1,5 @@
 .fiu-panel {
+  @include fiu-typography-common;
   background: $white;
   text-align: center;
   padding: 30px;
@@ -25,7 +26,6 @@
 
 .fiu-panel__content {
   @extend .govuk-body-l;
-  @include fiu-typography-common;
   color: inherit;
 }
 
