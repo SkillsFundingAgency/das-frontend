@@ -62,17 +62,9 @@ CookieSettings.prototype.formSubmitted = function (event) {
 CookieSettings.prototype.showConfirmationMessage = function () {
   const confirmationMessage = document.querySelector('div[data-cookie-confirmation]')
   const previousPageLink = document.querySelector('.fiu-cookie-settings__prev-page')
-  const referrer = CookieSettings.prototype.getReferrerLink()
 
   document.body.scrollTop = document.documentElement.scrollTop = 0
-
-  if (referrer && referrer !== document.location.pathname) {
-    previousPageLink.href = referrer
-    previousPageLink.style.display = "inline-block"
-  } else {
-    previousPageLink.style.display = "none"
-  }
-
+  
   confirmationMessage.style.display = "block"
 }
 
