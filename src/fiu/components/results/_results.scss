@@ -145,7 +145,7 @@ $fiu-results-favbar__link: '.fiu-results-favbar__link, .fiu-results-favbar__link
             border-left: none;
         }
         &--prev + &,
-        &:first-child() {
+        &:first-child {
             border-left: none;
         }
     }

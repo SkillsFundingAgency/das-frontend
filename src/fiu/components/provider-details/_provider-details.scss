@@ -14,18 +14,24 @@ $barmargin:     10px;
     line-height: 23px;
     margin-top: 50px;
     margin-bottom: 30px;
+
+    @include govuk-media-query(tablet) {
+        & > .govuk-summary-list__row:first-child {
+            .fiu-provider-details-summary__key,
+            .fiu-provider-details-summary__value {
+                border-top: 1px solid $fiu-border-colour;
+            }
+        }
+    }
 }
 
-.fiu-summary-list__row {
-    border-top: 1px solid $fiu-border-colour;
+.fiu-provider-details-summary__key,
+.fiu-provider-details-summary__value {
+    border-bottom-color: $fiu-border-colour;
+}
 
-    & > .govuk-summary-list__key,
-    & > .govuk-summary-list__value {
-        border-bottom-color: $fiu-border-colour;
-    }
-    & > .govuk-summary-list__key {
-        font-weight: $fiu-font-weight-bold;
-    }
+.fiu-provider-details-summary__key {
+    font-weight: $fiu-font-weight-bold;
 }
 
 .fiu-provider-details__details {
@@ -111,6 +117,71 @@ $barmargin:     10px;
     }
 }
 
+.fiu-provider-details-bars--min-design {
+    .fiu-provider-details-bars__key {
+        font-weight: $fiu-font-weight-book;
+    }
+
+    @include govuk-media-query(tablet) {
+        .govuk-summary-list__row {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            height: 30px;
+        }
+        .fiu-provider-details-bars__value {
+            width: 90%;
+        }
+        .fiu-provider-details-bars__actions {
+            width: 24%;
+            left: 81%;
+            padding: 8px 0 0 8px;
+            position: relative;
+            top: -23px;
+        }
+        .fiu-provider-details-bars__key,
+        .fiu-provider-details-bars__value,
+        .fiu-provider-details-bars__actions {
+            border-bottom: none;
+        }
+
+        .govuk-summary-list__row:first-child {/* first row */
+            position: relative;
+            top: 34px;
+            height: 50px;
+
+            .fiu-provider-details-bars__key {
+                order: 1;
+                position: relative;
+                top: -85px;
+                width: 80%;
+            }
+
+            & + .govuk-summary-list__row {/* second row */
+                .fiu-provider-details-bars__key {
+                    order: 3;
+                    position: relative;
+                    top: -29px;
+                    width: 80%;
+                    color: $dark-grey;
+                    font-size: 16px;
+                }
+                .fiu-provider-details-bars__actions {
+                    color: $dark-grey;
+                    font-size: 13px;
+                    line-height: 12px;
+                }
+            }
+        }
+
+        & + .fiu-provider-details__details {
+            padding-top: 24px;
+        }
+
+    }
+}
+
+.fiu-provider-details-bars__employers-default,
 .fiu-provider-details-bars__employers-excellent {
     background-color: lighten($fiu-employers-brand-colour, 0%);
 }
@@ -124,6 +195,7 @@ $barmargin:     10px;
     background-color: lighten($fiu-employers-brand-colour, 35%);
 }
 
+.fiu-provider-details-bars__citizens-default,
 .fiu-provider-details-bars__citizens-excellent {
     background-color: lighten($fiu-citizens-brand-colour, 0%);
 }
@@ -135,4 +207,8 @@ $barmargin:     10px;
 }
 .fiu-provider-details-bars__citizens-very-poor {
     background-color: lighten($fiu-citizens-brand-colour, 35%);
+}
+
+.fiu-provider-details-bars__default {
+    background-color: $fiu-border-colour;
 }
