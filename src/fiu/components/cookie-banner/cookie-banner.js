@@ -14,7 +14,6 @@ function CookieBanner (module) {
 }
 
 CookieBanner.prototype.start = function () {
-  console.log('start')
   this.module.cookieBanner = this.module
   this.module.cookieBannerInnerWrap = this.module.querySelector('.fiu-cookie-banner__message')
   this.module.cookieBannerConfirmationMessage = this.module.querySelector('.fiu-cookie-banner__confirmation')
@@ -37,10 +36,8 @@ CookieBanner.prototype.setupCookieMessage = function () {
 
 CookieBanner.prototype.showCookieBanner = function () {
   const cookiePolicy = this.settings.cookiePolicy,
-    that = this;
+        that = this;
   this.module.cookieBanner.style.display = 'block';
-  console.log(123)
-
   // Create the default cookies based on settings
   Object.keys(cookiePolicy).forEach(function (cookieName) {
     window.GOVUK.cookie(cookieName + that.settings.env, cookiePolicy[cookieName].toString(), { days: 365 })
