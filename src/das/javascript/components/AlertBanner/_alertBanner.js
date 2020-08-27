@@ -41,6 +41,8 @@ AlertBanner.prototype.showBanner = function () {
     if (this.$alertBanner !== null) {
         var bannerClass = this.$alertBanner.getAttribute('class').replace(' visually-hidden', '');
         this.$alertBanner.setAttribute('class', bannerClass);
+        var body = document.body;
+        body.classList.add("showing-banner");
     }
 }
 
@@ -70,6 +72,8 @@ AlertBanner.prototype.checkCookie = function (name) {
 AlertBanner.prototype.removeBanner = function () {
     if (this.$alertBanner !== null) {
         this.$alertBannerParent.removeChild(this.$alertBanner);
+        var body = document.body;
+        body.classList.remove("showing-banner");
     }
 }
 

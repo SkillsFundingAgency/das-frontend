@@ -8,6 +8,11 @@
   }
 }
 
+.fiu-link--no-visited-state {
+  &:visited {
+    color: $fiu-global-link-colour;
+  }
+}
 
 .fiu-link--citizens {
   color: $fiu-citizens-link-colour;
@@ -39,11 +44,9 @@
   }
 }
 
+// Content coming from CMS
 .fiu-article > p > a,
 .fiu-article > li > a {
   @extend .fiu-link;
 }
 
-.fiu-link--citizens {
-
-}
