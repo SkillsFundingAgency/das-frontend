@@ -1,0 +1,26 @@
+.fiu-notification {
+  @include fiu-typography-common;
+  background: $fiu-global-brand-colour;
+  padding: 20px;
+  color: $white;
+  margin-bottom: 20px;
+}
+
+.fiu-notification__heading {
+  @extend .govuk-heading-m;
+  color: inherit;
+  margin-bottom: 0;
+}
+
+.fiu-notification__body {
+  @extend .govuk-body;
+  color: inherit;
+  margin-top: .4em;
+}
+
+.fiu-notification__body:last-child {
+  margin-bottom: 0;
+  @include govuk-media-query(tablet) {
+    margin-bottom: -2px;
+  }
+}
