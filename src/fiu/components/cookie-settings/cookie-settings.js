@@ -64,7 +64,7 @@ CookieSettings.prototype.showConfirmationMessage = function () {
   const previousPageLink = document.querySelector('.fiu-cookie-settings__prev-page')
 
   document.body.scrollTop = document.documentElement.scrollTop = 0
-  
+
   confirmationMessage.style.display = "block"
 }
 
