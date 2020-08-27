@@ -1,3 +1,4 @@
+
 function Navigation(nav) {
   this.navToggle = nav.querySelector('[data-fiu-nav-toggle]')
   this.navMenu = nav.querySelector('[data-fiu-nav-menu]')
