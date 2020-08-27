@@ -1,6 +1,6 @@
 .fiu-page-header {
     @include fiu-typography-common;
-    background-color: #000;
+    background-color: $black;
     padding: 1px 0;
     color: $white;
     position: relative;
