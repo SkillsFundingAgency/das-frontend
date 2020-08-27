@@ -1,0 +1,13 @@
+
+.js-enabled {
+  .fiu-js-hide {
+    display: none;
+  }
+}
+
+.fiu-js-show {
+  display: none;
+  .js-enabled & {
+    display: block;
+  }
+}
