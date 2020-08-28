@@ -46,6 +46,9 @@
   &:active {
     color: $fiu-global-link-hover-colour;
   }
+  &:visited {
+    color: $fiu-global-link-colour;
+  }
   &.fiu-button--citizens {
     color: $fiu-citizens-link-colour;
     &:hover {
@@ -63,6 +66,25 @@
     &:hover {
       color: $fiu-providers-link-hover-colour;
     }
+  }
+}
+
+.fiu-button--text {
+  background: transparent;
+  color: $fiu-global-link-colour;
+  border: 2px solid transparent;
+  text-transform: none;
+  text-decoration: underline;
+  font-weight: $fiu-font-weight-book;
+  font-size: 16px;
+  padding: .5em 1.5em;
+  &:link,
+  &:active {
+    color: $fiu-global-link-colour;
+    text-decoration: underline;
+  }
+  &:hover {
+    background: transparent;
   }
 }
 

@@ -1,0 +1,27 @@
+.fiu-phase-banner {
+    @include fiu-typography-common;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    background: $light-grey;
+    @include govuk-media-query(tablet) {
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+}
+
+.fiu-phase-banner__content {
+    font-size: 18px;
+    line-height: 23px;
+    @include govuk-media-query(tablet) {
+        font-size: 16px;
+        line-height: 21px;
+    }
+}
+
+.fiu-phase-banner__tag {
+    font-size: 15px;
+    line-height: 16px;
+    display: inline-block;
+    padding: 3px 10px;
+    margin-right: 5px;
+}
