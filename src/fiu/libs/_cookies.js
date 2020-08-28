@@ -43,7 +43,7 @@
     if (document.location.protocol === 'https:') {
       cookieString = cookieString + '; Secure'
     }
-
+    console.log(cookieString  + ';domain=' + options.domain)
     document.cookie = cookieString  + ';domain=' + options.domain
   }
 
@@ -77,7 +77,7 @@
       return "TEST"
     }
     if (domain.indexOf("test2-") >= 0) {
-      return "TEST2"
+      return "TESTTWO"
     }
     if (domain.indexOf("preprod-") >= 0) {
       return "PP"
