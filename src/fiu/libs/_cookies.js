@@ -28,7 +28,7 @@
       options = {}
     }
 
-    var cookieString = name + '=' + value + '; path=/;SameSite=None'
+    var cookieString = name + '=' + value + '; path=/;SameSite=None;Secure'
 
     if (options.days) {
       var date = new Date()
