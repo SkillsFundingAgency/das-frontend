@@ -4,7 +4,7 @@ $barpadding:    12px;
 $barmargin:     10px;
 
 @mixin fiu-provider-details-bars-border() {
-  border-bottom: 10px solid $light-grey;
+  border-bottom: 10px solid $fiu-body-colour;
 }
 
 .fiu-provider-details-summary {
@@ -79,12 +79,20 @@ $barmargin:     10px;
     line-height: $barlineheight;
     height: $barheight;
     padding: $barpadding 0;
+    vertical-align: middle;
     border: none;
 
     @include govuk-media-query(tablet) {
-        width: 20%;
         @include fiu-provider-details-bars-border;
     }
+
+    @include govuk-media-query(desktop) {
+        width: 33%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
 }
 
 .fiu-provider-details-bars__value {
@@ -92,11 +100,15 @@ $barmargin:     10px;
     line-height: $barlineheight;
     height: $barheight;
     padding: 0;
+    vertical-align: middle;
     border: none;
 
     @include govuk-media-query(tablet) {
-        width: 80%;
         @include fiu-provider-details-bars-border;
+    }
+
+    @include govuk-media-query(desktop) {
+        width: 80%;
     }
 
     span {
@@ -112,9 +124,10 @@ $barmargin:     10px;
     line-height: $barlineheight;
     height: $barheight;
     padding: $barpadding 0;
+    vertical-align: middle;
     border: none;
 
-    @include govuk-media-query(tablet) {
+    @include govuk-media-query(desktop) {
         width: 25%;
         text-align: left;
         padding-left: 20px;
@@ -138,8 +151,8 @@ $barmargin:     10px;
             width: 90%;
         }
         .fiu-provider-details-bars__actions {
-            width: 24%;
-            left: 81%;
+            width: 54px;
+            left: 86%;
             padding: 8px 0 0 8px;
             position: relative;
             top: -23px;
@@ -179,41 +192,60 @@ $barmargin:     10px;
             }
         }
 
+        @include govuk-media-query(desktop) {
+            .fiu-provider-details-bars__actions {
+                left: 90%;
+            }
+        }
+
         & + .fiu-provider-details-details {
             padding-top: 24px;
         }
-
     }
 }
 
-.fiu-provider-details-bars__employers-default,
-.fiu-provider-details-bars__employers-excellent {
+.fiu-provider-details-source {
+    @include fiu-typography-common;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: $fiu-font-weight-regular;
+    width: 100%;
+    text-align: right;
+}
+
+.fiu-provider-details-bars__value--employers-default > span,
+.fiu-provider-details-bars__value--employers-excellent > span {
     background-color: lighten($fiu-employers-brand-colour, 0%);
 }
-.fiu-provider-details-bars__employers-good {
+.fiu-provider-details-bars__value--employers-good > span {
     background-color: lighten($fiu-employers-brand-colour, 15%);
 }
-.fiu-provider-details-bars__employers-poor {
+.fiu-provider-details-bars__value--employers-poor > span {
     background-color: lighten($fiu-employers-brand-colour, 25%);
 }
-.fiu-provider-details-bars__employers-very-poor {
+.fiu-provider-details-bars__value--employers-very-poor > span {
     background-color: lighten($fiu-employers-brand-colour, 35%);
 }
 
-.fiu-provider-details-bars__citizens-default,
-.fiu-provider-details-bars__citizens-excellent {
+.fiu-provider-details-bars__value--citizens-default > span,
+.fiu-provider-details-bars__value--citizens-excellent > span {
     background-color: lighten($fiu-citizens-brand-colour, 0%);
 }
-.fiu-provider-details-bars__citizens-good {
+.fiu-provider-details-bars__value--citizens-good > span {
     background-color: lighten($fiu-citizens-brand-colour, 15%);
 }
-.fiu-provider-details-bars__citizens-poor {
+.fiu-provider-details-bars__value--citizens-poor > span {
     background-color: lighten($fiu-citizens-brand-colour, 25%);
 }
-.fiu-provider-details-bars__citizens-very-poor {
+.fiu-provider-details-bars__value--citizens-very-poor > span {
     background-color: lighten($fiu-citizens-brand-colour, 35%);
 }
 
-.fiu-provider-details-bars__default {
-    background-color: $fiu-border-colour;
+.fiu-provider-details-bars__value--default > span {
+    background-color: $grey;
+}
+.fiu-provider-details-bars__value--none {
+    &.fiu-provider-details-bars__value {
+        background-color: transparent;
+    }
 }
