@@ -4,6 +4,9 @@
   padding: 20px;
   color: $white;
   margin-bottom: 20px;
+  &:focus {
+    @include fiu-focused-block;
+  }
 }
 
 .fiu-notification__heading {

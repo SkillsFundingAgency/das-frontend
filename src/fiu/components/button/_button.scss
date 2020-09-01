@@ -79,6 +79,7 @@
   font-size: 16px;
   padding: .5em 1.5em;
   &:link,
+  &:visited,
   &:active {
     color: $fiu-global-link-colour;
     text-decoration: underline;

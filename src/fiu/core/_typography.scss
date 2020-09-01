@@ -14,6 +14,8 @@ $fiu-font-weight-bold:    700;
   font-weight: $fiu-font-weight-bold;
 }
 
+.govuk-input,
+.govuk-select,
 .govuk-table,
 .govuk-body-l,
 .govuk-body,
@@ -22,10 +24,47 @@ $fiu-font-weight-bold:    700;
   @include fiu-typography-common;
 }
 
+.govuk-caption-s,
+.govuk-caption-m,
+.govuk-caption-l,
+.govuk-caption-xl {
+  color: $mid-grey;
+  @include fiu-typography-common;
+}
+
+
+.fiu-feature-text {
+  @include fiu-rotate-skew;
+}
+
+// Content coming from CMS
+
+.fiu-article > h2:not([class]) {
+  @extend .govuk-heading-l;
+}
+
+.fiu-article > h3:not([class]) {
+  @extend .govuk-heading-m;
+}
+
+.fiu-article > h4:not([class]) {
+  @extend .govuk-heading-s;
+}
+
+.fiu-article > h5:not([class]) {
+  @extend .govuk-heading-xs;
+}
+
 .fiu-article > p:not([class]) {
   @extend .govuk-body;
 }
 
-.fiu-feature-text {
-  @include fiu-rotate-skew;
+.fiu-article > ul:not([class]) {
+  @extend .govuk-list;
+  @extend .govuk-list--bullet;
+}
+
+.fiu-article > ol:not([class]) {
+  @extend .govuk-list;
+  @extend .govuk-list--number;
 }
