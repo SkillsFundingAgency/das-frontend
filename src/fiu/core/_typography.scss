@@ -23,6 +23,13 @@ $fiu-font-weight-bold:    700;
   @include fiu-typography-common;
 }
 
+.govuk-caption-s,
+.govuk-caption-m,
+.govuk-caption-l,
+.govuk-caption-xl {
+  color: $mid-grey;
+  @include fiu-typography-common;
+}
 
 
 .fiu-feature-text {
