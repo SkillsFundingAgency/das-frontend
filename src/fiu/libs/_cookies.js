@@ -28,7 +28,7 @@
       options = {}
     }
 
-    var cookieString = name + '=' + value + '; path=/;SameSite=None'
+    var cookieString = name + '=' + value + '; path=/'
 
     if (options.days) {
       var date = new Date()
@@ -41,7 +41,7 @@
     }
 
     if (document.location.protocol === 'https:') {
-      cookieString = cookieString + ';Secure'
+      cookieString = cookieString + ';Secure;SameSite=None'
     }
     console.log(cookieString  + ';domain=' + options.domain)
     document.cookie = cookieString  + ';domain=' + options.domain
@@ -75,6 +75,9 @@
 
   window.GOVUK.getEnv = function () {
     const domain = window.location.hostname;
+    if (domain.indexOf("localhost") >= 0) {
+      return "LOCAL"
+    }
     if (domain.indexOf("at-") >= 0) {
       return "AT"
     }
