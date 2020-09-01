@@ -59,39 +59,6 @@
     border-bottom: 1px solid $mid-grey;
 }
 
-.fiu-results-favbar {
-    @include fiu-typography-common;
-    text-align: right;
-}
-
-.fiu-results-favbar__link {
-    display: inline-block;
-    font-size: 16px;
-    line-height: 24px;
-    padding-right: 30px;
-    background-size: 20px 20px;
-    background-image: url('../assets/images/icon-star-outlined.svg');
-    background-repeat: no-repeat;
-    background-position: center right;
-}
-
-$fiu-results-favbar__link: '.fiu-results-favbar__link, .fiu-results-favbar__link:active, .fiu-results-favbar__link:hover, .fiu-results-favbar__link:visited';
-#{$fiu-results-favbar__link} {
-    text-decoration: none;
-    color: $fiu-header-link-colour;
-}
-
-.fiu-results-favbar__link {
-    &:hover {
-        background-image: url('../assets/images/icon-star-filled-yellow.svg');
-        text-decoration: underline;
-        cursor: pointer;
-    }
-    &:focus {
-        @include govuk-focused-text;
-    }
-}
-
 .fiu-results-desc {
     font-size: 18px;
     margin: 0 0 15px 0;
