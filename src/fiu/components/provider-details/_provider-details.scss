@@ -140,6 +140,10 @@ $barmargin:     10px;
         font-weight: $fiu-font-weight-book;
     }
 
+    .govuk-summary-list__row:first-child {
+        border-bottom: none;
+    }
+
     @include govuk-media-query(tablet) {
         .govuk-summary-list__row {
             width: 100%;
@@ -295,44 +299,56 @@ $barmargin:     10px;
 .fiu-provider-details-locations__td {
     margin-bottom: 10px;
     padding-bottom: 10px;
-    border-bottom: 1px solid $mid-grey;
+    border-bottom: 1px solid $fiu-border-colour;
 }
 .fiu-provider-details-locations__th:first-child,
 .fiu-provider-details-locations__th:first-child + .fiu-provider-details-locations__td {
     margin-top: 10px;
     padding-top: 10px;
-    border-top: 1px solid $mid-grey;
+    border-top: 1px solid $fiu-border-colour;
 }
 
-.fiu-provider-details-favbar {
+.fiu-summary-list-contact {
     @include fiu-typography-common;
-    text-align: right;
-}
 
-.fiu-provider-details-favbar__link {
-    display: inline-block;
-    font-size: 16px;
-    line-height: 24px;
-    padding-right: 30px;
-    background-size: 20px 20px;
-    background-image: url('../assets/images/icon-star-outlined.svg');
-    background-repeat: no-repeat;
-    background-position: center right;
-}
-
-$fiu-provider-details-favbar__link: '.fiu-provider-details-favbar__link, .fiu-provider-details-favbar__link:active, .fiu-provider-details-favbar__link:hover, .fiu-provider-details-favbar__link:visited';
-#{$fiu-provider-details-favbar__link} {
-    text-decoration: none;
-    color: $fiu-header-link-colour;
-}
-
-.fiu-provider-details-favbar__link {
-    &:hover {
-        background-image: url('../assets/images/icon-star-filled-yellow.svg');
-        text-decoration: underline;
-        cursor: pointer;
-    }
-    &:focus {
-        @include govuk-focused-text;
+    @include govuk-media-query(tablet) {
+        .fiu-link[href^="mailto:"] {
+            font-size: 14px;
+            line-height: 23px;
+            @include fiu-word-break;
+        }
     }
 }
+
+.fiu-summary-list-contact__row {
+    display: block;
+    width: 100%;
+
+    @include govuk-media-query(tablet) {
+        border-top: 1px solid $fiu-border-colour;
+    }
+
+    &:last-child {
+        border-bottom: none;
+    }
+
+    .fiu-summary-list-contact__key,
+    .fiu-summary-list-contact__value {
+        width: 100%;
+        display: block;
+        border-bottom: none;
+    }
+
+    .fiu-summary-list-contact__key {
+        padding-top: 10px;
+        padding-bottom: 5px;
+        margin-bottom: 0;
+        font-weight: $fiu-font-weight-bold;;
+    }
+    .fiu-summary-list-contact__value {
+        padding-top: 5px;
+        padding-bottom: 10px;
+    }
+}
+
+

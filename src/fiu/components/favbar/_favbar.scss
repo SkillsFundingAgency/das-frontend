@@ -14,22 +14,16 @@
     background-position: center right;
 }
 
-$fiu-favbar__link: '.fiu-favbar__link, .fiu-favbar__link:active, .fiu-favbar__link:hover, .fiu-favbar__link:visited';
-#{$fiu-favbar__link} {
+.fiu-favbar__link,
+.fiu-favbar__link:active,
+.fiu-favbar__link:hover,
+.fiu-favbar__link:visited{
     text-decoration: underline;
-
-    &:not(){
-        color: $fiu-header-link-colour;
-    }
 }
 
 .fiu-favbar__link {
     &:hover {
         background-image: url('../assets/images/icon-star-filled-yellow.svg');
-        text-decoration: none;
         cursor: pointer;
-    }
-    &:focus {
-        @include govuk-focused-text;
     }
 }
