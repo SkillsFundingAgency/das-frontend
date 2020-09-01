@@ -29,7 +29,7 @@ gulp.task('fiu-watch-js', function() {
 gulp.task('fiu-compile-js', function() {
   return gulp.src([paths.src.fiuJsLibs, paths.src.fiuJs, paths.src.fiuJsInit])
     .pipe(babel())
-    .pipe(terser())
+    //.pipe(terser())
     .pipe(concat('app.min.js'))
     .pipe(gulp.dest(paths.dist.fiuJs));
 });

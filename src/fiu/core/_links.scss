@@ -46,6 +46,7 @@
 
 // Content coming from CMS
 .fiu-article > p > a,
-.fiu-article li > a {
+.fiu-article li > a,
+.fiu-article li > p > a {
   @extend .fiu-link;
 }

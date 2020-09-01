@@ -4,9 +4,9 @@
 
 {% block content %}
 
-{% include "promo/promo.html" %}
-{% include "guides/guides.html" %}
-{% include "results/results.html" %}
-{% include "phase-banner/phase-banner.html" %}
-
+<main id="main" class="fiu-main-wrapper">
+	{% include "page-header/page-header.html" %}
+	<span class="fiu-header-content-spacer"></span>
+	{% include "results/results.html" %}
+</main>
 {% endblock %}
