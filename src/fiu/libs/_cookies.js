@@ -28,12 +28,12 @@
       options = {}
     }
 
-    var cookieString = name + '=' + value + '; path=/;SameSite=None;Secure'
+    var cookieString = name + '=' + value + '; path=/;SameSite=None'
 
     if (options.days) {
       var date = new Date()
       date.setTime(date.getTime() + (options.days * 24 * 60 * 60 * 1000))
-      cookieString = cookieString + '; expires=' + date.toGMTString()
+      cookieString = cookieString + ';expires=' + date.toGMTString()
     }
 
     if (!options.domain) {
@@ -41,7 +41,7 @@
     }
 
     if (document.location.protocol === 'https:') {
-      cookieString = cookieString + '; Secure'
+      cookieString = cookieString + ';Secure'
     }
     console.log(cookieString  + ';domain=' + options.domain)
     document.cookie = cookieString  + ';domain=' + options.domain
@@ -63,13 +63,18 @@
   }
 
   window.GOVUK.getDomain = function () {
-    return window.location.hostname.indexOf('.') !== -1
-      ? '.' + window.location.hostname.slice(window.location.hostname.indexOf('.') + 1)
-      : window.location.hostname;
+    const domain = window.location.hostname;
+    if (domain.indexOf("azurewebsites") >= 0) {
+      return domain
+    } else {
+      return window.location.hostname.indexOf('.') !== -1
+        ? '.' + window.location.hostname.slice(window.location.hostname.indexOf('.') + 1)
+        : window.location.hostname;
+    }
   }
 
   window.GOVUK.getEnv = function () {
-    var domain = window.location.hostname;
+    const domain = window.location.hostname;
     if (domain.indexOf("at-") >= 0) {
       return "AT"
     }
@@ -77,7 +82,7 @@
       return "TEST"
     }
     if (domain.indexOf("test2-") >= 0) {
-      return "TESTTWO"
+      return "TEST2"
     }
     if (domain.indexOf("preprod-") >= 0) {
       return "PP"
