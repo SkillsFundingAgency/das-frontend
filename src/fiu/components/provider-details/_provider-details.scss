@@ -140,7 +140,7 @@ $barmargin:     10px;
         font-weight: $fiu-font-weight-book;
     }
 
-    .govuk-summary-list__row:first-child {
+    .govuk-summary-list__row {
         border-bottom: none;
     }
 
@@ -264,8 +264,10 @@ $barmargin:     10px;
     width: 100%;
     text-align: right;
 
-    .fiu-tag {
-        font-size: 15px;
+    @include govuk-media-query(desktop) {
+        .fiu-tag {
+            font-size: 15px;
+        }
     }
 }
 
