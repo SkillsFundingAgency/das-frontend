@@ -8,7 +8,8 @@ $fiu-font-weight-bold:    700;
 .govuk-heading-m,
 .govuk-heading-s,
 .govuk-heading-xs,
-.govuk-fieldset__legend {
+.govuk-fieldset__legend,
+.fiu-font-weight-bold {
   @include fiu-typography-common;
   font-weight: $fiu-font-weight-bold;
 }

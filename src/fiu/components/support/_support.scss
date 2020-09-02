@@ -28,9 +28,7 @@
 
 .fiu-support-panel__wrap {
     display: block;
-    b {
-        font-weight: $fiu-font-weight-bold;
-    }
+
     &.fiu-link {
         margin-top: 10px;
         @include fiu-word-break;
@@ -42,4 +40,5 @@
     line-height: 40px;
     margin-top: 10px;
     margin-bottom: 30px;
+    @include fiu-word-break;
 }
