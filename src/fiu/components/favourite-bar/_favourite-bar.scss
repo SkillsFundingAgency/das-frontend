@@ -1,29 +1,34 @@
-.fiu-favbar {
+.fiu-favourite-bar {
     @include fiu-typography-common;
     text-align: right;
 }
 
-.fiu-favbar__link {
+.fiu-favourite-bar__link {
+    @include fiu-typography-common;
     display: inline-block;
     font-size: 16px;
     line-height: 24px;
-    padding-right: 30px;
+    padding: 0 30px 0 0;
     background-size: 20px 20px;
     background-image: url('../assets/images/icon-star-outlined.svg');
     background-repeat: no-repeat;
     background-position: center right;
+    background-color: transparent;
+    border: none;
 }
 
-.fiu-favbar__link,
-.fiu-favbar__link:active,
-.fiu-favbar__link:hover,
-.fiu-favbar__link:visited{
+.fiu-favourite-bar__link,
+.fiu-favourite-bar__link:active,
+.fiu-favourite-bar__link:visited{
     text-decoration: underline;
 }
 
-.fiu-favbar__link {
-    &:hover {
-        background-image: url('../assets/images/icon-star-filled-yellow.svg');
-        cursor: pointer;
-    }
+.fiu-favourite-bar__link:hover {
+    background-image: url('../assets/images/icon-star-filled-yellow.svg');
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.fiu-favourite-bar__link:focus {
+    @include govuk-focused-text;
 }

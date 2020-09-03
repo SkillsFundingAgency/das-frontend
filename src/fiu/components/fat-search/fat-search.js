@@ -25,7 +25,6 @@ if (keywordsInput && configUrl) {
     xhr.send();
   };
 
-
   accessibleAutocomplete({
     element: container,
     id: 'Keywords',
@@ -35,4 +34,5 @@ if (keywordsInput && configUrl) {
     source: getSuggestions,
     placeholder: "Job role or keyword..."
   });
+
 }
