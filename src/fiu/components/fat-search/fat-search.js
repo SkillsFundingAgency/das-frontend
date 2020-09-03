@@ -1,4 +1,4 @@
-const keywordsInput = document.getElementById('Keywords');
+const keywordsInput = document.getElementById('FATKeywords');
 const configUrl = document.querySelector('body').dataset.fatApi;
 
 if (keywordsInput && configUrl) {
@@ -27,7 +27,7 @@ if (keywordsInput && configUrl) {
 
   accessibleAutocomplete({
     element: container,
-    id: 'Keywords',
+    id: 'FATKeywords',
     name: 'Keywords',
     displayMenu: 'overlay',
     showNoOptionsFound: false,
