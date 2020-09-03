@@ -24,6 +24,16 @@
   }
 }
 
+.fiu-link--citizens-light {
+  color: $fiu-citizens-link-colour-light;
+  &:hover {
+    color: lighten($fiu-citizens-link-colour-light, 15%);
+  }
+  &:focus {
+    @include govuk-focused-text;
+  }
+}
+
 .fiu-link--employers {
   color: $fiu-employers-link-colour;
   &:hover {
@@ -35,9 +45,9 @@
 }
 
 .fiu-link--employers-light {
-  color: lighten($fiu-employers-link-colour, 15%);
+  color: $fiu-employers-link-colour-light;
   &:hover {
-    color: lighten($fiu-employers-link-colour, 30%);
+    color: lighten($fiu-employers-link-colour-light, 15%);
   }
   &:focus {
     @include govuk-focused-text;
