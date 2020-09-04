@@ -43,7 +43,6 @@
     if (document.location.protocol === 'https:') {
       cookieString = cookieString + ';Secure;SameSite=None'
     }
-    console.log(cookieString  + ';domain=' + options.domain)
     document.cookie = cookieString  + ';domain=' + options.domain
   }
 

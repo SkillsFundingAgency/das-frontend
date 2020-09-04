@@ -11,6 +11,9 @@
   &:hover {
     background: $fiu-global-link-hover-colour;
   }
+  @include govuk-media-query($from: tablet) {
+    padding-top: .8em;
+  }
 }
 
 .fiu-button--citizens {
