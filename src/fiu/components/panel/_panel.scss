@@ -2,7 +2,7 @@
   @include fiu-typography-common;
   background: $white;
   text-align: center;
-  padding: 30px;
+  padding: 20px;
   margin-bottom: 15px;
   height: 100%;
   display: block;
@@ -14,14 +14,9 @@
   &:focus {
     @include fiu-focused-block;
   }
-}
-
-.fiu-panel--left-align {
-  text-align: left;
-}
-
-.fiu-panel--min-padding {
-  padding: 0 15px;
+  @include govuk-media-query($from: desktop) {
+    padding: 30px;
+  }
 }
 
 .fiu-panel__tag {
@@ -54,6 +49,29 @@
 .fiu-panel--fat {
   background-image: url("../assets/images/design/warehouse-purple.jpg");
 }
+
+.fiu-panel--left-align {
+  text-align: left;
+}
+
+.fiu-panel--min-padding {
+  padding: 0 15px;
+}
+
+.fiu-panel--narrow-col {
+  .fiu-panel__heading.govuk-heading-l {
+    @include govuk-media-query($from: tablet) {
+      font-size: 20px;
+    }
+    @include govuk-media-query($from: desktop) {
+      font-size: 24px;
+    }
+    @include govuk-media-query($from: $fiu-large-desktop-breakpoint) {
+      font-size: 30px;
+    }
+  }
+}
+
 
 /* Homepage version of the panel */
 
