@@ -14,6 +14,8 @@ $fiu-font-weight-bold:    700;
   font-weight: $fiu-font-weight-bold;
 }
 
+.govuk-details__summary,
+.govuk-summary-list,
 .govuk-input,
 .govuk-select,
 .govuk-table,
@@ -32,6 +34,11 @@ $fiu-font-weight-bold:    700;
   @include fiu-typography-common;
 }
 
+.govuk-summary-list__key,
+.govuk-summary-list__value,
+.govuk-summary-list__actions {
+  vertical-align: top;
+}
 
 .fiu-feature-text {
   @include fiu-rotate-skew;
@@ -67,4 +74,13 @@ $fiu-font-weight-bold:    700;
 .fiu-article > ol:not([class]) {
   @extend .govuk-list;
   @extend .govuk-list--number;
+}
+
+.markdown > ul {
+  @extend .govuk-list--bullet;
+  margin: 0;
+}
+
+.markdown > p {
+  margin-top: 0;
 }
