@@ -4,6 +4,7 @@
     padding: 1px 0;
     color: $white;
     position: relative;
+    overflow: hidden;
 }
 
 .fiu-page-header__wrap {
@@ -16,13 +17,11 @@
     @include fiu-typography-common;
     text-transform: uppercase;
     font-size: 12px;
-    letter-spacing: .05em;
-    line-height: 1em;
-    padding-top: 20px;
-    margin-bottom: 30px;
     color: $white;
+    margin-bottom: 20px;
     @include govuk-media-query(tablet) {
         padding-top: 10px;
+        margin-bottom: 40px;
     }
     .govuk-breadcrumbs__link {
         @include fiu-typography-common;

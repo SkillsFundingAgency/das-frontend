@@ -28,7 +28,6 @@
 
 .fiu-support-panel__wrap {
     display: block;
-
     &.fiu-link {
         margin-top: 10px;
         @include fiu-word-break;
@@ -36,9 +35,8 @@
 }
 
 .fiu-support-panel__tel {
-    font-size: 36px;
-    line-height: 40px;
-    margin-top: 10px;
-    margin-bottom: 30px;
+    font-size: 34px;
+    line-height: 1.3em;
+    margin-bottom: 20px;
     @include fiu-word-break;
 }
