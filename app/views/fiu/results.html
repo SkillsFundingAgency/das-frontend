@@ -6,7 +6,8 @@
 
 <main id="main" class="fiu-main-wrapper">
 	{% include "page-header/page-header.html" %}
-	<span class="fiu-header-content-spacer"></span>
+	{% include "search-filter/search-filter.html" %}
+	<span class="fiu-header-content-spacer--grey"></span>
 	{% include "results/results.html" %}
 </main>
 {% endblock %}

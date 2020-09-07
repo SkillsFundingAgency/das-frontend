@@ -1,0 +1,65 @@
+.fiu-search-filter {
+  background: $dark-grey;
+  color: $white;
+  padding: 15px 0 10px;
+}
+
+.fiu-search-filter__title {
+  color: inherit;
+  margin: 0;
+  @include govuk-media-query($from: tablet) {
+    margin: 0 0 -10px;
+  }
+}
+
+.fiu-search-filter__fieldset {
+  @include govuk-clearfix();
+}
+
+.fiu-search-filter__legend {
+  color: inherit;
+  font-weight: $fiu-font-weight-book;
+  @include govuk-media-query($from: tablet) {
+    float: left;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    padding-right: 20px;
+    margin-bottom: 0;
+  }
+}
+
+.fiu-search-filter__label {
+  color: inherit;
+  font-size: 16px;
+  b {
+    font-weight: $fiu-font-weight-bold;
+  }
+  @include govuk-media-query($from: tablet) {
+    .govuk-checkboxes--small & {
+      padding-right: 20px;
+    }
+  }
+  .fiu-search-filter__checkbox-item:last-child & {
+    @include govuk-media-query($from: tablet) {
+      padding-right: 0;
+    }
+  }
+}
+
+.fiu-search-filter__checkboxes {
+  @include govuk-clearfix();
+  @include govuk-media-query($from: tablet) {
+    float: left;
+  }
+}
+
+.fiu-search-filter__checkbox-item {
+  @include govuk-media-query($from: tablet) {
+    clear: none;
+  }
+}
+
+.fiu-search-filter__button {
+  margin: 15px 0 0;
+}
+
