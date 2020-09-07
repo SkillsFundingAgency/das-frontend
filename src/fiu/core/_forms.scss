@@ -1,3 +1,21 @@
+
+.fiu-form-group-inline {
+  display: table;
+  & > .govuk-input {
+    display: table-cell;
+  }
+}
+
+.fiu-form-group-inline__button-wrap {
+  display: table-cell;
+  vertical-align: top;
+  width: 1%;
+  padding-left: 5px;
+  & > .govuk-button {
+    margin: 0;
+  }
+}
+
 .fiu-inline-form {
   @include govuk-clearfix()
 }
