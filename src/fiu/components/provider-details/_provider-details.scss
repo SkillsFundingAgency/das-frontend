@@ -12,7 +12,7 @@ $barmargin:     10px;
     color: $fiu-text-colour;
     font-size: 18px;
     line-height: 23px;
-    margin-top: 50px;
+    margin-top: 3px;
     margin-bottom: 30px;
 
     @include govuk-media-query(tablet) {
@@ -49,6 +49,10 @@ $barmargin:     10px;
 .fiu-provider-details-details__text {
     font-size: 18px;
     line-height: 23px;
+
+    p {
+        margin-bottom: 10px;
+    }
 }
 
 .fiu-provider-details-summary__status-yes,
@@ -251,6 +255,8 @@ $barmargin:     10px;
 .fiu-provider-details-bars__value--none {
     &.fiu-provider-details-bars__value {
         background-color: transparent;
+        font-size: 14px;
+        line-height: 14px;
     }
 }
 
@@ -258,6 +264,50 @@ $barmargin:     10px;
     @include fiu-typography-common;
     padding: 20px 15px 30px 15px;
     margin-bottom: 15px;
+}
+
+.fiu-provider-details-locations__fav {
+    text-align: right;
+
+    button {
+        @include fiu-typography-common;
+        display: inline-block;
+        border: none;
+        font-size: 16px;
+        line-height: 21px;
+        padding-right: 30px;
+        text-decoration: underline;
+        background-size: 20px 20px;
+        background-image: url('../assets/images/icon-star-outlined.svg');
+        background-repeat: no-repeat;
+        background-position: center right;
+        background-color: transparent;
+
+        &:hover {
+            background-image: url('../assets/images/icon-star-filled-yellow.svg');
+            text-decoration: none;
+            cursor: pointer;
+        }
+
+        &:focus {
+            @include govuk-focused-text;
+        }
+    }
+
+    &.fiu-provider-details-locations__fav--employers button {
+        color: $fiu-employers-link-colour;
+
+        &:hover {
+            color: $fiu-employers-link-hover-colour;
+        }
+    }
+    &.fiu-provider-details-locations__fav--citizens button {
+        color: $fiu-citizens-link-colour;
+
+        &:hover {
+            color: $fiu-citizens-link-hover-colour;
+        }
+    }
 }
 
 .fiu-provider-details-locations__tag {
