@@ -7,6 +7,12 @@
     overflow: hidden;
 }
 
+.fiu-page-header .fiu-width-container {
+    position: relative;
+    padding-top: 1px;
+    margin-top: -1px;
+}
+
 .fiu-page-header__wrap {
     padding-top: 15px;
     padding-bottom: 30px;
@@ -77,11 +83,19 @@
     position: absolute;
     top: 0;
     z-index: 0;
+    @include govuk-media-query($from: tablet) {
+        bottom: 0;
+        right: 0;
+    }
 }
 
 .fiu-page-header__image {
     z-index: 1;
     width: 100%;
+    @include govuk-media-query($from: tablet) {
+        width: auto;
+        height: 100%;
+    }
 }
 
 .fiu-page-header__image-mask {
