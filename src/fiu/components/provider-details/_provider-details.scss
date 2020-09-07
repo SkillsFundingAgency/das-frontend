@@ -266,50 +266,6 @@ $barmargin:     10px;
     margin-bottom: 15px;
 }
 
-.fiu-provider-details-locations__fav {
-    text-align: right;
-
-    button {
-        @include fiu-typography-common;
-        display: inline-block;
-        border: none;
-        font-size: 16px;
-        line-height: 21px;
-        padding-right: 30px;
-        text-decoration: underline;
-        background-size: 20px 20px;
-        background-image: url('../assets/images/icon-star-outlined.svg');
-        background-repeat: no-repeat;
-        background-position: center right;
-        background-color: transparent;
-
-        &:hover {
-            background-image: url('../assets/images/icon-star-filled-yellow.svg');
-            text-decoration: none;
-            cursor: pointer;
-        }
-
-        &:focus {
-            @include govuk-focused-text;
-        }
-    }
-
-    &.fiu-provider-details-locations__fav--employers button {
-        color: $fiu-employers-link-colour;
-
-        &:hover {
-            color: $fiu-employers-link-hover-colour;
-        }
-    }
-    &.fiu-provider-details-locations__fav--citizens button {
-        color: $fiu-citizens-link-colour;
-
-        &:hover {
-            color: $fiu-citizens-link-hover-colour;
-        }
-    }
-}
-
 .fiu-provider-details-locations__tag {
     width: 100%;
     text-align: right;
