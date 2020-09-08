@@ -25,7 +25,8 @@ $fiu-font-weight-bold:    700;
 .govuk-body-m,
 .govuk-body,
 .govuk-list,
-.govuk-label {
+.govuk-label,
+.govuk-checkboxes__label {
   @include fiu-typography-common;
 }
 
