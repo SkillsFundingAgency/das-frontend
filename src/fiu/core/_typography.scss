@@ -9,6 +9,8 @@ $fiu-font-weight-bold:    700;
 .govuk-heading-s,
 .govuk-heading-xs,
 .govuk-fieldset__legend,
+.govuk-error-summary__title,
+.govuk-error-message,
 .fiu-font-weight-bold {
   @include fiu-typography-common;
   font-weight: $fiu-font-weight-bold;
@@ -20,6 +22,7 @@ $fiu-font-weight-bold:    700;
 .govuk-select,
 .govuk-table,
 .govuk-body-l,
+.govuk-body-m,
 .govuk-body,
 .govuk-list,
 .govuk-label {

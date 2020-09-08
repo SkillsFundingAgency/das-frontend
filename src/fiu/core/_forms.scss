@@ -15,3 +15,15 @@
     margin: 0;
   }
 }
+
+.fiu-inline-form {
+  @include govuk-clearfix()
+}
+
+.fiu-inline-form-group {
+  @include govuk-media-query(tablet) {
+    float: left;
+    margin-right: 10px;
+    margin-bottom: 10px;
+  }
+}

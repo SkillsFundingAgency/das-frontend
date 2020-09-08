@@ -8,7 +8,7 @@
   color: inherit;
   margin: 0;
   @include govuk-media-query($from: tablet) {
-    margin: 0 0 -10px;
+    margin: 0 0 -5px;
   }
 }
 
@@ -23,7 +23,7 @@
     float: left;
     padding-top: 7px;
     padding-bottom: 7px;
-    padding-right: 20px;
+    padding-right: 15px;
     margin-bottom: 0;
   }
 }
