@@ -9,7 +9,7 @@
 .fiu-header__apprenticeship-logo-link {
   padding-top: 1px;
   display: inline-block;
-  margin-top: 10px;
+  margin-top: 9px;
   margin-bottom: 10px;
   &:focus {
     @include fiu-focused-block
@@ -20,7 +20,7 @@
 }
 
 .fiu-header__apprenticeship-logo {
-  display: inline-block;
+  display: block;
   height: 60px;
   max-width: 100%;
 }
@@ -34,6 +34,7 @@
   @include govuk-media-query(tablet) {
     display: table;
     float: right;
+    margin-right: -15px;
   }
 }
 
@@ -55,14 +56,10 @@
   padding: 15px 12px;
 
   @include govuk-media-query(tablet) {
-    padding: 33px;
+    padding: 0 15px;
     display: table-cell;
-  }
-
-  .fiu-button {
-    vertical-align: unset;
-    margin-bottom: 0;
-    font-size: 13px;
+    height: 80px;
+    vertical-align: middle;
   }
 }
 
