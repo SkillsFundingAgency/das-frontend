@@ -52,19 +52,24 @@
 .fiu-header__navigation-item {
   display: inline-block;
   position: relative;
-  padding: 15px 10px;
+  padding: 15px 12px;
   &:last-child {
     display: none;
   }
+
   @include govuk-media-query(tablet) {
-    padding: 15px 20px;
+    padding: 33px;
     display: table-cell;
     &:last-child {
       padding-right: 0;
       padding-top: 25px;
       padding-bottom: 25px;
-      display: inline-block;
+      display: table-cell;
     }
+  }
+  @media (max-width: 769px) {
+    padding-left: 12px;
+    padding-right: 12px;
   }
   .fiu-button {
     vertical-align: unset;
