@@ -63,7 +63,7 @@ $iconPDFheight: 152px;
 .fiu-guides-panel__link {
     font-size: 16px;
     line-height: 21px;
-    display: block;
+    display: inline-block;
 
     @include govuk-media-query(desktop) {
         font-size: 18px;
