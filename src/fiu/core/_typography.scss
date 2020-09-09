@@ -48,6 +48,15 @@ $fiu-font-weight-bold:    700;
   @include fiu-rotate-skew;
 }
 
+.fiu-heading-m-l {
+  @extend .govuk-heading-m;
+  @include govuk-media-query(tablet) {
+    font-size: 21px;
+    font-size: 1.3125rem;
+    line-height: 1.15;
+  }
+}
+
 // Content coming from CMS
 
 .fiu-article > h2:not([class]) {
