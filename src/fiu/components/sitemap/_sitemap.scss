@@ -1,11 +1,12 @@
-.fiu-sitemap-list__parent {
+.fiu-sitemap-list {
     margin-top: 20px;
     margin-bottom: 20px;
-    & > li > .fiu-link {
-        font-weight: $fiu-font-weight-bold;
-    }
 }
 
-.fiu-sitemap-list__child {
+.fiu-sitemap-list__link {
+    font-weight: $fiu-font-weight-bold;
+}
+
+.fiu-sitemap-list__child-list {
     margin-left: 10px;
 }
