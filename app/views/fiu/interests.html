@@ -1,0 +1,159 @@
+{% extends "_layout.html" %}
+{% from "card/macro.njk" import fiuCard %}
+{% from "panel/macro.njk" import fiuPanel %}
+
+
+{% block content %}
+<main id="main" class="fiu-main-wrapper">
+
+	<div class="fiu-page-header">
+        <div class="fiu-width-container">
+            <div class="govuk-breadcrumbs fiu-page-header__breadcrumbs">
+                <ol class="govuk-breadcrumbs__list">
+                    <li class="govuk-breadcrumbs__list-item">
+                        <a class="govuk-breadcrumbs__link" href="#">Home</a>
+                    </li>
+                    <li class="govuk-breadcrumbs__list-item">
+                        Apprentices
+                    </li>
+                </ol>
+            </div>
+            <div class="govuk-grid-row">
+                <div class="govuk-grid-column-two-thirds fiu-page-header__wrap">
+                    <strong class="fiu-tag fiu-tag--citizens fiu-page-header__tag fiu-feature-text">Apprentices</strong>
+                    <h1 class="govuk-heading-xl fiu-page-heading__title ">Browse by interest</h1>
+                    <img class="fiu-page-header__hm-logo" src="/fiu/assets/images/hm-government-logo.svg" alt="HM Government logo" />
+                </div>
+            </div>
+
+
+            <div class="fiu-interest-cards">
+                <a class="fiu-interest-card" href="#">
+                    <div class="fiu-interest-card__image-wrap">
+						<img src="/fiu/assets/images/interests/agriculture-environment-and-animal-care.jpg" class="fiu-interest-card__image" alt="">
+						<span class="fiu-interest-card__image-mask"></span>
+					</div>
+                	<h2 class="fiu-interest-card__heading"><span>Agriculture, environment and animal care</span></h2>
+                	<p class="fiu-interest-card__content">Working outside or with animals, passionate about nature and the environment? Take a look at the jobs in this sector.</p>
+                </a>
+                <a class="fiu-interest-card" href="#">
+                    <div class="fiu-interest-card__image-wrap">
+                        <img src="/fiu/assets/images/interests/business-and-administration.jpg" class="fiu-interest-card__image" alt="">
+                        <span class="fiu-interest-card__image-mask"></span>
+                    </div>
+                    <h2 class="fiu-interest-card__heading"><span>Business and administration</span></h2>
+                    <p class="fiu-interest-card__content">Business and administration could take you in many different career directions - a manager, personal assistant, CEO? See what types of roles are on offer.</p>
+                </a>
+                <a class="fiu-interest-card" href="#">
+                    <div class="fiu-interest-card__image-wrap">
+                        <img src="/fiu/assets/images/interests/care-services.jpg" class="fiu-interest-card__image" alt="">
+                        <span class="fiu-interest-card__image-mask"></span>
+                    </div>
+                    <h2 class="fiu-interest-card__heading"><span>Care services</span></h2>
+                    <p class="fiu-interest-card__content">Working in the care sector makes a real difference to people's lives, helping vulnerable children, young people, adults and the elderly, across a range of community care and support services.</p>
+                </a>
+                <a class="fiu-interest-card" href="#">
+                    <div class="fiu-interest-card__image-wrap">
+                        <img src="/fiu/assets/images/interests/catering-and-hospitality.jpg" class="fiu-interest-card__image" alt="">
+                        <span class="fiu-interest-card__image-mask"></span>
+                    </div>
+                    <h2 class="fiu-interest-card__heading"><span>Catering and hospitality</span></h2>
+                    <p class="fiu-interest-card__content">Cooking, hotels, restaurants, tourism, front of house and customer service. A varied sector where team working is key.</p>
+                </a>
+                <a class="fiu-interest-card" href="#">
+                    <div class="fiu-interest-card__image-wrap">
+                        <img src="/fiu/assets/images/interests/construction.jpg" class="fiu-interest-card__image" alt="">
+                        <span class="fiu-interest-card__image-mask"></span>
+                    </div>
+                    <h2 class="fiu-interest-card__heading"><span>Construction</span></h2>
+                    <p class="fiu-interest-card__content">A multi-billion pound industry covering a range of roles and careers from traditional and specialist skills such as bricklaying and carpentry, to civil engineering, quantity surveying and more.</p>
+                </a>
+                <a class="fiu-interest-card" href="#">
+                    <div class="fiu-interest-card__image-wrap">
+                        <img src="/fiu/assets/images/interests/creative-and-design.jpg" class="fiu-interest-card__image" alt="">
+                        <span class="fiu-interest-card__image-mask"></span>
+                    </div>
+                    <h2 class="fiu-interest-card__heading"><span>Creative and design</span></h2>
+                    <p class="fiu-interest-card__content">An exciting sector where your creative skills and imagination can come to the fore. Think photography, film, graphics, games design, fashion, interiors, publishing, journalism.</p>
+                </a>
+                <a class="fiu-interest-card" href="#">
+                    <div class="fiu-interest-card__image-wrap">
+                        <img src="/fiu/assets/images/interests/digital.jpg" class="fiu-interest-card__image" alt="">
+                        <span class="fiu-interest-card__image-mask"></span>
+                    </div>
+                    <h2 class="fiu-interest-card__heading"><span>Digital</span></h2>
+                    <p class="fiu-interest-card__content">An ever-growing industry that is constantly evolving. You could be working in a small start-up tech company or a huge global software business. Ready to get connected?</p>
+                </a>
+                <a class="fiu-interest-card" href="#">
+                    <div class="fiu-interest-card__image-wrap">
+                        <img src="/fiu/assets/images/interests/education-and-childcare.jpg" class="fiu-interest-card__image" alt="">
+                        <span class="fiu-interest-card__image-mask"></span>
+                    </div>
+                    <h2 class="fiu-interest-card__heading"><span>Education and childcare</span></h2>
+                    <p class="fiu-interest-card__content">Helping children and young people develop skills and fulfill their potential.Helping children and young people develop skills and fulfill their potential.</p>
+                </a>
+				<a class="fiu-interest-card" href="#">
+                    <div class="fiu-interest-card__image-wrap">
+                        <img src="/fiu/assets/images/interests/engineering-and-manufacturing.jpg" class="fiu-interest-card__image" alt="">
+                        <span class="fiu-interest-card__image-mask"></span>
+                    </div>
+                    <h2 class="fiu-interest-card__heading"><span>Engineering and manufacturing</span></h2>
+                    <p class="fiu-interest-card__content">A world of nuclear reactors, software systems, automotive engineering and all kinds of manufacturing. A hands-on industry where you design and build products that shape the way we live, work, travel and play.</p>
+                </a>
+                <a class="fiu-interest-card" href="#">
+                    <div class="fiu-interest-card__image-wrap">
+                        <img src="/fiu/assets/images/interests/hair-and-beauty.jpg" class="fiu-interest-card__image" alt="">
+                        <span class="fiu-interest-card__image-mask"></span>
+                    </div>
+                    <h2 class="fiu-interest-card__heading"><span>Hair and beauty</span></h2>
+                    <p class="fiu-interest-card__content">High street hair salons and luxury spas, theatre dressing rooms and backstage film and TV sets. So many creative roles in this multi-billion pound industry.</p>
+                </a>
+                <a class="fiu-interest-card" href="#">
+                    <div class="fiu-interest-card__image-wrap">
+                        <img src="/fiu/assets/images/interests/health-and-science.jpg" class="fiu-interest-card__image" alt="">
+                        <span class="fiu-interest-card__image-mask"></span>
+                    </div>
+                    <h2 class="fiu-interest-card__heading"><span>Health and science</span></h2>
+                    <p class="fiu-interest-card__content">Science, health and research-based careers cover a broad spectrum from the NHS to pharmaceuticals and biotechnology. Many varied roles on offer.</p>
+                </a>
+                <a class="fiu-interest-card" href="#">
+                    <div class="fiu-interest-card__image-wrap">
+                        <img src="/fiu/assets/images/interests/legal-finance-and-accounting.jpg" class="fiu-interest-card__image" alt="">
+                        <span class="fiu-interest-card__image-mask"></span>
+                    </div>
+                    <h2 class="fiu-interest-card__heading"><span>Legal, finance and accounting</span></h2>
+                    <p class="fiu-interest-card__content">Looking after a company's financial affairs or giving them legal advice? Working as a solicitor, paralegal, barrister or accountant. Lots of different career opportunities.</p>
+                </a>
+                <a class="fiu-interest-card" href="#">
+                    <div class="fiu-interest-card__image-wrap">
+                        <img src="/fiu/assets/images/interests/protective-services.jpg" class="fiu-interest-card__image" alt="">
+                        <span class="fiu-interest-card__image-mask"></span>
+                    </div>
+                    <h2 class="fiu-interest-card__heading"><span>Protective services</span></h2>
+                    <p class="fiu-interest-card__content">Working in communities to keep people safe. This could be in the police or the armed forces, the fire service and waste management.</p>
+                </a>
+                <a class="fiu-interest-card" href="#">
+                    <div class="fiu-interest-card__image-wrap">
+                        <img src="/fiu/assets/images/interests/sales-marketing-and-procurement.jpg" class="fiu-interest-card__image" alt="">
+                        <span class="fiu-interest-card__image-mask"></span>
+                    </div>
+                    <h2 class="fiu-interest-card__heading"><span>Sales, marketing and procurement</span></h2>
+                    <p class="fiu-interest-card__content">Sales in person, on the phone and online, e-commerce, marketing products and services to customers and helping companies make important purchasing decisions. This area covers a range of industries from retail and customer service to digital marketing and PR and more.</p>
+                </a>
+                <a class="fiu-interest-card" href="#">
+                    <div class="fiu-interest-card__image-wrap">
+                        <img src="/fiu/assets/images/interests/transport-and-logistics.jpg" class="fiu-interest-card__image" alt="">
+                        <span class="fiu-interest-card__image-mask"></span>
+                    </div>
+                    <h2 class="fiu-interest-card__heading"><span>Transport and logistics</span></h2>
+                    <p class="fiu-interest-card__content">Keeping the nation's transport systems running smoothly. Getting people, products and parts from A to B just in time. Think aviation, lorries, buses, trains and ferries. </p>
+                </a>
+			</div>
+
+        </div>
+    </div>
+
+	<span class="fiu-header-content-spacer"></span>
+
+</main>
+{% endblock %}
