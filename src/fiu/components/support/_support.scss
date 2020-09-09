@@ -3,17 +3,12 @@
 }
 
 .fiu-support-panel__heading {
-    font-size: 20px;
-    line-height: 24px;
+    @extend .govuk-heading-m;
     font-weight: $fiu-font-weight-bold;
     color: $fiu-text-colour;
     margin-top: 0;
     margin-bottom: 20px;
     @include fiu-word-break;
-    @include govuk-media-query(tablet) {
-        font-size: 24px;
-        line-height: 27px;
-    }
 }
 
 .fiu-support-panel__content {

@@ -11,7 +11,7 @@ $iconPDFheight: 152px;
     margin-bottom: 20px;
 
     @include govuk-media-query(tablet) {
-        padding: ($iconTopPos + 10px) ($iconLeftPos + 5px);
+        padding: ($iconTopPos + 10px) 20px 50px ($iconLeftPos + 5px);
     }
 }
 
@@ -32,18 +32,11 @@ $iconPDFheight: 152px;
 }
 
 .fiu-guides-panel__heading {
-    font-size: 20px;
-    line-height: 24px;
-    font-weight: $fiu-font-weight-bold;
+    @extend .govuk-heading-m;
     color: $fiu-text-colour;
     margin-top: 0;
     margin-bottom: 18px;
     @include fiu-word-break;
-
-    @include govuk-media-query(desktop) {
-        font-size: 24px;
-        line-height: 27px;
-    }
 }
 
 .fiu-guides-panel__spec {
