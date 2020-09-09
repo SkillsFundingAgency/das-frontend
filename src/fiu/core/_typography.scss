@@ -85,6 +85,12 @@ $fiu-font-weight-bold:    700;
   margin: 0;
 }
 
+.govuk-summary-list__value > ul,
+.govuk-summary-list__value > p,
 .markdown > p {
   margin-top: 0;
+}
+
+.govuk-summary-list__value > ul {
+  padding-left: 20px;
 }
