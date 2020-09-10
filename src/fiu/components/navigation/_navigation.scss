@@ -181,9 +181,10 @@
     overflow: hidden;
     background-image: url('../assets/images/icon-star.svg');
     background-repeat: no-repeat;
-    background-size: cover;
+    background-size: contain;
+    background-position: center center;
     height: 24px;
-    width: 24px;
+    width: 25px;
   }
 }
 
