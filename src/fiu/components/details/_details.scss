@@ -1,0 +1,20 @@
+.fiu-details {
+    @include fiu-typography-common;
+    @include govuk-media-query(tablet) {
+        padding-bottom: 5px;
+    }
+}
+
+.fiu-details__summary-text {
+    font-size: 21px;
+    line-height: 21px;
+}
+
+.fiu-details__text {
+    font-size: 18px;
+    line-height: 23px;
+
+    p {
+        margin-bottom: 10px;
+    }
+}
