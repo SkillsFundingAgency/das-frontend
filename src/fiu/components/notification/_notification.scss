@@ -1,6 +1,6 @@
 .fiu-notification {
   @include fiu-typography-common;
-  background: $fiu-global-brand-colour;
+  background: $fiu-action-information;
   padding: 20px;
   color: $white;
   margin-bottom: 20px;
@@ -18,7 +18,11 @@
 .fiu-notification__body {
   @extend .govuk-body;
   color: inherit;
+}
+
+.fiu-notification__heading + .fiu-notification__body {
   margin-top: .4em;
+  color: #c00;
 }
 
 .fiu-notification__body:last-child {
@@ -26,4 +30,12 @@
   @include govuk-media-query(tablet) {
     margin-bottom: -2px;
   }
+}
+
+.fiu-notification--success {
+  background: $fiu-action-success;
+}
+
+.fiu-notification--error {
+  background: $fiu-action-error;
 }
