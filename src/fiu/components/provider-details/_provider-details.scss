@@ -34,27 +34,6 @@ $barmargin:     10px;
     font-weight: $fiu-font-weight-bold;
 }
 
-.fiu-provider-details-details {
-    @include fiu-typography-common;
-    @include govuk-media-query(tablet) {
-        padding-bottom: 5px;
-    }
-}
-
-.fiu-provider-details-details__summary-text {
-    font-size: 21px;
-    line-height: 21px;
-}
-
-.fiu-provider-details-details__text {
-    font-size: 18px;
-    line-height: 23px;
-
-    p {
-        margin-bottom: 10px;
-    }
-}
-
 .fiu-provider-details-summary__status-yes,
 .fiu-provider-details-summary__status-no {
     font-size: 18px;
@@ -206,7 +185,7 @@ $barmargin:     10px;
             }
         }
 
-        & + .fiu-provider-details-details {
+        & + .fiu-details {
             padding-top: 24px;
         }
     }
