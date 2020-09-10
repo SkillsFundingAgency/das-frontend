@@ -38,6 +38,15 @@
     }
 }
 
+.govuk-back-link:before,
+.govuk-back-link:after {
+    border-color: $white;
+}
+
+.govuk-back-link:hover {
+    text-decoration: none;
+}
+
 .fiu-page-header__tag {
     margin-bottom: 15px;
 }
