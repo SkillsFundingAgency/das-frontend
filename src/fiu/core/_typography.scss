@@ -11,7 +11,8 @@ $fiu-font-weight-bold:    700;
 .govuk-fieldset__legend,
 .govuk-error-summary__title,
 .govuk-error-message,
-.fiu-font-weight-bold {
+.fiu-font-weight-bold,
+b {
   @include fiu-typography-common;
   font-weight: $fiu-font-weight-bold;
 }
@@ -50,6 +51,15 @@ $fiu-font-weight-bold:    700;
 
 .fiu-heading-m-l {
   @extend .govuk-heading-m;
+  @include govuk-media-query(tablet) {
+    font-size: 21px;
+    font-size: 1.3125rem;
+    line-height: 1.15;
+  }
+}
+
+.fiu-body-m-l {
+  @include fiu-typography-common;
   @include govuk-media-query(tablet) {
     font-size: 21px;
     font-size: 1.3125rem;

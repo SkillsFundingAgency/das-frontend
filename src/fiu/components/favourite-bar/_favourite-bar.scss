@@ -3,6 +3,14 @@
     text-align: right;
 }
 
+.fiu-favourite-bar--employers button {
+    @extend .fiu-link--employers;
+}
+
+.fiu-favourite-bar--citizens button {
+    @extend .fiu-link--citizens;
+}
+
 .fiu-favourite-bar__link {
     @include fiu-typography-common;
     display: inline-block;

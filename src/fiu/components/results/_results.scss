@@ -17,6 +17,12 @@
 
 .fiu-results-panel__heading {
     word-wrap : break-word;
+
+    .fiu-favourite-bar + & {
+        @include govuk-media-query(desktop) {
+            margin-top: 40px;
+        }
+    }
 }
 
 .fiu-results-inset-text {
@@ -50,6 +56,18 @@
 
     @include govuk-media-query(tablet) {
         flex-basis: 70%;
+    }
+}
+
+.fiu-table-list__th--favs {
+    @include govuk-media-query(tablet) {
+        flex-basis: 40%;
+    }
+}
+.fiu-table-list__td--favs {
+    color: $dark-grey;
+    @include govuk-media-query(tablet) {
+        flex-basis: 60%;
     }
 }
 
