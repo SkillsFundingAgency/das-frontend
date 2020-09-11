@@ -9,7 +9,7 @@ $iconPDFheight: 152px;
     border-radius: 10px;
     padding: $iconTopPos $iconLeftPos;
     margin-bottom: 20px;
-
+    position: relative;
     @include govuk-media-query(desktop) {
         padding: ($iconTopPos + 10px) 20px 50px ($iconLeftPos + 5px);
     }
