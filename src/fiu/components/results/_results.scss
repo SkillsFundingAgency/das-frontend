@@ -13,6 +13,10 @@
 .fiu-results-panel {
     @extend .fiu-panel;
     text-align: left;
+    padding-bottom: 20px;
+    @include govuk-media-query($from: desktop) {
+        padding-bottom: 30px;
+    }
 }
 
 .fiu-results-panel__heading {
