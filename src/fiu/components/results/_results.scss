@@ -29,6 +29,35 @@
     }
 }
 
+.fiu-results-panel__strip {
+    background-color: $dark-grey;
+    width: 100%;
+    display: block;
+    padding: 0 10px;
+    margin-top: -6px;
+    margin-bottom: 20px;
+
+    p {
+        text-transform: uppercase;
+        color: $white;
+    }
+    @include govuk-media-query(tablet) {
+        p {
+            font-size: 12px;
+            font-size: 0.75rem;
+            line-height: 28px;
+        }
+    }
+}
+
+.fiu-results-panel__strip--employers {
+    background-color: $fiu-employers-brand-colour;
+}
+
+.fiu-results-panel__strip--citizens {
+    background-color: $fiu-citizens-brand-colour;
+}
+
 .fiu-results-inset-text {
     @include fiu-typography-common;
     font-size: 16px;
