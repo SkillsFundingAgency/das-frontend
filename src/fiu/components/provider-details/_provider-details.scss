@@ -41,14 +41,16 @@ $barmargin:     10px;
     padding-left: 20px;
     background-repeat: no-repeat;
     background-position: left center;
+    background-size: .8em;
 }
 
 .fiu-provider-details-summary__status-yes {
-    background-image: url('../assets/images/fiu-status-tick.png');
+    background-image: url('../assets/images/fiu-status-tick.svg');
 }
 
 .fiu-provider-details-summary__status-no {
-    background-image: url('../assets/images/fiu-status-x.png');
+    background-image: url('../assets/images/fiu-status-cross.svg');
+    background-size: .7em;
 }
 
 .fiu-provider-details-bars {
