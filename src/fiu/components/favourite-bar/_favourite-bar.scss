@@ -3,11 +3,11 @@
     text-align: right;
 }
 
-.fiu-favourite-bar--employers button {
+.fiu-favourite-bar.fiu-favourite-bar--employers button {
     @extend .fiu-link--employers;
 }
 
-.fiu-favourite-bar--citizens button {
+.fiu-favourite-bar.fiu-favourite-bar--citizens button {
     @extend .fiu-link--citizens;
 }
 
@@ -18,12 +18,18 @@
     line-height: 24px;
     padding: 0 30px 0 0;
     background-size: 20px 20px;
-    background-image: url('../assets/images/icon-star-outlined.svg');
+    background-image: url('../assets/images/icon-star-outlined-employers.svg');
     background-repeat: no-repeat;
     background-position: center right;
     background-color: transparent;
     border: none;
+
+    &.fiu-favourite-bar__link--active {
+        background-image: url('../assets/images/icon-star-filled-employers.svg');
+    }
 }
+
+
 
 .fiu-favourite-bar__link,
 .fiu-favourite-bar__link:active,
@@ -32,7 +38,7 @@
 }
 
 .fiu-favourite-bar__link:hover {
-    background-image: url('../assets/images/icon-star-filled-yellow.svg');
+    background-image: url('../assets/images/icon-star-filled-employers.svg');
     cursor: pointer;
     text-decoration: none;
 }
