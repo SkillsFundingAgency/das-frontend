@@ -22,7 +22,6 @@
 
 .fiu-notification__heading + .fiu-notification__body {
   margin-top: .4em;
-  color: #c00;
 }
 
 .fiu-notification__body:last-child {
@@ -38,4 +37,5 @@
 
 .fiu-notification--error {
   background: $fiu-action-error;
+  color: $white;
 }
