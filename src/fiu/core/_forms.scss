@@ -31,3 +31,22 @@
 .fiu-checkboxes__label:before {
   background: $white;
 }
+
+.govuk-error-summary {
+  @extend .fiu-notification--error;
+  border: none;
+}
+
+.govuk-error-summary__title {
+  color: inherit;
+}
+
+.govuk-error-summary__list a:visited,
+.govuk-error-summary__list a:hover {
+  color: $white;
+}
+
+.govuk-error-summary__list a:active,
+.govuk-error-summary__list a:focus {
+  color: inherit;
+}
