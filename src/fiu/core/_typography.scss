@@ -98,6 +98,11 @@ $fiu-font-weight-bold:    700;
   @extend .govuk-list--number;
 }
 
+.fiu-article > blockquote:not([class]) {
+  @extend .fiu-quote;
+  @extend .fiu-quote__blockquote;
+}
+
 // Content coming from FAT API
 
 .markdown > ul {
