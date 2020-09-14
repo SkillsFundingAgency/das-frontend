@@ -36,12 +36,24 @@ $fiu-font-weight-bold:    700;
 .govuk-caption-xl {
   color: $mid-grey;
   @include fiu-typography-common;
+  .fiu-article & {
+    color: $dark-grey;
+  }
 }
 
 .govuk-summary-list__key,
 .govuk-summary-list__value,
 .govuk-summary-list__actions {
   vertical-align: top;
+}
+
+.govuk-summary-list__value > ul,
+.govuk-summary-list__value > p {
+  margin-top: 0;
+}
+
+.govuk-summary-list__value > ul {
+  padding-left: 20px;
 }
 
 .fiu-feature-text {
@@ -89,17 +101,18 @@ $fiu-font-weight-bold:    700;
   @extend .govuk-list--number;
 }
 
+.fiu-article > blockquote:not([class]) {
+  @extend .fiu-quote;
+  @extend .fiu-quote__blockquote;
+}
+
+// Content coming from FAT API
+
 .markdown > ul {
   @extend .govuk-list--bullet;
   margin: 0;
 }
 
-.govuk-summary-list__value > ul,
-.govuk-summary-list__value > p,
 .markdown > p {
   margin-top: 0;
-}
-
-.govuk-summary-list__value > ul {
-  padding-left: 20px;
 }
