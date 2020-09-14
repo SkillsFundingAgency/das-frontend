@@ -36,6 +36,9 @@ $fiu-font-weight-bold:    700;
 .govuk-caption-xl {
   color: $mid-grey;
   @include fiu-typography-common;
+  .fiu-article & {
+    color: $dark-grey;
+  }
 }
 
 .govuk-summary-list__key,
