@@ -30,6 +30,10 @@ $barmargin:     10px;
     border-bottom-color: $fiu-border-colour;
 }
 
+.fiu-provider-details-summary__value > ul {
+    padding-left: 0;
+}
+
 .fiu-provider-details-summary__key {
     font-weight: $fiu-font-weight-bold;
 }

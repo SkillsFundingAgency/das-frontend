@@ -1,0 +1,13 @@
+{% extends "_layout.html" %}
+{% from "card/macro.njk" import fiuCard %}
+{% from "panel/macro.njk" import fiuPanel %}
+
+{% block content %}
+
+<style>body.fiu-template__body {background-color: #F3F3F3; }</style>
+
+{% include "favourites/favourites.html" %}
+
+{% include "phase-banner/phase-banner.html" %}
+
+{% endblock %}
