@@ -1,8 +1,8 @@
 .fiu-card {
   @include fiu-typography-common;
   background: $white;
-  padding: 20px;
-  margin-bottom: 15px;
+  padding: 20px 20px 50px;
+  margin-bottom: 20px;
   height: 100%;
   display: block;
   color: $fiu-text-colour;
@@ -53,13 +53,16 @@
 
 .fiu-card__content {
   margin-bottom: 0;
+  @extend .govuk-body;
 }
 
 .fiu-card__link {
   margin-top: 1.5em;
   display: inline-block;
-  font-weight: $fiu-font-weight-bold;
   color: $fiu-global-link-colour;
+  position: absolute;
+  bottom: 20px;
+  font-size: 19px;
   &:hover {
     color: $fiu-global-link-hover-colour;
   }

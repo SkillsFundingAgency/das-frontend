@@ -3,10 +3,6 @@
     padding-top: 20px;
     padding-bottom: 20px;
     background: $fiu-body-colour;
-    @include govuk-media-query(tablet) {
-        padding-top: 30px;
-        padding-bottom: 30px;
-    }
 }
 
 .fiu-phase-banner__content {
