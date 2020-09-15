@@ -24,7 +24,7 @@ $iconPDFheight: 152px;
     padding-left: ($iconPDFwidth / 3) + ($iconLeftPos * 2);
 
     @include govuk-media-query(desktop) {
-        background-position: ($iconLeftPos + 5px) ($iconTopPos);
+        background-position: ($iconLeftPos + 5px) $iconTopPos;
         min-height: $iconPDFheight + ($iconTopPos * 3);
         background-size: auto;
         padding-left: $iconPDFwidth + ($iconLeftPos + 25px);
