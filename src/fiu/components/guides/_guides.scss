@@ -11,7 +11,7 @@ $iconPDFheight: 152px;
     margin-bottom: 20px;
     position: relative;
     @include govuk-media-query(desktop) {
-        padding: ($iconTopPos + 10px) 20px 50px ($iconLeftPos + 5px);
+        padding: $iconTopPos 20px 50px ($iconLeftPos + 5px);
     }
 }
 
@@ -24,10 +24,10 @@ $iconPDFheight: 152px;
     padding-left: ($iconPDFwidth / 3) + ($iconLeftPos * 2);
 
     @include govuk-media-query(desktop) {
-        background-position: ($iconLeftPos + 5px) ($iconTopPos + 10px);
+        background-position: ($iconLeftPos + 5px) ($iconTopPos);
         min-height: $iconPDFheight + ($iconTopPos * 3);
         background-size: auto;
-        padding-left: $iconPDFwidth + ($iconLeftPos + 20px);
+        padding-left: $iconPDFwidth + ($iconLeftPos + 25px);
     }
 }
 
