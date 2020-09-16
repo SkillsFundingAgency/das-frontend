@@ -22,9 +22,18 @@
 .fiu-results-panel__heading {
     word-wrap : break-word;
 
+    > .fiu-link {
+        margin-right: 10px;
+
+        + .fiu-tag--national {
+            position: relative;
+            top: -3px;
+        }
+    }
+
     .fiu-favourite-bar + & {
         @include govuk-media-query(desktop) {
-            margin-top: 40px;
+            margin-top: 20px;
         }
     }
 }
