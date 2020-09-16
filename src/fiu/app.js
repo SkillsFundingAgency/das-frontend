@@ -28,3 +28,9 @@ const searchFilter = document.querySelector('[data-fiu-search-filter]');
 if (searchFilter) {
   new SearchFilter(searchFilter);
 }
+
+// Back links
+const backLinkContainer = document.querySelector('[data-fiu-back-link]');
+if (backLinkContainer) {
+  new BackLink(backLinkContainer);
+}

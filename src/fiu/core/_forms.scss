@@ -40,9 +40,10 @@
 .govuk-error-summary__title {
   color: inherit;
 }
-
+.govuk-error-summary__list a:link,
 .govuk-error-summary__list a:visited,
-.govuk-error-summary__list a:hover {
+.govuk-error-summary__list a:hover
+{
   color: $white;
 }
 
