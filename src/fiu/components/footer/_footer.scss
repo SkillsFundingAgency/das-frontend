@@ -4,6 +4,7 @@
   color: $fiu-footer-text-colour;
   font-size: 18px;
   line-height: 20px;
+  margin-bottom: 30px;
 }
 
 .fiu-footer__row {
@@ -11,8 +12,7 @@
   text-align: center;
   @include govuk-media-query(tablet) {
     text-align: left;
-    margin-bottom: 2em;
-    padding: 30px 0;
+    padding: 30px 0 0;
   }
 }
 
