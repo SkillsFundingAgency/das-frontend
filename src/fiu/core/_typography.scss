@@ -116,6 +116,10 @@ b {
   @extend .fiu-quote__blockquote;
 }
 
+.fiu-article > ul > li > p {
+  margin: 0;
+}
+
 // Content coming from FAT API
 
 .markdown > ul {
