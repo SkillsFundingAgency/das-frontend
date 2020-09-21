@@ -6,7 +6,103 @@
 
 <style>body.fiu-template__body {background-color: #F3F3F3; }</style>
 
-{% include "favourites/favourites.html" %}
+<section class="fiu-width-container govuk-!-margin-top-8">
+    <div class="govuk-grid-row">
+        <div class="govuk-grid-column-two-thirds">
+
+            <p class="fiu-body-m-l">
+                These are your saved apprenticeships and training providers. Once you're ready to hire an apprentice <a href="" class="fiu-line fiu-link--employers">get started</a> by setting up an <span class="fiu-font-weight-bold">apprenticeship service account</span>.
+            </p>
+
+
+            <div class="fiu-results-panel">
+                <h2 class="govuk-heading-m fiu-results-panel__heading">
+                    <a class="fiu-link fiu-link--employers" href="#">Business and administration</a>
+                </h2>
+
+                <div class="fiu-results-panel__strip fiu-results-panel__strip--employers">
+                    <p>This apprenticeship is available to new starters until 01 October 2020</p>
+                </div>
+
+                <dl class="fiu-table-list">
+                    <dt class="fiu-table-list__th fiu-table-list__th--favs">Level</dt>
+                    <dd class="fiu-table-list__td fiu-table-list__td--favs">6 (Equivalent to bachelor's degree)</dd>
+                    <dt class="fiu-table-list__th fiu-table-list__th--favs">Typical length</dt>
+                    <dd class="fiu-table-list__td fiu-table-list__td--favs">36 months</dd>
+                    <dt class="fiu-table-list__th fiu-table-list__th--favs">Apprenticeship type</dt>
+                    <dd class="fiu-table-list__td fiu-table-list__td--favs">Standard</dd>
+                </dl>
+
+                <div class="fiu-favourite-bar fiu-favourite-bar--employers">
+                    <button type="submit" class="fiu-favourite-bar__link" name="itemId" value="311">
+                        <span class="fiu-favbar__img-wrap"></span>
+                        Remove from favourites  <!-- ******* use partials? ********* -->
+                    </button>
+                </div>
+                <p class="fiu-body-m-l">
+                    Training providers saved for this apprenticeship
+                </p>
+
+                <h2 class="govuk-heading-s fiu-results-panel__heading">
+                    <a class="fiu-link fiu-link--employers" href="#">Abingdon and Witney college</a>
+                </h2>
+                <dl class="fiu-table-list">
+                    <dt class="fiu-table-list__th fiu-table-list__th--favs">Distance</dt>
+                    <dd class="fiu-table-list__td fiu-table-list__td--favs">8 miles away</dd>
+                    <dt class="fiu-table-list__th fiu-table-list__th--favs">Address</dt>
+                    <dd class="fiu-table-list__td fiu-table-list__td--favs">Wootton Road, Abingdon, Oxfordshire</dd>
+                    <dt class="fiu-table-list__th fiu-table-list__th--favs">Employer satisfaction</dt>
+                    <dd class="fiu-table-list__td fiu-table-list__td--favs">96%</dd>
+                    <dt class="fiu-table-list__th fiu-table-list__th--favs">Learner satisfication</dt>
+                    <dd class="fiu-table-list__td fiu-table-list__td--favs">90%</dd>
+                    <dt class="fiu-table-list__th fiu-table-list__th--favs">Achievement satisfication</dt>
+                    <dd class="fiu-table-list__td fiu-table-list__td--favs">80%</dd>
+                </dl>
+
+                <div class="fiu-favourite-bar fiu-favourite-bar--employers">
+                    <button type="submit" class="fiu-favourite-bar__link" name="itemId" value="311">
+                        <span class="fiu-favbar__img-wrap"></span>
+                        Remove from favourites
+                    </button>
+                </div>
+
+                <h2 class="govuk-heading-s fiu-results-panel__heading">
+                    <a class="fiu-link fiu-link--employers" href="#">Intec business Colleges Limited</a>
+                </h2>
+                <dl class="fiu-table-list">
+                    <dt class="fiu-table-list__th fiu-table-list__th--favs">Distance</dt>
+                    <dd class="fiu-table-list__td fiu-table-list__td--favs">12 miles away</dd>
+                    <dt class="fiu-table-list__th fiu-table-list__th--favs">Address</dt>
+                    <dd class="fiu-table-list__td fiu-table-list__td--favs">Wootton Road, Abingdon, Oxfordshire</dd>
+                    <dt class="fiu-table-list__th fiu-table-list__th--favs">Employer satisfaction</dt>
+                    <dd class="fiu-table-list__td fiu-table-list__td--favs">96%</dd>
+                    <dt class="fiu-table-list__th fiu-table-list__th--favs">Learner satisfication</dt>
+                    <dd class="fiu-table-list__td fiu-table-list__td--favs">90%</dd>
+                    <dt class="fiu-table-list__th fiu-table-list__th--favs">Achievement satisfication</dt>
+                    <dd class="fiu-table-list__td fiu-table-list__td--favs">80%</dd>
+                </dl>
+
+                <div class="fiu-favourite-bar fiu-favourite-bar--employers">
+                    <button type="submit" class="fiu-favourite-bar__link" name="itemId" value="311">
+                        <span class="fiu-favbar__img-wrap"></span>
+                        Remove from favourites
+                    </button>
+                </div>
+
+                <a href="/employers/sign-up" class="fiu-button fiu-button--employers-light fiu-button--outlined fiu-panel__button govuk-!-margin-top-4">
+                    Search for more providers
+                </a>
+
+
+
+
+
+            </div>
+
+
+        </div>
+    </div>
+</section>
 
 {% include "phase-banner/phase-banner.html" %}
 

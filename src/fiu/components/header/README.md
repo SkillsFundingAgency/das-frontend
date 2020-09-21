@@ -1,2 +1,2 @@
 # Header
-Page header shown on all pages. Includes Apprenticeships logo and top level navigation.
+Websiet header shown on all pages. Includes Apprenticeships logo and top-level navigation.
