@@ -23,12 +23,24 @@
     background-position: center right;
     background-color: transparent;
     border: none;
-
     &.fiu-favourite-bar__link--active {
         background-image: url('../assets/images/icon-star-filled-employers.svg');
     }
 }
 
+.fiu-page-header__favourites-form .fiu-favourite-bar__link {
+    color: $white;
+    background-image: url('../assets/images/icon-star.svg');
+    &.fiu-favourite-bar__link--active {
+        background-image: url('../assets/images/icon-star-filled-white.svg');
+    }
+    &:hover {
+        background-image: url('../assets/images/icon-star.svg');
+    }
+    &:focus {
+        background-image: url('../assets/images/icon-star-outlined.svg');
+    }
+}
 
 
 .fiu-favourite-bar__link,
