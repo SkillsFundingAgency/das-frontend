@@ -1,0 +1,39 @@
+.das-rating {
+  @include govuk-clearfix;
+  display: inline-block;
+  vertical-align: text-top;
+}
+
+.das-rating--poor {
+  color: govuk-colour("dark-grey");
+}
+
+.das-rating--good {
+  color: govuk-colour("green");
+}
+
+.das-rating__icon-star,
+.das-rating__icon-star--empty {
+  display: block;
+  float: left;
+}
+
+.das-rating__icon-star {
+  &:before {
+    content: "★";
+  }
+}
+
+.das-rating__icon-star--empty {
+  &:before {
+    content: "☆";
+  }
+}
+
+.das-rating__label--poor {
+  color: govuk-colour("dark-grey");
+}
+
+.das-rating__label--good {
+  color: govuk-colour("green");
+}
