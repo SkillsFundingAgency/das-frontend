@@ -1,0 +1,31 @@
+.das-rating {
+  @include govuk-clearfix;
+  display: inline-block;
+  line-height: 1;
+}
+
+.das-rating--poor {
+  color: grey;
+}
+
+.das-rating--good {
+  color: green;
+}
+
+.das-rating__icon-star,
+.das-rating__icon-star--empty {
+  display: block;
+  float: left;
+}
+
+.das-rating__icon-star {
+  &:before {
+    content: "★";
+  }
+}
+
+.das-rating__icon-star--empty {
+  &:before {
+    content: "☆";
+  }
+}
