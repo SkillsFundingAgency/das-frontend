@@ -1,15 +1,15 @@
 .das-rating {
   @include govuk-clearfix;
   display: inline-block;
-  line-height: 1;
+  vertical-align: text-top;
 }
 
 .das-rating--poor {
-  color: grey;
+  color: govuk-colour("dark-grey");
 }
 
 .das-rating--good {
-  color: green;
+  color: govuk-colour("green");
 }
 
 .das-rating__icon-star,
@@ -28,4 +28,12 @@
   &:before {
     content: "☆";
   }
+}
+
+.das-rating__label--poor {
+  color: govuk-colour("dark-grey");
+}
+
+.das-rating__label--good {
+  color: govuk-colour("green");
 }
