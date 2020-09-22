@@ -42,7 +42,6 @@
   font-size: 20px;
   line-height: 1.1em;
   font-weight: $fiu-font-weight-bold;
-  @include fiu-word-break();
   @include govuk-media-query($from: tablet) {
     font-size: 18px;
   }
