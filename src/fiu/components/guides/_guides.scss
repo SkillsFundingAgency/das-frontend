@@ -36,7 +36,6 @@ $iconPDFheight: 152px;
     color: $fiu-text-colour;
     margin-top: 0;
     margin-bottom: 18px;
-    @include fiu-word-break;
 }
 
 .fiu-guides-panel__spec {
