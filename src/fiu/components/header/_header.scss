@@ -16,13 +16,17 @@
   }
   @include govuk-media-query(tablet) {
     float: left;
+    display: block;
   }
 }
 
 .fiu-header__apprenticeship-logo {
   display: block;
-  height: 60px;
   max-width: 100%;
+  height: 60px;
+  @include govuk-media-query(tablet) {
+    max-width: none;
+  }
 }
 
 .fiu-header__navigation-wrap {

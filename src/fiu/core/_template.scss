@@ -5,6 +5,7 @@
 
 .fiu-template__body {
   @extend .govuk-template__body;
+  background: $fiu-body-colour;
 }
 
 .fiu-feature-row {

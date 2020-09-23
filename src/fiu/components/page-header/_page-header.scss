@@ -104,29 +104,35 @@
     position: absolute;
     top: 0;
     z-index: 0;
-    @include govuk-media-query($from: tablet) {
-        bottom: 0;
-        right: 0;
-    }
 }
 
 .fiu-page-header__image {
     z-index: 1;
-    width: 100%;
-    @include govuk-media-query($from: tablet) {
-        width: auto;
-        height: 100%;
-    }
+    max-width: 100%;
 }
 
 .fiu-page-header__image-mask {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 2;
+    background: url("../assets/images/page-headers/mask.png");
+    background-size: contain;
+    display: block;
+}
+
+.fiu-page-header__image-maskdd {
+    display: none;
     position: absolute;
     top: 0;
     z-index: 2;
     width: 100%;
     height: 100%;
     background: url("../assets/images/page-headers/mask.png");
-    background-size: cover;
+    background-size: contain;
+    background-position: top right;
 }
 
 .fiu-page-header__favourites-form {
