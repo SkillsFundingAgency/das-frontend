@@ -1,14 +1,24 @@
-
-
-// Paragraphs in MAIN body of pages
-
 p {
-  @include govuk-font($size: 19);
+  @extend .govuk-body;
+  color: inherit;
 }
 
 .das-text--muted {
   color: govuk-colour('dark-grey');
 }
+
+.das-text--error {
+  color: govuk-colour('red');
+}
+
+.das-text--error-icon {
+  padding-left: 30px;
+  background-image: url("../images/icon-cross--red.svg");
+  background-repeat: no-repeat;
+  background-position: 0 .2em;
+  background-size: 18px 18px;
+}
+
 
 abbr {
     font-variant: none;
