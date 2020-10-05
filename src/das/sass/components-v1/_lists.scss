@@ -110,6 +110,9 @@ dl.das-inline-def-list {//Description: definition lists - brings the DT and DD i
   }
 }
 
+
+// Icon list - used to show ticks and crosses for training providers on FAT
+
 .das-icon-list {
 
 }
@@ -139,3 +142,23 @@ dl.das-inline-def-list {//Description: definition lists - brings the DT and DD i
   background-image: url("../images/icon-tick--green.svg");
   width: 1em;
 }
+
+// Icon list large option
+
+.das-icon-list--large {
+  line-height: 1.6em;
+}
+
+.das-icon-list--large .das-icon-list__list-item {
+  padding-left: 1.6em;
+}
+
+.das-icon-list--large .das-icon-list__icon {
+  height: .95em;
+  width: .95em;
+}
+
+.das-icon-list--large .das-icon-list__icon--tick {
+  width: 1.2em;
+}
+
