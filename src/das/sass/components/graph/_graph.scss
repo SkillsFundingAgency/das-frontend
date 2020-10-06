@@ -46,7 +46,8 @@
   background: govuk-colour('green');
 }
 
-.das-graph__bar-value--poor {
+.das-graph__bar-value--poor,
+.das-graph__bar-value--verypoor {
   background: govuk-colour('dark-grey');
 }
 
