@@ -1,0 +1,56 @@
+.das-graph {
+  @include govuk-font($size: 19);
+}
+
+.das-graph__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.das-graph__list-item {
+  display: table-row;
+}
+
+.das-graph__label,
+.das-graph__chart,
+.das-graph__figure {
+  display: table-cell;
+  white-space: nowrap;
+  vertical-align: middle;
+  padding: 5px 0;
+}
+
+.das-graph__label {
+  font-weight: $govuk-font-weight-regular;
+  font-size: inherit;
+}
+
+.das-graph__chart {
+  width: 100%;
+}
+
+.das-graph__bar,
+.das-graph__bar-value {
+  display: block;
+  height: 15px;
+  border-radius: 7px;
+}
+
+.das-graph__bar {
+  background: govuk-colour('light-grey');
+  margin: 3px 10px;
+}
+
+.das-graph__bar-value {
+  background: govuk-colour('green');
+}
+
+.das-graph__bar-value--poor,
+.das-graph__bar-value--verypoor {
+  background: govuk-colour('dark-grey');
+}
+
+.das-graph__figure {
+  @include govuk-font($size: 16);
+}
