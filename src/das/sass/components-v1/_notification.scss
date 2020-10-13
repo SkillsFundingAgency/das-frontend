@@ -15,8 +15,7 @@
 .das-notification__heading {
   @include govuk-text-colour;
   @include govuk-font($size: 24, $weight: bold);
-  margin-top: 0;
-  @include govuk-responsive-margin(2, "bottom");
+  margin: 0;
 }
 
 .das-notification__body {
@@ -24,6 +23,10 @@
   @include govuk-font($size: 19);
   margin-top: 0;
   @include govuk-responsive-margin(2, "bottom");
+}
+
+.das-notification__heading + .das-notification__body {
+  margin-top: 10px;
 }
 
 .das-notification__body:last-child {
