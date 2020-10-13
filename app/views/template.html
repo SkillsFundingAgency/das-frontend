@@ -57,7 +57,9 @@
     <div class="govuk-width-container">
         <ul class="das-navigation__list" id="navigation">
             <li class="das-navigation__list-item">
-                <a class="das-navigation__link" href="/documentation/components/index">Components</a>
+	            <a class="das-navigation__link {% if (section == 'styles') %} das-navigation__link--current {% endif %}" href="/documentation/styles">Styles</a>
+	            <a class="das-navigation__link {% if (section == 'components') %} das-navigation__link--current {% endif %}" href="/documentation/components">Components</a>
+                <a class="das-navigation__link {% if (section == 'patterns') %} das-navigation__link--current {% endif %}" href="/documentation/patterns">Patterns</a>
             </li>
         </ul>
     </div>
