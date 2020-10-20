@@ -1,0 +1,17 @@
+- name: Button
+  slug: button
+
+- name: Graph
+  slug: graph
+
+- name: Highlight
+  slug: highlight
+
+- name: Notification
+  slug: notification
+
+- name: Rating
+  slug: rating
+
+- name: Tag
+  slug: tag
