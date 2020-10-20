@@ -46,7 +46,7 @@ steps:
      azure/**
     targetFolder: '$(Build.ArtifactStagingDirectory)'
   
-- template: azure-pipelines-templates/dependency-check.yml@das-platform-building-blocks
+#- template: azure-pipelines-templates/dependency-check.yml@das-platform-building-blocks
 
 - task: PublishBuildArtifacts@1
   displayName: 'Publish Artifact'
