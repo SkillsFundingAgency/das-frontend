@@ -25,3 +25,10 @@
 .das-panel--confirmation {
   @extend .govuk-panel--confirmation;
 }
+
+.das-panel__link {
+  color: #fff;
+  &:focus {
+    @include govuk-focused-text
+  }
+}
