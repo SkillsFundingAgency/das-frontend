@@ -13,5 +13,8 @@
 - name: Rating
   slug: rating
 
+- name: Table
+  slug: table
+
 - name: Tag
   slug: tag

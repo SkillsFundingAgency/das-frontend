@@ -1,0 +1,185 @@
+---
+layout: components
+title: Table
+current: table
+---
+
+<p>An extension of <a href="https://design-system.service.gov.uk/components/table/" target="_blank" class="govuk-link govuk-link--no-visited-state">GOVUK table</a> with additional options.</p>
+
+<hr
+  class="govuk-section-break govuk-section-break--l"
+/>
+
+<h2 class="govuk-heading-m" id="#sortable-table">Sortable table</h2>
+
+<!-- This needs fixing in the main das-frontend sass -->
+<style>
+  .das-table__sort:before,
+  .das-table__sort:after {
+    position: absolute;
+    left: 0;
+    top: 13px;
+  }
+
+  .das-table__sort--asc,
+  .das-table__sort--desc {
+    position: relative;
+    padding-left: 18px;
+  }
+
+  .das-table--double-arrows .das-table__sort {
+    position: relative;
+    padding-left: 18px;
+  }
+</style>
+
+<p>
+  Sorting should work with JavaScript off. The JavaScript used here to display styles is not production ready.
+</p>
+
+
+
+<table class="govuk-table" data-module="das-table-sort">
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header">
+        <a
+          href="#"
+          class="govuk-link das-table__sort das-table__sort--asc"
+          aria-sort="ascending"
+          >Month you apply</a
+        >
+      </th>
+      <th
+        scope="col"
+        class="govuk-table__header das-table--double-arrows"
+        aria-sort="none"
+      >
+        <a href="#" class="govuk-link das-table__sort">Rate for bicycles</a>
+      </th>
+      <th
+        scope="col"
+        class="govuk-table__header das-table--double-arrows"
+        aria-sort="none"
+      >
+        <a href="#" class="govuk-link das-table__sort">Rate for vehicles</a>
+      </th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">January</th>
+      <td class="govuk-table__cell">£15</td>
+      <td class="govuk-table__cell">£96</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">February</th>
+      <td class="govuk-table__cell">£34</td>
+      <td class="govuk-table__cell">£85</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">March</th>
+      <td class="govuk-table__cell">£22</td>
+      <td class="govuk-table__cell">£73</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr class="govuk-section-break govuk-section-break--l">
+
+<h2 class="govuk-heading-m" id="#condensed-table">Condensed table</h2>
+
+<p>For full width tables where the number of columns causes layout problems.</p>
+
+<table class="govuk-table das-table--condensed">
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header app-custom-class">Date</th>
+      <th scope="col" class="govuk-table__header app-custom-class">Rate for vehicles</th>
+      <th scope="col" class="govuk-table__header app-custom-class">Rate for bicycles</th>
+      <th scope="col" class="govuk-table__header app-custom-class">Rate for vehicles</th>
+      <th scope="col" class="govuk-table__header app-custom-class">Rate for bicycles</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">First 6 weeks</th>
+      <td class="govuk-table__cell">£109.80 per week</td>
+      <td class="govuk-table__cell">£59.10 per week</td>
+      <td class="govuk-table__cell">£59.10 per week</td>
+      <td class="govuk-table__cell">£59.10 per week</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Next 33 weeks</th>
+      <td class="govuk-table__cell">£159.80 per week</td>
+      <td class="govuk-table__cell">£89.10 per week</td>
+      <td class="govuk-table__cell">£89.10 per week</td>
+      <td class="govuk-table__cell">£89.10 per week</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Total estimated pay</th>
+      <td class="govuk-table__cell">£4,282.20</td>
+      <td class="govuk-table__cell">£2,182.20</td>
+      <td class="govuk-table__cell">£2,182.20</td>
+      <td class="govuk-table__cell">£2,182.20</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Next 33 weeks</th>
+      <td class="govuk-table__cell">£159.80 per week</td>
+      <td class="govuk-table__cell">£89.10 per week</td>
+      <td class="govuk-table__cell">£89.10 per week</td>
+      <td class="govuk-table__cell">£89.10 per week</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Total estimated pay</th>
+      <td class="govuk-table__cell">£4,282.20</td>
+      <td class="govuk-table__cell">£2,182.20</td>
+      <td class="govuk-table__cell">£2,182.20</td>
+      <td class="govuk-table__cell">£2,182.20</td>
+    </tr>
+  </tbody>
+</table>
+
+<hr class="govuk-section-break govuk-section-break--l">
+
+<h2 class="govuk-heading-m" id="#responsive-table">Responsive table</h2>
+
+<p>Flip axis on tables to accomodate smaller screen sizes.</p>
+
+<table class="govuk-table das-table--responsive">
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header app-custom-class">Date</th>
+      <th scope="col" class="govuk-table__header app-custom-class">Rate for vehicles</th>
+      <th scope="col" class="govuk-table__header app-custom-class">Rate for bicycles</th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <th data-label="Date" scope="row" class="govuk-table__header">First 6 weeks</th>
+      <td data-label="Rate for vehicles" class="govuk-table__cell">£109.80 per week</td>
+      <td data-label="Rate for bicycles" class="govuk-table__cell">£59.10 per week</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th data-label="Date" scope="row" class="govuk-table__header">Next 33 weeks</th>
+      <td data-label="Rate for vehicles" class="govuk-table__cell">£159.80 per week</td>
+      <td data-label="Rate for bicycles" class="govuk-table__cell">£89.10 per week</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th data-label="Date" scope="row" class="govuk-table__header">Total estimated pay</th>
+      <td data-label="Rate for vehicles" class="govuk-table__cell">£4,282.20</td>
+      <td data-label="Rate for bicycles" class="govuk-table__cell">£2,182.20</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th data-label="Date" scope="row" class="govuk-table__header">Next 33 weeks</th>
+      <td data-label="Rate for vehicles" class="govuk-table__cell">£159.80 per week</td>
+      <td data-label="Rate for bicycles" class="govuk-table__cell">£89.10 per week</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th data-label="Date" scope="row" class="govuk-table__header">Total estimated pay</th>
+      <td data-label="Rate for vehicles" class="govuk-table__cell">£4,282.20</td>
+      <td data-label="Rate for bicycles" class="govuk-table__cell">£2,182.20</td>
+
+    </tr>
+  </tbody>
+</table>
