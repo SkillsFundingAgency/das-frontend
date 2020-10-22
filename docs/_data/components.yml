@@ -1,6 +1,9 @@
 - name: Button
   slug: button
 
+- name: Filter
+  slug: filter
+
 - name: Graph
   slug: graph
 
@@ -15,6 +18,12 @@
 
 - name: Panel
   slug: panel
+
+- name: Pagination
+  slug: pagination
+
+- name: Search results
+  slug: search-results
 
 - name: Table
   slug: table
