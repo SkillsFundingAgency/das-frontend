@@ -1,6 +1,9 @@
 - name: Button
   slug: button
 
+- name: Cookie banner
+  slug: cookie-banner
+
 - name: Filter
   slug: filter
 
@@ -30,3 +33,6 @@
 
 - name: Tag
   slug: tag
+
+- name: Tabs
+  slug: tabs
