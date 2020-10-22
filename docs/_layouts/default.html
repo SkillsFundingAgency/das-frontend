@@ -100,16 +100,17 @@
     <nav class="das-navigation">
       <div class="govuk-width-container">
         <ul class="das-navigation__list" id="navigation">
+        <li class="das-navigation__list-item">
+            <a class="das-navigation__link {% if page.section == "home" %} das-navigation__link--current {% endif %}" href="{{ site.baseurl }}/">Getting started</a>
+        </li>
           <li class="das-navigation__list-item">
-            <a class="das-navigation__link" href="{{ site.baseurl }}/styles"
-              >Styles</a
-            >
-            <a class="das-navigation__link" href="{{ site.baseurl }}/components"
-              >Components</a
-            >
-            <a class="das-navigation__link" href="{{ site.baseurl }}/patterns"
-              >Patterns</a
-            >
+                <a class="das-navigation__link {% if page.section == "styles" %} das-navigation__link--current {% endif %}" href="{{ site.baseurl }}/styles">Styles</a>
+            </li>
+            <li class="das-navigation__list-item">
+                <a class="das-navigation__link {% if page.section == "components" %} das-navigation__link--current {% endif %}" href="{{ site.baseurl }}/components">Components</a>
+            </li>
+            <li class="das-navigation__list-item">
+                <a class="das-navigation__link {% if page.section == "patterns" %} das-navigation__link--current {% endif %}" href="{{ site.baseurl }}/patterns">Patterns</a>
           </li>
         </ul>
       </div>
@@ -153,7 +154,7 @@
             <a
               class="govuk-footer__link govuk-footer__copyright-logo"
               href="https://www.nationalarchives.gov.uk/information-management/re-using-public-sector-information/uk-government-licensing-framework/crown-copyright/"
-              >© Crown copyright</a
+              >&copy; Crown copyright</a
             >
           </div>
         </div>
@@ -164,7 +165,7 @@
     <script src="https://das-at-frnt-end.azureedge.net/libs/jquery/jquery.min.js"></script>
     <script src="https://das-at-frnt-end.azureedge.net/js/das-all.js"></script>
     <script src="https://das-at-frnt-end.azureedge.net/js/app.min.js"></script>
-    <script src="../assets/javascript/tablesort.js"></script>
+    <script src="{{ site.baseurl }}/assets/javascript/tablesort.js"></script>
     <script>
       window.GOVUKFrontend.initAll();
       window.DASFrontend.initAll();

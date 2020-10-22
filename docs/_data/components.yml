@@ -13,6 +13,9 @@
 - name: Rating
   slug: rating
 
+- name: Panel
+  slug: panel
+
 - name: Table
   slug: table
 
