@@ -1,6 +1,12 @@
 - name: Button
   slug: button
 
+- name: Cookie banner
+  slug: cookie-banner
+
+- name: Filter
+  slug: filter
+
 - name: Graph
   slug: graph
 
@@ -13,8 +19,20 @@
 - name: Rating
   slug: rating
 
+- name: Panel
+  slug: panel
+
+- name: Pagination
+  slug: pagination
+
+- name: Search results
+  slug: search-results
+
 - name: Table
   slug: table
 
 - name: Tag
   slug: tag
+
+- name: Tabs
+  slug: tabs
