@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="govuk-template">
+<html lang="en">
   <head>
     <meta charset="utf-8" />
     <title>Digital Apprenticeship Service</title>
@@ -41,6 +41,10 @@
       href="https://das-at-frnt-end.azureedge.net/css/main.css"
       rel="stylesheet"
     />
+    <link
+          href="{{ site.baseurl }}/assets/css/main.css"
+          rel="stylesheet"
+        />
     <!--<![endif]-->
 
     <meta
@@ -49,14 +53,16 @@
     />
   </head>
 
-  <body class="govuk-template__body">
+  <body class="app-example-page">
     <script>
       document.body.className = document.body.className
         ? document.body.className + " js-enabled"
         : "js-enabled";
     </script>
 
+	<div id="app-example-content">
     {{ content }}
+    </div>
 
     <script src="https://das-at-frnt-end.azureedge.net/libs/govuk-frontend/all.js"></script>
     <script src="https://das-at-frnt-end.azureedge.net/libs/jquery/jquery.min.js"></script>
