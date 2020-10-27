@@ -31,8 +31,8 @@
 - name: Table
   slug: table
 
-- name: Tag
-  slug: tag
-
 - name: Tabs
   slug: tabs
+
+- name: Tag
+  slug: tag
