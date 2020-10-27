@@ -1,0 +1,12 @@
+<div class="app-example-wrapper" id="{{ include.component }}-example-{{ include.example | default: 'index' }}" data-module="app-tabs">
+  <div class="app-example">
+    <div class="app-example__toolbar">
+      <a href="example/{{ include.example | default: 'index' }}" class="govuk-link govuk-link--no-visited-state app-example__new-window" target="_blank">
+        Open this
+        <span class="govuk-visually-hidden">{{ include.component }}</span>
+        example in a new tab
+      </a>
+    </div>
+    <iframe title="{{ include.component | capitalize }} example" class="app-example__frame app-example__frame--{{ include.size | default: 's' }}" src="example/{{ include.example | default: 'index' }}" frameborder="0" loading="lazy" scrolling="auto"></iframe>
+  </div>
+</div>

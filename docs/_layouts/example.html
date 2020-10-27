@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Digital Apprenticeship Service</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#0b0c0c" />
+
+    <link
+      rel="shortcut icon"
+      href="https://das-at-frnt-end.azureedge.net/assets/images/favicon.ico"
+      type="image/x-icon"
+    />
+    <link
+      rel="mask-icon"
+      href="https://das-at-frnt-end.azureedge.net/assets/images/govuk-mask-icon.svg"
+      color="#0b0c0c"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="https://das-at-frnt-end.azureedge.net/assets/images/govuk-apple-touch-icon-180x180.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="167x167"
+      href="https://das-at-frnt-end.azureedge.net/assets/images/govuk-apple-touch-icon-167x167.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="152x152"
+      href="https://das-at-frnt-end.azureedge.net/assets/images/govuk-apple-touch-icon-152x152.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      href="https://das-at-frnt-end.azureedge.net/assets/images/govuk-apple-touch-icon.png"
+    />
+
+    <!--[if !IE 8]><!-->
+    <link
+      href="https://das-at-frnt-end.azureedge.net/css/main.css"
+      rel="stylesheet"
+    />
+    <link
+          href="{{ site.baseurl }}/assets/css/main.css"
+          rel="stylesheet"
+        />
+    <!--<![endif]-->
+
+    <meta
+      property="og:image"
+      content="https://das-at-frnt-end.azureedge.net/assets/images/govuk-opengraph-image.png"
+    />
+  </head>
+
+  <body class="app-example-page">
+    <script>
+      document.body.className = document.body.className
+        ? document.body.className + " js-enabled"
+        : "js-enabled";
+    </script>
+
+	<div id="app-example-content">
+    {{ content }}
+    </div>
+
+    <script src="https://das-at-frnt-end.azureedge.net/libs/govuk-frontend/all.js"></script>
+    <script src="https://das-at-frnt-end.azureedge.net/libs/jquery/jquery.min.js"></script>
+    <script src="https://das-at-frnt-end.azureedge.net/js/das-all.js"></script>
+    <script src="https://das-at-frnt-end.azureedge.net/js/app.min.js"></script>
+    <script>
+      window.GOVUKFrontend.initAll();
+      window.DASFrontend.initAll();
+    </script>
+  </body>
+</html>
