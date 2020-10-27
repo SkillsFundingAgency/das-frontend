@@ -16,14 +16,14 @@
 - name: Notification
   slug: notification
 
-- name: Rating
-  slug: rating
+- name: Pagination
+  slug: pagination
 
 - name: Panel
   slug: panel
 
-- name: Pagination
-  slug: pagination
+- name: Rating
+  slug: rating
 
 - name: Search results
   slug: search-results
