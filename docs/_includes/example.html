@@ -1,24 +1,32 @@
-<div class="app-example-wrapper" id="{{ include.component }}-example-{{ include.example | default: 'index' }}" data-module="app-tabs">
+<div class="app-example-wrapper" id="{{ include.component }}-example-{{ include.example | default: 'index' }}"
+  data-module="app-tabs">
   <div class="app-example">
     <div class="app-example__toolbar">
-      <a href="example/{{ include.example | default: 'index' }}" class="govuk-link govuk-link--no-visited-state app-example__new-window" target="_blank">
+      <a href="example/{{ include.example | default: 'index' }}"
+        class="govuk-link govuk-link--no-visited-state app-example__new-window" target="_blank">
         Open this
         <span class="govuk-visually-hidden">{{ include.component }}</span>
         example in a new tab
       </a>
     </div>
-    <iframe title="{{ include.component | capitalize }} example" class="app-example__frame app-example__frame--{{ include.size | default: 's' }}" src="example/{{ include.example | default: 'index' }}" frameborder="0" loading="lazy" scrolling="auto"></iframe>
+    <iframe title="{{ include.component | capitalize }} example"
+      class="app-example__frame app-example__frame--{{ include.size | default: 's' }}"
+      src="example/{{ include.example | default: 'index' }}" frameborder="0" loading="lazy" scrolling="auto"></iframe>
   </div>
 
 
-	<div class="app-code-example" data-module="das-show-hide">
-		<a href="#" class="govuk-link app-code-example__button das-show-hide__button" data-aria-controls="html-{{ include.component }}-example-{{ include.example | default: 'index' }}" data-button-string="HTML">HTML</a>
-		<div class="app-code-example__container" id="html-{{ include.component }}-example-{{ include.example | default: 'index' }}">
-			<div class="app-code-example__code">
-				{% capture get_html %}{% include_relative example/{{ include.example | default: 'index' }}.html %}{% endcapture %}
-				<pre tabindex="0"><code class="hljs html">{{ get_html | escape_once | replace: "---", "" | replace: "layout: example", "" | lstrip  }}</code></pre>
-			</div>
-		</div>
-	</div>
+  <div class="app-code-example" data-module="das-show-hide">
+    <a href="#" class="govuk-link app-code-example__button das-show-hide__button"
+      data-aria-controls="html-{{ include.component }}-example-{{ include.example | default: 'index' }}"
+      data-button-string="HTML">HTML</a>
+    <div class="app-code-example__container"
+      id="html-{{ include.component }}-example-{{ include.example | default: 'index' }}">
+      <div class="app-code-example__code">
+        {% capture get_html %}{% include_relative example/{{ include.example | default: 'index' }}.html %}{% endcapture %}
+        <pre
+          tabindex="0"><code class="hljs html">{{ get_html | escape_once | replace: "---", "" | replace: "layout: example", "" | lstrip  }}</code></pre>
+      </div>
+    </div>
+  </div>
 
 </div>
