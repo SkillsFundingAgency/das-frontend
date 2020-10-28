@@ -71,6 +71,7 @@ Showhide.prototype.handleShowLinkClick = function (event) {
   if (hasAriaControls) {
     var section = document.getElementById(hasAriaControls)
     this.showSection(section, showLink, hasAriaControls)
+    // Update any additional buttons to show/hide status of section
     this.updateButtons(buttons, true)
   }
 }
@@ -78,7 +79,7 @@ Showhide.prototype.handleShowLinkClick = function (event) {
 Showhide.prototype.showSection = function (section, control) {
   var focusId = control.getAttribute('data-focus-id'),
       focusIdExists = document.querySelector('#' + focusId);
-  
+
   // Show the section
   section.classList.add(this.sectionExpandedClass)
   // Focus on element if exists
