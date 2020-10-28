@@ -78,8 +78,7 @@ Showhide.prototype.handleShowLinkClick = function (event) {
 Showhide.prototype.showSection = function (section, control) {
   var focusId = control.getAttribute('data-focus-id'),
       focusIdExists = document.querySelector('#' + focusId);
-
-  console.log(focusIdExists)
+  
   // Show the section
   section.classList.add(this.sectionExpandedClass)
   // Focus on element if exists
