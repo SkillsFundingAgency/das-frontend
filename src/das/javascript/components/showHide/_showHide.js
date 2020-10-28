@@ -13,45 +13,37 @@ Showhide.prototype.init = function () {
   nodeListForEach(buttons, function (button) {
     var controls = button.getAttribute('data-aria-controls')
     var section = document.getElementById(controls)
-    var sectionExpanded
-
+    var sectionExpanded = that.isExpanded(section)
     if (!controls || !section) {
       return
     }
-
-    sectionExpanded = that.isExpanded(section)
     section.classList.add('das-show-hide__section')
-    that.changeButtonText(button, sectionExpanded)
     button.setAttribute('aria-controls', controls)
     button.setAttribute('aria-expanded', sectionExpanded)
     button.removeAttribute('data-aria-controls')
-
-    button.addEventListener('click', that.handleClick.bind(that))
-
+    button.addEventListener('click', that.handleButtonClick.bind(that))
   })
+
+  this.updateButtons(this.buttons, false)
 
   // Show links - will just show a hidden section - rather than toggling
   nodeListForEach(showLinks, function (showLink) {
     var controls = showLink.getAttribute('data-aria-controls')
     var section = document.getElementById(controls)
-    var sectionExpanded
-
+    var sectionExpanded = that.isExpanded(section)
     if (!controls || !section) {
       return
     }
-
-    sectionExpanded = that.isExpanded(section)
     section.classList.add('das-show-hide__section')
     showLink.setAttribute('aria-controls', controls)
     showLink.setAttribute('aria-expanded', sectionExpanded)
     showLink.removeAttribute('data-aria-controls')
-
-    showLink.addEventListener('click', that.handleShowClick.bind(that))
+    showLink.addEventListener('click', that.handleShowLinkClick.bind(that))
   })
 
 }
 
-Showhide.prototype.handleClick = function (event) {
+Showhide.prototype.handleButtonClick = function (event) {
 
   var button = event.target
   var hasAriaControls = button.getAttribute('aria-controls')
@@ -59,49 +51,57 @@ Showhide.prototype.handleClick = function (event) {
   event.preventDefault();
 
   if (hasAriaControls) {
-    var section = document.getElementById(hasAriaControls)
-    var isSectionExpanded = this.isExpanded(section)
-    button.setAttribute('aria-expanded', !isSectionExpanded)
-    this.changeButtonText(button, !isSectionExpanded)
+    var section = document.getElementById(hasAriaControls),
+        isSectionExpanded = this.isExpanded(section)
     if (!isSectionExpanded) {
-      var focusId = button.getAttribute('data-focus-id')
-      var focusIdExists = section.querySelector('#' + focusId)
-      section.classList.add(this.sectionExpandedClass)
-      if (focusIdExists) {
-        focusIdExists.focus()
-      }
+      this.showSection(section, button)
     } else {
-      section.classList.remove(this.sectionExpandedClass)
+      this.hideSection(section)
     }
+    this.updateButtons(this.buttons, !isSectionExpanded)
   }
 }
 
-Showhide.prototype.handleShowClick = function (event) {
+Showhide.prototype.handleShowLinkClick = function (event) {
   var showLink = event.target
   var hasAriaControls = showLink.getAttribute('aria-controls')
-
+  var buttons = document.querySelectorAll('.das-show-hide__button[aria-controls="' + hasAriaControls + '"]');
   event.preventDefault();
 
   if (hasAriaControls) {
     var section = document.getElementById(hasAriaControls)
-    showLink.setAttribute('aria-expanded', true)
-
-    var focusId = showLink.getAttribute('data-focus-id')
-    var focusIdExists = section.querySelector('#' + focusId)
-    section.classList.add(this.sectionExpandedClass)
-    if (focusIdExists) {
-      focusIdExists.focus()
-    }
+    this.showSection(section, showLink, hasAriaControls)
+    this.updateButtons(buttons, true)
   }
+}
+
+Showhide.prototype.showSection = function (section, control) {
+  var focusId = control.getAttribute('data-focus-id'),
+      focusIdExists = document.querySelector('#' + focusId);
+
+  console.log(focusIdExists)
+  // Show the section
+  section.classList.add(this.sectionExpandedClass)
+  // Focus on element if exists
+  if (focusIdExists) {
+    focusIdExists.focus()
+  }
+}
+
+Showhide.prototype.hideSection = function (section) {
+  section.classList.remove(this.sectionExpandedClass)
 }
 
 Showhide.prototype.isExpanded = function (section) {
   return section.classList.contains(this.sectionExpandedClass)
 }
 
-Showhide.prototype.changeButtonText = function (button, isExpanded) {
-  var additionalButtonString = button.getAttribute('data-button-string')
-  button.innerHTML = (!isExpanded ? 'Show' : 'Hide') + (additionalButtonString ? ' ' + additionalButtonString : '')
+Showhide.prototype.updateButtons = function (buttons, isSectionExpanded) {
+  nodeListForEach(buttons, function (button) {
+    var additionalButtonString = button.getAttribute('data-button-string')
+    button.innerHTML = (!isSectionExpanded ? 'Show' : 'Hide') + (additionalButtonString ? ' ' + additionalButtonString : '')
+    button.setAttribute('aria-expanded', !isSectionExpanded)
+  });
 }
 
 function nodeListForEach (nodes, callback) {
