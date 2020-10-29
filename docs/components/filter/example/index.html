@@ -2,80 +2,84 @@
 layout: example
 ---
 <div class="das-show-hide" data-module="das-show-hide">
-	<div class="das-filter">
-	   <div class="das-filter__header">
-	      <h2 class="das-filter__heading">Filter</h2>
-	   </div>
-	   <div class="das-filter__selected-filters">
-	        <div class="das-filter__selected-header">
-	            <h3 class="das-filter__selected-heading">Selected filters</h3>
-	            <a href="#" class="das-filter__selected-action govuk-link govuk-link--no-visited-state">Clear <span class="govuk-visually-hidden">the selected filters</span></a>
-	        </div>
-	        <h4 class="das-filter__selected-sub-heading">Keywords</h4>
-	        <a href="#" title="Clear this filter 'animals'" class="das-filter__tag">&lsquo;animals&rsquo;</a>
+  <div class="das-filter">
+    <div class="das-filter__header">
+      <h2 class="das-filter__heading">Filter</h2>
+    </div>
+    <div class="das-filter__selected-filters">
+      <div class="das-filter__selected-header">
+        <h3 class="das-filter__selected-heading">Selected filters</h3>
+        <a href="#" class="das-filter__selected-action govuk-link govuk-link--no-visited-state">Clear <span
+            class="govuk-visually-hidden">the selected filters</span></a>
+      </div>
+      <h4 class="das-filter__selected-sub-heading">Keywords</h4>
+      <a href="#" title="Clear this filter 'animals'" class="das-filter__tag">&lsquo;animals&rsquo;</a>
 
-	        <h4 class="das-filter__selected-sub-heading">Sector</h4>
-	        <a class="das-filter__tag" href="#">Business and administration</a>
-	        <a class="das-filter__tag" href="#">Agriculture, environmental and animal care</a>
-	        <a class="das-filter__tag" href="#">Construction</a>
-	        <a class="das-filter__tag" href="#">Digital</a>
-	   </div>
-	   <div class="das-filter__body" id="filter-options">
-	      <form>
-	         <button type="submit" class="govuk-button das-filter__button" id="filters-submit">Apply filters</button>
-	         <div class="govuk-form-group">
-	            <label for="search-training" class="govuk-label das-filter__search-label">Keywords</label>
-	            <input type="search" id="search-training" class="govuk-input">
-	         </div>
-	         <div class="govuk-form-group">
-	            <fieldset class="govuk-fieldset">
-	               <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-	                  <h3 class="govuk-fieldset__heading">
-	                     Sector
-	                  </h3>
-	               </legend>
-	               <div class="govuk-checkboxes govuk-checkboxes--small">
-	                  <div class="govuk-checkboxes__item">
-	                     <input class="govuk-checkboxes__input" id="sector" name="sector" type="checkbox" value="1">
-	                     <label class="govuk-label govuk-checkboxes__label" for="sector">
-	                     Construction
-	                     </label>
-	                  </div>
-	                  <div class="govuk-checkboxes__item">
-	                     <input class="govuk-checkboxes__input" id="sector-2" name="sector" type="checkbox" value="2">
-	                     <label class="govuk-label govuk-checkboxes__label" for="sector-2">
-	                     Engineering and manufacturing
-	                     </label>
-	                  </div>
-	               </div>
-	            </fieldset>
-	         </div>
-	         <div class="govuk-form-group">
-	            <fieldset class="govuk-fieldset">
-	               <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-	                  <h3 class="govuk-fieldset__heading">
-	                     Level
-	                  </h3>
-	               </legend>
-	               <div class="govuk-checkboxes govuk-checkboxes--small">
-	                  <div class="govuk-checkboxes__item">
-	                     <input class="govuk-checkboxes__input" id="level" name="level" type="checkbox" value="1">
-	                     <label class="govuk-label govuk-checkboxes__label" for="level">
-	                     Level 2 - GCSE grades 9 to 4
-	                     </label>
-	                  </div>
-	                  <div class="govuk-checkboxes__item">
-	                     <input class="govuk-checkboxes__input" id="level-2" name="level" type="checkbox" value="2">
-	                     <label class="govuk-label govuk-checkboxes__label" for="level-2">
-	                     Level 3 - A level
-	                     </label>
-	                  </div>
-	               </div>
-	            </fieldset>
-	         </div>
-	      </form>
-	      <p class="govuk-body govuk-!-font-size-16"><a class="govuk-link govuk-link--no-visited-state" href="https://www.gov.uk/what-different-qualification-levels-mean/list-of-qualification-levels" target="_blank" rel="external">What levels mean (opens in new tab or window)</a></p>
-	   </div>
-	   <button class="govuk-button das-filter__toggle das-show-hide__button" data-aria-controls="filter-options" data-button-string="filter options" data-focus-id="search-training">Show/hide</button>
-	</div>
+      <h4 class="das-filter__selected-sub-heading">Sector</h4>
+      <a class="das-filter__tag" href="#">Business and administration</a>
+      <a class="das-filter__tag" href="#">Agriculture, environmental and animal care</a>
+      <a class="das-filter__tag" href="#">Construction</a>
+      <a class="das-filter__tag" href="#">Digital</a>
+    </div>
+    <div class="das-filter__body" id="filter-options">
+      <form>
+        <button type="submit" class="govuk-button das-filter__button" id="filters-submit">Apply filters</button>
+        <div class="govuk-form-group">
+          <label for="search-training" class="govuk-label das-filter__search-label">Keywords</label>
+          <input type="search" id="search-training" class="govuk-input">
+        </div>
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+              <h3 class="govuk-fieldset__heading">
+                Sector
+              </h3>
+            </legend>
+            <div class="govuk-checkboxes govuk-checkboxes--small">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="sector" name="sector" type="checkbox" value="1">
+                <label class="govuk-label govuk-checkboxes__label" for="sector">
+                  Construction
+                </label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="sector-2" name="sector" type="checkbox" value="2">
+                <label class="govuk-label govuk-checkboxes__label" for="sector-2">
+                  Engineering and manufacturing
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+              <h3 class="govuk-fieldset__heading">
+                Level
+              </h3>
+            </legend>
+            <div class="govuk-checkboxes govuk-checkboxes--small">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="level" name="level" type="checkbox" value="1">
+                <label class="govuk-label govuk-checkboxes__label" for="level">
+                  Level 2 - GCSE grades 9 to 4
+                </label>
+              </div>
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="level-2" name="level" type="checkbox" value="2">
+                <label class="govuk-label govuk-checkboxes__label" for="level-2">
+                  Level 3 - A level
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
+      </form>
+      <p class="govuk-body govuk-!-font-size-16"><a class="govuk-link govuk-link--no-visited-state"
+          href="https://www.gov.uk/what-different-qualification-levels-mean/list-of-qualification-levels"
+          target="_blank" rel="external">What levels mean (opens in new tab or window)</a></p>
+    </div>
+    <button class="govuk-button das-filter__toggle das-show-hide__button" data-aria-controls="filter-options"
+      data-button-string="filter options" data-focus-id="search-training">Show/hide</button>
+  </div>
 </div>
