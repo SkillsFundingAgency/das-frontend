@@ -1,2 +1,5 @@
 - name: Lists
   slug: lists
+
+- name: Definition lists
+  slug: definition-lists

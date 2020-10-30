@@ -34,33 +34,6 @@
   }
 }
 
-dl.das-inline-def-list {//Description: definition lists - brings the DT and DD inline
-  margin: 0;
-  @include govuk-font($size: 19);
-  @include govuk-text-colour;
-
-  dt {
-
-    font-weight: bold;
-    display: inline;
-    padding-right: govuk-spacing(1);
-    &:before {
-        content: '';
-        display: block;
-    }
-    &:after{
-      content: ':';
-      font-weight: normal;
-    }
-  }
-  dd {
-    font-weight: normal;
-    display: inline;
-    margin: 0;
-    padding-right: govuk-spacing(2);
-    //& + dd {display: inline-block; }
-  }
-}
 
 .das-govuk-list-forms {//Description: search results list featuring forms (btn as link) in ea LI
   li {
