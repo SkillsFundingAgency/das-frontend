@@ -1,3 +1,4 @@
+
 function Navigation(nav) {
   this.navToggle = nav.querySelector('[data-fiu-nav-toggle]')
   this.navMenu = nav.querySelector('[data-fiu-nav-menu]')
@@ -5,8 +6,9 @@ function Navigation(nav) {
 }
 
 Navigation.prototype.setupEvents = function () {
-  this.navToggle.addEventListener('click', () => {
+  this.navToggle.addEventListener('click', (event) => {
     const body = document.querySelector('body');
     body.classList.toggle('fiu-navigation-menu-open');
+    event.preventDefault();
   });
 }

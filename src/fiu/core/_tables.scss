@@ -1,0 +1,13 @@
+// Content coming from CMS
+
+.fiu-table {
+  @extend .govuk-table;
+}
+
+.fiu-table th {
+  @extend .govuk-table__header
+}
+
+.fiu-table td {
+  @extend .govuk-table__cell
+}

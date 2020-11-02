@@ -22,7 +22,7 @@
 	<meta property="og:image" content="/fiu/assets/images/opengraph.png">
 
 </head>
-<body class="fiu-template__body">
+<body class="fiu-template__body" data-fat-api="https://findapprenticeshiptraining-api.apprenticeships.education.gov.uk/">
 	<script>
 		document.body.className = ((document.body.className) ? document.body.className + ' js-enabled' : 'js-enabled');
 	</script>
@@ -30,6 +30,8 @@
 	<a href="#main" class="govuk-skip-link">Skip to main content</a>
 
 	{% include "header/header.html" %}
+
+	{% include "alert/alert.html" %}
 
     {% block content %}
 

@@ -4,6 +4,7 @@ const babel = require('gulp-babel');
 const concat = require('gulp-concat');
 const terser = require('gulp-terser');
 const sass = require('gulp-sass');
+const rename = require('gulp-rename');
 const paths = require('../../config/paths.json')
 const sassOptionsFiu = require('../../config/sassOptionsFiu.js')
 
@@ -41,6 +42,8 @@ gulp.task('fiu-copy-images', (done) => {
 
 gulp.task('fiu-copy-libs', (done) => {
   gulp.src('./node_modules/plyr/dist/plyr.min.js').pipe(gulp.dest(paths.dist.fiuJs));
-  gulp.src('./src/fiu/javascript/libs/*.js').pipe(gulp.dest(paths.dist.fiuJs + '/libs'));
+  gulp.src('./node_modules/accessible-autocomplete/dist/accessible-autocomplete.min.js').pipe(rename('_autocomplete.js')).pipe(gulp.dest('./src/fiu/libs'));
+  gulp.src('./node_modules/accessible-autocomplete/src/autocomplete.css').pipe(rename('_autocomplete.scss')).pipe(gulp.dest('./src/fiu/components/fat-search/'));
+  //gulp.src('./src/fiu/javascript/libs/*.js').pipe(gulp.dest(paths.dist.fiuJs + '/libs'));
   done();
 });

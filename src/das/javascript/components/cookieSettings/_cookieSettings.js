@@ -61,11 +61,11 @@ CookieSettings.prototype.formSubmitted = function (event) {
 CookieSettings.prototype.showConfirmationMessage = function () {
   var confirmationMessage = document.querySelector('div[data-cookie-confirmation]')
   var previousPageLink = document.querySelector('.cookie-settings__prev-page')
-  var referrer = CookieSettings.prototype.getReferrerLink()
+  var referrer = document.referrer;
 
   document.body.scrollTop = document.documentElement.scrollTop = 0
 
-  if (referrer && referrer !== document.location.pathname) {
+  if (referrer && referrer !== document.location.href) {
     previousPageLink.href = referrer
     previousPageLink.style.display = "inline-block"
   } else {
@@ -73,10 +73,6 @@ CookieSettings.prototype.showConfirmationMessage = function () {
   }
 
   confirmationMessage.style.display = "block"
-}
-
-CookieSettings.prototype.getReferrerLink = function () {
-  return document.referrer ? new URL(document.referrer).pathname : false
 }
 
 export default CookieSettings

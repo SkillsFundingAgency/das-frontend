@@ -1,0 +1,64 @@
+$iconTopPos:    20px;
+$iconLeftPos:   15px;
+$iconPDFwidth:  110px;
+$iconPDFheight: 152px;
+
+.fiu-guides-panel {
+    @include fiu-typography-common;
+    border: 1px solid $fiu-border-colour;
+    border-radius: 10px;
+    padding: $iconTopPos $iconLeftPos;
+    margin-bottom: 20px;
+    position: relative;
+    @include govuk-media-query(desktop) {
+        padding: $iconTopPos 20px 50px ($iconLeftPos + 5px);
+    }
+}
+
+.fiu-guides-panel--pdf {
+    background-image: url('../assets/images/pdf-doc-icon.png');
+    background-repeat: no-repeat;
+    background-color: $white;
+    background-position: $iconLeftPos $iconTopPos;
+    background-size: ($iconPDFwidth / 3) ($iconPDFheight / 3);
+    padding-left: ($iconPDFwidth / 3) + ($iconLeftPos * 2);
+
+    @include govuk-media-query(desktop) {
+        background-position: ($iconLeftPos + 5px) $iconTopPos;
+        min-height: $iconPDFheight + ($iconTopPos * 3);
+        background-size: auto;
+        padding-left: $iconPDFwidth + ($iconLeftPos + 25px);
+    }
+}
+
+.fiu-guides-panel__heading {
+    @extend .govuk-heading-m;
+    color: $fiu-text-colour;
+    margin-top: 0;
+    margin-bottom: 18px;
+}
+
+.fiu-guides-panel__spec {
+    font-size: 16px;
+    line-height: 21px;
+    font-weight: $fiu-font-weight-book;
+    color: $dark-grey;
+    display: block;
+    margin-bottom: 16px;
+
+    @include govuk-media-query(desktop) {
+        font-size: 18px;
+        line-height: 23px;
+    }
+}
+
+.fiu-guides-panel__link {
+    font-size: 16px;
+    line-height: 21px;
+    display: inline-block;
+
+    @include govuk-media-query(desktop) {
+        font-size: 18px;
+        line-height: 23px;
+    }
+}

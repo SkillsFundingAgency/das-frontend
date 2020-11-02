@@ -1,0 +1,44 @@
+.das-rating {
+  @include govuk-clearfix;
+  display: inline-block;
+  vertical-align: text-top;
+}
+
+.das-rating--poor {
+  color: govuk-colour("dark-grey");
+}
+
+.das-rating--good {
+  color: govuk-colour("green");
+}
+
+.das-rating__icon-star,
+.das-rating__icon-star--empty {
+  width: 1em;
+  height: 1em;
+  display: block;
+  float: left;
+  background-image: url("../images/icon-star-grey-empty.svg");
+  margin-right: .1em;
+}
+
+.das-rating__icon-star {
+  background-image: url("../images/icon-star-grey.svg");
+}
+
+.das-rating--good {
+  .das-rating__icon-star {
+    background-image: url("../images/icon-star-green.svg");
+  }
+  .das-rating__icon-star--empty {
+    background-image: url("../images/icon-star-green-empty.svg");
+  }
+}
+
+.das-rating__label--poor {
+  color: govuk-colour("dark-grey");
+}
+
+.das-rating__label--good {
+  color: govuk-colour("green");
+}

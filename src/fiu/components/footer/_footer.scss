@@ -4,6 +4,7 @@
   color: $fiu-footer-text-colour;
   font-size: 18px;
   line-height: 20px;
+  margin-bottom: 30px;
 }
 
 .fiu-footer__row {
@@ -11,8 +12,7 @@
   text-align: center;
   @include govuk-media-query(tablet) {
     text-align: left;
-    margin-bottom: 2em;
-    padding: 30px 0;
+    padding: 30px 0 0;
   }
 }
 
@@ -35,7 +35,7 @@
 .fiu-footer__apprenticeship-logo-wrap {
   text-align: center;
   padding: 20px 0;
-  border-bottom: 1px solid #fff;
+  border-bottom: 1px solid $dark-grey;
   @include govuk-media-query(tablet) {
     text-align: left;
     padding: 30px 0;

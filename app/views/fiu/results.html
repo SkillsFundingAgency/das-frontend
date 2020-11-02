@@ -4,33 +4,10 @@
 
 {% block content %}
 
-
-
-
-{% include "results/results.html" %}
-
-
-
-<div class="govuk-grid-row">
-	<div class="govuk-grid-column-one-half">
-		{{ fiuPanel({
-			type: "citizens",
-            tag: "Apprentices",
-            heading: "Become an apprentice",
-            html: "Everything you need to know about becoming an appretice"
-        }) }}
-	</div>
-	<div class="govuk-grid-column-one-half">
-        {{ fiuPanel({
-            type: "employers",
-            tag: "Employers",
-            heading: "Hire an apprentice",
-            html: "Find out how to hire an apprentice and what you need to do"
-        }) }}
-    </div>
-</div>
-
-
-
-
+<main id="main" class="fiu-main-wrapper">
+	{% include "page-header/page-header.html" %}
+	{% include "search-filter/search-filter.html" %}
+	<span class="fiu-header-content-spacer--grey"></span>
+	{% include "results/results.html" %}
+</main>
 {% endblock %}

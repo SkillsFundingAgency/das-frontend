@@ -1,0 +1,38 @@
+- name: Button
+  slug: button
+
+- name: Cookie banner
+  slug: cookie-banner
+
+- name: Filter
+  slug: filter
+
+- name: Graph
+  slug: graph
+
+- name: Highlight
+  slug: highlight
+
+- name: Notification
+  slug: notification
+
+- name: Pagination
+  slug: pagination
+
+- name: Panel
+  slug: panel
+
+- name: Rating
+  slug: rating
+
+- name: Search results
+  slug: search-results
+
+- name: Table
+  slug: table
+
+- name: Tabs
+  slug: tabs
+
+- name: Tag
+  slug: tag

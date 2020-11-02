@@ -1,0 +1,5 @@
+title: DAS Frontend Docs
+description: >-
+  Documentation showing the styles, components and UI patterns that
+  exist in the DAS Frontend CDN.
+baseurl: "/das-frontend" # the subpath of your site, e.g. /blog

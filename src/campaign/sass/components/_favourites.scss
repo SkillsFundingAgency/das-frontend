@@ -2,7 +2,7 @@
   display: inline-block;
   width: 1em;
   height: 1em;
-  background-image: url('../images/icon-star-filled-yellow.svg');
+  background-image: url('../images/icon-star-filled-employers.svg');
   background-repeat: no-repeat;
   background-position: center center;
 }
@@ -16,7 +16,7 @@
     width: 2.4em;
     height: 2.4em;
     overflow: hidden;
-    background-image: url('../images/icon-star-outlined.svg');
+    background-image: url('../images/icon-star-outlined-employers.svg');
     background-repeat: no-repeat;
     background-position: center center;
     background-size: contain;
@@ -24,10 +24,10 @@
     text-indent: -999em;
     margin: -7px 0;
     .favourites-link--filled & {
-      background-image: url('../images/icon-star-filled-yellow.svg');
+      background-image: url('../images/icon-star-filled-employers.svg');
       .header--active & ,
       .header:hover & {
-        background-image: url('../images/icon-star-filled-yellow.svg');
+        background-image: url('../images/icon-star-filled-employers.svg');
       }
     }
   }

@@ -1,12 +1,17 @@
 .fiu-width-container {
   @extend .govuk-width-container;
   @include govuk-media-query($until: 1020px) {
-    margin-left: 30px;
-    margin-right: 30px;
+    margin-left: 20px;
+    margin-right: 20px;
   }
 }
 
 .fiu-main-wrapper {
-  padding: 0 0 1px;
-  background: $light-grey;
+  padding: 0;
+  background: $fiu-body-colour;
+}
+
+.fiu-main-wrapper:after {
+    content: ' ';
+    display: table;
 }

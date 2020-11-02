@@ -8,11 +8,26 @@
   }
 }
 
+.fiu-link--no-visited-state {
+  &:visited {
+    color: $fiu-global-link-colour;
+  }
+}
 
 .fiu-link--citizens {
   color: $fiu-citizens-link-colour;
   &:hover {
     color: $fiu-citizens-link-hover-colour;
+  }
+  &:focus {
+    @include govuk-focused-text;
+  }
+}
+
+.fiu-link--citizens-light {
+  color: $fiu-citizens-link-colour-light;
+  &:hover {
+    color: lighten($fiu-citizens-link-colour-light, 15%);
   }
   &:focus {
     @include govuk-focused-text;
@@ -30,20 +45,18 @@
 }
 
 .fiu-link--employers-light {
-  color: lighten($fiu-employers-link-colour, 15%);
+  color: $fiu-employers-link-colour-light;
   &:hover {
-    color: lighten($fiu-employers-link-colour, 30%);
+    color: lighten($fiu-employers-link-colour-light, 15%);
   }
   &:focus {
     @include govuk-focused-text;
   }
 }
 
+// Content coming from CMS
 .fiu-article > p > a,
-.fiu-article > li > a {
+.fiu-article li > a,
+.fiu-article li > p > a {
   @extend .fiu-link;
-}
-
-.fiu-link--citizens {
-
 }

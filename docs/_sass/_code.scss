@@ -1,0 +1,59 @@
+code {
+  padding: 0 5px;
+  color: #d13118;
+  background-color: #f3f2f1;
+}
+
+pre {
+  max-width: 38em;
+  margin: 0;
+  padding: 20px;
+  overflow: auto;
+  border: 1px solid #b1b4b6;
+  background-color: #f8f8f8;
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+.app-code-example {
+  border: 1px solid $govuk-border-colour;
+  position: relative;
+  top: -1px;
+}
+
+.app-code-example__button {
+  display: inline-block;
+  padding: 15px 20px;
+  font-family: $govuk-font-family;
+}
+
+.app-code-example__container {
+  padding: 20px;
+}
+
+.app-code-example__code {
+  background-color: #f3f2f1;
+}
+
+.app-code-example__code pre {
+  font-family: monospace, monospace;
+  font-size: 1.2em;
+  line-height: 1.2em;
+  max-width: inherit;
+  margin-bottom: 0;
+  padding: 0;
+  border: 3px solid transparent;
+  outline: 1px solid transparent;
+  color: #0b0c0c;
+  background-color: #f3f2f1;
+}
+
+.app-code-example__code pre:focus {
+  border: 3px solid #0b0c0c;
+  outline: 3px solid #fd0;
+}
+
+.app-code-example__code pre code {
+  display: inline-block;
+  padding: 20px;
+}
