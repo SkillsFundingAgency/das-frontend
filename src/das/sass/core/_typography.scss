@@ -11,12 +11,27 @@ p {
   color: govuk-colour('red');
 }
 
+.das-text--success {
+  color: govuk-colour('green');
+}
+
+.das-text--normal {
+  font-style: normal;
+}
+
 .das-text--error-icon {
   padding-left: 30px;
   background-image: url("../images/icon-cross--red.svg");
   background-repeat: no-repeat;
   background-position: 0 .2em;
   background-size: 18px 18px;
+}
+
+.das-text--success-icon {
+  padding-left: 30px;
+  background-image: url("../images/icon-tick--green.svg");
+  background-repeat: no-repeat;
+  background-size: 23px 22px;
 }
 
 
@@ -39,10 +54,6 @@ abbr {
   &:first-letter {
     text-transform: capitalize;
   }
-}
-
-.das-text--normal {
-  font-style: normal;
 }
 
 .das-mark {
