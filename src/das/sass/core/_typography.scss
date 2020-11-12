@@ -3,10 +3,6 @@ p {
   color: inherit;
 }
 
-.das-text--normal {
-  font-style: normal;
-}
-
 .das-text--error-icon {
   padding-left: 30px;
   background-image: url("../images/icon-cross--red.svg");
@@ -22,7 +18,6 @@ p {
   background-size: 23px 22px;
 }
 
-
 abbr {
     font-variant: none;
 
@@ -35,14 +30,6 @@ abbr {
           border-bottom: 1px dashed govuk-colour('mid-grey');
       }
     }
-}
-
-.das-text--capitalise,
-.das-text-capitalise {
-  display: inline-block;
-  &:first-letter {
-    text-transform: capitalize;
-  }
 }
 
 .das-mark {
