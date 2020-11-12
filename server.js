@@ -15,7 +15,6 @@ nunjucks.configure(
     'src/fiu/components/',
     'node_modules/govuk-frontend/',
     'node_modules/govuk-frontend/components/',
-    'dist/campaign/components/',
     'dist/fiu/components/'
   ], {
   express: app,

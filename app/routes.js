@@ -64,17 +64,6 @@ module.exports = {
       res.render('cdn-documentation/' + compName, {action: req.query.action, type: req.query.type})
     })
 
-    app.get('/campaign/:pageName', function (req, res) {
-      var pageName = req.params.pageName;
-      res.render('campaign/' + pageName , {action: req.query.action, type: req.query.type})
-    })
-
-    app.get('/campaign/:journey/:stepId', function (req, res) {
-      var stepId = req.params.stepId;
-      var journey = req.params.journey;
-      res.render('campaign/' + journey + '/' + stepId, {action: req.query.action, type: req.query.type})
-    })
-
     app.get('/fiu/:pageName', function (req, res) {
       var pageName = req.params.pageName;
       res.render('fiu/' + pageName , {action: req.query.action, type: req.query.type})
