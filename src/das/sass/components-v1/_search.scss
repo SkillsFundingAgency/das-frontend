@@ -52,7 +52,7 @@
   @extend .das-button--blue;
   overflow: hidden;
   text-indent: -9999px;
-  background-image: url('data:image/svg+xml;utf8,#{$icon-search}');
+  background-image: url("../images/icon-search--white.svg");
   background-position: center center;
   background-repeat: no-repeat;
   background-size: 20px;
@@ -64,7 +64,7 @@
   height: 40px;
   &:focus,
   &:hover {
-    background-image: url('data:image/svg+xml;utf8,#{$icon-search}');
+    background-image: url("../images/icon-search--white.svg");
     background-position: center center;
     background-repeat: no-repeat;
   }
