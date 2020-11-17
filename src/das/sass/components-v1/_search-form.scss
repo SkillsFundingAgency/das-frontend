@@ -21,7 +21,7 @@
   overflow: hidden;
   text-indent: -9999px;
   background-color: govuk-colour("blue");
-  background-image: url('data:image/svg+xml;utf8,#{$icon-search}');
+  background-image: url("../images/icon-search--white.svg");
   background-position: center;
   background-repeat: no-repeat;
   background-size: 50%;
@@ -43,7 +43,7 @@
 {
   box-shadow: none;
   background-color: $govuk-focus-colour;
-  background-image: url('data:image/svg+xml;utf8,#{$icon-search--black}');
+  background-image: url("../images/icon-search--black.svg");
 }
 
 .das-search-form__button:active {
