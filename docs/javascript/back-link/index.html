@@ -1,0 +1,10 @@
+---
+layout: javascript
+title: Back link
+current: back-link
+---
+<p>A standard <a href="https://design-system.service.gov.uk/components/back-link/" target="_blank" class="govuk-link">back link</a> which is inserted into the page with JavaScript. The back link acts the same as the browser back button, and will go back to the previous page in the users browsing history when clicked.</p>
+<p>The Javascript will completely replace the contents of the element with the class <code>.das-js-back-link</code>, which allows you to define a fallback for when JavaScript is not enabled for the user.</p>
+{% include example.html component="back-link" size="xs" %}
+<h2 class="govuk-heading-m">Fallback example</h2>
+{% include example.html component="back-link" example="fallback" size="xs" %}
