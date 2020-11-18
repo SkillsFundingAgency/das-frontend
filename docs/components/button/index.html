@@ -1,0 +1,31 @@
+---
+layout: components
+title: Button
+current: button
+---
+
+<p>
+  An extension of
+  <a
+    href="https://design-system.service.gov.uk/components/button/"
+    class="govuk-link govuk-link--no-visited-state"
+    target="_blank"
+    >GOVUK button</a
+  >
+  with additional styling options.
+</p>
+
+<h2 class="govuk-heading-m">Button inverted</h2>
+<p>This is a solid white button to be used on a blue background</p>
+{% include example.html component="button" example="inverted" size="s" %}
+
+<h2 class="govuk-heading-m">Button blue</h2>
+{% include example.html component="button" example="blue" size="xs" %}
+
+<h2 class="govuk-heading-m">Button link</h2>
+<p>This button looks like a link but has similar padding to a conventional button and can therefore be used alongside them.</p>
+{% include example.html component="button" example="link" size="xs" %}
+
+<h2 class="govuk-heading-m">Button inline link</h2>
+<p>This button can be used inline as part of a block of text.</p>
+{% include example.html component="button" example="inline-link" size="xs" %}

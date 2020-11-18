@@ -3,14 +3,6 @@ p {
   color: inherit;
 }
 
-.das-text--muted {
-  color: govuk-colour('dark-grey');
-}
-
-.das-text--error {
-  color: govuk-colour('red');
-}
-
 .das-text--error-icon {
   padding-left: 30px;
   background-image: url("../images/icon-cross--red.svg");
@@ -19,6 +11,12 @@ p {
   background-size: 18px 18px;
 }
 
+.das-text--success-icon {
+  padding-left: 30px;
+  background-image: url("../images/icon-tick--green.svg");
+  background-repeat: no-repeat;
+  background-size: 23px 22px;
+}
 
 abbr {
     font-variant: none;
@@ -34,13 +32,10 @@ abbr {
     }
 }
 
-.das-text-capitalise {
-  display: inline-block;
-  &:first-letter {
-    text-transform: capitalize;
-  }
+.das-mark {
+  color: govuk-colour('black');
 }
 
-.das-text--normal {
-  font-style: normal;
+.das-mark--green {
+  background: #cffdc6;
 }
