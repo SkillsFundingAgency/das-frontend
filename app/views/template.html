@@ -30,9 +30,7 @@
 
 <a href="#main-content" class="govuk-skip-link">Skip to main content</a>
 
-{% include "cookie-banner/template.html" %}
-
-<header class="govuk-header das-header--no-border {{ 'das-header--provider-legacy' if showLegacyHeader }}" role="banner" data-module="header">
+<header class="govuk-header" role="banner" data-module="header">
     <div class="govuk-header__container govuk-width-container">
         <div class="govuk-header__logo">
             <a href="/" class="govuk-header__link govuk-header__link--homepage">
@@ -55,88 +53,20 @@
     </div>
 </header>
 
-{% if loggedIn %}
-
-<div class="das-account-header das-account-header--{{ 'provider' if showProviderNavbar else 'employer' }}">
-    <div class="govuk-width-container">
-        <p class="das-account-header__title">Your employer account</p>
-        <nav class="das-user-navigation" id="das-user-navigation">
-            <ul class="das-user-navigation__list" role="menu">
-                <li role="menuitem" class="das-user-navigation__list-item">
-                    <a href="#" class="das-user-navigation__link">Help</a>
-                </li>
-                <li role="menuitem" class="das-user-navigation__list-item das-user-navigation__list-item--has-sub-menu">
-                    <a href="#" class="das-user-navigation__link">Settings</a>
-                    <ul role="menu" class="das-user-navigation__sub-menu js-hidden">
-                        <li class="das-user-navigation__sub-menu-list-item" role="menuitem">
-                            <a href="#" class="das-user-navigation__sub-menu-link">Your accounts</a>
-                        </li>
-                        <li class="das-user-navigation__sub-menu-list-item" role="menuitem">
-                            <a href="#" class="das-user-navigation__sub-menu-link">Rename account</a>
-                        </li>
-                        <li class="das-user-navigation__sub-menu-list-item" role="menuitem">
-                            <a href="#" class="das-user-navigation__sub-menu-link">Change your password</a>
-                        </li>
-                        <li class="das-user-navigation__sub-menu-list-item" role="menuitem">
-                            <a href="#" class="das-user-navigation__sub-menu-link">Change your email address</a>
-                        </li>
-                        <li class="das-user-navigation__sub-menu-list-item" role="menuitem">
-                            <a href="#" class="das-user-navigation__sub-menu-link">Notification settings</a>
-                        </li>
-                    </ul>
-                </li>
-                <li role="menuitem" class="das-user-navigation__list-item">
-                    <a href="#" class="das-user-navigation__link">Sign out</a>
-                </li>
-            </ul>
-        </nav>
-    </div>
-</div>
-
 <nav class="das-navigation">
     <div class="govuk-width-container">
         <ul class="das-navigation__list" id="navigation">
             <li class="das-navigation__list-item">
-                <a class="das-navigation__link das-navigation__link--current" href="/link">Home</a>
-            </li>
-            <li class="das-navigation__list-item">
-                <a class="das-navigation__link" href="/link">Recruitment</a>
-            </li>
-            <li class="das-navigation__list-item">
-                <a class="das-navigation__link" href="/link">Finance</a>
-            </li>
-            <li class="das-navigation__list-item">
-                <a class="das-navigation__link" href="/link">Apprentices</a>
-            </li>
-            <li class="das-navigation__list-item">
-                <a class="das-navigation__link" href="/link">Your team</a>
-            </li>
-            <li class="das-navigation__list-item">
-                <a class="das-navigation__link" href="/link">Your organisations and agreements</a>
-            </li>
-            <li class="das-navigation__list-item">
-                <a class="das-navigation__link das-navigation__link--last" href="/link">PAYE schemes</a>
+	            <a class="das-navigation__link {% if (section == 'styles') %} das-navigation__link--current {% endif %}" href="/documentation/styles">Styles</a>
+	            <a class="das-navigation__link {% if (section == 'components') %} das-navigation__link--current {% endif %}" href="/documentation/components">Components</a>
+                <a class="das-navigation__link {% if (section == 'patterns') %} das-navigation__link--current {% endif %}" href="/documentation/patterns">Patterns</a>
             </li>
         </ul>
     </div>
 </nav>
 
-{% endif %}
 
 <div class="govuk-width-container">
-
-    {% if not hideStatusBanner %}
-    <div class="govuk-phase-banner">
-      <p class="govuk-phase-banner__content">
-        <strong class="govuk-tag govuk-phase-banner__content__tag ">
-          beta
-        </strong>
-        <span class="govuk-phase-banner__text">
-          This is a new service
-        </span>
-      </p>
-    </div>
-    {% endif %}
 
     {% if backLink %}
     <a href="{{ backLink }}" class="govuk-back-link">Back</a>

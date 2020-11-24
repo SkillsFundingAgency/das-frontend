@@ -1,0 +1,23 @@
+{% extends "template.html" %}
+{% set section = "components" %}
+{% set pageTitle = "Tag" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-one-third">
+		{% include "_nav.html" %}
+	</div>
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">Tag</h1>
+        <p>An extension of <a href="https://design-system.service.gov.uk/components/tag/" target="_blank" class="govuk-link govuk-link--no-visited-state">GOVUK tag</a> with additional colour options.</p>
+
+		<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+        {% include "tag/template.html" %}
+
+    </div>
+</div>
+
+
+{% endblock  %}
