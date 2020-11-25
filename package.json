@@ -3,7 +3,8 @@
   "version": "0.2.2",
   "description": "DAS Frontend contains the code used across the apprenticeship services ",
   "scripts": {
-    "dev": "node server.js"
+    "dev": "node server.js",
+    "build": "gulp build"
   },
   "repository": {
     "type": "git",

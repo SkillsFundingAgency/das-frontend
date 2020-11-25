@@ -91,17 +91,19 @@
   &:after {
     position: absolute;
     left: 0;
-    top: 10px;
+    top: 5px;
+    @include govuk-media-query($from: tablet) {
+      top: 8px;
+    }
   }
 }
 
 .das-table__sort--asc,
 .das-table__sort--desc {
   position: relative;
-  padding-left: 15px;
+  padding-left: 18px;
   &:after {
     @include triangle-equilateral($size: 10px, $colour: currentColor);
-    margin-top: -5px;
   }
 }
 
@@ -114,14 +116,22 @@
 .das-table--double-arrows {
   .das-table__sort {
     position: relative;
-    padding-left: 12px;
+    padding-left: 18px;
     &:before {
+      left: 2px;
+      top: 2px;
       @include triangle-equilateral($direction: up, $size: 7px, $colour: currentColor);
-      margin-top: -8px;
+      @include govuk-media-query($from: tablet) {
+        top: 5px;
+      }
     }
     &:after {
+      left: 2px;
+      top: 11px;
       @include triangle-equilateral($direction: down, $size: 7px, $colour: currentColor);
-      margin-top: 1px;
+      @include govuk-media-query($from: tablet) {
+        top: 14px;
+      }
     }
     &.das-table__sort--asc {
       &:after {

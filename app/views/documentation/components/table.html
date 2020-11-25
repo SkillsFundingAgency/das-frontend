@@ -1,0 +1,23 @@
+{% extends "template.html" %}
+{% set section = "components" %}
+{% set pageTitle = "Table" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-third">
+    {% include "_nav.html" %}
+  </div>
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">Table</h1>
+    <p>An extension of <a href="https://design-system.service.gov.uk/components/table/" target="_blank" class="govuk-link govuk-link--no-visited-state">GOVUK table</a> with additional options.</p>
+
+    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+    {% include "table/template.html" %}
+
+  </div>
+</div>
+
+
+{% endblock  %}
