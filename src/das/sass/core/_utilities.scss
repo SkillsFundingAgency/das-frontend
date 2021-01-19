@@ -10,29 +10,7 @@
     float: right;
 }
 
-.das-\!-text-align-left {
-  text-align: left;
-}
 
-.das-\!-text-align-right {
-  text-align: right;
-}
-
-.das-\!-text-align-left--from-tablet {
-  @include govuk-media-query($from: tablet) {
-    text-align: left;
-  }
-}
-
-.das-\!-text-align-right--from-tablet {
-  @include govuk-media-query($from: tablet) {
-    text-align: right;
-  }
-}
-
-.das-\!-colour-inherit {
-  color: inherit !important;
-}
 
 
 // Clearfix
@@ -73,6 +51,7 @@
   white-space: nowrap;
 }
 
+.das-\!-display-block,
 .das-\!-display--block {
   display: block !important;
 }

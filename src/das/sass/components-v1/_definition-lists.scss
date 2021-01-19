@@ -81,19 +81,6 @@
   }
 }
 
-.das-definition-list--table-narrow {
-  @extend .das-definition-list--table;
-  @include govuk-media-query($from: tablet) {
-    .das-definition-list__title {
-      flex-basis: 20%;
-    }
-    .das-definition-list__definition {
-      flex-basis: 75%;
-    }
-  }
-}
-
-
 .das-definition-list--muted {
   color: $govuk-secondary-text-colour;
   .das-definition-list__title {
@@ -101,35 +88,7 @@
   }
 }
 
-.das-definition-list--with-separator {
-  .das-definition-list__title {
-    padding-top: 10px;
-  }
-  .das-definition-list__definition {
-    border-bottom: 1px solid $govuk-border-colour;
-    padding-bottom: 10px;
-  }
-}
 
-.das-definition-list__results {
-  padding-bottom: 20px;
-}
-
-.das-definition-list__results dt {
-  float: left;
-  font-weight:600;
-  clear: both;
-  display:block;
-  width: 25%;
-}
-
-.das-definition-list__results dd {
-  display:block;
-  float: left;
-  margin-inline-start:0px;
-  margin-bottom: 1em;
-  width:75%;   
-}
 
 .das-definition-list__title--spacer {
   @include govuk-media-query($from: tablet) {
@@ -143,4 +102,33 @@
   margin-bottom: 10px;
   padding-bottom: 10px;
   border-bottom: 1px solid $govuk-border-colour;
+}
+
+
+dl.das-inline-def-list {//Description: definition lists - brings the DT and DD inline
+  margin: 0;
+  @include govuk-font($size: 19);
+  @include govuk-text-colour;
+
+  dt {
+
+    font-weight: bold;
+    display: inline;
+    padding-right: govuk-spacing(1);
+    &:before {
+      content: '';
+      display: block;
+    }
+    &:after{
+      content: ':';
+      font-weight: normal;
+    }
+  }
+  dd {
+    font-weight: normal;
+    display: inline;
+    margin: 0;
+    padding-right: govuk-spacing(2);
+    //& + dd {display: inline-block; }
+  }
 }

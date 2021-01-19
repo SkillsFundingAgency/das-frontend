@@ -3,7 +3,7 @@
 
 <head>
   <meta charset="utf-8" />
-  <title>Digital Apprenticeship Service</title>
+  <title>{{ page.title }} - DAS frontend</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="theme-color" content="#0b0c0c" />
 
@@ -69,12 +69,16 @@
             href="{{ site.baseurl }}/">Getting started</a>
         </li>
         <li class="das-navigation__list-item">
-          <a class="das-navigation__link {% if page.section == "styles" %} das-navigation__link--current {% endif %}"
+          <a class="das-navigation__link {% if layout.section == "styles" %} das-navigation__link--current {% endif %}"
             href="{{ site.baseurl }}/styles">Styles</a>
         </li>
         <li class="das-navigation__list-item">
           <a class="das-navigation__link {% if layout.section == "components" %} das-navigation__link--current {% endif %}"
             href="{{ site.baseurl }}/components">Components</a>
+        </li>
+        <li class="das-navigation__list-item">
+          <a class="das-navigation__link {% if layout.section == "javascript" %} das-navigation__link--current {% endif %}"
+            href="{{ site.baseurl }}/javascript">JavaScript</a>
         </li>
         <li class="das-navigation__list-item">
           <a class="das-navigation__link {% if page.section == "patterns" %} das-navigation__link--current {% endif %}"

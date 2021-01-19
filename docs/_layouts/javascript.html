@@ -1,0 +1,24 @@
+---
+layout: default
+section: javascript
+---
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-one-third govuk-grid-column-one-quarter-from-desktop">
+    <h2 class="govuk-heading-m">JavaScript</h2>
+    <ul class="govuk-list">
+      {% for javascript in site.data.javascript %}
+      <li>
+        <a href="{{ site.baseurl }}/javascript/{{ javascript.slug }}"
+          class="govuk-link govuk-link--no-visited-state {% if page.current == javascript.slug %} govuk-!-font-weight-bold {% endif %}">
+          {{ javascript.name }}
+        </a>
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+  <div class="govuk-grid-column-two-thirds govuk-grid-column-three-quarters-from-desktop">
+    <h1 class="govuk-heading-xl">{{ page.title }}</h1>
+    {{ content }}
+  </div>
+</div>

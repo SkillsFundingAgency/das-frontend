@@ -25,6 +25,9 @@
 - name: Rating
   slug: rating
 
+- name: Search form
+  slug: search-form
+
 - name: Search results
   slug: search-results
 

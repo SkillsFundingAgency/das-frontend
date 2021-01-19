@@ -1,0 +1,43 @@
+{% extends "template.html" %}
+{% set section = "components" %}
+{% set pageTitle = "Button" %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+	<div class="govuk-grid-column-one-third">
+		{% include "_nav.html" %}
+	</div>
+    <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-xl">Button</h1>
+        <p>An extension of <a href="https://design-system.service.gov.uk/components/button/" class="govuk-link govuk-link--no-visited-state">GOVUK button</a> with additional styling options.</p>
+
+		<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+        <h2 class="govuk-heading-m">Button inverted</h2>
+        <p>This is a solid white button to be used on a blue background</p>
+        <a href="#" class="govuk-button das-button--inverted">Button</a>
+		<h3 class="govuk-heading-s">Context example</h3>
+        <div class="govuk-panel das-panel--featured">
+            <a href="#" class="govuk-button das-button--inverted">Button</a>
+        </div>
+
+		<hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+        <h2 class="govuk-heading-m">Button blue</h2>
+        <a href="#" class="govuk-button das-button--blue">Button</a>
+
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+        <h2 class="govuk-heading-m">Button link</h2>
+        <a href="#" class="das-button--link">Button</a>
+
+        <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+        <h2 class="govuk-heading-m">Button inline link</h2>
+        <a href="#" class="das-button--inline-link">Button</a>
+    </div>
+</div>
+
+
+{% endblock  %}
