@@ -64,6 +64,7 @@ module.exports = {
       res.render('cdn-documentation/' + compName, {action: req.query.action, type: req.query.type})
     })
 
+
     app.get('/documentation/:pageName', function (req, res) {
       var pageName = req.params.pageName;
       res.render('documentation/' + pageName , {action: req.query.action, type: req.query.type})
@@ -74,6 +75,7 @@ module.exports = {
       var journey = req.params.journey;
       res.render('documentation/' + journey + '/' + stepId, {action: req.query.action, type: req.query.type})
     })
+
 
     app.get('/fiu/:pageName', function (req, res) {
       var pageName = req.params.pageName;
