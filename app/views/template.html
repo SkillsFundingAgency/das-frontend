@@ -53,32 +53,8 @@
     </div>
 </header>
 
-<nav class="das-navigation">
-    <div class="govuk-width-container">
-        <ul class="das-navigation__list" id="navigation">
-            <li class="das-navigation__list-item">
-	            <a class="das-navigation__link {% if (section == 'styles') %} das-navigation__link--current {% endif %}" href="/documentation/styles">Styles</a>
-	            <a class="das-navigation__link {% if (section == 'components') %} das-navigation__link--current {% endif %}" href="/documentation/components">Components</a>
-                <a class="das-navigation__link {% if (section == 'patterns') %} das-navigation__link--current {% endif %}" href="/documentation/patterns">Patterns</a>
-            </li>
-        </ul>
-    </div>
-</nav>
-
-
 <div class="govuk-width-container">
-
-    {% if backLink %}
-    <a href="{{ backLink }}" class="govuk-back-link">Back</a>
-    {% endif %}
-
-    {% if jsbacklink %}
-    <div class="das-js-back-link"></div>
-    {% endif %}
-
     <main class="govuk-main-wrapper " id="main-content" role="main">
-
-        {% block preContent %} {% endblock %}
 
         {% block content %}
             <h1 class="govuk-heading-xl">Default page template</h1>
@@ -87,8 +63,6 @@
     </main>
 </div>
 
-
-
 <footer class="govuk-footer " role="contentinfo">
     <div class="govuk-width-container ">
         <div class="govuk-footer__meta">
@@ -96,14 +70,9 @@
                 <h2 class="govuk-visually-hidden">Support links</h2>
                 <ul class="govuk-footer__inline-list">
                     <li class="govuk-footer__inline-list-item">
-                        <a href="/service/help" class="govuk-footer__link" >Help</a>
+                        <a href="https://skillsfundingagency.github.io/das-frontend/" class="govuk-footer__link" target="_blank">Documentation</a>
                     </li>
-                    <li class="govuk-footer__inline-list-item">
-                        <a href="https://www.surveymonkey.co.uk/r/2JPLQ9T" target="_blank" class="govuk-footer__link">Feedback</a>
-                    </li>
-                    <li class="govuk-footer__inline-list-item">
-                        <a href="/help/cookies" class="govuk-footer__link">Privacy and cookies</a>
-                    </li>
+
                     <li class="govuk-footer__inline-list-item">Built by the <a href="http://gov.uk/sfa" target="_blank" class="govuk-footer__link">Education and Skills Funding Agency</a></li>
                 </ul>
                 <svg role="presentation" focusable="false" class="govuk-footer__licence-logo" xmlns="http://www.w3.org/2000/svg" viewbox="0 0 483.2 195.7" height="17" width="41">
@@ -130,10 +99,6 @@
     window.GOVUKFrontend.initAll();
     window.DASFrontend.initAll();
 </script>
-
-{% block js %}
-
-{% endblock %}
 
 </body>
 
