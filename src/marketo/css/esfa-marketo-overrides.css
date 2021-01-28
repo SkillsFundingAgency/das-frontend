@@ -1,0 +1,287 @@
+.sq-quote__inner {
+    display: block;
+    width: 100%;
+}
+
+.sq-quote__inner img {
+    width: 100%;
+}
+
+.sq-full-text > .row {
+    display: block;
+}
+
+.das-cookie-settings__close-modal {
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 14 14' width='14px' height='14px'><path d='M14,1.4 L12.6,0 L7,5.6 L1.4,0 L0,1.4 L5.6,7 L0,12.6 L1.4,14 L7,8.4 L12.6,14 L14,12.6 L8.4,7 L14,1.4 Z' fill='white'/></svg>")
+}
+
+.sq-banner-content {
+    padding: 15px;
+}
+
+#hero-banner-text {
+    display: block;
+    margin: 0 -15px;
+    padding: 15px;
+}
+
+#hero-banner-text > h1 {
+    font-size: 34px;
+}
+
+@media (min-width: 540px) {
+    #hero-banner-text {
+        display: inherit;
+    }
+    #hero-banner-text > h1 {
+        font-size: 44px;
+    }
+}
+
+@media (min-width: 900px) {
+    #hero-banner-text {
+
+    }
+    #hero-banner-text > h1 {
+        font-size: 60px;
+        max-width: 66%;
+    }
+}
+
+.govuk-list,
+.govuk-link,
+.govuk-body-m,
+.govuk-body {
+    font-family: inherit;
+}
+
+.govuk-button {
+    text-transform: uppercase;
+    font-family: Nobel,Helvetica,Arial,sans-serif;
+    font-weight: bold;
+    font-size: 14px;
+    padding: 15px;
+}
+
+.govuk-heading-xl,
+.govuk-heading-l,
+.govuk-heading-m,
+.govuk-fieldset__legend--m {
+    text-transform: uppercase;
+    font-family: Nobel,Helvetica,Arial,sans-serif;
+    font-weight: bold;
+}
+
+.das-cookie-banner {
+    background: #fff;
+}
+
+.das-cookie-banner__message {
+    padding-right: 0;
+}
+
+.das-cookie-banner__inner-wrap {
+    padding: 30px 15px;
+}
+
+.govuk-width-container {
+    max-width: 1100px;
+}
+
+.das-cookie-settings {
+    display: none;
+}
+
+.das-case-study {
+    padding: 30px;
+    background: #eee;
+    border-left: 5px solid #218379;
+}
+
+.das-case-study p {
+    color: #555;
+}
+
+
+.das-related-articles {
+    margin: 20px 0;
+}
+
+.das-related-article {
+    border-top: 3px solid #ccc;
+    padding: 20px 0 30px;
+}
+
+.das-related-article:first-child {
+    border-top-color: #1d70b8;
+    border-top-width: 5px;
+}
+
+.das-related-article h5 {
+    text-transform: none;
+    font-weight: bold;
+}
+
+.das-related-article p {
+    margin-bottom: 10px;
+}
+
+.das-related-article a {
+    color: #1d70b8;
+}
+
+/* Typography */
+
+.das-body-text > h1,
+.das-body-text > h2,
+.das-body-text > h3,
+.das-body-text > h4,
+.das-body-text > h5 {
+    font-family: Nobel,Helvetica,Arial,sans-serif;
+    margin: 30px 0 20px;
+    color: #000;
+    line-height: 1.4em;
+}
+
+.das-body-text > h1 {
+    font-weight: 700;
+    font-size: 36px;
+}
+
+.das-body-text > h2 {
+    font-size: 28px;
+    text-transform: uppercase;
+    font-weight: 400;
+}
+
+.das-body-text > h2:first-child {
+    text-transform: none;
+    font-weight: 700;
+    font-size: 36px;
+}
+
+.das-body-text > h3 {
+    font-size: 28px;
+    text-transform: uppercase;
+    font-weight: 400;
+}
+
+.das-body-text > h4 {
+    font-weight: 400;
+    font-size: 24px;
+}
+
+.das-body-text > h5 {
+    font-weight: 400;
+    font-size: 22px;
+    text-transform: uppercase;
+}
+
+.das-body-text > ul > li,
+.das-body-text > p {
+    font-weight: 200;
+    font-size: 21px;
+    -webkit-font-smoothing: auto;
+    line-height: 1.5em;
+}
+
+.das-body-text a.btn {
+    margin-bottom: 50px;
+}
+
+.das-body-text a:focus {
+    outline: 3px solid transparent;
+    color: #0b0c0c;
+    background-color: #fd0;
+    border-color: #fd0;;
+    box-shadow: 0 -2px #fd0, 0 4px #0b0c0c;
+    text-decoration: none;
+}
+
+
+/* Navigation */
+
+nav ul {
+    text-transform: none;
+}
+
+@media (min-width: 993px) {
+    header {
+        position: relative;
+    }
+    nav ul {
+        display: block;
+        overflow: visible;
+        margin-left: -20px;
+        margin-right: -20px;
+    }
+    nav ul li {
+        float: left;
+        padding: 10px 20px;
+    }
+    nav ul a {
+        text-decoration: underline;
+        padding: 3px 7px;
+        line-height: 1.2;
+    }
+    nav a.active, nav a:active, nav a:focus, nav a:hover {
+        text-decoration: none;
+        border-color: transparent;
+    }
+    nav a:active, nav a:focus {
+        outline: 3px solid transparent;
+        color: #0b0c0c;
+        background-color: #fd0;
+        border-color: #fd0;;
+        box-shadow: 0 -2px #fd0, 0 4px #0b0c0c;
+        text-decoration: none;
+    }
+    main {
+        margin-top: 0 !important;
+    }
+}
+
+
+/* Careers Pages */
+
+#content table {
+    width: 100% !important;
+}
+
+#content .mktoText td {
+    padding: 5px 7px;
+    vertical-align: top;
+    font-size: 17px;
+}
+
+#content .mktoText table tr,
+#content .mktoText table td {
+    height: auto !important;
+    width: auto !important;
+}
+
+#content .mktoText table td h1 {
+    font-size: 17px;
+    margin: 0;
+    padding: 0;
+}
+
+#content .mktoText table td span {
+    background: none !important;
+}
+
+#content .mktoText table tr:nth-child(1) td {
+    white-space: nowrap;
+}
+
+#content .mktoText table tr:nth-child(odd) td {
+    background: #f5f5f5;
+}
+
+#content .mktoText table td:nth-child(3) span {
+    word-wrap: break-word;
+    word-break: break-all;
+    word-break: break-word;
+    display: inline-block;
+    max-width: 100%;
+}
