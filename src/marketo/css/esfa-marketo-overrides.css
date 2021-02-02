@@ -1,3 +1,7 @@
+header {
+    border-bottom: 1px solid #aaa;
+}
+
 .sq-quote__inner {
     display: block;
     width: 100%;
@@ -25,16 +29,22 @@
     padding: 15px;
 }
 
-#hero-banner-text > h1 {
-    font-size: 34px;
+#hero-banner-text > h1,
+#hero-banner-text > h1 > span,
+#hero-banner-text > h1 > span > span {
+    font-size: 34px !important;
+    color: #fff !important;
 }
 
 @media (min-width: 540px) {
     #hero-banner-text {
         display: inherit;
     }
-    #hero-banner-text > h1 {
-        font-size: 44px;
+    #hero-banner-text > h1,
+    #hero-banner-text > h1 > span,
+    #hero-banner-text > h1 > span > span {
+        font-size: 44px !important;
+        color: #fff !important;
     }
 }
 
@@ -42,9 +52,12 @@
     #hero-banner-text {
 
     }
-    #hero-banner-text > h1 {
-        font-size: 60px;
+    #hero-banner-text > h1,
+    #hero-banner-text > h1 > span,
+    #hero-banner-text > h1 > span > span {
+        font-size: 60px !important;
         max-width: 66%;
+        color: #fff !important;
     }
 }
 
@@ -257,7 +270,7 @@ nav ul {
 #content .mktoText table tr,
 #content .mktoText table td {
     height: auto !important;
-    width: auto !important;
+    width: auto;
 }
 
 #content .mktoText table td h1 {
@@ -284,4 +297,91 @@ nav ul {
     word-break: break-word;
     display: inline-block;
     max-width: 100%;
+}
+
+/* Responsive tables */
+
+table.das-table--responsive {
+    color: #000;
+}
+
+table.das-table--responsive tr {
+    margin-bottom: 15px;
+    display: block;
+    float: left;
+    width: 100% !important;
+    box-sizing: border-box;
+    border: 1px solid #aaa;
+}
+
+table.das-table--responsive tr.das-table__first-row {
+    display: none;
+}
+
+table.das-table--responsive td,
+#content table.das-table--responsive td {
+    display: block;
+    clear: left;
+    float: left;
+    width: 100% !important;
+    padding: 5px 7px;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 1px dotted #aaa;
+    word-wrap: break-word;
+    word-break: break-all;
+    word-break: break-word;
+    display: inline-block;
+    max-width: 100%;
+}
+
+table.das-table--responsive td:last-child,
+#content table.das-table--responsive td:last-child {
+    border: none;
+}
+
+table.das-table--responsive td:before {
+    content: attr(data-label);
+    color: #000;
+    font-size: 12px;
+    display: block;
+    text-transform: uppercase;
+}
+
+@media (min-width: 540px) {
+    table.das-table--responsive tr.das-table__first-row {
+        display: table-row;
+        font-weight: 500;
+        color: #000;
+    }
+    table.das-table--responsive tr {
+        margin: 0;
+        display: table-row;
+        float: none;
+    }
+    table.das-table--responsive td,
+    #content table.das-table--responsive td {
+        display: table-cell;
+        clear: none;
+        float: none;
+        width: auto !important;
+        border-right: 1px solid #ccc;
+    }
+    table.das-table--responsive td:before {
+        display: none;
+    }
+}
+
+@media (min-width: 900px) {
+
+
+}
+
+
+#hero-banner-text br {
+    display: none;
+}
+
+p {
+    text-align: left !important;
 }
