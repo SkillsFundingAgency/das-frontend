@@ -5,7 +5,7 @@ dasJs.forms = {
     this.preventDoubleSubmit();
   },
   preventDoubleSubmit: function () {
-    var forms = $('form');
+    var forms = $('form').not('.das-ajax-form');
     forms.on('submit', function (e) {
       var button = $(this).find('.govuk-button');
       button.attr('disabled', 'disabled');
