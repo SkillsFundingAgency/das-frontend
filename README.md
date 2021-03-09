@@ -1,5 +1,5 @@
 # DAS Frontend
-Contains frontend code and assets used for The Apprentice Service and the Fire It Up campaign website.
+Contains frontend code and assets used for The Apprentice Service and the www.apprenticeships.gov.uk website.
 
 ## Requirements 
 
@@ -20,6 +20,6 @@ Run in the root directory
 
 |Task|Description|
 |----|-----------|
-| `gulp das` | Compiles, then watches the SASS files in `/src/das/sass` and JS files in `/src/das/javascript` - for The Apprenticeship Service|
-| `gulp campaign` | Compiles, then watches the SASS files in `/src/campaign/sass` and JS files in `/src/campaign/javascript` - for the Fire It Up campaign website|
-| `gulp build` | Generate all frontend assets for `das` and `campaign` without watching for changes |
+| `gulp das` | Compiles, then watches the SCSS files in `/src/das/sass` and JS files in `/src/das/javascript` - for The Apprenticeship Service|
+| `gulp fiu` | Compiles, then watches the SCSS and JS files across the `/src/fiu` directory - for the www.apprenticeships.gov.uk website|
+| `gulp build` | Build all frontend assets for `das` and `fiu` |

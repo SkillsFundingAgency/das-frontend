@@ -18,25 +18,36 @@
 }
 
 .das-search-form__button {
-  @extend .das-button--blue;
   overflow: hidden;
   text-indent: -9999px;
-  background-image: url('data:image/svg+xml;utf8,#{$icon-search}');
-  background-position: center center;
+  background-color: govuk-colour("blue");
+  background-image: url("../images/icon-search--white.svg");
+  background-position: center;
   background-repeat: no-repeat;
-  background-size: 20px;
+  background-size: 50%;
   box-shadow: none;
-  border: none;
   width: 40px;
   height: 40px;
   margin: 0;
-  &:focus,
-  &:hover {
-    background-image: url('data:image/svg+xml;utf8,#{$icon-search}');
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: 20px;
-  }
+}
+
+.das-search-form__button:hover,
+.das-search-form__button:active,
+.das-search-form__button[disabled="disabled"]:hover,
+.das-search-form__button[disabled]:hover {
+  background-color: darken(govuk-colour("blue"), 10%);
+}
+
+.das-search-form__button:focus,
+.das-search-form__button:focus:not(:active):not(:hover)
+{
+  box-shadow: none;
+  background-color: $govuk-focus-colour;
+  background-image: url("../images/icon-search--black.svg");
+}
+
+.das-search-form__button:active {
+  top: 0;
 }
 
 .das-search-form--m {
@@ -48,11 +59,6 @@
   .das-search-form__button {
     width: 50px;
     height: 50px;
-    background-size: 25px;
-    &:focus,
-    &:hover {
-      background-size: 25px;
-    }
   }
 }
 
@@ -65,16 +71,5 @@
   .das-search-form__button {
     width: 60px;
     height: 60px;
-    background-size: 30px;
-    &:focus,
-    &:hover {
-      background-size: 30px;
-    }
-  }
-}
-
-.das-search-form--no-border {
-  .das-search-form__input {
-    border: none;
   }
 }
