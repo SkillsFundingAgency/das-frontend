@@ -1,0 +1,86 @@
+.fiu-roadmap {
+  background: #000;
+  padding: 40px 0 40px 50px;
+  position: relative;
+  &:before {
+    display: block;
+    background: linear-gradient(#3b2c73 0%, #3f6f79 9%, #4a957f 18%, #67a74b 27%, #83b437 36%, #a8ad36 45%, #d3a838 54%, #d98c31 63%, #e37b2e 72%, #d86034 81%, #cf4c45 90%, #4b2e6d 100%);
+    width: 31px;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+  }
+}
+
+.fiu-roadmap__section {
+  position: relative;
+  padding: 1px 0 1px;
+  &:before {
+    display: block;
+    width: 31px;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -50px;
+    bottom: 0;
+  }
+}
+
+.fiu-roadmap__section-content {
+  & > p {
+    margin: 0 0 .5em;
+  }
+}
+
+.fiu-roadmap__section-heading {
+  margin: 1em 0 .5em;
+  position: relative;
+}
+
+/*
+
+.fiu-roadmap__section--1:before {
+  background: linear-gradient(#3f6f79 0%, #4a957f 100%);
+}
+.fiu-roadmap__section--2:before {
+  background: linear-gradient(#4a957f 0%, #67a74b 100%);
+}
+.fiu-roadmap__section--3:before {
+  background: linear-gradient(#67a74b 0%, #83b437 100%);
+}
+.fiu-roadmap__section--4:before {
+  background: linear-gradient(#83b437 0%, #a8ad36 100%);
+}
+.fiu-roadmap__section--5:before {
+  background: linear-gradient(#a8ad36 0%, #d3a838 100%);
+}
+.fiu-roadmap__section--6:before {
+  background: linear-gradient(#d3a838 0%, #d98c31 100%);
+}
+.fiu-roadmap__section--7:before {
+  background: linear-gradient(#d98c31 0%, #e37b2e 100%);
+}
+.fiu-roadmap__section--8:before {
+  background: linear-gradient(#e37b2e 0%, #d86034 100%);
+}
+.fiu-roadmap__section--9:before {
+  background: linear-gradient(#d86034 0%, #cf4c45 100%);
+}
+.fiu-roadmap__section--10:before {
+  background: linear-gradient(#cf4c45 0%, #4b2e6d 100%);
+}
+
+ */
+
+.fiu-roadmap__road {
+  display: block;
+  position: absolute;
+  width: 3px;
+  top: 0;
+  left: 14px;
+  bottom: 0;
+  background-image: url("/fiu/assets/images/road-markings.gif");
+  background-position: center;
+}
