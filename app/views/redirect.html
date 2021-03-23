@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+  <head>
+    <!-- Google Tag Manager -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({
+          'gtm.start':
+            new Date().getTime(),
+          event: 'gtm.js'
+        });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l !== 'dataLayer' ? '&l=' + l : '';
+        j.async = true;
+        j.src =
+          'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, 'script', 'dataLayer', 'GTM-M4VJPRW');
+    </script>
+    <!-- End Google Tag Manager -->
+    <meta charset="utf-8" />
+    <title>This page no longer exists </title>
+    <style>
+      body {
+        background: #fff;
+      }
+      #linkWrapper {
+        padding: 30px;
+        font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,sans-serif;
+        font-size: 17px;
+        line-height: 25px;
+      }
+
+      #linkWrapper a,
+      #linkWrapper a:visited {
+        color: #0f3a60;
+      }
+      #linkWrapper a:focus {
+        color: #0b0c0c;
+        outline: 3px solid transparent;
+        background-color: #fd0;
+        box-shadow: 0 -2px #fd0, 0 4px #0b0c0c;
+        text-decoration: none;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-M4VJPRW" height="0" width="0" style="display: none; visibility: hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+    <div class="mktoContent" id="linkWrapper" mktoName="Add your link here">
+      <a href="index.html">This page has moved</a>
+    </div>
+
+    <script>
+      window.onload = function ()  {
+        var qsParams = window.location.search;
+        var link = document.querySelector('#linkWrapper a');
+        if (link) {
+          var linkUrl = link.getAttribute("href");
+          var fullUrl = linkUrl + qsParams;
+          link.setAttribute('href', fullUrl);
+          setTimeout(function() {
+            link.click()
+          }, 2500);
+        }
+      };
+    </script>
+
+  </body>
+</html>
