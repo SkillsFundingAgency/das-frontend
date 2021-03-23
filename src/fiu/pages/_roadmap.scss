@@ -1,7 +1,10 @@
+$section-min-height-tablet: 300px;
+
 .fiu-roadmap {
   background: #000;
-  padding: 40px 0 40px 50px;
+  padding: 140px 0 150px 50px;
   position: relative;
+  margin-top: 50px;
   &:before {
     display: block;
     background: linear-gradient(#3b2c73 0%, #3f6f79 9%, #4a957f 18%, #67a74b 27%, #83b437 36%, #a8ad36 45%, #d3a838 54%, #d98c31 63%, #e37b2e 72%, #d86034 81%, #cf4c45 90%, #4b2e6d 100%);
@@ -11,6 +14,37 @@
     top: 0;
     left: 0;
     bottom: 0;
+  }
+  overflow: hidden;
+}
+
+.fiu-roadmap {
+  @include govuk-media-query(tablet) {
+    background: #555;
+    padding:0;
+    &:before {
+      display: none;
+    }
+    h1 {
+      display: none;
+    }
+  }
+}
+
+.fiu-roadmap__roadmap {
+  display: none;
+  @include govuk-media-query(tablet) {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    height: 1450px;
+    width: 500px;
+    margin-left: -250px;
+    background-image: url("/fiu/assets/images/roadmap.png");
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: contain;
   }
 }
 
@@ -26,17 +60,56 @@
     left: -50px;
     bottom: 0;
   }
+  @include govuk-media-query(tablet) {
+    min-height: 230px;
+    background: rgba(0, 0, 0, .2);
+    width: 50%;
+    float: left;
+    margin-bottom: 1px;
+    clear: left;
+  }
 }
 
 .fiu-roadmap__section-content {
+  background: #000;
   & > p {
     margin: 0 0 .5em;
+  }
+  @include govuk-media-query(tablet) {
+    width: 240px;
+    float: left;
   }
 }
 
 .fiu-roadmap__section-heading {
   margin: 1em 0 .5em;
   position: relative;
+  @include govuk-media-query(tablet) {
+    margin-top: 80px;
+    text-align: center;
+    float: right;
+    width: 175px;
+  }
+}
+
+.fiu-roadmap__section--1 {
+  margin-top: 90px;
+}
+
+.fiu-roadmap__section--2,
+.fiu-roadmap__section--4,
+.fiu-roadmap__section--6,
+.fiu-roadmap__section--8,
+.fiu-roadmap__section--10 {
+  float: right;
+  margin-top: -115px;
+
+  .fiu-roadmap__section-content {
+    float: right;
+  }
+  .fiu-roadmap__section-heading {
+    float: left;
+  }
 }
 
 /*
@@ -83,4 +156,7 @@
   bottom: 0;
   background-image: url("/fiu/assets/images/road-markings.gif");
   background-position: center;
+  @include govuk-media-query(tablet) {
+    display: none;
+  }
 }
