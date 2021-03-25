@@ -60,7 +60,8 @@
     bottom: 0;
   }
   @include govuk-media-query($fiu-large-desktop-breakpoint) {
-    min-height: 230px;
+    height: 230px;
+    overflow: hidden;
     width: 50%;
     float: left;
     margin-bottom: 1px;
