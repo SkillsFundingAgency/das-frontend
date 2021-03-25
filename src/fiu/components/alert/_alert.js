@@ -28,7 +28,7 @@ Alert.prototype.showBanner = function () {
 
 Alert.prototype.removeBanner = function () {
   this.createCookie(this.cookieName, this.cookieValue, 365)
-  this.alertBanner.remove();
+  this.alertBanner.parentNode.removeChild(this.alertBanner);
 }
 
 Alert.prototype.createCookie = function (name, value, days) {
