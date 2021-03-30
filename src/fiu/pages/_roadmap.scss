@@ -20,7 +20,6 @@
 .fiu-roadmap {
   @include govuk-media-query($fiu-large-desktop-breakpoint) {
     padding: 0 0 70px;
-    margin-top: -65px;
     &:before {
       display: none;
     }
