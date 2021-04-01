@@ -1,0 +1,22 @@
+{% extends "template.html" %}
+{% set pageTitle = "Digital Apprenticeship Service" %}
+{% set hideStatusBanner = true %}
+{% set loggedIn = true %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">Test form</h1>
+    <form method="post" action="form">
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="text-field">Text field</label>
+        <input type="text" class="govuk-input" name="text-field" id="text-field">
+      </div>
+      <button class="govuk-button">Submit</button>
+    </form>
+  </div>
+</div>
+
+
+{% endblock  %}
