@@ -1,6 +1,9 @@
 const nunjucks = require('nunjucks');
 const express = require('express');
 const routes = require('./app/routes');
+const utils = require('./app/libs/utilities')
+const sessionInCookie = require('client-sessions')
+const bodyParser = require('body-parser')
 
 const app = express();
 const port = (process.env.PORT || 1045);
@@ -29,6 +32,12 @@ nunjucks.configure(
 
 app.set('view engine', 'html');
 
+// Support for parsing data in POSTs
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({
+  extended: true
+}))
+
 
 app.use(function (req, res, next) {
 
@@ -44,6 +53,24 @@ app.use(function (req, res, next) {
   // Pass to next layer of middleware
   next();
 });
+
+
+const sessionName = 'das-frontend-session'.toString('hex')
+let sessionOptions = {
+  secret: sessionName,
+  cookie: {
+    maxAge: 1000 * 60 * 60 * 4, // 4 hours
+    secure: false
+  }
+}
+
+  app.use(sessionInCookie(Object.assign(sessionOptions, {
+    cookieName: sessionName,
+    proxy: true,
+    requestKey: 'session'
+  })))
+
+app.use(utils.autoStoreData)
 
 app.use(express.static('dist'));
 
