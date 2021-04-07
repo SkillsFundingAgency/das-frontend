@@ -38,6 +38,10 @@ var storeData = function (input, data) {
 
 exports.autoStoreData = function (req, res, next) {
 
+  if (req.session.data === undefined) {
+    req.session.data = {}
+  }
+
   storeData(req.body, req.session.data)
 
   res.locals.data = {}
