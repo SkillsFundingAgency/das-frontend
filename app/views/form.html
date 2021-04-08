@@ -28,24 +28,26 @@
         <input type="text" class="govuk-input" name="text-field" id="text-field" value="{{ data['text-field'] }}">
       </div>
       <div class="govuk-form-group">
-          <label for="course" class="govuk-label">Apprenticeship course</label>
-          <select id="course" name="course" class="govuk-select das-autocomplete">
+          <label for="course" class="govuk-label govuk-label--s">Apprenticeship training course</label>
+          <select id="course" name="course" class="govuk-select das-autocomplete" data-placeholder="This is some text">
             <option value="">Select an apprenticeship training course</option>
-            <option value="1">Network engineer (level 4)</option>
-            <option value="2">Software developer (level 4)</option>
-            <option value="5">Installation electrician / maintenance electrician (level 3)</option>
-            <option value="6">Power network craftsperson (level 3)</option>
-            <option value="8">Financial services administrator (level 3)</option>
-            <option value="9">Control / technical support engineer (degree) (level 6)</option>
-            <option value="10">Electrical / electronic technical support engineer (degree) (level 6)</option>
-            <option value="11">Manufacturing engineer (degree) (level 6)</option>
-            <option value="12">Product design and development engineer (degree) (level 6)</option>
-            <option value="14">Laboratory technician (level 3)</option>
+            <option value="Network">Network engineer (level 4)</option>
+            <option value="Software">Software developer (level 4)</option>
+            <option value="Installation">Installation electrician / maintenance electrician (level 3)</option>
+            <option value="Power">Power network craftsperson (level 3)</option>
+            <option value="Financial">Financial services administrator (level 3)</option>
+            <option value="Control">Control / technical support engineer (degree) (level 6)</option>
+            <option value="Electrical">Electrical / electronic technical support engineer (degree) (level 6)</option>
+            <option value="Manufacturing">Manufacturing engineer (degree) (level 6)</option>
+            <option value="Product">Product design and development engineer (degree) (level 6)</option>
+            <option value="Laboratory">Laboratory technician (level 3)</option>
           </select>
       </div>
       <button class="govuk-button">Submit</button>
     </form>
   </div>
 </div>
+
+
 
 {% endblock %}

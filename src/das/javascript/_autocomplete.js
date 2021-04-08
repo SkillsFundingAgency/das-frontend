@@ -6,9 +6,10 @@ if (selectElements) {
     var form = $(this).closest('form');
     accessibleAutocomplete.enhanceSelectElement({
       selectElement: this,
-      minLength: 3,
-      autoselect: true,
+      minLength: 2,
+      autoselect: false,
       defaultValue: '',
+      showAllValues: true,
       displayMenu: 'overlay',
       placeholder: $(this).data('placeholder') || '',
       onConfirm: function (opt) {
