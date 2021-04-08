@@ -3,6 +3,20 @@
 {% set hideStatusBanner = true %}
 {% set loggedIn = true %}
 
+{% block breadcrumbs %}
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="/">Home</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="/form">Form</a>
+    </li>
+  </ol>
+</div>
+{% endblock %}
+
+
 {% block content %}
 
 <div class="govuk-grid-row">
@@ -11,7 +25,7 @@
     <form method="post" action="form">
       <div class="govuk-form-group">
         <label class="govuk-label" for="text-field">Text field</label>
-        <input type="text" class="govuk-input" name="text-field" id="text-field" >
+        <input type="text" class="govuk-input" name="text-field" id="text-field" value="{{ data['text-field'] }}">
       </div>
       <div class="govuk-form-group">
           <label for="course" class="govuk-label">Apprenticeship course</label>
@@ -34,5 +48,4 @@
   </div>
 </div>
 
-
-{% endblock  %}
+{% endblock %}

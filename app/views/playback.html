@@ -3,15 +3,45 @@
 {% set hideStatusBanner = true %}
 {% set loggedIn = true %}
 
+{% block breadcrumbs %}
+<div class="govuk-breadcrumbs">
+  <ol class="govuk-breadcrumbs__list">
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="/">Home</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="/form">Form</a>
+    </li>
+    <li class="govuk-breadcrumbs__list-item">
+      <a class="govuk-breadcrumbs__link" href="/playback">Check answers</a>
+    </li>
+  </ol>
+</div>
+{% endblock %}
+
 {% block content %}
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-        <h1 class="govuk-heading-xl">Playback results of form</h1>
-        <p>{{ data['text-field'] }}</p>
-      <p>{{ data['course'] }}</p>
-        <a href="/form" class="govuk-link govuk-link--no-visited-state">Back to the form</a>
-
+        <h1 class="govuk-heading-xl">Check answers</h1>
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Text field
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['text-field'] }}
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Course
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['course'] }}
+            </dd>
+          </div>
+        </dl>
     </div>
 </div>
 
