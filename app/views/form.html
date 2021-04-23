@@ -43,8 +43,51 @@
             <option value="Laboratory">Laboratory technician (level 3)</option>
           </select>
       </div>
+
       <button class="govuk-button">Submit</button>
     </form>
+
+    <form action="form" method="post">
+      <div class="das-highlight govuk-!-padding-bottom-0">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">Filter employers by location</legend>
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-one-third das-float-right">
+              <div class="govuk-form-group govuk-!-margin-bottom-5">
+                <label class="govuk-label" for="radius">
+                  Radius
+                </label>
+                <select class="govuk-select" id="radius" name="radius">
+                  <option value="5">5 miles</option>
+                  <option value="10">10 miles</option>
+                  <option value="25">25 miles</option>
+                  <option value="50">50 miles</option>
+                  <option value="80" selected="">80 miles</option>
+                  <option value="england">England</option>
+                </select>
+              </div>
+            </div>
+            <div class="govuk-grid-column-two-thirds">
+              <div class="govuk-form-group govuk-!-margin-bottom-5">
+                <label for="search-form-example" class="govuk-label">
+                  Enter a town, city or postcode
+                </label>
+                <div class="das-search-form__group">
+                  <input id="search-form-example" title="Search" class="govuk-input das-search-form__input" type="text">
+                  <div class="das-search-form__button-wrap">
+                    <button class="govuk-button das-search-form__button" type="submit">
+                      Search
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </fieldset>
+      </div>
+    </form>
+
+
   </div>
 </div>
 
