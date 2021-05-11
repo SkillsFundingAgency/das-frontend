@@ -1,0 +1,261 @@
+.fiu-roadmap {
+  padding: 50px 0 50px 60px;
+  position: relative;
+  &:before {
+    display: block;
+    background: linear-gradient(#3b2c73 0%, #3f6f79 9%, #4a957f 18%, #67a74b 27%, #83b437 36%, #a8ad36 45%, #d3a838 54%, #d98c31 63%, #e37b2e 72%, #d86034 81%, #cf4c45 90%, #4b2e6d 100%);
+    width: 31px;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+  }
+  overflow: hidden;
+  font-family: nobel,sans-serif;
+  font-weight: 300;
+  font-style: normal;
+}
+
+.fiu-roadmap {
+  @include govuk-media-query($fiu-large-desktop-breakpoint) {
+    padding: 0 0 70px;
+    overflow: hidden;
+    &:before {
+      display: none;
+    }
+    h1 {
+      position: absolute;
+      right: 100px;
+      text-align: right;
+      width: 300px;
+      top: 50px;
+    }
+  }
+}
+
+.fiu-roadmap__roadmap {
+  display: none;
+  @include govuk-media-query($fiu-large-desktop-breakpoint) {
+    display: block;
+    position: absolute;
+    top: -50px;
+    left: 50%;
+    height: 1450px;
+    width: 500px;
+    margin-left: -250px;
+    background-image: url("/fiu/assets/images/roadmap.jpg");
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: contain;
+  }
+}
+
+.fiu-roadmap__section {
+  position: relative;
+  padding: 1px 0 1px;
+  &:before {
+    display: block;
+    width: 31px;
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -50px;
+    bottom: 0;
+  }
+  @include govuk-media-query($fiu-large-desktop-breakpoint) {
+    height: 230px;
+    overflow: hidden;
+    width: 50%;
+    float: left;
+    margin-bottom: 1px;
+    clear: left;
+    display: flex;
+    align-items: center;
+    flex-direction: row-reverse;
+    -ms-flex-direction: row-reverse;
+    transition: all 0.3s ease;
+    &:after {
+      content: '';
+      min-height: inherit;
+      font-size: 0;
+    }
+  }
+}
+
+.fiu-roadmap__section:hover {
+  opacity: 1;
+}
+
+.fiu-roadmap__section-content {
+  & > p {
+    margin: 0 0 .5em;
+    line-height: 1.3;
+  }
+  position: relative;
+  &:before {
+    content: "";
+    width: 20px;
+    height: 3px;
+    display: block;
+    position: absolute;
+    top: -25px;
+    left: -29px;
+  }
+  &:after {
+    content: "";
+    width: 15px;
+    height: 15px;
+    display: block;
+    position: absolute;
+    border-radius: 50%;
+    margin-top: -6px;
+    top: -26px;
+    left: -24px;
+  }
+  @include govuk-media-query($fiu-large-desktop-breakpoint) {
+    width: 230px;
+    float: left;
+    margin-right: 75px;
+    &:before {
+      top: 50%;
+      right: -32px;
+      left: auto;
+    }
+    &:after {
+      top: 50%;
+      right: -17px;
+      left: auto;
+    }
+  }
+}
+
+.fiu-roadmap__section-content a {
+  color: $fiu-global-link-colour;
+  &:hover {
+    text-decoration: underline;
+  }
+  &:focus {
+    @include govuk-focused-text;
+  }
+}
+
+.fiu-roadmap__section-heading {
+  margin: 1em 0 .5em;
+  position: relative;
+  @include govuk-media-query($fiu-large-desktop-breakpoint) {
+    width: 150px;
+    margin: 6px 25px 0 0;
+    height: 150px;
+    border-radius: 50%;
+    padding: 10px;
+    display: -webkit-flex;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    font-size: 22px;
+    & > span {
+      text-align: center;
+      flex-grow: 1;
+    }
+  }
+}
+
+@include govuk-media-query($fiu-large-desktop-breakpoint) {
+  .fiu-roadmap__section--1 {
+    margin-top: 40px;
+  }
+  .fiu-roadmap__section--2,
+  .fiu-roadmap__section--4,
+  .fiu-roadmap__section--6,
+  .fiu-roadmap__section--8,
+  .fiu-roadmap__section--10 {
+    float: right;
+    flex-direction: row;
+    -ms-flex-direction: row;
+    margin-top: -115px;
+    .fiu-roadmap__section-content {
+      margin-left: 80px;
+      width: 225px;
+      margin-right: 0;
+
+      &:before {
+        right: auto;
+        left: -37px;
+      }
+
+      &:after {
+        right: auto;
+        left: -22px;;
+      }
+    }
+    .fiu-roadmap__section-heading {
+      margin-right: 0;
+      margin-left: 25px;
+    }
+  }
+}
+
+.fiu-roadmap__section--1 .fiu-roadmap__section-content:before,
+.fiu-roadmap__section--1 .fiu-roadmap__section-content:after {
+  background-color: #4a957f;
+}
+
+.fiu-roadmap__section--2 .fiu-roadmap__section-content:before,
+.fiu-roadmap__section--2 .fiu-roadmap__section-content:after {
+  background-color: #67a74b;
+}
+
+.fiu-roadmap__section--3 .fiu-roadmap__section-content:before,
+.fiu-roadmap__section--3 .fiu-roadmap__section-content:after {
+  background-color: #83b437;
+}
+
+.fiu-roadmap__section--4 .fiu-roadmap__section-content:before,
+.fiu-roadmap__section--4 .fiu-roadmap__section-content:after {
+  background-color: #a8ad36;
+}
+
+.fiu-roadmap__section--5 .fiu-roadmap__section-content:before,
+.fiu-roadmap__section--5 .fiu-roadmap__section-content:after {
+  background-color: #d3a838;
+}
+
+.fiu-roadmap__section--6 .fiu-roadmap__section-content:before,
+.fiu-roadmap__section--6 .fiu-roadmap__section-content:after {
+  background-color: #d98c31;
+}
+
+.fiu-roadmap__section--7 .fiu-roadmap__section-content:before,
+.fiu-roadmap__section--7 .fiu-roadmap__section-content:after {
+  background-color: #e37b2e;
+}
+
+.fiu-roadmap__section--8 .fiu-roadmap__section-content:before,
+.fiu-roadmap__section--8 .fiu-roadmap__section-content:after {
+  background-color: #d86034;
+}
+
+.fiu-roadmap__section--9 .fiu-roadmap__section-content:before,
+.fiu-roadmap__section--9 .fiu-roadmap__section-content:after {
+  background-color: #cf4c45;
+}
+
+.fiu-roadmap__section--10 .fiu-roadmap__section-content:before,
+.fiu-roadmap__section--10 .fiu-roadmap__section-content:after {
+  background-color: #cf4c45;
+}
+
+.fiu-roadmap__road {
+  display: block;
+  position: absolute;
+  width: 3px;
+  top: 0;
+  left: 14px;
+  bottom: 0;
+  background-image: url("/fiu/assets/images/road-markings.gif");
+  background-position: center;
+  @include govuk-media-query($fiu-large-desktop-breakpoint) {
+    display: none;
+  }
+}
