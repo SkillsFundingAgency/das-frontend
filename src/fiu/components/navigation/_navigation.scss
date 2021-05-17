@@ -1,5 +1,3 @@
-
-
 .fiu-navigation {
   background: $fiu-navigation-bg-colour;
   padding: 5px 0;
@@ -12,6 +10,10 @@
 
 .fiu-navigation--employers {
   background: $fiu-employers-brand-colour;
+}
+
+.fiu-navigation--parents-educators {
+  background: $fiu-parents-educators-brand-colour;
 }
 
 .fiu-navigation__toggle {

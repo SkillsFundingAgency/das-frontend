@@ -89,3 +89,8 @@
 .fiu-header__navigation-item--employers-active:after {
   @include arrow($fiu-employers-brand-colour);
 }
+
+.fiu-header__navigation-item--parents-educators-active:after {
+  @include arrow($fiu-parents-educators-brand-colour);
+}
+
