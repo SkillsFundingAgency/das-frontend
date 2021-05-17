@@ -48,16 +48,17 @@
   list-style: none;
   display: block;
   padding: 0;
-  margin: 0;
+  margin: 0 -10px;
   @include govuk-media-query(tablet) {
     display: table-row;
+    margin: 0;
   }
 }
 
 .fiu-header__navigation-item {
   display: inline-block;
   position: relative;
-  padding: 15px 12px;
+  padding: 15px 0;
 
   @include govuk-media-query(tablet) {
     padding: 0 10px;
@@ -73,12 +74,15 @@
   text-transform: uppercase;
   text-decoration: none;
   color: $fiu-header-link-colour;
-  padding: 5px 10px;
+  padding: 5px;
   &:hover {
     color: $fiu-header-link-hover-colour;
   }
   &:focus {
     @include govuk-focused-text;
+  }
+  @include govuk-media-query(tablet) {
+    padding: 5px 10px;
   }
 }
 
