@@ -84,6 +84,12 @@
       color: $fiu-providers-link-hover-colour;
     }
   }
+  &.fiu-button--parents-educators {
+    color: $fiu-parents-educators-link-colour;
+    &:hover {
+      color: $fiu-parents-educators-link-hover-colour;
+    }
+  }
 }
 
 .fiu-button--text {
