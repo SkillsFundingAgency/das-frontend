@@ -9,7 +9,7 @@
   color: $fiu-text-colour;
   text-decoration: none;
   border: 1px solid $fiu-border-colour;
-  border-radius: 10px;
+  border-radius: $fiu-border-radius;
   position: relative;
   &:focus {
     @include fiu-focused-block;
@@ -98,6 +98,8 @@
   display: block;
   color: $white;
   position: relative;
+  background: $light-black;
+  border-radius: $fiu-border-radius;
   @include govuk-media-query(tablet) {
     padding-top: 120px;
   }
