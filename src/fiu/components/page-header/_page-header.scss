@@ -144,8 +144,11 @@
     .fiu-page-header__hm-logo {
         height: 30px;
         @include govuk-media-query($from: tablet) {
-            margin-bottom: 80px;
+            margin-bottom: 160px;
             height: 40px;
+        }
+        @include govuk-media-query($from: desktop) {
+
         }
     }
 }

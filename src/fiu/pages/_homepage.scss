@@ -1,0 +1,9 @@
+.fiu-homepage-card-container {
+  @include govuk-media-query($from: tablet) {
+    position: relative;
+    top: -100px;
+    .fiu-grad-row__bg {
+      top: 100px;
+    }
+  }
+}
