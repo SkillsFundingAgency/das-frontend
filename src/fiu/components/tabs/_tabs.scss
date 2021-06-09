@@ -1,0 +1,40 @@
+.fiu-tabs {
+  @extend .govuk-tabs;
+}
+
+.fiu-tabs__title {
+  @extend .govuk-tabs__title;
+}
+
+.fiu-tabs__list {
+  @extend .govuk-tabs__list;
+}
+
+.fiu-tabs__list-item {
+  @extend .govuk-tabs__list-item;
+}
+
+.fiu-tabs__tab {
+  @extend .govuk-tabs__tab;
+  @include fiu-typography-common;
+}
+
+.fiu-tabs__panel {
+  @extend .govuk-tabs__panel;
+}
+
+.fiu-tabs__panel--hidden {
+  @extend .govuk-tabs__panel--hidden;
+}
+
+.js-enabled {
+  @include govuk-media-query(tablet) {
+    .fiu-tabs__panel {
+      background: #fff;
+    }
+  }
+}
+
+.fiu-tabs__list-item--selected {
+  @extend .govuk-tabs__list-item--selected;
+}
