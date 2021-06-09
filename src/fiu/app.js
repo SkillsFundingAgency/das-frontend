@@ -34,3 +34,9 @@ const backLinkContainer = document.querySelector('[data-fiu-back-link]');
 if (backLinkContainer) {
   new BackLink(backLinkContainer);
 }
+
+// Tabs
+const tabs = document.querySelector('[data-fiu-tabs]');
+if (tabs) {
+  new Tabs(tabs).init();
+}
