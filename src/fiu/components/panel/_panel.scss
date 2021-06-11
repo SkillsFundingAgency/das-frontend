@@ -32,9 +32,27 @@
   color: inherit;
 }
 
+.fiu-panel__content--s {
+  font-size: 16px;
+  line-height: 1.35em;
+}
+
 .fiu-panel__label {
   color: inherit;
   margin-bottom: .5em;
+}
+
+.fiu-panel__logo {
+  height: 100px;
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+
+.fiu-panel__logo-img {
+  max-width: 65%;
+  max-height: 80%;
+  margin: 0 auto;
 }
 
 .fiu-panel__button {
