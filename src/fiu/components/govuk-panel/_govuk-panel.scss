@@ -1,0 +1,31 @@
+.fiu-govuk-panel {
+  @include govuk-font($size: 19, $line-height: 19px);
+  background: $white;
+  padding: 50px;
+  margin-bottom: 20px;
+  color: $fiu-text-colour;
+  border: 1px solid $fiu-border-colour;
+  border-radius: $fiu-border-radius;
+  position: relative;
+}
+
+.fiu-govuk-panel__govuk-logotype {
+  display: inline-block;
+  margin-right: 10px;
+  margin-bottom: 20px;
+}
+
+.fiu-govuk-panel__govuk-logotype-crown {
+  position: relative;
+  top: -1px;
+  margin-right: 3px;
+  fill: currentColor;
+  vertical-align: top;
+  width: 29px;
+  height: 21px;
+}
+
+.fiu-govuk-panel__govuk-logotype-text {
+  font-weight: $govuk-font-weight-bold;
+  font-size: 24px;
+}

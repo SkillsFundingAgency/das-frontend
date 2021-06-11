@@ -57,6 +57,10 @@ b {
   padding-left: 20px;
 }
 
+.govuk-\!-font-family {
+  font-family: $govuk-font-family;
+}
+
 .fiu-feature-text {
   @include fiu-rotate-skew;
 }
