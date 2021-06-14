@@ -100,16 +100,16 @@
 
 .fiu-card__image {
   height: 165px;
-  background: #ccc;
   border-bottom: 5px solid $fiu-border-colour;
   display: block;
-  background-image: url("/fiu/assets/images/panels/apprentice-panel-homepage.jpg");
-  background-size: cover;
+  background-color: #ccc;
+  background-image: url("/fiu/assets/images/placeholder.png");
+  background-size: contain;
 }
 
-.fiu-card__image--resources {}
-.fiu-card__image--aan {}
-.fiu-card__image--browse {}
+.fiu-card__image--resources {background-size: cover;}
+.fiu-card__image--aan {background-size: cover;}
+.fiu-card__image--browse {background-size: cover;}
 
 .fiu-card__image--influencers {
   border-color: $fiu-influencers-brand-colour;
