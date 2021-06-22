@@ -20,16 +20,23 @@
 }
 
 .fiu-panel__tag {
-  margin-bottom: 2em;
+
+  margin-bottom: 1.5em;
 }
 
 .fiu-panel__heading {
   color: inherit;
+  margin-bottom: .4em;
 }
 
 .fiu-panel__content {
-  @extend .govuk-body-l;
-  color: inherit;
+  @include fiu-typography-common;
+  color: $dark-grey;
+  margin: 0 0 1.5em;
+  @include govuk-media-query(tablet) {
+    font-size: 21px;
+    line-height: 1.15;
+  }
 }
 
 .fiu-panel__content--s {
@@ -57,20 +64,6 @@
 
 .fiu-panel__button {
   margin: 0;
-}
-
-.fiu-panel--faa,
-.fiu-panel--fat {
-  background-color: $black;
-  background-image: url("../assets/images/design/warehouse-green.jpg");
-  background-size: cover;
-  background-position: center;
-  color: $white;
-  border: none;
-}
-
-.fiu-panel--fat {
-  background-image: url("../assets/images/design/warehouse-purple.jpg");
 }
 
 .fiu-panel--solid-citizens {
