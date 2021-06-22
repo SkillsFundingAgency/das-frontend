@@ -144,15 +144,9 @@
 }
 
 .fiu-navigation__link {
+  @include fiu-link-common;
   color: $white;
   padding: 1px 5px 3px;
-  text-decoration: none;
-  &:hover {
-    text-decoration: underline;
-  }
-  &:focus {
-    @include govuk-focused-text;
-  }
 }
 
 .fiu-navigation__favourites-link {

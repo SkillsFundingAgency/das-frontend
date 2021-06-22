@@ -113,10 +113,8 @@
 }
 
 .fiu-footer__link {
+  @include fiu-link-common;
   color: $fiu-footer-link-colour;
-  &:focus {
-    @include govuk-focused-text;
-  }
 }
 
 .fiu-footer__inline-list,

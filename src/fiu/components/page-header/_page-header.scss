@@ -30,18 +30,12 @@
         margin-bottom: 40px;
     }
     .govuk-breadcrumbs__link {
-        @include fiu-typography-common;
+        @include fiu-link-common;
         color: $mid-grey;
         letter-spacing: .05em;
         -webkit-font-smoothing:auto;
         font-size: inherit;
         margin: 0;
-        &:focus {
-            color: $black;
-        }
-        &:hover {
-            text-decoration: none;
-        }
     }
 }
 

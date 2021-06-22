@@ -8,7 +8,7 @@
   color: $fiu-text-colour;
   text-decoration: none;
   border: 1px solid $fiu-border-colour;
-  border-radius: 10px;
+  border-radius: $fiu-border-radius;
   position: relative;
   &:focus {
     @include fiu-focused-block;
@@ -62,12 +62,7 @@
   position: absolute;
   bottom: 20px;
   font-size: 19px;
-  &:hover {
-    color: $fiu-global-link-hover-colour;
-  }
-  &:focus {
-    @include govuk-focused-text;
-  }
+  @include fiu-link-common;
 }
 
 .fiu-card__link--citizens {
