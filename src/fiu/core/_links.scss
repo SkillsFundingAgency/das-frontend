@@ -1,4 +1,5 @@
 .fiu-link {
+  @extend .govuk-link;
   color: $fiu-global-link-colour;
   &:hover {
     color: $fiu-global-link-hover-colour;
