@@ -20,13 +20,16 @@
 }
 
 .fiu-panel__tag {
-
-  margin-bottom: 1.5em;
+  margin-bottom: 2em;
 }
 
 .fiu-panel__heading {
   color: inherit;
-  margin-bottom: .4em;
+  margin-bottom: .5em;
+  line-height: 1;
+  @include govuk-media-query(tablet) {
+    margin: 0 1em .5em;
+  }
 }
 
 .fiu-panel__content {
@@ -36,6 +39,7 @@
   @include govuk-media-query(tablet) {
     font-size: 21px;
     line-height: 1.15;
+    margin: 0 2em 1.5em;
   }
 }
 
@@ -94,6 +98,12 @@
     }
     @include govuk-media-query($from: $fiu-large-desktop-breakpoint) {
       font-size: 30px;
+    }
+  }
+  .fiu-panel__content {
+    @include govuk-media-query($from: desktop) {
+      margin-left: 1em;
+      margin-right: 1em;
     }
   }
 }
