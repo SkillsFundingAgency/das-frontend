@@ -124,6 +124,7 @@ b {
 .fiu-article > blockquote:not([class]) {
   @extend .fiu-quote;
   @extend .fiu-quote__blockquote;
+  margin-bottom: 20px !important;
 }
 
 .fiu-article > img:not([class]) {
