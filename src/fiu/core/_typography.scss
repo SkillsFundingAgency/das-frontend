@@ -98,6 +98,10 @@ b {
   @extend .govuk-heading-xs;
 }
 
+.fiu-article > h6:not([class]) {
+  @extend .govuk-heading-xs;
+}
+
 .fiu-article > p:not([class]) {
   @extend .govuk-body;
 }
@@ -105,6 +109,11 @@ b {
 .fiu-article > ul:not([class]) {
   @extend .govuk-list;
   @extend .govuk-list--bullet;
+}
+
+.fiu-article > ul > li > p,
+.fiu-article > ol > li > p {
+  margin: 0;
 }
 
 .fiu-article > ol:not([class]) {
@@ -117,9 +126,16 @@ b {
   @extend .fiu-quote__blockquote;
 }
 
-.fiu-article > ul > li > p {
-  margin: 0;
+.fiu-article > img:not([class]) {
+  max-width: 100%;
 }
+
+.fiu-article > hr:not([class]) {
+  @extend .fiu-section-break;
+  @include govuk-responsive-margin(4, "top");
+  @include govuk-responsive-margin(4, "bottom");
+}
+
 
 // Content coming from FAT API
 
