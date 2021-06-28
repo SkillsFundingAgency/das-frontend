@@ -50,6 +50,7 @@
 .fiu-attachment__meta {
   color: $dark-grey;
   margin: 0 0 8px;
+  text-transform: uppercase;
   @include govuk-media-query($from: desktop) {
     margin-bottom: 15px;
   }
