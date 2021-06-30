@@ -136,15 +136,3 @@ b {
   @include govuk-responsive-margin(4, "top");
   @include govuk-responsive-margin(4, "bottom");
 }
-
-
-// Content coming from FAT API
-
-.markdown > ul {
-  @extend .govuk-list--bullet;
-  margin: 0;
-}
-
-.markdown > p {
-  margin-top: 0;
-}
