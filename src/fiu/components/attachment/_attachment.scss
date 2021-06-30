@@ -8,9 +8,11 @@
   border: 1px solid $fiu-border-colour;
   border-radius: $fiu-border-radius;
   position: relative;
+  min-height: 170px;
   @include govuk-media-query($from: desktop) {
     padding: 30px;
     padding-left: 150px;
+    min-height: 190px;
   }
 }
 
@@ -49,6 +51,7 @@
 
 .fiu-attachment__heading {
   margin-bottom: 10px;
+  margin-top: -5px;
 }
 
 .fiu-attachment__meta {
