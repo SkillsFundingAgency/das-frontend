@@ -25,6 +25,7 @@ b {
 .govuk-body-l,
 .govuk-body-m,
 .govuk-body,
+.govuk-link,
 .govuk-list,
 .govuk-label,
 .govuk-checkboxes__label {
@@ -55,6 +56,10 @@ b {
 
 .govuk-summary-list__value > ul {
   padding-left: 20px;
+}
+
+.govuk-\!-font-family {
+  font-family: $govuk-font-family;
 }
 
 .fiu-feature-text {
@@ -97,6 +102,10 @@ b {
   @extend .govuk-heading-xs;
 }
 
+.fiu-article > h6:not([class]) {
+  @extend .govuk-heading-xs;
+}
+
 .fiu-article > p:not([class]) {
   @extend .govuk-body;
 }
@@ -104,6 +113,11 @@ b {
 .fiu-article > ul:not([class]) {
   @extend .govuk-list;
   @extend .govuk-list--bullet;
+}
+
+.fiu-article > ul > li > p,
+.fiu-article > ol > li > p {
+  margin: 0;
 }
 
 .fiu-article > ol:not([class]) {
@@ -114,11 +128,20 @@ b {
 .fiu-article > blockquote:not([class]) {
   @extend .fiu-quote;
   @extend .fiu-quote__blockquote;
+  margin-bottom: 20px !important;
 }
 
-.fiu-article > ul > li > p {
-  margin: 0;
+.fiu-article > img:not([class]) {
+  max-width: 100%;
+  margin-bottom: 20px;
 }
+
+.fiu-article > hr:not([class]) {
+  @extend .fiu-section-break;
+  @include govuk-responsive-margin(4, "top");
+  @include govuk-responsive-margin(4, "bottom");
+}
+
 
 // Content coming from FAT API
 
