@@ -106,6 +106,10 @@ b {
   @extend .govuk-body;
 }
 
+.fiu-article > p:empty {
+  display: none;
+}
+
 .fiu-article > ul:not([class]) {
   @extend .govuk-list;
   @extend .govuk-list--bullet;
@@ -125,11 +129,6 @@ b {
   @extend .fiu-quote;
   @extend .fiu-quote__blockquote;
   margin-bottom: 20px !important;
-}
-
-.fiu-article > img:not([class]) {
-  max-width: 100%;
-  margin-bottom: 20px;
 }
 
 .fiu-article > hr:not([class]) {
