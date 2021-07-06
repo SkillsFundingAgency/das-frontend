@@ -146,4 +146,10 @@
 
 .fiu-navigation__link:hover {
   text-decoration: underline;
+  text-decoration-thickness: 2px;
+}
+
+.fiu-navigation__link:active,
+.fiu-navigation__link:focus {
+  text-decoration: none;
 }
