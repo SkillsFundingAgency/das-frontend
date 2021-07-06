@@ -62,8 +62,6 @@
   @extend .fiu-link;
 }
 
-.fiu-article > h2 > a,
-.fiu-article > h3 > a,
-.fiu-article > h4 > a {
+.fiu-article > h2 > a {
   @extend .fiu-button;
 }

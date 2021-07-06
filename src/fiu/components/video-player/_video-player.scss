@@ -20,3 +20,9 @@
   border-width: 0;
   border: none;
 }
+
+/* Vimeo iframe in article content */
+
+.fiu-article > p > iframe {
+  width: 100%;
+}
