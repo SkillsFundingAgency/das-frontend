@@ -136,15 +136,14 @@
   }
 }
 
-.fiu-navigation__list-item--favourites {
-  @include govuk-media-query($fiu-nav-breakpoint) {
-    margin-right: 0;
-    float: right;
-  }
-}
-
 .fiu-navigation__link {
   @include fiu-link-common;
   color: $white;
   padding: 1px 5px 3px;
+  font-weight: $fiu-font-weight-regular;
+  text-decoration: none;
+}
+
+.fiu-navigation__link:hover {
+  text-decoration: underline;
 }
