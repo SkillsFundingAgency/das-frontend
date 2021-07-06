@@ -1,7 +1,3 @@
-$fiu-font-family:         nobel, sans-serif;
-$fiu-font-weight-book:    300;
-$fiu-font-weight-regular: 500;
-$fiu-font-weight-bold:    700;
 
 .govuk-heading-xl,
 .govuk-heading-l,
@@ -110,6 +106,10 @@ b {
   @extend .govuk-body;
 }
 
+.fiu-article > p:empty {
+  display: none;
+}
+
 .fiu-article > ul:not([class]) {
   @extend .govuk-list;
   @extend .govuk-list--bullet;
@@ -131,25 +131,8 @@ b {
   margin-bottom: 20px !important;
 }
 
-.fiu-article > img:not([class]) {
-  max-width: 100%;
-  margin-bottom: 20px;
-}
-
 .fiu-article > hr:not([class]) {
   @extend .fiu-section-break;
   @include govuk-responsive-margin(4, "top");
   @include govuk-responsive-margin(4, "bottom");
-}
-
-
-// Content coming from FAT API
-
-.markdown > ul {
-  @extend .govuk-list--bullet;
-  margin: 0;
-}
-
-.markdown > p {
-  margin-top: 0;
 }

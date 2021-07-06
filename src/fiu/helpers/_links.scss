@@ -1,0 +1,13 @@
+
+@mixin fiu-link-common {
+  @include fiu-typography-common;
+  @include govuk-link-decoration;
+
+  &:hover {
+    @include govuk-link-hover-decoration;
+  }
+
+  &:focus {
+    @include govuk-focused-text;
+  }
+}

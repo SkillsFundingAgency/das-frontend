@@ -1,49 +1,15 @@
-// FIU homepage welcome banner and content
-
-.fiu-homepage-banner {
-  @include fiu-typography-common;
-  background-color: $black;
-  background-image: url("../assets/images/design/warehouse-full-colour.jpg");
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center top;
-  color: $white;
-  text-align: center;
-  padding: 30px 0 130px;
-  margin-bottom: -100px;
-  position: relative;
-}
-
-.fiu-homepage-banner__heading {
-  @include fiu-uppercase-title;
-  font-weight: $fiu-font-weight-bold;
-  font-size: 50px;
-  @include govuk-media-query(tablet) {
-    font-size: 60px;
-  }
-  @include govuk-media-query(desktop) {
-    font-size: 70px;
-  }
-  @include govuk-visually-hidden;
-}
-
-.fiu-homepage-banner__content {
-  font-size: 24px;
-  font-weight: $fiu-font-weight-regular;
-  @include govuk-media-query(tablet) {
-    font-size: 32px;
-  }
-  @include govuk-media-query(desktop) {
-    font-size: 40px;
+.fiu-homepage-card-container {
+  @include govuk-media-query($from: tablet) {
+    position: relative;
+    top: -100px;
+    .fiu-grad-row__bg {
+      top: 100px;
+    }
   }
 }
 
-.fiu-homepage-banner__content-line-break {
-  @include govuk-media-query(tablet) {
-    display: block;
-  }
-}
-
-.fiu-homepage-banner__hm-logo {
-  width: 100px;
+.fiu-homepage-row-highlight {
+  background: $fiu-body-colour;
+  border-top: 5px solid $lighter-grey;
+  padding: 20px 0 1px;
 }

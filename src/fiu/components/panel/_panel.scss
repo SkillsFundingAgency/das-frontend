@@ -9,7 +9,7 @@
   color: $fiu-text-colour;
   text-decoration: none;
   border: 1px solid $fiu-border-colour;
-  border-radius: 10px;
+  border-radius: $fiu-border-radius;
   position: relative;
   &:focus {
     @include fiu-focused-block;
@@ -25,11 +25,27 @@
 
 .fiu-panel__heading {
   color: inherit;
+  margin-bottom: .5em;
+  line-height: 1;
+  @include govuk-media-query(tablet) {
+    margin: 0 1em .5em;
+  }
 }
 
 .fiu-panel__content {
-  @extend .govuk-body-l;
-  color: inherit;
+  @include fiu-typography-common;
+  color: $dark-grey;
+  margin: 0 0 1.5em;
+  @include govuk-media-query(tablet) {
+    font-size: 21px;
+    line-height: 1.15;
+    margin: 0 2em 1.5em;
+  }
+}
+
+.fiu-panel__content--s {
+  font-size: 16px;
+  line-height: 1.35em;
 }
 
 .fiu-panel__label {
@@ -37,22 +53,21 @@
   margin-bottom: .5em;
 }
 
+.fiu-panel__logo {
+  height: 100px;
+  margin: 0;
+  display: flex;
+  align-items: center;
+}
+
+.fiu-panel__logo-img {
+  max-width: 65%;
+  max-height: 80%;
+  margin: 0 auto;
+}
+
 .fiu-panel__button {
   margin: 0;
-}
-
-.fiu-panel--faa,
-.fiu-panel--fat {
-  background-color: $black;
-  background-image: url("../assets/images/design/warehouse-green.jpg");
-  background-size: cover;
-  background-position: center;
-  color: $white;
-  border: none;
-}
-
-.fiu-panel--fat {
-  background-image: url("../assets/images/design/warehouse-purple.jpg");
 }
 
 .fiu-panel--solid-citizens {
@@ -85,6 +100,12 @@
       font-size: 30px;
     }
   }
+  .fiu-panel__content {
+    @include govuk-media-query($from: desktop) {
+      margin-left: 1em;
+      margin-right: 1em;
+    }
+  }
 }
 
 
@@ -92,14 +113,17 @@
 
 .fiu-panel-homepage {
   text-align: center;
-  padding: 70px 30px 30px;
+  padding: 15px;
+  padding-top: 20px;
   margin-bottom: 15px;
   height: 100%;
   display: block;
   color: $white;
   position: relative;
+  background: #333;
+  border-radius: $fiu-border-radius;
   @include govuk-media-query(tablet) {
-    padding-top: 120px;
+    padding: 20px;
   }
 }
 
@@ -110,30 +134,14 @@
 }
 
 .fiu-panel-homepage__content {
-  @extend .govuk-body-l;
   @include fiu-typography-common;
   color: inherit;
   position: relative;
+  @include govuk-media-query(tablet) {
+    font-size: 19px;
+  }
 }
 
-.fiu-panel-homepage__image-wrap {
-  position: absolute;
-  top: 0;
-  z-index: 0;
-}
-
-.fiu-panel-homepage__image {
-  z-index: 1;
-  width: 100%;
-}
-
-.fiu-panel-homepage__image-mask {
-  position: absolute;
-  top: 0;
-  z-index: 2;
-  width: 100%;
-  height: 100%;
-  background: url("../assets/images/panels/mask.png");
-  background-size: cover;
-  background-position: top;
+.fiu-panel-homepage__button {
+  margin-bottom: 0;
 }

@@ -84,6 +84,12 @@
       color: $fiu-providers-link-hover-colour;
     }
   }
+  &.fiu-button--influencers {
+    color: $fiu-influencers-link-colour;
+    &:hover {
+      color: $fiu-influencers-link-hover-colour;
+    }
+  }
 }
 
 .fiu-button--text {

@@ -25,6 +25,60 @@
   }
 }
 
+.fiu-footer__contact-heading {
+  color: #fff;
+  margin: 0 0 .7em;
+  font-size: 19px;
+  font-weight: $fiu-font-weight-bold;
+  @include govuk-media-query(tablet) {
+    font-size: 24px;
+  }
+}
+
+.fiu-footer__contact-list {
+  overflow: hidden;
+  margin: 0;
+  color: #fff;
+  font-size: 18px;
+  @include govuk-media-query(tablet) {
+    font-size: 21px;
+  }
+}
+
+.fiu-footer__contact-list-title {
+  margin-bottom: 5px;
+  font-weight: $fiu-font-weight-bold;
+  @include govuk-media-query(tablet) {
+    clear: both;
+    float: left;
+    margin: 0 10px 0;
+    min-width: 50px;
+  }
+}
+
+.fiu-footer__contact-list-item {
+  margin: 0 0 10px;
+  @include govuk-media-query(tablet) {
+    float: left;
+  }
+}
+
+.fiu-footer__contact-list-link {
+  color: #fff;
+  text-decoration: none;
+  &:focus {
+    @include govuk-focused-text;
+  }
+}
+
+.fiu-footer__section-break {
+  border-color: $dark-grey;
+  margin: 0;
+  @include govuk-media-query(tablet) {
+    margin-top: 20px;
+  }
+}
+
 .fiu-footer__heading {
   color: #fff;
   margin: 0 0 .7em;
@@ -59,10 +113,8 @@
 }
 
 .fiu-footer__link {
+  @include fiu-link-common;
   color: $fiu-footer-link-colour;
-  &:focus {
-    @include govuk-focused-text;
-  }
 }
 
 .fiu-footer__inline-list,
