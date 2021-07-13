@@ -102,9 +102,9 @@
   background-size: contain;
 }
 
-.fiu-card__image--resources {background-size: cover;}
-.fiu-card__image--aan {background-size: cover;}
-.fiu-card__image--browse {background-size: cover;}
+.fiu-card__image--resources {background-size: cover; background-image: url("/fiu/assets/images/panels/homepage-resources.jpg");  }
+.fiu-card__image--aan {background-size: cover; background-image: url("/fiu/assets/images/panels/homepage-yaan.jpg"); }
+.fiu-card__image--browse {background-size: cover; background-image: url("/fiu/assets/images/panels/homepage-faa.jpg"); }
 
 .fiu-card__image--influencers {
   border-color: $fiu-influencers-brand-colour;
