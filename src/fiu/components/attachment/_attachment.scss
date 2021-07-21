@@ -1,0 +1,79 @@
+.fiu-attachment {
+  @include fiu-typography-common;
+  background: $white;
+  padding: 20px;
+  padding-left: 130px;
+  margin-bottom: 20px;
+  color: $fiu-text-colour;
+  border: 1px solid $fiu-border-colour;
+  border-radius: $fiu-border-radius;
+  position: relative;
+  min-height: 170px;
+  @include govuk-media-query($from: desktop) {
+    padding: 30px;
+    padding-left: 150px;
+    min-height: 190px;
+  }
+}
+
+.fiu-attachment__icon {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  width: 90px;
+  box-shadow: 0px 0px 0px 4px #e2e2e2;
+  border-bottom: 1px solid #777;
+  outline: 1px solid #ccc;
+  min-height: 127px;
+  background-image: url("/fiu/assets/images/attachment-placeholder.png");
+  background-size: cover;
+  @include govuk-media-query($from: desktop) {
+    top: 30px;
+    left: 30px;
+    width: 90px;
+  }
+}
+
+.fiu-attachment__icon-label {
+  position: absolute;
+  top: 16px;
+  width: 100%;
+  display: block;
+  color: #fff;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: $fiu-font-weight-bold;
+}
+
+.fiu-attachment__heading {
+  margin-bottom: 10px;
+  margin-top: -5px;
+}
+
+.fiu-attachment__meta {
+  color: $dark-grey;
+  margin: 0 0 8px;
+  text-transform: uppercase;
+  @include govuk-media-query($from: desktop) {
+    margin-bottom: 15px;
+  }
+}
+
+.fiu-attachment__meta-title {
+  @extend .fiu-visually-hidden
+}
+
+.fiu-attachment__meta-description {
+  display: inline;
+  margin: 0 7px 0 0;
+  padding: 0 10px 0 0;
+  border-right: 1px solid $fiu-border-colour;
+}
+
+.fiu-attachment__meta-description:last-child {
+  border: none;
+}
+
+.fiu-attachment__link-wrap {
+  margin-bottom: 0;
+}

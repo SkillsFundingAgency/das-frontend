@@ -1,4 +1,5 @@
 @import "alert/alert";
+@import "attachment/attachment";
 @import "back-link/fiu-back-link";
 @import "button/button";
 @import "card/card";
@@ -8,7 +9,7 @@
 @import "fat-search/fat-search";
 @import "favourite-bar/favourite-bar";
 @import "footer/footer";
-@import "guides/guides";
+@import "govuk-panel/govuk-panel";
 @import "header/header";
 @import "navigation/navigation";
 @import "notification/notification";
@@ -25,4 +26,5 @@
 @import "support/support";
 @import "tabs/tabs";
 @import "tag/tag";
+@import "tile/tile";
 @import "video-player/video-player";

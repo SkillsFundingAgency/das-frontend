@@ -9,6 +9,12 @@
 .fiu-main-wrapper {
   padding: 0;
   background: $fiu-body-colour;
+  position: relative;
+  display: block;
+}
+
+.fiu-main-wrapper--homepage {
+  background: #fff;
 }
 
 .fiu-main-wrapper:after {

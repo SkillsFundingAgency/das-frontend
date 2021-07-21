@@ -2,7 +2,7 @@
   @extend .govuk-tag;
   @include fiu-typography-common;
   font-weight: $fiu-font-weight-bold;
-  font-size: 12px;
+  font-size: 11px;
   letter-spacing: 0;
 }
 
@@ -10,10 +10,32 @@
   background: $fiu-citizens-brand-colour;
 }
 
+a.fiu-tag--citizens:hover {
+  background: $fiu-citizens-link-hover-colour;
+}
+
 .fiu-tag--employers {
   background: $fiu-employers-brand-colour;
 }
 
+a.fiu-tag--employers:hover {
+  background: $fiu-employers-link-hover-colour;
+}
+
+.fiu-tag--influencers {
+  background: $fiu-influencers-brand-colour;
+}
+
+a.fiu-tag--influencers:hover {
+  background: $fiu-influencers-link-hover-colour;
+}
+
 .fiu-tag--national {
   background: $dark-grey;
+}
+
+a.fiu-tag {
+  &:focus {
+    @include govuk-focused-text;
+  }
 }

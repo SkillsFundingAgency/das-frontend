@@ -3,23 +3,25 @@
     text-align: center;
     padding-top: 30px;
     padding-bottom: 50px;
-    background-color: $mid-grey;
+    background-color: $white;
+    color: $light-black;
 }
 
 .fiu-promo--citizens {
     background-color: $fiu-citizens-brand-colour;
+    color: $white;
 }
 .fiu-promo--employers {
     background-color: $fiu-employers-brand-colour;
+    color: $white;
 }
 
 .fiu-promo__heading {
-    color: $white;
+    color: inherit;
     margin-bottom: -10px;
 }
 
 .fiu-promo__content {
-    color: $white;
     font-size: 20px;
     line-height: 24px;
     font-weight: $fiu-font-weight-book;
@@ -37,24 +39,6 @@
     }
 }
 
-.fiu-button--inverse {
-    background-color: $white;
+.fiu-promo__button {
     margin-bottom: 0;
-
-    .fiu-promo--citizens & {
-        color: $fiu-citizens-brand-colour;
-        &:hover {
-            color: darken($fiu-citizens-brand-colour, 10%);
-            background-color: $light-grey;
-        }
-    }
-    .fiu-promo--employers & {
-        color: $fiu-employers-brand-colour;
-
-        &:hover {
-            color: darken($fiu-employers-brand-colour, 10%);
-            background-color: $light-grey;
-        }
-    }
-
 }
