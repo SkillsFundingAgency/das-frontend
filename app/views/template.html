@@ -13,8 +13,11 @@
     <link rel="apple-touch-icon" href="/assets/images/govuk-apple-touch-icon.png" />
     <!--[if !IE 8]><!-->
     <link href="/css/main.css" rel="stylesheet" />
+    {% block styles %}
+    {% endblock %}
     <!--<![endif]-->
     <meta property="og:image" content="/assets/images/govuk-opengraph-image.png" />
+
   </head>
   <body class="govuk-template__body {{ bodyClass }}">
     <script>
@@ -78,11 +81,14 @@
     </footer>
     <script src="/libs/govuk-frontend/all.js"></script>
     <script src="/libs/jquery/jquery.min.js"></script>
+    <script src="/libs/accessible-autocomplete/accessible-autocomplete.min.js"></script>
     <script src="/js/das-all.js"></script>
     <script src="/js/app.min.js"></script>
     <script>
       window.GOVUKFrontend.initAll();
       window.DASFrontend.initAll();
     </script>
+    {% block js %}
+    {% endblock %}
   </body>
 </html>
