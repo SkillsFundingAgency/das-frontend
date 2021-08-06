@@ -1,9 +1,8 @@
-
-// Alert banner
-const alert = document.querySelector('[data-fiu-alert]')
-if (alert) {
-  new Alert(alert);
-}
+// Banner
+const banners = document.querySelectorAll('[data-fiu-banner]')
+nodeListForEach(banners, function (banner) {
+  new Banner(banner);
+});
 
 // Mobile navigation
 const nav = document.querySelector('[data-fiu-navigation]')

@@ -1,0 +1,57 @@
+.fiu-banner {
+  @include fiu-typography-common;
+  background: #333;
+  padding: 20px 0 5px;
+  color: #fff;
+  border-bottom: 1px solid rgba(0, 0, 0, .3);
+  &:focus {
+    @include fiu-focused-block;
+  }
+}
+
+.fiu-banner--warning {
+  background: $yellow;
+  color: $black;
+}
+
+.fiu-banner--highlight {
+  background: $blue;
+  color: #fff;
+}
+
+.fiu-banner__heading {
+  @extend .govuk-heading-s;
+  color: inherit;
+  margin-bottom: 0;
+}
+
+.fiu-banner__body {
+  color: inherit !important;
+  margin-top: .4em;
+}
+
+.fiu-banner__body>p>a,
+.fiu-banner__body li>a,
+.fiu-banner__body li>p>a {
+  color: inherit;
+  &:hover {
+    color: inherit;
+  }
+  &:focus {
+    color: $govuk-focus-text-colour;
+  }
+}
+
+.fiu-banner__hide-link {
+  @include fiu-link-common;
+  color: #fff;
+  margin-bottom: 20px;
+  float: right;
+  display: inline-block;
+  @include govuk-media-query($from: tablet) {
+    margin-top: 0;
+  }
+  &:focus {
+    @include govuk-focused-text;
+  }
+}

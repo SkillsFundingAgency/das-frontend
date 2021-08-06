@@ -104,6 +104,7 @@ b {
 
 .fiu-article > p:not([class]) {
   @extend .govuk-body;
+  color: inherit;
 }
 
 .fiu-article > p:empty {
@@ -113,6 +114,7 @@ b {
 .fiu-article > ul:not([class]) {
   @extend .govuk-list;
   @extend .govuk-list--bullet;
+  color: inherit;
 }
 
 .fiu-article > ul > li > p,
@@ -123,12 +125,14 @@ b {
 .fiu-article > ol:not([class]) {
   @extend .govuk-list;
   @extend .govuk-list--number;
+  color: inherit;
 }
 
 .fiu-article > blockquote:not([class]) {
   @extend .fiu-quote;
   @extend .fiu-quote__blockquote;
   margin-bottom: 20px !important;
+  color: inherit;
 }
 
 .fiu-article > hr:not([class]) {
