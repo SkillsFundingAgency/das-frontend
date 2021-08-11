@@ -70,7 +70,7 @@
   }
 }
 
-@for $i from 1 through 14 {
+@for $i from 1 through 20 {
   .das-table-cell-width-#{$i * 5} {
     width: $i * 5%;
   }
