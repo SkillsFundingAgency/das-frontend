@@ -65,7 +65,7 @@
   @include fiu-link-common;
 }
 
-.fiu-card__link--citizens {
+.fiu-template--apprentices .fiu-card__link {
   color: $fiu-citizens-link-colour;
   &:hover {
     color: $fiu-citizens-link-hover-colour;
@@ -75,7 +75,7 @@
   }
 }
 
-.fiu-card__link--employers {
+.fiu-template--employers .fiu-card__link {
   color: $fiu-employers-link-colour;
   &:hover {
     color: $fiu-employers-link-hover-colour;
