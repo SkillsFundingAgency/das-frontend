@@ -9,5 +9,10 @@ module.exports = {
       res.render('local/' + req.params.page)
     })
 
+    app.get('/jsontest', function (req, res) {
+      var jsonObj = {amount: '871623', hasEnoughFunding: true}
+      res.json(jsonObj);
+    })
+
   }
 }
