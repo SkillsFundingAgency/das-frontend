@@ -29,6 +29,12 @@
 
 .js-enabled {
   @include govuk-media-query(tablet) {
+    .fiu-tabs__list-item {
+      padding: 5px 10px;
+    }
+    .fiu-tabs__list-item--selected {
+      padding: 9px 9px 11px;
+    }
     .fiu-tabs__panel {
       background: #fff;
     }

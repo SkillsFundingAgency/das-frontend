@@ -30,15 +30,15 @@
   margin-top: .4em;
 }
 
-.fiu-banner__body>p>a,
-.fiu-banner__body li>a,
-.fiu-banner__body li>p>a {
-  color: inherit;
+.fiu-banner__body > p > a,
+.fiu-banner__body li > a,
+.fiu-banner__body li > p > a {
+  color: inherit !important;
   &:hover {
-    color: inherit;
+    color: inherit !important;;
   }
   &:focus {
-    color: $govuk-focus-text-colour;
+    color: $govuk-focus-text-colour !important;
   }
 }
 

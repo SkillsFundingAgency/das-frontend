@@ -56,12 +56,28 @@
 }
 
 // Content coming from CMS
+.fiu-article > h3 > a,
 .fiu-article > p > a,
 .fiu-article li > a,
 .fiu-article li > p > a {
   @extend .fiu-link;
+  font-weight: inherit;
+  .fiu-template--apprentices & {
+    @extend .fiu-link--citizens
+  }
+  .fiu-template--employers & {
+    @extend .fiu-link--employers
+  }
 }
 
 .fiu-article > h2 > a {
   @extend .fiu-button;
+}
+
+.fiu-template--apprentices .fiu-article > h2 > a {
+  @extend .fiu-button--citizens
+}
+
+.fiu-template--employers .fiu-article > h2 > a {
+  @extend .fiu-button--employers
 }
