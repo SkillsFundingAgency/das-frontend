@@ -83,6 +83,10 @@
   margin-bottom: -5px;
 }
 
+span.das-table-cell--highlight {
+  display: inline-block;
+}
+
 .das-table__sort {
   @extend .govuk-link;
   @extend .govuk-link--no-visited-state;
