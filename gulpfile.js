@@ -8,7 +8,7 @@ require('./tasks/gulp/dasJs');
 
 const defaultBuildTasks = gulp.series('das-copy-libs', 'das-copy-images', 'das-compile-sass', 'das-compile-js', 'das-compile-js-components', 'das-compile-js-components-dev');
 const defaultWatchTasks = gulp.parallel('das-watch-sass', 'das-watch-js');
-const fiuBuildTasks = gulp.series('fiu-copy-libs', 'fiu-compile-sass', 'fiu-compile-js', 'fiu-copy-images');
+const fiuBuildTasks = gulp.series('fiu-compile-sass', 'fiu-compile-js', 'fiu-copy-images');
 const fiuWatchTasks = gulp.parallel('fiu-watch-sass', 'fiu-watch-js');
 
 gulp.task('das',  gulp.series(defaultBuildTasks, defaultWatchTasks));

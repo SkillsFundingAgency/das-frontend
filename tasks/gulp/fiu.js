@@ -39,10 +39,3 @@ gulp.task('fiu-copy-images', (done) => {
   gulp.src(paths.src.fiuImages).pipe(gulp.dest(paths.dist.fiuImages));
   done();
 });
-
-gulp.task('fiu-copy-libs', (done) => {
-  gulp.src('./node_modules/plyr/dist/plyr.min.js').pipe(gulp.dest(paths.dist.fiuJs));
-  gulp.src('./node_modules/accessible-autocomplete/dist/accessible-autocomplete.min.js').pipe(rename('_autocomplete.js')).pipe(gulp.dest('./src/fiu/libs'));
-  gulp.src('./node_modules/accessible-autocomplete/src/autocomplete.css').pipe(rename('_autocomplete.scss')).pipe(gulp.dest('./src/fiu/components/fat-search/'));
-  done();
-});
