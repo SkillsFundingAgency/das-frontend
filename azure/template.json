@@ -87,6 +87,9 @@
                     },
                     "enableCors": {
                         "value": "[parameters('enableCors')]"
+                    },
+                    "allowSharedKeyAccess": {
+                        "value": true
                     }
                 }
             },
