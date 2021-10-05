@@ -88,6 +88,9 @@
                     "enableCors": {
                         "value": "[parameters('enableCors')]"
                     },
+                    "allowBlobPublicAccess": {
+                        "value": true
+                    },
                     "allowSharedKeyAccess": {
                         "value": true
                     }
