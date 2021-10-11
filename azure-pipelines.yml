@@ -22,9 +22,10 @@ resources:
     endpoint: "GitHub (SFA)"
 
 pool:
-  name: 'DAS - Continuous Integration'
+  name: 'DAS - Continuous Integration Agents'
   demands: 
   - gulp
+  - LATEST_DOTNET_VERSION -equals 3.1
 
 steps:
 - task: gittools.gitversion-preview.gitversion-task.GitVersion@5
