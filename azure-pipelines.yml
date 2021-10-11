@@ -28,8 +28,7 @@ pool:
   - LATEST_DOTNET_VERSION -equals 3.1
 
 steps:
-- task: gittools.gitversion-preview.gitversion-task.GitVersion@5
-  displayName: GitVersion
+- template: azure-pipelines-templates/build/step/gitversion.yml@das-platform-building-blocks
 
 - task: Npm@1
   displayName: 'npm install'
