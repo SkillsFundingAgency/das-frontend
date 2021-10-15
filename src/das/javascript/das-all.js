@@ -1,4 +1,3 @@
-import Accordion from './components/accordion/accordion'
 import Navigation from './components/navigation/_navigation'
 import CookieBanner from './components/cookieBanner/_cookieBanner'
 import CookieBannerCampaign from './components/cookieBannerCampaign/_cookieBannerCampaign'
@@ -63,11 +62,6 @@ function initAll() {
     JumpToScroll($jumpToScroll);
   }
 
-  var $accordions = document.querySelectorAll('[data-module="accordion"]');
-  nodeListForEach($accordions, function ($accordion) {
-    new Accordion($accordion).init();
-  });
-
   var $smoothScroll = document.querySelectorAll('[data-module="smoothScroll"]')
   nodeListForEach($smoothScroll, function ($smoothScroll) {
     new SmoothScroll($smoothScroll).init();
@@ -113,11 +107,9 @@ export {
   initAll,
   initMaps,
   AlertBanner,
-  Accordion,
   Navigation,
   CookieBanner,
   VideoPlayer,
-  //JumpToScroll,
   GoogleMaps,
   Radios,
   Tabs
