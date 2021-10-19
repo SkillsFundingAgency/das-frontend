@@ -5,6 +5,8 @@
     padding-bottom: 50px;
     background-color: $white;
     color: $light-black;
+    z-index: 0;
+    position: relative;
 }
 
 .fiu-promo--citizens {
@@ -41,4 +43,28 @@
 
 .fiu-promo__button {
     margin-bottom: 0;
+}
+
+.fiu-promo__bg-container {
+    position: relative;
+}
+
+.fiu-promo__bg {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    z-index: -1;
+}
+
+.fiu-promo__bg--logo-montage {
+    background-image: url("/fiu/assets/images/employers/montage.png");
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: contain;
+    height: 140px;
+    top: -30px;
+    @include govuk-media-query(tablet) {
+        top: -130px;
+    }
 }

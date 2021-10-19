@@ -19,6 +19,12 @@
   }
 }
 
+@include govuk-media-query(tablet) {
+  .fiu-flex-row .fiu-panel {
+    margin-bottom: 0;
+  }
+}
+
 .fiu-panel__tag {
   margin-bottom: 2em;
 }
@@ -46,6 +52,9 @@
 .fiu-panel__content--s {
   font-size: 16px;
   line-height: 1.35em;
+  p:last-child {
+    margin-bottom: 0;
+  }
 }
 
 .fiu-panel__label {
@@ -54,14 +63,20 @@
 }
 
 .fiu-panel__logo {
-  height: 100px;
+  height: 50px;
   margin: 0;
   display: flex;
   align-items: center;
 }
 
+@include govuk-media-query(tablet) {
+  .fiu-panel__logo {
+    height: 100px;
+  }
+}
+
 .fiu-panel__logo-img {
-  max-width: 65%;
+  max-width: 90%;
   max-height: 80%;
   margin: 0 auto;
 }
