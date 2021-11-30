@@ -30,7 +30,7 @@
     "gulp-plumber": "^1.2.1",
     "gulp-postcss": "^7.0.1",
     "gulp-rename": "^1.4.0",
-    "gulp-sass": "^4.1.1",
+    "gulp-sass": "^5.0.0",
     "gulp-sass-lint": "^1.4.0",
     "gulp-task-listing": "^1.1.0",
     "gulp-terser": "^1.4.1",
@@ -44,7 +44,8 @@
     "nunjucks": "^3.2.3",
     "rollup-plugin-commonjs": "^9.3.4",
     "rollup-plugin-node-resolve": "^3.4.0",
-    "select2": "^4.0.13"
+    "select2": "^4.0.13",
+    "node-sass": "^6.0.1"
   },
   "bugs": {
     "url": "https://github.com/SkillsFundingAgency/das-frontend/issues"
