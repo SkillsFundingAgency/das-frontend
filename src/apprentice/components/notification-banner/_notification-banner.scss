@@ -1,0 +1,59 @@
+.app-notification-banner {
+    @include govuk-font($size: 19);
+    @include govuk-text-colour;
+    padding: govuk-spacing(4);
+    @include govuk-responsive-margin(6, "bottom");
+    clear: both;
+    border-left: $govuk-border-width-wide solid $govuk-border-colour;
+    font-weight: $govuk-font-weight-bold;
+    background: govuk-colour("light-grey");
+    position: relative;
+
+    &:first-child {
+        margin-top: 0;
+    }
+
+    &:only-child,
+    &:last-child {
+        margin-bottom: 0;
+    }
+}
+
+.app-notification-banner--with-icon {
+    position: relative;
+    padding-left: 65px;
+}
+
+.app-notification-banner--icon-content-wrap {
+    padding-left: 45px;
+}
+
+.app-notification-banner--success {
+    border-left-color: govuk-colour("green");
+}
+
+.app-notification-banner__icon {
+    box-sizing: border-box;
+    display: inline-block;
+    position: absolute;
+    left: 20px;
+    min-width: 35px;
+    min-height: 35px;
+    margin-top: -7px;
+
+    @include govuk-media-query($from: tablet) {
+        margin-top: -5px;
+    }
+
+    border: 3px solid govuk-colour("black");
+    border-radius: 50%;
+    color: govuk-colour("white");
+    font-size: 30px;
+    line-height: 29px;
+    background-position: center;
+    background-size: 20px;
+}
+
+.app-notification-banner--success .app-notification-banner__icon {
+    border-color: govuk-colour("green");
+}

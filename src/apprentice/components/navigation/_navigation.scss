@@ -1,0 +1,146 @@
+.app-navigation {
+    background: govuk-colour("light-grey");
+    border-bottom: 1px solid $govuk-border-colour;
+}
+  
+.app-navigation__toggle {
+    display: none;
+}
+
+.js-enabled .app-navigation__toggle {
+    @include govuk-link-common;
+    @include govuk-link-style-default;
+    text-decoration: none;
+    font-weight: $govuk-font-weight-bold;
+    display: inline-block;
+    position: relative;
+    margin: 5px 5px 5px -5px;
+    padding: 5px 10px 5px 22px;
+    &:visited {
+        color: $govuk-link-colour;
+    }
+    &:focus {
+        @include govuk-focused-text;
+    }
+    @include govuk-media-query(tablet) {
+        margin-left: -5px;
+    }
+    @include govuk-media-query(desktop) {
+        display: none;
+    }
+    &:before {
+        content: "";
+        width: 0;
+        height: 0;
+        position: absolute;
+        left: 5px;
+        top: 8px;
+        border-color: transparent;
+        border-style: solid;
+        border-left-color: currentColor;
+        border-width: 6px 8px;
+    }
+}
+  
+.js-enabled.app-navigation-menu-open .app-navigation__toggle:before {
+    border-color: transparent;
+    border-top-color: currentColor;
+    border-width: 8px 5px 0 5px;
+    top: 11px;
+}
+
+.app-navigation__heading {
+    color: #fff;
+    margin: 15px;
+    @include govuk-media-query(tablet) {
+        margin: 15px 0;
+    }
+    @include govuk-media-query(desktop) {
+        display: none;
+    }
+}
+  
+.app-navigation__nav {
+    @include govuk-media-query(desktop) {
+        margin-left: -5px;
+    }
+}
+  
+.js-enabled .app-navigation__nav {
+    display: none;
+    @include govuk-media-query(desktop) {
+        display: block;
+    }
+}
+  
+.app-navigation-menu-open .app-navigation__nav {
+    display: block;
+}
+
+.js-enabled .app-navigation__nav--homepage,
+.app-navigation__nav--homepage {
+    @include govuk-media-query(desktop) {
+        display: none;
+    }
+}
+
+.app-navigation__list {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+  
+.app-navigation__list-item {
+    border-top: 1px solid #ddd;
+    padding: 10px 12px;
+    @include govuk-media-query(desktop) {
+        display: inline-block;
+        margin-right: 15px;
+        padding: 10px 0;
+        border: none;
+    }
+}
+
+.app-navigation__link {
+    @include govuk-link-common;
+    @include govuk-link-style-default;
+    padding: 2px 5px;
+    font-weight: $govuk-font-weight-bold;
+    display: inline-block;
+}
+
+.app-navigation__link:hover {
+    text-decoration: underline;
+    text-decoration-thickness: 2px;
+}
+
+.app-navigation__link:active,
+.app-navigation__link:focus {
+    @include govuk-focused-text;
+}
+
+.app-navigation__link--selected {
+    &:link,
+    &:active,
+    &:focus,
+    &:visited, 
+    &:hover {
+        color: govuk-colour('black');
+        text-decoration: none;
+        background: none;
+        box-shadow: none;
+        position: relative;
+    }
+    @include govuk-media-query(desktop) {
+        &:after {
+        content: '';
+        position: absolute;
+        height: 4px;
+        bottom: -11px;
+        left: 5px;
+        right: 5px;
+        display: block;
+        background: govuk-colour('blue');
+        }
+    }
+}

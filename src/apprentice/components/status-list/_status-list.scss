@@ -1,0 +1,112 @@
+.app-status-list {
+    counter-reset: number;
+}
+
+.app-status-list__list-item,
+li.app-status-list__list-item {
+    margin-bottom: 15px;
+    counter-increment: number;
+
+    @include govuk-media-query(tablet) {
+        margin-bottom: 25px;
+    }
+}
+
+@mixin app-section-list-style-focused {
+    &:focus {
+        box-shadow: 0 0 $govuk-focus-colour, 0 3px $govuk-focus-text-colour;
+        color: $govuk-focus-text-colour;
+        border-color: $govuk-focus-colour;
+        outline: $govuk-focus-width solid transparent;
+    }
+}
+
+.app-status-list__link {
+    display: flex;
+    border-radius: 10px;
+    text-decoration: none;
+    box-shadow: 0 0 10px 0 rgba(11, 12, 12, 0.2);
+    border: $govuk-border-width-form-element solid #f9f8f8;
+
+    &:link,
+    &:hover,
+    &:active,
+    &:visited {
+        color: $govuk-link-colour;
+    }
+
+    &:hover,
+    &:focus {
+        background: $govuk-focus-colour;
+        color: $govuk-focus-text-colour;
+    }
+
+    @include app-section-list-style-focused;
+
+    &:before {
+        content: counter(number);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+        background: #f9f8f8;
+        color: #505a5f;
+        width: 1.85em;
+        border-radius: 9px 0 0 9px;
+        font-size: 1.5rem;
+
+        @include govuk-media-query(tablet) {
+            font-size: 2.5rem;
+        }
+    }
+}
+
+.app-status-list__link.complete {
+    border-color: govuk-tint(govuk-colour("green"), 80);
+
+    &:before {
+        color: govuk-shade(govuk-colour("green"), 20);
+        background: govuk-tint(govuk-colour("green"), 80);
+    }
+
+    @include app-section-list-style-focused;
+}
+
+.app-status-list__link.incorrect {
+    border-color: govuk-tint(govuk-colour("red"), 80);
+
+    &:before {
+        color: govuk-shade(govuk-colour("red"), 30);
+        background: govuk-tint(govuk-colour("red"), 80);
+    }
+
+    @include app-section-list-style-focused;
+}
+
+.app-status-list__link-content {
+    padding: 15px;
+    width: 100%;
+
+    @include govuk-media-query(tablet) {
+        padding: 25px;
+    }
+}
+
+.app-status-list__link-text {
+    text-decoration: underline;
+    margin: 0;
+
+    @include govuk-media-query(tablet) {
+        float: left;
+    }
+}
+
+.app-status-list__tag {
+    margin-top: 10px;
+
+    @include govuk-media-query(tablet) {
+        float: right;
+        margin-top: 0;
+        margin-left: 15px;
+    }
+}
