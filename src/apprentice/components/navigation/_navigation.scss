@@ -109,6 +109,10 @@
     display: inline-block;
 }
 
+.app-navigation__link:visited {
+    color: $govuk-link-colour;
+}
+
 .app-navigation__link:hover {
     text-decoration: underline;
     text-decoration-thickness: 2px;
