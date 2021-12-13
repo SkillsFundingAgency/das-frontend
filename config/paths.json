@@ -11,7 +11,10 @@
     "fiuJsLibs": "./src/fiu/libs/*.js",
     "fiuJs": "./src/fiu/components/**/*.js",
     "fiuJsInit": "./src/fiu/app.js",
-    "fiuImages": "./src/fiu/assets/images/**/*"
+    "fiuImages": "./src/fiu/assets/images/**/*",
+    "apprenticeSass": "./src/apprentice/**/*.scss",
+    "apprenticeJs": "./src/apprentice/components/**/*.js",
+    "apprenticeJsInit": "./src/apprentice/apprentice.js"
   },
   "dist": {
     "dasCss": "./dist/css/",
@@ -20,6 +23,8 @@
     "dasImages": "./dist/images/",
     "fiuCss": "./dist/fiu/css/",
     "fiuJs": "./dist/fiu/js/",
-    "fiuImages": "./dist/fiu/assets/images/"
+    "fiuImages": "./dist/fiu/assets/images/",
+    "apprenticeCss": "./dist/css/",
+    "apprenticeJs": "./dist/js/"
   }
 }
