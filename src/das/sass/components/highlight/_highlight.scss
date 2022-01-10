@@ -6,8 +6,19 @@
   @include govuk-responsive-margin(4, "bottom");
 }
 
-.das-highlight__link:link {
+.das-highlight__link,
+.das-highlight__link:link,
+.das-highlight__link:hover {
   color: inherit;
+}
+
+.das-highlight__link:hover {
+  text-decoration: none;
+}
+
+.das-highlight__link:focus,
+.das-highlight__link:active {
+  color: $govuk-link-active-colour;
 }
 
 .das-highlight--featured,
