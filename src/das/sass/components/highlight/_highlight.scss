@@ -5,3 +5,16 @@
   @include govuk-responsive-margin(4, "top");
   @include govuk-responsive-margin(4, "bottom");
 }
+
+.das-highlight__link:link {
+  color: inherit;
+}
+
+.das-highlight--featured,
+.das-highlight--information {
+  background: govuk-colour("blue");
+  color: #fff;
+  & * {
+    color: inherit;
+  }
+}
