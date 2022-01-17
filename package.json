@@ -31,7 +31,6 @@
     "gulp-postcss": "^7.0.1",
     "gulp-rename": "^1.4.0",
     "gulp-sass": "^5.0.0",
-    "gulp-sass-lint": "^1.4.0",
     "gulp-task-listing": "^1.1.0",
     "gulp-terser": "^1.4.1",
     "gulp-to-markdown": "^1.0.0",
