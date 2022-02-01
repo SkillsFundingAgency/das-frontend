@@ -20,7 +20,6 @@
   display: block;
   padding: 10px $govuk-gutter-half 8px;
   color: $govuk-link-colour;
-  display: block;
   @include das-focusable;
   @include govuk-media-query($from: tablet) {
     display: inline-block;
@@ -84,10 +83,3 @@
     @include triangle-equilateral(up, 10px, $govuk-link-colour)
   }
 }
-
-
-
-
-
-
-

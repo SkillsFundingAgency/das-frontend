@@ -1,6 +1,3 @@
-
-// Description: Classes to add to .govuk-header to either hide the bottom border or change the colour
-
 .das-header--no-border {
   border: none;
   & > .govuk-header__container {
@@ -13,14 +10,12 @@
   & > .govuk-header__container {
     border-color: $employer;
   }
-
 }
 
 .das-header--provider {
   & > .govuk-header__container {
     border-color: $provider;
   }
-
 }
 
 .das-header--has-user-nav {
@@ -31,23 +26,16 @@
   }
 }
 
-
-// Make the new header look like the legacy provider header
-
 .das-header--provider-legacy {
-
   border-bottom: 10px solid #6f777b;
-
   .govuk-header__logo {
     display: none;
   }
-
   .govuk-header__content {
     @include govuk-media-query($from: tablet) {
       padding-left: 0;
     }
   }
-
   .govuk-header__link--service-name {
     font-size: 24px;
     margin: 15px 0 25px;
@@ -56,5 +44,4 @@
       margin: 12px 0 21px;
     }
   }
-
 }
