@@ -1,5 +1,3 @@
-// Description: User specific links in the header. 'Help', 'Settings' etc
-
 .das-user-navigation {
   margin: 0 $govuk-gutter-half * -1;
   @include govuk-media-query($from: tablet) {
