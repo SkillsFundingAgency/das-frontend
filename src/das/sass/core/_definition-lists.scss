@@ -1,4 +1,3 @@
-
 .das-definition-list {
   @include govuk-font($size: 19);
   @include govuk-text-colour;
@@ -29,10 +28,6 @@
   }
 }
 
-
-// An inline definition list used to show meta information
-// Smaller font size, the DT has a normal font weight and lighter in colour
-
 .das-definition-list--meta {
   overflow: hidden;
   @include govuk-font($size: 16);
@@ -50,7 +45,6 @@
     float: left;
   }
 }
-
 
 .das-definition-list--table {
   @include govuk-media-query($from: tablet) {
@@ -88,8 +82,6 @@
   }
 }
 
-
-
 .das-definition-list__title--spacer {
   @include govuk-media-query($from: tablet) {
     margin-bottom: 10px;
@@ -104,14 +96,11 @@
   border-bottom: 1px solid $govuk-border-colour;
 }
 
-
-dl.das-inline-def-list {//Description: definition lists - brings the DT and DD inline
+dl.das-inline-def-list {
   margin: 0;
   @include govuk-font($size: 19);
   @include govuk-text-colour;
-
   dt {
-
     font-weight: bold;
     display: inline;
     padding-right: govuk-spacing(1);
@@ -129,6 +118,5 @@ dl.das-inline-def-list {//Description: definition lists - brings the DT and DD i
     display: inline;
     margin: 0;
     padding-right: govuk-spacing(2);
-    //& + dd {display: inline-block; }
   }
 }

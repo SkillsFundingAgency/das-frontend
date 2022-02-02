@@ -1,10 +1,8 @@
-
 .das-inline-list {
   @include govuk-font($size: 19);
   list-style: none;
   padding: 0;
   margin: 0;
-
   & > li {
     display: inline-block;
   }
@@ -34,8 +32,7 @@
   }
 }
 
-
-.das-govuk-list-forms {//Description: search results list featuring forms (btn as link) in ea LI
+.das-govuk-list-forms {
   li {
     border-bottom: 1px solid govuk-colour('mid-grey');
     padding: govuk-spacing(3) govuk-spacing(4) govuk-spacing(4) govuk-spacing(4);
@@ -76,13 +73,6 @@
   }
 }
 
-
-// Icon list - used to show ticks and crosses for training providers on FAT
-
-.das-icon-list {
-
-}
-
 .das-icon-list__list-item {
   position: relative;
   padding-left: 1.35em;
@@ -109,8 +99,6 @@
   width: 1em;
 }
 
-// Icon list large option
-
 .das-icon-list--large {
   line-height: 1.6em;
 }
@@ -127,4 +115,3 @@
 .das-icon-list--large .das-icon-list__icon--tick {
   width: 1.2em;
 }
-
