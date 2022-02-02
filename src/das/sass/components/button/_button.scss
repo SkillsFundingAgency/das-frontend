@@ -106,22 +106,22 @@
 }
 
 .das-button--outline {
-  border-color: $cookie;
-  color: $cookie;
+  border-color: govuk-colour("green");
+  color: govuk-colour("green");
   background-color: #fff;
-  box-shadow: 0 2px 0 $cookie;
+  box-shadow: 0 2px 0 govuk-colour("green");
 
   &,
   &:link,
   &:visited,
   &:active,
   &:hover {
-    color: $cookie;
+    color: govuk-colour("green");
   }
 
   &:hover,
   &:focus {
     background: govuk-colour('light-grey');
-    color: $cookie;
+    color: govuk-colour("green");
   }
 }
