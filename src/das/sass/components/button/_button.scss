@@ -87,24 +87,6 @@
   display: inline;
 }
 
-.das-button--inverted {
-  background-color: #fff;
-  box-shadow: 0 2px 0 darken(govuk-colour("blue"), 20%);
-
-  &,
-  &:link,
-  &:visited,
-  &:active,
-  &:hover {
-    color: govuk-colour("blue");
-  }
-
-  &:hover,
-  &:focus {
-    background-color: #e6eff6;
-  }
-}
-
 .das-button--outline {
   border-color: govuk-colour("green");
   color: govuk-colour("green");
