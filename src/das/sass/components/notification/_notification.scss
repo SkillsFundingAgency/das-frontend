@@ -1,0 +1,46 @@
+.das-notification  {
+  @include govuk-text-colour;
+  @include govuk-responsive-padding(4);
+  @include govuk-responsive-margin(8, "bottom");
+  @include das-focusable;
+  border: 3px solid govuk-colour("purple");
+  @include govuk-media-query($from: tablet) {
+    border-width: $govuk-border-width;
+  }
+}
+
+.das-notification__heading {
+  @include govuk-text-colour;
+  @include govuk-font($size: 24, $weight: bold);
+  margin: 0;
+}
+
+.das-notification__body {
+  @include govuk-text-colour;
+  @include govuk-font($size: 19);
+  margin-top: 0;
+  @include govuk-responsive-margin(2, "bottom");
+}
+
+.das-notification__heading + .das-notification__body {
+  margin-top: 10px;
+}
+
+.das-notification__body:last-child {
+  margin-bottom: 0;
+  @include govuk-media-query($from: tablet) {
+    margin-bottom: -2px;
+  }
+}
+
+.das-notification--success {
+  border-color: govuk-colour("turquoise");
+}
+
+.das-notification--warning {
+  border-color: govuk-colour("orange");
+}
+
+.das-notification--information {
+  border-color: govuk-colour("blue");
+}

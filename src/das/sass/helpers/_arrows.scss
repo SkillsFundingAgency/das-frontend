@@ -1,5 +1,3 @@
-
-
 @mixin triangle-equilateral ($direction: down, $size: 20px, $colour: #000) {
   $secondWidth: $size / 1.732;
   border-color: transparent;
