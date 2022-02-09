@@ -1,0 +1,32 @@
+.das-show {
+  display: block;
+}
+
+.das-hide,
+.das-hidden {
+  display: none;
+}
+
+// Hide an element if JS is enabled
+.js-enabled {
+  .das-js-hide,
+  .js-hidden {
+    display: none;
+  }
+}
+
+// Show an element if JS is enabled
+.das-js-show {
+  display: none;
+  .js-enabled & {
+    display: block;
+  }
+}
+
+// Show an element (inline) if JS is enabled
+.das-js-show--inline {
+  display: none;
+  .js-enabled & {
+    display: inline;
+  }
+}
