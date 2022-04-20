@@ -3,7 +3,8 @@ $govuk-assets-path: "../assets/";
 $govuk-fonts-path: "../assets/fonts/";
 
 // GDS Design System
-@import "all";
+$govuk-new-link-styles: true;
+@import "govuk/all";
 
 // Autocomplete
 @import "libs/_autocomplete";
