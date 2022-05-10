@@ -3,20 +3,49 @@
   @include govuk-width-container;
 }
 
+.das-nav--employer { display: none }
+.das-nav--provider { display: block }
+
 .das-nav__list {
   list-style: none;
   padding: 0;
   margin: 0;
+  @include govuk-clearfix;
+  @include govuk-media-query ($from: tablet) {
+    margin: 0 (-$govuk-gutter-half);
+  }
 }
 
 .das-nav__list-item {
   border-bottom: 1px solid $govuk-border-colour;
-  padding-top: govuk-spacing(2);
-  padding-bottom: govuk-spacing(2);
+  @include govuk-media-query ($from: tablet) {
+    border: none;
+    float: left;
+  }
 }
 
 .das-nav__link {
-  @include govuk-link-common;
+  display: block;
+  text-decoration: none;
+  padding: 10px 0;
   @include govuk-link-style-default;
-  @include govuk-link-print-friendly;
+  @include govuk-media-query ($from: tablet) {
+    padding: 10px 15px;
+  }
+}
+
+.das-nav__link:visited {
+  color: $govuk-link-colour;
+}
+
+.das-nav__link:focus {
+  outline: none;
+}
+
+.das-nav__link-text {
+  @include govuk-link-common;
+}
+
+.das-nav__link:focus .das-nav__link-text {
+  @include govuk-focused-text;
 }
