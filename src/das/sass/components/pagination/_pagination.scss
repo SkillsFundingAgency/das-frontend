@@ -1,9 +1,4 @@
-@mixin arrow-right($color) {
-  background-image: url('data:image/svg+xml;utf8,<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" fill="' + $color + '" viewBox="0 0 25 40" xml:space="preserve"><path class="das-pagination__arrow" d="M0,4.3L16.2,20L0,35.8L4.4,40L25,20L4.5,0L0,4.3z"/></svg>');
-}
-@mixin arrow-left($color) {
-  background-image: url('data:image/svg+xml;utf8,<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="display: block; transform: scale(-1,1)"  x="0px" y="0px" fill="' + $color + '" viewBox="0 0 25 40" xml:space="preserve"><path class="das-pagination__arrow" d="M0,4.3L16.2,20L0,35.8L4.4,40L25,20L4.5,0L0,4.3z"/></svg>');
-}
+// Pagination
 
 .das-pagination {
   @include govuk-font($size: 19);
@@ -50,4 +45,41 @@
     float: right;
     padding: 15px 0;
   }
+}
+
+
+// Pagination simple - just previous and next links
+
+.das-pagination-simple {
+  @include govuk-font($size: 19);
+  margin: 20px 0;
+}
+
+.das-pagination-simple__list {
+  list-style: none;
+  padding: 0;
+  margin: 0 -10px;
+  @include govuk-clearfix
+}
+
+.das-pagination-simple__list-item {
+  float: left;
+  width: 50%;
+}
+
+.das-pagination-simple__list-item--next {
+  text-align: right;
+}
+
+.das-pagination-simple__link {
+  @include govuk-link-common;
+  @include govuk-link-style-no-visited-state;
+  display: block;
+  padding: 5px 10px;
+}
+
+.das-pagination-simple__link-text {
+  display: block;
+  font-weight: 700;
+  margin-bottom: 3px;
 }
