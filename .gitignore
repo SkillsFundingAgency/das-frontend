@@ -264,7 +264,6 @@ paket-files/
 .fake/
 
 # JetBrains Rider
-.idea/
 *.sln.iml
 
 # CodeRush
@@ -288,7 +287,5 @@ __pycache__/
 *.xsd.cs
 .DS_Store
 /dist
-/dist-old
-/src-old
-/app/views/campaign/local
 /app/views/local
+/.idea

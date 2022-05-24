@@ -1,0 +1,8 @@
+- name: Bingo boxes
+  slug: bingo-boxes
+
+- name: Cards
+  slug: cards
+
+- name: Task list
+  slug: task-list
