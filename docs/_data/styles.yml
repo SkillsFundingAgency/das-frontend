@@ -6,3 +6,6 @@
 
 - name: Text
   slug: text
+
+- name: Utilities
+  slug: utilities
