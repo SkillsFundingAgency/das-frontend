@@ -26,7 +26,7 @@
     "html5shiv": "^3.7.3",
     "jquery": "^3.6.0",
     "jquery-ui-dist": "^1.12.1",
-    "jquery-validation": "^1.19.3",
+    "jquery-validation": "^1.19.4",
     "jquery-validation-unobtrusive": "^3.2.12",
     "jquery.are-you-sure": "^1.9.0",
     "nunjucks": "^3.2.3",
