@@ -18,7 +18,7 @@ gulp.task('das-compile-js', function() {
       configPaths.src.dasJs,
       configPaths.src.dasJsApp
   ]).pipe(concat('app.min.js'))
-    .pipe(terser({ module: true }))
+    //.pipe(terser({ module: true }))
     .pipe(gulp.dest(configPaths.dist.dasJs));
 });
 
