@@ -39,3 +39,6 @@
 
 - name: Tag
   slug: tag
+
+- name: Time line
+  slug: time-line
