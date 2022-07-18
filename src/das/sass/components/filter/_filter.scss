@@ -5,6 +5,8 @@
 .das-filter__header {
   border: 1px solid $govuk-border-colour;
   padding: 10px 20px;
+  width: 100%;
+  box-sizing: border-box;
 }
 
 .das-filter__heading {
