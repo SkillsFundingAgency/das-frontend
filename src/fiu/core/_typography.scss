@@ -133,6 +133,9 @@ b {
   @extend .fiu-quote__blockquote;
   margin-bottom: 20px !important;
   color: inherit;
+  strong {
+    font-weight: 400;
+  }
 }
 
 .fiu-article > hr:not([class]) {
