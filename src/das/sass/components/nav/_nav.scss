@@ -49,3 +49,32 @@
 .das-nav__link:focus .das-nav__link-text {
   @include govuk-focused-text;
 }
+
+
+
+
+.js-enabled {
+
+  .das-nav__list {
+    margin: 0 (-$govuk-gutter-half);
+  }
+
+  .das-nav__list-item {
+    float: left;
+    border: none;
+    &.ok {
+      background: lime;
+    }
+    &.no {
+      background: hotpink;
+    }
+  }
+
+  .das-nav__link {
+    padding: 10px 15px;
+  }
+
+}
+
+
+

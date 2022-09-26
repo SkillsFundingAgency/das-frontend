@@ -4,14 +4,6 @@ import Radios from './components/gds-v2/radios/radios'
 import Tabs from './components/gds-v2/tabs/tabs'
 import ShowHide from './components/showHide/_showHide'
 
-function nodeListForEach(nodes, callback) {
-  if (window.NodeList.prototype.forEach) {
-    return nodes.forEach(callback)
-  }
-  for (var i = 0; i < nodes.length; i++) {
-    callback.call(window, nodes[i], i, nodes);
-  }
-}
 
 function initAll() {
 
