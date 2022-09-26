@@ -15,6 +15,11 @@
     <link href="/css/main.css" rel="stylesheet" />
     <!--<![endif]-->
     <meta property="og:image" content="/assets/images/govuk-opengraph-image.png" />
+
+    {% block css %}
+
+    {% endblock %}
+
   </head>
   <body class="govuk-template__body {{ bodyClass }}">
     <script>
@@ -84,5 +89,8 @@
       window.GOVUKFrontend.initAll();
       window.DASFrontend.initAll();
     </script>
+    {% block js %}
+
+  {% endblock %}
   </body>
 </html>
