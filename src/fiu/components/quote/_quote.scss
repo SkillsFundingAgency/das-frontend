@@ -10,19 +10,25 @@
 
 .fiu-quote__blockquote {
   @extend .govuk-body;
+  color: inherit;
   margin: 0;
 }
 
 .fiu-quote__caption {
   margin-top: 20px;
+  margin-bottom: 0;
   @extend .govuk-body;
-  font-weight: $fiu-font-weight-bold;
+  color: inherit;
+  font-weight: $fiu-font-weight-regular;
 }
 
 .fiu-quote__caption-description {
   font-weight: $fiu-font-weight-book;
   display: block;
-  text-transform: uppercase;
-  color: $dark-grey;
-  margin-bottom: 40px;
+  color: inherit;
+}
+
+.fiu-quote--employer {
+  color: $fiu-employers-brand-colour;
+  border-left-color: $fiu-employers-brand-colour;
 }
