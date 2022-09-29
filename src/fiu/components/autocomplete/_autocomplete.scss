@@ -130,10 +130,6 @@
   .autocomplete__option--focused,
   .autocomplete__option:hover {
     forced-color-adjust: none; /* prevent backplate from obscuring text */
-    background-color: Highlight;
-    border-color: Highlight;
-    color: HighlightText;
-
     /* Prefer SelectedItem / SelectedItemText in browsers that support it */
     background-color: SelectedItem;
     border-color: SelectedItem;
