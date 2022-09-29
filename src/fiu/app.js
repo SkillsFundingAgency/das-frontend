@@ -1,3 +1,9 @@
+// Autocomplete
+const autocompleteSelects = document.querySelectorAll('[data-fiu-autocomplete]');
+nodeListForEach(autocompleteSelects, function (select) {
+  new Autocomplete(select).init();
+});
+
 // Banner
 const banners = document.querySelectorAll('[data-fiu-banner]')
 nodeListForEach(banners, function (banner) {
@@ -39,3 +45,4 @@ const tabs = document.querySelector('[data-fiu-tabs]');
 if (tabs) {
   new Tabs(tabs).init();
 }
+
