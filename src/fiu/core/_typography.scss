@@ -8,6 +8,7 @@
 .govuk-error-summary__title,
 .govuk-error-message,
 .fiu-font-weight-bold,
+.govuk-panel__title,
 b {
   @include fiu-typography-common;
   font-weight: $fiu-font-weight-bold;

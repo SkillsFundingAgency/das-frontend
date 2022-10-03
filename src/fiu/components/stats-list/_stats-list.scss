@@ -41,3 +41,27 @@
     font-size: 48px;
   }
 }
+
+.fiu-stats-list--panels {
+  margin-top: 20px;
+  @include govuk-media-query(tablet) {
+    display: flex;
+  }
+  .fiu-stats-list__list-item {
+    @include govuk-media-query(tablet) {
+      @include govuk-grid-column(one-half)
+    }
+  }
+  .fiu-stats-list__stat {
+    text-align: left;
+    margin: 0;
+    color: $fiu-employers-brand-colour;
+  }
+}
+
+.fiu-stats-list__panel {
+  display: block;
+  background: govuk-colour("light-grey");
+  padding: 10px;
+  height: 100%;
+}
