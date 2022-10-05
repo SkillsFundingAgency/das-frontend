@@ -1,6 +1,7 @@
 .fiu-template {
   @extend .govuk-template;
   background: $fiu-page-bg-colour;
+  scroll-behavior: smooth;
 }
 
 .fiu-template__body {
