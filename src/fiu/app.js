@@ -46,3 +46,9 @@ if (tabs) {
   new Tabs(tabs).init();
 }
 
+// Print Page
+const printPageLinkContainer = document.querySelector('[data-fiu-print-page-link]');
+if (printPageLinkContainer) {
+  new PrintPageLink(printPageLinkContainer);
+}
+
