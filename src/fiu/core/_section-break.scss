@@ -4,7 +4,7 @@
   border-bottom: 1px solid $fiu-border-colour;
   @include govuk-responsive-margin(2, "top");
   @include govuk-responsive-margin(2, "bottom");
-  @media print {
+  @include govuk-media-query($media-type: print) {
     display: none;
   }
 }
