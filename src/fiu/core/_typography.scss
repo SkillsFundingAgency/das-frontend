@@ -8,6 +8,7 @@
 .govuk-error-summary__title,
 .govuk-error-message,
 .fiu-font-weight-bold,
+.govuk-panel__title,
 b {
   @include fiu-typography-common;
   font-weight: $fiu-font-weight-bold;
@@ -133,6 +134,9 @@ b {
   @extend .fiu-quote__blockquote;
   margin-bottom: 20px !important;
   color: inherit;
+  strong {
+    font-weight: 400;
+  }
 }
 
 .fiu-article > hr:not([class]) {

@@ -3,28 +3,33 @@
   color: $fiu-text-colour;
   margin: 0 0 20px;
   padding-left: 20px;
+  padding-top: 15px;
+  padding-bottom: 15px;
   border-left: 5px solid $fiu-border-colour;
 }
 
 .fiu-quote__blockquote {
   @extend .govuk-body;
-  font-style: italic;
+  color: inherit;
   margin: 0;
-  @include govuk-media-query(tablet) {
-    font-size: 21px
-  }
 }
 
 .fiu-quote__caption {
   margin-top: 20px;
+  margin-bottom: 0;
   @extend .govuk-body;
-  font-weight: $fiu-font-weight-bold;
+  color: inherit;
+  font-weight: $fiu-font-weight-regular;
 }
 
 .fiu-quote__caption-description {
   font-weight: $fiu-font-weight-book;
   display: block;
-  text-transform: uppercase;
-  color: $dark-grey;
-  margin-bottom: 40px;
+  color: inherit;
+}
+
+.fiu-template--employers .fiu-article>blockquote:not([class]),
+.fiu-quote--employer {
+  color: $fiu-employers-brand-colour;
+  border-left-color: $fiu-employers-brand-colour;
 }

@@ -1,0 +1,17 @@
+.fiu-print-page-link {
+  display: inline-block;
+  @media print {
+    display: none;
+  }
+}
+@media print {
+  .fiu-header__nav,
+  .fiu-navigation,
+  .fiu-promo,
+  .fiu-footer,
+  .fiu-panel__image,
+  .govuk-breadcrumbs,
+  .fiu-hide-print {
+    display: none;
+  }
+}

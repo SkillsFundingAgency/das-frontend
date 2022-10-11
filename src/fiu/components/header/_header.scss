@@ -4,6 +4,10 @@
   padding: 0;
   margin: 0;
   text-align: center;
+  @media print {
+    text-align: left;
+    margin-top: 50px;
+  }
 }
 
 .fiu-header__apprenticeship-logo-link {

@@ -1,6 +1,7 @@
 .fiu-template {
   @extend .govuk-template;
   background: $fiu-page-bg-colour;
+  scroll-behavior: smooth;
 }
 
 .fiu-template__body {
@@ -39,10 +40,16 @@
   height: 50px;
   display: block;
   margin-bottom: 30px;
+  @media print {
+    display: none;
+  }
 }
 
 .fiu-header-content-spacer--grey {
   background: url("../assets/images/design/step-gradient-bg-grey.png") repeat-x;
   height: 50px;
   display: block;
+  @media print {
+    display: none;
+  }
 }

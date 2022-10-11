@@ -1,0 +1,8 @@
+.fiu-confirmation {
+  @extend .govuk-panel
+}
+
+.fiu-confirmation--employers {
+  background: $fiu-employers-brand-colour;
+  color: #fff;
+}

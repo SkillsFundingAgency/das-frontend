@@ -1,0 +1,67 @@
+.fiu-stats-list {
+  @include fiu-typography-common;
+  list-style: none;
+  padding: 0;
+  margin: 20px 0;
+  @include govuk-media-query(tablet) {
+    @include govuk-clearfix;
+    margin-right: - ($govuk-gutter-half);
+    margin-left: - ($govuk-gutter-half);
+    margin-top: 30px;
+  }
+}
+
+.fiu-stats-list__list-item {
+  margin-bottom: 15px;
+  @include govuk-media-query(tablet) {
+    @include govuk-grid-column(one-third)
+    font-size: 18px;
+  }
+}
+
+.fiu-stats-list__stat {
+  font-weight: $fiu-font-weight-bold;
+  .fiu-stats-list--citizens & {
+    color: $fiu-citizens-brand-colour;
+  }
+  .fiu-stats-list--employers & {
+    color: $fiu-employers-brand-colour;
+  }
+  .fiu-stats-list--influencers & {
+    color: $fiu-influencers-brand-colour;
+  }
+
+  @include govuk-media-query(tablet) {
+    display: block;
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 15px;
+  }
+  @include govuk-media-query(desktop) {
+    font-size: 48px;
+  }
+}
+
+.fiu-stats-list--panels {
+  margin-top: 20px;
+  @include govuk-media-query(tablet) {
+    display: flex;
+  }
+  .fiu-stats-list__list-item {
+    @include govuk-media-query(tablet) {
+      @include govuk-grid-column(one-half)
+    }
+  }
+  .fiu-stats-list__stat {
+    text-align: left;
+    margin: 0;
+    color: $fiu-employers-brand-colour;
+  }
+}
+
+.fiu-stats-list__panel {
+  display: block;
+  background: govuk-colour("light-grey");
+  padding: 10px;
+  height: 100%;
+}
