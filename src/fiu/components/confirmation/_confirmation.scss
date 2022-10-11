@@ -6,3 +6,22 @@
   background: $fiu-employers-brand-colour;
   color: #fff;
 }
+
+@include govuk-media-query($media-type: print) {
+  .fiu-confirmation {
+    color: black;
+    background: white;
+    text-align: left;
+    padding: 20px 0;
+    border: none;
+    margin-bottom: 0;
+    .govuk-panel__title {
+      font-size: 32px;
+    }
+  }
+
+  .fiu-confirmation--employers {
+    color: black;
+    background: white;
+  }
+}
