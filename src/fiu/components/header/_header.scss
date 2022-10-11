@@ -4,7 +4,7 @@
   padding: 0;
   margin: 0;
   text-align: center;
-  @media print {
+  @include govuk-media-query($media-type: print) {
     text-align: left;
     margin-top: 50px;
   }

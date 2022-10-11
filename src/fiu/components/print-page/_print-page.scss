@@ -1,10 +1,10 @@
 .fiu-print-page-link {
   display: inline-block;
-  @media print {
+  @include govuk-media-query($media-type: print) {
     display: none;
   }
 }
-@media print {
+@include govuk-media-query($media-type: print) {
   .fiu-header__nav,
   .fiu-navigation,
   .fiu-promo,
