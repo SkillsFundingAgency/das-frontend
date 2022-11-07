@@ -9,12 +9,19 @@
     margin-left: - ($govuk-gutter-half);
     margin-top: 30px;
   }
+  @include govuk-media-query($media-type: print) {
+    margin-right: - ($govuk-gutter-half);
+    margin-left: - ($govuk-gutter-half);
+  }
 }
 
 .fiu-stats-list__list-item {
   margin-bottom: 15px;
   @include govuk-media-query(tablet) {
-    @include govuk-grid-column(one-third)
+    @include govuk-grid-column(one-third);
+    font-size: 18px;
+  }
+  @include govuk-media-query($media-type: print) {
     font-size: 18px;
   }
 }
@@ -40,6 +47,9 @@
   @include govuk-media-query(desktop) {
     font-size: 48px;
   }
+  @include govuk-media-query($media-type: print) {
+    font-size: 48px;
+  }
 }
 
 .fiu-stats-list--panels {
@@ -51,11 +61,22 @@
     @include govuk-media-query(tablet) {
       @include govuk-grid-column(one-half)
     }
+    @include govuk-media-query($media-type: print) {
+      @include govuk-grid-column(one-half)
+    }
   }
   .fiu-stats-list__stat {
     text-align: left;
     margin: 0;
     color: $fiu-employers-brand-colour;
+    @include govuk-media-query($media-type: print) {
+      display: block;
+      color: black;
+      margin-bottom: 5px;
+    }
+  }
+  @include govuk-media-query($media-type: print) {
+    display: flex;
   }
 }
 
@@ -64,4 +85,10 @@
   background: govuk-colour("light-grey");
   padding: 10px;
   height: 100%;
+  @include govuk-media-query($media-type: print) {
+    min-height: 100px;
+    border: 1px solid #ccc;
+    border-left: 10px solid #ccc;
+    padding: 20px;
+  }
 }

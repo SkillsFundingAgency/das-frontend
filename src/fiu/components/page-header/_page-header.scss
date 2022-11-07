@@ -84,8 +84,11 @@
     @include govuk-media-query($media-type: print) {
         color: black;
         transform: rotate(6deg) skewX(6deg);
-        text-transform: capitalize;
+        text-transform: lowercase;
         letter-spacing: 0;
+        &:first-letter {
+            text-transform: uppercase;
+        }
     }
 }
 
@@ -97,6 +100,9 @@
 .fiu-page-header__content-l {
     @extend .govuk-body-l;
     color: inherit;
+    @include govuk-media-query($media-type: print) {
+        display: none;
+    }
 }
 
 .fiu-page-header__hm-logo {
@@ -112,6 +118,9 @@
 .fiu-page-header__sub-heading {
     color: $white;
     position: relative;
+    @include govuk-media-query($media-type: print) {
+        display: none;
+    }
 }
 
 .fiu-page-header__image-wrap {

@@ -17,6 +17,11 @@
   @include govuk-media-query($from: desktop) {
     padding: 30px;
   }
+  @include govuk-media-query($media-type: print) {
+    padding: 0;
+    border: none;
+    text-align: left;
+  }
 }
 
 @include govuk-media-query(tablet) {
