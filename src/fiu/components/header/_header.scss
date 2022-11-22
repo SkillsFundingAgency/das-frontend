@@ -102,3 +102,32 @@
   @include arrow($fiu-influencers-brand-colour);
 }
 
+
+
+
+.fiu-header-grad {
+  height: 50px;
+  display: block;
+  margin-bottom: -50px;
+  content: "";
+  background-image: url(../assets/images/design/step-gradient-bg-black.png);
+  background-repeat: repeat-x;
+  background-position: bottom;
+}
+
+.fiu-page-header-wrap {
+  position: relative;
+}
+
+.fiu-header-inner-wrap {
+  position: relative;
+  z-index: 1;
+}
+
+.fiu-header-background-inner-wrap {
+  position: absolute;
+  z-index: 0;
+  top: 0;
+  bottom: 0;
+  right: 0;
+}

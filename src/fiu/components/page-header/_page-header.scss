@@ -201,6 +201,7 @@
 .fiu-page-header__background-image {
     z-index: 1;
     max-width: 100%;
+    max-height: 100%;
     display: block;
     @include govuk-media-query($media-type: print) {
         display: none;
