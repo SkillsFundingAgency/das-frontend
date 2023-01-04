@@ -33,7 +33,7 @@
     "rollup-plugin-commonjs": "^9.3.4",
     "rollup-plugin-node-resolve": "^3.4.0",
     "select2": "^4.0.13",
-    "node-sass": "^7.0.0"
+    "node-sass": "^7.0.3"
   },
   "bugs": {
     "url": "https://github.com/SkillsFundingAgency/das-frontend/issues"
