@@ -259,3 +259,71 @@
     display: none;
   }
 }
+
+:root {
+  --number-size: 30px;
+  @include govuk-media-query($fiu-large-desktop-breakpoint) {
+    --number-size: 60px;
+  }
+}
+
+.fiu-employer-roadmap {
+  margin: 50px 0 100px;
+}
+
+.fiu-employer-roadmap__list {
+  counter-reset: employer-roadmap;
+  list-style: none;
+  padding: 0;
+  margin-top: 30px;
+  margin-bottom: 50px;
+}
+
+@for $i from 1 through 10 {
+  .fiu-employer-roadmap__list[start="#{$i}"] {
+    counter-reset: employer-roadmap $i ;
+  }
+}
+
+.fiu-employer-roadmap__list-item {
+  counter-increment: employer-roadmap;
+  position: relative;
+  padding-left: calc(var(--number-size) + 15px);
+  &:before {
+    content: counter(employer-roadmap);
+    color: #fff;
+    font-size: calc(var(--number-size) / 2);
+    font-weight: bold;
+    position: absolute;
+    left: 0;
+    line-height: var(--number-size);
+    width: var(--number-size);
+    height: var(--number-size);
+    top: 0;
+    background: $fiu-employers-brand-colour;
+    border-radius: 50%;
+    text-align: center;
+  }
+}
+
+.fiu-employer-roadmap__list > li {
+  margin-bottom: 20px;
+}
+
+.fiu-employer-roadmap__list-item > h3 {
+  margin-bottom: 10px;
+}
+
+.fiu-employer-roadmap__list-item > p {
+  margin: 0 0 10px;
+}
+
+.fiu-employer-roadmap__list-item--1:before { background: #d6d3fb; color: #000; }
+.fiu-employer-roadmap__list-item--2:before { background: #d6d1fb; color: #000;}
+.fiu-employer-roadmap__list-item--3:before { background: #aca7dc; color: #000; }
+.fiu-employer-roadmap__list-item--4:before { background: #ada7dc; color: #000; }
+.fiu-employer-roadmap__list-item--5:before { background: #aba7db; color: #000; }
+.fiu-employer-roadmap__list-item--6:before { background: #6d63c9 }
+.fiu-employer-roadmap__list-item--7:before { background: #5b51c1 }
+.fiu-employer-roadmap__list-item--8:before { background: #484391 }
+.fiu-employer-roadmap__list-item--9:before { background: #40388a }
