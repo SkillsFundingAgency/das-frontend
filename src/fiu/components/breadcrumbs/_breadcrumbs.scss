@@ -1,0 +1,28 @@
+
+.fiu-breadcrumbs {
+  @include fiu-typography-common;
+  background: #000;
+  text-transform: uppercase;
+  font-size: 12px;
+  color: #fff;
+  margin: 0;
+  padding-top: 10px;
+  padding-bottom: 5px;
+  -webkit-font-smoothing: auto;
+  .govuk-breadcrumbs__link {
+    @include fiu-link-common;
+    color: #fff;
+    letter-spacing: .05em;
+    -webkit-font-smoothing: unset;
+    font-size: inherit;
+    margin: 0;
+    text-underline-offset: .2em;
+  }
+}
+
+.govuk-breadcrumbs__list-item:after,
+.govuk-breadcrumbs__list-item:before,
+.govuk-back-link:before,
+.govuk-back-link:after {
+  border-color: $mid-grey;
+}
