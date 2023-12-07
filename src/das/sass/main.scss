@@ -1,6 +1,7 @@
 // Override path variables
 $govuk-assets-path: "../assets/";
 $govuk-fonts-path: "../assets/fonts/";
+$govuk-new-link-styles: true;
 
 // GDS Design System
 @import "all";
