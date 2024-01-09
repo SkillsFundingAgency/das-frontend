@@ -8,10 +8,6 @@
   @extend .govuk-panel__title;
 }
 
-.das-panel__body {
-  @extend .govuk-panel__body;
-}
-
 .das-panel--featured {
   background: govuk-colour("blue");
   color: #fff;
