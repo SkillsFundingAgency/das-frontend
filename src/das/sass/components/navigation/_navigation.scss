@@ -17,10 +17,10 @@
 }
 
 .das-navigation__link {
+  @include govuk-link-common;
   display: block;
   padding: 10px $govuk-gutter-half 8px;
   color: $govuk-link-colour;
-  @include das-focusable;
   @include govuk-media-query($from: tablet) {
     display: inline-block;
   }
@@ -50,6 +50,9 @@
       height: 5px;
     }
   }
+  &:focus:after {
+    background: transparent;
+  }
 }
 
 .das-navigation__priority-list {
@@ -68,7 +71,7 @@
   padding: 10px $govuk-gutter-half 8px;
   padding-right: 35px;
   color: $govuk-link-colour;
-  @include das-focusable;
+  @include govuk-link-common;
   position: absolute;
   top: 0;
   right: 0;
@@ -76,10 +79,10 @@
     position: absolute;
     right: 15px;
     top: 17px;
-    @include triangle-equilateral(down, 10px, $govuk-link-colour)
+    @include triangle-equilateral(down, 10px, currentColor)
   }
   &.open:after {
     top: 15px;
-    @include triangle-equilateral(up, 10px, $govuk-link-colour)
+    @include triangle-equilateral(up, 10px, currentColor)
   }
 }

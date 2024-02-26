@@ -5,8 +5,8 @@ var totalSpace = 0;
 var breakWidths = [];
 
 var addMenuButton = function () {
-  var priorityLi = $('<li />').addClass('das-navigation__priority-list-item govuk-visually-hidden').attr('id', 'priority-list-menu');
-  var priorityUl = $('<ul />').addClass('das-navigation__priority-list govuk-visually-hidden');
+  var priorityLi = $('<li />').addClass('das-navigation__priority-list-item govuk-visually-hidden').attr('id', 'priority-list-menu').attr('role', 'menuitem');
+  var priorityUl = $('<ul />').addClass('das-navigation__priority-list govuk-visually-hidden').attr('role', 'menu').attr('id', 'priority-list-menu-ul');
   var priorityBut = $('<a />')
     .addClass('das-navigation__priority-button')
     .attr('href', '#')

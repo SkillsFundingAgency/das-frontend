@@ -19,15 +19,15 @@
 }
 
 .das-user-navigation__link {
+  @include govuk-link-common;
   color: #fff;
-  text-decoration: none;
   display: block;
   padding: 10px 15px;
   font-size: 16px;
+  font-weight: $govuk-font-weight-bold;
   border: 1px solid transparent;
-  @include das-focusable;
-  &:hover {
-    text-decoration: underline;
+  &:focus {
+    @include govuk-focused-text;
   }
   .das-user-navigation__list-item--has-sub-menu & {
     padding-right: 32px;
@@ -36,7 +36,7 @@
       position: absolute;
       right: 15px;
       top: 17px;
-      @include triangle-equilateral(down, 8px, #fff);
+      @include triangle-equilateral(down, 8px, currentColor);
       .govuk-header & {
         @include govuk-media-query($from: tablet) {
           top: 20px;
@@ -47,7 +47,7 @@
   .das-user-navigation__sub-menu--open & {
     &:after {
       top: 15px;
-      @include triangle-equilateral(up, 8px, $govuk-link-colour);
+      @include triangle-equilateral(up, 8px, currentColor);
       .govuk-header & {
         @include govuk-media-query($from: tablet) {
           top: 18px;
@@ -92,18 +92,13 @@
 }
 
 .das-user-navigation__sub-menu-link {
+  @include govuk-link-common;
   color: #fff;
-  text-decoration: none;
   display: block;
   padding: 8px 15px;
   font-size: 15px;
-  @include das-focusable;
-  &:hover {
-    text-decoration: underline;
-  }
   @include govuk-media-query($from: desktop) {
     color: $govuk-link-colour;
-    text-decoration: underline;
     white-space: nowrap;
     font-size: inherit;
     margin: 0 -15px;
