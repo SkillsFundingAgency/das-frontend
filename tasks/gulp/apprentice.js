@@ -3,7 +3,7 @@ const gulp = require('gulp')
 const babel = require('gulp-babel');
 const concat = require('gulp-concat');
 const terser = require('gulp-terser');
-const sass = require('gulp-sass')(require('node-sass'))
+const sass = require('gulp-sass')(require('sass'))
 const paths = require('../../config/paths.json')
 const sassOptions = require('../../config/sassOptions.js')
 
