@@ -1,10 +1,11 @@
 .fiu-card {
   @include fiu-typography-common;
   background: $white;
-  padding: 20px 20px 40px;
+  padding: 20px;
   margin-bottom: 20px;
   height: 100%;
-  display: block;
+  display: flex;
+  flex-direction: column;
   color: $fiu-text-colour;
   text-decoration: none;
   border: 1px solid $fiu-border-colour;
@@ -12,6 +13,9 @@
   position: relative;
   &:focus {
     @include fiu-focused-block;
+  }
+  @include govuk-media-query($from: tablet) {
+    margin-bottom: 5px;
   }
 }
 
@@ -57,16 +61,12 @@
 }
 
 .fiu-card__content {
-  margin-bottom: 0;
   @extend .govuk-body;
 }
 
 .fiu-card__link {
-  margin-top: 1.5em;
-  display: inline-block;
+  margin-top: auto;
   color: $fiu-global-link-colour;
-  position: absolute;
-  bottom: 20px;
   font-size: 16px;
   @include fiu-link-common;
   @include govuk-media-query($from: tablet) {
