@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FAA maps</title>
+    <script>(g=>{var h,a,k,p="The Google Maps JavaScript API",c="google",l="importLibrary",q="__ib__",m=document,b=window;b=b[c]||(b[c]={});var d=b.maps||(b.maps={}),r=new Set,e=new URLSearchParams,u=()=>h||(h=new Promise(async(f,n)=>{await (a=m.createElement("script"));e.set("libraries",[...r]+"");for(k in g)e.set(k.replace(/[A-Z]/g,t=>"_"+t[0].toLowerCase()),g[k]);e.set("callback",c+".maps."+q);a.src=`https://maps.${c}apis.com/maps/api/js?`+e;d[q]=f;a.onerror=()=>h=n(Error(p+" could not load."));a.nonce=m.querySelector("script[nonce]")?.nonce||"";m.head.append(a)}));d[l]?console.warn(p+" only loads once. Ignoring:",g):d[l]=(f,...n)=>r.add(f)&&u().then(()=>d[l](f,...n))})
+    ({key: "AIzaSyBqX5LFXQ4Kq3Z1vx3tvKigrnr77JqlDHg", v: "weekly"});</script>
+    <link href="/css/main.css" rel="stylesheet" />
+    <style>
+        #map {
+            height: 100%;
+        }
+        html,
+        body {
+            height: 100%;
+            margin: 0;
+            padding: 0;
+        }
+        .number-tag {
+            font-size: 19px;
+            font-weight: bold;
+            font-family: "GDS Transport", Arial, sans-serif;
+        }
+
+        .highlight {
+            color: red;
+            background: blue;
+        }
+
+    </style>
+</head>
+<body>
+    <div id="map"></div>
+    <script>
+        let map;
+
+        async function initMap() {
+            // Request needed libraries.
+            const { Map, InfoWindow } = await google.maps.importLibrary("maps");
+            const { AdvancedMarkerElement, PinElement } = await google.maps.importLibrary(
+                "marker",
+            );
+
+            map = new google.maps.Map(document.getElementById("map"), {
+                center: new google.maps.LatLng(52.400575,-1.507825),
+                zoom: 16,
+                mapId: "DEMO_MAP_ID",
+            });
+
+            const roles = [
+                {
+                    position: new google.maps.LatLng(52.400575,-1.507825),
+                    job: {
+                        title: 'Business Apprenticeship',
+                        company: 'AOF Consulting Ltd',
+                        standard: 'Business analyst (Level 4)',
+                        wage: '£25,000',
+                        closes: '30 October at 11:59pm',
+                        status: ''
+                    }
+                },
+                {
+                    position: new google.maps.LatLng(52.402284,-1.518454),
+                    job: {
+                        title: 'Business Administration Apprentice',
+                        company: 'King recruitment LTD',
+                        standard: 'Business administrator (Level 3)',
+                        wage: '£10,290 to £21,670',
+                        closes: '5 days (14 October at 11:59pm)',
+                        status: 'Closing soon'
+                    }
+                },
+                {
+                    position: new google.maps.LatLng(52.405625,-1.510837),
+                    job: {
+                        title: 'Business Admin Apprentice',
+                        company: 'FIELDS Studios',
+                        standard: 'Business administrator (Level 3)',
+                        wage: '£10,290',
+                        closes: 'Monday 31 July',
+                        status: ''
+                    }
+                },
+                {
+                    position: new google.maps.LatLng(52.402624,-1.507606),
+                    job: {
+                        title: 'Business Support Admin Apprentice',
+                        company: 'ICT Software Limited',
+                        standard: 'Business administrator (Level 3)',
+                        wage: '£12,740.00',
+                        closes: 'Monday 4 December',
+                        status: 'New'
+                    }
+                },
+                {
+                    position: new google.maps.LatLng(52.403065,-1.50706),
+                    job: {
+                        title: 'Apprentice Business Administrator',
+                        company: 'Childcare Point LTD',
+                        standard: 'Business administrator (Level 3)',
+                        wage: '£4,392.96',
+                        closes: 'Wednesday 1 November',
+                        status: ''
+                    }
+                },
+            ];
+
+
+            //
+            // for (let i = 0; i < roles.length; i++) {
+            //     const pinGlyph = new google.maps.marker.PinElement({
+            //         glyph: (i + 1).toString(),
+            //         glyphColor: "white",
+            //     });
+            //     const marker = new google.maps.marker.AdvancedMarkerElement({
+            //         map,
+            //         position: roles[i].position,
+            //         content: pinGlyph.element
+            //     });
+            //     marker.addEventListener('click', () => {
+            //         console.log(123)
+            //     })
+            // }
+
+            const pinGlyphActive = new google.maps.marker.PinElement({
+                glyph: 'number',
+                glyphColor: "#fff",
+                scale: 1.5,
+                background: '#c00',
+                borderColor: '#000'
+            });
+
+            const toggleClass = (marker) => {
+              //  marker.content.classList.add("highlight");
+              //  marker.glyph.classList.add("highlight");
+                marker.content(pinGlyphActive)
+            }
+            const markers = roles.map((role, i) => {
+                const label = `${i + 1}`;
+                const number = document.createElement("span");
+
+                number.className = "number-tag";
+                number.textContent = label;
+
+                const pinGlyph = new google.maps.marker.PinElement({
+                    glyph: number,
+                    glyphColor: "#fff",
+                    scale: 1.5,
+                    background: '#000',
+                    borderColor: '#000'
+                });
+                const marker = new google.maps.marker.AdvancedMarkerElement({
+                    position: role.position,
+                    content: pinGlyph.element,
+                    map
+                });
+
+                marker.addListener("click", () => {
+                    toggleClass(marker)
+                   // console.log(role)
+                });
+
+            });
+        }
+
+        initMap();
+    </script>
+</body>
+</html>

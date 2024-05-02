@@ -3,13 +3,33 @@
   @include fiu-typography-common;
   text-transform: uppercase;
   font-size: 12px;
-  color: $mid-grey;
+  color: $white;
   -webkit-font-smoothing:auto;
   margin: 20px 0 40px;
   &:link,
   &:active,
   &:visited {
-    color: $mid-grey;
+    color: $white;
+  }
+  &:focus {
+    @include govuk-focused-text;
+  }
+}
+
+.fiu-back-link--top {
+  @extend .govuk-back-link;
+  @include fiu-typography-common;
+  text-transform: uppercase;
+  font-size: 15px;
+  color: $black;
+  -webkit-font-smoothing:auto;
+  margin: 0;
+  position: relative;
+  top: -20px;
+  &:link,
+  &:active,
+  &:visited {
+    color: $black;
   }
   &:focus {
     @include govuk-focused-text;
