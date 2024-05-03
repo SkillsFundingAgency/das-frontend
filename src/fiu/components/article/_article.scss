@@ -1,0 +1,20 @@
+.fiu-article {
+  .fiu-template--employers & {
+    background: $white;
+    padding: 20px;
+    border: 1px solid $fiu-border-colour;
+    border-radius: $fiu-border-radius;
+    margin-bottom: 20px;
+    @include govuk-media-query($from: desktop) {
+      padding: 30px;
+    }
+    @include govuk-media-query($media-type: print) {
+      padding: 0;
+      border: none;
+      text-align: left;
+    }
+  }
+  &:empty {
+    display: none;
+  }
+}
