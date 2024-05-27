@@ -21,7 +21,6 @@ if ($('.das-js-back-link')) {
 
 dasJs.forms.init();
 
-
 // Legacy cookie clean up
 
 var currentDomain = window.location.hostname;
@@ -36,5 +35,8 @@ if (currentDomain !== cookieDomain) {
 
 // Delete the MarketingConsent with the domain attribute defined
 window.GOVUK.cookie('MarketingConsent', '',{days: -1})
+
+
+
 
 
