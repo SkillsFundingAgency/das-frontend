@@ -9,7 +9,8 @@ dasJs.userNavigation = {
     this.setupEvents(this.elems.settingsMenu);
   },
   setupMenus: function (menu) {
-    menu.find('ul').attr("aria-expanded", "false");
+    const link = menu.find('li.das-user-navigation__list-item--has-sub-menu > a');
+    link.attr("aria-expanded", "false");
   },
   setupEvents: function (menu) {
     var that = this;
@@ -25,11 +26,15 @@ dasJs.userNavigation = {
     var $li = link.parent();
     if ($li.hasClass("das-user-navigation__sub-menu--open")) {
       $li.removeClass("das-user-navigation__sub-menu--open");
-      subMenu.addClass("js-hidden").attr("aria-expanded", "false");
+      subMenu.addClass("js-hidden")
+      subMenu.attr("hidden", "hidden")
+      link.attr("aria-expanded", "false");
     } else {
       this.closeAllOpenMenus();
       $li.addClass("das-user-navigation__sub-menu--open");
-      subMenu.removeClass("js-hidden").attr("aria-expanded", "true");
+      subMenu.removeClass("js-hidden");
+      subMenu.removeAttr("hidden")
+      link.attr("aria-expanded", "true");
     }
   },
   closeAllOpenMenus: function () {
