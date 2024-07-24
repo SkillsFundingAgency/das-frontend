@@ -6,15 +6,28 @@ var breakWidths = [];
 
 var addMenuButton = function () {
   var priorityLi = $('<li />').addClass('das-navigation__priority-list-item govuk-visually-hidden').attr('id', 'priority-list-menu').attr('role', 'menuitem');
-  var priorityUl = $('<ul />').addClass('das-navigation__priority-list govuk-visually-hidden').attr('role', 'menu').attr('id', 'priority-list-menu-ul');
+  var priorityUl = $('<ul />').addClass('das-navigation__priority-list govuk-visually-hidden').attr('role', 'menu').attr('id', 'priority-list-menu-ul').attr('hidden', 'hidden');
   var priorityBut = $('<a />')
     .addClass('das-navigation__priority-button')
     .attr('href', '#')
+    .attr("aria-expanded", "false")
+    .attr('aria-controls', 'priority-list-menu-ul')
     .text('More')
     .on('click', function(e) {
-      $(menuLinksContainer).toggleClass('govuk-visually-hidden');
-      $(this).toggleClass('open');
       e.preventDefault();
+      if ($(this).hasClass("open")) {
+        // Hide the menu
+        $(this).attr('aria-expanded', 'false');
+        $(this).removeClass('open');
+        $(menuLinksContainer).addClass('govuk-visually-hidden')
+        $(menuLinksContainer).attr('hidden', 'hidden');
+      } else {
+        // Show the menu
+        $(this).attr('aria-expanded', 'true');
+        $(this).addClass('open');
+        $(menuLinksContainer).removeClass('govuk-visually-hidden')
+        $(menuLinksContainer).removeAttr('hidden');
+      }
     });
   priorityLi.append(priorityBut, priorityUl).appendTo($(navLinksContainer).eq(0));
   return priorityUl;

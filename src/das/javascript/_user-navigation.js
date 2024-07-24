@@ -9,8 +9,10 @@ dasJs.userNavigation = {
     this.setupEvents(this.elems.settingsMenu);
   },
   setupMenus: function (menu) {
+    menu.find('.das-user-navigation__sub-menu').attr('id', 'settings-menu');
     const link = menu.find('li.das-user-navigation__list-item--has-sub-menu > a');
     link.attr("aria-expanded", "false");
+    link.attr("aria-controls", "settings-menu");
   },
   setupEvents: function (menu) {
     var that = this;
