@@ -12,7 +12,7 @@
   },
   "author": "Education and Skill Funding Agency developers",
   "dependencies": {
-    "accessible-autocomplete": "^2.0.4",
+    "accessible-autocomplete": "^3.0.0",
     "express": "^4.19.2",
     "govuk-frontend": "^5.3.1",
     "gulp": "^4.0.2",
