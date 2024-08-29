@@ -2,7 +2,7 @@
   "src": {
     "dasSass": "./src/das/sass/**/*.scss",
     "dasJs": "./src/das/javascript/_*.js",
-    "dasJsApp": "./src/das/javascript/application.js",
+    "dasJsApp": "./src/das/javascript/application.js*",
     "dasJsLibPath": "./src/das/javascript/libs/",
     "dasJsComponent": "./src/das/javascript/das-all.js",
     "dasJsComponents": "./src/das/javascript/components/**/*.js",
