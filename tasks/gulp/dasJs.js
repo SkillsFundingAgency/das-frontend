@@ -5,8 +5,6 @@ const rollup = require('gulp-better-rollup')
 const gulpif = require('gulp-if')
 const eol = require('gulp-eol')
 const rename = require('gulp-rename')
-const resolve = require('rollup-plugin-node-resolve')
-const commonjs = require('rollup-plugin-commonjs');
 const terser = require('gulp-terser');
 const concat = require('gulp-concat');
 
@@ -18,7 +16,6 @@ gulp.task('das-compile-js', function() {
       configPaths.src.dasJs,
       configPaths.src.dasJsApp
   ]).pipe(concat('app.min.js'))
-    .pipe(terser({ module: true }))
     .pipe(gulp.dest(configPaths.dist.dasJs));
 });
 
@@ -44,13 +41,12 @@ gulp.task('das-compile-js-components', function () {
   return minifyJs(true);
 });
 
-var minifyJs = function (isDist) {
-  let srcFile = configPaths.src.dasJsComponent
-  let jsDest = configPaths.dist.dasJs
+const minifyJs = (isDist) => {
+    const srcFile = configPaths.src.dasJsComponent
+    const jsDest = configPaths.dist.dasJs
   return gulp.src(srcFile)
     .pipe(rollup({
       name: 'DASFrontend',
-      plugins: [resolve(), commonjs()],
       legacy: true,
       format: 'umd',
     })).on('error', function (e) { console.log(e) })
