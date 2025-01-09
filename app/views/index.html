@@ -1,449 +1,700 @@
-{% extends "template.html" %}
-{% set pageTitle = "Digital Apprenticeship Service" %}
-{% set hideStatusBanner = true %}
-{% set loggedIn = true %}
-
-{% block content %}
+{% extends "template.html" %} {% set pageTitle = "Digital Apprenticeship
+Service" %} {% set hideStatusBanner = true %} {% set loggedIn = true %} {% block
+content %}
 
 <style>
+  /* Extra fields */
 
-    /* Extra fields */
+  .faa-extra-fields__fieldset {
+    margin: 0 0 30px;
+    padding-top: 10px;
+  }
 
-    .faa-extra-fields__fieldset {
-        margin: 0 0 30px;
-        padding-top: 10px;
+  .js-enabled .faa-extra-fields__fieldset {
+    margin-bottom: 10px;
+  }
+
+  .js-enabled .faa-extra-fields__fieldset--all-hidden {
+    padding: 0;
+    margin: 0;
+  }
+
+  .faa-extra-fields__form-group {
+    position: relative;
+    margin-bottom: 20px;
+  }
+
+  .faa-extra-field__form-group-link--add {
+    display: inline-block;
+    font-size: 19px;
+    margin-bottom: 20px;
+  }
+
+  .faa-extra-field__form-group-link--remove {
+    display: inline-block;
+    margin-top: 5px;
+    margin-bottom: -10px;
+  }
+
+  .faa-extra-field__form-group--hidden {
+    display: none;
+  }
+  
+  .app-search-results-header {
+      margin-bottom: 15px;
+  }
+  
+  
+  @media (min-width: 40.0625em) {
+    .app-search-results-header {
+        display: flex;
+        align-items: center;
+        flex-direction: row;
+        justify-content: space-between;
+
     }
-
-    .js-enabled .faa-extra-fields__fieldset {
-        margin-bottom: 10px;
-    }
-
-    .js-enabled .faa-extra-fields__fieldset--all-hidden {
-        padding: 0;
-        margin: 0;
-    }
-
-    .faa-extra-fields__form-group {
-        position: relative;
-        margin-bottom: 20px;
-    }
-
-    .faa-extra-field__form-group-link--add {
-        display: inline-block;
-        font-size: 19px;
-        margin-bottom: 20px;
-    }
-
-    .faa-extra-field__form-group-link--remove {
-        display: inline-block;
-        margin-top: 5px;
-        margin-bottom: -10px;
-    }
-
-    .faa-extra-field__form-group--hidden {
-        display: none;
-    }
-    
+      .app-search-results-header h2 {
+          margin-bottom: 0;
+      }
+      .app-search-results-sort {
+         display: flex;
+          flex-direction: row;
+          align-items: center;
+          gap: 10px;
+      }
+  }
+  
+  
+  
 </style>
 
-<a href="dsds" class="govuk-back-link govuk-!-margin-bottom-9">Back</a>
+
 
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-
-
-
-        <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
-            <div class="govuk-notification-banner__header">
-                <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
-                    Important
-                </h2>
-            </div>
-            <div class="govuk-notification-banner__content">
-                <p class="govuk-notification-banner__heading">
-                    This applicant has applied under the Disability Confident scheme.
-                </p>
-            </div>
-        </div>
-
-        <span class="govuk-caption-xl govuk-!-margin-bottom-0">role</span>
-        <h1 class="govuk-heading-xl govuk-!-margin-bottom-5">name</h1>
-
-        <p>Application ID: 678CFR0</p>
-
-        <h2 class="govuk-heading-m">Personal details</h2>
-
-        <dl class="govuk-summary-list govuk-summary-list--no-border">
-            <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                    Address
-                </dt>
-                <dd class="govuk-summary-list__value">
-                    72 Guild Street<br>London<br>SE23 6FH
-                </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                    Phone number
-                </dt>
-                <dd class="govuk-summary-list__value">
-                    07700 900457
-                </dd>
-            </div>
-            <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                    Email address
-                </dt>
-                <dd class="govuk-summary-list__value">
-                    hello@goodbye.com
-                </dd>
-            </div>
-        </dl>
-
-        <hr class="govuk-section-break govuk-section-break--visible govuk-section-break--l" />
-
-        <h2 class="govuk-heading-m">School, college and university qualifications</h2>
-
-        <!-- Card -->
-        <div class="govuk-summary-card">
-            <div class="govuk-summary-card__title-wrapper">
-                <h3 class="govuk-summary-card__title">
-                    GCSEs
-                </h3>
-            </div>
-            <div class="govuk-summary-card__content">
-                <dl class="govuk-summary-list">
-                    <!-- List item -->
-                    <div class="govuk-summary-list__row">
-                        <dt class="govuk-summary-list__key">
-                            Maths
-                        </dt>
-                        <dd class="govuk-summary-list__value">
-                            B
-                        </dd>
-                    </div>
-                    <!-- List item -->
-                    <div class="govuk-summary-list__row">
-                        <dt class="govuk-summary-list__key">
-                            English
-                        </dt>
-                        <dd class="govuk-summary-list__value">
-                            A
-                        </dd>
-                    </div>
-
-                </dl>
-            </div>
-        </div>
-        <!-- End Card -->
-
-        <hr class="govuk-section-break govuk-section-break--visible govuk-section-break--xl" />
-        <h2 class="govuk-heading-m">Training courses</h2>
-        <!-- Card -->
-        <div class="govuk-summary-card">
-            <div class="govuk-summary-card__title-wrapper">
-                <h3 class="govuk-summary-card__title">
-                    Course name
-                </h3>
-            </div>
-            <div class="govuk-summary-card__content">
-                <dl class="govuk-summary-list">
-                    <!-- List item -->
-                    <div class="govuk-summary-list__row">
-                        <dt class="govuk-summary-list__key">
-                            Year
-                        </dt>
-                        <dd class="govuk-summary-list__value">
-                            2019
-                        </dd>
-                    </div>
-
-                </dl>
-            </div>
-        </div>
-        <!-- End Card -->
-
-
-        <hr class="govuk-section-break govuk-section-break--visible govuk-section-break--xl" />
-        <h2 class="govuk-heading-m">Jobs</h2>
-        <!-- Card -->
-        <div class="govuk-summary-card">
-            <div class="govuk-summary-card__title-wrapper">
-                <h3 class="govuk-summary-card__title">
-                    Job details
-                </h3>
-            </div>
-            <div class="govuk-summary-card__content">
-                <dl class="govuk-summary-list">
-                    <!-- List item -->
-                    <div class="govuk-summary-list__row">
-                        <dt class="govuk-summary-list__key">
-                            Responsibilities
-                        </dt>
-                        <dd class="govuk-summary-list__value">
-                            <p>Thrived in a fast-paced diner environment as a Line Cook, ensuring smooth operations
-                                through meticulous tood oren and organization. Maintained consistent quality by expertly chopping vegetables, adhering
-                                to PIro cFirst-n. First-Out nrotocol bv rotating stock and applying date stickers, and upholding the highest hygiene standards by keeping the kitchen spotless.</p>
-                        </dd>
-                    </div>
-                    <!-- List item -->
-                    <div class="govuk-summary-list__row">
-                        <dt class="govuk-summary-list__key">
-                            Dates
-                        </dt>
-                        <dd class="govuk-summary-list__value">
-                            2019
-                        </dd>
-                    </div>
-
-                </dl>
-            </div>
-        </div>
-        <!-- End Card -->
-
-        <hr class="govuk-section-break govuk-section-break--visible govuk-section-break--xl" />
-        <h2 class="govuk-heading-m">Volunteering and work experience</h2>
-        <p>This applicant didn't add any pieces of volunteering or work experience.</p>
-
-        <hr class="govuk-section-break govuk-section-break--visible govuk-section-break--xl" />
-
-        <h2 class="govuk-heading-m">Application questions</h2>
-        <h3 class="govuk-heading-s govuk-!-margin-bottom-2">What are your skills and strengths?</h3>
-        <p>Answer to the question appears here.</p>
-        <h3 class="govuk-heading-s govuk-!-margin-bottom-2">What are your skills and strengths?</h3>
-        <p>Answer to the question appears here.</p>
-        <h3 class="govuk-heading-s govuk-!-margin-bottom-2">What are your skills and strengths?</h3>
-        <p>Answer to the question appears here.</p>
-
-        <hr class="govuk-section-break govuk-section-break--visible govuk-section-break--xl" />
-
-        <h2 class="govuk-heading-m">Get support at an interview</h2>
-        <dl class="govuk-summary-list govuk-summary-list--no-border">
-            <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                    Do you want to request support at an
-                    interview?
-                </dt>
-                <dd class="govuk-summary-list__value">
-                    No
-                </dd>
-            </div>
-        </dl>
-
-        <hr class="govuk-section-break govuk-section-break--visible govuk-section-break--xl" />
-
+        <partial name="_validationSummary" />
         <div class="govuk-form-group">
-            <fieldset class="govuk-fieldset">
-                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-                    <h2 class="govuk-fieldset__heading">
-                        What do you want to do with this application?
-                    </h2>
-                </legend>
-                <div class="govuk-radios" data-module="govuk-radios">
-                    <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="review" name="applicationOption" type="radio" value="review" aria-describedby="option1-hint">
-                        <label class="govuk-label govuk-radios__label" for="review">
-                            Review
-                        </label>
-                        <div id="option1-hint" class="govuk-hint govuk-radios__hint">
-                            Description
-                        </div>
-                    </div>
-                    <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="interview" name="applicationOption" type="radio" value="review" aria-describedby="option2-hint">
-                        <label class="govuk-label govuk-radios__label" for="interview">
-                            Interview
-                        </label>
-                        <div id="option2-hint" class="govuk-hint govuk-radios__hint">
-                            Description
-                        </div>
-                    </div>
-                    <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="success" name="applicationOption" type="radio" value="review" aria-describedby="option3-hint">
-                        <label class="govuk-label govuk-radios__label" for="success">
-                            Success
-                        </label>
-                        <div id="option3-hint" class="govuk-hint govuk-radios__hint">
-                            Description
-                        </div>
-                    </div>
-                    <div class="govuk-radios__item">
-                        <input class="govuk-radios__input" id="unsuccessful" name="applicationOption" type="radio" value="review" aria-describedby="option4-hint">
-                        <label class="govuk-label govuk-radios__label" for="unsuccessful">
-                            Unsuccessful
-                        </label>
-                        <div id="option4-hint" class="govuk-hint govuk-radios__hint">
-                            Description
+            <h1 class="govuk-heading-l">
+                Create your apprenticeship service account
+            </h1>
+            <p class="govuk-body">
+                You'll need to check the details and permissions @Model.ProviderName added, and read and accept your
+                employer agreement.
+                Once you've done this, select <strong>Create account</strong> to finish creating your apprenticeship
+                service account.
+            </p>
+            <p class="govuk-body">
+                If the employer details or permissions are not correct, select <strong>Do not create account</strong>.
+            </p>
+        </div>
+        <div class="govuk-form-group">
+            <h2 class="govuk-heading-m">
+                Check your details
+            </h2>
+            <p class="govuk-body">
+                Employer details have been checked with HMRC records. Select <strong>Change name</strong> if your name
+                is spelled incorrectly or you want to be known by a different name on the Apprenticeship mservice.
+            </p>
+            <dl class="govuk-summary-list">
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                        Full name
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                        @Model.EmployerContactFirstName @Model.EmployerContactLastName
+                    </dd>
+                    <dd class="govuk-summary-list__actions">
+                        <a class="govuk-link" href="#">Change name</a>
+                    </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                        Employer name
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                        @Model.EmployerOrganisationName
+                    </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                        Employer PAYE reference
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                        @Model.EmployerPAYE
+                    </dd>
+                </div>
+                <div class="govuk-summary-list__row">
+                    <dt class="govuk-summary-list__key">
+                        Accounts office reference
+                    </dt>
+                    <dd class="govuk-summary-list__value">
+                        @Model.EmployerAORN
+                    </dd>
+                </div>
+            </dl>
+        </div>
+        
+        <div class="govuk-form-group">
+            <h2 class="govuk-heading-m">
+                Check training provider and permissions
+            </h2>
+            <p class="govuk-body">
+                Creating your account will add @Model.ProviderName as a training provider.
+            </p>
+            <p class="govuk-body">
+                @Model.ProviderName has selected the following permissions, which allow them to do certain actions on
+                your behalf:
+            <ul class="govuk-list govuk-list--bullet">
+                @foreach (var operation in Model.OperationDescriptions)
+                {
+                <li>@operation</li>
+                }
+            </ul>
+            </p>
+            <p class="govuk-body">
+                They should have confirmed these with you before sending the request to create an account. You'll be
+                able to change their permissions at any time in your account.
+            </p>
+            <details class="govuk-details">
+                <summary class="govuk-details__summary">
+                    <span class="govuk-details__summary-text">
+                        View more detail on permissions and how they work
+                    </span>
+                </summary>
+                <div class="govuk-details__text">
+                    <p class="govuk-body">
+                        Permissions refer to what a training provider can do on your behalf.
+                    </p>
+                    <p class="govuk-body">
+                        There are 2 training provider permissions in the Apprenticeship service:
+                    </p>
+                    <p class="govuk-body">
+                    <ul class="govuk-list govuk-list--bullet">
+                        <li><strong>Add apprentice records</strong> means the training provider can add details about
+                            new apprentices and reserve funding for them if needed. Apprentice records will not be added
+                            to your account until you approve them.</li>
+                        <li><strong>Recruit apprentices</strong> means the training provider can advertise
+                            apprenticeships and review applications.</li>
+                    </ul>
+                    </p>
+                    <p class="govuk-body">
+                        You’ll be emailed when you need to approve any apprentice records or adverts.
+                    </p>
+                    <p class="govuk-body">
+                        You can change training provider permissions at any time from your account.
+                    </p>
+                </div>
+            </details>
+            <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible" />
+            <h2 class="govuk-heading-m">
+                Accept the employer agreement and create your account
+            </h2>
+            <p class="govuk-body">
+                You must read the <a class="govuk-link" href="#">employer agreement between you and the Department of
+                Education</a>
+            </p>
+            
+            <div class="govuk-warning-text">
+                <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+                <strong class="govuk-warning-text__text">
+                    <span class="govuk-visually-hidden">Warning</span>
+                    The agreement is legally binding. If @Model.EmployerOrganisationName breaches the terms, we could
+                    stop them hiring apprentices, claim back funding or close their account.
+                </strong>
+            </div>
+            <form method="post">
+                <input asp-for="EmployerContactFirstName" id="employerContactFirstName" type="hidden" />
+                <input asp-for="EmployerContactLastName" id="employerContactLastName" type="hidden" />
+                <div esfa-validation-marker-for="@Model.HasAcceptedTerms" class="govuk-form-group">
+                    <span asp-validation-for="HasAcceptedTerms" class="govuk-error-message"></span>
+                    
+                    <div class="das-highlight">
+                        <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                            <div class="govuk-checkboxes__item">
+                                <input class="govuk-checkboxes__input" asp-for="HasAcceptedTerms" id="HasAcceptedTerms"
+                                       name="HasAcceptedTerms" type="checkbox" value="true">
+                                <label class="govuk-label govuk-checkboxes__label" for="HasAcceptedTerms">
+                                    By accepting, you confirm @Model.ProviderName agrees to the terms and conditions and
+                                    is entering into a legally binding agreement with the Department for Education
+                                </label>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </fieldset>
+                
+                <div class="govuk-button-group">
+                    <button type="submit" class="govuk-button" data-module="govuk-button">
+                        Create account
+                    </button>
+                    <button type="button" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+                        Do not create an account
+                    </button>
+                </div>
+            </form>
         </div>
-
-        <div class="govuk-button-group">
-            <button class="govuk-button">
-                Continue
-            </button>
-            <a href="url" class="govuk-link govuk-link--no-visited-state">Cancel</a>
-        </div>
-
     </div>
 </div>
 
+
+<a href="dsds" class="govuk-back-link govuk-!-margin-bottom-9">Back</a>
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        
+        <div class="das-highlight">
+            <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+                <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+                    <label class="govuk-label govuk-checkboxes__label" for="waste">
+                        Waste from animal carcasses
+                    </label>
+                </div>
+            </div>
+        </div>
+        
+        
+        <div class="app-search-results-header">
+            <h2 class="govuk-heading-m">@totalCountDescription <span class="govuk-visually-hidden">sorted by name</span></h2>
+            @if (Model.ShowSortOptions)
+            {
+                <form method="get" class="app-search-results-sort">
+                    <label class="govuk-label" asp-for="OrderBy">Sort by</label>
+                    <select class="govuk-select" asp-for="OrderBy" data-module="selectSubmit" asp-items="Model.OrderByOptions"></select>
+                    <button class="govuk-button govuk-button--secondary das-js-hide" type="submit">Sort</button>
+                    <partial name="_HiddenFilters" for="@Model" />
+                </form>
+            }
+        </div>
+    
+<div class="govuk-grid-row" style="display: none">
+    <div class="govuk-grid-column-one-third">
+        <h2 class="govuk-heading-m">6 results</h2>
+    </div>
+    
+
+    <div class="govuk-grid-column-two-thirds das-!-text-align-right--from-tablet">
+        <p class="govuk-body govuk-!-margin-bottom-6  govuk-visually-hidden">
+            Sorted by:
+            <span class="govuk-!-font-weight-bold">Name</span>
+        </p>
+        <form method="get">
+            <label class="govuk-label" asp-for="OrderBy">Sort by</label>
+            <select class="govuk-select" asp-for="OrderBy" data-module="selectSubmit" asp-items="Model.OrderByOptions"></select>
+            <button class="govuk-button govuk-button--secondary das-js-hide" type="submit">Sort</button>
+            <partial name="_HiddenFilters" for="@Model" />
+        </form>
+    </div>
+    
+</div>
+    
+    
+    
+    </div></div>
+
+<div class="govuk-grid-row">
+  
+  <div class="govuk-grid-column-two-thirds">
+    <div class="das-js-back-link"></div>
+
+    <div
+      class="govuk-notification-banner"
+      role="region"
+      aria-labelledby="govuk-notification-banner-title"
+      data-module="govuk-notification-banner">
+      <div class="govuk-notification-banner__header">
+        <h2
+          class="govuk-notification-banner__title"
+          id="govuk-notification-banner-title">
+          Important
+        </h2>
+      </div>
+      <div class="govuk-notification-banner__content">
+        <p class="govuk-notification-banner__heading">
+          This applicant has applied under the Disability Confident scheme.
+        </p>
+      </div>
+    </div>
+
+    <span class="govuk-caption-xl govuk-!-margin-bottom-0">role</span>
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-5">name</h1>
+
+    <p>Application ID: 678CFR0</p>
+
+    <h2 class="govuk-heading-m">Personal details</h2>
+
+    <dl class="govuk-summary-list govuk-summary-list--no-border">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Address</dt>
+        <dd class="govuk-summary-list__value">
+          72 Guild Street<br />London<br />SE23 6FH
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Phone number</dt>
+        <dd class="govuk-summary-list__value">07700 900457</dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Email address</dt>
+        <dd class="govuk-summary-list__value">hello@goodbye.com</dd>
+      </div>
+    </dl>
+
+    <hr
+      class="govuk-section-break govuk-section-break--visible govuk-section-break--l" />
+
+    <h2 class="govuk-heading-m">
+      School, college and university qualifications
+    </h2>
+
+    <!-- Card -->
+    <div class="govuk-summary-card">
+      <div class="govuk-summary-card__title-wrapper">
+        <h3 class="govuk-summary-card__title">GCSEs</h3>
+      </div>
+      <div class="govuk-summary-card__content">
+        <dl class="govuk-summary-list">
+          <!-- List item -->
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Maths</dt>
+            <dd class="govuk-summary-list__value">B</dd>
+          </div>
+          <!-- List item -->
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">English</dt>
+            <dd class="govuk-summary-list__value">A</dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+    <!-- End Card -->
+
+    <hr
+      class="govuk-section-break govuk-section-break--visible govuk-section-break--xl" />
+    <h2 class="govuk-heading-m">Training courses</h2>
+    <!-- Card -->
+    <div class="govuk-summary-card">
+      <div class="govuk-summary-card__title-wrapper">
+        <h3 class="govuk-summary-card__title">Course name</h3>
+      </div>
+      <div class="govuk-summary-card__content">
+        <dl class="govuk-summary-list">
+          <!-- List item -->
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Year</dt>
+            <dd class="govuk-summary-list__value">2019</dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+    <!-- End Card -->
+
+    <hr
+      class="govuk-section-break govuk-section-break--visible govuk-section-break--xl" />
+    <h2 class="govuk-heading-m">Jobs</h2>
+    <!-- Card -->
+    <div class="govuk-summary-card">
+      <div class="govuk-summary-card__title-wrapper">
+        <h3 class="govuk-summary-card__title">Job details</h3>
+      </div>
+      <div class="govuk-summary-card__content">
+        <dl class="govuk-summary-list">
+          <!-- List item -->
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Responsibilities</dt>
+            <dd class="govuk-summary-list__value">
+              <p>
+                Thrived in a fast-paced diner environment as a Line Cook,
+                ensuring smooth operations through meticulous tood oren and
+                organization. Maintained consistent quality by expertly chopping
+                vegetables, adhering to PIro cFirst-n. First-Out nrotocol bv
+                rotating stock and applying date stickers, and upholding the
+                highest hygiene standards by keeping the kitchen spotless.
+              </p>
+            </dd>
+          </div>
+          <!-- List item -->
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">Dates</dt>
+            <dd class="govuk-summary-list__value">2019</dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+    <!-- End Card -->
+
+    <hr
+      class="govuk-section-break govuk-section-break--visible govuk-section-break--xl" />
+    <h2 class="govuk-heading-m">Volunteering and work experience</h2>
+    <p>
+      This applicant didn't add any pieces of volunteering or work experience.
+    </p>
+
+    <hr
+      class="govuk-section-break govuk-section-break--visible govuk-section-break--xl" />
+
+    <h2 class="govuk-heading-m">Application questions</h2>
+    <h3 class="govuk-heading-s govuk-!-margin-bottom-2">
+      What are your skills and strengths?
+    </h3>
+    <p>Answer to the question appears here.</p>
+    <h3 class="govuk-heading-s govuk-!-margin-bottom-2">
+      What are your skills and strengths?
+    </h3>
+    <p>Answer to the question appears here.</p>
+    <h3 class="govuk-heading-s govuk-!-margin-bottom-2">
+      What are your skills and strengths?
+    </h3>
+    <p>Answer to the question appears here.</p>
+
+    <hr
+      class="govuk-section-break govuk-section-break--visible govuk-section-break--xl" />
+
+    <h2 class="govuk-heading-m">Get support at an interview</h2>
+    <dl class="govuk-summary-list govuk-summary-list--no-border">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Do you want to request support at an interview?
+        </dt>
+        <dd class="govuk-summary-list__value">No</dd>
+      </div>
+    </dl>
+
+    <hr
+      class="govuk-section-break govuk-section-break--visible govuk-section-break--xl" />
+
+    <div class="govuk-form-group">
+      <fieldset class="govuk-fieldset">
+        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+          <h2 class="govuk-fieldset__heading">
+            What do you want to do with this application?
+          </h2>
+        </legend>
+        <div class="govuk-radios" data-module="govuk-radios">
+          <div class="govuk-radios__item">
+            <input
+              class="govuk-radios__input"
+              id="review"
+              name="applicationOption"
+              type="radio"
+              value="review"
+              aria-describedby="option1-hint" />
+            <label class="govuk-label govuk-radios__label" for="review">
+              Review
+            </label>
+            <div id="option1-hint" class="govuk-hint govuk-radios__hint">
+              Description
+            </div>
+          </div>
+          <div class="govuk-radios__item">
+            <input
+              class="govuk-radios__input"
+              id="interview"
+              name="applicationOption"
+              type="radio"
+              value="review"
+              aria-describedby="option2-hint" />
+            <label class="govuk-label govuk-radios__label" for="interview">
+              Interview
+            </label>
+            <div id="option2-hint" class="govuk-hint govuk-radios__hint">
+              Description
+            </div>
+          </div>
+          <div class="govuk-radios__item">
+            <input
+              class="govuk-radios__input"
+              id="success"
+              name="applicationOption"
+              type="radio"
+              value="review"
+              aria-describedby="option3-hint" />
+            <label class="govuk-label govuk-radios__label" for="success">
+              Success
+            </label>
+            <div id="option3-hint" class="govuk-hint govuk-radios__hint">
+              Description
+            </div>
+          </div>
+          <div class="govuk-radios__item">
+            <input
+              class="govuk-radios__input"
+              id="unsuccessful"
+              name="applicationOption"
+              type="radio"
+              value="review"
+              aria-describedby="option4-hint" />
+            <label class="govuk-label govuk-radios__label" for="unsuccessful">
+              Unsuccessful
+            </label>
+            <div id="option4-hint" class="govuk-hint govuk-radios__hint">
+              Description
+            </div>
+          </div>
+        </div>
+      </fieldset>
+    </div>
+
+    <div class="govuk-button-group">
+      <button class="govuk-button">Continue</button>
+      <a href="url" class="govuk-link govuk-link--no-visited-state">Cancel</a>
+    </div>
+  </div>
+</div>
+
 <script>
+  // Show/Hide Extra Form Fields
 
+  function ExtraFieldRows(container) {
+    this.container = container;
+    this.fieldset = this.container.querySelector(".faa-extra-fields__fieldset");
+    this.fieldsetHiddenClass = "faa-extra-fields__fieldset--all-hidden";
+    this.extraFieldRows = this.fieldset.querySelectorAll(
+      ".faa-extra-fields__form-group"
+    );
+    this.hiddenClass = "faa-extra-field__form-group--hidden";
+    this.addButtonText = this.container.dataset.addButtonText || "Add another";
+  }
 
-
-    // Show/Hide Extra Form Fields
-
-    function ExtraFieldRows(container) {
-        this.container = container
-        this.fieldset = this.container.querySelector('.faa-extra-fields__fieldset')
-        this.fieldsetHiddenClass = 'faa-extra-fields__fieldset--all-hidden'
-        this.extraFieldRows = this.fieldset.querySelectorAll('.faa-extra-fields__form-group')
-        this.hiddenClass = 'faa-extra-field__form-group--hidden'
-        this.addButtonText = this.container.dataset.addButtonText || 'Add another'
+  ExtraFieldRows.prototype.init = function () {
+    this.insertAddLink();
+    // Append the remove links
+    for (let f = 0; f < this.extraFieldRows.length; f++) {
+      const extraFieldRow = this.extraFieldRows[f];
+      this.appendRemoveLink(extraFieldRow);
     }
 
-    ExtraFieldRows.prototype.init = function () {
-        this.insertAddLink()
-        // Append the remove links
-        for (let f = 0; f < this.extraFieldRows.length; f++) {
-            const extraFieldRow = this.extraFieldRows[f]
-            this.appendRemoveLink(extraFieldRow)
+    // If all rows are hidden, add class to hide the fieldset
+    const hiddenRowCount = this.showHideEmptyRows();
+    if (hiddenRowCount === this.extraFieldRows.length) {
+      this.fieldset.classList.add(this.fieldsetHiddenClass);
+    }
+  };
+
+  ExtraFieldRows.prototype.showHideEmptyRows = function () {
+    let hiddenRowCount = 0;
+    for (let f = 0; f < this.extraFieldRows.length; f++) {
+      const extraFieldRow = this.extraFieldRows[f];
+      const textInput = extraFieldRow.querySelector("input");
+      if (textInput.value === "") {
+        this.hideRow(extraFieldRow);
+        hiddenRowCount++;
+      } else {
+        this.showRow(extraFieldRow, false);
+      }
+    }
+    return hiddenRowCount;
+  };
+
+  ExtraFieldRows.prototype.insertAddLink = function () {
+    const addRowLink = document.createElement("a");
+    addRowLink.innerHTML = this.addButtonText;
+    addRowLink.className =
+      "govuk-button govuk-button--secondary faa-extra-field__form-group-link--add";
+    addRowLink.href = "#";
+    addRowLink.addEventListener("click", this.showFirstAvailableRow.bind(this));
+    this.addLink = addRowLink;
+    this.fieldset.parentNode.insertBefore(
+      this.addLink,
+      this.fieldset.nextSibling
+    );
+  };
+
+  ExtraFieldRows.prototype.appendRemoveLink = function (row) {
+    const that = this;
+    const removeLink = document.createElement("a");
+    removeLink.innerHTML = "Remove";
+    removeLink.className =
+      "govuk-link govuk-link--no-visited-state faa-extra-field__form-group-link--remove";
+    removeLink.href = "#";
+    removeLink.addEventListener("click", function (e) {
+      e.preventDefault();
+      that.addLink.classList.remove(that.hiddenClass);
+      that.hideRow(row);
+      that.updateRowOrder();
+    });
+    row.append(removeLink);
+  };
+
+  ExtraFieldRows.prototype.showFirstAvailableRow = function (e) {
+    let hiddenRowCount = 0;
+    let rowToShow;
+    for (let f = 0; f < this.extraFieldRows.length; f++) {
+      const extraFieldRow = this.extraFieldRows[f];
+      if (extraFieldRow.classList.contains(this.hiddenClass)) {
+        if (hiddenRowCount === 0) {
+          rowToShow = extraFieldRow;
         }
-
-        // If all rows are hidden, add class to hide the fieldset
-        const hiddenRowCount = this.showHideEmptyRows()
-        if (hiddenRowCount === this.extraFieldRows.length) {
-            this.fieldset.classList.add(this.fieldsetHiddenClass)
-        }
+        hiddenRowCount++;
+      }
     }
-
-    ExtraFieldRows.prototype.showHideEmptyRows = function () {
-        let hiddenRowCount = 0
-        for (let f = 0; f < this.extraFieldRows.length; f++) {
-            const extraFieldRow = this.extraFieldRows[f]
-            const textInput = extraFieldRow.querySelector('input')
-            if (textInput.value === '') {
-                this.hideRow(extraFieldRow)
-                hiddenRowCount++;
-            } else {
-                this.showRow(extraFieldRow, false)
-            }
-        }
-        return hiddenRowCount;
+    if (hiddenRowCount === 1) {
+      this.addLink.classList.add(this.hiddenClass);
     }
+    this.showRow(rowToShow, true);
+    e.preventDefault();
+  };
 
-    ExtraFieldRows.prototype.insertAddLink = function () {
-        const addRowLink = document.createElement('a');
-        addRowLink.innerHTML = this.addButtonText
-        addRowLink.className = 'govuk-button govuk-button--secondary faa-extra-field__form-group-link--add'
-        addRowLink.href = '#'
-        addRowLink.addEventListener('click', this.showFirstAvailableRow.bind(this))
-        this.addLink = addRowLink
-        this.fieldset.parentNode.insertBefore(this.addLink, this.fieldset.nextSibling);
+  ExtraFieldRows.prototype.updateRowOrder = function () {
+    const that = this;
+    const answers = [];
+    for (let f = 0; f < that.extraFieldRows.length; f++) {
+      const extraFieldRow = that.extraFieldRows[f];
+      const textValue = extraFieldRow.querySelector("input").value;
+      if (!extraFieldRow.classList.contains(this.hiddenClass)) {
+        answers.push(textValue);
+      }
+      extraFieldRow.querySelector("input").value = "";
+      that.hideRow(extraFieldRow);
     }
+    answers.forEach(function (answer, answerIndex) {
+      const extraFieldRow = that.extraFieldRows[answerIndex];
+      const textInput = extraFieldRow.querySelector("input");
+      textInput.value = answer;
+      that.showRow(extraFieldRow, false);
+    });
+  };
 
-    ExtraFieldRows.prototype.appendRemoveLink = function (row) {
-        const that = this
-        const removeLink = document.createElement('a');
-        removeLink.innerHTML = 'Remove'
-        removeLink.className = 'govuk-link govuk-link--no-visited-state faa-extra-field__form-group-link--remove'
-        removeLink.href = "#"
-        removeLink.addEventListener('click',
-            function (e) {
-                e.preventDefault();
-                that.addLink.classList.remove(that.hiddenClass)
-                that.hideRow(row);
-                that.updateRowOrder();
-            })
-        row.append(removeLink)
+  ExtraFieldRows.prototype.hideRow = function (row) {
+    const textInput = row.querySelector("input");
+    textInput.value = "";
+    row.classList.add(this.hiddenClass);
+    if (this.areAllRowsHidden()) {
+      this.fieldset.classList.add(this.fieldsetHiddenClass);
+    } else {
+      this.fieldset.classList.remove(this.fieldsetHiddenClass);
     }
+  };
 
-    ExtraFieldRows.prototype.showFirstAvailableRow = function (e) {
-        let hiddenRowCount = 0
-        let rowToShow
-        for (let f = 0; f < this.extraFieldRows.length; f++) {
-            const extraFieldRow = this.extraFieldRows[f]
-            if (extraFieldRow.classList.contains(this.hiddenClass)) {
-                if (hiddenRowCount === 0) {
-                    rowToShow = extraFieldRow
-                }
-                hiddenRowCount++
-            }
-        }
-        if (hiddenRowCount === 1) {
-            this.addLink.classList.add(this.hiddenClass)
-        }
-        this.showRow(rowToShow, true)
-        e.preventDefault()
+  ExtraFieldRows.prototype.showRow = function (row, focus = false) {
+    const errorMessage = row.querySelector(".govuk-error-message");
+    const textInput = row.querySelector("input");
+    this.fieldset.classList.remove(this.fieldsetHiddenClass);
+    if (errorMessage) {
+      errorMessage.remove();
     }
-
-    ExtraFieldRows.prototype.updateRowOrder = function () {
-        const that = this
-        const answers = [];
-        for (let f = 0; f < that.extraFieldRows.length; f++) {
-            const extraFieldRow = that.extraFieldRows[f]
-            const textValue = extraFieldRow.querySelector('input').value
-            if (!extraFieldRow.classList.contains(this.hiddenClass)) {
-                answers.push(textValue)
-            }
-            extraFieldRow.querySelector('input').value = ''
-            that.hideRow(extraFieldRow)
-        }
-        answers.forEach(function (answer, answerIndex) {
-            const extraFieldRow = that.extraFieldRows[answerIndex]
-            const textInput = extraFieldRow.querySelector('input')
-            textInput.value = answer
-            that.showRow(extraFieldRow, false)
-        });
+    row.classList.remove("govuk-form-group--error");
+    row.classList.remove(this.hiddenClass);
+    if (focus) {
+      textInput.focus();
     }
+  };
 
-    ExtraFieldRows.prototype.hideRow = function (row) {
-        const textInput = row.querySelector('input')
-        textInput.value = ''
-        row.classList.add(this.hiddenClass)
-        if (this.areAllRowsHidden()) {
-            this.fieldset.classList.add(this.fieldsetHiddenClass)
-        } else {
-            this.fieldset.classList.remove(this.fieldsetHiddenClass)
-        }
+  ExtraFieldRows.prototype.areAllRowsHidden = function () {
+    let hiddenRowCount = 0;
+    for (let f = 0; f < this.extraFieldRows.length; f++) {
+      const extraFieldRow = this.extraFieldRows[f];
+      if (extraFieldRow.classList.contains(this.hiddenClass)) {
+        hiddenRowCount++;
+      }
     }
+    return hiddenRowCount === this.extraFieldRows.length;
+  };
 
-    ExtraFieldRows.prototype.showRow = function (row, focus = false) {
-        const errorMessage = row.querySelector('.govuk-error-message')
-        const textInput = row.querySelector('input')
-        this.fieldset.classList.remove(this.fieldsetHiddenClass)
-        if (errorMessage) {
-            errorMessage.remove()
-        }
-        row.classList.remove('govuk-form-group--error')
-        row.classList.remove(this.hiddenClass)
-        if (focus) {
-            textInput.focus()
-        }
-    }
-
-    ExtraFieldRows.prototype.areAllRowsHidden = function () {
-        let hiddenRowCount = 0
-        for (let f = 0; f < this.extraFieldRows.length; f++) {
-            const extraFieldRow = this.extraFieldRows[f]
-            if (extraFieldRow.classList.contains(this.hiddenClass)) {
-                hiddenRowCount++
-            }
-        }
-        return hiddenRowCount === this.extraFieldRows.length
-    }
-
-    const extraFieldRows = document.querySelectorAll("[data-extra-field-rows]");
-    if (extraFieldRows) {
-        extraFieldRows.forEach(function (extraFieldRows) {
-            new ExtraFieldRows(extraFieldRows).init();
-        });
-    }
-
-
+  const extraFieldRows = document.querySelectorAll("[data-extra-field-rows]");
+  if (extraFieldRows) {
+    extraFieldRows.forEach(function (extraFieldRows) {
+      new ExtraFieldRows(extraFieldRows).init();
+    });
+  }
 </script>
 
-{% endblock  %}
+{% endblock %}
