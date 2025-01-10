@@ -24,8 +24,6 @@ function SessionTimeOutModal () {
 }
 
 SessionTimeOutModal.prototype.init = function () {
-    console.log(this.inactivityCountdownTime);
-    console.log(this.modalCountdownTime);
     this.startInactivityCountdown()
 }
 
@@ -89,6 +87,5 @@ SessionTimeOutModal.prototype.logout = function () {
 
 document.addEventListener("DOMContentLoaded", function () {
     const sessionTimeOutModal = new SessionTimeOutModal();
-    const docCS = document.currentScript;
     sessionTimeOutModal.init();
 });
