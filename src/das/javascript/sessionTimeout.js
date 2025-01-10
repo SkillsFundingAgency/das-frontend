@@ -1,8 +1,8 @@
 function SessionTimeOutModal () {
     this.modal = null;
     this.modalId = 'das-session-timeout-modal';
-    this.inactivityCountdownTime = 1000 * 60 * 15; // 15 minutess in milliseconds
-    this.modalCountdownTime = 60; // seconds
+    this.inactivityCountdownTime = 1000 * 60 * 13; // 13 minutess in milliseconds
+    this.modalCountdownTime = 120; // seconds
     this.modalTimeout = null;
     this.urls = {
         renew: '/service/keepalive',
