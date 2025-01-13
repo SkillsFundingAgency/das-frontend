@@ -140,43 +140,44 @@
             "dependsOn": [
                 "[concat('storage-account-arm-', parameters('utcValue'))]"
             ]
-        },
-        {
-            "apiVersion": "2017-05-10",
-            "name": "[concat('cdn-endpoint-', parameters('utcValue'))]",
-            "type": "Microsoft.Resources/deployments",
-            "resourceGroup": "[parameters('cdnProfileResourceGroup')]",
-            "properties": {
-                "mode": "Incremental",
-                "templateLink": {
-                    "uri": "https://raw.githubusercontent.com/SkillsFundingAgency/das-platform-building-blocks/master/templates/cdn-endpoint.json",
-                    "contentVersion": "1.0.0.0"
-                },
-                "parameters": {
-                    "cdnProfileName": {
-                        "value": "[parameters('cdnProfileName')]"
-                    },
-                    "cdnEndPointName": {
-                        "value": "[parameters('cdnEndPointName')]"
-                    },
-                    "customDomainName": {
-                        "value": "[parameters('customDomainName')]"
-                    },
-                    "originHostName": {
-                        "value": "[parameters('originHostName')]"
-                    },
-                    "isHttpAllowed": {
-                        "value": "[parameters('isHttpAllowed')]"
-                    },
-                    "originPath": {
-                        "value": "[parameters('originPath')]"
-                    }
-                }
-            },
-            "dependsOn": [
-                "[concat('storage-account-arm-', parameters('utcValue'))]"
-            ]
         }
+        // ,
+        // {
+        //     "apiVersion": "2017-05-10",
+        //     "name": "[concat('cdn-endpoint-', parameters('utcValue'))]",
+        //     "type": "Microsoft.Resources/deployments",
+        //     "resourceGroup": "[parameters('cdnProfileResourceGroup')]",
+        //     "properties": {
+        //         "mode": "Incremental",
+        //         "templateLink": {
+        //             "uri": "https://raw.githubusercontent.com/SkillsFundingAgency/das-platform-building-blocks/master/templates/cdn-endpoint.json",
+        //             "contentVersion": "1.0.0.0"
+        //         },
+        //         "parameters": {
+        //             "cdnProfileName": {
+        //                 "value": "[parameters('cdnProfileName')]"
+        //             },
+        //             "cdnEndPointName": {
+        //                 "value": "[parameters('cdnEndPointName')]"
+        //             },
+        //             "customDomainName": {
+        //                 "value": "[parameters('customDomainName')]"
+        //             },
+        //             "originHostName": {
+        //                 "value": "[parameters('originHostName')]"
+        //             },
+        //             "isHttpAllowed": {
+        //                 "value": "[parameters('isHttpAllowed')]"
+        //             },
+        //             "originPath": {
+        //                 "value": "[parameters('originPath')]"
+        //             }
+        //         }
+        //     },
+        //     "dependsOn": [
+        //         "[concat('storage-account-arm-', parameters('utcValue'))]"
+        //     ]
+        // }
     ],
     "outputs": {
         "storageKey": {
