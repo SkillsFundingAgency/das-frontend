@@ -2,7 +2,7 @@
 <html lang="en" class="govuk-template ">
   <head>
     <meta charset="utf-8" />
-    <title>@ViewData["Title"]</title>
+    <title>{{pageTitle}}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <meta name="theme-color" content="#0b0c0c">
     <link rel="icon" sizes="48x48" href="/assets/images/favicon.ico">
@@ -77,5 +77,6 @@
       window.GOVUKFrontend.initAll();
       window.DASFrontend.initAll();
     </script>
+  <script src="/js/sessionTimeout.js"></script>
   </body>
 </html>

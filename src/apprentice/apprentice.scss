@@ -1,5 +1,5 @@
 $govuk-include-default-font-face: false;
 
-@import "base";
+@import "node_modules/govuk-frontend/dist/govuk/base";
 @import "components/all";
 @import "pages/all";
