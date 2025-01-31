@@ -3,7 +3,7 @@
 function SessionTimeOutModal () {
     this.modal = null;
     this.modalId = 'das-session-timeout-modal';
-    this.inactivityCountdownTime = document.body.dataset.timeout || 18 // minutes
+    this.inactivityCountdownTime = document.body.dataset.timeout || 0 // minutes
     this.modalCountdownTime = document.body.dataset.modalcount || 120; // seconds
     this.modalTimeout = null;
     this.urls = {
@@ -14,7 +14,7 @@ function SessionTimeOutModal () {
         <div class="das-modal" role="dialog" aria-modal="true" id="${this.modalId}">
             <div class="das-modal__body" tabindex="0">
                 <h2 class="govuk-heading-m">You’re about to be signed out</h2>
-                <p class="govuk-body">For your security, we will sign you out in <strong>${this.modalCountdownTime} seconds</strong>.</p>
+                <p class="govuk-body">For your security, we will sign you out in <strong>${this.formatTime(this.modalCountdownTime)}</strong>.</p>
                 <div class="das-modal__actions govuk-button-group">
                     <a class="govuk-button" id="das-timeout-action-renew" href="#" role="button">Stay signed in</a>
                     <a class="govuk-link" id="das-timeout-action-logout" href="#" role="button">Sign out</a>
@@ -29,6 +29,15 @@ SessionTimeOutModal.prototype.init = function () {
 
 SessionTimeOutModal.prototype.startInactivityCountdown = function () {
     setTimeout(this.showModal.bind(this), this.inactivityCountdownTime * 60 * 1000);
+}
+
+SessionTimeOutModal.prototype.formatTime = function (seconds) {
+    if (seconds < 60) {
+        return `${seconds} seconds`;
+    }
+    const minutes = Math.floor(seconds / 60);
+    const secs = seconds % 60;
+    return `${String(minutes).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
 }
 
 SessionTimeOutModal.prototype.showModal = function () {
@@ -51,7 +60,7 @@ SessionTimeOutModal.prototype.startModalCountdown = function () {
     let countdownDisplay = this.modal.getElementsByTagName('strong')[0];
     this.modalTimeout = setInterval(() => {
         countdownTime--;
-        countdownDisplay.textContent = `${countdownTime} seconds`;
+        countdownDisplay.textContent = `${this.formatTime(countdownTime)}`;
         if (countdownTime <= 0) {
             clearInterval(this.modalTimeout);
             this.logout();
