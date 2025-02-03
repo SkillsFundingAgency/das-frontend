@@ -3,7 +3,7 @@
 function SessionTimeOutModal () {
     this.modal = null;
     this.modalId = 'das-session-timeout-modal';
-    this.inactivityCountdownTime = document.body.dataset.timeout || 0 // minutes
+    this.inactivityCountdownTime = document.body.dataset.timeout || 18 // minutes
     this.modalCountdownTime = document.body.dataset.modalcount || 120; // seconds
     this.modalTimeout = null;
     this.urls = {
