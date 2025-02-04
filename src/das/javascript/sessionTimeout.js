@@ -16,7 +16,7 @@ function SessionTimeOutModal () {
                 <h2 class="govuk-heading-m">You’re about to be signed out</h2>
                 <p class="govuk-body">For your security, we will sign you out in <strong>${this.formatTime(this.modalCountdownTime)}</strong>.</p>
                 <div class="das-modal__actions govuk-button-group">
-                    <a class="govuk-button" id="das-timeout-action-renew" href="#" role="button">Stay signed in</a>
+                    <button class="govuk-button" id="das-timeout-action-renew">Stay signed in</button>
                     <a class="govuk-link" id="das-timeout-action-logout" href="#" role="button">Sign out</a>
                 </div>
             </div>
@@ -70,6 +70,10 @@ SessionTimeOutModal.prototype.startModalCountdown = function () {
 
 SessionTimeOutModal.prototype.renewSession = function (e) {
     e.preventDefault();
+
+    const button = e.target;
+    button.disabled = true;
+
     fetch(this.urls.renew, {
         method: 'GET',
         credentials: 'include'
