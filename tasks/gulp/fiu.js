@@ -29,12 +29,12 @@ gulp.task('fiu-watch-js', function() {
 gulp.task('fiu-compile-js', function() {
   return gulp.src([paths.src.fiuJsLibs, paths.src.fiuJs, paths.src.fiuJsInit])
     .pipe(babel())
-    .pipe(terser())
+    //.pipe(terser())
     .pipe(concat('app.min.js'))
     .pipe(gulp.dest(paths.dist.fiuJs));
 });
 
 gulp.task('fiu-copy-images', (done) => {
-  gulp.src(paths.src.fiuImages).pipe(gulp.dest(paths.dist.fiuImages));
+  gulp.src(paths.src.fiuImages, {encoding: false}).pipe(gulp.dest(paths.dist.fiuImages));
   done();
 });
