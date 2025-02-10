@@ -1,14 +1,13 @@
-
 function Navigation(nav) {
-  this.navToggle = nav.querySelector('[data-fiu-nav-toggle]')
-  this.navMenu = nav.querySelector('[data-fiu-nav-menu]')
-  this.setupEvents()
-}
-
-Navigation.prototype.setupEvents = function () {
-  this.navToggle.addEventListener('click', (event) => {
-    const body = document.querySelector('body');
-    body.classList.toggle('fiu-navigation-menu-open');
-    event.preventDefault();
+  if (!nav) {
+    return;
+  }
+  this.navToggle = nav.querySelector("[data-fiu-nav-toggle]");
+  if (!this.navToggle) {
+    return;
+  }
+  this.navToggle.addEventListener("click", function(e) {
+    document.body.classList.toggle("fiu-navigation-menu-open");
+    e.preventDefault();
   });
 }
