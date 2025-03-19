@@ -1,11 +1,9 @@
-
-
 function SessionTimeOutModal () {
     this.modal = null;
     this.modalId = 'das-session-timeout-modal';
     this.inactivityCountdownTime = document.body.dataset.timeout || 18 // minutes
     this.modalCountdownTime = document.body.dataset.modalcount || 120; // seconds
-    this.modalTimeout = null;
+    this.worker = new Worker(new URL('./sessionWorker.js', import.meta.url));
     this.urls = {
         renew: '/service/keepalive',
         logout: '/service/signout'
@@ -13,7 +11,7 @@ function SessionTimeOutModal () {
     this.modalHtml = `
         <div class="das-modal" role="dialog" aria-modal="true" id="${this.modalId}">
             <div class="das-modal__body" tabindex="0">
-                <h2 class="govuk-heading-m">You’re about to be signed out</h2>
+                <h2 class="govuk-heading-m">You're about to be signed out</h2>
                 <p class="govuk-body">For your security, we will sign you out in <strong>${this.formatTime(this.modalCountdownTime)}</strong>.</p>
                 <div class="das-modal__actions govuk-button-group">
                     <button class="govuk-button" id="das-timeout-action-renew">Stay signed in</button>
@@ -21,14 +19,33 @@ function SessionTimeOutModal () {
                 </div>
             </div>
         </div>`;
+
+    // Set up worker message handling
+    this.worker.onmessage = (e) => {
+        const { type, remainingTime } = e.data;
+        switch (type) {
+            case 'showModal':
+                this.showModal();
+                break;
+            case 'updateCountdown':
+                this.updateCountdown(remainingTime);
+                break;
+            case 'logout':
+                this.logout();
+                break;
+        }
+    };
 }
 
 SessionTimeOutModal.prototype.init = function () {
-    this.startInactivityCountdown()
+    this.startInactivityCountdown();
 }
 
 SessionTimeOutModal.prototype.startInactivityCountdown = function () {
-    setTimeout(this.showModal.bind(this), this.inactivityCountdownTime * 60 * 1000);
+    this.worker.postMessage({
+        type: 'startInactivityTimer',
+        timeout: this.inactivityCountdownTime * 60 * 1000
+    });
 }
 
 SessionTimeOutModal.prototype.formatTime = function (seconds) {
@@ -56,21 +73,19 @@ SessionTimeOutModal.prototype.modalEvents = function () {
 }
 
 SessionTimeOutModal.prototype.startModalCountdown = function () {
-    let countdownTime = this.modalCountdownTime;
-    let countdownDisplay = this.modal.getElementsByTagName('strong')[0];
-    this.modalTimeout = setInterval(() => {
-        countdownTime--;
-        countdownDisplay.textContent = `${this.formatTime(countdownTime)}`;
-        if (countdownTime <= 0) {
-            clearInterval(this.modalTimeout);
-            this.logout();
-        }
-    }, 1000);
+    this.worker.postMessage({
+        type: 'startModalTimer',
+        timeout: this.modalCountdownTime
+    });
+}
+
+SessionTimeOutModal.prototype.updateCountdown = function (remainingTime) {
+    const countdownDisplay = this.modal.getElementsByTagName('strong')[0];
+    countdownDisplay.textContent = this.formatTime(remainingTime);
 }
 
 SessionTimeOutModal.prototype.renewSession = function (e) {
     e.preventDefault();
-
     const button = e.target;
     button.disabled = true;
 
@@ -80,6 +95,7 @@ SessionTimeOutModal.prototype.renewSession = function (e) {
     })
         .then(response => {
             if (response.ok) {
+                this.worker.postMessage({ type: 'clear' });
                 this.hideModal();
                 this.startInactivityCountdown();
             } else {
@@ -90,7 +106,6 @@ SessionTimeOutModal.prototype.renewSession = function (e) {
 }
 
 SessionTimeOutModal.prototype.hideModal = function () {
-    clearInterval(this.modalTimeout);
     this.modal.remove();
 }
 
