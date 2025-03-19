@@ -3,7 +3,7 @@ function SessionTimeOutModal () {
     this.modalId = 'das-session-timeout-modal';
     this.inactivityCountdownTime = document.body.dataset.timeout || 18 // minutes
     this.modalCountdownTime = document.body.dataset.modalcount || 120; // seconds
-    this.worker = new Worker(new URL('./sessionWorker.js', import.meta.url));
+    this.worker = new Worker('/js/sessionWorker.js');
     this.urls = {
         renew: '/service/keepalive',
         logout: '/service/signout'
