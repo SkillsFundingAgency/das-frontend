@@ -1,13 +1,16 @@
+
 // Autocomplete
 const autocompleteSelects = document.querySelectorAll('[data-fiu-autocomplete]');
 nodeListForEach(autocompleteSelects, function (select) {
-  new Autocomplete(select).init();
+  new _autocomplete(select).init();
 });
 
 // Banner
 const banners = document.querySelectorAll('[data-fiu-banner]')
 nodeListForEach(banners, function (banner) {
-  new Banner(banner);
+  console.log(banner)
+  const b = new Banner(banner);
+    b.init();
 });
 
 // Mobile navigation
@@ -37,7 +40,7 @@ if (searchFilter) {
 // Back links
 const backLinkContainer = document.querySelector('[data-fiu-back-link]');
 if (backLinkContainer) {
-  new BackLink(backLinkContainer);
+  new _backLink(backLinkContainer);
 }
 
 // Tabs

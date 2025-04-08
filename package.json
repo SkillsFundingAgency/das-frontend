@@ -4,7 +4,8 @@
   "description": "DAS Frontend contains the code used across the apprenticeship services ",
   "scripts": {
     "dev": "node server.js",
-    "build": "gulp build"
+    "build": "gulp build",
+    "build:js": "rollup src/fiu/fiu.js --format iife --file dist/fiu/js/fiu.js"
   },
   "repository": {
     "type": "git",
@@ -26,6 +27,7 @@
     "html5shiv": "^3.7.3",
     "jquery": "^3.7.1",
     "nunjucks": "^3.2.4",
+    "rollup": "^4.39.0",
     "sass": "^1.83.1",
     "select2": "^4.1.0-rc.0"
   },
