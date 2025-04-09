@@ -63,6 +63,9 @@
   & > .das-navigation__list-item {
     width: 100%;
     border-top: 1px solid #ccc;
+    @include govuk-media-query($from: desktop) {
+        width: auto;
+    }
   }
 }
 
