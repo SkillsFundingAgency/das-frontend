@@ -18,6 +18,15 @@
   }
 }
 
+.das-user-navigation__text-item {
+  color: #fff;
+  display: block;
+  padding: 10px 15px;
+  font-size: 16px;
+  font-weight: $govuk-font-weight-bold;
+  border: 1px solid transparent;
+}
+
 .das-user-navigation__link {
   @include govuk-link-common;
   color: #fff;
