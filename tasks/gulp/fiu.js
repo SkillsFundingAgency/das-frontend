@@ -1,8 +1,7 @@
 'use strict'
 const gulp = require('gulp')
-const babel = require('gulp-babel');
-const concat = require('gulp-concat');
-const terser = require('gulp-terser');
+const rollup = require('rollup')
+const terser = require('@rollup/plugin-terser');
 const sass = require('gulp-sass')(require('sass'))
 const paths = require('../../config/paths.json')
 const sassOptionsFiu = require('../../config/sassOptionsFiu.js')
@@ -26,13 +25,20 @@ gulp.task('fiu-watch-js', function() {
     });
 });
 
-gulp.task('fiu-compile-js', function() {
-  return gulp.src([
-      paths.src.fiuJsComponents,
-      paths.src.fiuJsParent,
-  ]).pipe(concat('app.min.js'))
-    .pipe(gulp.dest(paths.dist.fiuJs));
+gulp.task('fiu-compile-js', () => {
+  return rollup.rollup({
+      input: './src/fiu/fiu.js',
+      plugins: [terser()]
+    })
+    .then(bundle => {
+      return bundle.write({
+        file: './dist/fiu/js/app.min.js',
+        format: 'iife',
+        sourcemap: true
+      });
+    });
 });
+
 
 gulp.task('fiu-copy-images', (done) => {
   gulp.src(paths.src.fiuImages, {encoding: false}).pipe(gulp.dest(paths.dist.fiuImages));

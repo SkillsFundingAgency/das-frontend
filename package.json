@@ -15,9 +15,8 @@
   "dependencies": {
     "accessible-autocomplete": "^2.0.4",
     "express": "^4.21.1",
-    "govuk-frontend": "^5.8.0",
+    "govuk-frontend": "^5.9.0",
     "gulp": "^5.0.0",
-    "gulp-better-rollup": "^4.0.1",
     "gulp-concat": "^2.6.1",
     "gulp-eol": "^0.2.0",
     "gulp-if": "^3.0.0",
@@ -37,6 +36,7 @@
   "devDependencies": {
     "@babel/core": "^7.14.6",
     "@babel/preset-env": "^7.14.7",
+    "@rollup/plugin-terser": "^0.4.4",
     "gulp-babel": "^8.0.0"
   }
 }
