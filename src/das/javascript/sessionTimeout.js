@@ -63,7 +63,7 @@ SessionTimeOutModal.prototype.startModalCountdown = function () {
         countdownDisplay.textContent = `${this.formatTime(countdownTime)}`;
         if (countdownTime <= 0) {
             clearInterval(this.modalTimeout);
-            this.logout();
+            this.logout("autoSignOut");
         }
     }, 1000);
 }
@@ -94,8 +94,8 @@ SessionTimeOutModal.prototype.hideModal = function () {
     this.modal.remove();
 }
 
-SessionTimeOutModal.prototype.logout = function () {
-    window.location.href = this.urls.logout;
+SessionTimeOutModal.prototype.logout = function (action) {
+    window.location.href = `${this.urls.logout}${action === "autoSignOut" ? "?autoSignOut=true" : ""}`;
 }
 
 document.addEventListener("DOMContentLoaded", function () {
