@@ -8,7 +8,7 @@ function SessionTimeOutModal () {
     this.modalTimeout = null;
     this.urls = {
         renew: '/service/keepalive',
-        logout: '/service/signout'
+        logout: '/service/signout?autoSignOut=true'
     };
     this.modalHtml = `
         <div class="das-modal" role="dialog" aria-modal="true" id="${this.modalId}">
