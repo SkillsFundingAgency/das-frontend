@@ -1,7 +1,7 @@
 'use strict'
 
 const gulp = require('gulp')
-const rollup = require('gulp-better-rollup')
+const rollup = require('rollup')
 const gulpif = require('gulp-if')
 const eol = require('gulp-eol')
 const rename = require('gulp-rename')
@@ -34,16 +34,17 @@ gulp.task('das-watch-js', function() {
 });
 
 gulp.task('das-compile-js-components-dev', function () {
-  return minifyJs(false);
+  return minifyJs2();
 });
 
 gulp.task('das-compile-js-components', function () {
-  return minifyJs(true);
+  return minifyJs2();
 });
 
 const minifyJs = (isDist) => {
     const srcFile = configPaths.src.dasJsComponent
     const jsDest = configPaths.dist.dasJs
+
   return gulp.src(srcFile)
     .pipe(rollup({
       name: 'DASFrontend',
@@ -59,4 +60,22 @@ const minifyJs = (isDist) => {
     ))
     .pipe(eol())
     .pipe(gulp.dest(jsDest));
+};
+
+const minifyJs2 = () => {
+  const srcFile = configPaths.src.dasJsComponent
+  const jsDest = configPaths.dist.dasJs
+
+  return rollup.rollup({
+    input: srcFile,
+    plugins: [terser()]
+  })
+    .then(bundle => {
+      return bundle.write({
+        file: jsDest + '/das-all2.min.js',
+        format: 'umd',
+        name: 'DASFrontend',
+        sourcemap: true
+      });
+    });
 };
