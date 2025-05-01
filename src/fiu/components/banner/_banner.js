@@ -54,9 +54,9 @@ export class Banner {
     const nameEQ = `${name}=`;
     const cookies = document.cookie.split(';');
     for (let c of cookies) {
-      c.trim();
-      if (c.startsWith(nameEQ)) {
-        return c.substring(nameEQ.length);
+      let cookieName = c.trim();
+      if (cookieName.startsWith(nameEQ)) {
+        return cookieName.substring(nameEQ.length);
       }
     }
     return null;
