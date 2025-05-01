@@ -10,7 +10,7 @@
     "fiuSass": "./src/fiu/**/*.scss",
     "fiuJsLibs": "./src/fiu/libs/*.js",
     "fiuJsComponents": "./src/fiu/components/**/*.js",
-    "fiuJsParent": "./src/fiu/app.js",
+    "fiuJsParent": "./src/fiu/fiu.js",
     "fiuImages": "./src/fiu/assets/images/**/*",
     "apprenticeSass": "./src/apprentice/**/*.scss",
     "apprenticeJs": "./src/apprentice/components/**/*.js",
