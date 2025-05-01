@@ -28,7 +28,7 @@ banners.forEach(banner => {
 // Navigation
 const nav = document.querySelector('[data-fiu-navigation]')
 if (nav) {
-  new Navigation(nav);
+  let navObj = new Navigation(nav);
 }
 
 // Print Page
