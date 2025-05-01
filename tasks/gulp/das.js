@@ -30,7 +30,6 @@ gulp.task('das-copy-libs', (done) => {
   gulp.src(['./node_modules/govuk-frontend/dist/govuk/govuk-frontend.min.js'], {encoding: false}).pipe(gulp.dest('./dist/libs/govuk-frontend'));
   gulp.src(['./node_modules/accessible-autocomplete/dist/accessible-autocomplete.min.js'], {encoding: false}).pipe(gulp.dest('./dist/libs/accessible-autocomplete'));
   gulp.src([paths.src.dasJsLibPath + '/das-postcode/lookupService.js'], {encoding: false}).pipe(gulp.dest('./dist/libs/das-postcode'));
-  gulp.src(['./node_modules/html5shiv/dist/html5shiv.min.js'], {encoding: false}).pipe(gulp.dest('./dist/libs/html5shiv'));
   gulp.src(['./node_modules/jquery/dist/jquery.min.js'], {encoding: false}).pipe(gulp.dest('./dist/libs/jquery'));
   gulp.src(['./node_modules/select2/dist/js/select2.min.js'], {encoding: false}).pipe(gulp.dest('./dist/libs/select2'));
   gulp.src([paths.src.dasJsLibPath + '/select2/style.css'], {encoding: false}).pipe(gulp.dest('./dist/libs/select2'));

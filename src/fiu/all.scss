@@ -2,7 +2,8 @@
 
 // GDS
 $govuk-new-link-styles: true;
-@import "govuk/all";
+$govuk-suppressed-warnings: "legacy-organisation-colours";
+@import "govuk/index";
 
 // Fire It Up
 @import "settings/all";

@@ -14,20 +14,17 @@
   "author": "Education and Skill Funding Agency developers",
   "dependencies": {
     "accessible-autocomplete": "^2.0.4",
-    "express": "^4.21.1",
+    "express": "^5.1.0",
     "govuk-frontend": "^5.9.0",
     "gulp": "^5.0.0",
     "gulp-concat": "^2.6.1",
-    "gulp-eol": "^0.2.0",
-    "gulp-if": "^3.0.0",
     "gulp-rename": "^2.0.0",
     "gulp-sass": "^5.1.0",
     "gulp-terser": "^2.1.0",
-    "html5shiv": "^3.7.3",
     "jquery": "^3.7.1",
     "nunjucks": "^3.2.4",
-    "rollup": "^4.39.0",
-    "sass": "^1.83.1",
+    "rollup": "^4.40.1",
+    "sass": "^1.87.0",
     "select2": "^4.1.0-rc.0"
   },
   "bugs": {
