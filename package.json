@@ -15,7 +15,7 @@
   "dependencies": {
     "accessible-autocomplete": "^2.0.4",
     "express": "^5.1.0",
-    "govuk-frontend": "^5.9.0",
+    "govuk-frontend": "^5.10.0",
     "gulp": "^5.0.0",
     "gulp-concat": "^2.6.1",
     "gulp-rename": "^2.0.0",
