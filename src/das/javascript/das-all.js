@@ -1,7 +1,6 @@
 import CookieBanner from './components/cookieBanner/_cookieBanner'
 import CookieSettings from './components/cookieSettings/_cookieSettings'
 import Radios from './components/gds-v2/radios/radios'
-import Tabs from './components/gds-v2/tabs/tabs'
 import ShowHide from './components/showHide/_showHide'
 
 function nodeListForEach(nodes, callback) {
@@ -34,13 +33,6 @@ function initAll() {
     new Radios($radio).init()
   })
 
-  // GDS v2 Tabs
-
-  var $tabs = document.querySelectorAll('[data-module="tabs"]')
-  nodeListForEach($tabs, function ($tabs) {
-    new Tabs($tabs).init()
-  })
-
   var $showHide = document.querySelectorAll('[data-module="das-show-hide"]')
   nodeListForEach($showHide, function ($showHide) {
     new ShowHide($showHide).init()
@@ -51,5 +43,4 @@ export {
   initAll,
   CookieBanner,
   Radios,
-  Tabs
 }

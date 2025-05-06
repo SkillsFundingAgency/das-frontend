@@ -3,6 +3,7 @@
   background: #333;
   padding: 20px 0 5px;
   color: #fff;
+  border-top: 1px solid rgba(0, 0, 0, .3);
   border-bottom: 1px solid rgba(0, 0, 0, .3);
   &:focus {
     @include fiu-focused-block;
@@ -15,7 +16,7 @@
 }
 
 .fiu-banner--highlight {
-  background: $blue;
+  background: govuk-colour("dark-blue");
   color: #fff;
 }
 

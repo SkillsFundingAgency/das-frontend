@@ -1,11 +1,8 @@
 'use strict'
 
 const gulp = require('gulp')
-const rollup = require('gulp-better-rollup')
-const gulpif = require('gulp-if')
-const eol = require('gulp-eol')
-const rename = require('gulp-rename')
-const terser = require('gulp-terser');
+const rollup = require('rollup')
+const terser = require('@rollup/plugin-terser');
 const concat = require('gulp-concat');
 
 const configPaths = require('../../config/paths.json')
@@ -33,30 +30,27 @@ gulp.task('das-watch-js', function() {
 
 });
 
-gulp.task('das-compile-js-components-dev', function () {
-  return minifyJs(false);
+gulp.task('das-compile-js-components', async () => {
+  const bundle = await rollup.rollup({
+    input: configPaths.src.dasJsComponent,
+    plugins: [terser()]
+  });
+  await bundle.write({
+    file: configPaths.dist.dasJs + '/das-all.min.js',
+    format: 'umd',
+    name: 'DASFrontend',
+    sourcemap: true
+  });
 });
 
-gulp.task('das-compile-js-components', function () {
-  return minifyJs(true);
+// UnMinified version for development
+gulp.task('das-compile-js-components-dev', async () => {
+  const bundle = await rollup.rollup({
+    input: configPaths.src.dasJsComponent,
+  });
+  await bundle.write({
+    file: configPaths.dist.dasJs + '/das-all.js',
+    format: 'umd',
+    name: 'DASFrontend',
+  });
 });
-
-const minifyJs = (isDist) => {
-    const srcFile = configPaths.src.dasJsComponent
-    const jsDest = configPaths.dist.dasJs
-  return gulp.src(srcFile)
-    .pipe(rollup({
-      name: 'DASFrontend',
-      legacy: true,
-      format: 'umd',
-    })).on('error', function (e) { console.log(e) })
-    .pipe(gulpif(isDist, terser({ module: true })))
-    .pipe(gulpif(isDist,
-      rename({
-        basename: 'das-all',
-        extname: '.min.js'
-      })
-    ))
-    .pipe(eol())
-    .pipe(gulp.dest(jsDest));
-};

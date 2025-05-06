@@ -1,57 +1,64 @@
-function Banner(banner) {
-  this.banner = banner;
-  this.cookieName = this.banner.dataset.fiuBannerCookieName || 'fiu-banner';
-  this.cookieValue = 'true';
-  this.hidelink = this.banner.querySelector('[data-fiu-banner-hide-link]')
-  this.setupEvents()
-  this.init();
-}
-
-Banner.prototype.init = function () {
-  if (this.checkCookie(this.cookieName) === this.cookieValue) {
-    this.removeBanner()
-  } else {
-    this.showBanner()
-  }
-}
-
-Banner.prototype.setupEvents = function () {
-  this.hidelink.addEventListener('click', (event) => {
-    this.removeBanner();
-    event.preventDefault();
-  });
-}
-
-Banner.prototype.showBanner = function () {
-  this.banner.classList.remove('fiu-visually-hidden');
-}
-
-Banner.prototype.removeBanner = function () {
-  this.createCookie(this.cookieName, this.cookieValue, 365)
-  this.banner.parentNode.removeChild(this.banner);
-}
-
-Banner.prototype.createCookie = function (name, value, days) {
-  let expires;
-  if (days) {
-    let date = new Date();
-    date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
-    expires = "; expires=" + date.toGMTString();
-  }
-  document.cookie = name + "=" + value + expires + "; path=/";
-}
-
-Banner.prototype.checkCookie = function (name) {
-  let nameEQ = name + "=";
-  let cookies = document.cookie.split(';');
-  for (let i = 0; i < cookies.length; i++) {
-    let c = cookies[i];
-    while (c.charAt(0) === ' ') {
-      c = c.substring(1, c.length);
+export class Banner {
+  constructor(bannerElement) {
+    if (!bannerElement) {
+      throw new Error('No banner element provided.');
     }
-    if (c.indexOf(nameEQ) === 0) {
-      return c.substring(nameEQ.length, c.length);
+
+    this.banner = bannerElement;
+    this.cookieName = this.banner.dataset.fiuBannerCookieName || 'fiu-banner';
+    this.cookieValue = 'true';
+    this.hidelink = this.banner.querySelector('[data-fiu-banner-hide-link]');
+    this.setupEvents();
+    this.init();
+  }
+
+  init() {
+    if (this.checkCookie(this.cookieName) === this.cookieValue) {
+      this.removeBanner();
+    } else {
+      this.showBanner();
     }
   }
-  return null;
+
+  setupEvents() {
+    if (!this.hidelink) return;
+
+    this.hidelink.addEventListener('click', (event) => {
+      event.preventDefault();
+      this.removeBanner();
+    });
+  }
+
+  showBanner() {
+    this.banner.classList.remove('fiu-visually-hidden');
+  }
+
+  removeBanner() {
+    this.createCookie(this.cookieName, this.cookieValue, 365);
+    if (this.banner.parentNode) {
+      this.banner.parentNode.removeChild(this.banner);
+    }
+  }
+
+  createCookie(name, value, days) {
+    let expires = '';
+    if (days) {
+      const date = new Date();
+      date.setTime(date.getTime() + days * 86400000); // 24 * 60 * 60 * 1000
+      expires = `; expires=${date.toUTCString()}`;
+    }
+    document.cookie = `${name}=${value}${expires}; path=/`;
+  }
+
+  checkCookie(name) {
+    const nameEQ = `${name}=`;
+    const cookies = document.cookie.split(';');
+    for (let c of cookies) {
+      let cookieName = c.trim();
+      if (cookieName.startsWith(nameEQ)) {
+        return cookieName.substring(nameEQ.length);
+      }
+    }
+    return null;
+  }
 }
