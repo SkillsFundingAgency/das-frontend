@@ -29,22 +29,41 @@ SessionTimeOutModal.prototype.init = function () {
 }
 
 SessionTimeOutModal.prototype.startInactivityCountdown = function () {
-    // Use Web Worker for reliable timing in background tabs
-    this.worker = new Worker('/js/sessionTimeout.worker.js');
-    
-    this.worker.onmessage = (e) => {
-        if (e.data.type === 'showModal') {
-            this.showModal();
-        } else if (e.data.type === 'autoLogout') {
-            this.logout("autoSignOut");
-        }
-    };
-    
-    // Start the 18-minute countdown
-    this.worker.postMessage({
-        type: 'startInactivityCountdown',
-        timeoutMs: this.inactivityCountdownTime * 60 * 1000
-    });
+    try {
+        // Use Web Worker for reliable timing in background tabs
+        console.log('[SessionTimeout] Creating Web Worker for background tab support');
+        this.worker = new Worker('/js/sessionTimeout.worker.js');
+        
+        this.worker.onmessage = (e) => {
+            console.log('[SessionTimeout] Received message from worker:', e.data.type);
+            if (e.data.type === 'showModal') {
+                console.log('[SessionTimeout] Showing timeout modal');
+                this.showModal();
+            } else if (e.data.type === 'autoLogout') {
+                console.log('[SessionTimeout] Auto logout triggered by worker');
+                this.logout("autoSignOut");
+            }
+        };
+        
+        // Add error handling for worker
+        this.worker.onerror = (error) => {
+            console.error('[SessionTimeout] Web Worker error:', error);
+            // Fallback to original setTimeout if worker fails
+            console.log('[SessionTimeout] Falling back to setTimeout');
+            setTimeout(this.showModal.bind(this), this.inactivityCountdownTime * 60 * 1000);
+        };
+        
+        // Start the 18-minute countdown
+        console.log('[SessionTimeout] Starting inactivity countdown via worker');
+        this.worker.postMessage({
+            type: 'startInactivityCountdown',
+            timeoutMs: this.inactivityCountdownTime * 60 * 1000
+        });
+    } catch (error) {
+        console.error('[SessionTimeout] Failed to create Web Worker, falling back to setTimeout:', error);
+        // Fallback to original setTimeout if Web Workers are not supported
+        setTimeout(this.showModal.bind(this), this.inactivityCountdownTime * 60 * 1000);
+    }
 }
 
 SessionTimeOutModal.prototype.formatTime = function (seconds) {
@@ -76,10 +95,16 @@ SessionTimeOutModal.prototype.startModalCountdown = function () {
     let countdownDisplay = this.modal.getElementsByTagName('strong')[0];
     
     // Use Web Worker for modal countdown too
-    this.worker.postMessage({
-        type: 'startModalCountdown',
-        countdownMs: this.modalCountdownTime * 1000
-    });
+    if (this.worker) {
+        try {
+            this.worker.postMessage({
+                type: 'startModalCountdown',
+                countdownMs: this.modalCountdownTime * 1000
+            });
+        } catch (error) {
+            console.error('Failed to send message to worker:', error);
+        }
+    }
     
     // Update display every second (this can be throttled in background, but worker handles the actual timeout)
     this.modalTimeout = setInterval(() => {
@@ -108,7 +133,11 @@ SessionTimeOutModal.prototype.renewSession = function (e) {
                 this.hideModal();
                 // Cancel existing timers and restart countdown
                 if (this.worker) {
-                    this.worker.postMessage({ type: 'cancelTimers' });
+                    try {
+                        this.worker.postMessage({ type: 'cancelTimers' });
+                    } catch (error) {
+                        console.error('Failed to cancel worker timers:', error);
+                    }
                 }
                 this.startInactivityCountdown();
             } else {
@@ -129,7 +158,11 @@ SessionTimeOutModal.prototype.hideModal = function () {
 
 SessionTimeOutModal.prototype.logout = function (action) {
     if (this.worker) {
-        this.worker.terminate();
+        try {
+            this.worker.terminate();
+        } catch (error) {
+            console.error('Failed to terminate worker:', error);
+        }
     }
     window.location.href = `${this.urls.logout}${action === "autoSignOut" ? "?autoSignOut=true" : ""}`;
 }

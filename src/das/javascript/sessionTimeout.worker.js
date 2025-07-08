@@ -17,8 +17,11 @@ self.onmessage = function(e) {
                 clearTimeout(modalTimer);
             }
             
+            console.log('[SessionTimeout Worker] Starting inactivity countdown for', timeoutMs / 1000 / 60, 'minutes');
+            
             // Start the 18-minute inactivity countdown
             inactivityTimer = setTimeout(() => {
+                console.log('[SessionTimeout Worker] Inactivity timeout reached - showing modal');
                 self.postMessage({ type: 'showModal' });
             }, timeoutMs);
             break;
@@ -30,14 +33,18 @@ self.onmessage = function(e) {
                 inactivityTimer = null;
             }
             
+            console.log('[SessionTimeout Worker] Starting modal countdown for', countdownMs / 1000, 'seconds');
+            
             // Start the 2-minute modal countdown
             modalTimer = setTimeout(() => {
+                console.log('[SessionTimeout Worker] Modal countdown expired - auto logout');
                 self.postMessage({ type: 'autoLogout' });
             }, countdownMs);
             break;
             
         case 'cancelTimers':
             // Cancel all timers (when user renews session)
+            console.log('[SessionTimeout Worker] Cancelling all timers');
             if (inactivityTimer) {
                 clearTimeout(inactivityTimer);
                 inactivityTimer = null;
@@ -48,4 +55,7 @@ self.onmessage = function(e) {
             }
             break;
     }
-}; 
+};
+
+// Log when worker starts
+console.log('[SessionTimeout Worker] Worker initialized and ready'); 
