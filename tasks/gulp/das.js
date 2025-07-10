@@ -25,6 +25,7 @@ gulp.task('das-copy-images', function() {
 
 gulp.task('das-copy-libs', (done) => {
   gulp.src(['./src/das/javascript/sessionTimeout.js'], {encoding: false}).pipe(terser()).pipe(gulp.dest('./dist/js/'));
+  gulp.src(['./src/das/javascript/sessionTimeout.worker.js'], {encoding: false}).pipe(gulp.dest('./dist/js/'));
   gulp.src(['./node_modules/govuk-frontend/dist/govuk/assets/**/*'], {encoding: false}).pipe(gulp.dest('./dist/assets/'));
   gulp.src([paths.src.dasJsLibPath + '/govuk-frontend/all.js'], {encoding: false}).pipe(gulp.dest('./dist/libs/govuk-frontend'));
   gulp.src(['./node_modules/govuk-frontend/dist/govuk/govuk-frontend.min.js'], {encoding: false}).pipe(gulp.dest('./dist/libs/govuk-frontend'));
