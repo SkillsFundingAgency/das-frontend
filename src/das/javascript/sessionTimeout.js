@@ -3,8 +3,8 @@
 function SessionTimeOutModal () {
     this.modal = null;
     this.modalId = 'das-session-timeout-modal';
-    this.inactivityCountdownTime = document.body.dataset.timeout || 18 // minutes
-    this.modalCountdownTime = document.body.dataset.modalcount || 120; // seconds
+    this.inactivityCountdownTime = document.body.dataset.timeout || 18
+    this.modalCountdownTime = document.body.dataset.modalcount || 120;
     this.modalTimeout = null;
     this.worker = null;
     this.urls = {
@@ -30,14 +30,7 @@ SessionTimeOutModal.prototype.init = function () {
 
 SessionTimeOutModal.prototype.startInactivityCountdown = function () {
     try {
-        // Use Web Worker for reliable timing in background tabs
-        console.log('[SessionTimeout] Creating Web Worker for background tab support');
-        
-        // Inline worker code as a Blob URL
         const workerCode = `
-            // Web Worker for reliable session timeout timing
-            // This worker runs in a separate thread and is not throttled by browsers in background tabs
-            
             let inactivityTimer = null;
             let modalTimer = null;
             
@@ -46,7 +39,6 @@ SessionTimeOutModal.prototype.startInactivityCountdown = function () {
                 
                 switch (type) {
                     case 'startInactivityCountdown':
-                        // Clear any existing timers
                         if (inactivityTimer) {
                             clearTimeout(inactivityTimer);
                         }
@@ -54,34 +46,23 @@ SessionTimeOutModal.prototype.startInactivityCountdown = function () {
                             clearTimeout(modalTimer);
                         }
                         
-                        console.log('[SessionTimeout Worker] Starting inactivity countdown for', timeoutMs / 1000 / 60, 'minutes');
-                        
-                        // Start the 18-minute inactivity countdown
                         inactivityTimer = setTimeout(() => {
-                            console.log('[SessionTimeout Worker] Inactivity timeout reached - showing modal');
                             self.postMessage({ type: 'showModal' });
                         }, timeoutMs);
                         break;
                         
                     case 'startModalCountdown':
-                        // Clear inactivity timer since modal is showing
                         if (inactivityTimer) {
                             clearTimeout(inactivityTimer);
                             inactivityTimer = null;
                         }
                         
-                        console.log('[SessionTimeout Worker] Starting modal countdown for', countdownMs / 1000, 'seconds');
-                        
-                        // Start the 2-minute modal countdown
                         modalTimer = setTimeout(() => {
-                            console.log('[SessionTimeout Worker] Modal countdown expired - auto logout');
                             self.postMessage({ type: 'autoLogout' });
                         }, countdownMs);
                         break;
                         
                     case 'cancelTimers':
-                        // Cancel all timers (when user renews session)
-                        console.log('[SessionTimeout Worker] Cancelling all timers');
                         if (inactivityTimer) {
                             clearTimeout(inactivityTimer);
                             inactivityTimer = null;
@@ -93,52 +74,30 @@ SessionTimeOutModal.prototype.startInactivityCountdown = function () {
                         break;
                 }
             };
-            
-            // Log when worker starts
-            console.log('[SessionTimeout Worker] Worker initialized and ready');
         `;
         
-        // Create Blob URL for the worker
         const blob = new Blob([workerCode], { type: 'application/javascript' });
         this.workerUrl = URL.createObjectURL(blob);
         
-        console.log('[SessionTimeout] Creating worker from Blob URL');
         this.worker = new Worker(this.workerUrl);
         
         this.worker.onmessage = (e) => {
-            console.log('[SessionTimeout] Received message from worker:', e.data.type);
             if (e.data.type === 'showModal') {
-                console.log('[SessionTimeout] Showing timeout modal');
                 this.showModal();
             } else if (e.data.type === 'autoLogout') {
-                console.log('[SessionTimeout] Auto logout triggered by worker');
                 this.logout("autoSignOut");
             }
         };
         
-        // Add error handling for worker
         this.worker.onerror = (error) => {
-            console.error('[SessionTimeout] Web Worker error:', error);
-            console.error('[SessionTimeout] Error details:', {
-                message: error.message,
-                filename: error.filename,
-                lineno: error.lineno,
-                colno: error.colno
-            });
-            // Fallback to original setTimeout if worker fails
-            console.log('[SessionTimeout] Falling back to setTimeout');
             setTimeout(this.showModal.bind(this), this.inactivityCountdownTime * 60 * 1000);
         };
         
-        // Start the 18-minute countdown
-        console.log('[SessionTimeout] Starting inactivity countdown via worker');
         this.worker.postMessage({
             type: 'startInactivityCountdown',
             timeoutMs: this.inactivityCountdownTime * 60 * 1000
         });
     } catch (error) {
-        console.error('[SessionTimeout] Failed to create Web Worker, falling back to setTimeout:', error);
-        // Fallback to original setTimeout if Web Workers are not supported
         setTimeout(this.showModal.bind(this), this.inactivityCountdownTime * 60 * 1000);
     }
 }
@@ -171,7 +130,6 @@ SessionTimeOutModal.prototype.startModalCountdown = function () {
     let countdownTime = this.modalCountdownTime;
     let countdownDisplay = this.modal.getElementsByTagName('strong')[0];
     
-    // Use Web Worker for modal countdown too
     if (this.worker) {
         try {
             this.worker.postMessage({
@@ -179,11 +137,10 @@ SessionTimeOutModal.prototype.startModalCountdown = function () {
                 countdownMs: this.modalCountdownTime * 1000
             });
         } catch (error) {
-            console.error('Failed to send message to worker:', error);
+            // Fallback to setInterval if worker fails
         }
     }
     
-    // Update display every second (this can be throttled in background, but worker handles the actual timeout)
     this.modalTimeout = setInterval(() => {
         countdownTime--;
         if (countdownDisplay) {
@@ -208,20 +165,19 @@ SessionTimeOutModal.prototype.renewSession = function (e) {
         .then(response => {
             if (response.ok) {
                 this.hideModal();
-                // Cancel existing timers and restart countdown
                 if (this.worker) {
                     try {
                         this.worker.postMessage({ type: 'cancelTimers' });
                     } catch (error) {
-                        console.error('Failed to cancel worker timers:', error);
+                        // Continue if worker fails
                     }
                 }
                 this.startInactivityCountdown();
-            } else {
-                console.error('Failed to renew session');
             }
         })
-        .catch(error => console.error('Error:', error));
+        .catch(error => {
+            // Handle network error silently
+        });
 }
 
 SessionTimeOutModal.prototype.hideModal = function () {
@@ -229,7 +185,6 @@ SessionTimeOutModal.prototype.hideModal = function () {
     if (this.modal) {
         this.modal.remove();
     }
-    // Restart the inactivity countdown
     this.startInactivityCountdown();
 }
 
@@ -237,12 +192,11 @@ SessionTimeOutModal.prototype.logout = function (action) {
     if (this.worker) {
         try {
             this.worker.terminate();
-            // Clean up the Blob URL
             if (this.workerUrl) {
                 URL.revokeObjectURL(this.workerUrl);
             }
         } catch (error) {
-            console.error('Failed to terminate worker:', error);
+            // Continue if cleanup fails
         }
     }
     window.location.href = `${this.urls.logout}${action === "autoSignOut" ? "?autoSignOut=true" : ""}`;
