@@ -168,11 +168,14 @@ SessionTimeOutModal.prototype.renewSession = function (e) {
                 if (this.worker) {
                     try {
                         this.worker.postMessage({ type: 'cancelTimers' });
+                        this.worker.postMessage({
+                            type: 'startInactivityCountdown',
+                            timeoutMs: this.inactivityCountdownTime * 60 * 1000
+                        });
                     } catch (error) {
                         // Continue if worker fails
                     }
                 }
-                this.startInactivityCountdown();
             }
         })
         .catch(error => {
@@ -185,7 +188,6 @@ SessionTimeOutModal.prototype.hideModal = function () {
     if (this.modal) {
         this.modal.remove();
     }
-    this.startInactivityCountdown();
 }
 
 SessionTimeOutModal.prototype.logout = function (action) {
