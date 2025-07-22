@@ -127,8 +127,10 @@ SessionTimeOutModal.prototype.modalEvents = function () {
 }
 
 SessionTimeOutModal.prototype.startModalCountdown = function () {
-    let countdownTime = this.modalCountdownTime;
+    const startTime = Date.now();
+    const endTime = startTime + (this.modalCountdownTime * 1000);
     let countdownDisplay = this.modal.getElementsByTagName('strong')[0];
+    let lastUpdateTime = startTime;
     
     if (this.worker) {
         try {
@@ -142,14 +144,25 @@ SessionTimeOutModal.prototype.startModalCountdown = function () {
     }
     
     this.modalTimeout = setInterval(() => {
-        countdownTime--;
-        if (countdownDisplay) {
-            countdownDisplay.textContent = `${this.formatTime(countdownTime)}`;
+        const now = Date.now();
+        const timeSinceLastUpdate = now - lastUpdateTime;
+        
+        // Only update display if at least 800ms have passed (allows for throttling)
+        if (timeSinceLastUpdate >= 800) {
+            const remainingMs = Math.max(0, endTime - now);
+            const remainingSeconds = Math.ceil(remainingMs / 1000);
+            
+            if (countdownDisplay) {
+                countdownDisplay.textContent = `${this.formatTime(remainingSeconds)}`;
+            }
+            
+            lastUpdateTime = now;
         }
-        if (countdownTime <= 0) {
+        
+        if (now >= endTime) {
             clearInterval(this.modalTimeout);
         }
-    }, 1000);
+    }, 100); // Run every 100ms to catch up quickly when tab becomes active
 }
 
 SessionTimeOutModal.prototype.renewSession = function (e) {
