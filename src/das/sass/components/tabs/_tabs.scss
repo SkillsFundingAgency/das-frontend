@@ -1,4 +1,3 @@
-
 // Bingo boxes style tabs
 
 .das-tabs-boxes {
@@ -23,7 +22,7 @@
 .das-tabs-boxes__list-item {
   @include govuk-font($size: 19);
   margin-bottom: 3px;
-  border: 1px solid  govuk-colour(blue);
+  border: 1px solid govuk-colour(blue);
   background: govuk-colour(blue);
   color: #fff;
   @include govuk-media-query($from: tablet) {
@@ -35,7 +34,7 @@
 
 .das-tabs-boxes__list-item--selected {
   background: #fff;
-  color: $govuk-link-colour
+  color: $govuk-link-colour;
 }
 
 .das-tabs-boxes__tab {

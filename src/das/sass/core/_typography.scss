@@ -7,7 +7,7 @@ p {
   padding-left: 30px;
   background-image: url("../images/icon-cross--red.svg");
   background-repeat: no-repeat;
-  background-position: 0 .2em;
+  background-position: 0 0.2em;
   background-size: 18px 18px;
 }
 
@@ -19,21 +19,21 @@ p {
 }
 
 abbr {
-    font-variant: none;
+  font-variant: none;
 
-    &[title] {
-      text-decoration: none;
-      border-bottom: 1px dotted govuk-colour('mid-grey');
+  &[title] {
+    text-decoration: none;
+    border-bottom: 1px dotted govuk-colour("mid-grey");
 
-      .govuk-heading-xl &,
-      .govuk-heading-l & {
-          border-bottom: 1px dashed govuk-colour('mid-grey');
-      }
+    .govuk-heading-xl &,
+    .govuk-heading-l & {
+      border-bottom: 1px dashed govuk-colour("mid-grey");
     }
+  }
 }
 
 .das-mark {
-  color: govuk-colour('black');
+  color: govuk-colour("black");
 }
 
 .das-mark--green {

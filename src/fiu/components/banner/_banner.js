@@ -1,13 +1,13 @@
 export class Banner {
   constructor(bannerElement) {
     if (!bannerElement) {
-      throw new Error('No banner element provided.');
+      throw new Error("No banner element provided.");
     }
 
     this.banner = bannerElement;
-    this.cookieName = this.banner.dataset.fiuBannerCookieName || 'fiu-banner';
-    this.cookieValue = 'true';
-    this.hidelink = this.banner.querySelector('[data-fiu-banner-hide-link]');
+    this.cookieName = this.banner.dataset.fiuBannerCookieName || "fiu-banner";
+    this.cookieValue = "true";
+    this.hidelink = this.banner.querySelector("[data-fiu-banner-hide-link]");
     this.setupEvents();
     this.init();
   }
@@ -23,14 +23,14 @@ export class Banner {
   setupEvents() {
     if (!this.hidelink) return;
 
-    this.hidelink.addEventListener('click', (event) => {
+    this.hidelink.addEventListener("click", (event) => {
       event.preventDefault();
       this.removeBanner();
     });
   }
 
   showBanner() {
-    this.banner.classList.remove('fiu-visually-hidden');
+    this.banner.classList.remove("fiu-visually-hidden");
   }
 
   removeBanner() {
@@ -41,7 +41,7 @@ export class Banner {
   }
 
   createCookie(name, value, days) {
-    let expires = '';
+    let expires = "";
     if (days) {
       const date = new Date();
       date.setTime(date.getTime() + days * 86400000); // 24 * 60 * 60 * 1000
@@ -52,7 +52,7 @@ export class Banner {
 
   checkCookie(name) {
     const nameEQ = `${name}=`;
-    const cookies = document.cookie.split(';');
+    const cookies = document.cookie.split(";");
     for (let c of cookies) {
       let cookieName = c.trim();
       if (cookieName.startsWith(nameEQ)) {

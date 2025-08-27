@@ -39,8 +39,7 @@
 }
 
 .das-search-form__button:focus,
-.das-search-form__button:focus:not(:active):not(:hover)
-{
+.das-search-form__button:focus:not(:active):not(:hover) {
   box-shadow: none;
   background-color: $govuk-focus-colour;
   background-image: url("../images/icon-search--black.svg");

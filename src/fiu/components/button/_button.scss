@@ -7,12 +7,12 @@
   text-transform: uppercase;
   font-weight: $fiu-font-weight-bold;
   font-size: 14px;
-  padding: .7em 1.5em;
+  padding: 0.7em 1.5em;
   &:hover {
     background: $fiu-global-link-hover-colour;
   }
   @include govuk-media-query($from: tablet) {
-    padding-top: .8em;
+    padding-top: 0.8em;
   }
 }
 
@@ -36,7 +36,6 @@
     background: $fiu-providers-link-hover-colour;
   }
 }
-
 
 .fiu-button--outlined {
   background: #fff;
@@ -100,7 +99,7 @@
   text-decoration: underline;
   font-weight: $fiu-font-weight-book;
   font-size: 16px;
-  padding: .5em 1.5em;
+  padding: 0.5em 1.5em;
   &:link,
   &:visited,
   &:active {
@@ -116,5 +115,5 @@
   border-image-slice: 30% 20% 40%;
   border-image-width: 50px;
   border-image-outset: 50px;
-  border-image-source: url('../assets/images/design/button-sparks-border.png')
+  border-image-source: url("../assets/images/design/button-sparks-border.png");
 }

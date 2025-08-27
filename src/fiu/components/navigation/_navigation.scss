@@ -29,7 +29,7 @@
   width: 40px;
   margin-left: 10px;
   &:focus {
-    @include fiu-focused-block
+    @include fiu-focused-block;
   }
   @include govuk-media-query(tablet) {
     margin-left: -5px;

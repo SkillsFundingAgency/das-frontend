@@ -5,12 +5,12 @@ export class BackLink {
   }
 
   init() {
-    const backLink = document.createElement('a');
-    backLink.href = '#';
-    backLink.className = 'fiu-back-link';
-    backLink.textContent = 'Back';
+    const backLink = document.createElement("a");
+    backLink.href = "#";
+    backLink.className = "fiu-back-link";
+    backLink.textContent = "Back";
 
-    backLink.addEventListener('click', (event) => {
+    backLink.addEventListener("click", (event) => {
       event.preventDefault();
       window.history.back();
     });

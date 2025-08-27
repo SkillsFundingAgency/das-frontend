@@ -1,0 +1,7 @@
+# Ignore artifacts:
+.vscode
+dist
+docs
+azure
+src/das/javascript/libs
+azure-pipelines.yml

@@ -4,10 +4,11 @@ $govuk-fonts-path: "../assets/fonts/";
 $govuk-new-link-styles: true;
 $govuk-suppressed-warnings: "legacy-organisation-colours";
 
-
-
 // Import the GOV.UK Frontend styles
 @import "node_modules/govuk-frontend/dist/govuk/index";
+
+// Import the GOV.UK Frontend styles
+@import "node_modules/@govuk-one-login/service-header/dist/styles/service-header-no-imports";
 
 @import "libs/_autocomplete";
 

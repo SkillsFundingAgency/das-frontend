@@ -12,11 +12,11 @@
   @include govuk-media-query(tablet) {
     border-left: 1px solid $mid-grey;
 
-    &--prev{
+    &--prev {
       float: left;
       border-left: none;
     }
-    &--next{
+    &--next {
       float: right;
       border-left: none;
     }
@@ -27,7 +27,7 @@
   }
 }
 
-@mixin paginationArrows($content,$left,$right) {
+@mixin paginationArrows($content, $left, $right) {
   content: $content;
   display: inline-block;
   position: relative;
@@ -56,12 +56,12 @@
   @include govuk-media-query(tablet) {
     .fiu-pagination__item--prev & {
       &:before {
-        @include paginationArrows('<',-6px,unset);
+        @include paginationArrows("<", -6px, unset);
       }
     }
     .fiu-pagination__item--next & {
       &:after {
-        @include paginationArrows('>',unset,-6px);
+        @include paginationArrows(">", unset, -6px);
       }
     }
   }

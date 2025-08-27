@@ -1,4 +1,5 @@
 # Tabs
 
 ## Tab boxes
-Bingo box style tabs 
+
+Bingo box style tabs

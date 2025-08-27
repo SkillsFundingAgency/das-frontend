@@ -1,4 +1,3 @@
-
 .fiu-header {
   background-color: $fiu-header-bg-colour;
   padding: 0;
@@ -16,7 +15,7 @@
   margin-top: 9px;
   margin-bottom: 10px;
   &:focus {
-    @include fiu-focused-block
+    @include fiu-focused-block;
   }
   @include govuk-media-query(tablet) {
     float: left;
@@ -101,9 +100,6 @@
 .fiu-header__navigation-item--influencers-active:after {
   @include arrow($fiu-influencers-brand-colour);
 }
-
-
-
 
 .fiu-header-grad {
   height: 50px;

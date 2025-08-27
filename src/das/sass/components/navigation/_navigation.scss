@@ -64,7 +64,7 @@
     width: 100%;
     border-top: 1px solid #ccc;
     @include govuk-media-query($from: desktop) {
-        width: auto;
+      width: auto;
     }
   }
 }
@@ -82,10 +82,10 @@
     position: absolute;
     right: 15px;
     top: 17px;
-    @include triangle-equilateral(down, 10px, currentColor)
+    @include triangle-equilateral(down, 10px, currentColor);
   }
   &.open:after {
     top: 15px;
-    @include triangle-equilateral(up, 10px, currentColor)
+    @include triangle-equilateral(up, 10px, currentColor);
   }
 }

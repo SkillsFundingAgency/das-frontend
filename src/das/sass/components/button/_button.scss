@@ -25,13 +25,13 @@
 }
 
 .das-link--button-aligned {
-  display:inline-block;
+  display: inline-block;
   padding: 10px 15px 5px 10px;
   font-size: 1.1875rem;
   font-weight: 400;
   line-height: 1.25;
   margin-top: 0;
-  margin-bottom: 15px
+  margin-bottom: 15px;
 }
 
 .das-button--link {
@@ -42,7 +42,8 @@
   width: 100%;
   margin-top: 0;
   @include govuk-responsive-margin(6, "bottom");
-  padding: (govuk-spacing(2) - $govuk-border-width-form-element) govuk-spacing(2) (govuk-spacing(2) - $govuk-border-width-form-element);
+  padding: (govuk-spacing(2) - $govuk-border-width-form-element)
+    govuk-spacing(2) (govuk-spacing(2) - $govuk-border-width-form-element);
   border: $govuk-border-width-form-element solid transparent;
   border-radius: 0;
   color: $govuk-link-colour;
@@ -103,7 +104,7 @@
 
   &:hover,
   &:focus {
-    background: govuk-colour('light-grey');
+    background: govuk-colour("light-grey");
     color: govuk-colour("green");
   }
 }

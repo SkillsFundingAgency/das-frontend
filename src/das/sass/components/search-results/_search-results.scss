@@ -1,5 +1,4 @@
 .das-search-results {
-
 }
 
 .das-search-results__list {
@@ -23,7 +22,7 @@
 }
 
 .das-search-results__heading {
-  @include govuk-responsive-margin(2, "bottom")
+  @include govuk-responsive-margin(2, "bottom");
 }
 
 .das-search-results__body {

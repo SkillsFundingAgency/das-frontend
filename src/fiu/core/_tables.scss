@@ -5,9 +5,9 @@
 }
 
 .fiu-table th {
-  @extend .govuk-table__header
+  @extend .govuk-table__header;
 }
 
 .fiu-table td {
-  @extend .govuk-table__cell
+  @extend .govuk-table__cell;
 }

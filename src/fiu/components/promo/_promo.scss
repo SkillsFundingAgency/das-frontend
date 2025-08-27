@@ -1,70 +1,70 @@
 .fiu-promo {
-    @include fiu-typography-common;
-    text-align: center;
-    padding-top: 30px;
-    padding-bottom: 50px;
-    background-color: $white;
-    color: $light-black;
-    z-index: 0;
-    position: relative;
+  @include fiu-typography-common;
+  text-align: center;
+  padding-top: 30px;
+  padding-bottom: 50px;
+  background-color: $white;
+  color: $light-black;
+  z-index: 0;
+  position: relative;
 }
 
 .fiu-promo--citizens {
-    background-color: $fiu-citizens-brand-colour;
-    color: $white;
+  background-color: $fiu-citizens-brand-colour;
+  color: $white;
 }
 .fiu-promo--employers {
-    background-color: $fiu-employers-brand-colour;
-    color: $white;
+  background-color: $fiu-employers-brand-colour;
+  color: $white;
 }
 
 .fiu-promo__heading {
-    color: inherit;
-    margin-bottom: -10px;
+  color: inherit;
+  margin-bottom: -10px;
 }
 
 .fiu-promo__content {
-    font-size: 20px;
-    line-height: 24px;
-    font-weight: $fiu-font-weight-book;
+  font-size: 20px;
+  line-height: 24px;
+  font-weight: $fiu-font-weight-book;
 
-    & + .fiu-promo__content {
-        margin-top: -20px;
-    }
+  & + .fiu-promo__content {
+    margin-top: -20px;
+  }
 
-    @include govuk-media-query(tablet) {
-        font-size: 24px;
-        line-height: 29px;
-        width: 60%;
-        margin-left: auto;
-        margin-right: auto;
-    }
+  @include govuk-media-query(tablet) {
+    font-size: 24px;
+    line-height: 29px;
+    width: 60%;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 .fiu-promo__button {
-    margin-bottom: 0;
+  margin-bottom: 0;
 }
 
 .fiu-promo__bg-container {
-    position: relative;
+  position: relative;
 }
 
 .fiu-promo__bg {
-    position: absolute;
-    left: 0;
-    right: 0;
-    top: 0;
-    z-index: -1;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  z-index: -1;
 }
 
 .fiu-promo__bg--logo-montage {
-    background-image: url("/fiu/assets/images/employers/montage.png");
-    background-position: top;
-    background-repeat: no-repeat;
-    background-size: contain;
-    height: 140px;
-    top: -30px;
-    @include govuk-media-query(tablet) {
-        top: -130px;
-    }
+  background-image: url("/fiu/assets/images/employers/montage.png");
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size: contain;
+  height: 140px;
+  top: -30px;
+  @include govuk-media-query(tablet) {
+    top: -130px;
+  }
 }

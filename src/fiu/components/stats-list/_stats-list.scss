@@ -5,13 +5,13 @@
   margin: 20px 0;
   @include govuk-media-query(tablet) {
     @include govuk-clearfix;
-    margin-right: - ($govuk-gutter-half);
-    margin-left: - ($govuk-gutter-half);
+    margin-right: -($govuk-gutter-half);
+    margin-left: -($govuk-gutter-half);
     margin-top: 30px;
   }
   @include govuk-media-query($media-type: print) {
-    margin-right: - ($govuk-gutter-half);
-    margin-left: - ($govuk-gutter-half);
+    margin-right: -($govuk-gutter-half);
+    margin-left: -($govuk-gutter-half);
   }
 }
 
@@ -59,10 +59,10 @@
   }
   .fiu-stats-list__list-item {
     @include govuk-media-query(tablet) {
-      @include govuk-grid-column(one-half)
+      @include govuk-grid-column(one-half);
     }
     @include govuk-media-query($media-type: print) {
-      @include govuk-grid-column(one-half)
+      @include govuk-grid-column(one-half);
     }
   }
   .fiu-stats-list__stat {

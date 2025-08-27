@@ -21,7 +21,7 @@
     z-index: 1;
   }
   & > p {
-    margin-bottom: .5em;
+    margin-bottom: 0.5em;
   }
 }
 
@@ -37,22 +37,22 @@
 }
 
 .das-timeline__title {
-  @include govuk-font(19, 'bold');
+  @include govuk-font(19, "bold");
   margin-top: 0;
-  margin-bottom: .5em;
+  margin-bottom: 0.5em;
 }
 
 .das-timeline__by {
   @include govuk-font(16);
-  color: govuk-colour('dark-grey');
+  color: govuk-colour("dark-grey");
   display: inline;
 }
 
 .das-timeline__date {
   @include govuk-font(16);
-  color: govuk-colour('dark-grey');
+  color: govuk-colour("dark-grey");
   @include govuk-responsive-margin(0, "top");
-  margin-bottom: .5em;
+  margin-bottom: 0.5em;
 }
 
 .das-timeline__description {

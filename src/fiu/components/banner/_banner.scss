@@ -3,8 +3,8 @@
   background: #333;
   padding: 20px 0 5px;
   color: #fff;
-  border-top: 1px solid rgba(0, 0, 0, .3);
-  border-bottom: 1px solid rgba(0, 0, 0, .3);
+  border-top: 1px solid rgba(0, 0, 0, 0.3);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
   &:focus {
     @include fiu-focused-block;
   }
@@ -28,7 +28,7 @@
 
 .fiu-banner__body {
   color: inherit !important;
-  margin-top: .4em;
+  margin-top: 0.4em;
 }
 
 .fiu-banner__body > p > a,
@@ -36,7 +36,7 @@
 .fiu-banner__body li > p > a {
   color: inherit !important;
   &:hover {
-    color: inherit !important;;
+    color: inherit !important;
   }
   &:focus {
     color: $govuk-focus-text-colour !important;

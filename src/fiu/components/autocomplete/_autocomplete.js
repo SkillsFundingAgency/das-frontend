@@ -9,20 +9,22 @@ export class Autocomplete {
     accessibleAutocomplete.enhanceSelectElement({
       selectElement: this.select,
       minLength: 2,
-      defaultValue: '',
-      displayMenu: 'overlay',
-      placeholder: '',
+      defaultValue: "",
+      displayMenu: "overlay",
+      placeholder: "",
       onConfirm: (opt) => {
         const inputEl = document.getElementById(this.select.name);
-        const searchString = opt || inputEl?.value || '';
+        const searchString = opt || inputEl?.value || "";
 
         if (!searchString.trim()) {
           this.select.selectedIndex = 0;
           return;
         }
 
-        const matchedOption = Array.from(this.select.options).find(option =>
-          (option.textContent || option.innerText).toLowerCase() === searchString.toLowerCase()
+        const matchedOption = Array.from(this.select.options).find(
+          (option) =>
+            (option.textContent || option.innerText).toLowerCase() ===
+            searchString.toLowerCase(),
         );
 
         if (matchedOption) {
@@ -30,7 +32,7 @@ export class Autocomplete {
         } else {
           this.select.selectedIndex = 0;
         }
-      }
+      },
     });
   }
 }

@@ -27,7 +27,7 @@
 
 .fiu-footer__contact-heading {
   color: #fff;
-  margin: 0 0 .7em;
+  margin: 0 0 0.7em;
   font-size: 19px;
   font-weight: $fiu-font-weight-bold;
   @include govuk-media-query(tablet) {
@@ -81,7 +81,7 @@
 
 .fiu-footer__heading {
   color: #fff;
-  margin: 0 0 .7em;
+  margin: 0 0 0.7em;
   font-size: 19px;
   font-weight: $fiu-font-weight-bold;
 }
@@ -108,7 +108,7 @@
   display: inline-block;
   margin-bottom: 2em;
   @include govuk-media-query(tablet) {
-    margin-bottom: .2em;
+    margin-bottom: 0.2em;
   }
 }
 
@@ -118,16 +118,16 @@
 }
 
 .fiu-footer__inline-list,
-.fiu-footer__list{
+.fiu-footer__list {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
 .fiu-footer__inline-list-item {
-  margin: 0 0 .7em;
+  margin: 0 0 0.7em;
   display: inline-block;
-  padding: 0 .7em;
+  padding: 0 0.7em;
   line-height: 1;
   border-right: 1px solid $dark-grey;
   &:last-child {
@@ -140,11 +140,11 @@
 
 .fiu-footer__inline-list-title,
 .fiu-footer__list-item {
-  margin-bottom: .7em;
+  margin-bottom: 0.7em;
   display: block;
   @include govuk-media-query(tablet) {
     display: inline-block;
-    padding: 0 .7em;
+    padding: 0 0.7em;
     line-height: 1;
     border-right: 1px solid $dark-grey;
     &:last-child {

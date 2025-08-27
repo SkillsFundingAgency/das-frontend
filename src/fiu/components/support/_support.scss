@@ -1,37 +1,37 @@
 .fiu-support-panel {
-    @extend .fiu-panel;
+  @extend .fiu-panel;
 }
 
 .fiu-support-panel__heading {
-    @extend .govuk-heading-m;
-    font-weight: $fiu-font-weight-bold;
-    color: $fiu-text-colour;
-    margin-top: 0;
-    margin-bottom: 20px;
-    @include fiu-word-break;
+  @extend .govuk-heading-m;
+  font-weight: $fiu-font-weight-bold;
+  color: $fiu-text-colour;
+  margin-top: 0;
+  margin-bottom: 20px;
+  @include fiu-word-break;
 }
 
 .fiu-support-panel__content {
-    font-size: 16px;
-    line-height: 21px;
-    margin-bottom: 0;
-    @include govuk-media-query(tablet) {
-        font-size: 18px;
-        line-height: 23px;
-    }
+  font-size: 16px;
+  line-height: 21px;
+  margin-bottom: 0;
+  @include govuk-media-query(tablet) {
+    font-size: 18px;
+    line-height: 23px;
+  }
 }
 
 .fiu-support-panel__wrap {
-    display: block;
-    &.fiu-link {
-        margin-top: 10px;
-        @include fiu-word-break;
-    }
+  display: block;
+  &.fiu-link {
+    margin-top: 10px;
+    @include fiu-word-break;
+  }
 }
 
 .fiu-support-panel__tel {
-    font-size: 34px;
-    line-height: 1.3em;
-    margin-bottom: 20px;
-    @include fiu-word-break;
+  font-size: 34px;
+  line-height: 1.3em;
+  margin-bottom: 20px;
+  @include fiu-word-break;
 }

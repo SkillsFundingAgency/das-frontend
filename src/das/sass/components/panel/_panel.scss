@@ -25,6 +25,6 @@
 .das-panel__link {
   color: #fff;
   &:focus {
-    @include govuk-focused-text
+    @include govuk-focused-text;
   }
 }
