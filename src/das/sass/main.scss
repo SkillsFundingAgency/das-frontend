@@ -7,7 +7,7 @@ $govuk-suppressed-warnings: "legacy-organisation-colours";
 
 
 // Import the GOV.UK Frontend styles
-@import "node_modules/govuk-frontend/dist/govuk/index";
+@import "govuk-frontend/dist/govuk";
 
 @import "libs/_autocomplete";
 
