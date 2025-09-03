@@ -1,3 +1,5 @@
+@import url("https://rsms.me/inter/inter.css");
+
 p {
   @extend .govuk-body;
   color: inherit;
@@ -38,4 +40,10 @@ abbr {
 
 .das-mark--green {
   background: #cffdc6;
+}
+
+.dfe-branding {
+  * {
+    font-family: "Inter", sans-serif !important;
+  }
 }

@@ -1,5 +1,5 @@
 <div class="header__title">
-  <span class="govuk-heading-s">New employer (not logged in)</span>
+  <span class="govuk-heading-s">New employer (logged in)</span>
 </div>
 
 <header class="rebranded-cross-service-header" data-module="one-login-header">
@@ -70,12 +70,16 @@
         id="one-login-header__nav"
       >
         <ul class="rebranded-one-login-header__nav__list">
-          <li class="rebranded-one-login-header__nav__list-item">
+          <li
+            class="rebranded-one-login-header__nav__list-item das-header__nav__list-item"
+          >
             <a
               class="rebranded-one-login-header__nav__link"
               href="https://home.account.gov.uk/"
             >
-              <span class="rebranded-one-login-header__nav__link-content">
+              <span
+                class="rebranded-one-login-header__nav__link-content das-header__nav__link-content"
+              >
                 <svg
                   focusable="false"
                   xmlns="http://www.w3.org/2000/svg"
@@ -97,11 +101,64 @@
               </span>
             </a>
           </li>
-          <li class="rebranded-one-login-header__nav__list-item">
+          <li
+            class="rebranded-one-login-header__nav__list-item das-header__nav__list-item"
+          >
             <a class="rebranded-one-login-header__nav__link" href="/test">
               <span
                 class="rebranded-one-login-header__nav__link-content das-header__nav__link-content"
                 >Help</span
+              >
+            </a>
+          </li>
+          <li
+            class="rebranded-one-login-header__nav__list-item das-header__nav__list-item"
+          >
+            <a
+              class="rebranded-one-login-header__nav__link das-header__nav__link--has-menu"
+              href="#settings"
+              aria-controls="settings"
+            >
+              <span
+                class="rebranded-one-login-header__nav__link-content das-header__nav__link-content"
+                >Settings</span
+              >
+            </a>
+            <ul class="das-header__sub-menu" id="settings">
+              <li class="das-header__sub-menu-item">
+                <a role="menuitem" href="#" class="das-header__sub-menu-link"
+                  >Your accounts</a
+                >
+              </li>
+              <li class="das-header__sub-menu-item">
+                <a role="menuitem" href="#" class="das-header__sub-menu-link"
+                  >Rename account</a
+                >
+              </li>
+              <li class="das-header__sub-menu-item">
+                <a role="menuitem" href="#" class="das-header__sub-menu-link"
+                  >Change your sign-in details</a
+                >
+              </li>
+              <li class="das-header__sub-menu-item">
+                <a role="menuitem" href="#" class="das-header__sub-menu-link"
+                  >Notification settings</a
+                >
+              </li>
+              <li class="das-header__sub-menu-item">
+                <a role="menuitem" href="#" class="das-header__sub-menu-link"
+                  >Manage your advert notifications</a
+                >
+              </li>
+            </ul>
+          </li>
+          <li
+            class="rebranded-one-login-header__nav__list-item das-header__nav__list-item"
+          >
+            <a class="rebranded-one-login-header__nav__link" href="/test">
+              <span
+                class="rebranded-one-login-header__nav__link-content das-header__nav__link-content"
+                >Sign out</span
               >
             </a>
           </li>
@@ -122,6 +179,45 @@
             >Your employer account</span
           >
         </span>
+        <nav aria-label="Menu" class="govuk-service-navigation__wrapper">
+          <button
+            type="button"
+            class="govuk-service-navigation__toggle govuk-js-service-navigation-toggle"
+            aria-controls="navigation"
+            hidden
+          >
+            Menu
+          </button>
+          <ul class="govuk-service-navigation__list" id="navigation">
+            <li class="govuk-service-navigation__item">
+              <a class="govuk-service-navigation__link" href="#"> Home </a>
+            </li>
+            <li class="govuk-service-navigation__item">
+              <a class="govuk-service-navigation__link" href="#"> Finance </a>
+            </li>
+            <li class="govuk-service-navigation__item">
+              <a class="govuk-service-navigation__link" href="#"> Adverts </a>
+            </li>
+            <li class="govuk-service-navigation__item">
+              <a class="govuk-service-navigation__link" href="#">
+                Apprentices
+              </a>
+            </li>
+            <li class="govuk-service-navigation__item">
+              <a class="govuk-service-navigation__link" href="#"> Your team </a>
+            </li>
+            <li class="govuk-service-navigation__item">
+              <a class="govuk-service-navigation__link" href="#">
+                Your organisation and agreements
+              </a>
+            </li>
+            <li class="govuk-service-navigation__item">
+              <a class="govuk-service-navigation__link" href="#">
+                PAYE schemes
+              </a>
+            </li>
+          </ul>
+        </nav>
       </div>
     </div>
   </section>

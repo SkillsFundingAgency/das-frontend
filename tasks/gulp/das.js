@@ -23,7 +23,9 @@ gulp.task("das-compile-sass", function () {
 });
 
 gulp.task("das-copy-images", function () {
-  return gulp.src(paths.src.dasImages).pipe(gulp.dest(paths.dist.dasImages));
+  return gulp
+    .src(paths.src.dasImages, { encoding: false })
+    .pipe(gulp.dest(paths.dist.dasImages));
 });
 
 gulp.task("das-copy-libs", (done) => {

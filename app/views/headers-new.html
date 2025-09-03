@@ -50,9 +50,8 @@
     </script>
 
     {% include "headers/new/employer-not-logged-in.html" %} {% include
-    "headers/current/employer-logged-in.html" %} {% include
-    "headers/current/provider-not-logged-in.html" %} {% include
-    "headers/current/provider-logged-in.html" %}
+    "headers/new/employer-logged-in.html" %} {% include
+    "headers/new/provider-logged-in.html" %}
 
     <div class="notes">
       <strong>Dev Notes:</strong>
@@ -62,13 +61,18 @@
         <li>Updated the hex value in for theme-color and mask color</li>
       </ol>
     </div>
-
-    <script src="/libs/govuk-frontend/all.js"></script>
+    <script
+      type="module"
+      src="/libs/govuk-frontend/govuk-frontend.min.js"
+    ></script>
+    <script type="module">
+      import { initAll } from "/libs/govuk-frontend/govuk-frontend.min.js";
+      initAll();
+    </script>
     <script src="/libs/jquery/jquery.min.js"></script>
     <script src="/js/das-all.js"></script>
     <script src="/js/app.min.js"></script>
     <script>
-      window.GOVUKFrontend.initAll();
       window.DASFrontend.initAll();
     </script>
   </body>
