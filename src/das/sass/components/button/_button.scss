@@ -1,21 +1,21 @@
 .das-button--blue {
-  background: govuk-colour("blue");
+  background: govuk-colour('blue');
   &:hover,
   &:focus {
-    background: darken(govuk-colour("blue"), 10%);
+    background: darken(govuk-colour('blue'), 10%);
   }
 }
 
 .das-button--inverted {
   background-color: #fff;
-  box-shadow: 0 2px 0 darken(govuk-colour("blue"), 20%);
+  box-shadow: 0 2px 0 darken(govuk-colour('blue'), 20%);
 
   &,
   &:link,
   &:visited,
   &:active,
   &:hover {
-    color: govuk-colour("blue");
+    color: govuk-colour('blue');
   }
 
   &:hover,
@@ -41,9 +41,9 @@
   position: relative;
   width: 100%;
   margin-top: 0;
-  @include govuk-responsive-margin(6, "bottom");
-  padding: (govuk-spacing(2) - $govuk-border-width-form-element)
-    govuk-spacing(2) (govuk-spacing(2) - $govuk-border-width-form-element);
+  @include govuk-responsive-margin(6, 'bottom');
+  padding: (govuk-spacing(2) - $govuk-border-width-form-element) govuk-spacing(2)
+    (govuk-spacing(2) - $govuk-border-width-form-element);
   border: $govuk-border-width-form-element solid transparent;
   border-radius: 0;
   color: $govuk-link-colour;
@@ -89,22 +89,22 @@
 }
 
 .das-button--outline {
-  border-color: govuk-colour("green");
-  color: govuk-colour("green");
+  border-color: govuk-colour('green');
+  color: govuk-colour('green');
   background-color: #fff;
-  box-shadow: 0 2px 0 govuk-colour("green");
+  box-shadow: 0 2px 0 govuk-colour('green');
 
   &,
   &:link,
   &:visited,
   &:active,
   &:hover {
-    color: govuk-colour("green");
+    color: govuk-colour('green');
   }
 
   &:hover,
   &:focus {
-    background: govuk-colour("light-grey");
-    color: govuk-colour("green");
+    background: govuk-colour('light-grey');
+    color: govuk-colour('green');
   }
 }

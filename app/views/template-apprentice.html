@@ -5,16 +5,8 @@
     <title>{{ pageTitle if pageTitle else "DAS" }}</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#0b0c0c" />
-    <link
-      rel="shortcut icon"
-      href="/assets/images/favicon.ico"
-      type="image/x-icon"
-    />
-    <link
-      rel="mask-icon"
-      href="/assets/images/govuk-mask-icon.svg"
-      color="#0b0c0c"
-    />
+    <link rel="shortcut icon" href="/assets/images/favicon.ico" type="image/x-icon" />
+    <link rel="mask-icon" href="/assets/images/govuk-mask-icon.svg" color="#0b0c0c" />
     <link
       rel="apple-touch-icon"
       sizes="180x180"
@@ -30,35 +22,24 @@
       sizes="152x152"
       href="/assets/images/govuk-apple-touch-icon-152x152.png"
     />
-    <link
-      rel="apple-touch-icon"
-      href="/assets/images/govuk-apple-touch-icon.png"
-    />
+    <link rel="apple-touch-icon" href="/assets/images/govuk-apple-touch-icon.png" />
     <!--[if !IE 8]><!-->
     <link href="/css/main.css" rel="stylesheet" />
     <link href="/css/apprentice.css" rel="stylesheet" />
     <!--<![endif]-->
-    <meta
-      property="og:image"
-      content="/assets/images/govuk-opengraph-image.png"
-    />
+    <meta property="og:image" content="/assets/images/govuk-opengraph-image.png" />
   </head>
   <body class="govuk-template__body {{ bodyClass }}">
     <script>
       document.body.className = document.body.className
-        ? document.body.className + " js-enabled"
-        : "js-enabled";
+        ? document.body.className + ' js-enabled'
+        : 'js-enabled';
     </script>
     <a href="#main-content" class="govuk-skip-link">Skip to main content</a>
     <header class="govuk-header" data-module="header">
-      <div
-        class="govuk-header__container govuk-width-container app-user-header__border-override"
-      >
+      <div class="govuk-header__container govuk-width-container app-user-header__border-override">
         <div class="govuk-header__logo">
-          <a
-            href="https://www.gov.uk/"
-            class="govuk-header__link govuk-header__link--homepage"
-          >
+          <a href="https://www.gov.uk/" class="govuk-header__link govuk-header__link--homepage">
             <span class="govuk-header__logotype">
               <svg
                 aria-hidden="true"
@@ -100,9 +81,7 @@
       <div class="govuk-width-container">
         <div class="govuk-grid-row">
           <div class="govuk-grid-column-one-half">
-            <p class="govuk-body-l app-user-header__name">
-              <span>Welcome, James King</span>&nbsp;
-            </p>
+            <p class="govuk-body-l app-user-header__name"><span>Welcome, James King</span>&nbsp;</p>
           </div>
           <div class="govuk-grid-column-one-half">
             <div class="das-account-header">
@@ -112,37 +91,26 @@
                     role="menuitem"
                     class="das-user-navigation__list-item das-user-navigation__list-item--has-sub-menu"
                   >
-                    <a href="/" class="das-user-navigation__link"
-                      >Account settings</a
-                    >
+                    <a href="/" class="das-user-navigation__link">Account settings</a>
                     <ul
                       role="menu"
                       class="das-user-navigation__sub-menu js-hidden govuk-!-font-size-16"
                     >
-                      <li
-                        class="das-user-navigation__sub-menu-list-item"
-                        role="menuitem"
-                      >
+                      <li class="das-user-navigation__sub-menu-list-item" role="menuitem">
                         <a
                           class="das-user-navigation__sub-menu-link"
                           href="https://localhost:7070/Account"
                           >Change your personal details</a
                         >
                       </li>
-                      <li
-                        class="das-user-navigation__sub-menu-list-item"
-                        role="menuitem"
-                      >
+                      <li class="das-user-navigation__sub-menu-list-item" role="menuitem">
                         <a
                           class="das-user-navigation__sub-menu-link"
                           href="https://localhost:7070/ForgottenPassword/36BCFAAD-1FF7-49CB-8EEF-19877B7AD0C9/"
                           >Change your password</a
                         >
                       </li>
-                      <li
-                        class="das-user-navigation__sub-menu-list-item"
-                        role="menuitem"
-                      >
+                      <li class="das-user-navigation__sub-menu-list-item" role="menuitem">
                         <a
                           class="das-user-navigation__sub-menu-link"
                           href="https://localhost:7070/profile/36BCFAAD-1FF7-49CB-8EEF-19877B7AD0C9/changeemail"
@@ -152,9 +120,7 @@
                     </ul>
                   </li>
                   <li role="menuitem" class="das-user-navigation__list-item">
-                    <a
-                      class="das-user-navigation__link"
-                      href="https://localhost:7070/SignOut"
+                    <a class="das-user-navigation__link" href="https://localhost:7070/SignOut"
                       >Sign out</a
                     >
                   </li>
@@ -165,34 +131,16 @@
         </div>
       </div>
     </div>
-    <div
-      class="app-navigation app-navigation--employers"
-      data-app-navigation="true"
-    >
+    <div class="app-navigation app-navigation--employers" data-app-navigation="true">
       <div class="govuk-width-container">
-        <a
-          href="#navigation"
-          class="app-navigation__toggle"
-          data-app-nav-toggle="true"
-        >
-          Menu
-        </a>
-        <nav
-          class="app-navigation__nav"
-          data-app-nav-menu="true"
-          id="navigation"
-        >
-          <h3
-            class="govuk-visually-hidden app-navigation__heading"
-            id="app-nav-title"
-          >
+        <a href="#navigation" class="app-navigation__toggle" data-app-nav-toggle="true"> Menu </a>
+        <nav class="app-navigation__nav" data-app-nav-menu="true" id="navigation">
+          <h3 class="govuk-visually-hidden app-navigation__heading" id="app-nav-title">
             Navigation
           </h3>
           <ul class="app-navigation__list" aria-labelledby="app-nav-title">
             <li class="app-navigation__list-item">
-              <a class="app-navigation__link" href="https://localhost:5001/Home"
-                >Home</a
-              >
+              <a class="app-navigation__link" href="https://localhost:5001/Home">Home</a>
             </li>
             <li class="app-navigation__list-item">
               <a
@@ -202,9 +150,7 @@
               >
             </li>
             <li class="app-navigation__list-item">
-              <a
-                class="app-navigation__link"
-                href="https://localhost:5001/HelpAndSupport"
+              <a class="app-navigation__link" href="https://localhost:5001/HelpAndSupport"
                 >Help and support</a
               >
             </li>
@@ -235,10 +181,7 @@
               </li>
               <li class="govuk-footer__inline-list-item">
                 Built by the
-                <a
-                  href="http://gov.uk/sfa"
-                  target="_blank"
-                  class="govuk-footer__link"
+                <a href="http://gov.uk/sfa" target="_blank" class="govuk-footer__link"
                   >Education and Skills Funding Agency</a
                 >
               </li>

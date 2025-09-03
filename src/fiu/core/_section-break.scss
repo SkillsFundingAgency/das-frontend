@@ -2,19 +2,19 @@
   margin: 0;
   border: 0;
   border-bottom: 1px solid $fiu-border-colour;
-  @include govuk-responsive-margin(2, "top");
-  @include govuk-responsive-margin(2, "bottom");
+  @include govuk-responsive-margin(2, 'top');
+  @include govuk-responsive-margin(2, 'bottom');
   @include govuk-media-query($media-type: print) {
     display: none;
   }
 }
 
 .fiu-section-break--m {
-  @include govuk-responsive-margin(4, "top");
-  @include govuk-responsive-margin(4, "bottom");
+  @include govuk-responsive-margin(4, 'top');
+  @include govuk-responsive-margin(4, 'bottom');
 }
 
 .fiu-section-break--l {
-  @include govuk-responsive-margin(8, "top");
-  @include govuk-responsive-margin(8, "bottom");
+  @include govuk-responsive-margin(8, 'top');
+  @include govuk-responsive-margin(8, 'bottom');
 }

@@ -140,6 +140,6 @@ b {
 
 .fiu-article > hr:not([class]) {
   @extend .fiu-section-break;
-  @include govuk-responsive-margin(4, "top");
-  @include govuk-responsive-margin(4, "bottom");
+  @include govuk-responsive-margin(4, 'top');
+  @include govuk-responsive-margin(4, 'bottom');
 }

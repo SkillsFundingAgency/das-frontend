@@ -2,9 +2,9 @@
   @include govuk-text-colour;
   position: relative;
   padding: 10px;
-  background: govuk-colour("light-grey");
-  border-top: solid 1px govuk-colour("mid-grey");
-  border-bottom: solid 1px govuk-colour("mid-grey");
+  background: govuk-colour('light-grey');
+  border-top: solid 1px govuk-colour('mid-grey');
+  border-bottom: solid 1px govuk-colour('mid-grey');
   @include govuk-media-query($from: tablet) {
     padding: govuk-spacing(3);
   }
@@ -24,16 +24,16 @@ $stroke-width: 2px;
 $stroke-width-large: 3px;
 $number-circle-size: 26px;
 $number-circle-size-large: 35px;
-$top-border: solid 2px govuk-colour("mid-grey");
+$top-border: solid 2px govuk-colour('mid-grey');
 
 @mixin step-nav-vertical-line($line-style: solid) {
-  content: "";
+  content: '';
   position: absolute;
   z-index: 2;
   width: 0;
   height: 100%;
-  border-left: $line-style $stroke-width govuk-colour("mid-grey");
-  background: govuk-colour("white");
+  border-left: $line-style $stroke-width govuk-colour('mid-grey');
+  background: govuk-colour('white');
 }
 
 @mixin step-nav-line-position {
@@ -105,15 +105,10 @@ $top-border: solid 2px govuk-colour("mid-grey");
   display: inline-block;
   padding: 0;
   text-align: left;
-  color: govuk-colour("black");
+  color: govuk-colour('black');
 
   .app-step-nav--large & {
-    @include step-nav-font(
-      19,
-      $tablet-size: 24,
-      $weight: bold,
-      $line-height: 1.4
-    );
+    @include step-nav-font(19, $tablet-size: 24, $weight: bold, $line-height: 1.4);
   }
 }
 
@@ -160,7 +155,7 @@ $top-border: solid 2px govuk-colour("mid-grey");
 
 .app-step-nav__step:last-child {
   &:before {
-    content: "";
+    content: '';
     position: absolute;
     z-index: 6;
     bottom: 0;
@@ -168,7 +163,7 @@ $top-border: solid 2px govuk-colour("mid-grey");
     margin-left: $number-circle-size / 4;
     width: $number-circle-size / 2;
     height: 0;
-    border-bottom: solid $stroke-width govuk-colour("mid-grey");
+    border-bottom: solid $stroke-width govuk-colour('mid-grey');
   }
 
   &:after {
@@ -200,7 +195,7 @@ $top-border: solid 2px govuk-colour("mid-grey");
   .app-step-nav__circle--number,
   &:after,
   .app-step-nav__help:after {
-    border-color: govuk-colour("black");
+    border-color: govuk-colour('black');
   }
 }
 
@@ -212,8 +207,8 @@ $top-border: solid 2px govuk-colour("mid-grey");
   left: 0;
   width: $number-circle-size;
   height: $number-circle-size;
-  color: govuk-colour("black");
-  background: govuk-colour("white");
+  color: govuk-colour('black');
+  background: govuk-colour('white');
   border-radius: 100px;
   text-align: center;
 
@@ -228,7 +223,7 @@ $top-border: solid 2px govuk-colour("mid-grey");
 
 .app-step-nav__circle--number {
   @include step-nav-font(16, $weight: bold, $line-height: 23px);
-  border: solid $stroke-width govuk-colour("mid-grey");
+  border: solid $stroke-width govuk-colour('mid-grey');
 
   .app-step-nav--large & {
     @include step-nav-font(
@@ -267,7 +262,7 @@ $top-border: solid 2px govuk-colour("mid-grey");
 
 .app-step-nav__circle-background {
   $shadow-offset: 0.1em;
-  $shadow-colour: govuk-colour("white");
+  $shadow-colour: govuk-colour('white');
 
   // to make numbers readable for users zooming text only in browsers such as Firefox
   text-shadow:
@@ -324,12 +319,7 @@ $top-border: solid 2px govuk-colour("mid-grey");
   margin: 0;
 
   .app-step-nav--large & {
-    @include step-nav-font(
-      19,
-      $tablet-size: 24,
-      $weight: bold,
-      $line-height: 1.4
-    );
+    @include step-nav-font(19, $tablet-size: 24, $weight: bold, $line-height: 1.4);
   }
 }
 
@@ -430,7 +420,7 @@ $top-border: solid 2px govuk-colour("mid-grey");
 
   &:before {
     box-sizing: border-box;
-    content: "";
+    content: '';
     position: absolute;
     z-index: 5;
     top: 0.6em; // position the dot to align with the first row of text in the link
@@ -439,7 +429,7 @@ $top-border: solid 2px govuk-colour("mid-grey");
     margin-left: ($number-circle-size / 2);
     width: $number-circle-size / 2;
     height: $stroke-width;
-    background: govuk-colour("black");
+    background: govuk-colour('black');
   }
 
   .app-step-nav--large & {
@@ -460,16 +450,16 @@ $top-border: solid 2px govuk-colour("mid-grey");
 .app-step-nav__context {
   display: inline-block;
   font-weight: normal;
-  color: govuk-colour("dark-grey");
+  color: govuk-colour('dark-grey');
 
   &:before {
-    content: " \2013\00a0"; // dash followed by &nbsp;
+    content: ' \2013\00a0'; // dash followed by &nbsp;
   }
 }
 
 .app-step-nav-related {
   @include govuk-text-colour;
-  border-top: 2px solid govuk-colour("blue");
+  border-top: 2px solid govuk-colour('blue');
   margin-bottom: govuk-spacing(6);
 }
 

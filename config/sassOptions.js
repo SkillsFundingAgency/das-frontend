@@ -1,17 +1,17 @@
-"use strict";
+'use strict';
 
 let sassOptions;
 
 sassOptions = {
-  style: "compressed",
+  style: 'compressed',
   silenceDeprecations: [
-    "legacy-js-api",
-    "function-units",
-    "mixed-decls",
-    "slash-div",
-    "global-builtin",
-    "import",
-    "color-functions",
+    'legacy-js-api',
+    'function-units',
+    'mixed-decls',
+    'slash-div',
+    'global-builtin',
+    'import',
+    'color-functions',
   ],
 };
 

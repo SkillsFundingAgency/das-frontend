@@ -117,7 +117,7 @@
   right: 0;
   bottom: 0;
   z-index: 2;
-  background: url("../assets/images/page-headers/mask.png");
+  background: url('../assets/images/page-headers/mask.png');
   background-size: contain;
   display: block;
   @include govuk-media-query($media-type: print) {
@@ -145,9 +145,9 @@
 
 .fiu-page-header__background-grad-edge {
   display: block;
-  content: "";
+  content: '';
   height: 50px;
-  background-image: url("../assets/images/design/step-gradient-bg-black.png");
+  background-image: url('../assets/images/design/step-gradient-bg-black.png');
   background-repeat: repeat-x;
   background-position: bottom;
   position: absolute;
@@ -187,7 +187,7 @@
   right: 0;
   bottom: 0;
   z-index: 2;
-  background: url("../assets/images/page-headers/mask.png");
+  background: url('../assets/images/page-headers/mask.png');
   background-size: contain;
   display: block;
   @include govuk-media-query($media-type: print) {

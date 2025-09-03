@@ -9,12 +9,12 @@ export class Autocomplete {
     accessibleAutocomplete.enhanceSelectElement({
       selectElement: this.select,
       minLength: 2,
-      defaultValue: "",
-      displayMenu: "overlay",
-      placeholder: "",
-      onConfirm: (opt) => {
+      defaultValue: '',
+      displayMenu: 'overlay',
+      placeholder: '',
+      onConfirm: opt => {
         const inputEl = document.getElementById(this.select.name);
-        const searchString = opt || inputEl?.value || "";
+        const searchString = opt || inputEl?.value || '';
 
         if (!searchString.trim()) {
           this.select.selectedIndex = 0;
@@ -22,9 +22,8 @@ export class Autocomplete {
         }
 
         const matchedOption = Array.from(this.select.options).find(
-          (option) =>
-            (option.textContent || option.innerText).toLowerCase() ===
-            searchString.toLowerCase(),
+          option =>
+            (option.textContent || option.innerText).toLowerCase() === searchString.toLowerCase()
         );
 
         if (matchedOption) {

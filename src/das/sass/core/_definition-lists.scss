@@ -2,7 +2,7 @@
   @include govuk-font($size: 19);
   @include govuk-text-colour;
   margin-top: 0;
-  @include govuk-responsive-margin(4, "bottom");
+  @include govuk-responsive-margin(4, 'bottom');
 }
 
 .das-definition-list__title {
@@ -20,7 +20,7 @@
     float: left;
     margin-right: 10px;
     &:after {
-      content: ":";
+      content: ':';
     }
   }
   .das-definition-list__definition {
@@ -38,7 +38,7 @@
     color: $govuk-secondary-text-colour;
     margin-right: 0.3em;
     &:after {
-      content: ":";
+      content: ':';
     }
   }
   .das-definition-list__definition {
@@ -62,7 +62,7 @@
       }
     }
     &:after {
-      content: ":";
+      content: ':';
     }
   }
   .das-definition-list__definition {
@@ -105,11 +105,11 @@ dl.das-inline-def-list {
     display: inline;
     padding-right: govuk-spacing(1);
     &:before {
-      content: "";
+      content: '';
       display: block;
     }
     &:after {
-      content: ":";
+      content: ':';
       font-weight: normal;
     }
   }

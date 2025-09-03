@@ -131,7 +131,7 @@
   line-height: 24px;
   padding-right: 30px;
   background-size: 20px 20px;
-  background-image: url("../assets/images/icon-star-outlined.svg");
+  background-image: url('../assets/images/icon-star-outlined.svg');
   background-repeat: no-repeat;
   background-position: center right;
 }
@@ -146,7 +146,7 @@
 
 .fiu-results-favbar__link {
   &:hover {
-    background-image: url("../assets/images/icon-star-filled-yellow.svg");
+    background-image: url('../assets/images/icon-star-filled-yellow.svg');
     text-decoration: underline;
     cursor: pointer;
   }

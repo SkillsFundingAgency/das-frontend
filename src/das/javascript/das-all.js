@@ -1,7 +1,7 @@
-import CookieBanner from "./components/cookieBanner/_cookieBanner";
-import CookieSettings from "./components/cookieSettings/_cookieSettings";
-import Radios from "./components/gds-v2/radios/radios";
-import ShowHide from "./components/showHide/_showHide";
+import CookieBanner from './components/cookieBanner/_cookieBanner';
+import CookieSettings from './components/cookieSettings/_cookieSettings';
+import Radios from './components/gds-v2/radios/radios';
+import ShowHide from './components/showHide/_showHide';
 
 function nodeListForEach(nodes, callback) {
   if (window.NodeList.prototype.forEach) {
@@ -20,9 +20,7 @@ function initAll() {
   }
 
   // Cookie Settings Page
-  var $cookieSettings = document.querySelector(
-    '[data-module="cookie-settings"]',
-  );
+  var $cookieSettings = document.querySelector('[data-module="cookie-settings"]');
   if ($cookieSettings != null) {
     var $cookieSettingsOptions = $cookieSettings.dataset.options;
     new CookieSettings($cookieSettings, $cookieSettingsOptions);
@@ -40,4 +38,4 @@ function initAll() {
   });
 }
 
-export { initAll, CookieBanner, Radios };
+export {initAll, CookieBanner, Radios};

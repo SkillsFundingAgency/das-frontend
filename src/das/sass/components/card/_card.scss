@@ -41,7 +41,7 @@
   @include govuk-font($size: 16, $weight: bold);
   @include govuk-link-common;
   display: block;
-  background: govuk-colour("purple");
+  background: govuk-colour('purple');
   text-decoration: none;
   box-sizing: border-box;
   height: 100%;

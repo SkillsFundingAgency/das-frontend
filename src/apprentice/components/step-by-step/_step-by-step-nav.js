@@ -6,50 +6,45 @@ window.GOVUK = window.GOVUK || {};
 window.GOVUK.Modules = window.GOVUK.Modules || {};
 
 (function (Modules) {
-  "use strict";
+  'use strict';
 
   Modules.AppStepNav = function () {
     var actions = {}; // stores text for JS appended elements 'show' and 'hide' on steps, and 'show/hide all' button
     var rememberShownStep = false;
     var stepNavSize;
-    var sessionStoreLink = "govuk-step-nav-active-link";
-    var activeLinkClass = "app-step-nav__list-item--active";
-    var activeStepClass = "app-step-nav__step--active";
-    var activeLinkHref = "#content";
-    var jsTogglePanel = ".js-toggle-panel";
-    var jsToggleLink = ".js-toggle-link";
-    var ariaExpanded = "aria-expanded";
-    var stepIsShown = "step-is-shown";
-    var dataPosition = "data-position";
+    var sessionStoreLink = 'govuk-step-nav-active-link';
+    var activeLinkClass = 'app-step-nav__list-item--active';
+    var activeStepClass = 'app-step-nav__step--active';
+    var activeLinkHref = '#content';
+    var jsTogglePanel = '.js-toggle-panel';
+    var jsToggleLink = '.js-toggle-link';
+    var ariaExpanded = 'aria-expanded';
+    var stepIsShown = 'step-is-shown';
+    var dataPosition = 'data-position';
     var uniqueId;
 
     this.start = function ($element) {
       // Indicate that js has worked
-      $element.addClass("app-step-nav--active");
+      $element.addClass('app-step-nav--active');
 
       // Prevent FOUC, remove class hiding content
-      $element.removeClass("js-hidden");
+      $element.removeClass('js-hidden');
 
-      stepNavSize = $element.hasClass("app-step-nav--large") ? "Big" : "Small";
-      rememberShownStep =
-        !!$element.filter("[data-remember]").length && stepNavSize === "Big";
-      var $steps = $element.find(".js-step");
+      stepNavSize = $element.hasClass('app-step-nav--large') ? 'Big' : 'Small';
+      rememberShownStep = !!$element.filter('[data-remember]').length && stepNavSize === 'Big';
+      var $steps = $element.find('.js-step');
       var $stepHeaders = $element.find(jsTogglePanel);
-      var totalSteps = $element.find(".js-panel").length;
-      var totalLinks = $element.find("app-step-nav__link").length;
+      var totalSteps = $element.find('.js-panel').length;
+      var totalLinks = $element.find('app-step-nav__link').length;
       var $showOrHideAllButton;
 
-      uniqueId = $element.data("id") || false;
+      uniqueId = $element.data('id') || false;
 
       if (uniqueId) {
         sessionStoreLink = `${sessionStoreLink}_${uniqueId}`;
       }
 
-      var _stepNavTracker = new StepNavTracker(
-        totalSteps,
-        totalLinks,
-        uniqueId,
-      );
+      var _stepNavTracker = new StepNavTracker(totalSteps, totalLinks, uniqueId);
 
       getTextForInsertedElements();
       addButtonstoSteps();
@@ -65,10 +60,10 @@ window.GOVUK.Modules = window.GOVUK.Modules || {};
       bindComponentLinkClicks(_stepNavTracker);
 
       function getTextForInsertedElements() {
-        actions.showText = $element.attr("data-show-text");
-        actions.hideText = $element.attr("data-hide-text");
-        actions.showAllText = $element.attr("data-show-all-text");
-        actions.hideAllText = $element.attr("data-hide-all-text");
+        actions.showText = $element.attr('data-show-text');
+        actions.hideText = $element.attr('data-hide-text');
+        actions.showAllText = $element.attr('data-show-all-text');
+        actions.hideAllText = $element.attr('data-hide-all-text');
       }
 
       function addShowHideAllButton() {
@@ -80,19 +75,19 @@ window.GOVUK.Modules = window.GOVUK.Modules || {};
         $stepHeaders.each(function () {
           if (!$(this).find(jsToggleLink).length) {
             $(this)
-              .find(".js-step-title-button")
+              .find('.js-step-title-button')
               .append(
-                '<span class="app-step-nav__toggle-link js-toggle-link" aria-hidden="true" hidden></span>',
+                '<span class="app-step-nav__toggle-link js-toggle-link" aria-hidden="true" hidden></span>'
               );
           }
         });
       }
 
       function addAriaControlsAttrForShowHideAllButton() {
-        var ariaControlsValue = $element.find(".js-panel").first().attr("id");
+        var ariaControlsValue = $element.find('.js-panel').first().attr('id');
 
-        $showOrHideAllButton = $element.find(".js-step-controls-button");
-        $showOrHideAllButton.attr("aria-controls", ariaControlsValue);
+        $showOrHideAllButton = $element.find('.js-step-controls-button');
+        $showOrHideAllButton.attr('aria-controls', ariaControlsValue);
       }
 
       // called by show all/hide all, sets all steps accordingly
@@ -104,7 +99,7 @@ window.GOVUK.Modules = window.GOVUK.Modules || {};
           stepView.setIsShown(isShown);
 
           if (isShown) {
-            data.push($(this).attr("id"));
+            data.push($(this).attr('id'));
           }
         });
 
@@ -120,13 +115,13 @@ window.GOVUK.Modules = window.GOVUK.Modules || {};
         var data = loadFromSessionStorage(uniqueId) || [];
 
         $.each($steps, function () {
-          var id = $(this).attr("id");
+          var id = $(this).attr('id');
           var stepView = new StepView($(this));
 
           // show the step if it has been remembered or if it has the 'data-show' attribute
           if (
             (rememberShownStep && data.indexOf(id) > -1) ||
-            typeof $(this).attr("data-show") !== "undefined"
+            typeof $(this).attr('data-show') !== 'undefined'
           ) {
             stepView.setIsShown(true);
           } else {
@@ -143,31 +138,31 @@ window.GOVUK.Modules = window.GOVUK.Modules || {};
       function addButtonstoSteps() {
         $.each($steps, function () {
           var $step = $(this);
-          var $title = $step.find(".js-step-title");
-          var contentId = $step.find(".js-panel").first().attr("id");
+          var $title = $step.find('.js-step-title');
+          var contentId = $step.find('.js-panel').first().attr('id');
 
           $title.wrapInner('<span class="js-step-title-text"></span>');
 
           $title.wrapInner(
-            `<button class="app-step-nav__button app-step-nav__button--title js-step-title-button" aria-expanded="false" aria-controls="${contentId}"></button>`,
+            `<button class="app-step-nav__button app-step-nav__button--title js-step-title-button" aria-expanded="false" aria-controls="${contentId}"></button>`
           );
         });
       }
 
       function bindToggleForSteps(stepNavTracker) {
         $element.find(jsTogglePanel).click(function (event) {
-          var $step = $(this).closest(".js-step");
+          var $step = $(this).closest('.js-step');
 
           var stepView = new StepView($step);
           stepView.toggle();
 
-          var stepIsOptional = typeof $step.data("optional") !== "undefined";
+          var stepIsOptional = typeof $step.data('optional') !== 'undefined';
           var toggleClick = new StepToggleClick(
             event,
             stepView,
             $steps,
             stepNavTracker,
-            stepIsOptional,
+            stepIsOptional
           );
           toggleClick.track();
 
@@ -181,7 +176,7 @@ window.GOVUK.Modules = window.GOVUK.Modules || {};
       function rememberStepState($step) {
         if (rememberShownStep) {
           var data = JSON.parse(loadFromSessionStorage(uniqueId)) || [];
-          var thisstep = $step.attr("id");
+          var thisstep = $step.attr('id');
           var shown = $step.hasClass(stepIsShown);
 
           if (shown) {
@@ -198,16 +193,12 @@ window.GOVUK.Modules = window.GOVUK.Modules || {};
 
       // tracking click events on links in step content
       function bindComponentLinkClicks(stepNavTracker) {
-        $element.find(".js-link").click(function (event) {
-          var linkClick = new componentLinkClick(
-            event,
-            stepNavTracker,
-            $(this).attr(dataPosition),
-          ); // eslint-disable-line no-new, new-cap
+        $element.find('.js-link').click(function (event) {
+          var linkClick = new componentLinkClick(event, stepNavTracker, $(this).attr(dataPosition)); // eslint-disable-line no-new, new-cap
           linkClick.track();
-          var thisLinkHref = $(this).attr("href");
+          var thisLinkHref = $(this).attr('href');
 
-          if ($(this).attr("rel") !== "external") {
+          if ($(this).attr('rel') !== 'external') {
             saveToSessionStorage(sessionStoreLink, $(this).attr(dataPosition));
           }
 
@@ -231,7 +222,7 @@ window.GOVUK.Modules = window.GOVUK.Modules || {};
       }
 
       function setOnlyThisLinkActive(clicked) {
-        $element.find("." + activeLinkClass).removeClass(activeLinkClass);
+        $element.find('.' + activeLinkClass).removeClass(activeLinkClass);
         clicked.parent().addClass(activeLinkClass);
       }
 
@@ -241,7 +232,7 @@ window.GOVUK.Modules = window.GOVUK.Modules || {};
       // this code ensures only that link and its corresponding step have the highlighting
       // otherwise it accepts what the backend has already passed to the component
       function ensureOnlyOneActiveLink() {
-        var $activeLinks = $element.find(".js-list-item." + activeLinkClass);
+        var $activeLinks = $element.find('.js-list-item.' + activeLinkClass);
 
         if ($activeLinks.length <= 1) {
           return;
@@ -250,7 +241,7 @@ window.GOVUK.Modules = window.GOVUK.Modules || {};
         var lastClicked =
           loadFromSessionStorage(sessionStoreLink) ||
           $element
-            .find("." + activeLinkClass)
+            .find('.' + activeLinkClass)
             .first()
             .attr(dataPosition);
 
@@ -263,9 +254,9 @@ window.GOVUK.Modules = window.GOVUK.Modules || {};
             .hasClass(activeLinkClass)
         ) {
           lastClicked = $element
-            .find("." + activeLinkClass)
+            .find('.' + activeLinkClass)
             .first()
-            .find(".js-link")
+            .find('.js-link')
             .attr(dataPosition);
         }
         removeActiveStateFromAllButCurrent($activeLinks, lastClicked);
@@ -274,31 +265,28 @@ window.GOVUK.Modules = window.GOVUK.Modules || {};
 
       function removeActiveStateFromAllButCurrent($activeLinks, current) {
         $activeLinks.each(function () {
-          if (
-            $(this).find(".js-link").attr(dataPosition).toString() !==
-            current.toString()
-          ) {
+          if ($(this).find('.js-link').attr(dataPosition).toString() !== current.toString()) {
             $(this).removeClass(activeLinkClass);
-            $(this).find(".visuallyhidden").remove();
+            $(this).find('.visuallyhidden').remove();
           }
         });
       }
 
       function setActiveStepClass() {
         $element
-          .find("." + activeStepClass)
+          .find('.' + activeStepClass)
           .removeClass(activeStepClass)
-          .removeAttr("data-show");
+          .removeAttr('data-show');
         $element
-          .find("." + activeLinkClass)
-          .closest(".app-step-nav__step")
+          .find('.' + activeLinkClass)
+          .closest('.app-step-nav__step')
           .addClass(activeStepClass)
-          .attr("data-show", "");
+          .attr('data-show', '');
       }
 
       function bindToggleShowHideAllButton(stepNavTracker) {
-        $showOrHideAllButton = $element.find(".js-step-controls-button");
-        $showOrHideAllButton.on("click", function () {
+        $showOrHideAllButton = $element.find('.js-step-controls-button');
+        $showOrHideAllButton.on('click', function () {
           var shouldshowAll;
 
           if ($showOrHideAllButton.text() === actions.showAllText) {
@@ -306,7 +294,7 @@ window.GOVUK.Modules = window.GOVUK.Modules || {};
             $element.find(jsToggleLink).html(actions.hideText);
             shouldshowAll = true;
 
-            stepNavTracker.track("pageElementInteraction", "stepNavAllShown", {
+            stepNavTracker.track('pageElementInteraction', 'stepNavAllShown', {
               label: `${actions.showAllText}: ${stepNavSize}`,
             });
           } else {
@@ -314,7 +302,7 @@ window.GOVUK.Modules = window.GOVUK.Modules || {};
             $element.find(jsToggleLink).html(actions.showText);
             shouldshowAll = false;
 
-            stepNavTracker.track("pageElementInteraction", "stepNavAllHidden", {
+            stepNavTracker.track('pageElementInteraction', 'stepNavAllHidden', {
               label: `${actions.hideAllText}: ${stepNavSize}`,
             });
           }
@@ -328,7 +316,7 @@ window.GOVUK.Modules = window.GOVUK.Modules || {};
       }
 
       function setShowHideAllText() {
-        var shownSteps = $element.find(".step-is-shown").length;
+        var shownSteps = $element.find('.step-is-shown').length;
         // Find out if the number of is-opens == total number of steps
         if (shownSteps === totalSteps) {
           $showOrHideAllButton.text(actions.hideAllText);
@@ -339,10 +327,10 @@ window.GOVUK.Modules = window.GOVUK.Modules || {};
     };
 
     function StepView($stepElement) {
-      var $titleLink = $stepElement.find(".js-step-title-button");
-      var $stepContent = $stepElement.find(".js-panel");
+      var $titleLink = $stepElement.find('.js-step-title-button');
+      var $stepContent = $stepElement.find('.js-panel');
 
-      this.title = $stepElement.find(".js-step-title-text").text().trim();
+      this.title = $stepElement.find('.js-step-title-text').text().trim();
       this.element = $stepElement;
 
       this.show = show;
@@ -367,11 +355,9 @@ window.GOVUK.Modules = window.GOVUK.Modules || {};
 
       function setIsShown(iisShown) {
         $stepElement.toggleClass(stepIsShown, iisShown);
-        $stepContent.toggleClass("js-hidden", !iisShown);
+        $stepContent.toggleClass('js-hidden', !iisShown);
         $titleLink.attr(ariaExpanded, iisShown);
-        $stepElement
-          .find(jsToggleLink)
-          .html(iisShown ? actions.hideText : actions.showText);
+        $stepElement.find(jsToggleLink).html(iisShown ? actions.hideText : actions.showText);
       }
 
       function isShown() {
@@ -383,17 +369,11 @@ window.GOVUK.Modules = window.GOVUK.Modules || {};
       }
 
       function numberOfContentItems() {
-        return $stepContent.find(".js-link").length;
+        return $stepContent.find('.js-link').length;
       }
     }
 
-    function StepToggleClick(
-      event,
-      stepView,
-      $steps,
-      stepNavTracker,
-      stepIsOptional,
-    ) {
+    function StepToggleClick(event, stepView, $steps, stepNavTracker, stepIsOptional) {
       this.track = trackClick;
       var $target = $(event.target);
 
@@ -402,11 +382,7 @@ window.GOVUK.Modules = window.GOVUK.Modules || {};
           label: trackingLabel(),
           dimension28: stepView.numberOfContentItems().toString(),
         };
-        stepNavTracker.track(
-          "pageElementInteraction",
-          trackingAction(),
-          trackingOptions,
-        );
+        stepNavTracker.track('pageElementInteraction', trackingAction(), trackingOptions);
       }
 
       function trackingLabel() {
@@ -414,33 +390,33 @@ window.GOVUK.Modules = window.GOVUK.Modules || {};
       }
 
       function trackingAction() {
-        return stepView.isHidden() ? "stepNavHidden" : "stepNavShown";
+        return stepView.isHidden() ? 'stepNavHidden' : 'stepNavShown';
       }
 
       function locateClickElement() {
         if (clickedOnIcon()) {
-          return iconType() + " click";
+          return iconType() + ' click';
         } else if (clickedOnHeading()) {
-          return "Heading click";
+          return 'Heading click';
         } else {
-          return "Elsewhere click";
+          return 'Elsewhere click';
         }
       }
 
       function clickedOnIcon() {
-        return $target.hasClass("js-toggle-link");
+        return $target.hasClass('js-toggle-link');
       }
 
       function clickedOnHeading() {
-        return $target.hasClass("js-step-title-text");
+        return $target.hasClass('js-step-title-text');
       }
 
       function iconType() {
-        return stepView.isHidden() ? "Minus" : "Plus";
+        return stepView.isHidden() ? 'Minus' : 'Plus';
       }
 
       function isOptional() {
-        return stepIsOptional ? " ; optional" : "";
+        return stepIsOptional ? ' ; optional' : '';
       }
     }
 
@@ -449,21 +425,15 @@ window.GOVUK.Modules = window.GOVUK.Modules || {};
 
       function trackClick() {
         var trackingOptions = {
-          label: `${$(event.target).attr("href")} : ${stepNavSize}`,
+          label: `${$(event.target).attr('href')} : ${stepNavSize}`,
         };
-        var dimension28 = $(event.target)
-          .closest(".app-step-nav__list")
-          .attr("data-length");
+        var dimension28 = $(event.target).closest('.app-step-nav__list').attr('data-length');
 
         if (dimension28) {
           trackingOptions.dimension28 = dimension28;
         }
 
-        stepNavTracker.track(
-          "stepNavLinkClicked",
-          linkPosition,
-          trackingOptions,
-        );
+        stepNavTracker.track('stepNavLinkClicked', linkPosition, trackingOptions);
       }
     }
 

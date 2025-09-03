@@ -1,13 +1,13 @@
 function SessionTimeOutModal() {
   this.modal = null;
-  this.modalId = "das-session-timeout-modal";
+  this.modalId = 'das-session-timeout-modal';
   this.inactivityCountdownTime = document.body.dataset.timeout || 18;
   this.modalCountdownTime = document.body.dataset.modalcount || 120;
   this.modalTimeout = null;
   this.worker = null;
   this.urls = {
-    renew: "/service/keepalive",
-    logout: "/service/signout",
+    renew: '/service/keepalive',
+    logout: '/service/signout',
   };
   this.modalHtml = `
         <div class="das-modal" role="dialog" aria-modal="true" id="${this.modalId}">
@@ -74,35 +74,29 @@ SessionTimeOutModal.prototype.startInactivityCountdown = function () {
             };
         `;
 
-    const blob = new Blob([workerCode], { type: "application/javascript" });
+    const blob = new Blob([workerCode], {type: 'application/javascript'});
     this.workerUrl = URL.createObjectURL(blob);
 
     this.worker = new Worker(this.workerUrl);
 
-    this.worker.onmessage = (e) => {
-      if (e.data.type === "showModal") {
+    this.worker.onmessage = e => {
+      if (e.data.type === 'showModal') {
         this.showModal();
-      } else if (e.data.type === "autoLogout") {
-        this.logout("autoSignOut");
+      } else if (e.data.type === 'autoLogout') {
+        this.logout('autoSignOut');
       }
     };
 
-    this.worker.onerror = (error) => {
-      setTimeout(
-        this.showModal.bind(this),
-        this.inactivityCountdownTime * 60 * 1000,
-      );
+    this.worker.onerror = error => {
+      setTimeout(this.showModal.bind(this), this.inactivityCountdownTime * 60 * 1000);
     };
 
     this.worker.postMessage({
-      type: "startInactivityCountdown",
+      type: 'startInactivityCountdown',
       timeoutMs: this.inactivityCountdownTime * 60 * 1000,
     });
   } catch (error) {
-    setTimeout(
-      this.showModal.bind(this),
-      this.inactivityCountdownTime * 60 * 1000,
-    );
+    setTimeout(this.showModal.bind(this), this.inactivityCountdownTime * 60 * 1000);
   }
 };
 
@@ -112,11 +106,11 @@ SessionTimeOutModal.prototype.formatTime = function (seconds) {
   }
   const minutes = Math.floor(seconds / 60);
   const secs = seconds % 60;
-  return `${String(minutes).padStart(2, "0")}:${String(secs).padStart(2, "0")}`;
+  return `${String(minutes).padStart(2, '0')}:${String(secs).padStart(2, '0')}`;
 };
 
 SessionTimeOutModal.prototype.showModal = function () {
-  document.body.insertAdjacentHTML("beforeend", this.modalHtml);
+  document.body.insertAdjacentHTML('beforeend', this.modalHtml);
   this.modal = document.getElementById(this.modalId);
   this.modal.firstElementChild.focus();
   this.modalEvents();
@@ -124,20 +118,20 @@ SessionTimeOutModal.prototype.showModal = function () {
 };
 
 SessionTimeOutModal.prototype.modalEvents = function () {
-  const renewButton = document.getElementById("das-timeout-action-renew");
-  const logoutButton = document.getElementById("das-timeout-action-logout");
-  renewButton.addEventListener("click", this.renewSession.bind(this));
-  logoutButton.addEventListener("click", this.logout.bind(this));
+  const renewButton = document.getElementById('das-timeout-action-renew');
+  const logoutButton = document.getElementById('das-timeout-action-logout');
+  renewButton.addEventListener('click', this.renewSession.bind(this));
+  logoutButton.addEventListener('click', this.logout.bind(this));
 };
 
 SessionTimeOutModal.prototype.startModalCountdown = function () {
   let countdownTime = this.modalCountdownTime;
-  let countdownDisplay = this.modal.getElementsByTagName("strong")[0];
+  let countdownDisplay = this.modal.getElementsByTagName('strong')[0];
 
   if (this.worker) {
     try {
       this.worker.postMessage({
-        type: "startModalCountdown",
+        type: 'startModalCountdown',
         countdownMs: this.modalCountdownTime * 1000,
       });
     } catch (error) {
@@ -163,17 +157,17 @@ SessionTimeOutModal.prototype.renewSession = function (e) {
   button.disabled = true;
 
   fetch(this.urls.renew, {
-    method: "GET",
-    credentials: "include",
+    method: 'GET',
+    credentials: 'include',
   })
-    .then((response) => {
+    .then(response => {
       if (response.ok) {
         this.hideModal();
         if (this.worker) {
           try {
-            this.worker.postMessage({ type: "cancelTimers" });
+            this.worker.postMessage({type: 'cancelTimers'});
             this.worker.postMessage({
-              type: "startInactivityCountdown",
+              type: 'startInactivityCountdown',
               timeoutMs: this.inactivityCountdownTime * 60 * 1000,
             });
           } catch (error) {
@@ -182,7 +176,7 @@ SessionTimeOutModal.prototype.renewSession = function (e) {
         }
       }
     })
-    .catch((error) => {
+    .catch(error => {
       // Handle network error silently
     });
 };
@@ -205,10 +199,10 @@ SessionTimeOutModal.prototype.logout = function (action) {
       // Continue if cleanup fails
     }
   }
-  window.location.href = `${this.urls.logout}${action === "autoSignOut" ? "?autoSignOut=true" : ""}`;
+  window.location.href = `${this.urls.logout}${action === 'autoSignOut' ? '?autoSignOut=true' : ''}`;
 };
 
-document.addEventListener("DOMContentLoaded", function () {
+document.addEventListener('DOMContentLoaded', function () {
   const sessionTimeOutModal = new SessionTimeOutModal();
   sessionTimeOutModal.init();
 });

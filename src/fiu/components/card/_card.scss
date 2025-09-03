@@ -106,25 +106,25 @@
   border-bottom: 5px solid $fiu-border-colour;
   display: block;
   background-color: #ccc;
-  background-image: url("/fiu/assets/images/placeholder.png");
+  background-image: url('/fiu/assets/images/placeholder.png');
   background-size: contain;
 }
 
 .fiu-card__image--resources {
   background-size: cover;
-  background-image: url("/fiu/assets/images/panels/homepage-resources.jpg");
+  background-image: url('/fiu/assets/images/panels/homepage-resources.jpg');
 }
 .fiu-card__image--aan {
   background-size: cover;
-  background-image: url("/fiu/assets/images/panels/homepage-yaan.jpg");
+  background-image: url('/fiu/assets/images/panels/homepage-yaan.jpg');
 }
 .fiu-card__image--browse {
   background-size: cover;
-  background-image: url("/fiu/assets/images/panels/homepage-faa.jpg");
+  background-image: url('/fiu/assets/images/panels/homepage-faa.jpg');
 }
 .fiu-card__image--naw {
   background-size: cover;
-  background-image: url("/fiu/assets/images/panels/homepage-naw.jpg");
+  background-image: url('/fiu/assets/images/panels/homepage-naw.jpg');
 }
 
 .fiu-card__image--influencers {
@@ -187,7 +187,7 @@
 
 .fiu-interest-card__image-mask {
   position: absolute;
-  background-image: url("../assets/images/interests/mask.png");
+  background-image: url('../assets/images/interests/mask.png');
   background-repeat: no-repeat;
   background-size: contain;
   top: 0;

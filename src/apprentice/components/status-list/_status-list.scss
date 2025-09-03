@@ -64,22 +64,22 @@ li.app-status-list__list-item {
 }
 
 .app-status-list__link.complete {
-  border-color: govuk-tint(govuk-colour("green"), 80);
+  border-color: govuk-tint(govuk-colour('green'), 80);
 
   &:before {
-    color: govuk-shade(govuk-colour("green"), 20);
-    background: govuk-tint(govuk-colour("green"), 80);
+    color: govuk-shade(govuk-colour('green'), 20);
+    background: govuk-tint(govuk-colour('green'), 80);
   }
 
   @include app-section-list-style-focused;
 }
 
 .app-status-list__link.incorrect {
-  border-color: govuk-tint(govuk-colour("red"), 80);
+  border-color: govuk-tint(govuk-colour('red'), 80);
 
   &:before {
-    color: govuk-shade(govuk-colour("red"), 30);
-    background: govuk-tint(govuk-colour("red"), 80);
+    color: govuk-shade(govuk-colour('red'), 30);
+    background: govuk-tint(govuk-colour('red'), 80);
   }
 
   @include app-section-list-style-focused;

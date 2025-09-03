@@ -18,7 +18,7 @@
       #4b2e6d 100%
     );
     width: 31px;
-    content: "";
+    content: '';
     position: absolute;
     top: 0;
     left: 0;
@@ -57,7 +57,7 @@
     height: 1450px;
     width: 500px;
     margin-left: -250px;
-    background-image: url("/fiu/assets/images/roadmap.jpg");
+    background-image: url('/fiu/assets/images/roadmap.jpg');
     background-repeat: no-repeat;
     background-position: center top;
     background-size: contain;
@@ -70,7 +70,7 @@
   &:before {
     display: block;
     width: 31px;
-    content: "";
+    content: '';
     position: absolute;
     top: 0;
     left: -50px;
@@ -89,7 +89,7 @@
     -ms-flex-direction: row-reverse;
     transition: all 0.3s ease;
     &:after {
-      content: "";
+      content: '';
       min-height: inherit;
       font-size: 0;
     }
@@ -107,7 +107,7 @@
   }
   position: relative;
   &:before {
-    content: "";
+    content: '';
     width: 20px;
     height: 3px;
     display: block;
@@ -116,7 +116,7 @@
     left: -29px;
   }
   &:after {
-    content: "";
+    content: '';
     width: 15px;
     height: 15px;
     display: block;
@@ -266,7 +266,7 @@
   top: 0;
   left: 14px;
   bottom: 0;
-  background-image: url("/fiu/assets/images/road-markings.gif");
+  background-image: url('/fiu/assets/images/road-markings.gif');
   background-position: center;
   @include govuk-media-query($fiu-large-desktop-breakpoint) {
     display: none;
@@ -293,7 +293,7 @@
 }
 
 @for $i from 1 through 10 {
-  .fiu-employer-roadmap__list[start="#{$i}"] {
+  .fiu-employer-roadmap__list[start='#{$i}'] {
     counter-reset: employer-roadmap $i;
   }
 }

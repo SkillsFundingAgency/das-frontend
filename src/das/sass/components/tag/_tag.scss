@@ -7,31 +7,31 @@
 // Custom DAS tag colours. Defualt is solid blue.
 
 .das-tag--solid-green {
-  color: govuk-colour("white");
-  background-color: govuk-colour("green");
+  color: govuk-colour('white');
+  background-color: govuk-colour('green');
 }
 
 .das-tag--solid-red {
-  color: govuk-colour("white");
-  background-color: govuk-colour("red");
+  color: govuk-colour('white');
+  background-color: govuk-colour('red');
 }
 
 .das-tag--solid-purple {
-  color: govuk-colour("white");
-  background-color: govuk-colour("purple");
+  color: govuk-colour('white');
+  background-color: govuk-colour('purple');
 }
 
 .das-tag--solid-brown {
-  color: govuk-colour("white");
+  color: govuk-colour('white');
   background-color: $dark-brown;
 }
 
 .das-tag--solid-yellow {
-  color: govuk-colour("black");
-  background-color: govuk-colour("yellow");
+  color: govuk-colour('black');
+  background-color: govuk-colour('yellow');
 }
 
 .das-tag--solid-orange {
-  color: govuk-colour("black");
-  background-color: govuk-colour("orange");
+  color: govuk-colour('black');
+  background-color: govuk-colour('orange');
 }

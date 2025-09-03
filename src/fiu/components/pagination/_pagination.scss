@@ -56,12 +56,12 @@
   @include govuk-media-query(tablet) {
     .fiu-pagination__item--prev & {
       &:before {
-        @include paginationArrows("<", -6px, unset);
+        @include paginationArrows('<', -6px, unset);
       }
     }
     .fiu-pagination__item--next & {
       &:after {
-        @include paginationArrows(">", unset, -6px);
+        @include paginationArrows('>', unset, -6px);
       }
     }
   }

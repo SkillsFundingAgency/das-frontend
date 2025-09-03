@@ -1,6 +1,7 @@
 # DAS Frontend
 
-Contains frontend code and assets used for The Apprentice Service and the www.apprenticeships.gov.uk website.
+Contains frontend code and assets used for The Apprentice Service and the www.apprenticeships.gov.uk
+website.
 
 ## Requirements
 

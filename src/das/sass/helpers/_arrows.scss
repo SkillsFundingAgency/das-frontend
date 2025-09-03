@@ -5,7 +5,7 @@
   border-style: solid;
   width: 0;
   height: 0;
-  content: "";
+  content: '';
 
   @if $direction == down {
     border-width: $size $secondWidth 0 $secondWidth;

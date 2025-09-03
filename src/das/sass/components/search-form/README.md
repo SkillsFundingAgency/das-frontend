@@ -1,2 +1,1 @@
-#Search form
-An inline search form
+#Search form An inline search form

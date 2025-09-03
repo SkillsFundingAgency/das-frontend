@@ -1,2 +1,1 @@
-#Button
-An extension of GOVUK button with additional styling options.
+#Button An extension of GOVUK button with additional styling options.

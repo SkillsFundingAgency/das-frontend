@@ -30,11 +30,11 @@
   position: relative;
   text-decoration: none;
   font-weight: $govuk-font-weight-bold;
-  color: govuk-colour("black");
+  color: govuk-colour('black');
   &:after {
-    background: govuk-colour("blue");
+    background: govuk-colour('blue');
     bottom: -1px;
-    content: "";
+    content: '';
     display: block;
     left: 0;
     top: 0;

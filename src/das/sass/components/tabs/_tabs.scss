@@ -1,8 +1,8 @@
 // Bingo boxes style tabs
 
 .das-tabs-boxes {
-  @include govuk-responsive-margin(1, "top");
-  @include govuk-responsive-margin(6, "bottom");
+  @include govuk-responsive-margin(1, 'top');
+  @include govuk-responsive-margin(6, 'bottom');
   @include govuk-media-query($from: tablet) {
     margin-left: -$govuk-gutter-half;
     margin-right: -$govuk-gutter-half;
@@ -13,7 +13,7 @@
   margin: 0;
   padding: 0;
   list-style: none;
-  @include govuk-responsive-margin(6, "bottom");
+  @include govuk-responsive-margin(6, 'bottom');
   @include govuk-media-query($from: tablet) {
     display: flex;
   }

@@ -82,7 +82,7 @@
 
 .fiu-stats-list__panel {
   display: block;
-  background: govuk-colour("light-grey");
+  background: govuk-colour('light-grey');
   padding: 10px;
   height: 100%;
   @include govuk-media-query($media-type: print) {

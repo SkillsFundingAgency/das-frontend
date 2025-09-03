@@ -26,7 +26,7 @@
 
 .das-task-list__items {
   @include govuk-font($size: 19);
-  @include govuk-responsive-margin(9, "bottom");
+  @include govuk-responsive-margin(9, 'bottom');
   list-style: none;
   padding-left: 0;
   @include govuk-media-query($from: tablet) {

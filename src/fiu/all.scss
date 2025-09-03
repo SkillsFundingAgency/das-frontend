@@ -1,14 +1,14 @@
-@import "settings/grid";
+@import 'settings/grid';
 
 // GDS
 $govuk-new-link-styles: true;
-$govuk-suppressed-warnings: "legacy-organisation-colours";
-@import "govuk/index";
+$govuk-suppressed-warnings: 'legacy-organisation-colours';
+@import 'govuk/index';
 
 // Fire It Up
-@import "settings/all";
-@import "helpers/all";
-@import "core/all";
-@import "utilities/all";
-@import "components/all";
-@import "pages/all";
+@import 'settings/all';
+@import 'helpers/all';
+@import 'core/all';
+@import 'utilities/all';
+@import 'components/all';
+@import 'pages/all';

@@ -1,9 +1,9 @@
 .das-highlight {
   background: govuk-colour(light-grey);
   @include govuk-responsive-padding(4);
-  @include govuk-responsive-padding(5, "bottom");
-  @include govuk-responsive-margin(4, "top");
-  @include govuk-responsive-margin(4, "bottom");
+  @include govuk-responsive-padding(5, 'bottom');
+  @include govuk-responsive-margin(4, 'top');
+  @include govuk-responsive-margin(4, 'bottom');
 }
 
 .das-highlight__link,
@@ -23,7 +23,7 @@
 
 .das-highlight--interruption,
 .das-highlight--information {
-  background: govuk-colour("blue");
+  background: govuk-colour('blue');
   color: #fff;
   & * {
     color: inherit;

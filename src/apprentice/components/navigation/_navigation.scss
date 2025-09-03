@@ -1,5 +1,5 @@
 .app-navigation {
-  background: govuk-colour("light-grey");
+  background: govuk-colour('light-grey');
   border-bottom: 1px solid $govuk-border-colour;
 }
 
@@ -29,7 +29,7 @@
     display: none;
   }
   &:before {
-    content: "";
+    content: '';
     width: 0;
     height: 0;
     position: absolute;
@@ -129,7 +129,7 @@
   &:focus,
   &:visited,
   &:hover {
-    color: govuk-colour("black");
+    color: govuk-colour('black');
     text-decoration: none;
     background: none;
     box-shadow: none;
@@ -137,14 +137,14 @@
   }
   @include govuk-media-query(desktop) {
     &:after {
-      content: "";
+      content: '';
       position: absolute;
       height: 4px;
       bottom: -11px;
       left: 5px;
       right: 5px;
       display: block;
-      background: govuk-colour("blue");
+      background: govuk-colour('blue');
     }
   }
 }
