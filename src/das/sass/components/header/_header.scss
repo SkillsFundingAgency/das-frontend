@@ -114,6 +114,7 @@
     }
   }
 
+  // Styles for the user name and service name, used on Provider header
   &__service-user-name-wrap {
     display: flex;
     flex-direction: column;
@@ -122,6 +123,7 @@
       align-items: center;
       flex: 1;
       justify-content: space-between;
+      width: 100%;
     }
   }
 
@@ -133,6 +135,7 @@
     }
   }
 
+  // Styles for the DfE logo, used on Provider header
   &__dfe-logo-link {
     display: inline-block;
     padding-bottom: 5px;
@@ -163,6 +166,102 @@
       max-height: 30px;
     }
   }
+
+  // Styles for the navigation area on the all headers
+
+  &__navigation__container {
+    @include govuk-media-query($from: tablet) {
+      flex-direction: column;
+    }
+  }
+
+  &__navigation__wrapper {
+    @include govuk-media-query($from: 400px) {
+      width: 100%;
+      position: relative;
+    }
+  }
+
+  &__navigation__list {
+    @include govuk-media-query($from: 400px) {
+      margin-right: -30px;
+      width: 100%;
+    }
+  }
+
+  // Priority nav link styles
+
+  // More/menu link
+  &__navigation__menu-link {
+    @include govuk-link-common();
+    font-weight: $govuk-font-weight-bold;
+    color: $govuk-link-colour;
+    text-decoration: none;
+    @include govuk-media-query($from: tablet) {
+      font-weight: $govuk-font-weight-regular;
+    }
+
+    &:after {
+      content: '';
+      display: inline-block;
+      margin-left: 10px;
+      top: 50%;
+      width: 0.6rem;
+      height: 0.6rem;
+      min-width: 0.6rem;
+      transform: translateY(-20%) rotate(135deg);
+      border-top: 0.15rem solid;
+      border-right: 0.15rem solid;
+    }
+
+    &.open {
+      background: inherit;
+
+      &:focus {
+        background: $govuk-focus-colour;
+      }
+
+      &:after {
+        transform: translateY(30%) rotate(-45deg);
+      }
+    }
+  }
+
+  &__item--more {
+    margin: 0;
+    @include govuk-media-query($from: tablet) {
+      position: absolute;
+      right: 0;
+    }
+  }
+
+  // Sub menu styles for priority nav
+  // Reuses the das-header__sub-menu styles with some overrides
+  &__navigation__sub-menu {
+    border: none;
+    margin: 0;
+    @include govuk-media-query($from: tablet) {
+      min-width: 250px;
+      border: 1px solid $_govuk-rebrand-border-colour-on-blue-tint-95;
+      .govuk-service-navigation__item {
+        border-bottom: 1px solid $_govuk-rebrand-border-colour-on-blue-tint-95;
+        margin: 0;
+        display: block;
+
+        &:last-child {
+          border-bottom: none;
+        }
+      }
+    }
+  }
+
+}
+
+// Overrides a style in the govuk service navigation to add spacing between the service name and the first nav item on mobile
+// This is needed because of the structure of our service navigation HTML and the need for the priority nav
+.govuk-service-navigation__service-name + .govuk-service-navigation__wrapper .govuk-service-navigation__list:first-child .govuk-service-navigation__item:first-child .govuk-service-navigation__item,
+{
+  margin-top: 10px;
 }
 
 /* Legacy header styles (pre-new brand) */

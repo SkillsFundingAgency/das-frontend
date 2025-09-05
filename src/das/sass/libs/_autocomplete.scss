@@ -38,7 +38,7 @@
   cursor: pointer;
 }
 
-.autocomplete__dropdown-arrow-down {
+.autocomplete__dropdown-arrow-down{
   z-index: -1;
   display: inline-block;
   position: absolute;
@@ -50,9 +50,9 @@
 
 .autocomplete__menu {
   background-color: #fff;
-  border: 2px solid #0b0c0c;
+  border: 2px solid #0B0C0C;
   border-top: 0;
-  color: #0b0c0c;
+  color: #0B0C0C;
   margin: 0;
   max-height: 342px;
   overflow-x: hidden;
@@ -102,7 +102,7 @@
 }
 
 .autocomplete__option--odd {
-  background-color: #fafafa;
+  background-color: #FAFAFA;
 }
 
 .autocomplete__option--focused,
@@ -139,7 +139,7 @@
 }
 
 .autocomplete__option--no-results {
-  background-color: #fafafa;
+  background-color: #FAFAFA;
   color: #646b6f;
   cursor: not-allowed;
 }
