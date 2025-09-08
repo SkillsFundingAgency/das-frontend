@@ -254,13 +254,15 @@
       }
     }
   }
-
 }
 
 // Overrides a style in the govuk service navigation to add spacing between the service name and the first nav item on mobile
 // This is needed because of the structure of our service navigation HTML and the need for the priority nav
-.govuk-service-navigation__service-name + .govuk-service-navigation__wrapper .govuk-service-navigation__list:first-child .govuk-service-navigation__item:first-child .govuk-service-navigation__item,
-{
+.govuk-service-navigation__service-name
+  + .govuk-service-navigation__wrapper
+  .govuk-service-navigation__list:first-child
+  .govuk-service-navigation__item:first-child
+  .govuk-service-navigation__item {
   margin-top: 10px;
 }
 
