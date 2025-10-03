@@ -4,7 +4,8 @@
   "description": "DAS Frontend contains the code used across the apprenticeship services ",
   "scripts": {
     "dev": "node server.js",
-    "build": "gulp build"
+    "build": "gulp build",
+    "prettier": "npx prettier . --write"
   },
   "repository": {
     "type": "git",

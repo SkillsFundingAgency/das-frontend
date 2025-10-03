@@ -11,6 +11,22 @@ module.exports = {
       res.render('headers-new');
     });
 
+    app.get('/employers', function (req, res) {
+      res.render('employer-logged-in-page');
+    });
+
+    app.get('/employers-existing', function (req, res) {
+      res.render('old-employer-logged-in-page');
+    });
+
+    app.get('/providers', function (req, res) {
+      res.render('provider-logged-in-page');
+    });
+
+    app.get('/providers-existing', function (req, res) {
+      res.render('old-provider-logged-in-page');
+    });
+
     app.get('/map', function (req, res) {
       res.render('map');
     });
