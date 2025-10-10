@@ -36,10 +36,10 @@
 
 .fiu-panel__heading {
   color: inherit;
-  margin-bottom: .5em;
+  margin-bottom: 0.5em;
   line-height: 1;
   @include govuk-media-query(tablet) {
-    margin: 0 1em .5em;
+    margin: 0 1em 0.5em;
   }
 }
 
@@ -64,7 +64,7 @@
 
 .fiu-panel__label {
   color: inherit;
-  margin-bottom: .5em;
+  margin-bottom: 0.5em;
 }
 
 .fiu-panel__image {
@@ -132,7 +132,6 @@
     }
   }
 }
-
 
 /* Homepage version of the panel */
 

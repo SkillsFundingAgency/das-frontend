@@ -20,8 +20,8 @@
 .das-search-form__button {
   overflow: hidden;
   text-indent: -9999px;
-  background-color: govuk-colour("blue");
-  background-image: url("../images/icon-search--white.svg");
+  background-color: govuk-colour('blue');
+  background-image: url('../images/icon-search--white.svg');
   background-position: center;
   background-repeat: no-repeat;
   background-size: 50%;
@@ -33,17 +33,16 @@
 
 .das-search-form__button:hover,
 .das-search-form__button:active,
-.das-search-form__button[disabled="disabled"]:hover,
+.das-search-form__button[disabled='disabled']:hover,
 .das-search-form__button[disabled]:hover {
-  background-color: darken(govuk-colour("blue"), 10%);
+  background-color: darken(govuk-colour('blue'), 10%);
 }
 
 .das-search-form__button:focus,
-.das-search-form__button:focus:not(:active):not(:hover)
-{
+.das-search-form__button:focus:not(:active):not(:hover) {
   box-shadow: none;
   background-color: $govuk-focus-colour;
-  background-image: url("../images/icon-search--black.svg");
+  background-image: url('../images/icon-search--black.svg');
 }
 
 .das-search-form__button:active {

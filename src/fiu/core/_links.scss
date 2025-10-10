@@ -63,10 +63,10 @@
   @extend .fiu-link;
   font-weight: inherit;
   .fiu-template--apprentices & {
-    @extend .fiu-link--citizens
+    @extend .fiu-link--citizens;
   }
   .fiu-template--employers & {
-    @extend .fiu-link--employers
+    @extend .fiu-link--employers;
   }
 }
 
@@ -75,9 +75,9 @@
 }
 
 .fiu-template--apprentices .fiu-article > h2 > a {
-  @extend .fiu-button--citizens
+  @extend .fiu-button--citizens;
 }
 
 .fiu-template--employers .fiu-article > h2 > a {
-  @extend .fiu-button--employers
+  @extend .fiu-button--employers;
 }

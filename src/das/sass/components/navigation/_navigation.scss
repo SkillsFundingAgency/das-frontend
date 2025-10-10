@@ -30,11 +30,11 @@
   position: relative;
   text-decoration: none;
   font-weight: $govuk-font-weight-bold;
-  color: govuk-colour("black");
+  color: govuk-colour('black');
   &:after {
-    background: govuk-colour("blue");
+    background: govuk-colour('blue');
     bottom: -1px;
-    content: "";
+    content: '';
     display: block;
     left: 0;
     top: 0;
@@ -64,7 +64,7 @@
     width: 100%;
     border-top: 1px solid #ccc;
     @include govuk-media-query($from: desktop) {
-        width: auto;
+      width: auto;
     }
   }
 }
@@ -82,10 +82,10 @@
     position: absolute;
     right: 15px;
     top: 17px;
-    @include triangle-equilateral(down, 10px, currentColor)
+    @include triangle-equilateral(down, 10px, currentColor);
   }
   &.open:after {
     top: 15px;
-    @include triangle-equilateral(up, 10px, currentColor)
+    @include triangle-equilateral(up, 10px, currentColor);
   }
 }

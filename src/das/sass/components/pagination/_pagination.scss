@@ -4,7 +4,7 @@
   @include govuk-font($size: 19);
   list-style: none;
   padding: 0;
-  margin:0 0 0 -10px;
+  margin: 0 0 0 -10px;
   @include govuk-media-query($from: tablet) {
     padding: 10px 0;
   }
@@ -18,7 +18,8 @@
   display: block;
   padding: 5px 10px;
   color: $govuk-link-colour;
-  &:hover, &:focus {
+  &:hover,
+  &:focus {
     color: $govuk-link-hover-colour;
     text-decoration: none;
   }
@@ -32,7 +33,8 @@
     cursor: default;
     text-decoration: none;
     color: $govuk-text-colour;
-    &:hover, &:focus {
+    &:hover,
+    &:focus {
       background: none;
     }
   }
@@ -47,7 +49,6 @@
   }
 }
 
-
 // Pagination simple - just previous and next links
 
 .das-pagination-simple {
@@ -59,7 +60,7 @@
   list-style: none;
   padding: 0;
   margin: 0 -10px;
-  @include govuk-clearfix
+  @include govuk-clearfix;
 }
 
 .das-pagination-simple__list-item {

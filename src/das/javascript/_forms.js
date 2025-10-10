@@ -13,5 +13,5 @@ dasJs.forms = {
         button.removeAttr('disabled');
       }, 20000);
     });
-  }
+  },
 };

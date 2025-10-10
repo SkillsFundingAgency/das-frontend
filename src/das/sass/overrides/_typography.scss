@@ -1,4 +1,3 @@
-
 // Text colours
 
 .das-\!-color-white {
@@ -6,23 +5,23 @@
 }
 
 .das-\!-color-green {
-  color: govuk-colour("green") !important;
+  color: govuk-colour('green') !important;
 }
 
 .das-\!-color-red {
-  color: govuk-colour("red") !important;
+  color: govuk-colour('red') !important;
 }
 
 .das-\!-color-blue {
-  color: govuk-colour("blue") !important;
+  color: govuk-colour('blue') !important;
 }
 
 .das-\!-color-dark-blue {
-  color: govuk-colour("dark-blue") !important;
+  color: govuk-colour('dark-blue') !important;
 }
 
 .das-\!-color-purple {
-  color: govuk-colour("purple") !important;
+  color: govuk-colour('purple') !important;
 }
 
 .das-\!-color-dark-grey {
@@ -40,11 +39,15 @@
 
 // Existing text colour classes, that need phasing out
 
-.das-text--muted { @extend .das-\!-color-dark-grey }
-.das-text--error { @extend .das-\!-color-red }
-.das-text--success { @extend .das-\!-color-green }
-
-
+.das-text--muted {
+  @extend .das-\!-color-dark-grey;
+}
+.das-text--error {
+  @extend .das-\!-color-red;
+}
+.das-text--success {
+  @extend .das-\!-color-green;
+}
 
 // Text align
 

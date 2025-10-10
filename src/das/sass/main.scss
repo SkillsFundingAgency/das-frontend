@@ -1,21 +1,22 @@
 // Override path variables
-$govuk-assets-path: "../assets/";
-$govuk-fonts-path: "../assets/fonts/";
+$govuk-assets-path: '../assets/';
+$govuk-fonts-path: '../assets/fonts/';
 $govuk-new-link-styles: true;
-$govuk-suppressed-warnings: "legacy-organisation-colours";
-
-
+$govuk-suppressed-warnings: 'legacy-organisation-colours';
 
 // Import the GOV.UK Frontend styles
-@import "node_modules/govuk-frontend/dist/govuk/index";
+@import 'node_modules/govuk-frontend/dist/govuk/index';
 
-@import "libs/_autocomplete";
+// Import the GOV.UK Frontend styles
+@import 'node_modules/@govuk-one-login/service-header/dist/styles/service-header-no-imports';
+
+@import 'libs/_autocomplete';
 
 // DAS
-@import "settings/all";
-@import "helpers/all";
-@import "core/all";
-@import "utilities/all";
-@import "legacy/all";
-@import "components/all";
-@import "overrides/all";
+@import 'settings/all';
+@import 'helpers/all';
+@import 'core/all';
+@import 'utilities/all';
+@import 'legacy/all';
+@import 'components/all';
+@import 'overrides/all';

@@ -12,7 +12,7 @@ export class Autocomplete {
       defaultValue: '',
       displayMenu: 'overlay',
       placeholder: '',
-      onConfirm: (opt) => {
+      onConfirm: opt => {
         const inputEl = document.getElementById(this.select.name);
         const searchString = opt || inputEl?.value || '';
 
@@ -21,8 +21,9 @@ export class Autocomplete {
           return;
         }
 
-        const matchedOption = Array.from(this.select.options).find(option =>
-          (option.textContent || option.innerText).toLowerCase() === searchString.toLowerCase()
+        const matchedOption = Array.from(this.select.options).find(
+          option =>
+            (option.textContent || option.innerText).toLowerCase() === searchString.toLowerCase()
         );
 
         if (matchedOption) {
@@ -30,7 +31,7 @@ export class Autocomplete {
         } else {
           this.select.selectedIndex = 0;
         }
-      }
+      },
     });
   }
 }

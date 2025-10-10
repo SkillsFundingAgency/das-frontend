@@ -1,2 +1,3 @@
 # Cookie settings
-Styles and JS for the cookie settings page. 
+
+Styles and JS for the cookie settings page.

@@ -9,12 +9,12 @@
 }
 
 .das-panel--featured {
-  background: govuk-colour("blue");
+  background: govuk-colour('blue');
   color: #fff;
 }
 
 .das-panel--muted {
-  background: govuk-colour("dark-grey");
+  background: govuk-colour('dark-grey');
   color: #fff;
 }
 
@@ -25,6 +25,6 @@
 .das-panel__link {
   color: #fff;
   &:focus {
-    @include govuk-focused-text
+    @include govuk-focused-text;
   }
 }

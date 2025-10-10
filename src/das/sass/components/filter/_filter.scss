@@ -29,7 +29,7 @@
 }
 
 .das-filter__selected-filters {
-  background: govuk-colour("light-grey");
+  background: govuk-colour('light-grey');
   border: 1px solid $govuk-border-colour;
   border-top: none;
   padding: 20px;
@@ -67,14 +67,14 @@
 .das-filter__toggle {
   width: auto;
   margin: 20px 0;
-  @extend .govuk-button--secondary
+  @extend .govuk-button--secondary;
 }
 
 .das-filter__tag {
   @include govuk-font(16);
-  background-color: govuk-colour("white");
-  border: 1px solid govuk-colour("black");
-  color: govuk-colour("black");
+  background-color: govuk-colour('white');
+  border: 1px solid govuk-colour('black');
+  color: govuk-colour('black');
   display: inline-block;
   margin-top: govuk-spacing(1);
   padding: 5px 7px;
@@ -84,7 +84,7 @@
 
   &:link,
   &:visited {
-    color: govuk-colour("black");
+    color: govuk-colour('black');
   }
 
   &:focus {
@@ -93,23 +93,23 @@
   }
 
   &:hover {
-    background-color: govuk-colour("black");
-    color: govuk-colour("white");
+    background-color: govuk-colour('black');
+    color: govuk-colour('white');
   }
 
   &:after {
-    content: "";
-    background-image: url("/images/icon-cross--black.svg");
+    content: '';
+    background-image: url('/images/icon-cross--black.svg');
     display: block;
     font-weight: bold;
     height: 10px;
     width: 10px;
     position: absolute;
-    top: .6em;
+    top: 0.6em;
     right: 7px;
   }
 
   &:hover:after {
-    background-image: url("/images/icon-cross--white.svg");
+    background-image: url('/images/icon-cross--white.svg');
   }
 }

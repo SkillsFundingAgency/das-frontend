@@ -3,9 +3,9 @@ const express = require('express');
 const routes = require('./app/routes');
 
 const app = express();
-const port = (process.env.PORT || 1045);
+const port = process.env.PORT || 1045;
 
-const http = require('http')
+const http = require('http');
 
 nunjucks.configure(
   [
@@ -18,20 +18,19 @@ nunjucks.configure(
     'app/views/documentation/components',
     'node_modules/govuk-frontend/',
     'node_modules/govuk-frontend/components/',
-    'dist/fiu/components/'
-  ], {
-  express: app,
-  autoescape: true,
-  watch: true,
-  noCache: true,
-});
-
+    'dist/fiu/components/',
+  ],
+  {
+    express: app,
+    autoescape: true,
+    watch: true,
+    noCache: true,
+  }
+);
 
 app.set('view engine', 'html');
 
-
 app.use(function (req, res, next) {
-
   // Website you wish to allow to connect
   res.setHeader('Access-Control-Allow-Origin', 'https://localhost:50160');
 
@@ -51,6 +50,4 @@ routes.bind(app);
 
 const server = http.createServer(app).listen(port, () => {
   console.log('Website running at http://localhost:' + port);
-})
-
-
+});

@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en" class="govuk-template govuk-template--rebranded">
+  <head>
+    <meta charset="utf-8" />
+    <title>Page headers development</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <meta name="theme-color" content="#1d70b8" />
+    <link rel="icon" sizes="48x48" href="/assets/rebrand/images/favicon.ico" />
+    <link rel="icon" sizes="any" href="/assets/rebrand/images/favicon.svg" type="image/svg+xml" />
+    <link rel="mask-icon" href="/assets/rebrand/images/govuk-icon-mask.svg" color="#1d70b8" />
+    <link rel="apple-touch-icon" href="/assets/rebrand/images/govuk-icon-180.png" />
+    <link href="/css/main.css" rel="stylesheet" />
+    <style>
+      .header__title {
+        background: #eee;
+        padding: 280px 20px 10px 30px;
+        margin: 10px 0;
+      }
+
+      .notes {
+        background: #ffffe0;
+        border: 1px solid #cccc00;
+        padding: 10px;
+        margin: 240px 20px;
+        font-family: Arial, sans-serif;
+      }
+    </style>
+  </head>
+  <body class="govuk-template__body">
+    <script>
+      document.body.className +=
+        ' js-enabled' +
+        ('noModule' in HTMLScriptElement.prototype ? ' govuk-frontend-supported' : '');
+    </script>
+
+    {% include "headers/new/employer-not-logged-in.html" %} {% include
+    "headers/new/employer-logged-in.html" %} {% include "headers/new/provider-logged-in.html" %}
+
+    <div class="notes">
+      <strong>Dev Notes:</strong>
+      <ol>
+        <li>Added `govuk-template--rebranded` class to `html` tag</li>
+        <li>Added `rebrand/` to the asset path of the favicons</li>
+        <li>Updated the hex value in for theme-color and mask color</li>
+      </ol>
+    </div>
+    <script type="module" src="/libs/govuk-frontend/govuk-frontend.min.js"></script>
+    <script type="module">
+      import {initAll} from '/libs/govuk-frontend/govuk-frontend.min.js';
+
+      initAll();
+    </script>
+    <script src="/libs/jquery/jquery.min.js"></script>
+    <script src="/js/das-all.js"></script>
+    <script src="/js/app.min.js"></script>
+    <script>
+      window.DASFrontend.initAll();
+    </script>
+  </body>
+</html>

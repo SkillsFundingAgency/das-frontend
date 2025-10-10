@@ -1,9 +1,9 @@
-.das-notification  {
+.das-notification {
   @include govuk-text-colour;
   @include govuk-responsive-padding(4);
-  @include govuk-responsive-margin(8, "bottom");
+  @include govuk-responsive-margin(8, 'bottom');
   @include das-focusable;
-  border: 3px solid govuk-colour("purple");
+  border: 3px solid govuk-colour('purple');
   @include govuk-media-query($from: tablet) {
     border-width: $govuk-border-width;
   }
@@ -19,7 +19,7 @@
   @include govuk-text-colour;
   @include govuk-font($size: 19);
   margin-top: 0;
-  @include govuk-responsive-margin(2, "bottom");
+  @include govuk-responsive-margin(2, 'bottom');
 }
 
 .das-notification__heading + .das-notification__body {
@@ -34,13 +34,13 @@
 }
 
 .das-notification--success {
-  border-color: govuk-colour("turquoise");
+  border-color: govuk-colour('turquoise');
 }
 
 .das-notification--warning {
-  border-color: govuk-colour("orange");
+  border-color: govuk-colour('orange');
 }
 
 .das-notification--information {
-  border-color: govuk-colour("blue");
+  border-color: govuk-colour('blue');
 }

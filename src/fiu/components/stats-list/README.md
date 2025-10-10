@@ -1,2 +1,3 @@
 # Stats list
-UI component used for highlighting statistics 
+
+UI component used for highlighting statistics

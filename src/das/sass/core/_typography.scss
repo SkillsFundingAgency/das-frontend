@@ -5,31 +5,31 @@ p {
 
 .das-text--error-icon {
   padding-left: 30px;
-  background-image: url("../images/icon-cross--red.svg");
+  background-image: url('../images/icon-cross--red.svg');
   background-repeat: no-repeat;
-  background-position: 0 .2em;
+  background-position: 0 0.2em;
   background-size: 18px 18px;
 }
 
 .das-text--success-icon {
   padding-left: 30px;
-  background-image: url("../images/icon-tick--green.svg");
+  background-image: url('../images/icon-tick--green.svg');
   background-repeat: no-repeat;
   background-size: 23px 22px;
 }
 
 abbr {
-    font-variant: none;
+  font-variant: none;
 
-    &[title] {
-      text-decoration: none;
-      border-bottom: 1px dotted govuk-colour('mid-grey');
+  &[title] {
+    text-decoration: none;
+    border-bottom: 1px dotted govuk-colour('mid-grey');
 
-      .govuk-heading-xl &,
-      .govuk-heading-l & {
-          border-bottom: 1px dashed govuk-colour('mid-grey');
-      }
+    .govuk-heading-xl &,
+    .govuk-heading-l & {
+      border-bottom: 1px dashed govuk-colour('mid-grey');
     }
+  }
 }
 
 .das-mark {
@@ -38,4 +38,10 @@ abbr {
 
 .das-mark--green {
   background: #cffdc6;
+}
+
+.dfe-branding {
+  * {
+    font-family: 'Inter', sans-serif !important;
+  }
 }

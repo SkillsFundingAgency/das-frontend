@@ -10,7 +10,7 @@ export class BackLink {
     backLink.className = 'fiu-back-link';
     backLink.textContent = 'Back';
 
-    backLink.addEventListener('click', (event) => {
+    backLink.addEventListener('click', event => {
       event.preventDefault();
       window.history.back();
     });

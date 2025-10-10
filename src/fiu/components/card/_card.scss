@@ -44,7 +44,7 @@
 }
 
 .fiu-card__heading {
-  margin: .7em 0;
+  margin: 0.7em 0;
   font-size: 20px;
   line-height: 1.1em;
   font-weight: $fiu-font-weight-bold;
@@ -58,7 +58,6 @@
     margin-top: 0;
   }
 }
-
 
 .fiu-card__content {
   @extend .govuk-body;
@@ -107,14 +106,26 @@
   border-bottom: 5px solid $fiu-border-colour;
   display: block;
   background-color: #ccc;
-  background-image: url("/fiu/assets/images/placeholder.png");
+  background-image: url('/fiu/assets/images/placeholder.png');
   background-size: contain;
 }
 
-.fiu-card__image--resources {background-size: cover; background-image: url("/fiu/assets/images/panels/homepage-resources.jpg");  }
-.fiu-card__image--aan {background-size: cover; background-image: url("/fiu/assets/images/panels/homepage-yaan.jpg"); }
-.fiu-card__image--browse {background-size: cover; background-image: url("/fiu/assets/images/panels/homepage-faa.jpg"); }
-.fiu-card__image--naw {background-size: cover; background-image: url("/fiu/assets/images/panels/homepage-naw.jpg"); }
+.fiu-card__image--resources {
+  background-size: cover;
+  background-image: url('/fiu/assets/images/panels/homepage-resources.jpg');
+}
+.fiu-card__image--aan {
+  background-size: cover;
+  background-image: url('/fiu/assets/images/panels/homepage-yaan.jpg');
+}
+.fiu-card__image--browse {
+  background-size: cover;
+  background-image: url('/fiu/assets/images/panels/homepage-faa.jpg');
+}
+.fiu-card__image--naw {
+  background-size: cover;
+  background-image: url('/fiu/assets/images/panels/homepage-naw.jpg');
+}
 
 .fiu-card__image--influencers {
   border-color: $fiu-influencers-brand-colour;
@@ -145,7 +156,7 @@
     width: 33%;
   }
   &:hover {
-    opacity: .7;
+    opacity: 0.7;
     .fiu-interest-card__heading {
       text-decoration: none;
     }
@@ -176,7 +187,7 @@
 
 .fiu-interest-card__image-mask {
   position: absolute;
-  background-image: url("../assets/images/interests/mask.png");
+  background-image: url('../assets/images/interests/mask.png');
   background-repeat: no-repeat;
   background-size: contain;
   top: 0;

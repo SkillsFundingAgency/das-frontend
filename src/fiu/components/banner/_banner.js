@@ -23,7 +23,7 @@ export class Banner {
   setupEvents() {
     if (!this.hidelink) return;
 
-    this.hidelink.addEventListener('click', (event) => {
+    this.hidelink.addEventListener('click', event => {
       event.preventDefault();
       this.removeBanner();
     });

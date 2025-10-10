@@ -1,9 +1,8 @@
-
 // Bingo boxes style tabs
 
 .das-tabs-boxes {
-  @include govuk-responsive-margin(1, "top");
-  @include govuk-responsive-margin(6, "bottom");
+  @include govuk-responsive-margin(1, 'top');
+  @include govuk-responsive-margin(6, 'bottom');
   @include govuk-media-query($from: tablet) {
     margin-left: -$govuk-gutter-half;
     margin-right: -$govuk-gutter-half;
@@ -14,7 +13,7 @@
   margin: 0;
   padding: 0;
   list-style: none;
-  @include govuk-responsive-margin(6, "bottom");
+  @include govuk-responsive-margin(6, 'bottom');
   @include govuk-media-query($from: tablet) {
     display: flex;
   }
@@ -23,7 +22,7 @@
 .das-tabs-boxes__list-item {
   @include govuk-font($size: 19);
   margin-bottom: 3px;
-  border: 1px solid  govuk-colour(blue);
+  border: 1px solid govuk-colour(blue);
   background: govuk-colour(blue);
   color: #fff;
   @include govuk-media-query($from: tablet) {
@@ -35,7 +34,7 @@
 
 .das-tabs-boxes__list-item--selected {
   background: #fff;
-  color: $govuk-link-colour
+  color: $govuk-link-colour;
 }
 
 .das-tabs-boxes__tab {

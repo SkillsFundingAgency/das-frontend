@@ -1,11 +1,11 @@
-@mixin triangle-equilateral ($direction: down, $size: 20px, $colour: #000) {
+@mixin triangle-equilateral($direction: down, $size: 20px, $colour: #000) {
   $secondWidth: $size / 1.732;
   border-color: transparent;
   border-width: $size;
   border-style: solid;
   width: 0;
   height: 0;
-  content: "";
+  content: '';
 
   @if $direction == down {
     border-width: $size $secondWidth 0 $secondWidth;
@@ -26,5 +26,4 @@
     border-width: $secondWidth 0 $secondWidth $size;
     border-color: transparent transparent transparent $colour;
   }
-
 }

@@ -1,7 +1,6 @@
 $govuk-include-default-font-face: false;
-$govuk-suppressed-warnings: "legacy-organisation-colours";
+$govuk-suppressed-warnings: 'legacy-organisation-colours';
 
-
-@import "node_modules/govuk-frontend/dist/govuk/base";
-@import "components/all";
-@import "pages/all";
+@import 'node_modules/govuk-frontend/dist/govuk/base';
+@import 'components/all';
+@import 'pages/all';

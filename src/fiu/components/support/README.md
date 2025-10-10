@@ -1,2 +1,1 @@
-#Support panel 
-Copy of `panel` but styled to show support contact details.
+#Support panel Copy of `panel` but styled to show support contact details.

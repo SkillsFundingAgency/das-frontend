@@ -10,7 +10,7 @@ export class PrintLink {
     printLink.className = 'govuk-body govuk-link fiu-print-page-link';
     printLink.textContent = this.container.dataset.linkContent || 'Print page';
 
-    printLink.addEventListener('click', (event) => {
+    printLink.addEventListener('click', event => {
       event.preventDefault();
       window.print();
     });

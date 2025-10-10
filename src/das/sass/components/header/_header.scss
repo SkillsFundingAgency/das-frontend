@@ -1,5 +1,276 @@
+/* Additional header styles to extend the govuk one login header */
+
+.das-header {
+  &__toggle {
+    // Adjusts the height of the account menu toggle button on a small screen
+    min-height: 60px;
+  }
+
+  &__nav__list-item {
+    position: relative;
+
+    &:first-child {
+      .das-header__nav__link-content {
+        border-left: none;
+      }
+    }
+  }
+
+  &__nav__link--has-menu span {
+    padding-right: 5px;
+    @include govuk-media-query($from: tablet) {
+      display: flex;
+      padding-right: 16px;
+      align-items: center;
+    }
+    // Adds the arrow to the account menu toggle button
+    &:after {
+      content: '';
+      display: inline-block;
+      margin-left: 10px;
+      top: 50%;
+      width: 0.6rem;
+      height: 0.6rem;
+      min-width: 0.6rem;
+      transform: translateY(-20%) rotate(135deg);
+      border-top: 0.15rem solid;
+      border-right: 0.15rem solid;
+    }
+  }
+
+  &__nav__link--has-menu.open {
+    background: #fff;
+    z-index: 2;
+
+    span {
+      color: $govuk-link-colour;
+
+      &:after {
+        transform: translateY(30%) rotate(-45deg);
+      }
+    }
+
+    &:focus span {
+      color: $govuk-text-colour;
+    }
+  }
+
+  &__nav__link-content {
+    // Adds a border between the account links on tablet and above. plus min height
+    @include govuk-media-query($from: tablet) {
+      border-left: 1px solid #fff;
+      min-height: 30px;
+      white-space: nowrap;
+      :focus & {
+        border-left-color: transparent;
+      }
+    }
+  }
+
+  // Styles for the settings dropdown menu
+  &__sub-menu {
+    padding: 0;
+    list-style: none;
+    border-top: 1px solid $govuk-border-colour;
+    margin: 1rem 0 -1rem 1rem;
+    @include govuk-media-query($from: tablet) {
+      position: absolute;
+      background: #fff;
+      top: 100%;
+      right: 0;
+      padding: 0 1rem;
+      min-width: 200px;
+      margin: -1px 0 0;
+      border: 1px solid $govuk-border-colour;
+      z-index: 1;
+    }
+
+    &-item {
+      border-bottom: 1px solid $govuk-border-colour;
+      padding: 1rem 0;
+
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+
+    &-link {
+      color: $govuk-link-colour;
+      font-weight: $govuk-font-weight-bold;
+      @include govuk-link-common();
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+
+      &:focus {
+        text-decoration: none;
+      }
+    }
+
+    &--hidden {
+      display: none;
+    }
+  }
+
+  // Styles for the user name and service name, used on Provider header
+  &__service-user-name-wrap {
+    display: flex;
+    flex-direction: column;
+    @include govuk-media-query($from: tablet) {
+      flex-direction: row;
+      align-items: center;
+      flex: 1;
+      justify-content: space-between;
+      width: 100%;
+    }
+  }
+
+  &__user-name {
+    margin-bottom: 10px;
+    @include govuk-media-query($from: tablet) {
+      padding: 15px 0;
+      margin: 0;
+    }
+  }
+
+  // Styles for the DfE logo, used on Provider header
+  &__dfe-logo-link {
+    display: inline-block;
+    padding-bottom: 5px;
+    margin-bottom: -5px;
+
+    &:hover {
+      margin-bottom: -8px;
+    }
+
+    &:focus {
+      background-image: url('/images/department-for-education_black.png');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: top;
+      margin-bottom: -5px;
+    }
+  }
+
+  &__dfe-logo {
+    max-height: 25px;
+    display: block;
+
+    :focus & {
+      opacity: 0;
+    }
+
+    @include govuk-media-query($from: 400px) {
+      max-height: 30px;
+    }
+  }
+
+  // Styles for the navigation area on the all headers
+
+  &__navigation__container {
+    @include govuk-media-query($from: tablet) {
+      flex-direction: column;
+    }
+  }
+
+  &__navigation__wrapper {
+    @include govuk-media-query($from: 400px) {
+      width: 100%;
+      position: relative;
+    }
+  }
+
+  &__navigation__list {
+    @include govuk-media-query($from: 400px) {
+      margin-right: -30px;
+      width: 100%;
+    }
+  }
+
+  // Priority nav link styles
+
+  // More/menu link
+  &__navigation__menu-link {
+    @include govuk-link-common();
+    font-weight: $govuk-font-weight-bold;
+    color: $govuk-link-colour;
+    text-decoration: none;
+    @include govuk-media-query($from: tablet) {
+      font-weight: $govuk-font-weight-regular;
+    }
+
+    &:after {
+      content: '';
+      display: inline-block;
+      margin-left: 10px;
+      top: 50%;
+      width: 0.6rem;
+      height: 0.6rem;
+      min-width: 0.6rem;
+      transform: translateY(-20%) rotate(135deg);
+      border-top: 0.15rem solid;
+      border-right: 0.15rem solid;
+    }
+
+    &.open {
+      background: inherit;
+
+      &:focus {
+        background: $govuk-focus-colour;
+      }
+
+      &:after {
+        transform: translateY(30%) rotate(-45deg);
+      }
+    }
+  }
+
+  &__item--more {
+    margin: 0;
+    @include govuk-media-query($from: tablet) {
+      position: absolute;
+      right: 0;
+    }
+  }
+
+  // Sub menu styles for priority nav
+  // Reuses the das-header__sub-menu styles with some overrides
+  &__navigation__sub-menu {
+    border: none;
+    margin: 0;
+    @include govuk-media-query($from: tablet) {
+      min-width: 250px;
+      border: 1px solid $_govuk-rebrand-border-colour-on-blue-tint-95;
+      .govuk-service-navigation__item {
+        border-bottom: 1px solid $_govuk-rebrand-border-colour-on-blue-tint-95;
+        margin: 0;
+        display: block;
+
+        &:last-child {
+          border-bottom: none;
+        }
+      }
+    }
+  }
+}
+
+// Overrides a style in the govuk service navigation to add spacing between the service name and the first nav item on mobile
+// This is needed because of the structure of our service navigation HTML and the need for the priority nav
+.govuk-service-navigation__service-name
+  + .govuk-service-navigation__wrapper
+  .govuk-service-navigation__list:first-child
+  .govuk-service-navigation__item:first-child
+  .govuk-service-navigation__item {
+  margin-top: 10px;
+}
+
+/* Legacy header styles (pre-new brand) */
+
 .das-header--no-border {
   border: none;
+
   & > .govuk-header__container {
     border: none;
     margin-bottom: 0;
@@ -30,11 +301,13 @@
   .govuk-header__logo {
     display: none;
   }
+
   .govuk-header__content {
     @include govuk-media-query($from: tablet) {
       padding-left: 0;
     }
   }
+
   .govuk-header__service-name {
     font-size: 24px;
     margin: 15px 0 25px;

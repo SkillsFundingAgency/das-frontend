@@ -1,2 +1,3 @@
 # Search filter
-Display filter options on FAT searches 
+
+Display filter options on FAT searches
