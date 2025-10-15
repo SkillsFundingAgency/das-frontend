@@ -79,7 +79,7 @@
       top: 100%;
       right: 0;
       padding: 0 1rem;
-      min-width: 200px;
+      min-width: 240px;
       margin: -1px 0 0;
       border: 1px solid $govuk-border-colour;
       z-index: 1;
@@ -259,10 +259,10 @@
 // Overrides a style in the govuk service navigation to add spacing between the service name and the first nav item on mobile
 // This is needed because of the structure of our service navigation HTML and the need for the priority nav
 .govuk-service-navigation__service-name
-  + .govuk-service-navigation__wrapper
-  .govuk-service-navigation__list:first-child
-  .govuk-service-navigation__item:first-child
-  .govuk-service-navigation__item {
++ .govuk-service-navigation__wrapper
+.govuk-service-navigation__list:first-child
+.govuk-service-navigation__item:first-child
+.govuk-service-navigation__item {
   margin-top: 10px;
 }
 
@@ -316,4 +316,8 @@
       margin: 12px 0 21px;
     }
   }
+}
+
+.govuk-service-navigation__item:empty {
+  display: none;
 }
