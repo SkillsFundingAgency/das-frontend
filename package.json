@@ -15,7 +15,7 @@
   "dependencies": {
     "@govuk-one-login/service-header": "github:govuk-one-login/service-header.git",
     "accessible-autocomplete": "^2.0.4",
-    "express": "^5.1.0",
+    "express": "^5.2.0",
     "govuk-frontend": "^5.12.0",
     "gulp": "^5.0.1",
     "gulp-concat": "^2.6.1",
