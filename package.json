@@ -24,7 +24,7 @@
     "gulp-terser": "^2.1.0",
     "jquery": "^3.7.1",
     "nunjucks": "^3.2.4",
-    "rollup": "^4.49.0",
+    "rollup": "^4.59.0",
     "sass": "^1.91.0",
     "select2": "^4.1.0-rc.0"
   },
