@@ -32,6 +32,7 @@
         // Ensure initial state
         trigger.setAttribute('aria-expanded', 'false');
         menu.classList.add('das-header__sub-menu--hidden');
+        menu.classList.add('das-header__sub-menu--loaded');
         menu.setAttribute('hidden', 'hidden');
 
         this.menus.set(trigger, menu);
