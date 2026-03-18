@@ -1,9 +1,11 @@
 .fiu-link {
   @include fiu-link-common;
   color: $fiu-global-link-colour;
+
   &:hover {
     color: $fiu-global-link-hover-colour;
   }
+
   &:focus {
     @include govuk-focused-text;
   }
@@ -17,19 +19,27 @@
 
 .fiu-link--citizens {
   color: $fiu-citizens-link-colour;
+
   &:hover {
     color: $fiu-citizens-link-hover-colour;
   }
+
   &:focus {
     @include govuk-focused-text;
   }
 }
 
+.fiu-template--apprentices .app-anchor-links__link {
+  @extend .fiu-link--citizens;
+}
+
 .fiu-link--citizens-light {
   color: $fiu-citizens-link-colour-light;
+
   &:hover {
     color: lighten($fiu-citizens-link-colour-light, 15%);
   }
+
   &:focus {
     @include govuk-focused-text;
   }
@@ -37,19 +47,27 @@
 
 .fiu-link--employers {
   color: $fiu-employers-link-colour;
+
   &:hover {
     color: $fiu-employers-link-hover-colour;
   }
+
   &:focus {
     @include govuk-focused-text;
   }
 }
 
+.fiu-template--employers .app-anchor-links__link {
+  @extend .fiu-link--employers;
+}
+
 .fiu-link--employers-light {
   color: $fiu-employers-link-colour-light;
+
   &:hover {
     color: lighten($fiu-employers-link-colour-light, 15%);
   }
+
   &:focus {
     @include govuk-focused-text;
   }
@@ -62,9 +80,11 @@
 .fiu-article li > p > a {
   @extend .fiu-link;
   font-weight: inherit;
+
   .fiu-template--apprentices & {
     @extend .fiu-link--citizens;
   }
+
   .fiu-template--employers & {
     @extend .fiu-link--employers;
   }
