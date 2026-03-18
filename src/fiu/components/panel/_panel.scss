@@ -11,9 +11,11 @@
   border: 1px solid $fiu-border-colour;
   border-radius: $fiu-border-radius;
   position: relative;
+
   &:focus {
     @include fiu-focused-block;
   }
+
   @include govuk-media-query($from: desktop) {
     padding: 30px;
   }
@@ -57,6 +59,7 @@
 .fiu-panel__content--s {
   font-size: 16px;
   line-height: 1.35em;
+
   p:last-child {
     margin-bottom: 0;
   }
@@ -114,6 +117,10 @@
 }
 
 .fiu-panel--narrow-col {
+  @include govuk-media-query($from: desktop) {
+    padding: 20px;
+  }
+
   .fiu-panel__heading.govuk-heading-l {
     @include govuk-media-query($from: tablet) {
       font-size: 20px;
@@ -125,10 +132,11 @@
       font-size: 30px;
     }
   }
+
   .fiu-panel__content {
     @include govuk-media-query($from: desktop) {
-      margin-left: 1em;
-      margin-right: 1em;
+      margin-left: 0;
+      margin-right: 0;
     }
   }
 }

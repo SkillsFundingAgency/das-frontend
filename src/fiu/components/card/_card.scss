@@ -10,9 +10,11 @@
   text-decoration: none;
   border: 1px solid $fiu-border-colour;
   border-radius: $fiu-border-radius;
+
   &:focus {
     @include fiu-focused-block;
   }
+
   @include govuk-media-query($from: tablet) {
     margin-bottom: 0;
   }
@@ -21,6 +23,7 @@
 .fiu-card__category {
   @include govuk-clearfix;
   display: block;
+
   .fiu-template--employers & {
     display: none;
   }
@@ -35,16 +38,18 @@
   color: $dark-grey;
   text-decoration: none;
   text-align: right;
+
   &:hover {
     color: $black;
   }
+
   &:focus {
     @include govuk-focused-text;
   }
 }
 
 .fiu-card__heading {
-  margin: 0.7em 0;
+  margin: 0 0 0.7em 0;
   font-size: 20px;
   line-height: 1.1em;
   font-weight: $fiu-font-weight-bold;
@@ -54,6 +59,7 @@
   @include govuk-media-query($from: $fiu-large-desktop-breakpoint) {
     font-size: 24px;
   }
+
   .fiu-template--employers & {
     margin-top: 0;
   }
@@ -75,9 +81,11 @@
 
 .fiu-template--apprentices .fiu-card__link {
   color: $fiu-citizens-link-colour;
+
   &:hover {
     color: $fiu-citizens-link-hover-colour;
   }
+
   &:focus {
     color: inherit;
   }
@@ -85,9 +93,11 @@
 
 .fiu-template--employers .fiu-card__link {
   color: $fiu-employers-link-colour;
+
   &:hover {
     color: $fiu-employers-link-hover-colour;
   }
+
   &:focus {
     color: inherit;
   }
@@ -114,14 +124,17 @@
   background-size: cover;
   background-image: url('/fiu/assets/images/panels/homepage-resources.jpg');
 }
+
 .fiu-card__image--aan {
   background-size: cover;
   background-image: url('/fiu/assets/images/panels/homepage-yaan.jpg');
 }
+
 .fiu-card__image--browse {
   background-size: cover;
   background-image: url('/fiu/assets/images/panels/homepage-faa.jpg');
 }
+
 .fiu-card__image--naw {
   background-size: cover;
   background-image: url('/fiu/assets/images/panels/homepage-naw.jpg');
@@ -155,17 +168,22 @@
   @include govuk-media-query($from: desktop) {
     width: 33%;
   }
+
   &:hover {
     opacity: 0.7;
+
     .fiu-interest-card__heading {
       text-decoration: none;
     }
   }
+
   &:focus {
     outline: none;
     opacity: 1;
+
     .fiu-interest-card__heading {
       text-decoration: none;
+
       span {
         @include govuk-focused-text;
       }
