@@ -3,6 +3,7 @@ trigger:
   branches:
     include:
       - "master"
+      - "DASD-14850-REVERT-PACKAGE.LOCK" 
 
 workspace:
     clean: all
