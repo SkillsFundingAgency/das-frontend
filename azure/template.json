@@ -86,6 +86,10 @@
         "originPath": {
             "type": "string"
         },
+        "healthProbePath": {
+            "type": "string",
+            "defaultValue": "/frontend/health.txt"
+        },
         "enableCors": {
             "type": "string",
             "defaultValue": "False"
@@ -209,6 +213,9 @@
                     },
                     "originName": {
                         "value": "[parameters('originName')]"
+                    },
+                    "healthProbePath": {
+                        "value": "[parameters('healthProbePath')]"
                     }
                 }
             },
