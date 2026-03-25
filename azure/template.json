@@ -213,6 +213,9 @@
                     },
                     "originName": {
                         "value": "[parameters('originName')]"
+                    },
+                    "healthProbePath": {
+                        "value": "[parameters('healthProbePath')]"
                     }
                 }
             },
