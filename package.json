@@ -13,7 +13,7 @@
   },
   "author": "Education and Skill Funding Agency developers",
   "dependencies": {
-    "@govuk-one-login/service-header": "github:govuk-one-login/service-header.git",
+    "@govuk-one-login/service-header": "^5.0.0",
     "accessible-autocomplete": "^2.0.4",
     "express": "^5.2.0",
     "govuk-frontend": "^5.14.0",
