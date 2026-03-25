@@ -30,11 +30,10 @@ steps:
   parameters:
     ContinueOnVulnerablePackageScanError: true
 
-- script: npm install -g npm@9.9.3
-  displayName: 'Pin npm version'
-
-- script: npm install
+- task: Npm@1
   displayName: 'npm install'
+  inputs:
+    command: 'install'
 
 - task: gulp@1
   inputs:
