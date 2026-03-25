@@ -30,7 +30,7 @@ steps:
   parameters:
     ContinueOnVulnerablePackageScanError: true
 
-- task: Npm@1
+- script: npm install
   displayName: 'npm install'
 
 - task: gulp@1
