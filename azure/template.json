@@ -87,7 +87,8 @@
             "type": "string"
         },
         "healthProbePath": {
-            "value": "/frontend/health.txt"
+            "type": "string",
+            "defaultValue": "/frontend/health.txt"
         },
         "enableCors": {
             "type": "string",
