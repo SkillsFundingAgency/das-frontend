@@ -4,6 +4,7 @@ let sassOptions;
 
 sassOptions = {
   style: 'compressed',
+  loadPaths: ['.'],
   silenceDeprecations: [
     'legacy-js-api',
     'function-units',
