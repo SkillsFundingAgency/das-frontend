@@ -11,8 +11,8 @@ sassOptionsFiu = {
     'import',
     'color-functions',
   ],
-  outputStyle: 'compressed',
-  includePaths: ['node_modules/govuk-frontend/dist', 'node_modules/plyr/src/sass', 'src/sass'],
+  style: 'compressed',
+  loadPaths: ['node_modules/govuk-frontend/dist', 'node_modules/plyr/src/sass', 'src/sass'],
 };
 
 module.exports = sassOptionsFiu;

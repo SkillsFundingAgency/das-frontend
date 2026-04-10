@@ -244,9 +244,9 @@
     margin: 0;
     @include govuk-media-query($from: tablet) {
       min-width: 250px;
-      border: 1px solid $_govuk-rebrand-border-colour-on-blue-tint-95;
+      border: 1px solid $govuk-border-colour;
       .govuk-service-navigation__item {
-        border-bottom: 1px solid $_govuk-rebrand-border-colour-on-blue-tint-95;
+        border-bottom: 1px solid $govuk-border-colour;
         margin: 0;
         display: block;
 
