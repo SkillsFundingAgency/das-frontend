@@ -1,123 +1,136 @@
 <!doctype html>
 <html lang="en" class="govuk-template">
-  <head>
-    <meta charset="utf-8" />
-    <title>DAS Frontend — Accessible autocomplete demos</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
+<head>
+  <meta charset="utf-8"/>
+  <title>DAS Frontend — Accessible autocomplete demos</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
 
-    <!--
-      Assets are loaded from the AT (dev/test) CDN.
-      main.css includes the GOV.UK Frontend styles AND the accessible-autocomplete styles.
+  <!--
+    Assets are loaded from the AT (dev/test) CDN.
+    main.css includes the GOV.UK Frontend styles AND the accessible-autocomplete styles.
 
-      NOTE: this page fetches its data from the co-located `data/` folder, so it must be
-      *served over HTTP* — visit it via the dev server at /demos/autocomplete.html
-      (`npm run dev`), or run `npx serve demos`. Opening the file directly with file://
-      will block the data fetches in most browsers.
-    -->
-    <link rel="stylesheet" href="https://das-at-frnt-end.azureedge.net/css/main.css" />
-  </head>
-  <body class="govuk-template__body">
-    <div class="govuk-width-container">
-      <main class="govuk-main-wrapper" id="main-content" role="main">
-        <h1 class="govuk-heading-xl">Accessible autocomplete demos</h1>
-        <p class="govuk-body">
-          Three ways to use
-          <a class="govuk-link" href="https://github.com/alphagov/accessible-autocomplete"
-            >alphagov/accessible-autocomplete</a
-          >
-          with DAS Frontend, backed by the real courses and providers data in
-          <code>demos/data</code>. View source to see the code for each.
-        </p>
+    NOTE: this page fetches its data from the co-located `data/` folder, so it must be
+    *served over HTTP* — visit it via the dev server at /demos/autocomplete.html
+    (`npm run dev`), or run `npx serve demos`. Opening the file directly with file://
+    will block the data fetches in most browsers.
+  -->
+  <link rel="stylesheet" href="https://das-at-frnt-end.azureedge.net/css/main.css"/>
+</head>
+<body class="govuk-template__body">
+<div class="govuk-width-container">
+  <main class="govuk-main-wrapper" id="main-content" role="main">
+    <h1 class="govuk-heading-xl">Accessible autocomplete demos</h1>
+    <p class="govuk-body">
+      Three ways to use
+      <a class="govuk-link" href="https://github.com/alphagov/accessible-autocomplete"
+      >alphagov/accessible-autocomplete</a
+      >
+      with DAS Frontend, backed by the real courses and providers data in
+      <code>demos/data</code>. View source to see the code for each.
+    </p>
 
-        <!-- Demo 1: progressive enhancement of a <select> -->
-        <h2 class="govuk-heading-l">1. Enhance a <code>&lt;select&gt;</code></h2>
-        <div class="govuk-form-group">
-          <label class="govuk-label" for="country">Country</label>
-          <select id="country" name="country" class="govuk-select">
-            <option value="">Select a country</option>
-            <option value="fr">France</option>
-            <option value="de">Germany</option>
-            <option value="ie">Ireland</option>
-            <option value="es">Spain</option>
-            <option value="gb">United Kingdom</option>
-          </select>
-        </div>
-
-        <!-- Demo 2: static list — the real apprenticeship courses list -->
-        <h2 class="govuk-heading-l">2. Static list — apprenticeship courses</h2>
-        <div class="govuk-form-group">
-          <label class="govuk-label" for="course">Apprenticeship course</label>
-          <div id="course-container"></div>
-        </div>
-
-        <!-- Demo 3: remote/async source — the real training providers list -->
-        <h2 class="govuk-heading-l">3. Async source — training providers</h2>
-        <div class="govuk-form-group">
-          <label class="govuk-label" for="provider">Training provider</label>
-          <div id="provider-container"></div>
-        </div>
-      </main>
+    <!-- Demo 1: progressive enhancement of a <select> -->
+    <h2 class="govuk-heading-l">1. Enhance a <code>&lt;select&gt;</code></h2>
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="country">Country</label>
+      <select id="country" name="country" class="govuk-select">
+        <option value="">Select a country</option>
+        <option value="fr">France</option>
+        <option value="de">Germany</option>
+        <option value="ie">Ireland</option>
+        <option value="es">Spain</option>
+        <option value="gb">United Kingdom</option>
+      </select>
     </div>
 
-    <script src="https://das-at-frnt-end.azureedge.net/libs/accessible-autocomplete/accessible-autocomplete.min.js"></script>
-    <script>
-      // Data lives alongside this file. Served over HTTP the relative path resolves
-      // to /demos/data/… (see the note in <head>).
-      var DATA = 'data/';
+    <!-- Demo 2: static list — the real apprenticeship courses list -->
+    <h2 class="govuk-heading-l">2. Static list — apprenticeship courses</h2>
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="course">Apprenticeship course</label>
+      <div id="course-container"></div>
+    </div>
 
-      // 1. Progressive enhancement of an existing <select> — recommended default.
-      accessibleAutocomplete.enhanceSelectElement({
-        selectElement: document.querySelector('#country'),
-        minLength: 2,
-        defaultValue: '',
-        displayMenu: 'overlay',
-      });
+    <!-- Demo 3: remote/async source — the real training providers list -->
+    <h2 class="govuk-heading-l">3. Async source — training providers</h2>
+    <div class="govuk-form-group">
+      <label class="govuk-label" for="provider">Training provider</label>
+      <div id="provider-container"></div>
+    </div>
+  </main>
+</div>
 
-      // 2. Static list: fetch the full courses list once, then hand it to the
-      //    autocomplete as a plain `source` array.
-      fetch(DATA + 'courses.json')
-        .then(function (r) { return r.json(); })
-        .then(function (courses) {
-          accessibleAutocomplete({
-            element: document.querySelector('#course-container'),
-            id: 'course',
-            name: 'course',
-            source: courses,
-          });
-        });
+<script
+  src="https://das-at-frnt-end.azureedge.net/libs/accessible-autocomplete/accessible-autocomplete.min.js"></script>
+<script>
+  // Data lives alongside this file. Served over HTTP the relative path resolves
+  // to /demos/data/… (see the note in <head>).
+  var DATA = 'data/';
 
-      // 3. Async source: for a large dataset, fetch once and cache, then filter per
-      //    keystroke inside the `source` callback. Swap the fetch for a real search
-      //    endpoint to query server-side instead.
-      var providersPromise;
-      function loadProviderNames() {
-        providersPromise =
-          providersPromise ||
-          fetch(DATA + 'providers.json')
-            .then(function (r) { return r.json(); })
-            .then(function (list) {
-              return Array.from(new Set(list.map(function (p) { return p.ProviderName; }))).sort();
-            });
-        return providersPromise;
-      }
+  // 1. Progressive enhancement of an existing <select> — recommended default.
+  accessibleAutocomplete.enhanceSelectElement({
+    selectElement: document.querySelector('#country'),
+    minLength: 2,
+    defaultValue: '',
+    displayMenu: 'overlay',
+  });
+
+  // 2. Static list: fetch the full courses list once, then hand it to the
+  //    autocomplete as a plain `source` array.
+  fetch(DATA + 'courses.json')
+    .then(function (r) {
+      return r.json();
+    })
+    .then(function (courses) {
       accessibleAutocomplete({
-        element: document.querySelector('#provider-container'),
-        id: 'provider',
-        name: 'provider',
-        minLength: 2,
-        source: function (query, populateResults) {
-          var q = query.toLowerCase();
-          loadProviderNames()
-            .then(function (names) {
-              populateResults(
-                names
-                  .filter(function (n) { return n.toLowerCase().indexOf(q) !== -1; })
-                  .slice(0, 100) // cap the menu for very common substrings
-              );
-            })
-            .catch(function () { populateResults([]); });
-        },
+        element: document.querySelector('#course-container'),
+        id: 'course',
+        name: 'course',
+        source: courses,
       });
-    </script>
-  </body>
+    });
+
+  // 3. Async source: for a large dataset, fetch once and cache, then filter per
+  //    keystroke inside the `source` callback. Swap the fetch for a real search
+  //    endpoint to query server-side instead.
+  var providersPromise;
+
+  function loadProviderNames() {
+    providersPromise =
+      providersPromise ||
+      fetch(DATA + 'providers.json')
+        .then(function (r) {
+          return r.json();
+        })
+        .then(function (list) {
+          return Array.from(new Set(list.map(function (p) {
+            return p.ProviderName;
+          }))).sort();
+        });
+    return providersPromise;
+  }
+
+  accessibleAutocomplete({
+    element: document.querySelector('#provider-container'),
+    id: 'provider',
+    name: 'provider',
+    minLength: 2,
+    source: function (query, populateResults) {
+      var q = query.toLowerCase();
+      loadProviderNames()
+        .then(function (names) {
+          populateResults(
+            names
+              .filter(function (n) {
+                return n.toLowerCase().includes(q);
+              })
+              .slice(0, 100) // cap the menu for long lists
+          );
+        })
+        .catch(function () {
+          populateResults([]);
+        });
+    },
+  });
+</script>
+</body>
 </html>
