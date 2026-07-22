@@ -108,9 +108,9 @@
           populateResults(
             names
               .filter(function (n) {
-                return n.toLowerCase().indexOf(q) !== -1;
+                return n.toLowerCase().includes(q);
               })
-              .slice(0, 100) // cap the menu for very common substrings
+              .slice(0, 100) // cap the menu for very long lists
           );
         })
         .catch(function () {
