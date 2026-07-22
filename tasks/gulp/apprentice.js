@@ -1,6 +1,5 @@
 'use strict';
 const gulp = require('gulp');
-const babel = require('gulp-babel');
 const concat = require('gulp-concat');
 const terser = require('gulp-terser');
 const sass = require('gulp-sass')(require('sass'));
@@ -36,7 +35,6 @@ gulp.task('apprentice-watch-js', function () {
 gulp.task('apprentice-compile-js', function () {
   return gulp
     .src([paths.src.apprenticeJs, paths.src.apprenticeJsInit])
-    .pipe(babel())
     .pipe(terser())
     .pipe(concat('apprentice.min.js'))
     .pipe(gulp.dest(paths.dist.apprenticeJs));

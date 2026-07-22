@@ -1,10 +1,13 @@
-{% extends "template.html" %} {% set pageTitle = "Digital Apprenticeship Service" %} {% set
+{% extends "template.njk" %} {% set pageTitle = "Digital Apprenticeship Service" %} {% set
 hideStatusBanner = true %} {% set loggedIn = true %} {% block content %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-l">DAS frontend local dev</h1>
     <p>Use these views to develop locally</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li><a class="govuk-link" href="/demos/autocomplete">Accessible autocomplete demos</a></li>
+    </ul>
   </div>
 </div>
 

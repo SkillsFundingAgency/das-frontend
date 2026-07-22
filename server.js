@@ -16,8 +16,7 @@ nunjucks.configure(
     'app/views/layouts',
     'app/views/documentation',
     'app/views/documentation/components',
-    'node_modules/govuk-frontend/',
-    'node_modules/govuk-frontend/components/',
+    'node_modules/govuk-frontend/dist/',
     'dist/fiu/components/',
   ],
   {
@@ -45,6 +44,9 @@ app.use(function (req, res, next) {
 });
 
 app.use(express.static('dist'));
+
+// Serve the standalone demos and their co-located data (e.g. /demos/data/courses.json)
+app.use('/demos', express.static('demos'));
 
 routes.bind(app);
 
