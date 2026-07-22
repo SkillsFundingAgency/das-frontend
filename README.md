@@ -116,7 +116,7 @@ type‑ahead combo box. Include the script once per page:
 <script src="https://das-at-frnt-end.azureedge.net/libs/accessible-autocomplete/accessible-autocomplete.min.js"></script>
 ```
 
-The demos below are backed by real data in [`demos/data`](demos/data) — the full apprenticeship
+The demos below are backed by real data in [`demos/data`](app/views/demos/data) — the full apprenticeship
 courses list (`courses.json`) and training providers list (`providers.json`). A runnable version
 is available two ways:
 
@@ -162,60 +162,62 @@ it.
 ### Demo 2 — static list (apprenticeship courses)
 
 When there is no `<select>` to enhance, mount an autocomplete into an empty container and provide
-the suggestions as an array. Here we fetch the full [`courses.json`](demos/data/courses.json) list
+the suggestions as an array. Here we fetch the full [`courses.json`](app/views/demos/data/courses.json) list
 once and hand it over as the `source`.
 
 ```html
+
 <div class="govuk-form-group">
-  <label class="govuk-label" for="course">Apprenticeship course</label>
-  <div id="course-container"></div>
+    <label class="govuk-label" for="course">Apprenticeship course</label>
+    <div id="course-container"></div>
 </div>
 
 <script>
-  fetch('/demos/data/courses.json')
-    .then(response => response.json())
-    .then(courses => {
-      accessibleAutocomplete({
-        element: document.querySelector('#course-container'),
-        id: 'course', // matches the <label for="...">
-        name: 'course',
-        source: courses,
-      });
-    });
+    fetch('/demos/data/courses.json')
+            .then(response => response.json())
+            .then(courses => {
+                accessibleAutocomplete({
+                    element: document.querySelector('#course-container'),
+                    id: 'course', // matches the <label for="...">
+                    name: 'course',
+                    source: courses,
+                });
+            });
 </script>
 ```
 
 ### Demo 3 — async source (training providers)
 
 For a large dataset, pass a `source` function. Here we fetch
-[`providers.json`](demos/data/providers.json) once, cache it, and filter by name on each keystroke.
+[`providers.json`](app/views/demos/data/providers.json) once, cache it, and filter by name on each keystroke.
 Swapping the fetch for a real search endpoint moves the filtering server‑side.
 
 ```html
+
 <div class="govuk-form-group">
-  <label class="govuk-label" for="provider">Training provider</label>
-  <div id="provider-container"></div>
+    <label class="govuk-label" for="provider">Training provider</label>
+    <div id="provider-container"></div>
 </div>
 
 <script>
-  let providersPromise;
-  const loadProviderNames = () =>
-    (providersPromise ??= fetch('/demos/data/providers.json')
-      .then(response => response.json())
-      .then(list => [...new Set(list.map(p => p.ProviderName))].sort()));
-
-  accessibleAutocomplete({
-    element: document.querySelector('#provider-container'),
-    id: 'provider',
-    name: 'provider',
-    minLength: 2,
-    source: (query, populateResults) => {
-      const q = query.toLowerCase();
-      loadProviderNames()
-        .then(names => populateResults(names.filter(n => n.toLowerCase().includes(q)).slice(0, 100)))
-        .catch(() => populateResults([]));
-    },
-  });
+    let providersPromise;
+    const loadProviderNames = () =>
+            (providersPromise ??= fetch('/demos/data/providers.json')
+                    .then(response => response.json())
+                    .then(list => [...new Set(list.map(p => p.ProviderName))].sort()));
+    
+    accessibleAutocomplete({
+        element: document.querySelector('#provider-container'),
+        id: 'provider',
+        name: 'provider',
+        minLength: 2,
+        source: (query, populateResults) => {
+            const q = query.toLowerCase();
+            loadProviderNames()
+                    .then(names => populateResults(names.filter(n => n.toLowerCase().includes(q)).slice(0, 100)))
+                    .catch(() => populateResults([]));
+        },
+    });
 </script>
 ```
 

@@ -44,9 +44,7 @@ app.use(function (req, res, next) {
 });
 
 app.use(express.static('dist'));
-
-// Serve the standalone demos and their co-located data (e.g. /demos/data/courses.json)
-app.use('/demos', express.static('demos'));
+app.use('/demos/data', express.static('app/views/demos/data'));
 
 routes.bind(app);
 
