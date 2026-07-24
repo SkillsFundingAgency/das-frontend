@@ -11,12 +11,12 @@
     "type": "git",
     "url": "git+https://github.com/SkillsFundingAgency/das-frontend.git"
   },
-  "author": "Education and Skill Funding Agency developers",
+  "author": "Department for Education",
   "dependencies": {
     "@govuk-one-login/service-header": "github:govuk-one-login/service-header.git",
-    "accessible-autocomplete": "^2.0.4",
+    "accessible-autocomplete": "^3.0.1",
     "express": "^5.2.1",
-    "govuk-frontend": "^6.1.0",
+    "govuk-frontend": "^6.4.0",
     "gulp": "^5.0.1",
     "gulp-concat": "^2.6.1",
     "gulp-rename": "^2.1.0",
@@ -24,18 +24,15 @@
     "gulp-terser": "^2.1.0",
     "jquery": "^3.7.1",
     "nunjucks": "^3.2.4",
-    "rollup": "4.60.1",
-    "sass": "^1.99.0",
+    "rollup": "^4.62.2",
+    "sass": "^1.101.3",
     "select2": "^4.1.0-rc.0"
   },
   "bugs": {
     "url": "https://github.com/SkillsFundingAgency/das-frontend/issues"
   },
   "devDependencies": {
-    "@babel/core": "^7.29.6",
-    "@babel/preset-env": "^7.14.7",
     "@rollup/plugin-terser": "^1.0.0",
-    "gulp-babel": "^8.0.0",
-    "prettier": "3.6.2"
+    "prettier": "^3.9.6"
   }
 }

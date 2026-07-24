@@ -16,8 +16,7 @@ nunjucks.configure(
     'app/views/layouts',
     'app/views/documentation',
     'app/views/documentation/components',
-    'node_modules/govuk-frontend/',
-    'node_modules/govuk-frontend/components/',
+    'node_modules/govuk-frontend/dist/',
     'dist/fiu/components/',
   ],
   {
@@ -45,6 +44,7 @@ app.use(function (req, res, next) {
 });
 
 app.use(express.static('dist'));
+app.use('/demos/data', express.static('app/views/demos/data'));
 
 routes.bind(app);
 

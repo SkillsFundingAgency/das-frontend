@@ -35,6 +35,10 @@ module.exports = {
       res.render('apprentice');
     });
 
+    app.get('/demos/autocomplete', function (req, res) {
+      res.render('demos/autocomplete');
+    });
+
     app.get('/local/:page', function (req, res) {
       res.render('local/' + req.params.page);
     });

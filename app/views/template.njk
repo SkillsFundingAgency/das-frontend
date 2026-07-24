@@ -1,0 +1,37 @@
+{% extends "govuk/template.njk" %}
+{% from "govuk/components/footer/macro.njk" import govukFooter %}
+
+{# Values read by govuk/template.njk to render the header/service navigation #}
+{% set serviceName = "DAS frontend" %}
+{% set serviceUrl = "/" %}
+{% set themeColor = "#0b0c0c" %}
+
+{% block pageTitle %}{{ pageTitle }}{% endblock %}
+
+{% block head %}
+<link href="/css/main.css" rel="stylesheet"/>
+{% endblock %}
+
+{% block footer %}
+{{ govukFooter({
+meta: {
+items: [
+{
+href: "http://gov.uk/dfe",
+text: "Built by the Department for Education"
+}
+]
+}
+}) }}
+{% endblock %}
+
+{% block bodyEnd %}
+<script src="/libs/govuk-frontend/all.js"></script>
+<script src="/libs/jquery/jquery.min.js"></script>
+<script src="/js/das-all.js"></script>
+<script src="/js/app.min.js"></script>
+<script>
+  window.GOVUKFrontend.initAll();
+  window.DASFrontend.initAll();
+</script>
+{% endblock %}
