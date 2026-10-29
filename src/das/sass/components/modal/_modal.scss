@@ -32,22 +32,40 @@
   background: #fff;
   padding: 30px;
   margin-bottom: 15px;
-  height: 100%;
+  box-sizing: border-box;
+  height: auto;
+  max-height: calc(100vh - 30px);
+  max-height: calc(100dvh - 30px);
+  overflow-y: auto;
+  overscroll-behavior: contain;
   display: block;
   text-decoration: none;
   border: 1px solid rgba(0, 0, 0, 0.5);
   border-radius: 10px;
   position: relative;
+  @include govuk-media-query(tablet) {
+    max-height: calc(100vh - 10vw - 15px);
+    max-height: calc(100dvh - 10vw - 15px);
+  }
   &:focus {
     outline: 3px solid $govuk-focus-colour;
+    outline-offset: -3px;
   }
 }
 
 .das-modal__actions {
   margin-top: 30px;
-  margin-bottom: -20px;
+  margin-bottom: 0;
   @include govuk-media-query(tablet) {
     margin-top: 10px;
-    margin-bottom: -10px;
+    margin-bottom: 0;
   }
+}
+
+body.das-modal-open {
+  position: fixed;
+  left: 0;
+  right: 0;
+  width: 100%;
+  overflow: hidden;
 }
