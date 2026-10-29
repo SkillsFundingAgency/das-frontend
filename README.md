@@ -26,7 +26,7 @@ asset paths below are relative to one of these base URLs:
 
 | Environment   | Base URL                                  |
 |---------------|-------------------------------------------|
-| AT (dev/test) | `https://das-at-frnt-end.azureedge.net`   |
+| AT            | `https://das-at-frnt-end.azureedge.net`   |
 | TEST          | `https://das-test-frnt-end.azureedge.net` |
 | PP            | `https://das-pp-frnt-end.azureedge.net`   |
 | PRD           | `https://das-prd-frnt-end.azureedge.net`  |
