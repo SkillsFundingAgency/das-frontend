@@ -110,11 +110,27 @@ SessionTimeOutModal.prototype.formatTime = function (seconds) {
 };
 
 SessionTimeOutModal.prototype.showModal = function () {
+  this.lockPageScroll();
   document.body.insertAdjacentHTML('beforeend', this.modalHtml);
   this.modal = document.getElementById(this.modalId);
   this.modal.firstElementChild.focus();
   this.modalEvents();
   this.startModalCountdown();
+};
+
+SessionTimeOutModal.prototype.lockPageScroll = function () {
+  this.lockedScrollY = window.scrollY || document.documentElement.scrollTop || 0;
+  document.body.style.top = '-' + this.lockedScrollY + 'px';
+  document.body.classList.add('das-modal-open');
+};
+
+SessionTimeOutModal.prototype.unlockPageScroll = function () {
+  if (!document.body.classList.contains('das-modal-open')) {
+    return;
+  }
+  document.body.classList.remove('das-modal-open');
+  document.body.style.top = '';
+  window.scrollTo(0, this.lockedScrollY || 0);
 };
 
 SessionTimeOutModal.prototype.modalEvents = function () {
@@ -198,7 +214,9 @@ SessionTimeOutModal.prototype.hideModal = function () {
   clearInterval(this.modalTimeout);
   if (this.modal) {
     this.modal.remove();
+    this.modal = null;
   }
+  this.unlockPageScroll();
 };
 
 SessionTimeOutModal.prototype.logout = function (action) {
